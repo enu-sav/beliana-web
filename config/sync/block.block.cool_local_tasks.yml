@@ -1,0 +1,22 @@
+uuid: a591e764-a153-42f3-b200-368e3e051ec6
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - cool
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: cool_local_tasks
+theme: cool
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Záložky
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

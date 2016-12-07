@@ -1,0 +1,22 @@
+uuid: 0ea3dcfa-c50b-4e95-8a1e-57553ffe534d
+langcode: sk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cool
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: cool_content
+theme: cool
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Hlavný obsah stránky'
+  provider: system
+  label_display: '0'
+visibility: {  }

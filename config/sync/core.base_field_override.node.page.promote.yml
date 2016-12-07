@@ -1,0 +1,24 @@
+uuid: ee87b768-d34a-4b87-bfbe-a9ea784217be
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.page
+_core:
+  default_config_hash: fPUEnm4T5zfZRr3ttDUqq7yCDd2uW3clWD-pvos4tlQ
+id: node.page.promote
+field_name: promote
+entity_type: node
+bundle: page
+label: 'Zobrazené na titulnej strane'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Zapnúť
+  off_label: Vypnúť
+field_type: boolean

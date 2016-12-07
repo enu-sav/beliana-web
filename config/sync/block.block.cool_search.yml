@@ -1,0 +1,22 @@
+uuid: 9b8f252e-0a34-4fcf-aec2-ec9623949102
+langcode: sk
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - cool
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: cool_search
+theme: cool
+region: navigation
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Vyhľadávanie
+  provider: search
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 9504c13f-0844-4fd0-9821-e5d90b628aa6
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - seven
+_core:
+  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
+id: seven_page_title
+theme: seven
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Názov stránky'
+  provider: core
+  label_display: '0'
+visibility: {  }
