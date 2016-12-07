@@ -1,0 +1,19 @@
+name: Cool
+type: theme
+description: Coolstranky.sk base theme
+package: Coolstranky
+core: 8.x
+libraries:
+  - cool/theme
+
+base theme: stable
+
+regions:
+  navigation: Navigation
+  header: Header
+  help: Help
+  highlighted: Highlighted
+  content: Content
+  footer_left: Footer left
+  footer_center: Footer center
+  footer_right: Footer right
