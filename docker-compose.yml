@@ -1,0 +1,39 @@
+# Create here the Drupal site you would like
+version: '2'
+services:
+  drupal:
+    # Choose your URL and hostname for this Docker Container
+    # DO NOT remove the '&hostname'
+    hostname: &hostname beliana.docker.amazee.io
+
+    environment:
+      WEBROOT: web
+
+      # APC Support is by default enabled, but in some cases it can make issues, change to 0 to disable:
+      APC: 1
+
+      VIRTUAL_HOST: *hostname
+    image: amazeeio/drupal:php70-basic
+    volumes:
+      - .:/var/www/drupal/public_html
+    volumes_from:
+      - container:amazeeio-ssh-agent
+    container_name: *hostname
+    network_mode: bridge
+    ports:
+      - "3306"
+    links:
+      - mysql
+
+  mysql:
+    container_name: dobrodruhsk_db
+    image: mariadb
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    volumes:
+      - ./db/scrubbed-d6.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    network_mode: bridge
