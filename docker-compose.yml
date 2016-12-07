@@ -22,18 +22,3 @@ services:
     network_mode: bridge
     ports:
       - "3306"
-    links:
-      - mysql
-
-  mysql:
-    container_name: dobrodruhsk_db
-    image: mariadb
-    ports:
-      - 3306:3306
-    expose:
-      - 3306
-    volumes:
-      - ./db/scrubbed-d6.sql:/docker-entrypoint-initdb.d/schema.sql:ro
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-    network_mode: bridge
