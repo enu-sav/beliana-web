@@ -88,12 +88,12 @@ that the generated `composer.json` might differ from this project's file.
       create directory for project (e.g. `beliana-webova-verzia`) and run command in this directory to clone repository.
    1. use "Clone in SourceTree" button to clone repository directly in SourceTree app, choose directory destination and push clone button (preferred option).
 1. In terminal emulator open project directory (e.g. `beliana-webova-verzia`) run command `amazeeio-cachalot up` or `cachalot up` to start Docker Virtual Machine and services.
-1. In the same directory run command `docker-compose up -d` to run hostname [beliana.docker.amazee.io](beliana.docker.amazee.io). This command must be run in the directory that contains file `docker-compose.yml`.
+1. In the same directory run command `docker-compose up -d` to run hostname `beliana.docker.amazee.io`. This command must be run in the directory that contains file `docker-compose.yml`.
 1. Run command `composer install` to install all project dependencies define in the file `composer.json`.
-1. Open internet browser and run path [beliana.docker.amazee.io/core/install.php](beliana.docker.amazee.io/core/install.php) and install Drupal site. Choose "Configuration installer"
+1. Open internet browser and run path `beliana.docker.amazee.io/core/install.php` and install Drupal site. Choose "Configuration installer"
    installation profile. Set username, password, email and finish installation process.
 1. To connect to the container (to run e.g. drush or git commands in terminal emulator) run command `docker-compose exec --user drupal drupal bash` in terminal emulator in project directory.
-1. Your Drupal site is ready to use on [beliana.docker.amazee.io](beliana.docker.amazee.io).
+1. Your Drupal site is ready to use on `beliana.docker.amazee.io`.
 1. If you are not logged in on site (e.g. after log out, restart PC, ...) and want to log in, connect to the container in terminal emulator (step. 6), go to directory `web` and
    run command `drush uli` to reset password. After that copy path `/user/reset/1/...` and in browser open path `beliana.docker.amazee.io` with copy path (`beliana.docker.amazee.io/user/reset/1/...`)
 
