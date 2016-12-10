@@ -1,0 +1,24 @@
+uuid: f163cff2-837f-4355-bac0-89099ddf5899
+langcode: sk
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - system
+  theme:
+    - cool
+id: footersecondarymenu
+theme: cool
+region: footer_center
+weight: 0
+provider: null
+plugin: 'system_menu_block:secondary'
+settings:
+  id: 'system_menu_block:secondary'
+  label: Odkazy
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }
