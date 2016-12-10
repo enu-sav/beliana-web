@@ -1,0 +1,9 @@
+uuid: 0782b847-413f-426d-9be5-c1e99bd4568f
+langcode: sk
+status: true
+dependencies: {  }
+name: Kategórie
+vid: categories
+description: ''
+hierarchy: 0
+weight: 0
