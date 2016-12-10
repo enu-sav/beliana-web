@@ -1,0 +1,28 @@
+uuid: 20d52098-c2b6-4b71-9c9d-359a7ddd4fc1
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categories
+    - node.type.word
+    - taxonomy.vocabulary.categories
+id: node.word.field_categories
+field_name: field_categories
+entity_type: node
+bundle: word
+label: Kategórie
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      categories: categories
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

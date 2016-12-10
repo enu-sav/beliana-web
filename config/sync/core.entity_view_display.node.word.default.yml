@@ -1,0 +1,39 @@
+uuid: ca2da2c3-eefa-446c-939d-5a98f080ddb2
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.node.word.body
+    - field.field.node.word.field_categories
+    - field.field.node.word.field_date
+    - field.field.node.word.field_images
+    - node.type.word
+  module:
+    - text
+    - user
+id: node.word.default
+targetEntityType: node
+bundle: word
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_images:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_categories: true
+  field_date: true
+  langcode: true

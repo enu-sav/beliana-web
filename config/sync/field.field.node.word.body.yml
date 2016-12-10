@@ -1,0 +1,22 @@
+uuid: 0c05e749-21a7-49f4-b114-153399f52709
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.word
+  module:
+    - text
+id: node.word.body
+field_name: body
+entity_type: node
+bundle: word
+label: 'Text hesla'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,27 @@
+uuid: b1bd3514-19d6-49c2-b112-80b8557bcab9
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.word.body
+    - node.type.word
+  module:
+    - text
+    - user
+id: node.word.teaser
+targetEntityType: node
+bundle: word
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

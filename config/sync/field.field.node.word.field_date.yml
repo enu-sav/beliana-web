@@ -1,0 +1,21 @@
+uuid: 6bb36071-16f1-4521-8a20-1b2cdff15227
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.word
+  module:
+    - datetime
+id: node.word.field_date
+field_name: field_date
+entity_type: node
+bundle: word
+label: Dátum
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
