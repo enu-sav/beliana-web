@@ -8,9 +8,9 @@ dependencies:
 _core:
   default_config_hash: rRWxAX-IQkJ5viACQRovRkC784EyCl9493GU_G23n2Q
 id: files
-label: Files
+label: Súbory
 module: file
-description: 'Find and manage files.'
+description: 'Vyhľadať a spravovať súbory.'
 tag: default
 base_table: file_managed
 base_field: fid
@@ -43,10 +43,10 @@ display:
           submit_button: Filter
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Zoradiť podľa'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzostupne
+          sort_desc_label: Zostupne
       pager:
         type: mini
         options:
@@ -55,16 +55,16 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ Predchádzajúci'
+            next: Ďalej
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položiek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Všetko -'
             offset: false
-            offset_label: Offset
+            offset_label: 'Zobraziť od'
       style:
         type: table
         options:
@@ -187,7 +187,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Name
+          label: Názov
           exclude: false
           alter:
             alter_text: false
@@ -250,7 +250,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'MIME type'
+          label: 'MIME typ'
           exclude: false
           alter:
             alter_text: false
@@ -302,7 +302,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Size
+          label: Veľkosť
           exclude: false
           alter:
             alter_text: false
@@ -354,7 +354,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: Stav
           exclude: false
           alter:
             alter_text: false
@@ -410,7 +410,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Upload date'
+          label: 'Dátum nahrania'
           exclude: false
           alter:
             alter_text: false
@@ -466,7 +466,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Changed date'
+          label: 'Dátum zmeny'
           exclude: false
           alter:
             alter_text: false
@@ -522,7 +522,7 @@ display:
           relationship: fid
           group_type: sum
           admin_label: ''
-          label: 'Used in'
+          label: 'Použité v'
           exclude: false
           alter:
             alter_text: false
@@ -586,7 +586,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: Filename
+            label: 'Názov súboru'
             description: ''
             use_operator: false
             operator: filename_op
@@ -626,7 +626,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: 'MIME type'
+            label: 'MIME typ'
             description: ''
             use_operator: false
             operator: filemime_op
@@ -666,7 +666,7 @@ display:
           exposed: true
           expose:
             operator_id: status_op
-            label: Status
+            label: Stav
             description: ''
             use_operator: false
             operator: status_op
@@ -695,7 +695,7 @@ display:
           entity_type: file
           entity_field: status
       sorts: {  }
-      title: Files
+      title: Súbory
       header: {  }
       footer: {  }
       empty:
@@ -704,7 +704,7 @@ display:
           table: views
           field: area_text_custom
           empty: true
-          content: 'No files available.'
+          content: 'Žiadne súbory nie sú dostupné.'
           plugin_id: text_custom
       relationships:
         fid:
@@ -737,7 +737,7 @@ display:
       path: admin/content/files
       menu:
         type: tab
-        title: Files
+        title: Súbory
         description: ''
         menu_name: admin
         weight: 0
@@ -794,16 +794,16 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ Predchádzajúci'
+            next: Ďalej
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položiek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Všetko -'
             offset: false
-            offset_label: Offset
+            offset_label: 'Zobraziť od'
       filters: {  }
       filter_groups:
         operator: AND
@@ -816,7 +816,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Entity
+          label: Entita
           exclude: false
           alter:
             alter_text: false
@@ -866,7 +866,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Entity type'
+          label: 'Typ entity'
           exclude: false
           alter:
             alter_text: false
@@ -1028,7 +1028,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: All
+            title: Všetko
           title_enable: true
           title: 'File usage information for {{ arguments.fid }}'
           default_argument_type: fixed
