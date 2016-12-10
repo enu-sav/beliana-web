@@ -1,0 +1,16 @@
+uuid: db9006f6-f3a4-413d-b9a1-6bf1415fcd02
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media_entity_image
+id: image
+label: Obrázok
+description: ''
+type: image
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: field_image
+  gather_exif: false
+field_map: {  }

@@ -1,0 +1,20 @@
+uuid: 4b9487e4-df60-4605-9564-d155d817bce3
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media_entity
+    - taxonomy
+id: media.field_licence
+field_name: field_licence
+entity_type: media
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

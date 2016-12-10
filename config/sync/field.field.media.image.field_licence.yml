@@ -1,0 +1,28 @@
+uuid: 684f2ae8-8aa0-4fd3-97b8-23d9b1c89195
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_licence
+    - media_entity.bundle.image
+    - taxonomy.vocabulary.licenses
+id: media.image.field_licence
+field_name: field_licence
+entity_type: media
+bundle: image
+label: Licencia
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      licenses: licenses
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

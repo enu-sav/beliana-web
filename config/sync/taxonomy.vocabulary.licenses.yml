@@ -1,0 +1,9 @@
+uuid: 48941578-450d-412d-baf2-e05026d2543e
+langcode: sk
+status: true
+dependencies: {  }
+name: Licencie
+vid: licenses
+description: ''
+hierarchy: 0
+weight: 0
