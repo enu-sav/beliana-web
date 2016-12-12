@@ -1,14 +1,39 @@
-# How to install project
+# How to work with this project
 
 ## Prerequisities
 
-First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+### 1. Composer
 
-> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar) 
-for your setup.
+[Install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
+> Why are we using Composer?
+Because it's standartised way how to handle project dependencies in PHP world.
 
+### 2. Docker
+* [Follow instruction for your OS](https://docs.docker.com/)
+* [Install Amazee.io](https://docs.amazee.io/local_docker_development/local_docker_development.html)
+
+> Why are we using Docker? Docker allows everyone to have the same environment, so it means no more "It's working for me."
+
+@TODO: Gulp/Grunt
+
+## Let's start working
+
+### Non-drupal stuff
+1. checkout this repository
+2. go into directory where your repository is installed
+3. run `composer install`, which will download all dependencies
+4. run your docker containers with `pigmy up`(Linux) or `amazeeio-cachalot up`(Mac) and run `docker-compose up -d` to assure that your containers are running.
+5. log into container using `docker-compose exec --user drupal drupal bash`
+6. develop
+
+### Drupal stuff
+1. install project by going to your-project-url/core/install.php
+2. select 'Slovak' language in the first step.
+3. select 'Config installer' install profile in the second step.
+4. rest of the required values for the rest of install profile should be set up automatically.
+  
+## Development
 * Autoloader is implemented to use the generated composer autoloader in `vendor/autoload.php`,
   instead of the one provided by Drupal (`web/vendor/autoload.php`).
 * Modules (packages of type `drupal-module`) will be placed in `web/modules/contrib/`
@@ -19,82 +44,6 @@ for your setup.
 * Latest version of drush is installed locally for use at `vendor/bin/drush`.
 * Latest version of DrupalConsole is installed locally for use at `vendor/bin/drupal`.
 
-## Updating Drupal Core
-
-This project will attempt to keep all of your Drupal Core files up-to-date; the 
-project [drupal-composer/drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold) 
-is used to ensure that your scaffold files are updated every time drupal/core is 
-updated. If you customize any of the "scaffolding" files (commonly .htaccess), 
-you may need to merge conflicts if any of your modfied files are updated in a 
-new release of Drupal core.
-
-Follow the steps below to update your core files.
-
-1. Run `composer update drupal/core --with-dependencies` to update Drupal Core and its dependencies.
-1. Run `git diff` to determine if any of the scaffolding files have changed. 
-   Review the files for any changes and restore any customizations to 
-  `.htaccess` or `robots.txt`.
-1. Commit everything all together in a single commit, so `web` will remain in
-   sync with the `core` when checking out branches or running `git bisect`.
-1. In the event that there are non-trivial conflicts in step 2, you may wish 
-   to perform these steps on a branch, and use `git merge` to combine the 
-   updated core files with your customized files. This facilitates the use 
-   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple; 
-   keeping all of your modifications at the beginning or end of the file is a 
-   good strategy to keep merges easy.
-
-## Generate composer.json from existing project
-
-With using [the "Composer Generate" drush extension](https://www.drupal.org/project/composer_generate)
-you can now generate a basic `composer.json` file from an existing project. Note
-that the generated `composer.json` might differ from this project's file.
-
-
-## Clone a repository and Install Drupal site locally
-
-1. Use "Clone" button in left sidebar to clone repository to your computer. You can use:
-   1. HTTPS or SSH command line command. For this option open terminal emulator (Terminal, iTerm, Linux console, ...),
-      create directory for project (e.g. `beliana-webova-verzia`) and run command in this directory to clone repository.
-   1. use "Clone in SourceTree" button to clone repository directly in SourceTree app, choose directory destination and push clone button (preferred option).
-1. In terminal emulator open project directory (e.g. `beliana-webova-verzia`) run command `amazeeio-cachalot up` or `cachalot up` to start Docker Virtual Machine and services.
-1. In the same directory run command `docker-compose up -d` to run hostname `beliana.docker.amazee.io`. This command must be run in the directory that contains file `docker-compose.yml`.
-1. Run command `composer install` to install all project dependencies define in the file `composer.json`.
-1. Open internet browser and run path `beliana.docker.amazee.io/core/install.php` and install Drupal site. Choose "Configuration installer"
-   installation profile. Set username, password, email and finish installation process.
-1. To connect to the container (to run e.g. drush or git commands in terminal emulator) run command `docker-compose exec --user drupal drupal bash` in terminal emulator in project directory.
-1. Your Drupal site is ready to use on `beliana.docker.amazee.io`.
-1. If you are not logged in on site (e.g. after log out, restart PC, ...) and want to log in, connect to the container in terminal emulator (step. 6), go to directory `web` and
-   run command `drush uli` to reset password. After that copy path `/user/reset/1/...` and in browser open path `beliana.docker.amazee.io` with copy path (`beliana.docker.amazee.io/user/reset/1/...`)
-
-
-## FAQ
-
-### Should I commit the contrib modules I download?
-
-Composer recommends **no**. They provide [argumentation against but also 
-workrounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
-
-### Should I commit the scaffolding files?
-
-The [drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold) plugin can download the scaffold files (like
-index.php, update.php, …) to the web/ directory of your project. If you have not customized those files you could choose
-to not check them into your version control system (e.g. git). If that is the case for your project it might be
-convenient to automatically run the drupal-scaffold plugin after every install or update of your project. You can
-achieve that by registering `@drupal-scaffold` as post-install and post-update command in your composer.json:
-
-```json
-"scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "post-install-cmd": [
-        "@drupal-scaffold",
-        "..."
-    ],
-    "post-update-cmd": [
-        "@drupal-scaffold",
-        "..."
-    ]
-},
-```
 ### How can I apply patches to downloaded modules?
 
 If you need to apply patches (depending on the project being modified, a pull 
@@ -112,3 +61,22 @@ section of composer.json:
     }
 }
 ```
+
+## Updating Drupal Core
+
+Follow the steps below to update your core files.
+
+1. Run `composer update drupal/core --with-dependencies` to update Drupal Core and its dependencies.
+1. Run `git diff` to determine if any of the scaffolding files have changed. 
+   Review the files for any changes and restore any customizations to 
+  `.htaccess` or `robots.txt`.
+1. Commit everything all together in a single commit, so `web` will remain in
+   sync with the `core` when checking out branches or running `git bisect`.
+1. In the event that there are non-trivial conflicts in step 2, you may wish 
+   to perform these steps on a branch, and use `git merge` to combine the 
+   updated core files with your customized files. This facilitates the use 
+   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple; 
+   keeping all of your modifications at the beginning or end of the file is a 
+   good strategy to keep merges easy.
+
+
