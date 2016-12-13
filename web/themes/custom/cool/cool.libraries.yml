@@ -3,4 +3,7 @@ theme:
   css:
     theme:
       css/style.css: {}
+      css/normalize.css: {}
       css/main.css: {}
+      css/responsive-nav.css: {}
+      css/nav.css: {}
