@@ -43,10 +43,11 @@
 #}
 <div class="layout-container">
 
-  <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t }}">
+  <header id="header" class="header clearfix" role="banner" aria-label="{{ 'Site header'|t }}">
     {{ page.header }}
-    {{ page.navigation }}
   </header>
+
+  {{ page.navigation }}
 
   {{ page.highlighted }}
 
