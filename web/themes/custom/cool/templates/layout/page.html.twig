@@ -64,12 +64,11 @@
     </div>
   </main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
+  <footer role="contentinfo">
+    <div class="container clearfix">
       {{ page.footer_left }}
       {{ page.footer_center }}
-      {{ page.footer_right }}
-    </footer>
-  {% endif %}
-
+      {% include directory ~ '/templates/block/block-copyright.html.twig' %}
+    </div>
+  </footer>
 </div>

@@ -4,3 +4,34 @@
  * @file
  * Functions to support theming in the cool theme.
  */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add class to footer regions.
+ */
+function cool_preprocess_region(&$vars) {
+  if (in_array($vars['region'], ['footer_left', 'footer_center'])) {
+    $vars['attributes']['class'][] = 'footer-nav';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add theme suggestion for footer blocks.
+ */
+function cool_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Load block region.
+  /** @var \Drupal\block\Entity\Block $block */
+  $block = \Drupal::entityTypeManager()
+    ->getStorage('block')
+    ->load($variables['elements']['#id']);
+  $region = $block->getRegion();
+
+  if (in_array($region, ['footer_left', 'footer_center'])) {
+    // We don't want to put it to end, so we can override it with some other
+    // suggestions if needed.
+    array_splice($suggestions, 3, 0, ['block__footer_nav']);
+  }
+}
