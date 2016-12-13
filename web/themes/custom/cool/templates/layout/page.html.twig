@@ -44,7 +44,10 @@
 <div class="layout-container">
 
   <header id="header" class="header clearfix" role="banner" aria-label="{{ 'Site header'|t }}">
-    {{ page.header }}
+    <div class="container clearfix">
+      {{ page.header }}
+      {{ page.header_right }}
+    </div>
   </header>
 
   {{ page.navigation }}

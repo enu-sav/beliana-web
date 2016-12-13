@@ -9,8 +9,9 @@ libraries:
 base theme: stable
 
 regions:
-  navigation: Navigation
   header: Header
+  header_right: Header right
+  navigation: Navigation
   help: Help
   highlighted: Highlighted
   content: Content
