@@ -11,7 +11,7 @@ dependencies:
 _core:
   default_config_hash: '-fJpPBLfGRPa6VPFiBweHcjlSOTqltsw5cbz8VVqXAI'
 id: media
-label: Media
+label: Médiá
 module: views
 description: ''
 tag: ''
@@ -43,13 +43,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Použiť
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Zoradiť podľa'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzostupne
+          sort_desc_label: Zostupne
       pager:
         type: full
         options:
@@ -59,17 +59,17 @@ display:
           total_pages: null
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položiek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Všetko -'
             offset: false
-            offset_label: Offset
+            offset_label: 'Zobraziť od'
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+            previous: '‹ Predchádzajúci'
+            next: Ďalej
+            first: '« Prvý'
+            last: Koniec
           quantity: 9
       style:
         type: table
@@ -185,7 +185,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Akcia
           include_exclude: exclude
           selected_actions: {  }
           entity_type: media
@@ -197,7 +197,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Thumbnail
+          label: Miniatúra
           exclude: false
           alter:
             alter_text: false
@@ -310,7 +310,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Provider
+          label: Poskytovateľ
           exclude: false
           alter:
             alter_text: false
@@ -375,7 +375,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Author
+          label: Autor
           exclude: false
           alter:
             alter_text: false
@@ -440,7 +440,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: Stav
           exclude: false
           alter:
             alter_text: false
@@ -507,7 +507,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Updated
+          label: Aktualizované
           exclude: false
           alter:
             alter_text: false
@@ -574,7 +574,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Operácie
           exclude: false
           alter:
             alter_text: false
@@ -632,7 +632,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'True'
+            label: Pravda
             description: null
             use_operator: false
             operator: status_op
@@ -655,11 +655,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Zverejnené
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: Nezverejnené
                 operator: '='
                 value: '0'
           plugin_id: boolean
@@ -678,7 +678,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Provider
+            label: Poskytovateľ
             description: ''
             use_operator: false
             operator: bundle_op
@@ -759,7 +759,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Jazyk
             description: ''
             use_operator: false
             operator: langcode_op
@@ -803,7 +803,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: Media
+      title: Médiá
       header: {  }
       footer: {  }
       empty:
@@ -816,7 +816,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No content available.'
+          content: 'Žiaden obsah nie je dostupný.'
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }
@@ -833,14 +833,14 @@ display:
   media_page_list:
     display_plugin: page
     id: media_page_list
-    display_title: Media
+    display_title: Médiá
     position: 1
     display_options:
       display_extenders: {  }
       path: admin/content/media
       menu:
         type: tab
-        title: Media
+        title: Médiá
         description: ''
         expanded: false
         parent: ''
