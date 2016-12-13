@@ -29,7 +29,10 @@
         "drupal/redirect": "1.x-dev",
         "drupal/colorbox": "^1.2",
         "drupal/media_entity": "^1.6",
-        "drupal/media_entity_image": "^1.2"
+        "drupal/media_entity_image": "^1.2",
+        "drupal/inline_entity_form": "1.x-dev",
+        "drupal/entity_browser": "1.x-dev",
+        "drupal/media_entity_browser": "1.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
