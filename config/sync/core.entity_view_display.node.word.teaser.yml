@@ -24,4 +24,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_categories: true
+  field_date: true
+  field_images: true
   langcode: true

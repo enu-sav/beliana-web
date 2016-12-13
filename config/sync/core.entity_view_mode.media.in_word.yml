@@ -1,0 +1,10 @@
+uuid: ee3264ec-8b6e-4ff1-a5cc-70dc61f2bb45
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.in_word
+label: 'V hesle'
+targetEntityType: media
+cache: true

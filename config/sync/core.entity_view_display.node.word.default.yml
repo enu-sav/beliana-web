@@ -17,7 +17,7 @@ bundle: word
 mode: default
 content:
   body:
-    label: hidden
+    label: visually_hidden
     type: text_default
     weight: 1
     settings: {  }
@@ -26,9 +26,10 @@ content:
     weight: 2
     label: visually_hidden
     settings:
-      link: true
+      view_mode: in_word
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   links:
     weight: 0
     settings: {  }

@@ -1,0 +1,15 @@
+uuid: ec5c14fe-5b3f-42cc-8ab8-93e1ecf57943
+langcode: sk
+status: true
+dependencies: {  }
+name: colorbox_thumbnail
+label: 'Colorbox thumbnail'
+effects:
+  16a82e59-6fd4-469c-a008-7e114f41476f:
+    uuid: 16a82e59-6fd4-469c-a008-7e114f41476f
+    id: image_scale
+    weight: 1
+    data:
+      width: 282
+      height: null
+      upscale: false
