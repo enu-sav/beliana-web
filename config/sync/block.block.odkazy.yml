@@ -1,0 +1,24 @@
+uuid: ecc62b7e-bc7f-443d-95ea-67e4ba2ed75c
+langcode: sk
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - system
+  theme:
+    - cool
+id: odkazy
+theme: cool
+region: header_right
+weight: -5
+provider: null
+plugin: 'system_menu_block:secondary'
+settings:
+  id: 'system_menu_block:secondary'
+  label: Odkazy
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }
