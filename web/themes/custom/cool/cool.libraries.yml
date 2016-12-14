@@ -6,3 +6,12 @@ theme:
       css/responsive-nav.css: {}
       css/nav.css: {}
       css/main.css: {}
+  js:
+    js/jquery.collapse.js: {}
+    js/jquery.selectric.min.js: {}
+    js/responsive-nav.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

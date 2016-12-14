@@ -537,12 +537,12 @@ footer a.rights {
   margin-bottom: 8px
 }
 
-.heslo p {
+.heslo div {
   font-size: 16px;
   font-size: 1.6rem
 }
 
-.heslo p.obsah {
+.heslo div.obsah {
   line-height: 1.625em
 }
 
@@ -551,7 +551,7 @@ footer a.rights {
   text-decoration: underline
 }
 
-.heslo p a:visited,
+.heslo div a:visited,
 .najhladanejsie-hesla li a:visited {
   color: purple;
   text-decoration: underline
