@@ -104,7 +104,8 @@
     </pre>
     <h1>{{ node.label }}</h1>
     <p class="last-update">
-      {{ date }}
+      Vydané v roku {{ created_date | date("Y") }}.
+      Aktualizované v roku  {{ updated_date | date("Y") }}.
     </p>
     <div class="obsah">
       {{ content.body }}

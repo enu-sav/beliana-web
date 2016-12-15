@@ -1298,3 +1298,12 @@ td.long {
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff)
   }
 }
+
+@media print {
+  header,
+  footer,
+  .heslo-tools
+   {
+    display: none !important;
+  }
+}
