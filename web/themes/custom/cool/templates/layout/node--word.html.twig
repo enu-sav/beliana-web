@@ -72,18 +72,14 @@
  * @ingroup themeable
  */
 #}
-<div{{ attributes.addClass('heslo-container') }}>
+
+{{ attach_library('cool/word') }}
+
+<article{{ attributes.addClass('heslo-container') }}>
 
   <div class="heslo">
     <div class="heslo-tools nadpis-vpravo smartphone">
       <div class="selectric-wrapper">
-        <div class="selectric-hide-select">
-          <select tabindex="0">
-            <option value="">Zdieľať</option>
-            <option value="facebook">Facebook</option>
-            <option value="twitter">Twitter</option>
-          </select>
-        </div>
         <div class="selectric">
           <p class="label">Zdieľať</p>
           <b class="button">▾</b>
@@ -91,18 +87,21 @@
         <div class="selectric-items" tabindex="-1">
           <div class="selectric-scroll">
             <ul>
-              <li data-index="0" class="selected">Zdieľať</li>
-              <li data-index="1" class="">Facebook</li>
-              <li data-index="2" class="last">Twitter</li>
+              <li class="share-facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a>
+              </li>
+              <li class="last share-twitter">
+                <a href="https://twitter.com/intent/tweet?text={{ node.label |url_encode }} {{ share_url }}" target="_blank">Twitter</a>
+              </li>
             </ul>
           </div>
         </div>
-        <input class="selectric-input" tabindex="0">
       </div>
-      <a href="#">Vytlačiť</a>    
+      <a href="#" onclick="window.print();">Vytlačiť</a>    
       <a href="#">Komentovať</a>
     </div>
-
+    <pre>
+    </pre>
     <h1>{{ node.label }}</h1>
     <p class="last-update">
       {{ date }}
@@ -119,13 +118,6 @@
 
   <div class="heslo-tools no-desktop">
     <div class="selectric-wrapper">
-      <div class="selectric-hide-select">
-        <select tabindex="0">
-          <option value="">Zdieľať</option>
-          <option value="facebook">Facebook</option>
-          <option value="twitter">Twitter</option>
-        </select>
-      </div>
       <div class="selectric">
         <p class="label">Zdieľať</p>
         <b class="button">▾</b>
@@ -155,4 +147,4 @@
     </div>
   </div>
 
-</div>
+</article>

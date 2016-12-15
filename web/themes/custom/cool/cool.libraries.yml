@@ -10,8 +10,14 @@ theme:
     js/jquery.collapse.js: {}
     js/jquery.selectric.min.js: {}
     js/responsive-nav.js: {}
+    js/custom.js: {}
   dependencies:
     - core/jquery
     - core/drupal
     - core/drupalSettings
     - core/jquery.once
+
+word:
+  version: 1.x
+  js: 
+    js/word.js: {}

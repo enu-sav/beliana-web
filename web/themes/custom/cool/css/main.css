@@ -553,7 +553,6 @@ footer a.rights {
 
 .heslo div a:visited,
 .najhladanejsie-hesla li a:visited {
-  color: purple;
   text-decoration: underline
 }
 
@@ -1006,7 +1005,7 @@ h2 + div,
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0 30px 0 10px;
+  padding: 0 30px 0 10px;
   font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
@@ -1120,17 +1119,17 @@ h2 + div,
   background: #f8f8f8;
   border: 1px solid #c4c4c4;
   z-index: -1;
-  box-shadow: 0 0 10px -6px
+  box-shadow: 0 0 10px -6px;
 }
 
 .selectric-items .selectric-scroll {
   height: 100%;
-  overflow: auto
+  overflow: auto;
 }
 
 .selectric-above .selectric-items {
   top: auto;
-  bottom: 100%
+  bottom: 100%;
 }
 
 .selectric-items ul,
@@ -1141,7 +1140,7 @@ h2 + div,
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 20px;
-  min-height: 20px
+  min-height: 20px;
 }
 
 .selectric-items li {
@@ -1150,17 +1149,40 @@ h2 + div,
   border-top: 1px solid #fff;
   border-bottom: 1px solid #eee;
   color: #666;
-  cursor: pointer
+  cursor: pointer;
+}
+
+.selectric-items li a {
+  border: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  background: transparent;
+  height: auto;
+  display: inline-block;
+  white-space: normal;
+  font-size: inherit;
+  line-height: inherit;
+  color: #666 !important;
+  text-decoration: none;
+  padding: 0;
+  margin-right: 0;
+}
+
+.selectric-items li a:hover {
+  background: transparent;
+  border: none;
+  color: #444 !important;
 }
 
 .selectric-items li.selected {
   background: #efefef;
-  color: #444
+  color: #444;
 }
 
 .selectric-items li:hover {
   background: #f0f0f0;
-  color: #444
+  color: #444;
 }
 
 .selectric-items .disabled {

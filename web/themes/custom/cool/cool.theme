@@ -35,3 +35,17 @@ function cool_theme_suggestions_block_alter(array &$suggestions, array $variable
     array_splice($suggestions, 3, 0, ['block__footer_nav']);
   }
 }
+
+function cool_preprocess_node(&$vars) {
+  function getUrl() {
+    $url  = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
+    $url .= '://' . $_SERVER['SERVER_NAME'];
+    $url .= in_array( $_SERVER['SERVER_PORT'], array('80', '443') ) ? '' : ':' . $_SERVER['SERVER_PORT'];
+    $url .= $_SERVER['REQUEST_URI'];
+    return $url;
+  }
+  // Print Share link on Page
+  $node_url = getUrl();
+
+  $vars['share_url'] = $node_url;
+}
