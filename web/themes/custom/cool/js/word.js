@@ -5,7 +5,7 @@
 			$('select').selectric();
 		}
 	}
-*/
+
 	Drupal.behaviors.shareSelect = {
 		attach: function(context, settings) {
 			$('.selectric-wrapper').click(function() {
@@ -15,7 +15,7 @@
 			});
 		}
 	}
-/*
+
 	Drupal.behaviors.fbShare = {
 		attach: function(context, settings) {
 			$.ajaxSetup({ cache: true });

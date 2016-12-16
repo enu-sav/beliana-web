@@ -48,4 +48,5 @@ function cool_preprocess_node(&$vars) {
   $node_url = getUrl();
 
   $vars['share_url'] = $node_url;
+  $vars['site_name'] = \Drupal::config('system.site')->get('name');
 }

@@ -79,29 +79,11 @@
 
   <div class="heslo">
     <div class="heslo-tools nadpis-vpravo smartphone">
-      <div class="selectric-wrapper">
-        <div class="selectric">
-          <p class="label">Zdieľať</p>
-          <b class="button">▾</b>
-        </div>
-        <div class="selectric-items" tabindex="-1">
-          <div class="selectric-scroll">
-            <ul>
-              <li class="share-facebook">
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a>
-              </li>
-              <li class="last share-twitter">
-                <a href="https://twitter.com/intent/tweet?text={{ node.label |url_encode }} {{ share_url }}" target="_blank">Twitter</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a>
+      <a href="https://twitter.com/intent/tweet?text={{ node.label |url_encode }} {{ share_url }}" target="_blank">Twitter</a>
       <a href="#" onclick="window.print();">Vytlačiť</a>    
       <a href="#">Komentovať</a>
     </div>
-    <pre>
-    </pre>
     <h1>{{ node.label }}</h1>
     <p class="last-update">
       Vydané v roku {{ created_date | date("Y") }}.
@@ -109,6 +91,17 @@
     </p>
     <div class="obsah">
       {{ content.body }}
+    </div>
+    <div class="heslo-tools smartphone">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a>
+      <a href="https://twitter.com/intent/tweet?text={{ node.label |url_encode }} {{ share_url }}" target="_blank">Twitter</a>
+      <a href="#" onclick="window.print();">Vytlačiť</a>    
+      <a href="#">Komentovať</a>
+    </div>
+    <div class="citacia smartphone" data-collapse>
+        <h3>citácia</h3>
+        <div><p>{{ node.label }} [online]. {{ site_name }}. Aktualizované {{ updated_date | date("Y-m-d") }} [cit. {{ now | date("Y-m-d") }}].</p>
+        <p>Dostupné na: <a href="{{ share_url }}">{{ share_url }}</a></p></div>
     </div>
   </div>
 
@@ -118,34 +111,16 @@
   </div>
 
   <div class="heslo-tools no-desktop">
-    <div class="selectric-wrapper">
-      <div class="selectric">
-        <p class="label">Zdieľať</p>
-        <b class="button">▾</b>
-      </div>
-      <div class="selectric-items" tabindex="-1">
-        <div class="selectric-scroll">
-          <ul>
-            <li data-index="0" class="selected">Zdieľať</li>
-            <li data-index="1" class="">Facebook</li>
-            <li data-index="2" class="last">Twitter</li>
-          </ul>
-        </div>
-      </div>
-      <input class="selectric-input" tabindex="0">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a>
+      <a href="https://twitter.com/intent/tweet?text={{ node.label |url_encode }} {{ share_url }}" target="_blank">Twitter</a>
+      <a href="#" onclick="window.print();">Vytlačiť</a>    
+      <a href="#">Komentovať</a>
     </div>
-    <div class="smartphone">
-      <a href="#">Vytlačiť</a>
-    </div>    
-    <a href="#">Komentovať</a>     
-  </div>
 
-  <div class="citacia no-desktop" data-collapse="">
-    <h3 data-collapse-summary="" aria-expanded="false"><a href="#">citácia</a></h3>
-    <div aria-hidden="true" style="display: none;">    
-      <p>diéta [online]. Encyclopaedia Beliana. Aktualizované 2015-11-19 [cit. 2015-12-24].</p>
-      <p>Dostupné na: <a href="http://dev.encyclopaedia.sk/heslo/dieta">http://dev.encyclopaedia.sk/heslo/dieta</a></p>
-    </div>
+  <div class="citacia no-desktop" data-collapse>
+      <h3>citácia</h3>
+      <div><p>{{ node.label }} [online]. {{ site_name }}. Aktualizované {{ updated_date | date("Y-m-d") }} [cit. {{ now | date("Y-m-d") }}].</p>
+      <p>Dostupné na: <a href="{{ share_url }}">{{ share_url }}</a></p></div>
   </div>
 
 </article>
