@@ -200,12 +200,16 @@ input.search-submit:hover {
   background-color: #3284cc;
 }
 
-.nav-collapse ul li a.home i {
-  background: url(../img/home_icon.png);
-  width: 12px;
-  height: 10px;
+.nav-collapse ul li:first-child a {
+  background: url(../img/home_icon.png) transparent no-repeat;
   display: inline-block;
-  margin-right: 10px;
+  background-position-x: 12px;
+  background-position-y: 20px;
+  padding-left: 38px;
+}
+
+.nav-collapse ul li a:hover {
+  background-color: #e6e6e6;
 }
 
 .welcome {
