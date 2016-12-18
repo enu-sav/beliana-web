@@ -1,0 +1,22 @@
+uuid: 160c9cc0-9abd-470e-9def-0742f8169647
+langcode: sk
+status: true
+dependencies:
+  config:
+    - node.type.book_part
+id: node.book_part.promote
+field_name: promote
+entity_type: node
+bundle: book_part
+label: 'Zobrazené na titulnej strane'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Zapnúť
+  off_label: Vypnúť
+field_type: boolean

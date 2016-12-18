@@ -1,0 +1,43 @@
+uuid: 45050d44-f9e7-4966-941c-87cda0ea2e7a
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.node.book_part.field_alphabet_coverage
+    - field.field.node.book_part.field_cover_image
+    - field.field.node.book_part.field_store_link
+    - node.type.book_part
+  module:
+    - image
+    - user
+id: node.book_part.default
+targetEntityType: node
+bundle: book_part
+mode: default
+content:
+  field_alphabet_coverage:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_cover_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_store_link:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 100
+hidden:
+  langcode: true

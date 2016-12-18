@@ -1,0 +1,19 @@
+uuid: 7a46bcc2-ec82-487c-a772-08ec0a7ef6d3
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_link
+    - node.type.book_part
+id: node.book_part.field_store_link
+field_name: field_store_link
+entity_type: node
+bundle: book_part
+label: 'Odkaz na eshop'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

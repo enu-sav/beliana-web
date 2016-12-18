@@ -1,0 +1,24 @@
+uuid: 118c4984-3ffe-49df-84cb-249ba5e2dbc2
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.book_part.field_alphabet_coverage
+    - field.field.node.book_part.field_cover_image
+    - field.field.node.book_part.field_store_link
+    - node.type.book_part
+  module:
+    - user
+id: node.book_part.teaser
+targetEntityType: node
+bundle: book_part
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_alphabet_coverage: true
+  field_cover_image: true
+  field_store_link: true
+  langcode: true

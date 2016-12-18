@@ -1,0 +1,19 @@
+uuid: 7f8c7e95-0ece-4147-8890-ea650d231a99
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alphabet_coverage
+    - node.type.book_part
+id: node.book_part.field_alphabet_coverage
+field_name: field_alphabet_coverage
+entity_type: node
+bundle: book_part
+label: Obsah
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
