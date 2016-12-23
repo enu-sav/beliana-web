@@ -1,0 +1,25 @@
+uuid: f1674f39-fd31-41a4-898d-96aa94e3829c
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: book_part_queue
+label: 'Zväzok knihy - poradie'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      book_part: book_part
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

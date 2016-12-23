@@ -33,7 +33,8 @@
         "drupal/inline_entity_form": "1.x-dev",
         "drupal/entity_browser": "1.x-dev",
         "drupal/media_entity_browser": "1.x-dev",
-        "drupal/devel": "^1.0@beta"
+        "drupal/devel": "^1.0@beta",
+        "drupal/entityqueue": "1.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
