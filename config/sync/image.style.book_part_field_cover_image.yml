@@ -1,0 +1,14 @@
+uuid: eee6873b-0332-4727-a8ba-f82de175a1c8
+langcode: sk
+status: true
+dependencies: {  }
+name: book_part_field_cover_image
+label: 'Book Part field cover image (86x121)'
+effects:
+  741e6ae5-bca9-415e-b1e9-3f4febbe2c6b:
+    uuid: 741e6ae5-bca9-415e-b1e9-3f4febbe2c6b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 86
+      height: 121

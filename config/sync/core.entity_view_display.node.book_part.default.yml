@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.book_part.field_alphabet_coverage
     - field.field.node.book_part.field_cover_image
     - field.field.node.book_part.field_store_link
+    - image.style.book_part_field_cover_image
     - node.type.book_part
   module:
     - image
@@ -26,7 +27,7 @@ content:
     weight: 102
     label: visually_hidden
     settings:
-      image_style: ''
+      image_style: book_part_field_cover_image
       image_link: ''
     third_party_settings: {  }
     type: image

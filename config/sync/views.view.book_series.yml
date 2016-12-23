@@ -54,7 +54,14 @@ display:
         options:
           offset: 0
       style:
-        type: default
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
+          type: ul
+          wrapper_class: ''
+          class: ''
       row:
         type: 'entity:node'
         options:
@@ -161,6 +168,7 @@ display:
           plugin_id: entity_queue
       arguments: {  }
       display_extenders: {  }
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,30 @@
+uuid: dc2a1c52-926d-44a6-a936-9321286c3301
+langcode: sk
+status: true
+dependencies:
+  config:
+    - views.view.book_series
+  module:
+    - system
+    - views
+  theme:
+    - cool
+id: views_block__book_series_block_1
+theme: cool
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:book_series-block_1'
+settings:
+  id: 'views_block:book_series-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
