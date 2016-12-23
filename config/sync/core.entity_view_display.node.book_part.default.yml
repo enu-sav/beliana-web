@@ -17,14 +17,14 @@ mode: default
 content:
   field_alphabet_coverage:
     weight: 103
-    label: above
+    label: visually_hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_cover_image:
     weight: 102
-    label: above
+    label: visually_hidden
     settings:
       image_style: ''
       image_link: ''
@@ -32,12 +32,14 @@ content:
     type: image
   field_store_link:
     weight: 104
-    label: above
+    label: visually_hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true
