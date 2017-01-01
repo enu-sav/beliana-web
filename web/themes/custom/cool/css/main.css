@@ -303,6 +303,10 @@ ul.podkategoria li a {
   color: #266ead;
 }
 
+.dnes a {
+  text-decoration: none;
+}
+
 .najhladanejsie-hesla {
   margin-top: 32px;
   padding-bottom: 38px;
