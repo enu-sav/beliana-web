@@ -493,7 +493,8 @@ footer a.rights {
   clear: both;
 }
 
-.nav-collapse li.only-mobile {
+.nav-collapse li.only-mobile,
+.footer-nav li.only-mobile {
   display: none;
 }
 

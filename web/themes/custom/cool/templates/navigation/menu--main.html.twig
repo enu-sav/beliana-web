@@ -30,12 +30,16 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes }}>
+      <ul{{ attributes.addClass('clearfix') }}>
     {% else %}
       <ul>
     {% endif %}
     {% for item in items %}
-      <li{{ item.attributes }}>
+      {% if loop.revindex0 in [0, 1, 2] %}
+        <li{{ item.attributes.addClass('only-mobile') }}>
+      {% else %}
+        <li{{ item.attributes }}>
+      {% endif %}
         {{ link(item.title, item.url) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
