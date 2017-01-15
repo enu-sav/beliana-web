@@ -116,3 +116,16 @@ function cool_preprocess_views_view(&$variables){
     );
   }
 }
+
+/**
+ * Implements hook_form_alter
+ */
+function cool_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    $form['actions']['submit']['#value'] = t('Hľadať');
+  }
+  elseif ($form_id == 'search_form') {
+    $form['basic']['submit']['#value'] = t('Hľadať');
+    $form['advanced']['submit']['#value'] = t('Hľadať');
+  };
+}

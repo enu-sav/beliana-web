@@ -10,4 +10,4 @@
  * @see template_preprocess_input()
  */
 #}
-<input{{ attributes.addClass('search-input') }} />{{ children }}
+<input{{ attributes.addClass('search-input') }}{{ attributes.setAttribute('placeholder', 'Zadajte hľadané heslo ...') }} />{{ children }}
