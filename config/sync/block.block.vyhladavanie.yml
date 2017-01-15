@@ -1,0 +1,20 @@
+uuid: be796419-877f-4b1a-bd2e-217fc1be2270
+langcode: sk
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - cool
+id: vyhladavanie
+theme: cool
+region: navigation
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Vyhľadávanie
+  provider: search
+  label_display: '0'
+visibility: {  }
