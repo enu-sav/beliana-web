@@ -905,10 +905,6 @@ p.hesla-count {
     display: none;
   }
 
-  .nav-toggle {
-    top: -90px;
-  }
-
   .nav-collapse li.only-mobile {
     display: block;
   }
