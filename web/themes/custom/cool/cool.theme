@@ -138,5 +138,9 @@ function cool_theme_suggestions_container_alter(&$suggestions, $variables) {
     if (isset($variables['element']['#type']) && $variables['element']['#type'] == 'view') {
       $suggestions[] = 'container__view__' . $variables['element']['#view_id'];
     }
+    elseif (isset($variables['element']['0']['#view']) && is_a($variables['element']['0']['#view'], \Drupal\views\ViewExecutable::class)) {
+      $view_id = $variables['element']['0']['#view']->id();
+      $suggestions[] = 'container__view__' . $view_id;
+    }
   }
 }

@@ -37,6 +37,7 @@ widgets:
       media_bundle: image
       upload_location: 'public://'
       submit_text: 'Select files'
+      multiple: true
     uuid: 91a8e761-f688-42a5-b087-a71dce7e8fa2
     weight: 2
     label: media_entity_image_upload
