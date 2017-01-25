@@ -129,3 +129,14 @@ function cool_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_stat
     $form['advanced']['submit']['#value'] = t('Hľadať');
   };
 }
+
+/**
+ * Implements hook_theme_suggestion_HOOK_alter()
+ */
+function cool_theme_suggestions_container_alter(&$suggestions, $variables) {
+  if ($variables['theme_hook_original'] == 'container') {
+    if (isset($variables['element']['#type']) && $variables['element']['#type'] == 'view') {
+      $suggestions[] = 'container__view__' . $variables['element']['#view_id'];
+    }
+  }
+}
