@@ -13,7 +13,7 @@ services:
       APC: 1
 
       VIRTUAL_HOST: *hostname
-    image: amazeeio/drupal:php70-basic
+    image: amazeeio/drupal:php70-solr
     volumes:
       - .:/var/www/drupal/public_html
     volumes_from:

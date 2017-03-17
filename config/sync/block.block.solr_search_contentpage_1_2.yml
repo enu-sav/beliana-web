@@ -1,0 +1,23 @@
+uuid: ce6ed66b-146d-49cf-a1cd-1cfa0ac34b07
+langcode: sk
+status: true
+dependencies:
+  config:
+    - views.view.solr_search_content
+  module:
+    - views
+  theme:
+    - cool
+id: solr_search_contentpage_1_2
+theme: cool
+region: navigation
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:solr_search_content-page_1'
+settings:
+  id: 'views_exposed_filter_block:solr_search_content-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }

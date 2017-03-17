@@ -121,13 +121,15 @@ function cool_preprocess_views_view(&$variables){
  * Implements hook_form_alter
  */
 function cool_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'search_block_form') {
-    $form['actions']['submit']['#value'] = t('Hľadať');
+
+  if ($form_id == 'views_exposed_form') {
+    if ($form['#id'] == 'views-exposed-form-solr-search-content-page-1') {
+      // Change search submit button value
+      $form['actions']['submit']['#value'] = t('Hľadať');
+      // Add placeholder to search form
+      $form['keys']['#placeholder'] = t('Zadajte hľadané heslo ...');
+    }
   }
-  elseif ($form_id == 'search_form') {
-    $form['basic']['submit']['#value'] = t('Hľadať');
-    $form['advanced']['submit']['#value'] = t('Hľadať');
-  };
 }
 
 /**
@@ -142,5 +144,17 @@ function cool_theme_suggestions_container_alter(&$suggestions, $variables) {
       $view_id = $variables['element']['0']['#view']->id();
       $suggestions[] = 'container__view__' . $view_id;
     }
+  }
+}
+
+/**
+ * Implements template_preprocess_form_element_label
+ *
+ * @param $variables
+ */
+function cool_preprocess_form_element_label(&$variables) {
+  // Search form label visually hidden
+  if (isset($variables['element']) && $variables['element']['#title'] == 'Search') {
+    $variables['attributes']['class'][] = 'visually-hidden';
   }
 }
