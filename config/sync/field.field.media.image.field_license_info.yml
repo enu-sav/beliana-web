@@ -1,0 +1,21 @@
+uuid: 68f762f1-18b2-4856-bcd2-4a8fd52d81fc
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_license_info
+    - media_entity.bundle.image
+  module:
+    - text
+id: media.image.field_license_info
+field_name: field_license_info
+entity_type: media
+bundle: image
+label: 'Licenčné informácie'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

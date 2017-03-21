@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
+    - field.field.node.word.field_sort
     - node.type.word
   module:
     - text
@@ -37,4 +38,5 @@ content:
 hidden:
   field_categories: true
   field_date: true
+  field_sort: true
   langcode: true

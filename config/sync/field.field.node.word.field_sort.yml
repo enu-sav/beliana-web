@@ -1,0 +1,19 @@
+uuid: ecf01a66-9091-4b9b-ba0f-82cc501cbfd4
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sort
+    - node.type.word
+id: node.word.field_sort
+field_name: field_sort
+entity_type: node
+bundle: word
+label: 'Na zoradenie'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

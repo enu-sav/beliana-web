@@ -3,13 +3,15 @@ langcode: sk
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_author
+    - field.field.media.image.field_description
     - field.field.media.image.field_image
     - field.field.media.image.field_licence
+    - field.field.media.image.field_license_info
     - image.style.thumbnail
     - media_entity.bundle.image
   module:
     - image
+    - text
     - user
 id: media.image.default
 targetEntityType: media
@@ -25,13 +27,12 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
-  field_author:
-    weight: 3
-    label: inline
-    settings:
-      link_to_entity: false
+  field_description:
+    weight: 6
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: basic_string
   field_image:
     weight: 2
     label: visually_hidden
@@ -47,6 +48,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_license_info:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   name:
     label: hidden
     type: string
