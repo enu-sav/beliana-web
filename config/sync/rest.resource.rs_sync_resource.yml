@@ -1,0 +1,22 @@
+uuid: b9296c59-cd54-4af1-9b7d-f473f59409b2
+langcode: sk
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - beliana_sync
+    - serialization
+id: rs_sync_resource
+plugin_id: rs_sync_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+  PATCH:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth

@@ -1,5 +1,7 @@
 module:
   automated_cron: 0
+  basic_auth: 0
+  beliana_sync: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -35,8 +37,10 @@ module:
   page_cache: 0
   path: 0
   rdf: 0
+  rest: 0
   search_api: 0
   search_api_solr: 0
+  serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0

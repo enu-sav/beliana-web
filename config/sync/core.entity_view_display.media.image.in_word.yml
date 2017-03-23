@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.in_word
-    - field.field.media.image.field_author
     - field.field.media.image.field_image
     - field.field.media.image.field_licence
+    - field.field.media.image.field_license_info
     - image.style.colorbox_thumbnail
     - media_entity.bundle.image
   module:
@@ -16,13 +16,6 @@ targetEntityType: media
 bundle: image
 mode: in_word
 content:
-  field_author:
-    weight: 1
-    label: visually_hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_image:
     weight: 0
     label: visually_hidden
@@ -45,6 +38,7 @@ content:
     type: entity_reference_label
 hidden:
   created: true
+  field_license_info: true
   langcode: true
   name: true
   thumbnail: true

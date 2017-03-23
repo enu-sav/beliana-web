@@ -1,19 +1,20 @@
-uuid: 2099672e-b039-48f6-a14b-34b13e95759d
+uuid: 08d0d279-6cb6-44f1-839a-587485f26a1d
 langcode: sk
 status: true
 dependencies:
   module:
-    - datetime
     - node
-id: node.field_date
-field_name: field_date
+id: node.field_sort
+field_name: field_sort
 entity_type: node
-type: datetime
+type: string
 settings:
-  datetime_type: date
-module: datetime
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
