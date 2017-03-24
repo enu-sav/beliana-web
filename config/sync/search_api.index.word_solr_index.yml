@@ -1,0 +1,201 @@
+uuid: 22d9b1a6-09ba-4076-86c4-c0aeea26f2f6
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_sort
+    - field.storage.node.field_categories
+    - field.storage.node.field_images
+    - field.storage.media.field_image
+    - field.storage.node.field_date
+    - field.storage.node.field_password
+    - search_api.server.solr
+  module:
+    - taxonomy
+    - media_entity
+    - search_api
+    - node
+id: word_solr_index
+name: 'Word Solr index'
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          word: default
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  title:
+    label: Nadpis
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  body:
+    label: 'Text hesla'
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_sort:
+    label: 'Na zoradenie'
+    datasource_id: 'entity:node'
+    property_path: field_sort
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_sort
+  field_categories:
+    label: Kategórie
+    datasource_id: 'entity:node'
+    property_path: field_categories
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+  name:
+    label: 'Kategórie » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  title_1:
+    label: 'Obrázky » Médiá » Obrázok » Nadpis'
+    datasource_id: 'entity:node'
+    property_path: 'field_images:entity:field_image:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_images
+        - field.storage.media.field_image
+      module:
+        - media_entity
+  alt:
+    label: 'Obrázky » Médiá » Obrázok » Alternative text'
+    datasource_id: 'entity:node'
+    property_path: 'field_images:entity:field_image:alt'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_images
+        - field.storage.media.field_image
+      module:
+        - media_entity
+  description:
+    label: 'Kategórie » Termín taxonómie » Popis'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:description'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  field_date:
+    label: Dátum
+    datasource_id: 'entity:node'
+    property_path: field_date
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_date
+  name_1:
+    label: 'Heslo » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_password:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_password
+      module:
+        - taxonomy
+  field_password:
+    label: Heslo
+    datasource_id: 'entity:node'
+    property_path: field_password
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_password
+  parent:
+    label: 'Heslo » Termín taxonómie » Term Parents'
+    datasource_id: 'entity:node'
+    property_path: 'field_password:entity:parent'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_password
+      module:
+        - taxonomy
+  name_2:
+    label: 'Heslo » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_password:entity:parent:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_password
+      module:
+        - taxonomy
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - word
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  rendered_item: {  }
+  hierarchy:
+    fields:
+      field_password: taxonomy_term-parent
+      parent: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr

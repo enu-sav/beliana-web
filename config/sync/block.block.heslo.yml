@@ -1,0 +1,22 @@
+uuid: 318fba26-66e6-4b6c-b96d-3b98d9a96d7f
+langcode: sk
+status: true
+dependencies:
+  config:
+    - facets.facet.password
+  module:
+    - facets
+  theme:
+    - cool
+id: heslo
+theme: cool
+region: content
+weight: -6
+provider: null
+plugin: 'facet_block:password'
+settings:
+  id: 'facet_block:password'
+  label: 'Abecedný zoznam'
+  provider: facets
+  label_display: visible
+visibility: {  }

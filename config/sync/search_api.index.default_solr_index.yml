@@ -1,6 +1,6 @@
 uuid: 090dca9e-eff4-4a49-b791-c972f9b3d391
 langcode: sk
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_tags

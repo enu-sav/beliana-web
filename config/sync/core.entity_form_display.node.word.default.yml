@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
+    - field.field.node.word.field_password
     - field.field.node.word.field_sort
     - node.type.word
   module:
@@ -58,6 +59,14 @@ content:
       field_widget_display_settings: {  }
     third_party_settings: {  }
     type: entity_browser_entity_reference
+  field_password:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_sort:
     weight: 35
     settings:

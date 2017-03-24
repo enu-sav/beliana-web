@@ -32,4 +32,5 @@ hidden:
   field_categories: true
   field_date: true
   field_images: true
+  field_sort: true
   langcode: true

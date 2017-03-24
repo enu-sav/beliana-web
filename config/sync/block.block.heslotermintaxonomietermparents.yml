@@ -1,0 +1,22 @@
+uuid: 3f9206a0-648c-4573-b263-5832408ebba8
+langcode: sk
+status: false
+dependencies:
+  config:
+    - facets.facet.heslo_termin_taxonomie_term_parents
+  module:
+    - facets
+  theme:
+    - cool
+id: heslotermintaxonomietermparents
+theme: cool
+region: '-1'
+weight: -6
+provider: null
+plugin: 'facet_block:heslo_termin_taxonomie_term_parents'
+settings:
+  id: 'facet_block:heslo_termin_taxonomie_term_parents'
+  label: 'Heslo » Termín taxonómie » Term Parents'
+  provider: facets
+  label_display: visible
+visibility: {  }
