@@ -1,4 +1,4 @@
-uuid: 78b4a003-58f2-425e-a46d-a2a492c450e1
+uuid: b3784c7e-5bce-40e6-89b3-8bfb7fd23ece
 langcode: sk
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: k3aUaZXGDuhkek2TZIee0PApOPTvYZLadziekdyHA5A
 id: user_search
-label: Používatelia
+label: Users
 path: user
 weight: 0
 plugin: user_search

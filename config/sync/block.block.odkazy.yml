@@ -11,7 +11,7 @@ dependencies:
 id: odkazy
 theme: cool
 region: header_right
-weight: -5
+weight: -6
 provider: null
 plugin: 'system_menu_block:secondary'
 settings:

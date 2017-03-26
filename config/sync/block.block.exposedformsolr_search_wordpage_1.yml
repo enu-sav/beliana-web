@@ -1,0 +1,23 @@
+uuid: a5060435-e98d-4ccb-9fdf-679f4bd54751
+langcode: sk
+status: true
+dependencies:
+  config:
+    - views.view.solr_search_word
+  module:
+    - views
+  theme:
+    - cool
+id: exposedformsolr_search_wordpage_1
+theme: cool
+region: header_right
+weight: -4
+provider: null
+plugin: 'views_exposed_filter_block:solr_search_word-page_1'
+settings:
+  id: 'views_exposed_filter_block:solr_search_word-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility: {  }

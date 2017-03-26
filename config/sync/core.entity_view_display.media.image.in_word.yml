@@ -38,6 +38,7 @@ content:
     type: entity_reference_label
 hidden:
   created: true
+  field_description: true
   field_license_info: true
   langcode: true
   name: true

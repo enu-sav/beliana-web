@@ -1,0 +1,385 @@
+uuid: 22d9b1a6-09ba-4076-86c4-c0aeea26f2f6
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_sort
+    - field.storage.node.field_categories
+    - field.storage.node.field_images
+    - field.storage.media.field_image
+    - field.storage.node.field_date
+    - field.storage.node.field_alphabet
+    - search_api.server.solr
+  module:
+    - taxonomy
+    - media_entity
+    - search_api
+    - node
+id: word_solr_index
+name: 'Word Solr index'
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          word: default
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  title:
+    label: Nadpis
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  body:
+    label: 'Text hesla'
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_sort:
+    label: 'Na zoradenie'
+    datasource_id: 'entity:node'
+    property_path: field_sort
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_sort
+  field_categories:
+    label: Kategórie
+    datasource_id: 'entity:node'
+    property_path: field_categories
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+  name:
+    label: 'Kategórie » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  title_1:
+    label: 'Obrázky » Médiá » Obrázok » Nadpis'
+    datasource_id: 'entity:node'
+    property_path: 'field_images:entity:field_image:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_images
+        - field.storage.media.field_image
+      module:
+        - media_entity
+  alt:
+    label: 'Obrázky » Médiá » Obrázok » Alternative text'
+    datasource_id: 'entity:node'
+    property_path: 'field_images:entity:field_image:alt'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_images
+        - field.storage.media.field_image
+      module:
+        - media_entity
+  description:
+    label: 'Kategórie » Termín taxonómie » Popis'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:description'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  field_date:
+    label: Dátum
+    datasource_id: 'entity:node'
+    property_path: field_date
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_date
+  name_1:
+    label: 'Heslo » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_alphabet:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_alphabet
+      module:
+        - taxonomy
+  field_alphabet:
+    label: Heslo
+    datasource_id: 'entity:node'
+    property_path: field_alphabet
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_alphabet
+  parent:
+    label: 'Heslo » Termín taxonómie » Term Parents'
+    datasource_id: 'entity:node'
+    property_path: 'field_alphabet:entity:parent'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_alphabet
+      module:
+        - taxonomy
+  name_2:
+    label: 'Heslo » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_alphabet:entity:parent:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_alphabet
+      module:
+        - taxonomy
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - word
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  hierarchy:
+    fields:
+      field_alphabet: taxonomy_term-parent
+      parent: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  html_filter:
+    fields:
+      - rendered_item
+      - node_grants
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+      em: 1
+      u: 1
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  ignorecase:
+    fields:
+      - rendered_item
+      - node_grants
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  ignore_character:
+    fields:
+      - rendered_item
+      - node_grants
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    ignorable: '[''¿¡!?,.:;]'
+    strip:
+      character_sets:
+        Pc: Pc
+        Pd: Pd
+        Pe: Pe
+        Pf: Pf
+        Pi: Pi
+        Po: Po
+        Ps: Ps
+        Cc: 0
+        Cf: 0
+        Co: 0
+        Mc: 0
+        Me: 0
+        Mn: 0
+        Sc: 0
+        Sk: 0
+        Sm: 0
+        So: 0
+        Zl: 0
+        Zp: 0
+        Zs: 0
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  rendered_item: {  }
+  stemmer:
+    fields:
+      - rendered_item
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  stopwords:
+    fields:
+      - rendered_item
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  tokenizer:
+    fields:
+      - rendered_item
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    fields:
+      - rendered_item
+      - node_grants
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr

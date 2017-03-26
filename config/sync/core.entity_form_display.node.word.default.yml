@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.media_entity_browser
     - field.field.node.word.body
+    - field.field.node.word.field_alphabet
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
@@ -22,7 +23,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 7
     settings:
       rows: 9
       summary_rows: 3
@@ -30,11 +31,16 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  field_alphabet:
+    type: options_select
+    weight: 13
     settings: {  }
     third_party_settings: {  }
   field_categories:
-    weight: 34
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -42,12 +48,12 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
   field_date:
-    weight: 33
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
   field_images:
-    weight: 32
+    weight: 8
     settings:
       entity_browser: media_entity_browser
       field_widget_display: label
@@ -59,7 +65,7 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
   field_sort:
-    weight: 35
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -67,36 +73,36 @@ content:
     type: string_textfield
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 4
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 5
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60

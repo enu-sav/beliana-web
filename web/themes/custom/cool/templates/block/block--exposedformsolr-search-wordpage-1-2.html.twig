@@ -25,7 +25,7 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes.removeClass('search-block-form') }}{{ attributes.addClass('search-box-mobile') }} style="display: none">
+<div{{ attributes.addClass('search-box-mobile') }} style="display: none">
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -35,5 +35,3 @@
     {{ content }}
   {% endblock %}
 </div>
-
-{#{{ kint(attributes) }}#}

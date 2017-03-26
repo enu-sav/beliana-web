@@ -1,0 +1,20 @@
+uuid: 54f04567-3c8a-4b08-a8fe-b5c42f925df6
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_alphabet
+field_name: field_alphabet
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.word.body
+    - field.field.node.word.field_alphabet
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
@@ -36,6 +37,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_alphabet: true
   field_categories: true
   field_date: true
   field_sort: true

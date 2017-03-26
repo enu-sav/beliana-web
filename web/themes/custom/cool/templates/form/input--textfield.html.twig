@@ -10,4 +10,9 @@
  * @see template_preprocess_input()
  */
 #}
-<input{{ attributes.addClass('search-input') }}{{ attributes.setAttribute('placeholder', 'Zadajte hľadané heslo ...') }} />{{ children }}
+{% if attributes.id == 'edit-keys' %}
+<input{{ attributes.addClass('search-input') }} />
+{% else %}
+<input{{ attributes }} />
+{% endif %}
+{{ children }}
