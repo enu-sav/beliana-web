@@ -1,6 +1,6 @@
 uuid: 34ec7858-2fc0-4f1e-adcc-a7d155b3a1df
 langcode: sk
-status: true
+status: false
 dependencies:
   config:
     - views.view.today
@@ -11,8 +11,8 @@ dependencies:
     - cool
 id: views_block__today_block_1
 theme: cool
-region: content
-weight: -3
+region: '-1'
+weight: -5
 provider: null
 plugin: 'views_block:today-block_1'
 settings:
