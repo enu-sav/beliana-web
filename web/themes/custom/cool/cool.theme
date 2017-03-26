@@ -123,7 +123,7 @@ function cool_preprocess_views_view(&$variables){
 function cool_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
   if ($form_id == 'views_exposed_form') {
-    if ($form['#id'] == 'views-exposed-form-solr-search-content-page-1') {
+    if ($form['#id'] == 'views-exposed-form-solr-search-content-page-1' || $form['#id'] == 'views-exposed-form-solr-search-word-page-1') {
       // Change search submit button value
       $form['actions']['submit']['#value'] = t('Hľadať');
       // Add placeholder to search form

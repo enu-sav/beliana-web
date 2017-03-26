@@ -69,7 +69,7 @@ field_settings:
     label: 'Na zoradenie'
     datasource_id: 'entity:node'
     property_path: field_sort
-    type: text
+    type: integer
     dependencies:
       config:
         - field.storage.node.field_sort
@@ -180,6 +180,12 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
+  hierarchy:
+    fields:
+      field_password: taxonomy_term-parent
+      parent: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
   add_url: {  }
   aggregated_field: {  }
   content_access:
@@ -187,12 +193,6 @@ processor_settings:
       preprocess_query: -30
   entity_status: {  }
   rendered_item: {  }
-  hierarchy:
-    fields:
-      field_password: taxonomy_term-parent
-      parent: taxonomy_term-parent
-    weights:
-      preprocess_index: -45
 tracker_settings:
   default: {  }
 options:
