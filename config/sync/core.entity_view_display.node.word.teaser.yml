@@ -29,6 +29,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_alphabet: true
   field_categories: true
   field_date: true
   field_images: true
