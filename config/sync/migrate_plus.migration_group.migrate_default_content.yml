@@ -1,0 +1,10 @@
+uuid: de1501c6-bcb7-4d2d-b4cc-5dff46061324
+langcode: sk
+status: true
+dependencies: {  }
+id: migrate_default_content
+label: migrate_default_content
+description: ''
+source_type: null
+module: null
+shared_configuration: null

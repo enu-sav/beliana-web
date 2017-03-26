@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa7819a5d812c12bf03cb690e863c854",
+    "content-hash": "a04f34e3465c1f5fb6158eff97182f85",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1062,6 +1062,66 @@
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
             "time": "2016-11-05T10:46:44+00:00"
+        },
+        {
+            "name": "drupal/admin_toolbar",
+            "version": "1.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/admin_toolbar",
+                "reference": "8.x-1.18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.18.zip",
+                "reference": "8.x-1.18",
+                "shasum": "ea5b6b5eb20757fda12e7220819a750e2575359b"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.18",
+                    "datestamp": "1480614184"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mohamed Anis Taktak",
+                    "homepage": "https://www.drupal.org/u/matio89"
+                },
+                {
+                    "name": "eme",
+                    "homepage": "https://www.drupal.org/user/542492"
+                },
+                {
+                    "name": "fethi.krout",
+                    "homepage": "https://www.drupal.org/user/3206765"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "romainj",
+                    "homepage": "https://www.drupal.org/user/370706"
+                }
+            ],
+            "description": "Admin Toolbar improve the default Drupal Toolbar, it lets the hover of sub menus.",
+            "homepage": "http://drupal.org/project/admin_toolbar",
+            "support": {
+                "source": "http://cgit.drupalcode.org/admin_toolbar",
+                "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+            }
         },
         {
             "name": "drupal/colorbox",
@@ -2345,6 +2405,278 @@
                 "issues": "http://drupal.org/project/issues/metatag"
             },
             "time": "2016-12-15 20:17:53"
+        },
+        {
+            "name": "drupal/migrate_default_content",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_default_content",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_default_content-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "6be12c15d99a11cc7b461757ec0b73aeff2d690a"
+            },
+            "require": {
+                "drupal/core": "~8.1",
+                "drupal/migrate_plus": "*",
+                "drupal/migrate_source_csv": "*",
+                "drupal/migrate_tools": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1485349683"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "rodrigoaguilera",
+                    "homepage": "https://www.drupal.org/user/408170"
+                }
+            ],
+            "description": "Provides dummy content",
+            "homepage": "https://github.com/ymbra/migrate_default_content",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://github.com/ymbra/migrate_default_content",
+                "error": "Invalid dependency: \"migrate_source_yaml\" is an unknown drupal 8 package name",
+                "issues": "https://github.com/ymbra/migrate_default_content/issues"
+            }
+        },
+        {
+            "name": "drupal/migrate_plus",
+            "version": "3.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_plus",
+                "reference": "8.x-3.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-3.0-beta1.zip",
+                "reference": "8.x-3.0-beta1",
+                "shasum": "7bae5c758a432053863b7b19c94fc1b829debf00"
+            },
+            "require": {
+                "drupal/core": "^8.2"
+            },
+            "require-dev": {
+                "drupal/migrate_example_advanced_setup": "*",
+                "drupal/migrate_example_setup": "*"
+            },
+            "suggest": {
+                "sainsburys/guzzle-oauth2-plugin": "3.0 required for the OAuth2 authentication plugin"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.0-beta1",
+                    "datestamp": "1476307739"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Ryan",
+                    "homepage": "https://www.drupal.org/u/mikeryan",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Enhancements to core migration support.",
+            "homepage": "https://www.drupal.org/project/migrate_plus",
+            "support": {
+                "source": "https://cgit.drupalcode.org/migrate_plus",
+                "issues": "https://www.drupal.org/project/issues/migrate_plus",
+                "irc": "irc://irc.freenode.org/drupal-migrate"
+            }
+        },
+        {
+            "name": "drupal/migrate_source_csv",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_source_csv",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_source_csv-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "056845ce1679a051733b12576e3204609dce293d"
+            },
+            "require": {
+                "drupal/core": "~8.1"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1",
+                "phpunit/phpunit": "~4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1479750843"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Lucas Hedding",
+                    "homepage": "https://www.drupal.org/u/heddn",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "CSV source migration.",
+            "homepage": "https://www.drupal.org/project/migrate_source_csv",
+            "support": {
+                "source": "https://cgit.drupalcode.org/migrate_source_csv",
+                "issues": "https://www.drupal.org/project/issues/migrate_source_csv",
+                "irc": "irc://irc.freenode.org/drupal-migrate"
+            }
+        },
+        {
+            "name": "drupal/migrate_source_yaml",
+            "version": "dev-custom",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/sandbox/stborchert/2808617.git",
+                "reference": "8.x-1.x"
+            },
+            "type": "drupal-module",
+            "time": "2016-10-27 09:29:24"
+        },
+        {
+            "name": "drupal/migrate_tools",
+            "version": "3.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_tools",
+                "reference": "8.x-3.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_tools-8.x-3.0-beta1.zip",
+                "reference": "8.x-3.0-beta1",
+                "shasum": "1511d1da1444743fa2defa54a17e62264e8ab836"
+            },
+            "require": {
+                "drupal/core": "^8.2",
+                "drupal/migrate_plus": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.0-beta1",
+                    "datestamp": "1476313439"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "Tools to assist in developing and running migrations.",
+            "homepage": "https://www.drupal.org/project/migrate_tools",
+            "support": {
+                "source": "http://cgit.drupalcode.org/migrate_tools"
+            }
+        },
+        {
+            "name": "drupal/page_manager",
+            "version": "1.0.0-alpha24",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/page_manager",
+                "reference": "8.x-1.0-alpha24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/page_manager-8.x-1.0-alpha24.zip",
+                "reference": "8.x-1.0-alpha24",
+                "shasum": "f0d5a6ff5ef1151265fd21c1758455902e6940df"
+            },
+            "require": {
+                "drupal/core": "^8.0.5",
+                "drupal/ctools": "~3.0.0-alpha21"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha24",
+                    "datestamp": "1471723439"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Plunkett",
+                    "homepage": "https://www.drupal.org/u/tim.plunkett",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "dsnopek",
+                    "homepage": "https://www.drupal.org/user/266527"
+                },
+                {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "tim.plunkett",
+                    "homepage": "https://www.drupal.org/user/241634"
+                }
+            ],
+            "description": "Provides a way to place blocks on a custom page.",
+            "homepage": "https://www.drupal.org/project/page_manager",
+            "support": {
+                "source": "https://git.drupal.org/project/page_manager.git",
+                "issues": "https://www.drupal.org/project/issues/page_manager",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
         },
         {
             "name": "drupal/pathauto",
@@ -7256,7 +7588,9 @@
         "drupal/entityqueue": 20,
         "drupal/search_api": 20,
         "drupal/search_api_solr": 20,
-        "drupal/facets": 15
+        "drupal/facets": 15,
+        "drupal/page_manager": 15,
+        "drupal/migrate_source_yaml": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
