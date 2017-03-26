@@ -1,0 +1,12 @@
+uuid: b585f255-e8f7-4fb2-9d72-8a7901ddd0f8
+langcode: sk
+status: true
+dependencies: {  }
+id: homepage
+label: 'Úvodná stránka'
+description: ''
+use_admin_theme: false
+path: /homepage
+access_logic: and
+access_conditions: {  }
+parameters: {  }
