@@ -1,12 +1,12 @@
-uuid: 99703c05-71a9-41e5-be4f-1427f143157f
+uuid: 54f04567-3c8a-4b08-a8fe-b5c42f925df6
 langcode: sk
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_password
-field_name: field_password
+id: node.field_alphabet
+field_name: field_alphabet
 entity_type: node
 type: entity_reference
 settings:

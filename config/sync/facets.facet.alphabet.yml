@@ -1,4 +1,4 @@
-uuid: 1d529ebf-31ef-43ea-9fe9-25a56830a434
+uuid: eb2130a0-f73d-4f57-959d-3267c803e9cb
 langcode: sk
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
     - views.view.solr_search_word
   module:
     - search_api
-id: password
+id: alphabet
 name: Heslo
-url_alias: password
+url_alias: alphabet
 weight: 0
 min_count: 0
 show_only_one_result: true
-field_identifier: field_password
+field_identifier: field_alphabet
 facet_source_id: 'search_api:views_page__solr_search_word__page_1'
 widget:
   type: links

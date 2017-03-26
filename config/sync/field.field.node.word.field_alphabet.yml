@@ -1,16 +1,16 @@
-uuid: 896d1488-f146-4870-b014-587c280a367b
+uuid: 5e2e89a6-d8d4-4c70-acec-10b013fd8d12
 langcode: sk
 status: true
 dependencies:
   config:
-    - field.storage.node.field_password
+    - field.storage.node.field_alphabet
     - node.type.word
-    - taxonomy.vocabulary.passwords
-id: node.word.field_password
-field_name: field_password
+    - taxonomy.vocabulary.alphabets
+id: node.word.field_alphabet
+field_name: field_alphabet
 entity_type: node
 bundle: word
-label: Heslo
+label: 'Abecedné zaradenie'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      passwords: passwords
+      alphabets: alphabets
     sort:
       field: _none
     auto_create: false

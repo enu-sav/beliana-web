@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.word.body
+    - field.field.node.word.field_alphabet
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
-    - field.field.node.word.field_password
     - field.field.node.word.field_sort
     - node.type.word
   module:
@@ -32,18 +32,12 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
-  field_password:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_alphabet: true
   field_categories: true
   field_date: true
   field_sort: true

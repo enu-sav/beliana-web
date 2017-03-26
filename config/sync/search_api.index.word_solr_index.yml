@@ -9,7 +9,7 @@ dependencies:
     - field.storage.node.field_images
     - field.storage.media.field_image
     - field.storage.node.field_date
-    - field.storage.node.field_password
+    - field.storage.node.field_alphabet
     - search_api.server.solr
   module:
     - taxonomy
@@ -134,39 +134,39 @@ field_settings:
   name_1:
     label: 'Heslo » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
-    property_path: 'field_password:entity:name'
+    property_path: 'field_alphabet:entity:name'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_password
+        - field.storage.node.field_alphabet
       module:
         - taxonomy
-  field_password:
+  field_alphabet:
     label: Heslo
     datasource_id: 'entity:node'
-    property_path: field_password
+    property_path: field_alphabet
     type: integer
     dependencies:
       config:
-        - field.storage.node.field_password
+        - field.storage.node.field_alphabet
   parent:
     label: 'Heslo » Termín taxonómie » Term Parents'
     datasource_id: 'entity:node'
-    property_path: 'field_password:entity:parent'
+    property_path: 'field_alphabet:entity:parent'
     type: integer
     dependencies:
       config:
-        - field.storage.node.field_password
+        - field.storage.node.field_alphabet
       module:
         - taxonomy
   name_2:
     label: 'Heslo » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
-    property_path: 'field_password:entity:parent:entity:name'
+    property_path: 'field_alphabet:entity:parent:entity:name'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_password
+        - field.storage.node.field_alphabet
       module:
         - taxonomy
         - taxonomy
@@ -182,7 +182,7 @@ datasource_settings:
 processor_settings:
   hierarchy:
     fields:
-      field_password: taxonomy_term-parent
+      field_alphabet: taxonomy_term-parent
       parent: taxonomy_term-parent
     weights:
       preprocess_index: -45

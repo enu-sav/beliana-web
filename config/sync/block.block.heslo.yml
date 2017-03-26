@@ -3,7 +3,7 @@ langcode: sk
 status: true
 dependencies:
   config:
-    - facets.facet.password
+    - facets.facet.alphabet
   module:
     - facets
   theme:
@@ -13,9 +13,9 @@ theme: cool
 region: content
 weight: -6
 provider: null
-plugin: 'facet_block:password'
+plugin: 'facet_block:alphabet'
 settings:
-  id: 'facet_block:password'
+  id: 'facet_block:alphabet'
   label: 'Abecedný zoznam'
   provider: facets
   label_display: visible

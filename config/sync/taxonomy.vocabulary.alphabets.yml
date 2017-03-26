@@ -1,0 +1,9 @@
+uuid: 932a9754-705d-4dfd-9a92-e6368f19af47
+langcode: sk
+status: true
+dependencies: {  }
+name: 'Abecedné zaradenie'
+vid: alphabets
+description: ''
+hierarchy: 1
+weight: 0
