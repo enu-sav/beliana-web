@@ -194,7 +194,7 @@ class RsSyncResource extends ResourceBase {
         $item = $images->item($i);
         $remote_path = $item->getAttribute('src');
         $remote_site_url = \Drupal::configFactory()
-          ->get('beliana')
+          ->get('beliana.config')
           ->get('remote_url');
         $file_data = file_get_contents($remote_site_url . $remote_path);
         $uri = file_unmanaged_save_data($file_data);

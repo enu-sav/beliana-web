@@ -1,0 +1,11 @@
+
+beliana_sync.config_form:
+  path: '/admin/config/services/beliana_sync_config'
+  defaults:
+    _form: '\Drupal\beliana_sync\Form\ConfigForm'
+    _title: 'ConfigForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

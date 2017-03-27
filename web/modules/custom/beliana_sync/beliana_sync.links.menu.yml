@@ -1,0 +1,7 @@
+beliana_sync.config_form:
+  title: 'Beliana Configuration'
+  route_name: beliana_sync.config_form
+  description: 'Configuration for Beliana'
+  parent: system.admin_config_services
+  weight: 99
+
