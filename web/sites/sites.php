@@ -55,3 +55,4 @@
  */
 
 $sites['beliana.docker.amazee.io'] = 'dev';
+$sites['dw.beliana.sav.sk'] = 'stage';

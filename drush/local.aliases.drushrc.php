@@ -9,3 +9,13 @@ $aliases["dev"] = array (
     '%site' => 'sites/dev/',
   ),
 );
+
+$aliases["stage"] = array (
+  'root' => '/var/www/beliana.sk/web',
+  'uri' => 'http://dw.beliana.sav.sk',
+  'path-aliases' =>
+  array (
+    '%drush' => '/var/www/beliana.sk/vendor/drush/drush',
+    '%site' => 'sites/stage/',
+  ),
+);
