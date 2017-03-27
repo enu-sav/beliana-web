@@ -103,8 +103,32 @@ class RsSyncResource extends ResourceBase {
     }
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
+    $node->field_alphabet = $this->assignAlphabetGroup($data['title']);
     $node->save();
     return new ResourceResponse($node->id(), 201);
+  }
+
+  /**
+   * Extract alphabet group from title.
+   *
+   * @param string $title
+   *   Title of the node.
+   *
+   * @return int
+   *   ID of alphabet group taxonomy term.
+   */
+  public function assignAlphabetGroup($title) {
+    // We need to compare only first 3 characters of the lowercase string.
+    $string_to_compare = mb_substr($title, 0,3);
+    $string_to_compare = mb_strtolower($string_to_compare);
+
+    $term = \Drupal::entityQuery('taxonomy_term')
+      ->condition('field_last',$string_to_compare,'<')
+      ->sort('tid', 'DESC')
+      ->range(0,1)
+      ->execute();
+
+    return reset($term);
   }
 
   /**
@@ -219,6 +243,7 @@ class RsSyncResource extends ResourceBase {
     if (!empty($local_fids)) {
       $node->field_images = $local_fids;
     }
+    $node->field_alphabet = $this->assignAlphabetGroup($data['title']);
     $node->save();
     return new ResourceResponse();
   }
