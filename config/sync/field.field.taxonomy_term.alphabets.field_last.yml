@@ -1,0 +1,19 @@
+uuid: d2063bb5-e401-497a-9c29-9adaf6ebfdb0
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_last
+    - taxonomy.vocabulary.alphabets
+id: taxonomy_term.alphabets.field_last
+field_name: field_last
+entity_type: taxonomy_term
+bundle: alphabets
+label: Last
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
