@@ -8,6 +8,7 @@ dependencies:
   module:
     - search_api
     - text
+    - user
 id: solr_search_word
 label: 'Solr search word'
 module: views
@@ -24,8 +25,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -288,6 +290,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags:
         - 'config:field.storage.node.body'
   page_1:
@@ -447,5 +450,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags:
         - 'config:field.storage.node.body'
