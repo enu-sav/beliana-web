@@ -123,7 +123,7 @@ class RsSyncResource extends ResourceBase {
     $string_to_compare = mb_strtolower($string_to_compare);
 
     $term = \Drupal::entityQuery('taxonomy_term')
-      ->condition('field_last',$string_to_compare,'<')
+      ->condition('field_last',$string_to_compare,'>')
       ->sort('tid', 'DESC')
       ->range(0,1)
       ->execute();
