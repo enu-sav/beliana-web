@@ -124,7 +124,7 @@ class RsSyncResource extends ResourceBase {
 
     $term = \Drupal::entityQuery('taxonomy_term')
       ->condition('field_last',$string_to_compare,'>')
-      ->sort('tid', 'DESC')
+      ->sort('tid', 'ASC')
       ->range(0,1)
       ->execute();
 
