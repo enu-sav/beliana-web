@@ -156,6 +156,9 @@ class RsSyncResource extends ResourceBase {
           ]);
           $license->save();
         }
+        else {
+          $license = reset($license);
+        }
         $media = Media::create([
           'bundle' => 'image',
           'title' => $image['title'],
