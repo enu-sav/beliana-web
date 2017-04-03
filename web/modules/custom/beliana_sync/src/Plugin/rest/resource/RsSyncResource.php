@@ -189,7 +189,7 @@ class RsSyncResource extends ResourceBase {
   public function downloadBodyImages($body) {
     // Extract links from field_text_hesla.
     $dom = new \DOMDocument();
-    $dom->loadHTML($body);
+    $dom->loadHTML(mb_convert_encoding($body, 'HTML-ENTITIES', 'UTF-8'));
     /** @var \DOMElement[] $images */
     $images = $dom->getElementsByTagName('img');
     if (!empty($images)) {
