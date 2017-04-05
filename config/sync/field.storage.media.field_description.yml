@@ -1,16 +1,16 @@
-uuid: 85ebd4b3-571a-4d05-a5b9-c31b18566093
+uuid: 270c3d49-7887-4e8e-a014-fcfe208b36c9
 langcode: sk
 status: true
 dependencies:
   module:
     - media_entity
+    - text
 id: media.field_description
 field_name: field_description
 entity_type: media
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

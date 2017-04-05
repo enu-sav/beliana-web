@@ -28,7 +28,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+    type: text_textarea
   field_image:
     weight: 11
     settings:

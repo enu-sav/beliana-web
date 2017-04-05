@@ -32,7 +32,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
   field_image:
     weight: 2
     label: visually_hidden
