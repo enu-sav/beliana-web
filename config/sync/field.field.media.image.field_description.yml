@@ -1,10 +1,12 @@
-uuid: d02d3e04-41a0-41b7-9c91-fc3006671d9a
+uuid: f6d86e01-78d9-48b7-b00e-5ccb1290aea5
 langcode: sk
 status: true
 dependencies:
   config:
     - field.storage.media.field_description
     - media_entity.bundle.image
+  module:
+    - text
 id: media.image.field_description
 field_name: field_description
 entity_type: media
@@ -16,4 +18,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long

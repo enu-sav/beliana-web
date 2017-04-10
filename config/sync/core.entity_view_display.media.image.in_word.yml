@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.in_word
+    - field.field.media.image.field_description
     - field.field.media.image.field_image
     - field.field.media.image.field_licence
     - field.field.media.image.field_license_info
@@ -11,11 +12,19 @@ dependencies:
     - media_entity.bundle.image
   module:
     - colorbox
+    - text
 id: media.image.in_word
 targetEntityType: media
 bundle: image
 mode: in_word
 content:
+  field_description:
+    type: text_trimmed
+    weight: 1
+    label: visually_hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
   field_image:
     weight: 0
     label: visually_hidden
@@ -29,16 +38,9 @@ content:
       colorbox_caption_custom: ''
     third_party_settings: {  }
     type: colorbox
-  field_licence:
-    weight: 2
-    label: visually_hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
 hidden:
   created: true
-  field_description: true
+  field_licence: true
   field_license_info: true
   langcode: true
   name: true
