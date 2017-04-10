@@ -109,29 +109,6 @@ class RsSyncResource extends ResourceBase {
   }
 
   /**
-   * Extract alphabet group from title.
-   *
-   * @param string $title
-   *   Title of the node.
-   *
-   * @return int
-   *   ID of alphabet group taxonomy term.
-   */
-  public function assignAlphabetGroup($title) {
-    // We need to compare only first 3 characters of the lowercase string.
-    $string_to_compare = mb_substr($title, 0,3);
-    $string_to_compare = mb_strtolower($string_to_compare);
-
-    $term = \Drupal::entityQuery('taxonomy_term')
-      ->condition('field_last',$string_to_compare,'>')
-      ->sort('tid', 'ASC')
-      ->range(0,1)
-      ->execute();
-
-    return reset($term);
-  }
-
-  /**
    * Download attached files and create media entities from them.
    *
    * @param $images
@@ -166,9 +143,12 @@ class RsSyncResource extends ResourceBase {
           'field_licence' => $license->id(),
           'field_license_info' => [
             'value' => $image['license_info'],
-            'format' => 'basic_html'
+            'format' => 'basic_html',
           ],
-          'field_description' => $image['description'],
+          'field_description' => [
+            'value' => $image['description'],
+            'format' => 'basic_html',
+          ],
         ]);
         $media->save();
         $local_fids[] = $media->id();
@@ -212,6 +192,29 @@ class RsSyncResource extends ResourceBase {
       $fragment .= $dom->saveHtml($node);
     }
     return $fragment;
+  }
+
+  /**
+   * Extract alphabet group from title.
+   *
+   * @param string $title
+   *   Title of the node.
+   *
+   * @return int
+   *   ID of alphabet group taxonomy term.
+   */
+  public function assignAlphabetGroup($title) {
+    // We need to compare only first 3 characters of the lowercase string.
+    $string_to_compare = mb_substr($title, 0, 3);
+    $string_to_compare = mb_strtolower($string_to_compare);
+
+    $term = \Drupal::entityQuery('taxonomy_term')
+      ->condition('field_last', $string_to_compare, '>')
+      ->sort('tid', 'ASC')
+      ->range(0, 1)
+      ->execute();
+
+    return reset($term);
   }
 
   /**
