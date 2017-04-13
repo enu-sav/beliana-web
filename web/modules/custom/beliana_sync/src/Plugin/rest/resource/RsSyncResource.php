@@ -120,10 +120,14 @@ class RsSyncResource extends ResourceBase {
   public function downloadMedia($images) {
     $taxonomy_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $local_fids = [];
+    $date = date('Y-m-d');
     foreach ($images as $image) {
       $file_data = file_get_contents($image['uri']);
+      $exploded_path = explode('/', $image['uri']);
+      $file_name = array_pop($exploded_path);
+      $dir = substr($file_name, 0, 3);
       /** @var FileInterface $file */
-      $file = file_save_data($file_data);
+      $file = file_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
       if ($file !== FALSE) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
         if (empty($license)) {
@@ -172,15 +176,19 @@ class RsSyncResource extends ResourceBase {
     $dom->loadHTML(mb_convert_encoding($body, 'HTML-ENTITIES', 'UTF-8'));
     /** @var \DOMElement[] $images */
     $images = $dom->getElementsByTagName('img');
+    $date = date('Y-m-d');
+    $remote_site_url = \Drupal::configFactory()
+      ->get('beliana.config')
+      ->get('remote_url');
     if (!empty($images)) {
       for ($i = $images->length - 1; $i >= 0; $i--) {
         $item = $images->item($i);
         $remote_path = $item->getAttribute('src');
-        $remote_site_url = \Drupal::configFactory()
-          ->get('beliana.config')
-          ->get('remote_url');
         $file_data = file_get_contents($remote_site_url . $remote_path);
-        $uri = file_unmanaged_save_data($file_data);
+        $exploded_path = explode('/', $remote_path);
+        $file_name = array_pop($exploded_path);
+        $dir = substr($file_name, 0, 3);
+        $uri = file_unmanaged_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
         if ($uri !== FALSE) {
           $item->setAttribute('src', $uri);
         }
