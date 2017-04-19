@@ -103,7 +103,7 @@ class RsSyncResource extends ResourceBase {
     }
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
-    $node->field_alphabet = $this->assignAlphabetGroup($data['title']);
+    $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
     $node->save();
     return new ResourceResponse($node->id(), 201);
   }
@@ -127,6 +127,10 @@ class RsSyncResource extends ResourceBase {
       $file_name = array_pop($exploded_path);
       $dir = substr($file_name, 0, 3);
       /** @var FileInterface $file */
+      $file_dir = $date . '/' . $dir;
+      $create_dir = \Drupal::service('file_system')
+          ->realpath('public://') . '/' . $file_dir;
+      file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
       $file = file_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
       if ($file !== FALSE) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
@@ -188,6 +192,10 @@ class RsSyncResource extends ResourceBase {
         $exploded_path = explode('/', $remote_path);
         $file_name = array_pop($exploded_path);
         $dir = substr($file_name, 0, 3);
+        $file_dir = $date . '/' . $dir;
+        $create_dir = \Drupal::service('file_system')
+            ->realpath('public://') . '/' . $file_dir;
+        file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
         $uri = file_unmanaged_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
         if ($uri !== FALSE) {
           $item->setAttribute('src', $uri);
@@ -249,13 +257,16 @@ class RsSyncResource extends ResourceBase {
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
     $node->field_date = $data['dates'];
     $node->field_sort = $data['sort'];
-    foreach ($node->field_images as $field_image) {
+    foreach ($node->field_images->getValue() as $field_image) {
       $media = Media::load($field_image->target_id);
       $media->delete();
     }
     $local_fids = $this->downloadMedia($data['images']);
     if (!empty($local_fids)) {
       $node->field_images = $local_fids;
+    }
+    else {
+      $node->set('field_images', []);
     }
     $node->field_alphabet = $this->assignAlphabetGroup($data['title']);
     $node->save();
