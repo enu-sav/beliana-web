@@ -103,7 +103,7 @@ class RsSyncResource extends ResourceBase {
     }
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
-    $node->field_alphabet = $this->assignAlphabetGroup($data['title']);
+    $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
     $node->save();
     return new ResourceResponse($node->id(), 201);
   }
@@ -249,13 +249,16 @@ class RsSyncResource extends ResourceBase {
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
     $node->field_date = $data['dates'];
     $node->field_sort = $data['sort'];
-    foreach ($node->field_images as $field_image) {
+    foreach ($node->field_images->getValue() as $field_image) {
       $media = Media::load($field_image->target_id);
       $media->delete();
     }
     $local_fids = $this->downloadMedia($data['images']);
     if (!empty($local_fids)) {
       $node->field_images = $local_fids;
+    }
+    else {
+      $node->set('field_images', []);
     }
     $node->field_alphabet = $this->assignAlphabetGroup($data['title']);
     $node->save();
