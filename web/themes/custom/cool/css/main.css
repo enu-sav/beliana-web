@@ -1316,10 +1316,11 @@ table {
 .heslo table td {
   padding: 5px;
   vertical-align: top;
+  border: 1px solid #282727;
 }
 
-.heslo table tr:nth-child(odd) {
-  background: #f5f5f5;
+.heslo table tr {
+  border: 1px solid #282727;
 }
 
 table tr td:first-child {
