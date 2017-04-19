@@ -131,7 +131,7 @@ class RsSyncResource extends ResourceBase {
       $create_dir = \Drupal::service('file_system')
           ->realpath('public://') . '/' . $file_dir;
       file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-      $file = file_save_data($file_data, 'public://'. $create_dir . '/' . $file_name);
+      $file = file_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
       if ($file !== FALSE) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
         if (empty($license)) {
@@ -196,7 +196,7 @@ class RsSyncResource extends ResourceBase {
         $create_dir = \Drupal::service('file_system')
             ->realpath('public://') . '/' . $file_dir;
         file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-        $uri = file_unmanaged_save_data($file_data, 'public://'. $file_dir . '/' . $file_name);
+        $uri = file_unmanaged_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
         if ($uri !== FALSE) {
           $item->setAttribute('src', $uri);
         }
