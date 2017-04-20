@@ -259,7 +259,9 @@ class RsSyncResource extends ResourceBase {
     $node->field_sort = $data['sort'];
     foreach ($node->field_images->getValue() as $field_image) {
       $media = Media::load($field_image->target_id);
-      $media->delete();
+      if (!is_null($media)) {
+        $media->delete();
+      }
     }
     $local_fids = $this->downloadMedia($data['images']);
     if (!empty($local_fids)) {
