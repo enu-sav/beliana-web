@@ -172,4 +172,19 @@ function cool_preprocess_form_element_label(&$variables) {
   if (isset($variables['element']) && $variables['element']['#title'] == 'Search') {
     $variables['attributes']['class'][] = 'visually-hidden';
   }
+}}
+
+/**
+ * Implements template_preprocess_image_style().
+ *
+ * For SVG files we don't want to create image with image style, because
+ * it's not possible.
+ */
+function cool_preprocess_image_style(&$variables) {
+  $mimetype = \Drupal::service('file.mime_type.guesser')->guess($variables['uri']);
+  if (strpos($mimetype, 'svg') !== FALSE) {
+    $variables['image']['#uri'] = file_create_url($variables['uri']);
+    $variables['image']['#attributes']['style'][] = 'width:100%; height: auto;';
+    unset($variables['image']['#style_name']);
+  }
 }
