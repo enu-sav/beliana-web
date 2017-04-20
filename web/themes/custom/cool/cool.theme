@@ -108,11 +108,11 @@ function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
 /**
  * Implements template_preprocess_views_view().
  */
-function cool_preprocess_views_view(&$variables){
+function cool_preprocess_views_view(&$variables) {
   $view = $variables['view'];
-  if($view->id() == 'today'){
+  if ($view->id() == 'today') {
     $variables['more']['#options']['attributes']['class'] = array(
-        'more',
+      'more',
     );
   }
 }
@@ -126,7 +126,7 @@ function cool_preprocess_field(&$variables) {
       $field_value = $variables['items'][$k]['content']['#context']['value'];
       $variables['items'][$k]['content'] = [
         '#type' => 'inline_template',
-        '#template' => 'kúpiť na <a href="' . $field_value.'" target="_blank">veda.sav.sk</a>',
+        '#template' => 'kúpiť na <a href="' . $field_value . '" target="_blank">veda.sav.sk</a>',
       ];
     }
   }
@@ -164,15 +164,13 @@ function cool_theme_suggestions_container_alter(&$suggestions, $variables) {
 
 /**
  * Implements template_preprocess_form_element_label().
- *
- * @param $variables
  */
 function cool_preprocess_form_element_label(&$variables) {
   // Search form label visually hidden
   if (isset($variables['element']) && $variables['element']['#title'] == 'Search') {
     $variables['attributes']['class'][] = 'visually-hidden';
   }
-}}
+}
 
 /**
  * Implements template_preprocess_image_style().
