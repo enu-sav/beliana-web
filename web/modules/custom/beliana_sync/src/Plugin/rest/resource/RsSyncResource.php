@@ -270,7 +270,7 @@ class RsSyncResource extends ResourceBase {
     else {
       $node->set('field_images', []);
     }
-    $node->field_alphabet = $this->assignAlphabetGroup($data['title']);
+    $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
     $node->save();
     return new ResourceResponse();
   }
