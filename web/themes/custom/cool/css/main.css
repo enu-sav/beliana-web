@@ -1294,7 +1294,8 @@ table {
   table-layout: fixed;
 }
 
-.heslo table {
+.heslo table,
+.views-field-body table {
   font-size: 13px;
   font-size: 1.3rem;
   border: 0;
@@ -1302,24 +1303,28 @@ table {
   margin-bottom: 25px;
 }
 
-.heslo table thead th {
+.heslo table thead th,
+.views-field-body table thead th {
   text-align: left;
   background-color: #d3d3d3;
   padding: 5px;
 }
 
-.heslo table p {
+.heslo table p,
+.views-field-body table p {
   font-size: 13px;
   font-size: 1.3rem;
 }
 
-.heslo table td {
+.heslo table td,
+.views-field-body table td{
   padding: 5px;
   vertical-align: top;
   border: 1px solid #282727;
 }
 
-.heslo table tr {
+.heslo table tr,
+.views-field-body table tr {
   border: 1px solid #282727;
 }
 
