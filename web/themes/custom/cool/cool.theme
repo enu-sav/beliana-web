@@ -97,8 +97,10 @@ function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
 
   if (isset($variables['element']) && isset($variables['element']['#type']) && $variables['element']['#type'] == 'form') {
     $original_theme_hook = $variables['theme_hook_original'];
-
-    $suggestions[] = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
+    $new_suggestion = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
+    if (!in_array($new_suggestion, $suggestions)) {
+      $suggestions[] = $new_suggestion;
+    }
   }
 
   return $suggestions;
@@ -110,10 +112,13 @@ function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
  */
 function cool_preprocess_views_view(&$variables) {
   $view = $variables['view'];
-  if ($view->id() == 'today') {
+  if (in_array($view->id(), ['today', 'solr_search_word'])) {
     $variables['more']['#options']['attributes']['class'] = array(
       'more',
     );
+  }
+  if (in_array($view->id(), ['solr_search_word'])) {
+    $variables['#attached']['library'][] = 'cool/facets';
   }
 }
 
@@ -138,11 +143,11 @@ function cool_preprocess_field(&$variables) {
 function cool_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
   if ($form_id == 'views_exposed_form') {
-    if ($form['#id'] == 'views-exposed-form-solr-search-content-page-1' || $form['#id'] == 'views-exposed-form-solr-search-word-page-1') {
+    if ($form['#id'] == 'views-exposed-form-solr-search-word-page-2') {
       // Change search submit button value
       $form['actions']['submit']['#value'] = t('Hľadať');
       // Add placeholder to search form
-      $form['keys']['#placeholder'] = t('Zadajte hľadané heslo ...');
+      $form['text']['#placeholder'] = t('Zadajte hľadané heslo ...');
     }
   }
 }
@@ -179,7 +184,8 @@ function cool_preprocess_form_element_label(&$variables) {
  * it's not possible.
  */
 function cool_preprocess_image_style(&$variables) {
-  $mimetype = \Drupal::service('file.mime_type.guesser')->guess($variables['uri']);
+  $mimetype = \Drupal::service('file.mime_type.guesser')
+    ->guess($variables['uri']);
   if (strpos($mimetype, 'svg') !== FALSE) {
     $variables['image']['#uri'] = file_create_url($variables['uri']);
     $variables['image']['#attributes']['style'][] = 'width:100%; height: auto;';

@@ -1,4 +1,4 @@
-uuid: 4c98772e-0036-4c7e-8f22-027eb411c7cb
+uuid: a389c6b6-b59c-4194-887c-61de20e0cca6
 langcode: sk
 status: true
 dependencies:
@@ -13,9 +13,9 @@ theme: cool
 region: navigation
 weight: 0
 provider: null
-plugin: 'views_exposed_filter_block:solr_search_word-page_1'
+plugin: 'views_exposed_filter_block:solr_search_word-page_2'
 settings:
-  id: 'views_exposed_filter_block:solr_search_word-page_1'
+  id: 'views_exposed_filter_block:solr_search_word-page_2'
   label: ''
   provider: views
   label_display: '0'

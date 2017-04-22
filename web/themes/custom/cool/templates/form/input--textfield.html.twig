@@ -10,9 +10,9 @@
  * @see template_preprocess_input()
  */
 #}
-{% if attributes.id == 'edit-keys' %}
-<input{{ attributes.addClass('search-input') }} />
+{% if attributes.id == 'edit-text' %}
+  <input{{ attributes.addClass('search-input') }} />
 {% else %}
-<input{{ attributes }} />
+  <input{{ attributes }} />
 {% endif %}
 {{ children }}

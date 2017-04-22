@@ -6,12 +6,23 @@ theme:
       css/responsive-nav.css: {}
       css/nav.css: {}
       css/main.css: {}
-      css/word-search.css: {}
   js:
     js/jquery.collapse.js: {}
     js/jquery.selectric.min.js: {}
     js/responsive-nav.js: {}
     js/custom.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+facets:
+  version: 1.x
+  css:
+    theme:
+      css/word-search.css: {}
+  js:
     js/word-search.js: {}
   dependencies:
     - core/jquery
