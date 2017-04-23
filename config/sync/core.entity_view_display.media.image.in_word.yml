@@ -25,6 +25,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_image:
     weight: 0
     label: visually_hidden
@@ -38,6 +39,7 @@ content:
       colorbox_caption_custom: ''
     third_party_settings: {  }
     type: colorbox
+    region: content
 hidden:
   created: true
   field_licence: true

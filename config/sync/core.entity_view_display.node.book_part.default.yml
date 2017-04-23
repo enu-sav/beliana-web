@@ -23,6 +23,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_cover_image:
     weight: 1
     label: visually_hidden
@@ -31,10 +32,12 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_store_link: true
   langcode: true

@@ -24,6 +24,7 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_images:
     weight: 2
     label: visually_hidden
@@ -32,10 +33,12 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_alphabet: true
   field_categories: true

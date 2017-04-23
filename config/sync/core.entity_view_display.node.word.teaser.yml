@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.word.body
+    - field.field.node.word.field_alphabet
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
+    - field.field.node.word.field_sort
     - node.type.word
   module:
     - text
@@ -24,10 +26,12 @@ content:
     settings:
       trim_length: 200
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_alphabet: true
   field_categories: true

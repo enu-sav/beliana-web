@@ -20,6 +20,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_last:
     weight: 31
     settings:
@@ -27,11 +28,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
     weight: -5
@@ -39,9 +42,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 30
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }
