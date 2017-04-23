@@ -101,10 +101,7 @@
         },
         "patches": {
             "drupal/core": {
-                "UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-67.patch"
-            },
-            "drupal/search_api": {
-                "PluginNotFoundException exception in Views when using an index with multiple entity types": "https://www.drupal.org/files/issues/2839932-19--rendered_item_views_field_handler.patch"
+                "UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-88-8.3.x.patch.txt"
             }
         }
     }
