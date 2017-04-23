@@ -1,0 +1,11 @@
+uuid: 420e2e5b-539d-4001-9c80-7c9d123be822
+langcode: sk
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ydpmSCtxLjO9xqkBxObkeYx0Bf2dkW-d8bB_6Q1Ggjs
+id: node
+label: Content
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:summary]'

@@ -1,0 +1,10 @@
+uuid: 224b2436-40a4-43ef-b027-dc9d6555f623
+langcode: sk
+status: true
+dependencies:
+  module:
+    - page_manager
+id: page_variant.token
+label: Token
+targetEntityType: page_variant
+cache: true

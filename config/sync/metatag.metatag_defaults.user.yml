@@ -1,0 +1,11 @@
+uuid: a38284af-e869-40f5-91c2-7fe816acbe30
+langcode: sk
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: O0NfJbzQmkMg1brwA-gUw8v59V0Ana1YKTeRfb-okGI
+id: user
+label: User
+tags:
+  title: '[user:name] | [site:name]'
+  description: '[site:name]'

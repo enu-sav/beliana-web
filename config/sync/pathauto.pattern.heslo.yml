@@ -1,0 +1,22 @@
+uuid: 1925cfd0-558c-412f-8262-b8beb80f54ac
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: heslo
+label: Heslo
+type: 'canonical_entities:node'
+pattern: 'heslo/[node:title]'
+selection_criteria:
+  23a333f5-aebe-40ae-9f06-63b63c4b70e3:
+    id: node_type
+    bundles:
+      word: word
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 23a333f5-aebe-40ae-9f06-63b63c4b70e3
+selection_logic: and
+weight: -5
+relationships: {  }
