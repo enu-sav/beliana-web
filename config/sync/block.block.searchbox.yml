@@ -1,0 +1,20 @@
+uuid: a785f187-3617-4869-a970-d98ac2521533
+langcode: sk
+status: true
+dependencies:
+  module:
+    - beliana_search
+  theme:
+    - cool
+id: searchbox
+theme: cool
+region: header_right
+weight: 0
+provider: null
+plugin: beliana_searchbox
+settings:
+  id: beliana_searchbox
+  label: 'Search box'
+  provider: beliana_search
+  label_display: '0'
+visibility: {  }
