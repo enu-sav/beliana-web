@@ -1,8 +1,8 @@
 use_cdn: 1
 cdn_url: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-config_type: 0
+config_type: 1
 default_config_string: '{"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"processEscapes":"true"},"showProcessingMessages":"false","messageStyle":"none"}'
 _core:
   default_config_hash: Y89RDIXY0PJrapY3pDHYMbnnM-z8_tnWCurMXu3jocA
 langcode: sk
-config_string: '{"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"processEscapes":"true"},"showProcessingMessages":"false","messageStyle":"none"}'
+config_string: "MathJax.Hub.Config(\r\n{\r\n\"tex2jax\":{\r\n\"inlineMath\":[[\"$\",\"$\"],[\"\\(\",\"\\)\"]],\r\n\"processEscapes\":\"true\"\r\n},\r\n\"showProcessingMessages\":\"false\",\r\n\"messageStyle\":\"none\",\r\n\"HTML-CSS\": {\r\npreferredFont: \"STIX\",\r\nscale: 85\r\n},\r\nCommonHTML: {\r\nscale: 85\r\n},\r\nSVG: {\r\nfont: \"STIX-Web\",\r\nscale: 85\r\n},\r\nTeX: {\r\nextensions: [\"extpfeil.js\"],\r\nextensions: [\"mhchem.js\"],\r\nMacros: {\r\nRR: \"{\\bf R}\",\r\nbold: [\"{\\ce{#1}}\",1],\r\nmc: [\"{\\require{mhchem} \\mathsf{\\ce{#1}}}\",1]\r\n}\r\n}\r\n}\r\n);"
