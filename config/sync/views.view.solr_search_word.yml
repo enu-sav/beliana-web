@@ -67,7 +67,7 @@ display:
             offset_label: Offset
           views_infinite_scroll:
             button_text: 'Načítať ďalšie'
-            automatically_load_content: true
+            automatically_load_content: false
       style:
         type: default
       row:
@@ -250,7 +250,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: 'Celkový počet hesiel: @total'
+          content: 'Zobrazené heslá @start - @end z celkového počtu @total hesiel.'
           plugin_id: result
       footer: {  }
       empty: {  }
@@ -634,7 +634,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: "<h2>Výsledky vyhľadávania</h2>\nCelkový počet hesiel: @total"
+          content: "<h1>Výsledky vyhľadávania</h1>\nZobrazené heslá @start - @end z celkového počtu @total hesiel."
           plugin_id: result
     cache_metadata:
       max-age: -1
