@@ -102,6 +102,9 @@
         "patches": {
             "drupal/core": {
                 "UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-88-8.3.x.patch.txt"
+            },
+            "drupal/mathjax": {
+                "Custom config is not loaded correctly":"https://www.drupal.org/files/issues/mathjax-custom_config_is_not-2873269-2.patch"
             }
         }
     }
