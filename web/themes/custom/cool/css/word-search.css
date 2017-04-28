@@ -65,20 +65,23 @@
     text-align: center;
 }
 
-#block-heslo ul li a {
+#block-heslo ul li a,
+.view-word-search-page ul.pager li a {
     line-height: 35px;
     text-decoration: none;
     color: #545454;
     font-size: 1.5rem;
 }
 
-#block-heslo ul li a {
+#block-heslo ul li a,
+.view-word-search-page ul.pager li a {
     width: 100%;
     height: 100%;
     display: block;
 }
 
-#block-heslo ul li a:hover {
+#block-heslo ul li a:hover,
+.view-word-search-page ul.pager li a:hover {
     cursor: pointer;
 }
 
@@ -120,6 +123,37 @@
     color: #266ead;
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+.view-word-search-page ul.pager {
+    margin-top: 20px;
+}
+
+.view-word-search-page > ul.pager > li {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #f5f5f5;
+    border: 1px solid #d5d5d5;
+    line-height: 35px;
+    text-decoration: none;
+    text-align: center;
+    width: 120px;
+}
+
+.view-word-search-page ul.pager li a {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.view-word-search-page ul.pager li a:hover {
+    background-color:#e6e6e6;
+    text-decoration:underline;
 }
 
 @media screen and (max-width:1013px) {
