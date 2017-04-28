@@ -555,7 +555,8 @@ footer a.rights {
   line-height: 1.625em;
 }
 
-.heslo a {
+.heslo a,
+.views-field-body a {
   color: #266ead;
   text-decoration: underline;
 }
