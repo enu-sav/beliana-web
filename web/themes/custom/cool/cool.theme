@@ -77,7 +77,7 @@ function cool_preprocess_html(&$vars) {
  */
 function cool_preprocess_block(&$vars) {
   if ($vars['plugin_id'] === 'facet_block:alphabet' && \Drupal::service('path.matcher')->isFrontPage()) {
-    $vars['label']['#markup'] = $vars['elements']['#configuration']['label'];
+    $vars['label'] = $vars['elements']['#configuration']['label'];
     $vars['attributes']['class'][] = 'box';
     $vars['attributes']['class'][] = 'abecedny-zoznam';
   }
