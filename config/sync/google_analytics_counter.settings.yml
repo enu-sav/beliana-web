@@ -4,10 +4,10 @@ api_dayquota: 10000
 cache_length: 0
 start_date: '-1 week'
 overwrite_statistics: false
-profile_id: '149213657'
-client_id: 741234285455-5o8rvur69qvlpes69csp5o4io50h15pu.apps.googleusercontent.com
-client_secret: '-0PHErOHNYuDVjD28sIaBFpk'
-redirect_uri: 'http://beliana.docker.amazee.io/admin/config/system/google-analytics-counter/authentication'
+profile_id: ''
+client_id: ''
+client_secret: ''
+redirect_uri: ''
 _core:
   default_config_hash: 29Zkbxgm_9XoV0UdMizyIhfPHLCzGNIZLrWBR3EtDPA
 langcode: sk
