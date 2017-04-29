@@ -762,6 +762,43 @@ p.hesla-count {
   overflow: hidden;
 }
 
+form.user-login-form label,
+form.user-pass label {
+  display: block;
+  margin-top: 20px;
+}
+
+form.user-login-form input,
+form.user-pass input {
+  display: block;
+  margin-top: 5px;
+}
+
+form.user-login-form div,
+form.user-pass div {
+  display: block;
+  margin-top: 5px;
+}
+
+form.user-login-form input#edit-submit,
+form.user-pass input#edit-submit {
+  margin-top: 30px;
+}
+
+#block-zalozky ul {
+  margin-top: 20px;
+}
+
+#block-zalozky ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#block-zalozky ul li a {
+  color: #266ead;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1013px) {
   ul.podkategoria li a {
     width: 100%;
@@ -997,6 +1034,16 @@ p.hesla-count {
 
   .knizna-seria li:nth-child(7) {
     border-bottom: 0;
+  }
+
+  form.user-login-form input,
+  form.user-pass input {
+    width: 100%;
+  }
+
+  form.user-login-form input#edit-submit,
+  form.user-pass input#edit-submit {
+    width: auto;
   }
 }
 

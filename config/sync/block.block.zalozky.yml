@@ -1,0 +1,27 @@
+uuid: 0f005112-21d5-4d8f-83bc-0be859f940f8
+langcode: sk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cool
+id: zalozky
+theme: cool
+region: content
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Záložky
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user/login\r\n/user/password"
+    negate: false
+    context_mapping: {  }

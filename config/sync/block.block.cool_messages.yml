@@ -11,7 +11,7 @@ _core:
 id: cool_messages
 theme: cool
 region: highlighted
-weight: -5
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:
