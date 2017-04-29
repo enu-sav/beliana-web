@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0c3f2930c4ce82960a09104976ccc3f",
+    "content-hash": "ad2c3fd4d6992eaa144da2c849eb70e6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1996,6 +1996,38 @@
             }
         },
         {
+            "name": "drupal/google_analytics_counter",
+            "version": "dev-8.x-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/coolstrankysk/drupal-google_analytics_counter.git",
+                "reference": "d466befa32d8eea2a92b2657922d47f293aff86c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/coolstrankysk/drupal-google_analytics_counter/zipball/d466befa32d8eea2a92b2657922d47f293aff86c",
+                "reference": "d466befa32d8eea2a92b2657922d47f293aff86c",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Tomas Fulopp (Vacilando)",
+                    "homepage": "https://www.drupal.org/u/vacilando"
+                }
+            ],
+            "description": "Lightweight page view counter drawing on data collected by Google Analytics.",
+            "homepage": "https://www.drupal.org/project/google_analytics_counter",
+            "support": {
+                "issues": "https://www.drupal.org/project/issues/google_analytics_counter",
+                "source": "http://git.drupal.org/project/google_analytics_counter.git"
+            },
+            "time": "2017-04-29 14:25:14"
+        },
+        {
             "name": "drupal/inline_entity_form",
             "version": "dev-1.x",
             "source": {
@@ -2077,6 +2109,9 @@
                 "drupal": {
                     "version": "8.x-2.7",
                     "datestamp": "1492196642"
+                },
+                "patches_applied": {
+                    "Custom config is not loaded correctly": "https://www.drupal.org/files/issues/mathjax-custom_config_is_not-2873269-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2778,7 +2813,7 @@
                 "issues": "https://www.drupal.org/project/issues/search_api",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
             },
-            "time": "2017-04-22T12:02:05+00:00"
+            "time": "2017-04-22 12:02:05"
         },
         {
             "name": "drupal/search_api_solr",
@@ -7412,7 +7447,8 @@
         "drupal/search_api_solr": 20,
         "drupal/facets": 15,
         "drupal/page_manager": 15,
-        "drupal/migrate_source_yaml": 20
+        "drupal/migrate_source_yaml": 20,
+        "drupal/google_analytics_counter": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

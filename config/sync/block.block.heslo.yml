@@ -11,12 +11,12 @@ dependencies:
 id: heslo
 theme: cool
 region: content
-weight: -6
+weight: -5
 provider: null
 plugin: 'facet_block:alphabet'
 settings:
   id: 'facet_block:alphabet'
   label: 'Abecedný zoznam'
   provider: facets
-  label_display: visible
+  label_display: '0'
 visibility: {  }

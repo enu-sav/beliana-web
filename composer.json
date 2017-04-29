@@ -26,7 +26,11 @@
                     "reference": "8.x-1.x"
                 }
             }
-        }
+        },
+	{
+	    "type": "vcs",
+	    "url": "git@github.com:coolstrankysk/drupal-google_analytics_counter.git"
+	}
     ],
     "require": {
         "composer/installers": "^1.2",
@@ -54,7 +58,8 @@
         "drupal/page_manager": "^1.0@alpha",
         "drupal/migrate_default_content": "^1.0",
         "drupal/migrate_source_yaml": "dev-custom",
-        "drupal/mathjax": "^2.6"
+        "drupal/mathjax": "^2.6",
+        "drupal/google_analytics_counter": "dev-8.x-3.x"
     },
     "require-dev": {
         "behat/mink": "~1.7",

@@ -1,17 +1,11 @@
 .word-facet-wrap {
-    margin-top: 32px;
+    margin-top: 14px;
     margin-bottom: 40px;
 }
 
 #block-heslo {
-    margin-top: 32px;
-    margin-bottom: 40px;
     display: block;
     position: relative;
-}
-
-#block-heslo h1 {
-    margin-bottom: 14px;
 }
 
 #block-heslo ul li {
@@ -105,45 +99,6 @@
 
 #block-heslo .facet-item__status {
     display: none;
-}
-
-.view-word-search-page {
-    margin-top: 14px;
-}
-
-.view-word-search-page .views-row {
-    margin-top: 30px;
-}
-
-.view-word-search-page header h2 {
-    margin-bottom: 5px;
-}
-
-.view-word-search-page .views-row h3 a {
-    color: #266ead;
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-.view-word-search-page ul.pager {
-    margin-top: 20px;
-}
-
-.view-word-search-page > ul.pager > li {
-    display: block;
-    font-size: 1.5rem;
-    margin-bottom: 4px;
-    margin-right: auto;
-    margin-left: auto;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    background: #f5f5f5;
-    border: 1px solid #d5d5d5;
-    line-height: 35px;
-    text-decoration: none;
-    text-align: center;
-    width: 120px;
 }
 
 .view-word-search-page ul.pager li a {
