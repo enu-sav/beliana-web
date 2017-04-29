@@ -11,7 +11,7 @@ dependencies:
 id: heslo
 theme: cool
 region: content
-weight: -5
+weight: -6
 provider: null
 plugin: 'facet_block:alphabet'
 settings:
