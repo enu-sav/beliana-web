@@ -250,7 +250,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: 'Zobrazené heslá @start - @end z celkového počtu @total hesiel.'
+          content: 'Zobrazené heslá @start - <span id="count-words">@end</span> z celkového počtu @total hesiel.'
           plugin_id: result
       footer: {  }
       empty: {  }
@@ -634,7 +634,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: "<h1>Výsledky vyhľadávania</h1>\nZobrazené heslá @start - @end z celkového počtu @total hesiel."
+          content: "<h1>Výsledky vyhľadávania</h1>\nZobrazené heslá @start - <span id=\"count-words\">@end</span> z celkového počtu @total hesiel."
           plugin_id: result
     cache_metadata:
       max-age: -1
