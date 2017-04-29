@@ -6,12 +6,13 @@ dependencies:
     - facets.facet.alphabet
   module:
     - facets
+    - system
   theme:
     - cool
 id: heslo
 theme: cool
 region: content
-weight: -6
+weight: -5
 provider: null
 plugin: 'facet_block:alphabet'
 settings:
@@ -19,4 +20,9 @@ settings:
   label: 'Abecedný zoznam'
   provider: facets
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/abecedny-zoznam"
+    negate: false
+    context_mapping: {  }

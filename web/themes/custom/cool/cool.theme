@@ -71,6 +71,19 @@ function cool_preprocess_html(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add classes to facet alphabet block and display its title on front page.
+ */
+function cool_preprocess_block(&$vars) {
+  if ($vars['plugin_id'] === 'facet_block:alphabet' && \Drupal::service('path.matcher')->isFrontPage()) {
+    $vars['label']['#markup'] = $vars['elements']['#configuration']['label'];
+    $vars['attributes']['class'][] = 'box';
+    $vars['attributes']['class'][] = 'abecedny-zoznam';
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Add theme suggestion for footer blocks.

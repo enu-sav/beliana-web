@@ -19,9 +19,6 @@ theme:
 
 facets:
   version: 1.x
-  css:
-    theme:
-      css/word-search.css: {}
   js:
     js/word-search.js: {}
   dependencies:
@@ -34,3 +31,6 @@ word:
   version: 1.x
   js: 
     js/word.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
