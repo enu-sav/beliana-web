@@ -112,11 +112,12 @@ function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
  */
 function cool_preprocess_views_view(&$variables) {
   $view = $variables['view'];
-  if (in_array($view->id(), ['today', 'solr_search_word'])) {
+  if (in_array($view->id(), ['today', 'most_visited_content'])) {
     $variables['more']['#options']['attributes']['class'] = array(
       'more',
     );
   }
+
   if (in_array($view->id(), ['solr_search_word'])) {
     $variables['#attached']['library'][] = 'cool/facets';
   }

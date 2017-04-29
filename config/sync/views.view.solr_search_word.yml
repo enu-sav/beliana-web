@@ -281,6 +281,7 @@ display:
       defaults:
         cache: false
         fields: false
+        title: false
       fields:
         title_2:
           id: title_2
@@ -387,13 +388,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
+          element_class: obsah
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -417,6 +418,7 @@ display:
             link_to_item: false
             multi_separator: ', '
           plugin_id: search_api_field
+      title: 'Abecedný zoznam'
     cache_metadata:
       max-age: -1
       contexts:
@@ -442,7 +444,7 @@ display:
         fields: false
         filters: false
         filter_groups: false
-        header: false
+        header: true
       fields:
         title_2:
           id: title_2
@@ -548,14 +550,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: obsah
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -625,17 +627,6 @@ display:
         operator: AND
         groups:
           1: AND
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: "<h1>Výsledky vyhľadávania</h1>\nZobrazené heslá @start - <span id=\"count-words\">@end</span> z celkového počtu @total hesiel."
-          plugin_id: result
     cache_metadata:
       max-age: -1
       contexts:

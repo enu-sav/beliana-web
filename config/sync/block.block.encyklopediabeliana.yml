@@ -12,7 +12,7 @@ dependencies:
 id: encyklopediabeliana
 theme: cool
 region: content
-weight: -5
+weight: -4
 provider: null
 plugin: 'block_content:320eb99a-81b6-4625-8e54-a7330048e241'
 settings:
