@@ -84,6 +84,18 @@ function cool_preprocess_block(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Hide active item from local tasks displayed on user pages.
+ */
+function cool_preprocess_menu_local_tasks(&$vars) {
+  $current = \Drupal::routeMatch()->getRouteName();
+  if (strpos($current, 'user.') !== FALSE && isset($vars['primary'][$current])) {
+    unset($vars['primary'][$current]);
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Add theme suggestion for footer blocks.
