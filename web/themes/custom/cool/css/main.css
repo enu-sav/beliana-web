@@ -1142,6 +1142,22 @@ td.long {
   margin: 0 0 1em;
 }
 
+.table-container-outer {
+  position: relative;
+}
+
+.table-container-fade {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
+  background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
+  background-image: -ms-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
+  background-image: -o-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
+}
+
 #block-page-title {
   margin-top: 32px;
 }
@@ -1194,22 +1210,6 @@ td.long {
 @media screen and (max-width: 768px) {
   table {
     font-size: 14px;
-  }
-
-  .table-container-outer {
-    position: relative;
-  }
-
-  .table-container-fade {
-    position: absolute;
-    right: 0;
-    width: 20px;
-    height: 100%;
-    background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
-    background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
-    background-image: -ms-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
-    background-image: -o-linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff);
   }
 }
 

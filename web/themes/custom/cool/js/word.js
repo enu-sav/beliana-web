@@ -12,4 +12,12 @@
         }
     };
 
+    Drupal.behaviors.tableFade = {
+        attach: function () {
+            if ($('.table-500').width() > $('.table-container-outer').width()) {
+                $('.table-container-outer div:first-child').addClass('table-container-fade');
+            }
+        }
+    };
+
 })(jQuery);

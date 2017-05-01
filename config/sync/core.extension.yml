@@ -3,6 +3,7 @@ module:
   basic_auth: 0
   beliana_search: 0
   beliana_sync: 0
+  beliana_text_filter: 0
   block: 0
   block_content: 0
   breakpoint: 0
