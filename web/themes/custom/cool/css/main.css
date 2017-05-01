@@ -262,12 +262,8 @@ ul.podkategoria li a {
   padding: 0;
 }
 
-.dnes b {
-  color: #266ead;
-}
-
 .dnes a {
-  text-decoration: none;
+  color: #266ead;
 }
 
 .najhladanejsie-hesla {

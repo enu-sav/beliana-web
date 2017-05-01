@@ -1,0 +1,39 @@
+<?php
+/**
+ * @file
+ * Update, and uninstall functions for the Beliana Daily module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function beliana_daily_schema() {
+  $schema['beliana_daily'] = array(
+    'description' => 'Beliana daily data storage.',
+    'fields' => array(
+      'nid' => array(
+        'description' => 'Node IDs',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'date' => array(
+        'type' => 'varchar',
+        'length' => 4,
+        'description' => 'Day and month slug in MMDD format.',
+        'not null' => TRUE,
+      ),
+      'weight' => array(
+        'type' => 'int',
+        // Big int unsigned: 8 B (18446744073709551615).
+        'size' => 'big',
+        'description' => 'Weight of node and day.',
+        'default' => 0,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('nid', 'date'),
+  );
+
+  return $schema;
+}

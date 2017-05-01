@@ -1,6 +1,7 @@
 module:
   automated_cron: 0
   basic_auth: 0
+  beliana_daily: 0
   beliana_search: 0
   beliana_sync: 0
   block: 0
