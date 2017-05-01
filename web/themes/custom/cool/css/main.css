@@ -297,6 +297,12 @@ ul.podkategoria li a {
   background: url(../img/right_arrow.png) no-repeat top 6px right;
 }
 
+.dnes.half-box,
+.dnes.half-box > div,
+.najhladanejsie-hesla.half-box {
+  margin-top: 0;
+}
+
 .knizna-seria {
   margin-top: 32px;
   border-bottom: 0 !important;
