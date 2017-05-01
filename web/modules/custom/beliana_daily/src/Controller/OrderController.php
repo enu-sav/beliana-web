@@ -63,4 +63,26 @@ class OrderController extends ControllerBase {
     return $output;
   }
 
+  /**
+   * Save dates for beliana daily functionality.
+   *
+   * @param array|null $dates
+   *   Array of dates
+   * @param int $nid
+   *   Node ID.
+   */
+  public static function saveBelianaDailyDates($nid, array $dates = NULL) {
+    $db = \Drupal::database();
+    // If new data contains any dates, insert them.
+    if (!is_null($dates['dates'])) {
+      foreach ($dates['dates'] as $date) {
+        $monthday = date('md', strtotime($date));
+        $db->insert('beliana_daily')
+          ->fields(['nid', 'date'])
+          ->values([$nid, $monthday])
+          ->execute();
+      }
+    }
+  }
+
 }
