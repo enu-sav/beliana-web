@@ -26,4 +26,14 @@
       $('#count-words').text($('.view-word-search-page .views-row').size());
     }
   }
+
+  Drupal.behaviors.alphabetHeight = {
+    attach: function () {
+      $(window).on('load resize', function () {
+        var height = $('#block-heslo ul').height();
+        $('#block-heslo ul li ul').css('top', height);
+      });
+    }
+  };
+
 })(jQuery);

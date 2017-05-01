@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: fUDNcSYKNw6cTMPsX3G9VhsUGov5yUe6_TBHbcnZHyo
 id: content
-label: Obsah
+label: Content
 module: node
 description: 'Vyhľadať a spravovať obsah'
 tag: default
@@ -32,10 +32,10 @@ display:
           submit_button: Filter
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Zoradiť podľa'
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: Vzostupne
-          sort_desc_label: Zostupne
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         type: full
         options:
@@ -278,8 +278,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Published
-            format_custom_false: Unpublished
+            format_custom_true: Zverejnené
+            format_custom_false: Nezverejnené
           plugin_id: field
           entity_type: node
           entity_field: status
@@ -534,7 +534,7 @@ display:
           entity_type: node
           entity_field: langcode
       sorts: {  }
-      title: Obsah
+      title: Content
       empty:
         area_text_custom:
           id: area_text_custom
@@ -578,20 +578,20 @@ display:
       path: admin/content/node
       menu:
         type: 'default tab'
-        title: Obsah
+        title: Content
         description: ''
         menu_name: admin
         weight: -10
         context: ''
       tab_options:
         type: normal
-        title: Obsah
+        title: Content
         description: 'Find and manage content'
         menu_name: admin
         weight: -10
       display_extenders: {  }
     display_plugin: page
-    display_title: Stránka
+    display_title: Page
     id: page_1
     position: 1
     cache_metadata:

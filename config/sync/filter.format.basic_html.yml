@@ -3,6 +3,7 @@ langcode: sk
 status: true
 dependencies:
   module:
+    - beliana_text_filter
     - editor
     - mathjax
 _core:
@@ -49,4 +50,10 @@ filters:
     provider: mathjax
     status: true
     weight: 50
+    settings: {  }
+  filter_beliana_table_wrapper:
+    id: filter_beliana_table_wrapper
+    provider: beliana_text_filter
+    status: true
+    weight: 0
     settings: {  }
