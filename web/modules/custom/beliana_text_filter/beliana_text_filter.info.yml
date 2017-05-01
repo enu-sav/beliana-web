@@ -1,5 +1,5 @@
 name: Beliana text filter
 type: module
-description: Custom filter to style tables
+description: Beliana custom text filters
 core: 8.x
 package: Beliana

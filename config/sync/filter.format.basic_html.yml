@@ -51,8 +51,8 @@ filters:
     status: true
     weight: 50
     settings: {  }
-  filter_beliana_text_filter:
-    id: filter_beliana_text_filter
+  filter_beliana_table_wrapper:
+    id: filter_beliana_table_wrapper
     provider: beliana_text_filter
     status: true
     weight: 0
