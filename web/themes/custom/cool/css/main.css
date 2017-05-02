@@ -723,19 +723,28 @@ p.hesla-count {
 }
 
 form.user-login-form label,
-form.user-pass label {
+form.user-pass label,
+#submit-error-form label {
   display: block;
   margin-top: 20px;
 }
 
 form.user-login-form input,
-form.user-pass input {
+form.user-pass input,
+#submit-error-form input {
   display: block;
   margin-top: 5px;
 }
 
+#submit-error-form .form-type-checkbox input,
+#submit-error-form .form-type-checkbox label {
+  display: inline-block;
+  margin-top: 0;
+}
+
 form.user-login-form div,
-form.user-pass div {
+form.user-pass div,
+#submit-error-form div {
   display: block;
   margin-top: 5px;
 }

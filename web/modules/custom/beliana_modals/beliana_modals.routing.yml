@@ -1,0 +1,19 @@
+beliana_modals.open_modal_form:
+  path: '/beliana/{js}/kontaktujte-nas/{node}'
+  defaults:
+    _title: 'Formulár na nahlásenie chyby.'
+    _controller: '\Drupal\beliana_modals\Controller\ModalController::openModalForm'
+  requirements:
+    _permission: 'access content'
+    js: 'nojs|ajax'
+  options:
+    _admin_route: FALSE
+beliana_modals.error_thanks:
+  path: '/beliana/vdaka'
+  defaults:
+    _title: 'Formulár na nahlásenie chyby.'
+    _controller: '\Drupal\beliana_modals\Controller\ModalController::thankyouPage'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: FALSE
