@@ -1,0 +1,9 @@
+services:
+  post_node_update_subscriber:
+    class: '\Drupal\beliana_daily\EventSubscriber\PostNodeUpdateSubscriber'
+    tags:
+      - { name: 'event_subscriber' }
+  post_node_save_subscriber:
+    class: '\Drupal\beliana_daily\EventSubscriber\PostNodeSaveSubscriber'
+    tags:
+      - { name: 'event_subscriber' }

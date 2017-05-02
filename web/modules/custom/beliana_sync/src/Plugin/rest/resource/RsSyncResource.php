@@ -2,6 +2,11 @@
 
 namespace Drupal\beliana_sync\Plugin\rest\resource;
 
+use Drupal\beliana_sync\Event\BelianaSyncEvents;
+use Drupal\beliana_sync\Event\PostNodeSaveEvent;
+use Drupal\beliana_sync\Event\PostNodeUpdateEvent;
+use Drupal\beliana_sync\Event\PreNodeSaveEvent;
+use Drupal\beliana_sync\Event\PreNodeUpdateEvent;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\file\FileInterface;
 use Drupal\media_entity\Entity\Media;
@@ -104,7 +109,11 @@ class RsSyncResource extends ResourceBase {
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
     $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
+    \Drupal::service('event_dispatcher')
+      ->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $$data));
     $node->save();
+    \Drupal::service('event_dispatcher')
+      ->dispatch(BelianaSyncEvents::POST_NODE_SAVE, new PostNodeSaveEvent($node, $$data));
     return new ResourceResponse($node->id(), 201);
   }
 
@@ -271,7 +280,11 @@ class RsSyncResource extends ResourceBase {
       $node->set('field_images', []);
     }
     $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
+    \Drupal::service('event_dispatcher')
+      ->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $$data));
     $node->save();
+    \Drupal::service('event_dispatcher')
+      ->dispatch(BelianaSyncEvents::POST_NODE_UPDATE, new PostNodeUpdateEvent($node, $$data));
     return new ResourceResponse();
   }
 

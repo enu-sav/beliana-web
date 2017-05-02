@@ -1,0 +1,18 @@
+beliana_daily.order_summary:
+  path: '/admin/config/services/beliana/daily-order-summary'
+  defaults:
+    _controller: '\Drupal\beliana_daily\Controller\OrderController::summary'
+    _title: 'Order summary'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+beliana_daily.edit_order:
+  path: '/admin/config/services/beliana/daily-order/{date}'
+  defaults:
+    _form: '\Drupal\beliana_daily\Form\EditOrderForm'
+    _title: 'Edit order'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

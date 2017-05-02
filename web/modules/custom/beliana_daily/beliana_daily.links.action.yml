@@ -1,0 +1,5 @@
+beliana_daily.order_summary:
+  route_name: beliana_daily.order_summary
+  title: 'Zmeniť poradie hesiel'
+  appears_on:
+    - system.admin_content

@@ -1,0 +1,7 @@
+uuid: aed72c5a-ff2d-48ca-a920-27e4ccdfa7ce
+langcode: sk
+status: true
+dependencies: {  }
+formId: submit_error_form
+captchaType: default
+label: submit_error_form

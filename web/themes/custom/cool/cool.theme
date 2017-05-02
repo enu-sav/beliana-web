@@ -128,6 +128,14 @@ function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
     }
   }
 
+  if (isset($variables['element']) && isset($variables['element']['#type']) && $variables['theme_hook_original'] == 'form_element') {
+    $original_theme_hook = $variables['theme_hook_original'];
+    $new_suggestion = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#name']);
+    if (!in_array($new_suggestion, $suggestions)) {
+      $suggestions[] = $new_suggestion;
+    }
+  }
+
   return $suggestions;
 
 }

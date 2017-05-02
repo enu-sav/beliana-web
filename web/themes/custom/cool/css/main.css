@@ -262,12 +262,8 @@ ul.podkategoria li a {
   padding: 0;
 }
 
-.dnes b {
-  color: #266ead;
-}
-
 .dnes a {
-  text-decoration: none;
+  color: #266ead;
 }
 
 .najhladanejsie-hesla {
@@ -299,6 +295,12 @@ ul.podkategoria li a {
   text-decoration: underline;
   padding-right: 13px;
   background: url(../img/right_arrow.png) no-repeat top 6px right;
+}
+
+.dnes.half-box,
+.dnes.half-box > div,
+.najhladanejsie-hesla.half-box {
+  margin-top: 0;
 }
 
 .knizna-seria {
@@ -721,19 +723,28 @@ p.hesla-count {
 }
 
 form.user-login-form label,
-form.user-pass label {
+form.user-pass label,
+#submit-error-form label {
   display: block;
   margin-top: 20px;
 }
 
 form.user-login-form input,
-form.user-pass input {
+form.user-pass input,
+#submit-error-form input {
   display: block;
   margin-top: 5px;
 }
 
+#submit-error-form .form-type-checkbox input,
+#submit-error-form .form-type-checkbox label {
+  display: inline-block;
+  margin-top: 0;
+}
+
 form.user-login-form div,
-form.user-pass div {
+form.user-pass div,
+#submit-error-form div {
   display: block;
   margin-top: 5px;
 }
