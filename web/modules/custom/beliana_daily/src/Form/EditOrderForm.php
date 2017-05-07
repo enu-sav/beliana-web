@@ -2,6 +2,7 @@
 
 namespace Drupal\beliana_daily\Form;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
@@ -103,7 +104,9 @@ class EditOrderForm extends FormBase {
           ->keys(['nid' => $nid, 'date' => $this->date])
           ->fields(['weight' => $item['weight']])
           ->execute();
+        $tags[] = 'node:' . $nid;
       }
+      Cache::invalidateTags($tags);
     }
   }
 
