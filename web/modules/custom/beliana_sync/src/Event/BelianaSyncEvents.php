@@ -71,5 +71,4 @@ final class BelianaSyncEvents {
    */
   const POST_NODE_UPDATE = 'beliana_sync.post_node_update';
 
-
 }

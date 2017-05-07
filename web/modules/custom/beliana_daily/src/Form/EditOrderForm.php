@@ -21,6 +21,8 @@ class EditOrderForm extends FormBase {
   private $date;
 
   /**
+   * Connection to DB.
+   *
    * @var \Drupal\Core\Database\Connection
    */
   private $db;
@@ -61,7 +63,7 @@ class EditOrderForm extends FormBase {
     /** @var Node[] $nodes */
     $nodes = Node::loadMultiple($nids);
 
-    $delta = ceil(sizeof($nids)/2);
+    $delta = ceil(count($nids) / 2);
 
     foreach ($nodes as $node) {
       $form['beliana_daily_table'][$node->id()]['#attributes']['class'][] = 'draggable';
@@ -96,7 +98,7 @@ class EditOrderForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     if (!empty($form_state->getValue('beliana_daily_table'))) {
-      foreach ($form_state->getValue('beliana_daily_table') as $nid=>$item) {
+      foreach ($form_state->getValue('beliana_daily_table') as $nid => $item) {
         $this->db->merge('beliana_daily')
           ->keys(['nid' => $nid, 'date' => $this->date])
           ->fields(['weight' => $item['weight']])

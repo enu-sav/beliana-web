@@ -5,6 +5,8 @@ namespace Drupal\beliana_search\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
+ * Custom search block, so we override AJAX-driven views.
+ *
  * @Block(
  *  id = "beliana_searchbox",
  *  admin_label = @Translation("Search box"),

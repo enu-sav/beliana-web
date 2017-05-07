@@ -9,7 +9,6 @@ use Drupal\beliana_sync\Event\PreNodeSaveEvent;
 use Drupal\beliana_sync\Event\PreNodeUpdateEvent;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Session\AccountProxyInterface;
-use Drupal\file\FileInterface;
 use Drupal\media_entity\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\rest\Plugin\ResourceBase;
@@ -121,13 +120,13 @@ class RsSyncResource extends ResourceBase {
   /**
    * Download attached files and create media entities from them.
    *
-   * @param $images
+   * @param array $images
    *   Array with image data.
    *
    * @return array
    *   Array with media IDs.
    */
-  public function downloadMedia($images) {
+  public function downloadMedia(array $images) {
     $taxonomy_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $local_fids = [];
     $date = date('Y-m-d');
@@ -139,7 +138,7 @@ class RsSyncResource extends ResourceBase {
       /** @var FileInterface $file */
       $file_dir = $date . '/' . $dir;
       $create_dir = \Drupal::service('file_system')
-          ->realpath('public://') . '/' . $file_dir;
+        ->realpath('public://') . '/' . $file_dir;
       file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
       $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
       if ($file !== FALSE) {
@@ -147,7 +146,7 @@ class RsSyncResource extends ResourceBase {
         if (empty($license)) {
           $license = $taxonomy_terms->create([
             'name' => $image['license'],
-            'vid' => 'licenses'
+            'vid' => 'licenses',
           ]);
           $license->save();
         }
@@ -210,7 +209,7 @@ class RsSyncResource extends ResourceBase {
           $dir = substr($file_name, 0, 3);
           $file_dir = $date . '/' . $dir;
           $create_dir = \Drupal::service('file_system')
-              ->realpath('public://') . '/' . $file_dir;
+            ->realpath('public://') . '/' . $file_dir;
           file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
           $uri = file_unmanaged_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
           if ($uri !== FALSE) {

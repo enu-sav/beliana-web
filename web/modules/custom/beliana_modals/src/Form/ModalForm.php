@@ -61,7 +61,7 @@ class ModalForm extends FormBase {
       '#required' => TRUE,
     ];
     $form['actions'] = [
-      '#type' => 'actions'
+      '#type' => 'actions',
     ];
     $form['actions']['submit'] = [
       '#type' => 'submit',
@@ -100,6 +100,12 @@ class ModalForm extends FormBase {
     return $response;
   }
 
+  /**
+   * Send email with content specified from form.
+   *
+   * @param FormStateInterface $form_state
+   *   Values submitted from form.
+   */
   private function sendEmail(FormStateInterface $form_state) {
     $key = 'report_error';
     $mailManager = \Drupal::service('plugin.manager.mail');

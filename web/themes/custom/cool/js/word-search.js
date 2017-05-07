@@ -1,3 +1,7 @@
+/**
+ * @file
+ */
+
 (function ($) {
 
   Drupal.behaviors.wordFacetsBlockTheme = {
@@ -25,7 +29,7 @@
     attach: function () {
       $('#count-words').text($('.view-word-search-page .views-row').size());
     }
-  }
+  };
 
   Drupal.behaviors.alphabetHeight = {
     attach: function () {

@@ -8,6 +8,7 @@ use Drupal\node\Entity\Node;
 
 /**
  * Class OrderController.
+ *
  * @package Drupal\beliana_daily\Controller
  */
 class OrderController extends ControllerBase {
@@ -66,10 +67,10 @@ class OrderController extends ControllerBase {
   /**
    * Save dates for beliana daily functionality.
    *
-   * @param array|null $dates
-   *   Array of dates
    * @param int $nid
    *   Node ID.
+   * @param array|null $dates
+   *   Array of dates.
    */
   public static function saveBelianaDailyDates($nid, array $dates = NULL) {
     $db = \Drupal::database();

@@ -283,7 +283,7 @@ ul.podkategoria li a {
 }
 
 .najhladanejsie-hesla li a,
-.najhladanejsie-hesla li a:visited{
+.najhladanejsie-hesla li a:visited {
   color: #282727;
 }
 
@@ -1235,10 +1235,6 @@ td.long {
   }
 }
 
-
-
-
-
 .word-facet-wrap {
   margin-top: 14px;
   margin-bottom: 40px;
@@ -1321,20 +1317,20 @@ td.long {
 }
 
 
-#block-heslo .facet-item a:hover{
-  background-color:#e6e6e6;
-  text-decoration:underline;
+#block-heslo .facet-item a:hover {
+  background-color: #e6e6e6;
+  text-decoration: underline;
 }
 
 #block-heslo .facet-item a.is-active,
 #block-heslo .facet-item--active-trail > a,
 #block-heslo .facet-item--active-trail > a:hover,
 #block-heslo .facet-item a.is-active:hover {
-  color:#fff;
-  background:#266ead;
-  font-weight:700;
-  border:1px solid #1d629f;
-  text-decoration:none;
+  color: #fff;
+  background: #266ead;
+  font-weight: 700;
+  border: 1px solid #1d629f;
+  text-decoration: none;
 }
 
 
@@ -1348,37 +1344,37 @@ td.long {
 }
 
 .view-word-search-page ul.pager li a:hover {
-  background-color:#e6e6e6;
-  text-decoration:underline;
+  background-color: #e6e6e6;
+  text-decoration: underline;
 }
 
 @media screen and (max-width:1013px) {
   #block-heslo ul li ul li {
-    width:16%;
+    width: 16%;
   }
 }
 @media screen and (max-width:740px) {
   #block-heslo ul li ul li {
-    width:18%;
+    width: 18%;
   }
 }
 @media screen and (max-width:640px) {
   #block-heslo ul li ul li {
-    width:23%;
+    width: 23%;
   }
 }
 @media screen and (max-width:520px) {
   #block-heslo ul li ul li {
-    width:30%;
+    width: 30%;
   }
 }
 @media screen and (max-width:380px) {
   #block-heslo ul li ul li {
-    width:45%;
+    width: 45%;
   }
 }
 @media screen and (max-width:240px) {
   #block-heslo ul li ul li {
-    width:99%;
+    width: 99%;
   }
 }
