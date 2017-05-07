@@ -33,7 +33,7 @@ $config['search_api.server.solr']['name'] = 'Solr - Environment: stage';
 $config['locale.settings']['translation']['path'] = 'sites/stage/files/translations';
 
 // Beliana settings.
-$config['beliana.config']['remote_url'] = 'http://dev.beliana.sav.sk/';
+$config['beliana_sync.config']['remote_url'] = 'http://dev.beliana.sav.sk/';
 
 // Last: this servers specific settings files.
 if (file_exists(__DIR__ . '/settings.local.php')) {

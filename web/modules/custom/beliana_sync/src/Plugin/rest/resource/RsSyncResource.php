@@ -135,7 +135,7 @@ class RsSyncResource extends ResourceBase {
       $exploded_path = explode('/', $image['uri']);
       $file_name = array_pop($exploded_path);
       $dir = substr($file_name, 0, 3);
-      /** @var FileInterface $file */
+      /** @var \Drupal\file\FileInterface $file */
       $file_dir = $date . '/' . $dir;
       $create_dir = \Drupal::service('file_system')
         ->realpath('public://') . '/' . $file_dir;
@@ -191,7 +191,7 @@ class RsSyncResource extends ResourceBase {
     $images = $dom->getElementsByTagName('img');
     $date = date('Y-m-d');
     $remote_site_url = \Drupal::configFactory()
-      ->get('beliana.config')
+      ->get('beliana_sync.config')
       ->get('remote_url');
     if (empty($remote_site_url)) {
       \Drupal::logger('beliana_sync')->critical('Extrakcia obrázkov zlyhala, pretože cesta k RS nie je nastavená');

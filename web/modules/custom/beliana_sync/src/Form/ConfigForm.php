@@ -17,7 +17,7 @@ class ConfigForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'beliana.config',
+      'beliana_sync.config',
     ];
   }
 
@@ -32,7 +32,7 @@ class ConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('beliana.config');
+    $config = $this->config('beliana_sync.config');
     $form['remote_url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('URL redakčného systému'),
@@ -56,7 +56,7 @@ class ConfigForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
 
-    $this->config('beliana.config')
+    $this->config('beliana_sync.config')
       ->set('remote_url', $form_state->getValue('remote_url'))
       ->save();
   }
