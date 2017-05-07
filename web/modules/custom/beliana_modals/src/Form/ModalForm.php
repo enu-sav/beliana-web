@@ -26,12 +26,17 @@ class ModalForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $node = NULL) {
-    $form['#prefix'] = '<div id="submit-error-form">';
-    $form['#suffix'] = '</div>';
-    // The status messages that will contain any form errors.
-    $form['status_messages'] = [
-      '#type' => 'status_messages',
-      '#weight' => -10,
+//    $form['#prefix'] = '<div id="submit-error-form">';
+//    $form['#suffix'] = '</div>';
+//    // The status messages that will contain any form errors.
+//    $form['status_messages'] = [
+//      '#type' => 'status_messages',
+//      '#weight' => -10,
+//    ];
+    $form['header'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h2',
+      '#value' => 'Formulár na nahlásenie chyby v hesle',
     ];
     $form['name'] = [
       '#type' => 'textfield',
@@ -66,15 +71,7 @@ class ModalForm extends FormBase {
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Odoslať'),
-      '#attributes' => [
-        'class' => ['use-ajax'],
-      ],
-      '#ajax' => [
-        'callback' => [$this, 'submitModalFormAjax'],
-        'event' => 'click',
-      ],
     ];
-    $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
     return $form;
   }
 

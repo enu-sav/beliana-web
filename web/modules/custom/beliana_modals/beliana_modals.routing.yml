@@ -17,3 +17,12 @@ beliana_modals.error_thanks:
     _permission: 'access content'
   options:
     _admin_route: FALSE
+beliana_modals.open_form:
+  path: '/beliana/kontaktujte-nas/{node}'
+  defaults:
+    _title: 'Formulár na nahlásenie chyby.'
+    _controller: '\Drupal\beliana_modals\Controller\ModalController::openForm'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: FALSE

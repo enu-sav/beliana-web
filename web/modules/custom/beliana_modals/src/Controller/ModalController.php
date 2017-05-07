@@ -61,8 +61,22 @@ class ModalController extends ControllerBase {
       return $response;
     }
     else {
-      return $this->formBuilder->getForm('Drupal\beliana_modals\Form\ModalForm', $node);
+      return $this->openForm($node);
     }
+  }
+
+  /**
+   * Callback for opening non-modal form.
+   *
+   * @param NodeInterface $node
+   *   Object of node from which modal form is displayed.
+   *
+   * @return AjaxResponse|array
+   *   Return either AjaxResponse object if JS is enabled or
+   *   render array of form for browsers with disabled JS.
+   */
+  public function openForm(NodeInterface $node) {
+    return $this->formBuilder->getForm('Drupal\beliana_modals\Form\ModalForm', $node);
   }
 
   /**
@@ -72,11 +86,18 @@ class ModalController extends ControllerBase {
    *   Content of thankyou page.
    */
   public function thankyouPage() {
-    return [
+    $page = [];
+    $page['header'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h2',
+      '#value' => 'Ďakujeme za nahlásenie chyby v hesle',
+    ];
+    $page['content'] = [
       '#markup' => 'Ďakujeme za nahlásenie chyby, jej odstránením sa budeme 
           čoskoro zaoberať a o jej odstránení vás budeme informovať na 
           zadanú emailovú adresu.',
     ];
+    return $page;
   }
 
 }
