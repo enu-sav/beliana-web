@@ -111,10 +111,10 @@ class RsSyncResource extends ResourceBase {
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
     $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
     \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $$data));
+      ->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $data));
     $node->save();
     \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::POST_NODE_SAVE, new PostNodeSaveEvent($node, $$data));
+      ->dispatch(BelianaSyncEvents::POST_NODE_SAVE, new PostNodeSaveEvent($node, $data));
     return new ResourceResponse($node->id(), 201);
   }
 
@@ -289,10 +289,10 @@ class RsSyncResource extends ResourceBase {
     }
     $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
     \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $$data));
+      ->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $data));
     $node->save();
     \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::POST_NODE_UPDATE, new PostNodeUpdateEvent($node, $$data));
+      ->dispatch(BelianaSyncEvents::POST_NODE_UPDATE, new PostNodeUpdateEvent($node, $data));
     return new ResourceResponse();
   }
 
