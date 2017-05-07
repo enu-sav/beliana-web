@@ -7,6 +7,7 @@ use Drupal\beliana_sync\Event\PostNodeSaveEvent;
 use Drupal\beliana_sync\Event\PostNodeUpdateEvent;
 use Drupal\beliana_sync\Event\PreNodeSaveEvent;
 use Drupal\beliana_sync\Event\PreNodeUpdateEvent;
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\file\FileInterface;
 use Drupal\media_entity\Entity\Media;
@@ -140,7 +141,7 @@ class RsSyncResource extends ResourceBase {
       $create_dir = \Drupal::service('file_system')
           ->realpath('public://') . '/' . $file_dir;
       file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-      $file = file_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
+      $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
       if ($file !== FALSE) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
         if (empty($license)) {
@@ -193,21 +194,28 @@ class RsSyncResource extends ResourceBase {
     $remote_site_url = \Drupal::configFactory()
       ->get('beliana.config')
       ->get('remote_url');
+    if (empty($remote_site_url)) {
+      \Drupal::logger('beliana_sync')->critical('Extrakcia obrázkov zlyhala, pretože cesta k RS nie je nastavená');
+      return $body;
+    }
     if (!empty($images)) {
       for ($i = $images->length - 1; $i >= 0; $i--) {
+        /** @var \DOMElement $item */
         $item = $images->item($i);
         $remote_path = $item->getAttribute('src');
-        $file_data = file_get_contents($remote_site_url . $remote_path);
-        $exploded_path = explode('/', $remote_path);
-        $file_name = array_pop($exploded_path);
-        $dir = substr($file_name, 0, 3);
-        $file_dir = $date . '/' . $dir;
-        $create_dir = \Drupal::service('file_system')
-            ->realpath('public://') . '/' . $file_dir;
-        file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-        $uri = file_unmanaged_save_data($file_data, 'public://'. $date . '/' . $dir . '/' . $file_name);
-        if ($uri !== FALSE) {
-          $item->setAttribute('src', $uri);
+        if (!UrlHelper::isExternal($remote_path)) {
+          $file_data = file_get_contents($remote_site_url . $remote_path);
+          $exploded_path = explode('/', $remote_path);
+          $file_name = array_pop($exploded_path);
+          $dir = substr($file_name, 0, 3);
+          $file_dir = $date . '/' . $dir;
+          $create_dir = \Drupal::service('file_system')
+              ->realpath('public://') . '/' . $file_dir;
+          file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
+          $uri = file_unmanaged_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
+          if ($uri !== FALSE) {
+            $item->setAttribute('src', file_url_transform_relative(file_create_url($uri)));
+          }
         }
       }
     }
