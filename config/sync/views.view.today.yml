@@ -228,6 +228,18 @@ display:
           table: beliana_daily
           field: weight
           plugin_id: numeric
+        field_sort_value:
+          id: field_sort_value
+          table: node__field_sort
+          field: field_sort_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
       title: Dnes
       header: {  }
       footer: {  }
