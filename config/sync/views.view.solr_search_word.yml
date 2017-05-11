@@ -361,8 +361,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{{ body }}\n<div id=\"gradient\"></div>"
             make_link: false
             path: ''
             absolute: false
@@ -387,8 +387,8 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: obsah
+          element_type: div
+          element_class: 'obsah truncate-wrapper'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -524,8 +524,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{{ body }}\n<div id=\"gradient\"></div>"
             make_link: false
             path: ''
             absolute: false
@@ -551,7 +551,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: obsah
+          element_class: 'obsah truncate-wrapper'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false

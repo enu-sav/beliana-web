@@ -39,5 +39,25 @@
       });
     }
   };
+  
+  Drupal.behaviors.selectricSearch = {
+    attach: function () {
+      $('.truncate-button').click(function () {
+        $(this).toggleClass('active');
+      });
+
+      $('.word-full').click(function () {
+        $('.view-word-search-page .obsah').removeClass('truncate-wrapper');
+        $('.view-word-search-page .obsah #gradient').css('display', 'none');
+        $('.truncate-button .label').html("Celé heslo<b class='button'></b>");
+      });
+
+      $('.word-short').click(function () {
+        $('.view-word-search-page .obsah').addClass('truncate-wrapper');
+        $('.view-word-search-page .obsah #gradient').css('display', 'block');
+        $('.truncate-button .label').html("Začiatok hesla<b class='button'></b>");
+      });
+    }
+  }
 
 })(jQuery);
