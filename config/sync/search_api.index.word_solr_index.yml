@@ -69,7 +69,8 @@ field_settings:
     label: 'Na zoradenie'
     datasource_id: 'entity:node'
     property_path: field_sort
-    type: integer
+    type: text
+    boost: !!float 0
     dependencies:
       config:
         - field.storage.node.field_sort
@@ -187,11 +188,57 @@ processor_settings:
     weights:
       preprocess_index: -45
   add_url: {  }
-  aggregated_field: {  }
-  content_access:
+  stopwords:
+    fields:
+      - rendered_item
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
     weights:
-      preprocess_query: -30
-  entity_status: {  }
+      preprocess_index: -5
+      preprocess_query: -2
   html_filter:
     fields:
       - rendered_item
@@ -218,6 +265,48 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
+  stemmer:
+    fields:
+      - rendered_item
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  rendered_item: {  }
+  aggregated_field: {  }
+  tokenizer:
+    fields:
+      - rendered_item
+      - title
+      - body
+      - name
+      - title_1
+      - alt
+      - description
+      - field_date
+      - name_1
+      - name_2
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
   ignorecase:
     fields:
       - rendered_item
@@ -273,94 +362,6 @@ processor_settings:
     weights:
       preprocess_index: -10
       preprocess_query: -10
-  rendered_item: {  }
-  stemmer:
-    fields:
-      - rendered_item
-      - title
-      - body
-      - name
-      - title_1
-      - alt
-      - description
-      - field_date
-      - name_1
-      - name_2
-    exceptions:
-      texan: texa
-      mexican: mexic
-    weights:
-      preprocess_index: 0
-      preprocess_query: 0
-  stopwords:
-    fields:
-      - rendered_item
-      - title
-      - body
-      - name
-      - title_1
-      - alt
-      - description
-      - field_date
-      - name_1
-      - name_2
-    stopwords:
-      - a
-      - an
-      - and
-      - are
-      - as
-      - at
-      - be
-      - but
-      - by
-      - for
-      - if
-      - in
-      - into
-      - is
-      - it
-      - 'no'
-      - not
-      - of
-      - 'on'
-      - or
-      - s
-      - such
-      - t
-      - that
-      - the
-      - their
-      - then
-      - there
-      - these
-      - they
-      - this
-      - to
-      - was
-      - will
-      - with
-    weights:
-      preprocess_index: -5
-      preprocess_query: -2
-  tokenizer:
-    fields:
-      - rendered_item
-      - title
-      - body
-      - name
-      - title_1
-      - alt
-      - description
-      - field_date
-      - name_1
-      - name_2
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
-    weights:
-      preprocess_index: -6
-      preprocess_query: -6
   transliteration:
     fields:
       - rendered_item
