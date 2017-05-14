@@ -247,8 +247,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: '{{ title }},'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false

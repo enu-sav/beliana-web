@@ -1328,6 +1328,14 @@ td.long {
   width: 120px;
 }
 
+.najhladanejsie-hesla ul li .views-field-title span a:after {
+  content: ",";
+}
+
+.najhladanejsie-hesla ul li:last-child .views-field-title span a:after {
+  content: normal;
+}
+
 @media screen and (max-width: 768px) {
   table {
     font-size: 14px;
