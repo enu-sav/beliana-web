@@ -40,23 +40,44 @@
     }
   };
   
-  Drupal.behaviors.selectricSearch = {
+  Drupal.behaviors.clickChangeFormatButtonWrapper = {
     attach: function () {
-      $('.truncate-button').click(function () {
+      $('.truncate-button').once().on('click', function () {
         $(this).toggleClass('active');
       });
+    }
+  };
 
-      $('.word-full').click(function () {
+  Drupal.behaviors.clickChangeFormatButton = {
+    attach: function () {
+      $('.word-full').on('click',function () {
         $('.view-word-search-page .obsah').removeClass('truncate-wrapper');
         $('.view-word-search-page .obsah #gradient').css('display', 'none');
         $('.truncate-button .label').html("Celé heslo<b class='button'></b>");
+        $('.truncate-button').once().toggleClass('active');
       });
 
-      $('.word-short').click(function () {
-        $('.view-word-search-page .obsah').addClass('truncate-wrapper');
-        $('.view-word-search-page .obsah #gradient').css('display', 'block');
+      $('.word-short').on('click',function () {
+        $('.view-word-search-page .obsah').each(function () {
+          if ($(this).height() > 120) {
+            $(this).addClass('truncate-wrapper');
+            $(this).children('#gradient').css('display', 'block');
+          }
+        });
         $('.truncate-button .label').html("Začiatok hesla<b class='button'></b>");
+        $('.truncate-button').once().toggleClass('active');
       });
+    }
+  };
+
+  Drupal.behaviors.onLoadTrigger = {
+    attach: function() {
+      if ($('.truncate-button .label').text() === 'Začiatok hesla') {
+        $('.word-short').click();
+      }
+      else {
+        $('.word-full').click();
+      }
     }
   }
 
