@@ -1,305 +1,311 @@
-tid,name,field_last,parent
-1,A,"",0
-2,A - Acy,ačc,1
-3,Ačc - Afr,afs,1
-4,Afs - Akc,akč,1
-5,Akč - Ale,alf,1
-6,Alf - Alt,alu,1
-7,Alu - Ana,anb,1
-8,Anb - Ann,ano,1
-9,Ano - Apl,apm,1
-10,Apm - Arc,ari,1
-11,Ari - Asi,asj,1
-12,Asj - Aug,auc,1
-13,Auc -,b,1
-14,B,"",0
-15,B - Bal,bam,14
-16,Bam - Bar,bas,14
-17,Bas - Baz,baž,14
-18,Baž - Ben,beo,14
-19,Beo - Bez,bež,14
-20,Bež - Bio,bip,14
-21,Bip - Blo,blš,14
-22,Blš - Bom,bon,14
-23,Bon - Bra,brb,14
-24,Brb - Bri,brj,14
-25,Brj - Buj,buk,14
-26,Buk -,c,14
-27,C,"",0
-28,C - Can,cao,27
-29,Cao - Cau,cav,27
-30,Cav - Cep,cer,27
-31,Cer - Cir,cis,27
-32,Cis - Coh,coc,27
-33,Coc - Cor,cos,27
-34,Cos - Cro,crp,27
-35,Crp - Cyk,cyl,27
-36,Cyl -,č,27
-37,Č,"",0
-38,Č - Čas,čaš,37
-39,Čaš - Čer,čes,37
-40,Čes - Čes,češ,37
-41,Češ - Čie,čif,37
-42,Čif - Čis,čit,37
-43,Čit -,d,37
-44,D,"",0
-45,D - Dar,das,44
-46,Das - Def,deg,44
-47,Deg - Dem,den,44
-48,Den - Det,deu,44
-49,Deu - Die,dif,44
-50,Dif - Dir,dis,44
-51,Dis - Dob,doc,44
-52,Doc - Dom,don,44
-53,Don - Dra,drd,44
-54,Drd - Dub,duc,44
-55,Duc - Dva,dvb,44
-56,Dvb -,e,44
-57,E,"",0
-58,E - Egy,eh,57
-59,Eh - Ekz,el,57
-60,El - Ele,elf,57
-61,Elf - End,ene,57
-62,Ene - Epi,epl,57
-63,Epl - Esc,ese,57
-64,Ese - Eug,euh,57
-65,Euh - Evi,evl,57
-66,Evl -,f,57
-67,F,"",0
-68,F - Far,fas,67
-69,Fas - Fek,fel,67
-70,Fel - Fet,feu,67
-71,Feu - Fil,fim,67
-72,Fim - Fla,fle,67
-73,Fle - Fon,foo,67
-74,Foo - Fou,fov,67
-75,Fov - Fre,fri,67
-76,Fri - Ful,fum,67
-77,Fum -,g,67
-78,G,"",0
-79,G - Gam,gan,78
-80,Gan - Gaz,gaž,78
-81,Gaž - Geo,gep,78
-82,Gep - Gez,gfa,78
-83,Gfa - Glo,glp,78
-84,Glp - Gom,gon,78
-85,Gon - Gra,grb,78
-86,Grb - Gre,grg,78
-87,Grg - Gub,guc,78
-88,Guc -,h,78
-89,H,"",0
-90,H - Hal,ham,89
-91,Ham - Har,has,89
-92,Has - Hei,hej,89
-93,Hej - Her,hes,89
-94,Hes - Him,hin,89
-95,Hin - Hmo,hmx,89
-96,Hmx - Hol,hom,89
-97,Hom - Hor,hos,89
-98,Hos - Hre,hrh,89
-99,Hrh - Hul,hum,89
-100,Hum - Hyd,hye,89
-101,Hye -,i,89
-102,I,"",0
-103,I - Ign,igo,102
-104,Igo - Imo,imp,102
-105,Imp - Ind,ine,102
-106,Ine - Ino,inp,102
-107,Inp - Int,inu,102
-108,Inu - Ire,irf,102
-109,Irf - Iur,ius,102
-110,Ius -,j,102
-111,J,"",0
-112,J - Jal,jam,111
-113,Jam - Jan,jao,111
-114,Jao - Jav,jaw,111
-115,Jaw - Jem,jen,111
-116,Jen - Jod,joe,111
-117,Joe - Jud,jue,111
-118,Jue -,k,111
-119,K,"",0
-120,K - Kan,kao,119
-121,Kao - Kat,kau,119
-122,Kau - Kin,kio,119
-123,Kio - Kni,knj,119
-124,Knj - Kol,kom,119
-125,Kom - Kon,koo,119
-126,Koo - Kor,kos,119
-127,Kos - Kov,kow,119
-128,Kow - Kre,krc,119
-129,Krc - Kry,krz,119
-130,Krz - Kur,kus,119
-131,Kus -,l,119
-132,L,"",0
-133,L - Lak,lal,132
-134,Lal - Lap,laq,132
-135,Laq - Laz,laž,132
-136,Laž - Lem,len,132
-137,Len - Let,leu,132
-138,Leu - Lib,lic,132
-139,Lic - Lin,lio,132
-140,Lio - Lit,liu,132
-141,Liu - Loc,loi,132
-142,Loi - Loy,loz,132
-143,Loz - Luk,lul,132
-144,Lul -,m,132
-145,M,"",0
-146,M - Maj,mak,145
-147,Mak - Man,mao,145
-148,Mao - Mar,mas,145
-149,Mas - May,maz,145
-150,Maz - Med,mee,145
-151,Mee - Mer,mes,145
-152,Mes - Mie,mif,145
-153,Mif - Min,mio,145
-154,Mio - Mog,moh,145
-155,Moh - Mor,mos,145
-156,Mos - Mul,mum,145
-157,Mum -,n,145
-158,N,"",0
-159,N - Nah,nac,158
-160,Nac - Nap,nar,158
-161,Nar - Nas,naš,158
-162,Naš - Neč,ned,158
-163,Ned - Nem,nen,158
-164,Nen - Nes,neš,158
-165,Neš - New,nex,158
-166,Nex - Nit,niu,158
-167,Niu - Nom,non,158
-168,Non - Not,nou,158
-169,Nou - Nov,now,158
-170,Now -,o,158
-171,O,"",0
-172,O - Obj,obk,171
-173,Obk - Oby,obz,171
-174,Obz - Odo,odp,171
-175,Odp - Oha,ohc,171
-176,Ohc - Okr,oks,171
-177,Oks - Oly,olž,171
-178,Olž - Ope,oph,171
-179,Oph - Ord,ore,171
-180,Ore - Oro,orp,171
-181,Orp - Ost,osu,171
-182,Osu - Ots,ott,171
-183,Ott -,p,171
-184,P,"",0
-185,P - Pap,paq,184
-186,Paq - Pav,paw,184
-187,Paw - Per,pes,184
-188,Pes - Pin,pio,184
-189,Pio - Plu,ply,184
-190,Ply - Poj,pok,184
-191,Pok - Pon,poo,184
-192,Poo - Poz,pož,184
-193,Pož - Pre,prh,184
-194,Prh - Pri,prl,184
-195,Prl - Pro,prs,184
-196,Prs -,q,184
-197,Q,"",0
-198,Q - Qua,que,197
-199,Que - Que,qui,197
-200,Qui - Qui,qum,197
-201,Qum -,r,197
-202,R,"",0
-203,R - Rah,rac,202
-204,Rac - Ras,raš,202
-205,Raš - Red,ree,202
-206,Ree - Rek,rel,202
-207,Rel - Res,reš,202
-208,Reš - Ria,rib,202
-209,Rib - Rio,rip,202
-210,Rip - Roj,rok,202
-211,Rok - Rot,rou,202
-212,Rou - Roz,rož,202
-213,Rož - Run,ruo,202
-214,Ruo -,s,202
-215,S,"",0
-216,S - San,sao,215
-217,Sao - Sek,sel,215
-218,Sel - Sch,si_,215
-219,Si_ - Sio,sip,215
-220,Sip - Sli,sln,215
-221,Sln - Sno,snp,215
-222,Snp - Spa,spd,215
-223,Spd - Srd,sre,215
-224,Sre - Stl,stm,215
-225,Stm - Stu,stv,215
-226,Stv - Sva,sve,215
-227,Sve -,š,215
-228,Š,"",0
-229,Š - Šat,šav,228
-230,Šav - Šim,šin,228
-231,Šin - Ško,škr,228
-232,Škr - Špa,špe,228
-233,Špe - Šta,štb,228
-234,Štb - Šti,što,228
-235,Što - Šty,šu,228
-236,Šu -,t,228
-237,T,"",0
-238,T - Tan,tao,237
-239,Tao - Ted,tee,237
-240,Tee - Ten,teo,237
-241,Teo - Ter,tes,237
-242,Tes - Tho,thr,237
-243,Thr - Tit,tiu,237
-244,Tiu - Ton,too,237
-245,Too - Tra,trb,237
-246,Trb - Tre,trg,237
-247,Trg - Tro,trp,237
-248,Trp - Tur,tus,237
-249,Tus -,u,237
-250,U,"",0
-251,U - Uhl,uho,250
-252,Uho - Uli,ulj,250
-253,Ulj - Una,unb,250
-254,Unb - Upr,upu,250
-255,Upu - Urv,urx,250
-256,Urx - Ute,uth,250
-257,Uth -,v,250
-258,V,"",0
-259,V - Van,vap,258
-260,Vap - Vče,vči,258
-261,Vči - Vel,vem,258
-262,Vem - Ver,ves,258
-263,Ves - Vig,vih,258
-264,Vih - Vit,viv,258
-265,Viv - Vnu,voa,258
-266,Voa - Vol,vom,258
-267,Vom - Vrš,vrt,258
-268,Vrt - Vyc,vyi,258
-269,Vyi - Vys,vyš,258
-270,Vyš -,w,258
-271,W,"",0
-272,W - Wan,wap,271
-273,Wap - Wed,wee,271
-274,Wee - Wes,weš,271
-275,Weš - Wil,wim,271
-276,Wim - Wol,won,271
-277,Won -,x,271
-278,X,"",0
-279,X - Xen,xer,278
-280,Xer - Xer,xho,278
-281,Xho - Xoa,xoc,278
-282,Xoc -,y,278
-283,Y,"",0
-284,Y - Yap,yar,283
-285,Yar - Yil,yin,283
-286,Yin - Yov,ype,283
-287,Ype -,z,283
-288,Z,"",0
-289,Z - Zak,zal,288
-290,Zal - Zan,zao,288
-291,Zao - Zar,zas,288
-292,Zas - Zav,zaw,288
-293,Zaw - Zek,zel,288
-294,Zel - Zia,zib,288
-295,Zib - Zlo,zlu,288
-296,Zlu - Zol,zom,288
-297,Zom - Zub,zuc,288
-298,Zuc -,ž,288
-299,Ž,"",0
-300,Ž - Žel,žem,299
-301,Žem - Žia,žib,299
-302,Žib - Žin,žip,299
-303,Žip - Živ,žiž,299
-304,Žiž -,žžž,299
+tid,name,field_last,parent,weight
+1,A,"",0,1
+2,A - Acy,ačc,1,2
+3,Ačc - Afr,afs,1,3
+4,Afs - Akc,akč,1,4
+5,Akč - Ale,alf,1,5
+6,Alf - Alt,alu,1,6
+7,Alu - Ana,anb,1,7
+8,Anb - Ann,ano,1,8
+9,Ano - Apl,apm,1,9
+10,Apm - Arc,ari,1,10
+11,Ari - Asi,asj,1,11
+12,Asj - Aug,auc,1,12
+13,Auc -,b,1,13
+14,B,"",0,14
+15,B - Bal,bam,14,15
+16,Bam - Bar,bas,14,16
+17,Bas - Baz,baž,14,17
+18,Baž - Ben,beo,14,18
+19,Beo - Bez,bež,14,19
+20,Bež - Bio,bip,14,20
+21,Bip - Blo,blš,14,21
+22,Blš - Bom,bon,14,22
+23,Bon - Bra,brb,14,23
+24,Brb - Bri,brj,14,24
+25,Brj - Buj,buk,14,25
+26,Buk -,c,14,26
+27,C,"",0,27
+28,C - Can,cao,27,28
+29,Cao - Cau,cav,27,29
+30,Cav - Cep,cer,27,30
+31,Cer - Cir,cis,27,31
+32,Cis - Coh,coc,27,32
+33,Coc - Cor,cos,27,33
+34,Cos - Cro,crp,27,34
+35,Crp - Cyk,cyl,27,35
+36,Cyl -,č,27,36
+37,Č,"",0,37
+38,Č - Čas,čaš,37,38
+39,Čaš - Čer,čes,37,39
+40,Čes - Čes,češ,37,40
+41,Češ - Čie,čif,37,41
+42,Čif - Čis,čit,37,42
+43,Čit -,d,37,43
+44,D,"",0,44
+45,D - Dar,das,44,45
+46,Das - Def,deg,44,46
+47,Deg - Dem,den,44,47
+48,Den - Det,deu,44,48
+49,Deu - Die,dif,44,49
+50,Dif - Dir,dis,44,50
+51,Dis - Dob,doc,44,51
+52,Doc - Dom,don,44,52
+53,Don - Dra,drd,44,53
+54,Drd - Dub,duc,44,54
+55,Duc - Dva,dvb,44,55
+56,Dvb -,e,44,56
+57,E,"",0,57
+58,E - Egy,eh,57,58
+59,Eh - Ekz,el,57,59
+60,El - Ele,elf,57,60
+61,Elf - End,ene,57,61
+62,Ene - Epi,epl,57,62
+63,Epl - Esc,ese,57,63
+64,Ese - Eug,euh,57,64
+65,Euh - Evi,evl,57,65
+66,Evl -,f,57,66
+67,F,"",0,67
+68,F - Far,fas,67,68
+69,Fas - Fek,fel,67,69
+70,Fel - Fet,feu,67,70
+71,Feu - Fil,fim,67,71
+72,Fim - Fla,fle,67,72
+73,Fle - Fon,foo,67,73
+74,Foo - Fou,fov,67,74
+75,Fov - Fre,fri,67,75
+76,Fri - Ful,fum,67,76
+77,Fum -,g,67,77
+78,G,"",0,78
+79,G - Gam,gan,78,79
+80,Gan - Gaz,gaž,78,80
+81,Gaž - Geo,gep,78,81
+82,Gep - Gez,gfa,78,82
+83,Gfa - Glo,glp,78,83
+84,Glp - Gom,gon,78,84
+85,Gon - Gra,grb,78,85
+86,Grb - Gre,grg,78,86
+87,Grg - Gub,guc,78,87
+88,Guc -,h,78,88
+89,H,"",0,89
+90,H - Hal,ham,89,90
+91,Ham - Har,has,89,91
+92,Has - Hei,hej,89,92
+93,Hej - Her,hes,89,93
+94,Hes - Him,hin,89,94
+95,Hin - Hmo,hmx,89,95
+96,Hmx - Hol,hom,89,96
+97,Hom - Hor,hos,89,97
+98,Hos - Hre,hrh,89,98
+99,Hrh - Hul,hum,89,99
+100,Hum - Hyd,hye,89,100
+101,Hye -,ch,89,101
+102,CH,"",0,102
+103,Ch - Chd,che,102,103
+104,Che - Chh,chi,102,104
+105,Chi - Chn,cho,102,105
+106,Cho - Cht,chu,102,106
+107,Chu -,i,102,107
+108,I,"",0,108
+109,I - Ign,igo,108,109
+110,Igo - Imo,imp,108,110
+111,Imp - Ind,ine,108,111
+112,Ine - Ino,inp,108,112
+113,Inp - Int,inu,108,113
+114,Inu - Ire,irf,108,114
+115,Irf - Iur,ius,108,115
+116,Ius -,j,108,116
+117,J,"",0,117
+118,J - Jal,jam,117,118
+119,Jam - Jan,jao,117,119
+120,Jao - Jav,jaw,117,120
+121,Jaw - Jem,jen,117,121
+122,Jen - Jod,joe,117,122
+123,Joe - Jud,jue,117,123
+124,Jue -,k,117,124
+125,K,"",0,125
+126,K - Kan,kao,125,126
+127,Kao - Kat,kau,125,127
+128,Kau - Kin,kio,125,128
+129,Kio - Kni,knj,125,129
+130,Knj - Kol,kom,125,130
+131,Kom - Kon,koo,125,131
+132,Koo - Kor,kos,125,132
+133,Kos - Kov,kow,125,133
+134,Kow - Kre,krc,125,134
+135,Krc - Kry,krz,125,135
+136,Krz - Kur,kus,125,136
+137,Kus -,l,125,137
+138,L,"",0,138
+139,L - Lak,lal,138,139
+140,Lal - Lap,laq,138,140
+141,Laq - Laz,laž,138,141
+142,Laž - Lem,len,138,142
+143,Len - Let,leu,138,143
+144,Leu - Lib,lic,138,144
+145,Lic - Lin,lio,138,145
+146,Lio - Lit,liu,138,146
+147,Liu - Loc,loi,138,147
+148,Loi - Loy,loz,138,148
+149,Loz - Luk,lul,138,149
+150,Lul -,m,138,150
+151,M,"",0,151
+152,M - Maj,mak,151,152
+153,Mak - Man,mao,151,153
+154,Mao - Mar,mas,151,154
+155,Mas - May,maz,151,155
+156,Maz - Med,mee,151,156
+157,Mee - Mer,mes,151,157
+158,Mes - Mie,mif,151,158
+159,Mif - Min,mio,151,159
+160,Mio - Mog,moh,151,160
+161,Moh - Mor,mos,151,161
+162,Mos - Mul,mum,151,162
+163,Mum -,n,151,163
+164,N,"",0,164
+165,N - Nah,nac,164,165
+166,Nac - Nap,nar,164,166
+167,Nar - Nas,naš,164,167
+168,Naš - Neč,ned,164,168
+169,Ned - Nem,nen,164,169
+170,Nen - Nes,neš,164,170
+171,Neš - New,nex,164,171
+172,Nex - Nit,niu,164,172
+173,Niu - Nom,non,164,173
+174,Non - Not,nou,164,174
+175,Nou - Nov,now,164,175
+176,Now -,o,164,176
+177,O,"",0,177
+178,O - Obj,obk,177,178
+179,Obk - Oby,obz,177,179
+180,Obz - Odo,odp,177,180
+181,Odp - Oha,ohc,177,181
+182,Ohc - Okr,oks,177,182
+183,Oks - Oly,olž,177,183
+184,Olž - Ope,oph,177,184
+185,Oph - Ord,ore,177,185
+186,Ore - Oro,orp,177,186
+187,Orp - Ost,osu,177,187
+188,Osu - Ots,ott,177,188
+189,Ott -,p,177,189
+190,P,"",0,190
+191,P - Pap,paq,190,191
+192,Paq - Pav,paw,190,192
+193,Paw - Per,pes,190,193
+194,Pes - Pin,pio,190,194
+195,Pio - Plu,ply,190,195
+196,Ply - Poj,pok,190,196
+197,Pok - Pon,poo,190,197
+198,Poo - Poz,pož,190,198
+199,Pož - Pre,prh,190,199
+200,Prh - Pri,prl,190,200
+201,Prl - Pro,prs,190,201
+202,Prs -,q,190,202
+203,Q,"",0,203
+204,Q - Qua,que,203,204
+205,Que - Que,qui,203,205
+206,Qui - Qui,qum,203,206
+207,Qum -,r,203,207
+208,R,"",0,208
+209,R - Rah,rac,208,209
+210,Rac - Ras,raš,208,210
+211,Raš - Red,ree,208,211
+212,Ree - Rek,rel,208,212
+213,Rel - Res,reš,208,213
+214,Reš - Ria,rib,208,214
+215,Rib - Rio,rip,208,215
+216,Rip - Roj,rok,208,216
+217,Rok - Rot,rou,208,217
+218,Rou - Roz,rož,208,218
+219,Rož - Run,ruo,208,219
+220,Ruo -,s,208,220
+221,S,"",0,221
+222,S - San,sao,221,222
+223,Sao - Sek,sel,221,223
+224,Sel - Sch,si_,221,224
+225,Si_ - Sio,sip,221,225
+226,Sip - Sli,sln,221,226
+227,Sln - Sno,snp,221,227
+228,Snp - Spa,spd,221,228
+229,Spd - Srd,sre,221,229
+230,Sre - Stl,stm,221,230
+231,Stm - Stu,stv,221,231
+232,Stv - Sva,sve,221,232
+233,Sve -,š,221,233
+234,Š,"",0,234
+235,Š - Šat,šav,234,235
+236,Šav - Šim,šin,234,236
+237,Šin - Ško,škr,234,237
+238,Škr - Špa,špe,234,238
+239,Špe - Šta,štb,234,239
+240,Štb - Šti,što,234,240
+241,Što - Šty,šu,234,241
+242,Šu -,t,234,242
+243,T,"",0,243
+244,T - Tan,tao,243,244
+245,Tao - Ted,tee,243,245
+246,Tee - Ten,teo,243,246
+247,Teo - Ter,tes,243,247
+248,Tes - Tho,thr,243,248
+249,Thr - Tit,tiu,243,249
+250,Tiu - Ton,too,243,250
+251,Too - Tra,trb,243,251
+252,Trb - Tre,trg,243,252
+253,Trg - Tro,trp,243,253
+254,Trp - Tur,tus,243,254
+255,Tus -,u,243,255
+256,U,"",0,256
+257,U - Uhl,uho,256,257
+258,Uho - Uli,ulj,256,258
+259,Ulj - Una,unb,256,259
+260,Unb - Upr,upu,256,260
+261,Upu - Urv,urx,256,261
+262,Urx - Ute,uth,256,262
+263,Uth -,v,256,263
+264,V,"",0,264
+265,V - Van,vap,264,265
+266,Vap - Vče,vči,264,266
+267,Vči - Vel,vem,264,267
+268,Vem - Ver,ves,264,268
+269,Ves - Vig,vih,264,269
+270,Vih - Vit,viv,264,270
+271,Viv - Vnu,voa,264,271
+272,Voa - Vol,vom,264,272
+273,Vom - Vrš,vrt,264,273
+274,Vrt - Vyc,vyi,264,274
+275,Vyi - Vys,vyš,264,275
+276,Vyš -,w,264,276
+277,W,"",0,277
+278,W - Wan,wap,277,278
+279,Wap - Wed,wee,277,279
+280,Wee - Wes,weš,277,280
+281,Weš - Wil,wim,277,281
+282,Wim - Wol,won,277,282
+283,Won -,x,277,283
+284,X,"",0,284
+285,X - Xen,xer,284,285
+286,Xer - Xer,xho,284,286
+287,Xho - Xoa,xoc,284,287
+288,Xoc -,y,284,288
+289,Y,"",0,289
+290,Y - Yap,yar,289,290
+291,Yar - Yil,yin,289,291
+292,Yin - Yov,ype,289,292
+293,Ype -,z,289,293
+294,Z,"",0,294
+295,Z - Zak,zal,294,295
+296,Zal - Zan,zao,294,296
+297,Zao - Zar,zas,294,297
+298,Zas - Zav,zaw,294,298
+299,Zaw - Zek,zel,294,299
+300,Zel - Zia,zib,294,300
+301,Zib - Zlo,zlu,294,301
+302,Zlu - Zol,zom,294,302
+303,Zom - Zub,zuc,294,303
+304,Zuc -,ž,294,304
+305,Ž,"",0,305
+306,Ž - Žel,žem,305,306
+307,Žem - Žia,žib,305,307
+308,Žib - Žin,žip,305,308
+309,Žip - Živ,žiž,305,309
+310,Žiž -,žžž,305,310
