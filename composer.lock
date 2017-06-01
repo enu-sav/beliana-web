@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bff89d9e61e047950266a5ad9f9a161",
+    "content-hash": "c0d8e07124a7370b848fbac168764cda",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2193,9 +2193,6 @@
                 "drupal": {
                     "version": "8.x-2.7",
                     "datestamp": "1492196642"
-                },
-                "patches_applied": {
-                    "Custom config is not loaded correctly": "https://www.drupal.org/files/issues/mathjax-custom_config_is_not-2873269-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
