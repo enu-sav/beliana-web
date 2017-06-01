@@ -13,6 +13,7 @@ use Drupal\media_entity\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
+use Drupal\taxonomy\Entity\Term;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -242,7 +243,7 @@ class RsSyncResource extends ResourceBase {
 
     $term = \Drupal::entityQuery('taxonomy_term')
       ->condition('field_last', $string_to_compare, '>')
-      ->sort('tid', 'ASC')
+      ->sort('name', 'ASC')
       ->range(0, 1)
       ->execute();
 
