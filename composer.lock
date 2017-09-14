@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0d8e07124a7370b848fbac168764cda",
+    "content-hash": "646f41d192c63d089ac9e8c183ff1658",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1670,7 +1670,8 @@
             "type": "drupal-core",
             "extra": {
                 "patches_applied": {
-                    "UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-88-8.3.x.patch.txt"
+                    "UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-88-8.3.x.patch.txt",
+                    "There is no indication on configuration forms if there are overridden values": "https://www.drupal.org/files/issues/drupal-n2408549-67.patch"
                 }
             },
             "autoload": {

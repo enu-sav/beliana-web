@@ -107,7 +107,8 @@
         },
         "patches": {
             "drupal/core": {
-                "UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-88-8.3.x.patch.txt"
+                "UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-88-8.3.x.patch.txt",
+                "There is no indication on configuration forms if there are overridden values": "https://www.drupal.org/files/issues/drupal-n2408549-67.patch"
             }
         }
     }
