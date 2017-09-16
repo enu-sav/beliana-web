@@ -1,0 +1,16 @@
+uuid: 033e25ad-5fc3-40ed-9f1a-ba79c1a66d13
+langcode: sk
+status: false
+dependencies: {  }
+id: dev
+label: Dev
+folder: ../config/dev
+module: {  }
+theme: {  }
+blacklist:
+  - beliana_sync.config
+  - locale.settings
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

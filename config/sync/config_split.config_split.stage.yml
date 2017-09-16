@@ -1,0 +1,16 @@
+uuid: ef9a26c8-d064-4f92-a386-c7946d48d5d3
+langcode: sk
+status: true
+dependencies: {  }
+id: stage
+label: Stage
+folder: ../config/stage
+module: {  }
+theme: {  }
+blacklist:
+  - beliana_sync.config
+  - locale.settings
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

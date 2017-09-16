@@ -29,11 +29,10 @@ $config['search_api.server.solr']['backend_config']['connector_config']['http_pa
 $config['search_api.server.solr']['backend_config']['connector_config']['http']['http_pass'] = '';
 $config['search_api.server.solr']['name'] = 'Solr - Environment: stage';
 
-// Locale settings.
-$config['locale.settings']['translation']['path'] = 'sites/stage/files/translations';
-
-// Beliana settings.
-$config['beliana_sync.config']['remote_url'] = 'http://dev.beliana.sav.sk/';
+// Configure config split.
+$config['config_split.config_split.dev']['status'] = FALSE;
+$config['config_split.config_split.stage']['status'] = TRUE;
+$config['config_split.config_split.prod']['status'] = FALSE;
 
 // Last: this servers specific settings files.
 if (file_exists(__DIR__ . '/settings.local.php')) {
