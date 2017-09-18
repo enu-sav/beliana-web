@@ -620,9 +620,19 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
+          parse_mode: direct
           min_length: null
-          fields: {  }
+          fields:
+            title: title
+            body: body
+            field_sort: field_sort
+            name: name
+            title_1: title_1
+            alt: alt
+            description: description
+            field_date: field_date
+            name_1: name_1
+            name_2: name_2
           plugin_id: search_api_fulltext
       filter_groups:
         operator: AND
