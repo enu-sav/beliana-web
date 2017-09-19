@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
+    - field.field.node.word.field_info_published
     - field.field.node.word.field_sort
     - node.type.word
   module:
@@ -69,6 +70,14 @@ content:
       field_widget_display_settings: {  }
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
+  field_info_published:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_sort:
     weight: 11

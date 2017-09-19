@@ -102,6 +102,7 @@ class RsSyncResource extends ResourceBase {
       'title' => $data['title'],
       'field_date' => $data['dates'],
       'field_sort' => $data['sort'],
+      'field_info_published' => $data['info_published']
     ]);
     $local_fids = $this->downloadMedia($data['images']);
     if (!empty($local_fids)) {
@@ -274,6 +275,7 @@ class RsSyncResource extends ResourceBase {
     $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
     $node->field_date = $data['dates'];
     $node->field_sort = $data['sort'];
+    $node->field_info_published = $data['info_published'];
     foreach ($node->field_images->getValue() as $field_image) {
       $media = Media::load($field_image->target_id);
       if (!is_null($media)) {

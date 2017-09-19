@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
+    - field.field.node.word.field_info_published
     - field.field.node.word.field_sort
     - node.type.word
   module:
@@ -33,6 +34,14 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_info_published:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 0
