@@ -88,7 +88,7 @@
     <h1>{{ node.label }}</h1>
     <p class="last-update">
 {% set info_published %}
-{{ content.field_info_published }}
+{{ node.field_info_published.value }}
 {% endset %}
 {{ info_published |striptags }}
     </p>
