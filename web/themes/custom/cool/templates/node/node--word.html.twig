@@ -107,9 +107,8 @@
       <a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank">Komentovať</a>
     </div>
     <div class="citacia smartphone" data-collapse>
-     {% set node_upd = node.changed.value|date("Y-m-d") %}
       <h3>citácia</h3>
-      <div><p>{{ node.label }}. [online]. Encyclopaedia Beliana. Aktualizované {{ node_upd|placeholder|striptags }}
+      <div><p>{{ node.label }}. [online]. Encyclopaedia Beliana. Aktualizované {{ node.changed.value|date("Y-m-d") }}
           [cit: {{ now | date("Y-m-d") }}].</p>
         <p>Dostupné a internete: <a href="{{ share_url }}">{{ share_url }}</a></p></div>
     </div>
@@ -131,9 +130,8 @@
   </div>
 
   <div class="citacia no-desktop" data-collapse>
-     {% set node_upd = node.changed.value|date("Y-m-d") %}
-      <h3>citácia</h>
-      <div><p>{{ node.label }}. [online]. Encyclopaedia Beliana. Aktualizované {{ node_upd|placeholder|striptags }}
+      <h3>citácia</h3>
+      <div><p>{{ node.label }}. [online]. Encyclopaedia Beliana. Aktualizované {{ node.changed.value | date("Y-m-d") }}
           [cit: {{ now | date("Y-m-d") }}].</p>
         <p>Dostupné a internete: <a href="{{ share_url }}">{{ share_url }}</a></p></div>
   </div>
