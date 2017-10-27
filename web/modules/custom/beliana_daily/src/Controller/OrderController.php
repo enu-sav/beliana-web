@@ -76,12 +76,17 @@ class OrderController extends ControllerBase {
     $db = \Drupal::database();
     // If new data contains any dates, insert them.
     if (!is_null($dates['dates'])) {
+      // in case there are two or more equal days, store just one of them
+      $stored_md = [];	// keep stored days here
       foreach ($dates['dates'] as $date) {
         $monthday = date('md', strtotime($date));
-        $db->insert('beliana_daily')
-          ->fields(['nid', 'date'])
-          ->values([$nid, $monthday])
-          ->execute();
+        if (!in_array($monthday, $stored_md)) {
+          $db->insert('beliana_daily')
+            ->fields(['nid', 'date'])
+            ->values([$nid, $monthday])
+            ->execute();
+          $stored_md[] = $monthday;
+        }
       }
     }
   }
