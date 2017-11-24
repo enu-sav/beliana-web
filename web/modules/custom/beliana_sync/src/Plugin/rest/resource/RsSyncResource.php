@@ -160,15 +160,42 @@ class RsSyncResource extends ResourceBase {
           'title' => $image['title'],
           'field_image' => $file->id(),
           'field_licence' => $license->id(),
-          'field_license_info' => [
-            'value' => $image['license_info'],
-            'format' => 'basic_html',
-          ],
           'field_description' => [
             'value' => $image['description'],
             'format' => 'basic_html',
           ],
         ]);
+
+        if (isset($image['nazov_diela']))
+          $media->set('field_nazov_diela', [ 'value' => $image['nazov_diela']]);
+
+        if (isset($image['institucia']))
+          $media->set('field_institucia', [ 'value' => $image['institucia']]);
+
+        if (isset($image['meno_autora_diela']))
+          $media->set('field_meno_autora_diela', [ 'value' => $image['meno_autora_diela']]);
+
+        if (isset($image['meno_autora_snimky_diela']))
+          $media->set('field_meno_autora_snimky_diela', [ 'value' => $image['meno_autora_snimky_diela']]);
+
+        if (isset($image['url_diela_l']))
+          $media->set('field_url_diela_l', [
+            'uri' => $image['url_diela_l'],
+            'title' => parse_url($image['url_diela_l'])['host']
+          ]);
+
+        if (isset($image['url_autora_diela_l']))
+          $media->set('field_url_autora_diela_l', [
+            'uri' => $image['url_autora_diela_l'],
+            'title' => parse_url($image['url_autora_diela_l'])['host']
+          ]);
+
+        if (isset($image['url_testu_licencie_l']))
+          $media->set('field_url_testu_licencie_l', [
+            'uri' => $image['url_testu_licencie_l'],
+            'title' => parse_url($image['url_testu_licencie_l'])['host']
+          ]);
+
         $media->save();
         $local_fids[] = $media->id();
       }

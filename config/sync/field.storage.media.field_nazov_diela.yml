@@ -1,0 +1,21 @@
+uuid: 4b1dac8b-873d-44e2-867a-33a8d01b216a
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.field_nazov_diela
+field_name: field_nazov_diela
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 021e9af7-e483-4d91-922d-fbe89ac0de1e
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_nazov_diela
+    - media_entity.bundle.image
+id: media.image.field_nazov_diela
+field_name: field_nazov_diela
+entity_type: media
+bundle: image
+label: 'Názov diela'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

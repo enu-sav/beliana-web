@@ -1,0 +1,23 @@
+uuid: ee2301ce-fd79-45e6-a9fa-d24db6a8d0e7
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_url_diela_l
+    - media_entity.bundle.image
+  module:
+    - link
+id: media.image.field_url_diela_l
+field_name: field_url_diela_l
+entity_type: media
+bundle: image
+label: 'URL diela'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link
