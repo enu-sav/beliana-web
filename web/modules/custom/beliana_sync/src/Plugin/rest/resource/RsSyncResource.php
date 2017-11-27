@@ -158,7 +158,12 @@ class RsSyncResource extends ResourceBase {
         $media = Media::create([
           'bundle' => 'image',
           'title' => $image['title'],
-          'field_image' => $file->id(),
+          //'alt' => $image['title'],
+          //'field_image' => $file->id(),
+          'field_image' => [
+            'target_id' => $file->id(), 
+            'alt' =>  $image['alternativny_text'],
+          ],
           'field_licence' => $license->id(),
           'field_description' => [
             'value' => $image['description'],
