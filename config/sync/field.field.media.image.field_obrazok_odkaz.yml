@@ -1,0 +1,23 @@
+uuid: 131b09c8-d9b3-476a-82b2-e87a58fbb8d9
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_obrazok_odkaz
+    - media_entity.bundle.image
+  module:
+    - link
+id: media.image.field_obrazok_odkaz
+field_name: field_obrazok_odkaz
+entity_type: media
+bundle: image
+label: 'Obrázok odkaz'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

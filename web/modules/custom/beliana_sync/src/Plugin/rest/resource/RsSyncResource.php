@@ -132,18 +132,26 @@ class RsSyncResource extends ResourceBase {
     $taxonomy_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $local_fids = [];
     $date = date('Y-m-d');
+    $file_OK = FALSE;
+    $link_OK = FALSE;
     foreach ($images as $image) {
-      $file_data = file_get_contents($image['uri']);
-      $exploded_path = explode('/', $image['uri']);
-      $file_name = array_pop($exploded_path);
-      $dir = substr($file_name, 0, 3);
-      /** @var \Drupal\file\FileInterface $file */
-      $file_dir = $date . '/' . $dir;
-      $create_dir = \Drupal::service('file_system')
-        ->realpath('public://') . '/' . $file_dir;
-      file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-      $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
-      if ($file !== FALSE) {
+      if (isset($image['image_url_local'])) { // local image should be used
+        $file_data = file_get_contents($image['image_url_local']);
+        $exploded_path = explode('/', $image['image_url_local']);
+        $file_name = array_pop($exploded_path);
+        $dir = substr($file_name, 0, 3);
+        /** @var \Drupal\file\FileInterface $file */
+        $file_dir = $date . '/' . $dir;
+        $create_dir = \Drupal::service('file_system')
+          ->realpath('public://') . '/' . $file_dir;
+        file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
+        $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
+        if ($file !== FALSE) $file_OK = TRUE; 
+      } else { // we have link to external image
+        $link_OK = TRUE;
+      } 
+
+      if ($file_OK or $link_OK) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
         if (empty($license)) {
           $license = $taxonomy_terms->create([
@@ -155,21 +163,34 @@ class RsSyncResource extends ResourceBase {
         else {
           $license = reset($license);
         }
+
         $media = Media::create([
           'bundle' => 'image',
           'title' => $image['title'],
           //'alt' => $image['title'],
           //'field_image' => $file->id(),
-          'field_image' => [
-            'target_id' => $file->id(), 
-            'alt' =>  $image['alternativny_text'],
-          ],
+          //'field_image' => [
+            //'target_id' => $file->id(), 
+            //'alt' =>  $image['alternativny_text'],
+          //],
           'field_licence' => $license->id(),
           'field_description' => [
             'value' => $image['description'],
             'format' => 'basic_html',
           ],
         ]);
+
+        if ( $file_OK === TRUE ) {
+          $media->set('field_image', [ 
+            'target_id' => $file->id(), 
+            'alt' =>  $image['alternativny_text'],
+          ]);
+        } else { // we have link to external image
+          $media->set('field_obrazok_odkaz', [
+            'uri' => $image['image_url_web'],
+            'alt' =>  $image['alternativny_text'],
+          ]);
+        }
 
         if (isset($image['nazov_diela']))
           $media->set('field_nazov_diela', [ 'value' => $image['nazov_diela']]);

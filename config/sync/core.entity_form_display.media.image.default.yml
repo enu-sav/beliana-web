@@ -10,6 +10,7 @@ dependencies:
     - field.field.media.image.field_meno_autora_diela
     - field.field.media.image.field_meno_autora_snimky_diela
     - field.field.media.image.field_nazov_diela
+    - field.field.media.image.field_obrazok_odkaz
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
@@ -86,6 +87,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_obrazok_odkaz:
+    weight: 23
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_url_autora_diela_l:
     weight: 21

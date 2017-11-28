@@ -1,0 +1,19 @@
+uuid: d0b7c4f0-a485-4eda-83bb-93b27f7b9a6d
+langcode: sk
+status: true
+dependencies:
+  module:
+    - link
+    - media_entity
+id: media.field_obrazok_odkaz
+field_name: field_obrazok_odkaz
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
