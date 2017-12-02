@@ -1,21 +1,19 @@
-uuid: 68f762f1-18b2-4856-bcd2-4a8fd52d81fc
+uuid: 61069c0d-be8e-4cb7-a97f-e901341ec871
 langcode: sk
 status: true
 dependencies:
   config:
-    - field.storage.media.field_license_info
+    - field.storage.media.field_meno_autora_diela
     - media_entity.bundle.image
-  module:
-    - text
-id: media.image.field_license_info
-field_name: field_license_info
+id: media.image.field_meno_autora_diela
+field_name: field_meno_autora_diela
 entity_type: media
 bundle: image
-label: 'Licenčné informácie'
+label: 'Meno autora diela'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: string

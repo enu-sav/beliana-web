@@ -6,8 +6,14 @@ dependencies:
     - core.entity_view_mode.media.in_word
     - field.field.media.image.field_description
     - field.field.media.image.field_image
+    - field.field.media.image.field_institucia
     - field.field.media.image.field_licence
-    - field.field.media.image.field_license_info
+    - field.field.media.image.field_meno_autora_diela
+    - field.field.media.image.field_meno_autora_snimky_diela
+    - field.field.media.image.field_nazov_diela
+    - field.field.media.image.field_url_autora_diela_l
+    - field.field.media.image.field_url_diela_l
+    - field.field.media.image.field_url_textu_licencie_l
     - image.style.colorbox_thumbnail
     - media_entity.bundle.image
   module:
@@ -42,8 +48,14 @@ content:
     region: content
 hidden:
   created: true
+  field_institucia: true
   field_licence: true
-  field_license_info: true
+  field_meno_autora_diela: true
+  field_meno_autora_snimky_diela: true
+  field_nazov_diela: true
+  field_url_autora_diela_l: true
+  field_url_diela_l: true
+  field_url_textu_licencie_l: true
   langcode: true
   name: true
   thumbnail: true

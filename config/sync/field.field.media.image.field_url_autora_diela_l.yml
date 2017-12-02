@@ -1,0 +1,23 @@
+uuid: 384abd33-daa6-41c3-80a7-058ed8f0c5bc
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_url_autora_diela_l
+    - media_entity.bundle.image
+  module:
+    - link
+id: media.image.field_url_autora_diela_l
+field_name: field_url_autora_diela_l
+entity_type: media
+bundle: image
+label: 'URL autora diela'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

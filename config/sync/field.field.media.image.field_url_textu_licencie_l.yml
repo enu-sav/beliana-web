@@ -1,0 +1,23 @@
+uuid: 7b686644-5e80-4a36-9e51-f9824e0dbc30
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_url_textu_licencie_l
+    - media_entity.bundle.image
+  module:
+    - link
+id: media.image.field_url_textu_licencie_l
+field_name: field_url_textu_licencie_l
+entity_type: media
+bundle: image
+label: 'URL textu licencie'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

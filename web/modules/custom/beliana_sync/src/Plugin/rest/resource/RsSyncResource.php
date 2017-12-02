@@ -104,6 +104,10 @@ class RsSyncResource extends ResourceBase {
       'field_sort' => $data['sort'],
       'field_info_published' => $data['info_published']
     ]);
+    // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
+    // may have multiple values, each having hierarchy starting from parent and separated by ';'
+    $node->field_categories = $this->getCategories($data['category']);
+
     $local_fids = $this->downloadMedia($data['images']);
     if (!empty($local_fids)) {
       $node->field_images = $local_fids;
@@ -132,18 +136,26 @@ class RsSyncResource extends ResourceBase {
     $taxonomy_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $local_fids = [];
     $date = date('Y-m-d');
+    $file_OK = FALSE;
+    $link_OK = FALSE;
     foreach ($images as $image) {
-      $file_data = file_get_contents($image['uri']);
-      $exploded_path = explode('/', $image['uri']);
-      $file_name = array_pop($exploded_path);
-      $dir = substr($file_name, 0, 3);
-      /** @var \Drupal\file\FileInterface $file */
-      $file_dir = $date . '/' . $dir;
-      $create_dir = \Drupal::service('file_system')
-        ->realpath('public://') . '/' . $file_dir;
-      file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-      $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
-      if ($file !== FALSE) {
+      if (isset($image['image_url_local'])) { // local image should be used
+        $file_data = file_get_contents($image['image_url_local']);
+        $exploded_path = explode('/', $image['image_url_local']);
+        $file_name = array_pop($exploded_path);
+        $dir = substr($file_name, 0, 3);
+        /** @var \Drupal\file\FileInterface $file */
+        $file_dir = $date . '/' . $dir;
+        $create_dir = \Drupal::service('file_system')
+          ->realpath('public://') . '/' . $file_dir;
+        file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
+        $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
+        if ($file !== FALSE) $file_OK = TRUE; 
+      } else { // we got link to external image
+        $link_OK = TRUE;
+      } 
+
+      if ($file_OK or $link_OK) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
         if (empty($license)) {
           $license = $taxonomy_terms->create([
@@ -155,25 +167,152 @@ class RsSyncResource extends ResourceBase {
         else {
           $license = reset($license);
         }
+
         $media = Media::create([
           'bundle' => 'image',
           'title' => $image['title'],
-          'field_image' => $file->id(),
           'field_licence' => $license->id(),
-          'field_license_info' => [
-            'value' => $image['license_info'],
-            'format' => 'basic_html',
-          ],
           'field_description' => [
             'value' => $image['description'],
             'format' => 'basic_html',
           ],
         ]);
+
+        if ( $file_OK === TRUE ) {
+          $media->set('field_image', [ 
+            'target_id' => $file->id(), 
+            'alt' =>  $image['alternativny_text'],
+          ]);
+        } else { // we got link to external image
+          $media->set('field_obrazok_odkaz', [
+            'uri' => $image['image_url_web'],
+            //'alt' =>  $image['alternativny_text'],
+          ]);
+        }
+
+        if (isset($image['nazov_diela']))
+          $media->set('field_nazov_diela', [ 'value' => $image['nazov_diela']]);
+
+        if (isset($image['institucia']))
+          $media->set('field_institucia', [ 'value' => $image['institucia']]);
+
+        if (isset($image['meno_autora_diela']))
+          $media->set('field_meno_autora_diela', [ 'value' => $image['meno_autora_diela']]);
+
+        if (isset($image['meno_autora_snimky_diela']))
+          $media->set('field_meno_autora_snimky_diela', [ 'value' => $image['meno_autora_snimky_diela']]);
+
+        if (isset($image['url_diela_l']))
+          $media->set('field_url_diela_l', [
+            'uri' => $image['url_diela_l'],
+            'title' => parse_url($image['url_diela_l'])['host']
+          ]);
+
+        if (isset($image['url_autora_diela_l']))
+          $media->set('field_url_autora_diela_l', [
+            'uri' => $image['url_autora_diela_l'],
+            'title' => parse_url($image['url_autora_diela_l'])['host']
+          ]);
+
+        if (isset($image['url_testu_licencie_l']))
+          $media->set('field_url_testu_licencie_l', [
+            'uri' => $image['url_testu_licencie_l'],
+            'title' => parse_url($image['url_testu_licencie_l'])['host']
+          ]);
+
         $media->save();
         $local_fids[] = $media->id();
       }
     }
     return $local_fids;
+  }
+
+  // get parent with a required top parent $parentName
+  // we a sure that the right parent exists, so just find it in the array
+  public function getParentId($parentName, $topParentName)
+  {
+    $parentList = taxonomy_term_load_multiple_by_name($parentName, 'categories');
+    if (sizeof($parentList) > 1 ) {
+      foreach($parentList as $candidate)
+        $topParent = $this->getTopParent($candidate);
+        if ( $topParent->getName() == $topParentName)
+          return $candidate->id();
+    } else {
+      return reset($parentList)->id();
+    }
+  }
+
+
+  // get the topmost parent. We have just a 3-level hierarchy
+  public function getTopParent($term) {
+    $parents = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($term->id());
+    if (sizeof($parents) == 0) 
+      return $term;
+    $parent = reset($parents);
+
+    $parents1 = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($parent->id());
+    if (sizeof($parents1) == 0) 
+      return $parent;
+    $parent1 = reset($parents1);
+
+    $parents2 = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($parent1->id());
+    if (sizeof($parents2) == 0) 
+      return $parent1;
+  }
+
+  // select category from a list of categories with a required top parent $parentName
+  public function selectItem($tname, $parentName)
+  {
+    $terms = taxonomy_term_load_multiple_by_name($tname, 'categories');
+    if (!$terms) return Null;
+    if (sizeof($terms) == 1 and !$parentName)
+      return reset($terms);
+    foreach ($terms as $term) {
+      $topParent = $this->getTopParent($term);
+      if ($topParent->getName() == $parentName)
+        return $term;
+    }
+    // if a category with the required name does not exist
+    return Null;
+  }
+
+  // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
+  // may have multiple values, each having hierarchy starting from parent and separated by ';'
+  // two categories with the same name but a different parent are asigned different IDs
+  public function getCategories($datacategory)
+  {
+    $catlist = array();
+    foreach ($datacategory as $taxo) {
+      $tnames = explode(";",$taxo);
+      $parentName=Null;
+      // process categories one by one
+      foreach ($tnames as $tname) {
+        // check if the category $tname exists, create if not
+        $cterm = $this->selectItem($tname, $tnames[0]);
+        if(!$cterm) { // create a new item 
+          if ($parentName != NULL) { 
+            $parentId = $this->getParentId($parentName, $tnames[0]);
+            $term = Term::create([
+              'name' => $tname,
+              'vid' => 'categories',
+              'parent' => $parentId,
+            ])->save();
+          } else {
+            $term = Term::create([
+              'name' => $tname,
+              'vid' => 'categories',
+            ])->save();
+          }
+          $cterm = $this->selectItem($tname, $parentName);
+        }  
+        $parentName = $tname;
+	// if the full category hierarchy should be stored
+        $catlist[] = $cterm;
+      }
+      // if only the lowest category in the hierarchy should be stored
+      //$catlist[] = $cterm;
+    }
+  return $catlist;
   }
 
   /**
@@ -276,6 +415,11 @@ class RsSyncResource extends ResourceBase {
     $node->field_date = $data['dates'];
     $node->field_sort = $data['sort'];
     $node->field_info_published = $data['info_published'];
+
+    // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
+    // may have multiple values, each having hierarchy starting from parent and separated by ';'
+    $node->field_categories = $this->getCategories($data['category']);
+
     foreach ($node->field_images->getValue() as $field_image) {
       $media = Media::load($field_image->target_id);
       if (!is_null($media)) {

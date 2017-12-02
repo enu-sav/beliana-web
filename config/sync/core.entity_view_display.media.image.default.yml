@@ -5,12 +5,20 @@ dependencies:
   config:
     - field.field.media.image.field_description
     - field.field.media.image.field_image
+    - field.field.media.image.field_institucia
     - field.field.media.image.field_licence
-    - field.field.media.image.field_license_info
+    - field.field.media.image.field_meno_autora_diela
+    - field.field.media.image.field_meno_autora_snimky_diela
+    - field.field.media.image.field_nazov_diela
+    - field.field.media.image.field_obrazok_odkaz
+    - field.field.media.image.field_url_autora_diela_l
+    - field.field.media.image.field_url_diela_l
+    - field.field.media.image.field_url_textu_licencie_l
     - image.style.thumbnail
     - media_entity.bundle.image
   module:
     - image
+    - link
     - text
     - user
 id: media.image.default
@@ -44,6 +52,14 @@ content:
     third_party_settings: {  }
     type: image
     region: content
+  field_institucia:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_licence:
     weight: 4
     label: inline
@@ -52,12 +68,77 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_license_info:
-    weight: 5
+  field_meno_autora_diela:
+    weight: 7
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: text_default
+    type: string
+    region: content
+  field_meno_autora_snimky_diela:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nazov_diela:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_obrazok_odkaz:
+    weight: 14
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_url_autora_diela_l:
+    weight: 12
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_url_diela_l:
+    weight: 13
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_url_textu_licencie_l:
+    weight: 11
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   name:
     label: hidden

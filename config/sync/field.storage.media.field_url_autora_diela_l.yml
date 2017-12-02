@@ -1,16 +1,16 @@
-uuid: 5c966b67-7663-4ecb-8c99-eb3b4b4727ec
+uuid: c2b39638-4819-49cf-a9e6-5ebcc362411e
 langcode: sk
 status: true
 dependencies:
   module:
+    - link
     - media_entity
-    - text
-id: media.field_license_info
-field_name: field_license_info
+id: media.field_url_autora_diela_l
+field_name: field_url_autora_diela_l
 entity_type: media
-type: text_long
+type: link
 settings: {  }
-module: text
+module: link
 locked: false
 cardinality: 1
 translatable: true
