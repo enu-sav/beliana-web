@@ -233,10 +233,12 @@ class RsSyncResource extends ResourceBase {
   {
     $parentList = taxonomy_term_load_multiple_by_name($parentName, 'categories');
     if (sizeof($parentList) > 1 ) {
-      foreach($parentList as $candidate)
+      foreach($parentList as $candidate) {
         $topParent = $this->getTopParent($candidate);
-        if ( $topParent->getName() == $topParentName)
+        if ( $topParent->getName() === $topParentName){
           return $candidate->id();
+        }
+      }
     } else {
       return reset($parentList)->id();
     }
@@ -281,6 +283,7 @@ class RsSyncResource extends ResourceBase {
   // two categories with the same name but a different parent are asigned different IDs
   public function getCategories($datacategory)
   {
+//\Drupal::logger('beliana_sync')->notice($datacategory[0]);
     $catlist = array();
     foreach ($datacategory as $taxo) {
       $tnames = explode(";",$taxo);
