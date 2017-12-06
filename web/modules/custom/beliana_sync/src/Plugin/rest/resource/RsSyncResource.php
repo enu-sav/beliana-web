@@ -311,10 +311,10 @@ class RsSyncResource extends ResourceBase {
         }  
         $parentName = $tname;
 	// if the full category hierarchy should be stored
-        $catlist[] = $cterm;
+        //$catlist[] = $cterm;
       }
       // if only the lowest category in the hierarchy should be stored
-      //$catlist[] = $cterm;
+      $catlist[] = $cterm;
     }
   return $catlist;
   }
