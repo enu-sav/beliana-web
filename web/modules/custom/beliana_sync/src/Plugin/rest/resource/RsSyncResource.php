@@ -287,6 +287,7 @@ class RsSyncResource extends ResourceBase {
     $catlist = array();
     foreach ($datacategory as $taxo) {
       $tnames = explode(";",$taxo);
+      if ($tnames[0] === "ignore" ) continue;	// do not create and assign category "ignore"
       $parentName=Null;
       // process categories one by one
       foreach ($tnames as $tname) {
