@@ -1,22 +1,22 @@
-uuid: dc2a1c52-926d-44a6-a936-9321286c3301
+uuid: f6188440-c83c-4237-9c9b-3bdfde341756
 langcode: sk
-status: false
+status: true
 dependencies:
   config:
-    - views.view.book_series
+    - views.view.today
   module:
     - system
     - views
   theme:
-    - cool
-id: views_block__book_series_block_1
-theme: cool
+    - beliana
+id: beliana_views_block__today_block_1
+theme: beliana
 region: content
-weight: -2
+weight: -4
 provider: null
-plugin: 'views_block:book_series-block_1'
+plugin: 'views_block:today-block_1'
 settings:
-  id: 'views_block:book_series-block_1'
+  id: 'views_block:today-block_1'
   label: ''
   provider: views
   label_display: visible

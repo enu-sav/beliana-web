@@ -1,4 +1,4 @@
-uuid: 140881ec-cb01-40bc-ab77-a3f7589513ab
+uuid: e2aff0ea-2a08-42b6-a0fd-4e1aa37a044a
 langcode: sk
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - cool
+    - beliana
 _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
-id: cool_main_menu
-theme: cool
+id: beliana_main_menu
+theme: beliana
 region: navigation
 weight: -4
 provider: null

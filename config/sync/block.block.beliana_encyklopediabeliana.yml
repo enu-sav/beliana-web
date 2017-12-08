@@ -1,0 +1,31 @@
+uuid: 2cfce083-a18b-4f43-8a96-f6fa9d95ff65
+langcode: sk
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:320eb99a-81b6-4625-8e54-a7330048e241'
+  module:
+    - block_content
+    - system
+  theme:
+    - beliana
+id: beliana_encyklopediabeliana
+theme: beliana
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:320eb99a-81b6-4625-8e54-a7330048e241'
+settings:
+  id: 'block_content:320eb99a-81b6-4625-8e54-a7330048e241'
+  label: 'Encyklopédia Beliana'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

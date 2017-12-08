@@ -53,6 +53,7 @@ hidden:
   field_meno_autora_diela: true
   field_meno_autora_snimky_diela: true
   field_nazov_diela: true
+  field_obrazok_odkaz: true
   field_url_autora_diela_l: true
   field_url_diela_l: true
   field_url_textu_licencie_l: true

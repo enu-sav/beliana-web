@@ -1,4 +1,4 @@
-uuid: 140881ec-cb01-40bc-ab77-a3f7589513ab
+uuid: 8cd50086-960e-41fd-9da1-1b62968449dc
 langcode: sk
 status: true
 dependencies:
@@ -7,20 +7,18 @@ dependencies:
   module:
     - system
   theme:
-    - cool
-_core:
-  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
-id: cool_main_menu
-theme: cool
-region: navigation
-weight: -4
+    - beliana
+id: beliana_footermainnavigation
+theme: beliana
+region: footer_left
+weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: 'Encyclopaedia Beliana'
   provider: system
-  label_display: '0'
+  label_display: visible
   level: 1
   depth: 0
 visibility: {  }

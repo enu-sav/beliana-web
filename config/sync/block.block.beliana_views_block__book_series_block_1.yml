@@ -1,4 +1,4 @@
-uuid: dc2a1c52-926d-44a6-a936-9321286c3301
+uuid: 899c0320-98c0-4df6-92d1-02d484b1e4b1
 langcode: sk
 status: false
 dependencies:
@@ -8,9 +8,9 @@ dependencies:
     - system
     - views
   theme:
-    - cool
-id: views_block__book_series_block_1
-theme: cool
+    - beliana
+id: beliana_views_block__book_series_block_1
+theme: beliana
 region: content
 weight: -2
 provider: null

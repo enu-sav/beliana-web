@@ -1,0 +1,28 @@
+uuid: a70f7014-3cd4-4dfa-a7a9-01b04e6771c2
+langcode: sk
+status: true
+dependencies:
+  config:
+    - facets.facet.alphabet
+  module:
+    - facets
+    - system
+  theme:
+    - beliana
+id: beliana_heslo
+theme: beliana
+region: content
+weight: -5
+provider: null
+plugin: 'facet_block:alphabet'
+settings:
+  id: 'facet_block:alphabet'
+  label: 'Abecedný zoznam'
+  provider: facets
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/abecedny-zoznam"
+    negate: false
+    context_mapping: {  }

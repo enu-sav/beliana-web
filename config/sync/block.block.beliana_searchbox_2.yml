@@ -1,0 +1,20 @@
+uuid: b28b8d63-3e01-429d-95cb-7941f9a8c23a
+langcode: sk
+status: false
+dependencies:
+  module:
+    - beliana_search
+  theme:
+    - beliana
+id: beliana_searchbox_2
+theme: beliana
+region: navigation
+weight: 0
+provider: null
+plugin: beliana_searchbox
+settings:
+  id: beliana_searchbox
+  label: 'Search box'
+  provider: beliana_search
+  label_display: '0'
+visibility: {  }

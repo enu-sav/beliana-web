@@ -1,0 +1,24 @@
+uuid: d81601f4-f0b6-4bcc-9cb3-a9feffdb17bb
+langcode: sk
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - system
+  theme:
+    - beliana
+id: beliana_odkazy
+theme: beliana
+region: header_right
+weight: -6
+provider: null
+plugin: 'system_menu_block:secondary'
+settings:
+  id: 'system_menu_block:secondary'
+  label: Odkazy
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }
