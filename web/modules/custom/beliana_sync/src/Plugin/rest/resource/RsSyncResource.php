@@ -287,6 +287,7 @@ class RsSyncResource extends ResourceBase {
     $catlist = array();
     foreach ($datacategory as $taxo) {
       $tnames = explode(";",$taxo);
+      if ($tnames[0] === "ignore" ) continue;	// do not create and assign category "ignore"
       $parentName=Null;
       // process categories one by one
       foreach ($tnames as $tname) {
@@ -310,10 +311,10 @@ class RsSyncResource extends ResourceBase {
         }  
         $parentName = $tname;
 	// if the full category hierarchy should be stored
-        $catlist[] = $cterm;
+        //$catlist[] = $cterm;
       }
       // if only the lowest category in the hierarchy should be stored
-      //$catlist[] = $cterm;
+      $catlist[] = $cterm;
     }
   return $catlist;
   }
