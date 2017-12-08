@@ -1,0 +1,7 @@
+/**
+ * @file
+ */
+
+(function ($) {
+
+})(jQuery)
