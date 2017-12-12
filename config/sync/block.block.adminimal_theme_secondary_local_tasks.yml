@@ -1,13 +1,13 @@
-uuid: 92f28bc8-5798-4a71-9b90-47a2869e833a
+uuid: a45cb1b3-241a-4527-aef7-5a6c96dfc179
 langcode: sk
 status: true
 dependencies:
   theme:
-    - seven
+    - adminimal_theme
 _core:
-  default_config_hash: QeZBeCilQfeET3GeW6ZtJkEiwROADTZktFgKWwPieD4
-id: seven_secondary_local_tasks
-theme: seven
+  default_config_hash: DJ7Om1C2xWr2GI8CjZaZtyWpP-0S3hRR3oROZl1oesc
+id: adminimal_theme_secondary_local_tasks
+theme: adminimal_theme
 region: pre_content
 weight: 0
 provider: null

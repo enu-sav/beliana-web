@@ -1,4 +1,6 @@
 module:
+  admin_toolbar: 0
+  adminimal_admin_toolbar: 0
   automated_cron: 0
   basic_auth: 0
   beliana_daily: 0
@@ -15,6 +17,7 @@ module:
   comment: 0
   config: 0
   config_filter: 0
+  config_ignore: 0
   config_split: 0
   ctools: 0
   datetime: 0
@@ -82,6 +85,7 @@ theme:
   seven: 0
   cool: 0
   beliana: 0
+  adminimal_theme: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 langcode: sk

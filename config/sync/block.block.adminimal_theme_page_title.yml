@@ -1,13 +1,13 @@
-uuid: 9504c13f-0844-4fd0-9821-e5d90b628aa6
+uuid: 8d4b76f3-040b-4c19-a2bd-cb9c4760a562
 langcode: sk
 status: true
 dependencies:
   theme:
-    - seven
+    - adminimal_theme
 _core:
-  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
-id: seven_page_title
-theme: seven
+  default_config_hash: Z3nlZUh2mSJP3apMrJWt-duS-aLyP79rcfu_0wpPmDs
+id: adminimal_theme_page_title
+theme: adminimal_theme
 region: header
 weight: -30
 provider: null
