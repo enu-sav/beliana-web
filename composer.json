@@ -27,15 +27,15 @@
                 }
             }
         },
-	{
-	    "type": "vcs",
-	    "url": "git@github.com:coolstrankysk/drupal-google_analytics_counter.git"
-	}
+        {
+            "type": "vcs",
+            "url": "git@github.com:coolstrankysk/drupal-google_analytics_counter.git"
+        }
     ],
     "require": {
         "composer/installers": "^1.2",
-        "drupal-composer/drupal-scaffold": "^2.2",
         "cweagans/composer-patches": "~1.0",
+        "drupal-composer/drupal-scaffold": "^2.2",        
         "drupal/core": "~8.0",
         "drush/drush": "~8.0",
         "drupal/console": "~1.0",
@@ -61,7 +61,11 @@
         "drupal/mathjax": "^2.6",
         "drupal/google_analytics_counter": "dev-8.x-3.x",
         "drupal/captcha": "^1.0@beta",
-        "drupal/config_split": "^1.1"
+        "drupal/config_split": "^1.1",
+        "drupal/config_ignore": "~1.0",
+        "drupal/admin_toolbar": "~1.0",
+        "drupal/adminimal_theme": "~1.0",
+        "drupal/adminimal_admin_toolbar": "~1.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",

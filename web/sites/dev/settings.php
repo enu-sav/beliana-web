@@ -31,12 +31,14 @@ if (getenv('AMAZEEIO_SOLR_HOST') && getenv('AMAZEEIO_SOLR_PORT')) {
 $config['system.logging']['error_level'] = 'all';
 // Disable Google Analytics from sending dev GA data.
 $config['google_analytics.settings']['account'] = 'UA-XXXXXXXX-YY';
-// Expiration of cached pages to 0
-$config['system.performance']['cache']['page']['max_age'] = 0;
-// Aggregate CSS files on
-$config['system.performance']['css']['preprocess'] = 0;
-// Aggregate JavaScript files on
-$config['system.performance']['js']['preprocess'] = 0;
+
+//// Expiration of cached pages to 0
+//$config['system.performance']['cache']['page']['max_age'] = 0;
+//// Aggregate CSS files on
+//$config['system.performance']['css']['preprocess'] = 0;
+//// Aggregate JavaScript files on
+//$config['system.performance']['js']['preprocess'] = 0;
+//
 // Configure config split.
 $config['config_split.config_split.dev']['status'] = TRUE;
 $config['config_split.config_split.stage']['status'] = FALSE;
