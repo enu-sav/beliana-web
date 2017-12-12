@@ -96,9 +96,54 @@
     display: none;
 }
 
+#block-beliana-zalozky ul {
+    margin-top: 20px;
+}
+
+#block-beliana-zalozky ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#block-beliana-zalozky ul li a {
+    color: #266ead;
+    text-decoration: underline;
+}
+
 @media print {
     #block-beliana-local-tasks,
     #block-beliana-main-menu {
         display: none !important;
+    }
+}
+
+@media screen and (max-width:1013px) {
+    #block-beliana-heslo ul li ul li {
+        width: 16%;
+    }
+}
+@media screen and (max-width:740px) {
+    #block-beliana-heslo ul li ul li {
+        width: 18%;
+    }
+}
+@media screen and (max-width:640px) {
+    #block-beliana-heslo ul li ul li {
+        width: 23%;
+    }
+}
+@media screen and (max-width:520px) {
+    #block-beliana-heslo ul li ul li {
+        width: 30%;
+    }
+}
+@media screen and (max-width:380px) {
+    #block-beliana-heslo ul li ul li {
+        width: 45%;
+    }
+}
+@media screen and (max-width:240px) {
+    #block-beliana-heslo ul li ul li {
+        width: 99%;
     }
 }
