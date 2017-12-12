@@ -1,22 +1,22 @@
-#block-heslo {
+#block-beliana-heslo {
     display: block;
     position: relative;
 }
 
-#block-heslo ul li {
+#block-beliana-heslo ul li {
     list-style-type: none;
     margin-right: 4px;
 }
 
-#block-heslo ul li:last-of-type {
+#block-beliana-heslo ul li:last-of-type {
     margin-right: 0px;
 }
 
-#block-heslo > ul {
+#block-beliana-heslo > ul {
     display: inline-block;
 }
 
-#block-heslo > ul > li {
+#block-beliana-heslo > ul > li {
     float: left;
     display: block;
     font-size: 1.5rem;
@@ -33,14 +33,14 @@
     text-align: center;
 }
 
-#block-heslo ul li ul {
+#block-beliana-heslo ul li ul {
     position: absolute;
     left: 0;
     right: 0;
     padding-top: 8px;
 }
 
-#block-heslo ul li ul li {
+#block-beliana-heslo ul li ul li {
     float: left;
     display: block;
     margin-bottom: 4px;
@@ -54,7 +54,7 @@
     text-align: center;
 }
 
-#block-heslo ul li a,
+#block-beliana-heslo ul li a,
 .view-word-search-page ul.pager li a {
     line-height: 35px;
     text-decoration: none;
@@ -62,28 +62,28 @@
     font-size: 1.5rem;
 }
 
-#block-heslo ul li a,
+#block-beliana-heslo ul li a,
 .view-word-search-page ul.pager li a {
     width: 100%;
     height: 100%;
     display: block;
 }
 
-#block-heslo ul li a:hover,
+#block-beliana-heslo ul li a:hover,
 .view-word-search-page ul.pager li a:hover {
     cursor: pointer;
 }
 
 
-#block-heslo .facet-item a:hover {
+#block-beliana-heslo .facet-item a:hover {
     background-color: #e6e6e6;
     text-decoration: underline;
 }
 
-#block-heslo .facet-item a.is-active,
-#block-heslo .facet-item--active-trail > a,
-#block-heslo .facet-item--active-trail > a:hover,
-#block-heslo .facet-item a.is-active:hover {
+#block-beliana-heslo .facet-item a.is-active,
+#block-beliana-heslo .facet-item--active-trail > a,
+#block-beliana-heslo .facet-item--active-trail > a:hover,
+#block-beliana-heslo .facet-item a.is-active:hover {
     color: #fff;
     background: #266ead;
     font-weight: 700;
@@ -92,7 +92,7 @@
 }
 
 
-#block-heslo .facet-item__status {
+#block-beliana-heslo .facet-item__status {
     display: none;
 }
 
