@@ -113,7 +113,7 @@ class RsSyncResource extends ResourceBase {
       $node->field_images = $local_fids;
     }
     $modified_body = $this->downloadBodyImages($data['body']);
-    $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
+    $node->body = ['value' => $modified_body, 'format' => 'full_html'];
     $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
     \Drupal::service('event_dispatcher')
       ->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $data));
@@ -415,7 +415,7 @@ class RsSyncResource extends ResourceBase {
     $node = Node::load($nid);
     $node->title = $data['title'];
     $modified_body = $this->downloadBodyImages($data['body']);
-    $node->body = ['value' => $modified_body, 'format' => 'basic_html'];
+    $node->body = ['value' => $modified_body, 'format' => 'full_html'];
     $node->field_date = $data['dates'];
     $node->field_sort = $data['sort'];
     $node->field_info_published = $data['info_published'];
