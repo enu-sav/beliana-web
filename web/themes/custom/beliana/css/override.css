@@ -12,11 +12,11 @@
     margin-right: 0px;
 }
 
-#block-beliana-heslo > ul {
+#block-beliana-heslo .facets-widget-links > ul {
     display: inline-block;
 }
 
-#block-beliana-heslo > ul > li {
+#block-beliana-heslo .facets-widget-links > ul > li {
     float: left;
     display: block;
     font-size: 1.5rem;
