@@ -110,6 +110,10 @@
     text-decoration: underline;
 }
 
+.heslo-ilustracia .media-image.view-mode-in-word img{
+    max-width: 100%;
+}
+
 @media print {
     #block-beliana-local-tasks,
     #block-beliana-main-menu {

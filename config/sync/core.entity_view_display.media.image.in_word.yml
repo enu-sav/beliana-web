@@ -11,10 +11,10 @@ dependencies:
     - field.field.media.image.field_meno_autora_diela
     - field.field.media.image.field_meno_autora_snimky_diela
     - field.field.media.image.field_nazov_diela
+    - field.field.media.image.field_obrazok_odkaz
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
-    - image.style.colorbox_thumbnail
     - media_entity.bundle.image
   module:
     - colorbox
@@ -36,7 +36,7 @@ content:
     weight: 0
     label: visually_hidden
     settings:
-      colorbox_node_style: colorbox_thumbnail
+      colorbox_node_style: ''
       colorbox_node_style_first: ''
       colorbox_image_style: ''
       colorbox_gallery: page
