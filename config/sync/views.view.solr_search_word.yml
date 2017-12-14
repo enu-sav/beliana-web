@@ -71,12 +71,11 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: search_api
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          view_modes:
+            'entity:node':
+              word: search_index
       fields:
         title_2:
           id: title_2

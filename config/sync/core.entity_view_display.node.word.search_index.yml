@@ -1,8 +1,9 @@
-uuid: ca2da2c3-eefa-446c-939d-5a98f080ddb2
+uuid: 3f7ac503-685c-4f7e-b747-45d2b614ed9d
 langcode: sk
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.word.body
     - field.field.node.word.field_alphabet
     - field.field.node.word.field_categories
@@ -14,43 +15,24 @@ dependencies:
   module:
     - text
     - user
-id: node.word.default
+id: node.word.search_index
 targetEntityType: node
 bundle: word
-mode: default
+mode: search_index
 content:
   body:
-    label: visually_hidden
+    label: hidden
     type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_images:
-    weight: 2
-    label: visually_hidden
-    settings:
-      view_mode: in_word
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  field_info_published:
-    weight: 3
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  links:
     weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_alphabet: true
   field_categories: true
   field_date: true
+  field_images: true
+  field_info_published: true
   field_sort: true
   langcode: true
+  links: true
