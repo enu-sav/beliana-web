@@ -1,3 +1,12 @@
+body { 
+    font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
+    font-size: 1.7rem;
+}
+
+math, .inline-formula, .block-formula { 
+    font-family: 'STIXGeneral'; 
+}
+
 #block-beliana-heslo {
     display: block;
     position: relative;
