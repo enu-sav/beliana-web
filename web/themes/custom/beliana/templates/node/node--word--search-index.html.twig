@@ -71,8 +71,8 @@
 
 <article{{ attributes.addClass('heslo-container') }}>
   <div class="heslo truncate-wrapper">
-    <h1>{{ node.label }}</h1>
+    <h1><a href="{{ url }}">{{ node.label }}</a></h1>
     <div class="obsah">{{ content.body }}</div>
-    <div id="gradient"></div>
+    <div id="gradient" style="display: block;"></div>
   </div>
 </article>

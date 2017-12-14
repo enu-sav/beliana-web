@@ -115,6 +115,11 @@
     height: auto;
 }
 
+.view-word-search-page article .heslo h1 a{
+    color: #266ead;
+    text-decoration: none;
+}
+
 @media print {
     #block-beliana-local-tasks,
     #block-beliana-main-menu {
