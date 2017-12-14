@@ -70,10 +70,9 @@
 #}
 
 <article{{ attributes.addClass('heslo-container') }}>
-  <div class="heslo">
+  <div class="heslo truncate-wrapper">
     <h1>{{ node.label }}</h1>
-    <div class="obsah">
-      {{ content.body }}
-    </div>
+    <div class="obsah">{{ content.body }}</div>
+    <div id="gradient"></div>
   </div>
 </article>
