@@ -112,6 +112,7 @@
 
 .heslo-ilustracia .media-image.view-mode-in-word img{
     max-width: 100%;
+    height: auto;
 }
 
 @media print {
