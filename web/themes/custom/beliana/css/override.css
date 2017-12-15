@@ -3,13 +3,19 @@ article .heslo .obsah {
     font-size: 1.7rem;
 }
 
-article.media-image .field-media {
+article.media-image.view-mode-in-word a {
     display: block;
     text-align: center;
 }
-article.media-image .field-media img{
+article.media-image.view-mode-in-word a img {
     max-width: 100%;
+    max-height: 420px;
+    width: auto;
+}
+article.media-image.view-mode-full img {
     max-height: 660px;
+    max-width: 100%;
+    height: auto;
     width: auto;
 }
 
@@ -131,10 +137,8 @@ article.media-image .field-media img{
 }
 
 .heslo-ilustracia .media-image.view-mode-in-word img{
-    max-height: 420px;
     max-width: 100%;
-    height: auto;    
-    width: auto;
+    height: auto;
 }
 
 .view-word-search-page article .heslo h1 a{
