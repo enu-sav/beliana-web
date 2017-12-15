@@ -1,10 +1,11 @@
-body { 
+article .heslo { 
     font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
     font-size: 1.7rem;
 }
 
-math, .inline-formula, .block-formula { 
-    font-family: 'STIXGeneral'; 
+.MathJax span, .inline-formula, .block-formula { 
+    font-family: 'STIXGeneral' !important;
+    font-size: 1.5rem;
 }
 
 #block-beliana-heslo {
