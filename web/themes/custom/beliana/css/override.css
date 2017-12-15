@@ -3,9 +3,19 @@ article .heslo .obsah {
     font-size: 1.7rem;
 }
 
+article.media-image .field-media {
+    display: block;
+    text-align: center;
+}
+article.media-image .field-media img{
+    max-width: 100%;
+    max-height: 660px;
+    width: auto;
+}
+
 .MathJax span, .inline-formula, .block-formula { 
     font-family: 'STIXGeneral' !important;
-    font-size: 1.56rem;
+    font-size: 1.7rem;
 }
 
 #block-beliana-heslo {
@@ -121,8 +131,10 @@ article .heslo .obsah {
 }
 
 .heslo-ilustracia .media-image.view-mode-in-word img{
+    max-height: 420px;
     max-width: 100%;
-    height: auto;
+    height: auto;    
+    width: auto;
 }
 
 .view-word-search-page article .heslo h1 a{

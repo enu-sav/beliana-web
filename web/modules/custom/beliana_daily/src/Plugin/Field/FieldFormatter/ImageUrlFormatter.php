@@ -77,7 +77,7 @@ class ImageUrlFormatter extends LinkFormatter {
         $elements[$delta] = [
           '#type' => 'html_tag',
           '#tag' => 'a',
-          '#attributes' => ['href' => $entity->url()],
+          '#attributes' => ['href' => $entity->url(), 'class' => ['field-media']],
           'image' => $image
         ];
       }
