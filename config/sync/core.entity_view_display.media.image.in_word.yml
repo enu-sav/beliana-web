@@ -17,7 +17,8 @@ dependencies:
     - field.field.media.image.field_url_textu_licencie_l
     - media_entity.bundle.image
   module:
-    - colorbox
+    - beliana_daily
+    - image
     - text
 id: media.image.in_word
 targetEntityType: media
@@ -26,7 +27,7 @@ mode: in_word
 content:
   field_description:
     type: text_trimmed
-    weight: 1
+    weight: 2
     label: visually_hidden
     settings:
       trim_length: 600
@@ -34,18 +35,26 @@ content:
     region: content
   field_image:
     weight: 0
-    label: visually_hidden
+    label: hidden
     settings:
-      colorbox_node_style: ''
-      colorbox_node_style_first: ''
-      colorbox_image_style: ''
-      colorbox_gallery: page
-      colorbox_gallery_custom: ''
-      colorbox_caption: entity_title
-      colorbox_caption_custom: ''
+      image_style: ''
+      image_link: content
     third_party_settings: {  }
-    type: colorbox
+    type: image
     region: content
+  field_obrazok_odkaz:
+    type: beliana_image_url
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_link: content
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
+    third_party_settings: {  }
 hidden:
   created: true
   field_institucia: true
@@ -53,7 +62,6 @@ hidden:
   field_meno_autora_diela: true
   field_meno_autora_snimky_diela: true
   field_nazov_diela: true
-  field_obrazok_odkaz: true
   field_url_autora_diela_l: true
   field_url_diela_l: true
   field_url_textu_licencie_l: true
