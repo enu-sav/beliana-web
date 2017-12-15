@@ -27,7 +27,7 @@ mode: default
 content:
   field_description:
     weight: 4
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -43,7 +43,7 @@ content:
     region: content
   field_institucia:
     weight: 8
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -53,13 +53,13 @@ content:
     weight: 3
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_meno_autora_diela:
     weight: 5
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -67,7 +67,7 @@ content:
     region: content
   field_meno_autora_snimky_diela:
     weight: 6
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -75,7 +75,7 @@ content:
     region: content
   field_nazov_diela:
     weight: 7
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -96,7 +96,7 @@ content:
     region: content
   field_url_autora_diela_l:
     weight: 10
-    label: above
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -108,7 +108,7 @@ content:
     region: content
   field_url_diela_l:
     weight: 11
-    label: above
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -120,7 +120,7 @@ content:
     region: content
   field_url_textu_licencie_l:
     weight: 9
-    label: above
+    label: inline
     settings:
       trim_length: 80
       url_only: false
