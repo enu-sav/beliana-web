@@ -209,19 +209,30 @@ article.media-image.view-mode-full img {
 .heslo-ilustracia {
     margin-top: 90px;
 }
-.heslo-ilustracia .media-image.view-mode-in-word img{
+.heslo-ilustracia .media-image.view-mode-in-word img {
     max-width: 100%;
     height: auto;
 }
-
-.view-word-search-page article .heslo #gradient {
-    bottom: -15px;
+.view-word-search-page article {
+    margin-top: 15px;
 }
-.view-word-search-page article .heslo h1 a{
+.view-word-search-page article .heslo #gradient {
+    bottom: -4px;
+}
+.view-word-search-page article .heslo h1 a {
     color: #266ead;
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+.view-word-search-page .views-row, 
+.view-najcitanejsie-hesla .views-row {
+    margin-top: 15px;
+}
+
+.truncate-wrapper {
+    max-height: 135px;
 }
 
 @media print {
