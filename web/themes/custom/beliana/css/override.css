@@ -210,6 +210,9 @@ article.media-image.view-mode-full img {
     height: auto;
 }
 
+.view-word-search-page article .heslo #gradient {
+    bottom: -15px;
+}
 .view-word-search-page article .heslo h1 a{
     color: #266ead;
     text-decoration: none;
