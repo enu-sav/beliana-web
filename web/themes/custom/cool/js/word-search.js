@@ -27,7 +27,7 @@
 
   Drupal.behaviors.wordCounter = {
     attach: function () {
-      $('#count-words').text($('.view-word-search-page .views-row').size());
+      $('#count-words').text($('.view-word-search-page .views-row').length);
     }
   };
 
@@ -39,7 +39,7 @@
       });
     }
   };
-  
+
   Drupal.behaviors.clickChangeFormatButtonWrapper = {
     attach: function () {
       $('.truncate-button').once().on('click', function () {
@@ -50,15 +50,15 @@
 
   Drupal.behaviors.clickChangeFormatButton = {
     attach: function () {
-      $('.word-full').on('click',function () {
-        $('.view-word-search-page .obsah').removeClass('truncate-wrapper');
-        $('.view-word-search-page .obsah #gradient').css('display', 'none');
+      $('.word-full').on('click', function () {
+        $('.view-word-search-page .heslo').removeClass('truncate-wrapper');
+        $('.view-word-search-page .truncate-wrapper #gradient').css('display', 'none');
         $('.truncate-button .label').html("Celé heslo<b class='button'></b>");
         $('.truncate-button').once().toggleClass('active');
       });
 
-      $('.word-short').on('click',function () {
-        $('.view-word-search-page .obsah').each(function () {
+      $('.word-short').on('click', function () {
+        $('.view-word-search-page .heslo').each(function () {
           if ($(this).height() > 120) {
             $(this).addClass('truncate-wrapper');
             $(this).children('#gradient').css('display', 'block');
@@ -71,11 +71,10 @@
   };
 
   Drupal.behaviors.onLoadTrigger = {
-    attach: function() {
+    attach: function () {
       if ($('.truncate-button .label').text() === 'Začiatok hesla') {
         $('.word-short').click();
-      }
-      else {
+      } else {
         $('.word-full').click();
       }
     }

@@ -91,6 +91,10 @@ article.media-image.view-mode-full img {
     font-size: 1.7rem;
 }
 
+#block-beliana-page-title{
+    margin-top: 32px;
+}
+
 #block-beliana-heslo {
     display: block;
     position: relative;
