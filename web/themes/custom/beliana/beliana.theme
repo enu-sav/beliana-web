@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the beliana theme.
+ */
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cool_preprocess_media(&$variables) {
+  $media = $variables['elements']['#media'];
+
+  $entity_ids = Drupal::service('entity.query')->get('node')
+      ->condition('type', 'word')
+      ->condition('field_images', [$media->id()], 'IN')
+      ->execute();
+
+  if (!empty($entity_ids)) {
+    $variables['back_url'] = Url::fromRoute('entity.node.canonical', ['node' => reset($entity_ids)], ['absolute' => 'true'])->toString();
+  }
+}

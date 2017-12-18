@@ -10,32 +10,27 @@ header.header {
     background: none;
 }
 
-/*.modal-look-backdrop{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    top: 0;
-    left: 0;
-    z-index: 5;
+.media.media-image.view-mode-full .left,
+.media.media-image.view-mode-full .right{
+    display: inline-block;
+    width: 50%;
 }
-.modal-look-content{
-    position: absolute;
-    z-index: 6;
-}*/
-
-.modal-look-content .metadata .field .field__label {
+.media.media-image.view-mode-full .metadata .field .field__label {
     display: inline-block;
     font-weight: bold;
 }
-.modal-look-content .metadata .field .field__label:after{
+.media.media-image.view-mode-full .metadata .field .field__label:after {
     content: ":";
 }
-.modal-look-content .metadata .field .field__item {
+.media.media-image.view-mode-full .metadata .field .field__item {
     display: inline-block;
 }
 
-.modal-look-content .metadata .back{
+.media.media-image.view-mode-full .metadata .field--name-field-description {
+    padding-bottom: 10px;
+}
+
+.media.media-image.view-mode-full .metadata .back{
     border: 1px solid #d5d5d5;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
