@@ -26,14 +26,14 @@ bundle: image
 mode: default
 content:
   field_description:
-    weight: 4
+    weight: 2
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_image:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       image_style: ''
@@ -42,7 +42,7 @@ content:
     type: image
     region: content
   field_institucia:
-    weight: 8
+    weight: 7
     label: inline
     settings:
       link_to_entity: false
@@ -50,7 +50,7 @@ content:
     type: string
     region: content
   field_licence:
-    weight: 3
+    weight: 4
     label: inline
     settings:
       link: false
@@ -74,7 +74,7 @@ content:
     type: string
     region: content
   field_nazov_diela:
-    weight: 7
+    weight: 3
     label: inline
     settings:
       link_to_entity: false
@@ -82,7 +82,7 @@ content:
     type: string
     region: content
   field_obrazok_odkaz:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       image_link: ''
@@ -95,26 +95,26 @@ content:
     type: beliana_image_url
     region: content
   field_url_autora_diela_l:
-    weight: 10
+    weight: 8
     label: inline
     settings:
       trim_length: 80
+      rel: nofollow
+      target: _blank
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
     third_party_settings: {  }
     type: link
     region: content
   field_url_diela_l:
-    weight: 11
+    weight: 10
     label: inline
     settings:
       trim_length: 80
+      rel: nofollow
+      target: _blank
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
     third_party_settings: {  }
     type: link
     region: content
@@ -123,23 +123,16 @@ content:
     label: inline
     settings:
       trim_length: 80
+      rel: nofollow
+      target: _blank
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  name:
-    label: hidden
-    type: string
-    weight: 0
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     region: content
 hidden:
   created: true
   langcode: true
+  name: true
   thumbnail: true
   uid: true

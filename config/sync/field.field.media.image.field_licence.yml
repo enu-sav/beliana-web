@@ -10,7 +10,7 @@ id: media.image.field_licence
 field_name: field_licence
 entity_type: media
 bundle: image
-label: Licencia
+label: 'Licenčné podmienky'
 description: ''
 required: false
 translatable: false

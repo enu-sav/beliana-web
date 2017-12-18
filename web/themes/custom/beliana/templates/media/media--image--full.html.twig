@@ -16,6 +16,8 @@
 <article{{ attributes }}>
   {% if content %}      
       <div class="left metadata">
+        <h2 class="title">Ilustrácia k heslu <span>{{ node.title.value }}</span></h2>
+
         {{ content|without('field_image')|without('field_obrazok_odkaz') }}
 
         {% if back_url %}

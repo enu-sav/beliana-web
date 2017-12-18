@@ -29,6 +29,9 @@ header.header {
 .media.media-image.view-mode-full .metadata .field--name-field-description {
     padding-bottom: 10px;
 }
+.media.media-image.view-mode-full .metadata .field--name-field-description p {
+    margin: 0;
+}
 
 .media.media-image.view-mode-full .metadata .back{
     border: 1px solid #d5d5d5;

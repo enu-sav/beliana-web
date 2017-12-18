@@ -11,7 +11,7 @@ id: media.image.field_url_autora_diela_l
 field_name: field_url_autora_diela_l
 entity_type: media
 bundle: image
-label: 'URL autora diela'
+label: 'URL autora / inštitúcie'
 description: ''
 required: false
 translatable: false

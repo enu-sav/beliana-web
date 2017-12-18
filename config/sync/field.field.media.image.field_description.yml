@@ -11,7 +11,7 @@ id: media.image.field_description
 field_name: field_description
 entity_type: media
 bundle: image
-label: Popis
+label: 'Popis ilustrácie'
 description: ''
 required: false
 translatable: false
