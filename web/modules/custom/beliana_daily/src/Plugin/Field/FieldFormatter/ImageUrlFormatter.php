@@ -35,7 +35,10 @@ class ImageUrlFormatter extends LinkFormatter {
       '#type' => 'select',
       '#default_value' => $this->getSetting('image_link'),
       '#empty_option' => t('Nothing'),
-      '#options' => ['content' => t('Content')],
+      '#options' => [
+        'content' => t('Content'),
+        'file' => t('File')
+      ],
     ];
 
     return $element;
@@ -48,7 +51,11 @@ class ImageUrlFormatter extends LinkFormatter {
     $summary = [];
     $image_link_setting = $this->getSetting('image_link');
 
-    $link_types = ['content' => t('Linked to content')];
+    $link_types = [
+      'content' => t('Linked to content'),
+      'file' => t('File'),
+    ];
+
     if (isset($link_types[$image_link_setting])) {
       $summary[] = $link_types[$image_link_setting];
     }
@@ -72,12 +79,15 @@ class ImageUrlFormatter extends LinkFormatter {
           'alt' => empty($item->title) ? '' : \Drupal::token()->replace($item->title, [$entity->getEntityTypeId() => $entity], ['clear' => TRUE]),
         ]
       ];
-      
-      if ($this->getSetting('image_link') == 'content') {
+
+      if ($this->getSetting('image_link') == 'content' || $this->getSetting('image_link') == 'file') {
+        $url = $this->getSetting('image_link') == 'content' ? $entity->url() : $item->uri;
+        $target = $this->getSetting('image_link') == 'content' ? '' : '_blank';
+
         $elements[$delta] = [
           '#type' => 'html_tag',
           '#tag' => 'a',
-          '#attributes' => ['href' => $entity->url(), 'class' => ['field-media']],
+          '#attributes' => ['href' => $url, 'class' => ['field-media'], 'target' => $target],
           'image' => $image
         ];
       }

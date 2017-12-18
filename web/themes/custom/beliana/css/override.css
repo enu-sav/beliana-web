@@ -167,7 +167,6 @@ article.media-image.view-mode-full img {
     cursor: pointer;
 }
 
-
 #block-beliana-heslo .facet-item a:hover {
     background-color: #e6e6e6;
     text-decoration: underline;
@@ -214,6 +213,8 @@ article.media-image.view-mode-full img {
 .view-word-search-page article .heslo h1 a{
     color: #266ead;
     text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 @media print {
