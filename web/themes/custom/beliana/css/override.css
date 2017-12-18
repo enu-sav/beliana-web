@@ -10,6 +10,9 @@ header.header {
     background: none;
 }
 
+.media.media-image.view-mode-full {
+    margin-top: 32px;
+}
 .media.media-image.view-mode-full .left,
 .media.media-image.view-mode-full .right{
     display: inline-block;
@@ -26,8 +29,14 @@ header.header {
     display: inline-block;
 }
 
+.media.media-image.view-mode-full .metadata .title {
+    font-weight: normal;
+}
+.media.media-image.view-mode-full .metadata .title span {
+    font-weight: bold;
+}
 .media.media-image.view-mode-full .metadata .field--name-field-description {
-    padding-bottom: 10px;
+    padding: 10px 0;
 }
 .media.media-image.view-mode-full .metadata .field--name-field-description p {
     margin: 0;
@@ -49,6 +58,11 @@ header.header {
     text-decoration: none;
     padding: 0 10px;
     margin: 15px 0 0 0;
+}
+
+article .heslo {
+    float: none;
+    display: inline-block;
 }
 
 article .heslo .obsah { 
@@ -189,6 +203,9 @@ article.media-image.view-mode-full img {
     text-decoration: underline;
 }
 
+.heslo-ilustracia {
+    margin-top: 90px;
+}
 .heslo-ilustracia .media-image.view-mode-in-word img{
     max-width: 100%;
     height: auto;
@@ -209,6 +226,20 @@ article.media-image.view-mode-full img {
 @media screen and (max-width:1013px) {
     #block-beliana-heslo ul li ul li {
         width: 16%;
+    }
+}
+@media screen and (max-width: 843px) {
+    .media.media-image.view-mode-full .left,
+    .media.media-image.view-mode-full .right {
+        width: 100%;
+    }
+    .media.media-image.view-mode-full .right {
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .citacia.smartphone {
+        display: block;
     }
 }
 @media screen and (max-width:740px) {

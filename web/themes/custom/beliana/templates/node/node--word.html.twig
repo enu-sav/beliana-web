@@ -74,23 +74,12 @@
 <article{{ attributes.addClass('heslo-container') }}>
 
   <div class="heslo">
-    <div class="heslo-tools nadpis-vpravo smartphone">
-      <div class="share">
-        <span>Zdieľať<b class="button"></b></span>
-        <ul class="dropdown">
-          <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a></li>
-          <li><a href="https://twitter.com/intent/tweet?text={{ node.label|url_encode }} {{ share_url }}" target="_blank">Twitter</a>
-        </ul>
-      </div>
-      <a href="#" onclick="window.print();" class="print">Vytlačiť</a>
-      <a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank">Komentovať</a>
-    </div>
     <h1>{{ node.label }}</h1>
     <p class="last-update">
-{% set info_published %}
-{{ node.field_info_published.value }}
-{% endset %}
-{{ info_published |striptags }}
+      {% set info_published %}
+          {{ node.field_info_published.value }}
+      {% endset %}
+      {{ info_published |striptags }}
     </p>
     <div class="obsah">
       {{ content.body }}
@@ -105,12 +94,6 @@
       </div>
       <a href="#" onclick="window.print();" class="print">Vytlačiť</a>
       <a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank">Komentovať</a>
-    </div>
-    <div class="citacia smartphone" data-collapse>
-      <h3>citácia</h3>
-      <div><p>{{ node.label }} [online]. {{ site_name }}. Aktualizované {{ node.changed.value | date("Y-m-d") }}
-          [cit. {{ now | date("Y-m-d") }}].</p>
-        <p>Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p></div>
     </div>
   </div>
 
@@ -129,7 +112,7 @@
     <a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank">Komentovať</a>
   </div>
 
-  <div class="citacia no-desktop" data-collapse>
+  <div class="citacia smartphone" data-collapse>
     <h3>citácia</h3>
     <div><p>{{ node.label }} [online]. {{ site_name }}. Aktualizované {{ node.changed.value | date("Y-m-d") }}
         [cit. {{ now | date("Y-m-d") }}].</p>
