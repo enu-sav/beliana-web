@@ -9,7 +9,7 @@ id: media.image.field_meno_autora_snimky_diela
 field_name: field_meno_autora_snimky_diela
 entity_type: media
 bundle: image
-label: 'Meno autora snímky diela'
+label: 'Autora snímky diela'
 description: ''
 required: false
 translatable: false
