@@ -2,22 +2,25 @@
  * @file
  */
 
-(function ($) {
+(function ($, Drupal) {
 
   Drupal.behaviors.wordFacetsBlockTheme = {
-    attach: function () {
+    attach: function (context, settings) {
       // Set word search facet api second level filter position.
-      $('.word-facet-wrap').height($('#block-heslo').height() + $('#block-heslo ul li ul').height());
+      Drupal.behaviors.wordFacetsBlockTheme.setHeight(context);
 
       $(window).resize(function () {
-        $('.word-facet-wrap').height(0);
-        $('.word-facet-wrap').height($('#block-heslo').height() + $('#block-heslo ul li ul').height());
+        Drupal.behaviors.wordFacetsBlockTheme.setHeight(context);
       });
+    },
+    setHeight: function (context) {
+      var $block = $('#block-beliana-heslo', context);
+      $block.css({height: ($block.find('ul li ul').height() + 10) + 'px'});
     }
   };
 
   Drupal.behaviors.setCurrentWordFacet = {
-    attach: function () {
+    attach: function (context, settings) {
       // Set active facet string in solr_search_word view header.
       if ($('#block-heslo .facet-item .is-active .facet-item__value')) {
         $('.view-word-search-page header h2').once().append(' ' + $('#block-heslo .facet-item .is-active .facet-item__value').text());
@@ -26,13 +29,13 @@
   };
 
   Drupal.behaviors.wordCounter = {
-    attach: function () {
+    attach: function (context, settings) {
       $('#count-words').text($('.view-word-search-page .views-row').length);
     }
   };
 
   Drupal.behaviors.alphabetHeight = {
-    attach: function () {
+    attach: function (context, settings) {
       $(window).on('load resize', function () {
         var height = $('#block-heslo ul').height();
         $('#block-heslo ul li ul').css('top', height);
@@ -41,7 +44,7 @@
   };
 
   Drupal.behaviors.clickChangeFormatButtonWrapper = {
-    attach: function () {
+    attach: function (context, settings) {
       $('.truncate-button').once().on('click', function () {
         $(this).toggleClass('active');
       });
@@ -49,7 +52,7 @@
   };
 
   Drupal.behaviors.clickChangeFormatButton = {
-    attach: function () {
+    attach: function (context, settings) {
       $('.word-full').on('click', function () {
         $('.view-word-search-page .heslo').removeClass('truncate-wrapper');
         $('.view-word-search-page .truncate-wrapper #gradient').css('display', 'none');
@@ -71,7 +74,7 @@
   };
 
   Drupal.behaviors.onLoadTrigger = {
-    attach: function () {
+    attach: function (context, settings) {
       if ($('.truncate-button .label').text() === 'Začiatok hesla') {
         $('.word-short').click();
       } else {
@@ -80,4 +83,4 @@
     }
   }
 
-})(jQuery);
+})(jQuery, Drupal);
