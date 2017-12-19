@@ -23,6 +23,11 @@ header.header {
     font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
     font-size: 1.7rem;
 }
+.media.media-image.view-mode-full .metadata a{
+    color: #266ead;
+    text-decoration: underline;
+}
+
 .media.media-image.view-mode-full .metadata .field .field__label {
     display: inline-block;
     font-weight: bold;

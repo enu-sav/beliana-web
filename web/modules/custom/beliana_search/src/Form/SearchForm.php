@@ -27,10 +27,9 @@ class SearchForm extends FormBase {
       '#type' => 'textfield',
       '#title' => 'Vyhľadať zadaný text',
       '#title_display' => 'hidden',
-      '#required' => 'required',
       '#attributes' => [
         'class' => ['search-input'],
-        'placeholder' => ['Zadajte hľadané heslo ...'],
+        'placeholder' => ['Zadajte výraz na vyhľadanie ...'],
       ],
       '#default_value' => $_GET['text'] ?? '',
     ];
@@ -41,7 +40,6 @@ class SearchForm extends FormBase {
       '#attributes' => [
         'class' => ['search-submit'],
       ],
-
     ];
 
     return $form;
@@ -51,10 +49,7 @@ class SearchForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if (!empty($form_state->getValue('beliana_search_input'))) {
-      $form_state->setRedirect('view.solr_search_word.page_2', ['text' => $form_state->getValue('beliana_search_input')]);
-      return;
-    }
+    $form_state->setRedirect('view.solr_search_word.page_2', ['text' => $form_state->getValue('beliana_search_input')]);
   }
 
 }
