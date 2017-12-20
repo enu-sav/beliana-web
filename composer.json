@@ -66,7 +66,8 @@
         "drupal/admin_toolbar": "~1.0",
         "drupal/adminimal_theme": "~1.0",
         "drupal/adminimal_admin_toolbar": "~1.0",
-        "drupal/piwik": "~1.0"
+        "drupal/piwik": "~1.0",
+        "drupal/eu_cookie_compliance": "~1.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",
