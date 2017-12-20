@@ -10,8 +10,12 @@ header.header {
     background: none;
 }
 
-.media.media-image.view-mode-full {
+#content-main {
     margin-top: 32px;
+}
+
+.media.media-image.view-mode-full {
+
 }
 .media.media-image.view-mode-full .left,
 .media.media-image.view-mode-full .right{
@@ -48,10 +52,32 @@ header.header {
     font-weight: bold;
 }
 .media.media-image.view-mode-full .metadata .field--name-field-description {
-    padding: 10px 0;
+    padding: 20px 0;
 }
 .media.media-image.view-mode-full .metadata .field--name-field-description p {
     margin: 0;
+}
+
+.media.media-image.view-mode-full .metadata .dalsie-info > div {
+    padding: 15px 0 15px 27px;
+}
+
+.media.media-image.view-mode-full .metadata .dalsie-info h3.open a {
+    background-position: 0 -17px;
+}
+
+.media.media-image.view-mode-full .metadata .dalsie-info h3 a {
+    background: url("../img/arrow_sprite.png") no-repeat;
+    height: 17px;
+    display: inline-block;
+    padding-left: 26px;
+    margin: 0;
+    color: #1c1c1c;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 20px;
+    opacity: 0.5;
 }
 
 .media.media-image.view-mode-full .metadata .back {
@@ -248,7 +274,7 @@ article.media-image.view-mode-full img {
 }
 
 .citacia h3 a {
-    opacity: 0.75;
+    opacity: 0.5;
 }
 
 @media print {

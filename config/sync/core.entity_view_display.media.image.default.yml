@@ -27,7 +27,7 @@ mode: default
 content:
   field_description:
     weight: 2
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -94,18 +94,6 @@ content:
     third_party_settings: {  }
     type: beliana_image_url
     region: content
-  field_url_autora_diela_l:
-    weight: 10
-    label: inline
-    settings:
-      trim_length: 80
-      rel: nofollow
-      target: _blank
-      url_only: false
-      url_plain: false
-    third_party_settings: {  }
-    type: link
-    region: content
   field_url_diela_l:
     weight: 6
     label: inline
@@ -132,6 +120,7 @@ content:
     region: content
 hidden:
   created: true
+  field_url_autora_diela_l: true
   langcode: true
   name: true
   thumbnail: true
