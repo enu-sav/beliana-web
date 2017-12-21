@@ -10,6 +10,7 @@ theme: {  }
 blacklist:
   - beliana_sync.config
   - locale.settings
+  - piwik.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
