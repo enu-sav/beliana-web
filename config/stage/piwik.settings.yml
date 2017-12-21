@@ -55,3 +55,4 @@ page_title_hierarchy_exclude_home: true
 _core:
   default_config_hash: a4NtJT7rQbnxB8tkCJH4-JtDHzCoyQxFbX8PvU8vhxU
 langcode: sk
+access_token: dd33a5f96203f6b82c615313ea9e4e0a

@@ -15,7 +15,7 @@ popup_bg_hex: 073f77
 popup_clicking_confirmation: false
 popup_delay: 1
 popup_disagree_button_message: 'No, give me more info'
-popup_enabled: true
+popup_enabled: false
 popup_find_more_button_message: 'More info'
 popup_height: null
 popup_hide_agreed: false
