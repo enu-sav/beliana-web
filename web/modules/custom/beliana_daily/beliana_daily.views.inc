@@ -43,7 +43,7 @@ function beliana_daily_views_data_alter(array &$data) {
       'click sortable' => TRUE,
     ),
     'sort' => array(
-      'id' => 'standard',
+      'id' => 'node_piwik_statistics_sort',
     ),
   );
 }

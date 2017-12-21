@@ -444,6 +444,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           period: month
+          show: nb_hits
           entity_type: node
           plugin_id: node_piwik_statistics
       defaults:

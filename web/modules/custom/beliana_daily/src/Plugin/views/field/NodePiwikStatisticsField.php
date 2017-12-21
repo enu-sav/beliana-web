@@ -34,12 +34,17 @@ class NodePiwikStatisticsField extends FieldPluginBase {
   protected function defineOptions() {
     $options = parent::defineOptions();
 
-    $options['period'] = array(
+    $options['period'] = [
       'day' => t('Day'),
       'week' => t('Week'),
       'month' => t('Month'),
       'year' => t('Year')
-    );
+    ];
+
+    $options['show'] = [
+      'nb_visits' => t('Unique user visits'),
+      'nb_hits' => t('Page visits'),
+    ];
 
     return $options;
   }
@@ -48,18 +53,30 @@ class NodePiwikStatisticsField extends FieldPluginBase {
    * Provide the options form.
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
-    $options = [
+    $period_map = [
       'day' => t('Day'),
       'week' => t('Week'),
       'month' => t('Month'),
       'year' => t('Year')
     ];
 
+    $show_map = [
+      'nb_visits' => t('Unique user visits'),
+      'nb_hits' => t('Page visits'),
+    ];
+
     $form['period'] = [
       '#title' => $this->t('Select period to count visits'),
       '#type' => 'select',
       '#default_value' => $this->options['period'],
-      '#options' => $options,
+      '#options' => $period_map,
+    ];
+
+    $form['show'] = [
+      '#title' => $this->t('Select data to show'),
+      '#type' => 'select',
+      '#default_value' => $this->options['show'],
+      '#options' => $show_map,
     ];
 
     parent::buildOptionsForm($form, $form_state);
@@ -83,7 +100,8 @@ class NodePiwikStatisticsField extends FieldPluginBase {
 
     // Request piwik data.
     if ($result = $this->getApiRequest($config->get('url_http'), $config->get('access_token'), 'Actions.getPageUrl', $config->get('site_id'), $options)) {
-//      debug($result);
+      $data = reset($result);
+      $statistics = $data[$this->options['show']];
     }
 
     return $statistics;
