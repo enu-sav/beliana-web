@@ -244,27 +244,19 @@ article.media-image.view-mode-full img {
     text-decoration: underline;
 }
 
-#sliding-popup {
+#test-popup {
     min-height: 52px;
+    background: #073f77;
 }
-#sliding-popup #popup-text {
+#test-popup #popup-text {
     width: 100%;
-    text-align: center !important;
-    position: relative;
-    top: 10px;    
+    text-align: center;
+    color: #fff;
+    float: left;
+    font-weight: bold;
 }
-#sliding-popup #popup-text p {
-    font-size: 1.8rem !important;
-}
-#sliding-popup #popup-buttons button {
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    border-radius: 2px !important;
-    padding: 6px 14px !important;
-    float: right;
-}
-#sliding-popup #popup-buttons button.find-more-button {
-    display: none;
+#test-popup #popup-text p {
+    font-size: 1.8rem;
 }
 
 .heslo-ilustracia {
