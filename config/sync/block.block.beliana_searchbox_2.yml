@@ -1,6 +1,6 @@
 uuid: b28b8d63-3e01-429d-95cb-7941f9a8c23a
 langcode: sk
-status: false
+status: true
 dependencies:
   module:
     - beliana_search
