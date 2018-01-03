@@ -10,6 +10,10 @@ header.header {
     background: none;
 }
 
+.search-box-mobile{
+    min-height: 58px;
+}
+
 #content-main {
     margin-top: 32px;
 }

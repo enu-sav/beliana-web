@@ -53,11 +53,15 @@
 
   Drupal.behaviors.clickChangeFormatButton = {
     attach: function (context, settings) {
+      var labelMap = {short: 'Začiatok hesla', full: 'Celé heslo'};
+
       $('.word-full').on('click', function () {
         $('.view-word-search-page .heslo').removeClass('truncate-wrapper');
-        $('.view-word-search-page .truncate-wrapper #gradient').css('display', 'none');
-        $('.truncate-button .label').html("Celé heslo<b class='button'></b>");
+        $('.view-word-search-page .heslo #gradient').css('display', 'none');
+        $('.truncate-button .label').html(labelMap.full + '<b class="button"></b>');
         $('.truncate-button').once().toggleClass('active');
+
+        Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', labelMap.full, 1);
       });
 
       $('.word-short').on('click', function () {
@@ -67,19 +71,49 @@
             $(this).children('#gradient').css('display', 'block');
           }
         });
-        $('.truncate-button .label').html("Začiatok hesla<b class='button'></b>");
+        $('.truncate-button .label').html(labelMap.short + '<b class="button"></b>');
         $('.truncate-button').once().toggleClass('active');
+
+        Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', labelMap.short, 1);
       });
     }
   };
 
   Drupal.behaviors.onLoadTrigger = {
     attach: function (context, settings) {
-      if ($('.truncate-button .label').text() === 'Začiatok hesla') {
-        $('.word-short').click();
-      } else {
+      if (Drupal.behaviors.onLoadTrigger.getCookie('word_search_label') === 'Celé heslo') {
         $('.word-full').click();
+      } else {
+        $('.word-short').click();
       }
+    },
+    setCookie: function (name, value, days) {
+      var expires = '';
+      var date = new Date();
+
+      if (days) {
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = '; expires=' + date.toGMTString();
+      }
+
+      document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value) + expires + '; path=/';
+    },
+    getCookie: function (name) {
+      var nameEQ = encodeURIComponent(name) + '=';
+      var ca = document.cookie.split(';');
+
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') {
+          c = c.substring(1, c.length);
+        }
+
+        if (c.indexOf(nameEQ) === 0) {
+          return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
+      }
+
+      return null;
     }
   }
 
