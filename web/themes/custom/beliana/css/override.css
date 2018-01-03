@@ -312,6 +312,19 @@ article.media-image.view-mode-full img {
     opacity: 0.5;
 }
 
+.contentinfo .alret {
+    color: #a51b00;
+    background: no-repeat 10px 17px;    
+    background-image: url('/core/misc/icons/e32700/error.svg');
+    border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+    box-shadow: -8px 0 0 #e62600;
+    background-color: white;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    background-position: right 10px top 17px;
+    padding: 12px 20px 15px 30px;
+}
+
 @media print {
     #block-beliana-local-tasks,
     #block-beliana-main-menu {

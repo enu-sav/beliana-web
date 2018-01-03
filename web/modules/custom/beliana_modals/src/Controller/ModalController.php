@@ -87,15 +87,14 @@ class ModalController extends ControllerBase {
    */
   public function thankyouPage() {
     $page = [];
-    $page['header'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'h2',
-      '#value' => 'Ďakujeme za nahlásenie chyby v hesle',
-    ];
+//    $page['header'] = [
+//      '#type' => 'html_tag',
+//      '#tag' => 'h2',
+//      '#value' => 'Ďakujeme za nahlásenie chyby v hesle',
+//    ];
     $page['content'] = [
-      '#markup' => 'Ďakujeme za nahlásenie chyby, jej odstránením sa budeme 
-          čoskoro zaoberať a o jej odstránení vás budeme informovať na 
-          zadanú emailovú adresu.',
+      '#markup' => 'Ďakujeme za nahlásenie chyby. Vašou pripomienkou sa budeme '
+      . 'čoskoro zaoberať a výsledok odošleme na Vami zadanú emailovú adresu.',
     ];
     return $page;
   }
