@@ -4,14 +4,28 @@ header.header {
     background: url(../img/header_bg.png) center top no-repeat #073f77;
 }
 
-.header{
+.header {
     width: auto;
     height: auto;
     background: none;
 }
 
-.search-box-mobile{
+.search-box-mobile {
     min-height: 58px;
+}
+
+.obsah a,
+.citacia a,
+.obsah a:visited,
+.citacia a:visited {
+    color: #266ead;
+    text-decoration: none;
+}
+
+.obsah a:hover,
+.citacia a:hover {
+    color: #266ead;
+    text-decoration: underline;
 }
 
 #content-main {
@@ -22,7 +36,7 @@ header.header {
 
 }
 .media.media-image.view-mode-full .left,
-.media.media-image.view-mode-full .right{
+.media.media-image.view-mode-full .right {
     display: inline-block;
     width: 50%;
 }
@@ -134,7 +148,7 @@ article.media-image.view-mode-full img {
     font-size: 1.7rem;
 }
 
-#block-beliana-page-title{
+#block-beliana-page-title {
     margin-top: 32px;
 }
 
@@ -294,6 +308,7 @@ article.media-image.view-mode-full img {
 }
 
 .citacia h3 a {
+    color: #1c1c1c !important;
     opacity: 0.5;
 }
 

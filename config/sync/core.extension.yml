@@ -43,6 +43,7 @@ module:
   media_entity: 0
   media_entity_browser: 0
   media_entity_image: 0
+  menu_link_attributes: 0
   menu_ui: 0
   metatag: 0
   metatag_hreflang: 0
