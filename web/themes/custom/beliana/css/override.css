@@ -36,6 +36,20 @@ header.header {
     text-decoration: underline !important;
 }
 
+.top-links a,
+.top-links a:visited,
+footer a,
+footer a:visited,
+#block-beliana-main-menu a,
+#block-beliana-main-menu a:visited {
+    text-decoration: none !important;
+}
+.top-links a:hover,
+footer a:hover,
+#block-beliana-main-menu a:hover {
+    text-decoration: underline !important;
+}
+
 .najhladanejsie-hesla ul li .views-field-title span:after {
     content: ", ";
 }
@@ -376,6 +390,9 @@ article.media-image.view-mode-full img {
 @media screen and (max-width: 768px) {
     .citacia.smartphone {
         display: block;
+    }
+    .view-najcitanejsie-hesla .zoznam-tools {
+        margin-top: 52px;
     }
 }
 @media screen and (max-width:740px) {
