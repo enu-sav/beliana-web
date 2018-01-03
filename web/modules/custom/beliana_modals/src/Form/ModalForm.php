@@ -7,6 +7,7 @@ use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 
@@ -26,48 +27,34 @@ class ModalForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $node = NULL) {
-//    $form['#prefix'] = '<div id="submit-error-form">';
-//    $form['#suffix'] = '</div>';
-//    // The status messages that will contain any form errors.
-//    $form['status_messages'] = [
-//      '#type' => 'status_messages',
-//      '#weight' => -10,
-//    ];
-    $form['header'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'h2',
-      '#value' => 'Formulár na nahlásenie chyby v hesle',
-    ];
-    $form['name'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Meno a priezvisko'),
-      '#required' => TRUE,
-    ];
-    $form['email'] = [
-      '#type' => 'email',
-      '#title' => $this->t('Emailová adresa'),
-      '#description' => $this->t('Po vyriešení nahláseného problému Vás budeme kontaktovať'),
-      '#required' => TRUE,
-    ];
-    $form['description'] = [
-      '#type' => 'textarea',
-      '#title' => 'Popis chyby',
-      '#required' => TRUE,
-      '#default_value' => 'Nahlasujem chybu v hesle ' . $node->getTitle(),
-    ];
     $form['node'] = [
       '#type' => 'value',
       '#value' => $node->id(),
     ];
-    // A required checkbox field.
-    $form['personal_data_agreement'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Súhlasím so spracovaním osobných údajov.'),
-      '#required' => TRUE,
+
+    $form['header'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h2',
+      '#value' => 'Nahlásenie chyby v hesle',
     ];
+
+    $form['description'] = [
+      '#type' => 'textarea',
+      '#title' => 'Popis chyby',
+      '#required' => TRUE,
+      '#default_value' => 'Nahlasujem chybu v hesle "' . $node->getTitle() . '"',
+    ];
+
+    $form['email'] = [
+      '#type' => 'email',
+      '#title' => $this->t('Emailová adresa'),
+      '#description' => $this->t('Ak uvediete svoju emailovú adresu, budeme Vás informovať o vyriešení problému'),
+    ];
+
     $form['actions'] = [
       '#type' => 'actions',
     ];
+
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Odoslať'),
@@ -87,11 +74,9 @@ class ModalForm extends FormBase {
     else {
       $this->sendEmail($form_state);
       $response->addCommand(
-        new OpenModalDialogCommand("Formulár na nahlásenie chyby.",
-          'Ďakujeme za nahlásenie chyby, jej odstránením sa budeme 
+          new OpenModalDialogCommand('Nahlásenie chyby v hesle', 'Ďakujeme za nahlásenie chyby, jej odstránením sa budeme 
           čoskoro zaoberať a o jej odstránení vás budeme informovať na 
-          zadanú emailovú adresu.',
-          ['width' => '80%'])
+          zadanú emailovú adresu.', ['width' => '80%'])
       );
     }
     return $response;
@@ -105,22 +90,25 @@ class ModalForm extends FormBase {
    */
   private function sendEmail(FormStateInterface $form_state) {
     $key = 'report_error';
-    $mailManager = \Drupal::service('plugin.manager.mail');
     $module = 'beliana_modals';
+    $mail_manager = \Drupal::service('plugin.manager.mail');
+
     $to = \Drupal::config('system.site')->get('mail');
     $node = Node::load($form_state->getValue('node'));
+
     $params['node_title'] = $node->getTitle();
-    $params['name'] = $form_state->getValue('name');
-    $params['email'] = $form_state->getValue('email');
-    $params['url'] = '/node/' . $node->id();
+    $params['email'] = $form_state->getValue('email');    
     $params['message'] = $form_state->getValue('description');
-    $mailManager->mail($module, $key, $to, 'sk', $params, NULL, TRUE);
+    $params['url'] = Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString();
+
+    $mail_manager->mail($module, $key, $to, 'sk', $params, NULL, TRUE);
   }
 
   /**
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    
   }
 
   /**

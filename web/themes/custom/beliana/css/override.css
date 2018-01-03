@@ -110,6 +110,7 @@ article .heslo {
 article .heslo .obsah { 
     font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
     font-size: 1.7rem;
+    min-height: 2.4em;
 }
 
 article.media-image.view-mode-in-word a {
