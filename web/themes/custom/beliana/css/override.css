@@ -14,18 +14,34 @@ header.header {
     min-height: 58px;
 }
 
+.more,
 .obsah a,
 .citacia a,
+.dnes a,
+.najhladanejsie-hesla a,
 .obsah a:visited,
-.citacia a:visited {
-    color: #266ead;
-    text-decoration: none;
+.citacia a:visited,
+.dnes a:visited,
+.najhladanejsie-hesla a:visited {
+    color: #266ead !important;
+    text-decoration: none !important;
 }
 
+.more:hover,
 .obsah a:hover,
-.citacia a:hover {
+.citacia a:hover,
+.dnes a:hover,
+.najhladanejsie-hesla a:hover {
     color: #266ead;
-    text-decoration: underline;
+    text-decoration: underline !important;
+}
+
+.najhladanejsie-hesla ul li .views-field-title span:after {
+    content: ", ";
+}
+.najhladanejsie-hesla ul li:last-child .views-field-title span:after,
+.najhladanejsie-hesla ul li .views-field-title span a:after {
+    content: "";
 }
 
 #content-main {
@@ -285,22 +301,33 @@ article.media-image.view-mode-full img {
     max-width: 100%;
     height: auto;
 }
+
+.view-najcitanejsie-hesla {
+    margin-top: -52px;
+}
+.view-word-search-page .views-row, 
+.view-najcitanejsie-hesla .views-row {
+    margin-top: 15px;
+}
 .view-word-search-page article {
     margin-top: 15px;
 }
 .view-word-search-page article .heslo #gradient {
     bottom: -4px;
 }
+.view-najcitanejsie-hesla article .heslo h1 a,
 .view-word-search-page article .heslo h1 a {
     color: #266ead;
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 700;
 }
-
-.view-word-search-page .views-row, 
-.view-najcitanejsie-hesla .views-row {
-    margin-top: 15px;
+.view-najcitanejsie-hesla article .heslo h1 a:hover,
+.view-word-search-page article .heslo h1 a:hover {
+    text-decoration: underline;
+}
+.view-najcitanejsie-hesla article .heslo .obsah img {
+    display: none;
 }
 
 .truncate-wrapper {

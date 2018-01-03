@@ -355,7 +355,7 @@ display:
         fields: false
         css_class: false
       use_more_always: true
-      use_more_text: Viac
+      use_more_text: 'Zobraziť viac'
       fields:
         field_date:
           id: field_date

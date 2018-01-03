@@ -56,8 +56,8 @@
       var labelMap = {short: 'Začiatok hesla', full: 'Celé heslo'};
 
       $('.word-full').on('click', function () {
-        $('.view-word-search-page .heslo').removeClass('truncate-wrapper');
-        $('.view-word-search-page .heslo #gradient').css('display', 'none');
+        $('.views-element-container .heslo').removeClass('truncate-wrapper');
+        $('.views-element-container .heslo #gradient').css('display', 'none');
         $('.truncate-button .label').html(labelMap.full + '<b class="button"></b>');
         $('.truncate-button').once().toggleClass('active');
 
@@ -65,7 +65,7 @@
       });
 
       $('.word-short').on('click', function () {
-        $('.view-word-search-page .heslo').each(function () {
+        $('.views-element-container .heslo').each(function () {
           if ($(this).height() > 120) {
             $(this).addClass('truncate-wrapper');
             $(this).children('#gradient').css('display', 'block');

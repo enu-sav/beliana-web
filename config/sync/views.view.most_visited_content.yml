@@ -3,6 +3,7 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.storage.node.body
     - node.type.word
   module:
@@ -423,7 +424,20 @@ display:
       defaults:
         fields: false
         css_class: false
+        style: false
+        row: false
       css_class: view-najcitanejsie-hesla
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: search_index
     cache_metadata:
       max-age: -1
       contexts:
