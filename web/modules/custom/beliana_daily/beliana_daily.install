@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
  * Update, and uninstall functions for the Beliana Daily module.
  */
+use Drupal\Core\Database\Database;
 
 /**
  * Implements hook_schema().
@@ -35,5 +37,37 @@ function beliana_daily_schema() {
     'primary key' => array('nid', 'date'),
   );
 
+  $schema['beliana_piwik_counter_storage'] = array(
+    'description' => 'Piwik table holding pageview counts.',
+    'fields' => array(
+      'nid' => array(
+        'description' => 'Node IDs',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'pageview_total' => array(
+        'description' => 'Total pageview counts',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('nid'),
+    'indexes' => array(
+      'pageview_total' => array('pageview_total'),
+    ),
+  );
+
   return $schema;
+}
+
+/**
+ * Update database tables for Piwik statistics counter.
+ */
+function beliana_daily_update_8001() {
+  $db = Database::getConnection();
+  $schema = beliana_daily_schema();
+
+  $db->schema()->createTable('beliana_piwik_counter_storage', $schema['beliana_piwik_counter_storage']);
 }

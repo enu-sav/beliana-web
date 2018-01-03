@@ -12,12 +12,21 @@ function beliana_daily_views_data() {
   $data = [];
 
   $data['beliana_daily']['table']['group'] = t('Beliana daily');
+  $data['beliana_piwik_counter_storage']['table']['group'] = t('Piwik Analytics Counter');
+
   $data['beliana_daily']['table']['join'] = [
     'node_field_data' => [
       'left_field' => 'nid',
       'field' => 'nid',
     ],
   ];
+
+  $data['beliana_piwik_counter_storage']['table']['join'] = array(
+    'node_field_data' => array(
+      'left_field' => 'nid',
+      'field' => 'nid',
+    ),
+  );
 
   $data['beliana_daily']['weight'] = [
     'title' => t('Weight for Words in Today block and page'),
@@ -27,23 +36,23 @@ function beliana_daily_views_data() {
     ],
   ];
 
-  return $data;
-}
-
-/**
- * Implements hook_views_data_alter().
- */
-function beliana_daily_views_data_alter(array &$data) {
-  $data['node']['node_piwik_statistics'] = array(
-    'title' => t('Node statistics (Piwik)'),
+  $data['beliana_piwik_counter_storage']['pageview_total'] = array(
+    'title' => t('Views count'),
+    'help' => t('The total number of times the node has been viewed as tracked by Piwik analytics.'),
     'field' => array(
-      'title' => t('Node statistics (Piwik)'),
-      'help' => t('Get Piwik visit count statistics for node.'),
-      'id' => 'node_piwik_statistics',
+      'id' => 'numeric',
       'click sortable' => TRUE,
     ),
+    'filter' => array(
+      'id' => 'numeric',
+    ),
+    'argument' => array(
+      'id' => 'numeric',
+    ),
     'sort' => array(
-      'id' => 'node_piwik_statistics_sort',
+      'id' => 'standard',
     ),
   );
+
+  return $data;
 }

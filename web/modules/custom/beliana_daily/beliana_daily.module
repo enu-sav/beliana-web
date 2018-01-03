@@ -32,3 +32,25 @@ function beliana_daily_piwik_admin_settings_submit($form, FormStateInterface $fo
   $config->set('access_token', $form_state->getValue('piwik_access_token'));
   $config->save();
 }
+
+/**
+ * Implements hook_cron().
+ */
+function beliana_daily_cron() {
+  $interval = 60 * 60 * 12;
+
+  if (REQUEST_TIME >= \Drupal::state()->get('beliana_piwik_counter.last_cron_run') + $interval) {
+    $queue = \Drupal::queue('beliana_piwik_counter_worker');
+
+    // Queue all the published nodes to be counted
+    $ids = \Drupal::entityQuery('node')
+        ->condition('status', NODE_PUBLISHED)
+        ->execute();
+
+    foreach ($ids as $nid) {
+      $queue->createItem(['nid' => $nid]);
+    }
+
+    \Drupal::state()->set('beliana_piwik_counter.last_cron_run', REQUEST_TIME);
+  }
+}
