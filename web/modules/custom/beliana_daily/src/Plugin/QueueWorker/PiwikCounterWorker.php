@@ -58,8 +58,8 @@ class PiwikCounterWorker extends QueueWorkerBase implements ContainerFactoryPlug
 
     // Request piwik data.
     if ($result = $this->getApiRequest($config->get('url_http'), $config->get('access_token'), 'Actions.getPageUrl', $config->get('site_id'), $options)) {
-      $data = reset($result);
-      $statistics = $data['nb_hits'];
+      $piwik = reset($result);
+      $statistics = $piwik['nb_hits'];
     }
 
     $this->connection->merge('beliana_piwik_counter_storage')

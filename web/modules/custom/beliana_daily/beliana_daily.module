@@ -47,8 +47,10 @@ function beliana_daily_cron() {
         ->condition('status', NODE_PUBLISHED)
         ->execute();
 
-    foreach ($ids as $nid) {
-      $queue->createItem(['nid' => $nid]);
+    foreach ($ids as $key => $nid) {
+      if (is_numeric($nid)) {
+        $queue->createItem(['nid' => $nid]);
+      }
     }
 
     \Drupal::state()->set('beliana_piwik_counter.last_cron_run', REQUEST_TIME);
