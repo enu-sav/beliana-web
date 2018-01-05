@@ -27,7 +27,7 @@
     setMediaImageSize: function (image, maxHeight) {
       var ratio = image.height() / image.width();
 
-      image.css({width: '100%'});
+      image.css({height: 'auto', width: '100%'});
 
       if (ratio > 1 && image.parent().width() * ratio > maxHeight) {
         image.css({height: maxHeight + 'px', width: 'auto'});
