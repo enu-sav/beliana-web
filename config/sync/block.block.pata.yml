@@ -1,21 +1,21 @@
-uuid: 446986c9-ef29-4c7c-bb78-c86ab742ee75
+uuid: c57c07fd-5ead-4d9f-8ae3-f6287bbe723d
 langcode: sk
-status: false
+status: true
 dependencies:
   config:
-    - system.menu.secondary
+    - system.menu.footer
   module:
     - system
   theme:
     - beliana
-id: beliana_footersecondarymenu
+id: pata
 theme: beliana
 region: footer_center
 weight: 0
 provider: null
-plugin: 'system_menu_block:secondary'
+plugin: 'system_menu_block:footer'
 settings:
-  id: 'system_menu_block:secondary'
+  id: 'system_menu_block:footer'
   label: Odkazy
   provider: system
   label_display: visible

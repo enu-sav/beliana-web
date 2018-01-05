@@ -1,7 +1,15 @@
 uuid: 08602cfe-1c79-44ec-9798-9612d50cb669
 langcode: sk
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - footer
+    parent: 'main:'
 _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
 name: 'Základná stránka'
