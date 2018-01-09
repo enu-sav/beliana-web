@@ -36,17 +36,21 @@
       Drupal.behaviors.override.setMediaOrientation(image);
     },
     setMediaOrientation: function (image) {
-      var orientation = 6;
-      var css = exif2css(orientation);
+      image.on('load', function () {
+        EXIF.getData(image.get(0), function () {
+          var orientation = EXIF.getTag(this, 'Orientation');
+          var css = exif2css(orientation);
 
-      if (css.transform) {
-        image.css({transform: css.transform});
-      }
+          if (css.transform) {
+            image.css({transform: css.transform});
+          }
 
-      if (css['transform-origin']) {
-        image.css({'transform-origin': css['transform-origin']});
-      }
-    },
+          if (css['transform-origin']) {
+            image.css({'transform-origin': css['transform-origin']});
+          }
+        });
+      });
+    }
   };
 
 })(jQuery, Drupal);

@@ -4,6 +4,7 @@ theme:
     theme:
       css/fonts.css: {}
       css/override.css: {}
-  js:
+  js:    
+    js/exif-js/exif.js: {}
+    js/exif2css/dist/exif2css.js: {}
     js/override.js: {}
-    js/exif2css/dist/exif2css.js: {}    
