@@ -14,6 +14,9 @@ header.header {
     min-height: 58px;
 }
 
+body .page-loader{
+    display: none;
+}
 body.use-loader .page-loader {
     display: block;
     width: 100%;
