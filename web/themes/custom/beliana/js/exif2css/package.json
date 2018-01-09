@@ -1,0 +1,36 @@
+{
+  "name": "exif2css",
+  "version": "1.2.0",
+  "description": "Convert EXIF orientation to CSS transform",
+  "main": "src/index.js",
+  "files": [
+    "src/"
+  ],
+  "scripts": {
+    "test": "ZOROASTER_TIMEOUT=10000 zoroaster test/spec",
+    "build": "browserify src/index.js --standalone exif2css -o dist/exif2css.js && uglifyjs dist/exif2css.js --compress --mangle --source-map dist/exif2css.min.js.map -o dist/exif2css.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sobesednik/exif2css.git"
+  },
+  "keywords": [
+    "exif",
+    "css",
+    "orientation"
+  ],
+  "author": "Anton <anton@sobesednik.media>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sobesednik/exif2css/issues"
+  },
+  "homepage": "https://github.com/Sobesednik/exif2css#readme",
+  "devDependencies": {
+    "browserify": "^13.3.0",
+    "node-resemble-js": "^0.2.0",
+    "phantomjs-prebuilt": "^2.1.14",
+    "selenium-webdriver": "^3.0.1",
+    "uglify-js": "^2.7.5",
+    "zoroaster": "^0.2.0"
+  }
+}

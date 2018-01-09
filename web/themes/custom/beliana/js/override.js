@@ -17,14 +17,14 @@
 
       //set "Ilustracia" image media size in "Heslo" node
       $('.heslo-ilustracia .media-image.view-mode-in-word img').each(function (key, value) {
-        Drupal.behaviors.override.setMediaImageSize($(value), 420);
+        Drupal.behaviors.override.setMediaSize($(value), 420);
       });
 
       $('article.media-image.view-mode-full img').each(function (key, value) {
-        Drupal.behaviors.override.setMediaImageSize($(value), 660);
+        Drupal.behaviors.override.setMediaSize($(value), 660);
       });
     },
-    setMediaImageSize: function (image, maxHeight) {
+    setMediaSize: function (image, maxHeight) {
       var ratio = image.height() / image.width();
 
       image.css({height: 'auto', width: '100%'});
@@ -32,7 +32,21 @@
       if (ratio > 1 && image.parent().width() * ratio > maxHeight) {
         image.css({height: maxHeight + 'px', width: 'auto'});
       }
-    }
+
+      Drupal.behaviors.override.setMediaOrientation(image);
+    },
+    setMediaOrientation: function (image) {
+      var orientation = 6;
+      var css = exif2css(orientation);
+
+      if (css.transform) {
+        image.css({transform: css.transform});
+      }
+
+      if (css['transform-origin']) {
+        image.css({'transform-origin': css['transform-origin']});
+      }
+    },
   };
 
 })(jQuery, Drupal);

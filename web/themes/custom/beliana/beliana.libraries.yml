@@ -6,3 +6,4 @@ theme:
       css/override.css: {}
   js:
     js/override.js: {}
+    js/exif2css/dist/exif2css.js: {}    
