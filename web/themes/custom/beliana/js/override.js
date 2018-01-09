@@ -25,6 +25,7 @@
       });
     },
     setMediaSize: function (image, maxHeight) {
+      $('body').addClass('use-loader');
       var ratio = image.height() / image.width();
 
       image.css({height: 'auto', width: '100%'});
@@ -48,6 +49,8 @@
           if (css['transform-origin']) {
             image.css({'transform-origin': css['transform-origin']});
           }
+
+          $('body').addClass('is-loaded');
         });
       });
     }
