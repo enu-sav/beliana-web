@@ -9,10 +9,7 @@
   Drupal.behaviors.override = {
     attach: function (context, settings) {
       $('.heslo-tools .print').on('click', function (e) {
-        e.preventDefault();
-
-        $('article .citacia h3 a').click();
-        window.print();
+        Drupal.behaviors.override.print(e);
       });
 
       //set "Ilustracia" image media size in "Heslo" node
@@ -24,6 +21,11 @@
         Drupal.behaviors.override.setMediaSize($(value), 660);
       });
     },
+    print: function (event) {
+      event.preventDefault();
+      $('article .citacia h3 a').click();
+      window.print();
+    },
     setMediaSize: function (image, maxHeight) {
       $('body').addClass('use-loader');
       var ratio = image.height() / image.width();
@@ -34,7 +36,10 @@
         image.css({height: maxHeight + 'px', width: 'auto'});
       }
 
-      Drupal.behaviors.override.setMediaOrientation(image);
+      // disable exif orientation checking
+      //Drupal.behaviors.override.setMediaOrientation(image);
+
+      $('body').addClass('is-loaded');
     },
     setMediaOrientation: function (image) {
       image.on('load', function () {
@@ -49,8 +54,6 @@
           if (css['transform-origin']) {
             image.css({'transform-origin': css['transform-origin']});
           }
-
-          $('body').addClass('is-loaded');
         });
       });
     }
