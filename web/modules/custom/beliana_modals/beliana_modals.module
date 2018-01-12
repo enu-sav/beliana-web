@@ -8,7 +8,7 @@ function beliana_modals_mail($key, &$message, $params) {
    case 'report_error':
      $message['from'] = \Drupal::config('system.site')->get('mail');
      $message['subject'] = 'Pre heslo ' . $params['node_title'] . ' bola nahlásená chyba';
-     $message['body'][] = 'Meno a priezvisko: ' . $params['name'];
+//     $message['body'][] = 'Meno a priezvisko: ' . $params['name'];
      $message['body'][] = 'Email: ' . $params['email'];
      $message['body'][] = 'Správa: ' . $params['message'];
      $message['body'][] = 'URL hesla: ' . $params['url'];
