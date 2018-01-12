@@ -11,7 +11,7 @@ dependencies:
 id: beliana_footersecondarymenu
 theme: beliana
 region: footer_center
-weight: 0
+weight: -7
 provider: null
 plugin: 'system_menu_block:secondary'
 settings:

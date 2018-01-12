@@ -11,14 +11,14 @@ dependencies:
 id: pata
 theme: beliana
 region: footer_center
-weight: 0
+weight: -8
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: Odkazy
+  label: Päta
   provider: system
-  label_display: visible
+  label_display: '0'
   level: 1
   depth: 0
 visibility: {  }
