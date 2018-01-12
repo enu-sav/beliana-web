@@ -339,7 +339,9 @@ article.media-image.view-mode-in-word a {
     text-align: center;
 }
 .heslo-ilustracia .media-image.view-mode-in-word .field--name-field-description p {
-    font-size: 1.5rem;
+    font-size: 1.5rem;    
+    line-height: 1.8rem;
+    margin: 0;
 }
 
 .view-najcitanejsie-hesla {
