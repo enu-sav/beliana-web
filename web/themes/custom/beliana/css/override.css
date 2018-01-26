@@ -76,7 +76,7 @@ footer a:hover,
 }
 
 .najhladanejsie-hesla ul li .views-field-title span:after {
-    content: ", ";
+    content: "; ";
 }
 .najhladanejsie-hesla ul li:last-child .views-field-title span:after,
 .najhladanejsie-hesla ul li .views-field-title span a:after {
