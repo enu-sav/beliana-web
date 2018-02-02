@@ -32,12 +32,11 @@
 
       image.css({height: 'auto', width: '100%'});
 
-      if (ratio > 1 && image.parent().width() * ratio > maxHeight) {
-        image.css({height: maxHeight + 'px', width: 'auto'});
-      }
-
-      // disable exif orientation checking
-      //Drupal.behaviors.override.setMediaOrientation(image);
+//      if (ratio > 1 && image.parent().width() * ratio > maxHeight) {
+//        image.css({height: maxHeight + 'px', width: 'auto'});
+//      }
+//
+//      Drupal.behaviors.override.setMediaOrientation(image);
 
       $('body').addClass('is-loaded');
     },
