@@ -3,3 +3,6 @@ parameters:
     debug: false
     auto_reload: null
     cache: true
+services:
+  cache.backend.null:
+    class: Drupal\Core\Cache\NullBackendFactory

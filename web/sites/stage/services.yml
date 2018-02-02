@@ -1,5 +1,8 @@
 parameters:
-  twig.config: # disabling twig debugging and auto reload, plus enabling twig caching
-    debug: false
-    auto_reload: null
-    cache: true
+  twig.config:
+    debug: true
+    auto_reload: true
+    cache: false
+services:
+  cache.backend.null:
+    class: Drupal\Core\Cache\NullBackendFactory
