@@ -37,9 +37,10 @@ function beliana_daily_piwik_admin_settings_submit($form, FormStateInterface $fo
  * Implements hook_cron().
  */
 function beliana_daily_cron() {
+  $time = \Drupal::time()->getRequestTime();
   $interval = 60 * 60 * 12;
 
-  if (REQUEST_TIME >= \Drupal::state()->get('beliana_piwik_counter.last_cron_run') + $interval) {
+  if ($time >= \Drupal::state()->get('beliana_piwik_counter.last_cron_run') + $interval) {
     $queue = \Drupal::queue('beliana_piwik_counter_worker');
 
     // Queue all the published nodes to be counted
@@ -53,6 +54,8 @@ function beliana_daily_cron() {
       }
     }
 
-    \Drupal::state()->set('beliana_piwik_counter.last_cron_run', REQUEST_TIME);
+    \Drupal::state()->set('beliana_piwik_counter.last_cron_run', $time);
+    // clear cache for solr facets
+    drupal_flush_all_caches();
   }
 }
