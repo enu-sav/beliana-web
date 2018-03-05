@@ -285,6 +285,11 @@ article .heslo {
   display: inline-block;
   position: relative;
   width: 70%;
+  padding-right: 50px;
+}
+article .heslo p.last-update {
+  font-style: normal;
+  margin: 0;
 }
 
 article .heslo-ilustracia {
@@ -523,9 +528,23 @@ article.media-image.view-mode-in-word a {
   font-size: 1.8rem;
 }
 
-.heslo-ilustracia {
-  margin-top: 90px;
+.heslo-ilustracia .heslo-tools {
+  margin: 0;
+  padding-bottom: 45px;
 }
+.heslo-ilustracia .heslo-tools .share {
+  background: none;
+  color: #8b2908; 
+}
+.heslo-ilustracia .heslo-tools a.print, 
+.heslo-ilustracia .heslo-tools a.comment,
+.heslo-ilustracia .heslo-tools a:hover.print, 
+.heslo-ilustracia .heslo-tools a:hover.comment{
+  border: none;
+  background: none;
+}
+
+
 .heslo-ilustracia .media-image.view-mode-in-word {
   margin-bottom: 30px;
   border: 1px solid #e5e5e5;
