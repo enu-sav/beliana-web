@@ -10,8 +10,8 @@ dependencies:
     - beliana
 id: beliana_odkazy
 theme: beliana
-region: header_right
-weight: -6
+region: header
+weight: -8
 provider: null
 plugin: 'system_menu_block:secondary'
 settings:

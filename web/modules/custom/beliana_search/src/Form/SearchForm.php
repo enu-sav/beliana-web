@@ -25,18 +25,18 @@ class SearchForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['beliana_search_input'] = [
       '#type' => 'textfield',
-      '#title' => 'Vyhľadať zadaný text',
+      '#title' => $this->t('Search'),
       '#title_display' => 'hidden',
       '#attributes' => [
         'class' => ['search-input'],
-        'placeholder' => ['Zadajte výraz na vyhľadanie ...'],
+        'placeholder' => [$this->t('Search for words, shortcuts ...')],
       ],
       '#default_value' => $_GET['text'] ?? '',
     ];
 
     $form['beliana_search_submit'] = [
       '#type' => 'submit',
-      '#value' => 'Hľadať',
+      '#value' => $this->t('Enter'),
       '#attributes' => [
         'class' => ['search-submit'],
       ],

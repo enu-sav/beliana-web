@@ -20,9 +20,12 @@ widget:
   config:
     show_numbers: false
     soft_limit: 0
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
 query_operator: or
 use_hierarchy: true
-expand_hierarchy: false
+expand_hierarchy: true
 enable_parent_when_child_gets_disabled: true
 hard_limit: 0
 exclude: false

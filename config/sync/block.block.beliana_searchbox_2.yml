@@ -1,6 +1,6 @@
 uuid: b28b8d63-3e01-429d-95cb-7941f9a8c23a
 langcode: sk
-status: true
+status: false
 dependencies:
   module:
     - beliana_search
@@ -9,7 +9,7 @@ dependencies:
 id: beliana_searchbox_2
 theme: beliana
 region: navigation
-weight: 0
+weight: -6
 provider: null
 plugin: beliana_searchbox
 settings:

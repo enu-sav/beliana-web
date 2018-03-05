@@ -9,7 +9,7 @@ dependencies:
 id: beliana_zalozky
 theme: beliana
 region: content
-weight: 0
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:

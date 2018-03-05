@@ -12,12 +12,12 @@ dependencies:
 id: beliana_encyklopediabeliana
 theme: beliana
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: 'block_content:320eb99a-81b6-4625-8e54-a7330048e241'
 settings:
   id: 'block_content:320eb99a-81b6-4625-8e54-a7330048e241'
-  label: 'Encyklopédia Beliana'
+  label: 'Encyclopaedia Beliana'
   provider: block_content
   label_display: visible
   status: true

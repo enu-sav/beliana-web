@@ -48,16 +48,34 @@
 </div>
 
 <div class="layout-container">
-
   <header id="header" class="header clearfix" role="banner" aria-label="{{ 'Site header'|t }}">
-    <div class="container clearfix">
-      {{ page.header }}
-      <a href="#" id="search-box-mobile-toggle"></a>
-      {{ page.header_right }}
+    <div class="header-top">
+      <div class="container clearfix">
+        {{ page.header }}
+      </div>
+    </div>
+
+    <div class="header-main">
+      <div class="container clearfix">
+        <div class="left">
+          {{ page.header_left }}
+        </div>
+        <div class="middle">
+          {{ page.header_middle }}
+        </div>
+        <div class="right">
+          {{ page.header_right }}
+          <a href="#" id="search-box-mobile-toggle"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-navigation">
+      <div class="container clearfix">
+        {{ page.navigation }}
+      </div>
     </div>
   </header>
-
-  {{ page.navigation }}
 
   {{ page.highlighted }}
 

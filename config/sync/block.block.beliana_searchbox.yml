@@ -8,8 +8,8 @@ dependencies:
     - beliana
 id: beliana_searchbox
 theme: beliana
-region: header_right
-weight: 0
+region: header_middle
+weight: -8
 provider: null
 plugin: beliana_searchbox
 settings:

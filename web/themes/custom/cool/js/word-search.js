@@ -7,11 +7,11 @@
   Drupal.behaviors.wordFacetsBlockTheme = {
     attach: function (context, settings) {
       // Set word search facet api second level filter position.
-      Drupal.behaviors.wordFacetsBlockTheme.setHeight(context);
-
-      $(window).resize(function () {
-        Drupal.behaviors.wordFacetsBlockTheme.setHeight(context);
-      });
+//      Drupal.behaviors.wordFacetsBlockTheme.setHeight(context);
+//
+//      $(window).resize(function () {
+//        Drupal.behaviors.wordFacetsBlockTheme.setHeight(context);
+//      });
     },
     setHeight: function (context) {
       var $block = $('#block-beliana-heslo', context);
