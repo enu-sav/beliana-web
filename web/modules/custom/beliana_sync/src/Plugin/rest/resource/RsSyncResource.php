@@ -135,10 +135,10 @@ class RsSyncResource extends ResourceBase {
   public function downloadMedia(array $images) {
     $taxonomy_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $local_fids = [];
-    $date = date('Y-m-d');
-    $file_OK = FALSE;
-    $link_OK = FALSE;
+    $date = date('Y-m-d');    
     foreach ($images as $image) {
+      $file_OK = FALSE;
+      $link_OK = FALSE;
       if (isset($image['image_url_local'])) { // local image should be used
         $file_data = file_get_contents($image['image_url_local']);
         $exploded_path = explode('/', $image['image_url_local']);
