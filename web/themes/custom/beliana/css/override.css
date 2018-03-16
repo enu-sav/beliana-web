@@ -58,7 +58,7 @@ header.header {
 }
 
 .header .header-main {
-  padding: 0 0 14px 0;
+  min-height: 90px;
 }
 
 .header .header-main .left {
@@ -69,7 +69,8 @@ header.header {
   top: 15px;
 }
 .header .header-main .left .logo {
-
+  top: -4px;
+  position: relative;
 }
 .header .header-main .left .logo .beliana-logo {
   width: 62px;
@@ -112,8 +113,12 @@ header.header {
 }
 .header .header-main .right .search-help {  
   position: relative;
-  top: -18px;
+  top: -19px;
   left: 32px;
+  z-index: 9;
+}
+body.path-frontpage .header .header-main .right .search-help {
+  top: 38px;
 }
 .header .header-main .right .search-help .text {
   color: #fff;
@@ -126,7 +131,7 @@ header.header {
   background: #fae1d9;
   padding: 15px;
   position: absolute;
-  top: 35px;
+  top: 42px;
   right: calc(50% - 80px);
   width: 100%;
 }
@@ -610,6 +615,8 @@ article.media-image.view-mode-in-word a {
 
 #block-beliana-encyklopediabeliana {
   padding: 50px 0;
+  margin-bottom: 50px;
+  border: none;
 }
 #block-beliana-encyklopediabeliana h1 {
   color: #231f20;
