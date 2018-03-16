@@ -9,7 +9,7 @@ dependencies:
 id: beliana_searchbox_2
 theme: beliana
 region: navigation
-weight: -6
+weight: -7
 provider: null
 plugin: beliana_searchbox
 settings:

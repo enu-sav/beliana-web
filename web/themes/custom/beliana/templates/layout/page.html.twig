@@ -51,7 +51,12 @@
   <header id="header" class="header clearfix" role="banner" aria-label="{{ 'Site header'|t }}">
     <div class="header-top">
       <div class="container clearfix">
-        {{ page.header }}
+        <div class="left">
+          {{ page.top_left }}
+        </div>
+        <div class="right">
+          {{ page.top_right }}
+        </div>
       </div>
     </div>
 
@@ -65,6 +70,9 @@
         </div>
         <div class="right">
           {{ page.header_right }}
+          <div class="search-help">
+            Možnosti vyhľadávania
+          </div>
           <a href="#" id="search-box-mobile-toggle"></a>
         </div>
       </div>
@@ -89,10 +97,17 @@
   </div>
 
   <footer role="contentinfo">
-    <div class="container clearfix">
-      {{ page.footer_left }}
-      {{ page.footer_center }}
-      {% include directory ~ '/templates/block/block-copyright.html.twig' %}
+    <div class="footer-content">
+      <div class="container clearfix">
+        {{ page.footer }}
+      </div>
+    </div>
+      
+    <div class="footer-bottom">
+      <div class="container clearfix">
+        {{ page.bottom }}
+        {% include directory ~ '/templates/block/block-copyright.html.twig' %}
+      </div>
     </div>
   </footer>
 

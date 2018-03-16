@@ -1,4 +1,4 @@
-uuid: 9f2798a5-79f6-4739-8ae7-bc2323988bf4
+uuid: 143edd77-8275-4a1e-acee-48c82317b171
 langcode: sk
 status: true
 dependencies:
@@ -6,22 +6,20 @@ dependencies:
     - system
   theme:
     - beliana
-id: beliana_zalozky
+id: breadcrumbs
 theme: beliana
 region: content
-weight: -2
+weight: -8
 provider: null
-plugin: local_tasks_block
+plugin: system_breadcrumb_block
 settings:
-  id: local_tasks_block
-  label: Záložky
-  provider: core
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
   label_display: '0'
-  primary: true
-  secondary: true
 visibility:
   request_path:
     id: request_path
-    pages: "/user/login\r\n/user/password"
+    pages: "/node/*\r\n/vysledky-vyhladavania\r\n/abecedny-zoznam"
     negate: false
     context_mapping: {  }

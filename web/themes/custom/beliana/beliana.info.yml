@@ -10,14 +10,14 @@ libraries:
 base theme: cool
 
 regions:
-  header: Header
+  top_left: Top left
+  top_right: Top right
   header_left: Header left
   header_middle: Header middle
   header_right: Header right
   navigation: Navigation
   help: Help
   highlighted: Highlighted
-  content: Content
-  footer_left: Footer left
-  footer_center: Footer center
-  footer_right: Footer right
+  content: Content  
+  footer: Footer
+  bottop: Bottom

@@ -1,6 +1,6 @@
 uuid: e2aff0ea-2a08-42b6-a0fd-4e1aa37a044a
 langcode: sk
-status: false
+status: true
 dependencies:
   config:
     - system.menu.main
@@ -12,8 +12,8 @@ _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: beliana_main_menu
 theme: beliana
-region: navigation
-weight: -7
+region: top_left
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:
