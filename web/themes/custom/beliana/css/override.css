@@ -430,6 +430,10 @@ footer .footer-center ul {
     }
 }
 @media screen and (max-width: 768px) {
+    .heslo {
+        width: 100% !important;
+    }
+  
     .citacia.smartphone {
         display: block;
     }
