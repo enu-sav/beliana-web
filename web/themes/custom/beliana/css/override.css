@@ -9,6 +9,12 @@ h1, h2 {
   max-width: 1320px;
 }
 
+.heslo-container {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
 header.header {
   width: 100%;
   background: #231f20;
@@ -103,6 +109,9 @@ header.header {
   display: inline-block;
   vertical-align: top;
   margin-top: 24px;
+}
+.header .header-main .middle .smartphone-navigation {
+  display: none;
 }
 
 .header .header-main .right {
@@ -209,14 +218,14 @@ body.use-loader.is-loaded .page-loader {
   display: none;
 }
 
-body.path-abecedny-zoznam #block-beliana-page-title ,
-body.path-abecedny-zoznam .view-word-search-page header h2 {
+#block-beliana-page-title ,
+.view-word-search-page header h2 {
   display: none;
 }
 body.path-abecedny-zoznam .view-word-search-page header {
-  margin-top: 32px;
+  margin-top: 25px;
 }
-body.path-abecedny-zoznam .view-word-search-page {
+.view-word-search-page {
   width: 50%;
   margin: 0 auto;
 }
@@ -823,6 +832,47 @@ footer .footer-copyright {
   }
 }
 @media screen and (max-width: 768px) {
+  .header .header-top {
+    display: none;
+  }
+  .header .header-main .right,
+  .header .header-main .left {
+    display: none;
+  }
+  .header .header-main .middle {
+    width: calc(100% - 45px);
+  }
+
+  .header .header-main .middle .smartphone-navigation {
+    display: block;
+  }
+  .header .header-main .middle .smartphone-navigation .fa-bars {
+    position: absolute;
+    top: 7px;
+    right: -45px;
+    color: #ff9774;
+  }
+  .header .header-main .middle .smartphone-navigation .nav-collapse {
+    display: none;
+  }
+  .header .header-main .middle .smartphone-navigation.open .nav-collapse {
+    display: block;
+    max-height: initial;
+    width: calc(100% + 85px);
+    left: -20px;
+    top: 5px;
+  }
+  .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li {
+    background: #fff;
+  }
+  .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li:first-child a {
+    padding-left: 18px;
+  }
+
+  .heslo-container {
+    width: 100%; 
+  }
+
   .citacia.smartphone {
     display: block;
   }

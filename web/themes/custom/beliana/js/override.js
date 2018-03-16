@@ -14,6 +14,14 @@
         }
       });
 
+      $('.smartphone-navigation .fa-bars').on('click', function () {
+        if ($(this).parent().hasClass('open')) {
+          $(this).parent().removeClass('open');
+        } else {
+          $(this).parent().addClass('open');
+        }
+      });
+
       $('.search-help').on('click', function () {
         var desc = $(this);
         setTimeout(function () {
