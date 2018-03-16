@@ -8,6 +8,19 @@
 
   Drupal.behaviors.override = {
     attach: function (context, settings) {
+      $(document).on('click', function () {
+        if ($('.search-help .description').hasClass('open')) {
+          $('.search-help .description').removeClass('open');
+        }
+      });
+
+      $('.search-help').on('click', function () {
+        var desc = $(this);
+        setTimeout(function () {
+          desc.find('.description').addClass('open');
+        }, 150);
+      });
+
       $('.heslo-tools .print').on('click', function (e) {
         Drupal.behaviors.override.print(e);
       });
