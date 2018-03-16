@@ -104,7 +104,7 @@ class SearchForm extends FormBase {
       unset($query['text']);
     }
 
-    $form_state->setRedirect('view.solr_search_word.page_2', [], ['query' => $query]);
+    $form_state->setRedirect('view.solr_search_word.page_1', [], ['query' => $query]);
   }
 
 }
