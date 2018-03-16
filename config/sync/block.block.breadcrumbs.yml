@@ -3,6 +3,7 @@ langcode: sk
 status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - beliana
@@ -18,8 +19,12 @@ settings:
   provider: system
   label_display: '0'
 visibility:
-  request_path:
-    id: request_path
-    pages: "/node/*\r\n/vysledky-vyhladavania\r\n/abecedny-zoznam"
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      page: page
+      word: word
     negate: false
-    context_mapping: {  }
+    context_mapping:
+      node: '@node.node_route_context:node'

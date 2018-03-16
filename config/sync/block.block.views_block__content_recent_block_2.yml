@@ -1,26 +1,26 @@
-uuid: 8e208226-21c9-4a0b-9b64-d2e3d7bbd3e0
+uuid: c0d08075-4409-438e-b1ad-c9a87bf519b2
 langcode: sk
-status: false
+status: true
 dependencies:
   config:
-    - views.view.most_visited_content
+    - views.view.content_recent
   module:
     - system
     - views
   theme:
     - beliana
-id: beliana_most_visited_content_block
+id: views_block__content_recent_block_2
 theme: beliana
 region: content
-weight: -3
+weight: -4
 provider: null
-plugin: 'views_block:most_visited_content-block_1'
+plugin: 'views_block:content_recent-block_2'
 settings:
-  id: 'views_block:most_visited_content-block_1'
-  label: ''
+  id: 'views_block:content_recent-block_2'
+  label: 'Nové heslá'
   provider: views
   label_display: visible
-  views_label: ''
+  views_label: 'Nové heslá'
   items_per_page: none
 visibility:
   request_path:

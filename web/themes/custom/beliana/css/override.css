@@ -226,12 +226,12 @@ body.path-abecedny-zoznam .view-word-search-page {
 .citacia a,
 .dnes a,
 .najhladanejsie-hesla a,
-#content-main a,
+.body-content a,
 .obsah a:visited,
 .citacia a:visited,
 .dnes a:visited,
 .najhladanejsie-hesla a:visited,
-#content-main a:visited {
+.body-content .container  a:visited {
   color: #8b2908 !important;
   text-decoration: none !important;
 }
@@ -241,7 +241,7 @@ body.path-abecedny-zoznam .view-word-search-page {
 .citacia a:hover,
 .dnes a:hover,
 .najhladanejsie-hesla a:hover,
-#content-main a:hover {
+.body-content .container  a:hover {
   color: #8b2908;
   text-decoration: underline !important;
 }
@@ -633,6 +633,17 @@ article.media-image.view-mode-in-word a {
   font-size: 1.3em;
 }
 
+#block-views-block-content-recent-block-2 h2 {
+  color: #333;
+  font-size: 1em;
+  font-weight: normal;
+}
+#block-views-block-content-recent-block-2 ul li{
+  display: inline-block;
+  padding: 0 10px 2px 0;
+  font-size: 1.2em;
+}
+
 #block-breadcrumbs ol {
   list-style: none;
 }
@@ -679,7 +690,6 @@ article.media-image.view-mode-in-word a {
   border: none;
   background: none;
 }
-
 
 .heslo-ilustracia .media-image.view-mode-in-word {
   margin-bottom: 30px;
@@ -733,6 +743,16 @@ article.media-image.view-mode-in-word a {
   display: none;
 }
 
+.dnes h2 {
+  color: #333;
+  font-size: 1em;
+  font-weight: normal;
+}
+.dnes ul li {
+  font-size: 1.2em;
+  color: #8b2908;
+}
+
 .truncate-wrapper {
   max-height: 126px;
 }
@@ -775,6 +795,10 @@ footer .footer-content ul li a:hover {
 footer .footer-copyright {
   width: 100%;
   float: none;
+}
+
+*:focus {
+  outline: none;
 }
 
 @media print {
