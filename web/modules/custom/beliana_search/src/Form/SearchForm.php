@@ -25,6 +25,7 @@ class SearchForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $query = \Drupal::request()->query->all();
+    $form['#cache']['max-age'] = 0;
 
     $form['query'] = [
       '#type' => 'value',
@@ -45,6 +46,8 @@ class SearchForm extends FormBase {
         ],
       ]
     ];
+
+    debug($query);
 
     if (isset($query['f'])) {
       $filter = explode(':', $query['f'][0]);

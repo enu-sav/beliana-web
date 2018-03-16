@@ -1,6 +1,20 @@
 body {
   font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
 }
+
+body.path-frontpage {
+  background: #ffa587;
+}
+body.path-frontpage h2 + div {
+  background: none;
+}
+body.path-frontpage .box {
+  border: none;
+}
+body.path-frontpage footer{
+  border-color: #8b2908;
+}
+
 h1, h2 {
   color: #8b2908;
 }
@@ -17,7 +31,7 @@ h1, h2 {
 
 header.header {
   width: 100%;
-  background: #231f20;
+  background: #171717;
 }
 
 .header {
@@ -79,13 +93,13 @@ header.header {
   position: relative;
 }
 .header .header-main .left .logo .beliana-logo {
-  width: 62px;
+  width: 78px;
   height: 78px;
   position: relative;
   background-size: 78px;
-  margin: -5px 0 0 0;
+  margin: -2px 0 0 0;
   display: inline-block;
-  background: url('../img/beliana_logo.png') no-repeat;
+  background: url('../img/beliana_logo_pink.png') no-repeat;
 }
 .header .header-main .left .logo .beliana-heading {
   display: inline-block;
@@ -174,7 +188,7 @@ body.path-frontpage .header .header-main .right .search-help {
 }
 
 .header .header-navigation {
-  background: #ff9774;
+  background: #ffa587;
 }
 .header .header-navigation .word-facet-wrap {
   margin: 0;
@@ -632,10 +646,10 @@ article.media-image.view-mode-in-word a {
   font-size: 4.5em;
   font-weight: normal;
   line-height: 0.8em;
-  padding: 95px 0 15px 0;
+  padding: 120px 0 15px 0;
   text-transform: uppercase;
   word-spacing: 9999999px;
-  background: url('../img/beliana_logo_inv.png') no-repeat top center;
+  background: url('../img/beliana_logo_black.png') no-repeat top center;
   margin: 0;
 }
 #block-beliana-encyklopediabeliana .field--name-body {
@@ -671,7 +685,7 @@ article.media-image.view-mode-in-word a {
 
 #test-popup {
   min-height: 52px;
-  background: #ff9774;
+  background: #ffa587;
 }
 #test-popup #popup-text {
   width: 100%;
@@ -850,7 +864,7 @@ footer .footer-copyright {
     position: absolute;
     top: 7px;
     right: -45px;
-    color: #ff9774;
+    color: #ffa587;
   }
   .header .header-main .middle .smartphone-navigation .nav-collapse {
     display: none;
