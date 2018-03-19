@@ -3,10 +3,12 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - node.type.word
   module:
     - node
     - user
+    - views_infinite_scroll
 _core:
   default_config_hash: tDcmzGfShE0XJbfwJzyA6lJTUYC6X4iVu887dgoFfDg
 id: content_recent
@@ -52,7 +54,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 50
+          items_per_page: 30
           offset: 0
       style:
         type: html_list
@@ -245,10 +247,10 @@ display:
           entity_field: langcode
           plugin_id: language
       sorts:
-        changed:
-          id: changed
+        created:
+          id: created
           table: node_field_data
-          field: changed
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
@@ -258,7 +260,7 @@ display:
             label: ''
           granularity: second
           entity_type: node
-          entity_field: changed
+          entity_field: created
           plugin_id: date
       title: 'Najnovší obsah'
       header: {  }
@@ -323,7 +325,7 @@ display:
   block_2:
     display_plugin: block
     id: block_2
-    display_title: Hesla
+    display_title: 'Heslá blok'
     position: 2
     display_options:
       display_extenders: {  }
@@ -334,10 +336,12 @@ display:
         fields: false
         filters: false
         filter_groups: false
-        use_more: true
-        use_more_always: true
-        use_more_text: true
+        use_more: false
+        use_more_always: false
+        use_more_text: false
         css_class: true
+        link_display: false
+        link_url: false
       fields:
         title:
           id: title
@@ -497,11 +501,195 @@ display:
         operator: AND
         groups:
           1: AND
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Zobraziť viac'
+      link_display: page_1
+      link_url: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Heslá
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      path: najnovsie
+      pager:
+        type: infinite_scroll
+        options:
+          items_per_page: 50
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Predchádzajúci'
+            next: Ďalej
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Položiek na stránku'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Všetko -'
+            offset: false
+            offset_label: 'Zobraziť od'
+          views_infinite_scroll:
+            button_text: 'Načítať ďalšie'
+            automatically_load_content: false
+      defaults:
+        pager: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: search_index
+      filters:
+        status_extra:
+          id: status_extra
+          table: node_field_data
+          field: status_extra
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: false
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          plugin_id: node_status
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            word: word
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions

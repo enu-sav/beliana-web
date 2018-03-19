@@ -39,7 +39,6 @@ class SearchForm extends FormBase {
         '#type' => 'textfield',
         '#title' => $this->t('Search'),
         '#title_display' => 'hidden',
-        '#default_value' => $query['text'] ?? '',
         '#attributes' => [
           'class' => ['search-input'],
           'placeholder' => [$this->t('Search for words, shortcuts ...')],
@@ -47,7 +46,10 @@ class SearchForm extends FormBase {
       ]
     ];
 
-    debug($query);
+    if (isset($query['text'])) {
+      $form['beliana_search_input']['input']['#default_value'] = $query['text'];
+      $form['beliana_search_input']['input']['#attributes']['autofocus'] = '';
+    }
 
     if (isset($query['f'])) {
       $filter = explode(':', $query['f'][0]);
