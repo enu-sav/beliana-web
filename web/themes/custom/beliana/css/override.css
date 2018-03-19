@@ -692,11 +692,11 @@ article.media-image.view-mode-in-word a {
 }
 #block-views-block-content-recent-block-2 .more-link a {
   margin-top: 30px;
-    float: left;
-    color: #266ead;
-    text-decoration: underline;
-    padding-right: 13px;
-    background: url('../img/right_arrow.png') no-repeat top 6px right;
+  float: left;
+  color: #266ead;
+  text-decoration: underline;
+  padding-right: 13px;
+  background: url('../img/right_arrow.png') no-repeat top 6px right;
 }
 
 #block-breadcrumbs ol {
@@ -935,6 +935,7 @@ footer .footer-copyright {
 
   article .heslo {
     width: 100%;
+    padding: 0;
   }
   article .heslo-ilustracia {
     width: 100%;
@@ -993,29 +994,8 @@ footer .footer-copyright {
   #block-beliana-heslo .facets-widget-links > ul > li {
     flex: 0 0 auto;
   }
-}
-@media screen and (max-width:740px) {
+
   #block-beliana-heslo ul li ul li {
-    width: 18%;
-  }
-}
-@media screen and (max-width:640px) {
-  #block-beliana-heslo ul li ul li {
-    width: 23%;
-  }
-}
-@media screen and (max-width:520px) {
-  #block-beliana-heslo ul li ul li {
-    width: 30%;
-  }
-}
-@media screen and (max-width:380px) {
-  #block-beliana-heslo ul li ul li {
-    width: 45%;
-  }
-}
-@media screen and (max-width:240px) {
-  #block-beliana-heslo ul li ul li {
-    width: 99%;
+    width: 100%;
   }
 }
