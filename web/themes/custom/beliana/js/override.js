@@ -29,6 +29,42 @@
         }, 150);
       });
 
+      //set alphabet facet slides wrappers
+      var alphabet_width = 155;
+      $('#block-beliana-heslo .item-list__links > li').each(function (i, item) {
+        alphabet_width += $(item).width();
+      });
+
+      $('#block-beliana-heslo .facets-widget-links').prepend('<a href="#" class="navigation prev"><i class="fa fa-chevron-left"></i></a>');
+      $('#block-beliana-heslo .facets-widget-links').append('<a href="#" class="navigation next"><i class="fa fa-chevron-right"></i></a>');
+
+      if (alphabet_width > $(window).width()) {
+        $('#block-beliana-heslo').addClass('is-slider');
+      }
+
+      $(window).resize(function () {
+        if (alphabet_width > $(window).width()) {
+          $('#block-beliana-heslo').addClass('is-slider');
+        } else {
+          $('#block-beliana-heslo').removeClass('is-slider');
+        }
+      });
+
+      var alphabet_scroll_offset = 0;
+      $('#block-beliana-heslo .facets-widget-links .navigation').on('click', function (e) {
+        e.preventDefault();
+        var scroll_width = $(this).parent().find('ul.item-list__links > li').width();
+
+        if ($(this).hasClass('next')) {
+          alphabet_scroll_offset += scroll_width;
+        } else {
+          alphabet_scroll_offset -= scroll_width;
+        }
+
+        $(this).parent().find('ul.item-list__links').scrollLeft(alphabet_scroll_offset);
+      });
+
+      //add print functionallity
       $('.heslo-tools .print').on('click', function (e) {
         Drupal.behaviors.override.print(e);
       });

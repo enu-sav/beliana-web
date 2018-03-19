@@ -42,3 +42,20 @@ function beliana_preprocess_views_view(&$variables) {
     $variables['#attached']['library'][] = 'cool/facets';
   }
 }
+
+/**
+ * Implements template_preprocess_facets_item_list().
+ */
+function beliana_preprocess_facets_item_list(&$variables) {
+  foreach ($variables['items'] as &$item) {
+   $options = $item['value']['#url']->getOptions();
+   
+   // remove search text query from facet link
+   if(isset($options['query']['text'])){
+     unset($options['query']['text']);
+   }
+   
+   $item['value']['#url']->setOptions($options);   
+  }
+  
+}
