@@ -37,7 +37,8 @@ class ImageUrlFormatter extends LinkFormatter {
       '#empty_option' => t('Nothing'),
       '#options' => [
         'content' => t('Content'),
-        'file' => t('File')
+        'file' => t('File'),
+        'colorbox' => t('Colorbox'),
       ],
     ];
 
@@ -54,6 +55,7 @@ class ImageUrlFormatter extends LinkFormatter {
     $link_types = [
       'content' => t('Linked to content'),
       'file' => t('File'),
+      'colorbox' => t('Colorbox'),
     ];
 
     if (isset($link_types[$image_link_setting])) {
@@ -69,6 +71,7 @@ class ImageUrlFormatter extends LinkFormatter {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
     $entity = $items->getEntity();
+    $link_type = $this->getSetting('image_link');
 
     foreach ($items as $delta => $item) {
       $image = [
@@ -80,19 +83,38 @@ class ImageUrlFormatter extends LinkFormatter {
         ]
       ];
 
-      if ($this->getSetting('image_link') == 'content' || $this->getSetting('image_link') == 'file') {
-        $url = $this->getSetting('image_link') == 'content' ? $entity->url() : $item->uri;
-        $target = $this->getSetting('image_link') == 'content' ? '' : '_blank';
+      switch ($link_type) {
+        case 'colorbox':
+          $elements[$delta] = [
+            '#theme' => 'colorbox_url_formatter',
+            '#item' => $item,
+            '#image' => $image,
+            '#entity' => $entity,
+            '#cache' => ['tags' => ['file:' . $entity->id()]],
+          ];
 
-        $elements[$delta] = [
-          '#type' => 'html_tag',
-          '#tag' => 'a',
-          '#attributes' => ['href' => $url, 'class' => ['field-media'], 'target' => $target],
-          'image' => $image
-        ];
-      }
-      else {
-        $elements[$delta] = $image;
+          $colorbox_service = \Drupal::service('colorbox.attachment');
+
+          // Attach the Colorbox JS and CSS.
+          if ($colorbox_service->isApplicable()) {
+            $colorbox_service->attach($elements);
+          }
+          break;
+        case 'content':
+        case 'file':
+          $url = $this->getSetting('image_link') == 'content' ? $entity->url() : $item->uri;
+          $target = $this->getSetting('image_link') == 'content' ? '' : '_blank';
+
+          $elements[$delta] = [
+            '#type' => 'html_tag',
+            '#tag' => 'a',
+            '#attributes' => ['href' => $url, 'class' => ['field-media'], 'target' => $target],
+            'image' => $image
+          ];
+          break;
+        default:
+          $elements[$delta] = $image;
+          break;
       }
     }
 

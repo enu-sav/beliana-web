@@ -4,6 +4,8 @@ description: Beliana daily
 core: 8.x
 package: Beliana
 dependencies:
-  - rest
-  - system (>=8.2.0)
   - beliana_sync
+  - colorbox
+  - system (>=8.2.0)
+  - rest
+  

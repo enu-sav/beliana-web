@@ -6,6 +6,24 @@
 use Drupal\Core\Form\FormStateInterface;
 
 /**
+ * Implements hook_theme().
+ */
+function beliana_daily_theme() {
+  return array(
+    'colorbox_url_formatter' => array(
+      'variables' => array(
+        'item' => NULL,
+        'image' => NULL,
+        'item_attributes' => NULL,
+        'entity' => NULL,
+        'settings' => NULL,
+      ),
+      'file' => 'beliana_daily.theme.inc',
+    ),
+  );
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function beliana_daily_form_piwik_admin_settings_alter(&$form, FormStateInterface $form_state, $form_id) {
