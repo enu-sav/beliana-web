@@ -1009,6 +1009,7 @@ footer .footer-copyright {
   }
   .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li a {
     color: #fff;
+    background: #171717;
     border: none;
   }
   .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li:first-child a {
