@@ -240,7 +240,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: Dnes
+      title: 'Heslo dńa'
       header: {  }
       footer: {  }
       empty:
