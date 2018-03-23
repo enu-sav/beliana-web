@@ -76,7 +76,6 @@ header.header {
   padding: 0 10px;
 }
 .header .header-top ul li a:hover {
-  text-decoration: none !important;
   background-color: transparent;
 }
 
@@ -98,11 +97,11 @@ header.header {
 .header .header-main .left .logo .beliana-logo {
   width: 78px;
   height: 78px;
-  position: relative;
-  background-size: 78px;
-  margin: -2px 0 0 0;
+  position: relative;  
+  margin: -4px 0 0 0;
   display: inline-block;
-  background: url('../img/beliana_logo_pink.png') no-repeat;
+  background: url('../img/beliana_logo_pink.png') no-repeat center center;
+  background-size: 64px 64px;
 }
 .header .header-main .left .logo .beliana-heading {
   display: inline-block;
@@ -295,7 +294,8 @@ footer a:visited,
 }
 
 .top-links a:hover,
-footer a:hover {
+footer a:hover,
+#block-beliana-main-menu a:hover {
   text-decoration: underline !important;
 }
 
@@ -316,9 +316,14 @@ footer a:hover {
 #content-main {
   margin-top: 32px;
 }
+body.path-frontpage #content-main .container {
+  max-width: 1170px;
+}
+
 
 .media.media-image.view-mode-full {
-
+  width: 75%;
+  margin: 0 auto;
 }
 .media.media-image.view-mode-full .left,
 .media.media-image.view-mode-full .right {
@@ -414,6 +419,10 @@ article .heslo p.last-update {
 
 article .heslo-ilustracia {
   width: 30%;
+}
+
+article .heslo-ilustracia .field--name-field-images {
+  margin-top: 78px;
 }
 
 article .heslo .obsah { 
@@ -704,6 +713,7 @@ article.media-image.view-mode-in-word a {
   color: #333;
   font-size: 1em;
   font-weight: normal;
+  margin-bottom: 10px;
 }
 #block-views-block-content-recent-block-2 .item-list {
   max-height: 115px;
@@ -834,10 +844,14 @@ article.media-image.view-mode-in-word a {
   color: #333;
   font-size: 1em;
   font-weight: normal;
+  margin-bottom: 10px;
+}
+.dnes ul {
+  margin: 0;
 }
 .dnes ul li {
   font-size: 1.2em;
-  color: #8b2908;
+  color: #8b2908;  
 }
 
 .truncate-wrapper {
@@ -887,7 +901,6 @@ footer .footer-content ul li a,
 footer .footer-content ul li a:hover {
   color: #333 !important;
   font-size: 1.5em;
-  text-decoration: none !important;
 }
 footer .footer-copyright {
   width: 100%;
@@ -918,12 +931,28 @@ footer .footer-copyright {
   .header .header-top {
     display: none;
   }
-  .header .header-main .right,
   .header .header-main .left {
+    width: 45px;
+  }
+  .header .header-main .left .logo .beliana-heading {
     display: none;
   }
+  .header .header-main .left .logo .beliana-logo {
+    width: 45px;
+    height: 45px;
+    background-size: 45px;
+    margin-top: 12px;
+    margin-left: -4px;
+  }
   .header .header-main .middle {
-    width: calc(100% - 45px);
+    width: calc(100% - 105px);
+    background: #fff;
+    padding: 1px 0 1px 5px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .header .header-main .right {
+    display: none;
   }
 
   .header .header-main .middle .smartphone-navigation {
@@ -931,7 +960,7 @@ footer .footer-copyright {
   }
   .header .header-main .middle .smartphone-navigation .fa-bars {
     position: absolute;
-    top: 7px;
+    top: 8px;
     right: -45px;
     color: #ffa587;
   }
@@ -941,12 +970,22 @@ footer .footer-copyright {
   .header .header-main .middle .smartphone-navigation.open .nav-collapse {
     display: block;
     max-height: initial;
-    width: calc(100% + 85px);
-    left: -20px;
+    width: calc(100% + 151px);
+    left: -85px;
     top: 5px;
+    margin-bottom: 4px;
+    margin-top: -4px;
+    background: #171717;
+    border: none;
+    padding-top: 15px;
+    text-align: center;
   }
   .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li {
-    background: #fff;
+    background: #171717;
+  }
+  .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li a {
+    color: #fff;
+    border: none;
   }
   .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li:first-child a {
     padding-left: 18px;
@@ -959,9 +998,22 @@ footer .footer-copyright {
   article .heslo-ilustracia {
     width: 100%;
   }
+  article .heslo-ilustracia .field--name-field-images {
+    margin-top: 0;
+  }
 
   .heslo-container {
     width: 100%; 
+  }
+
+  .media.media-image.view-mode-full {
+    width: 100%;
+  }
+
+  .media.media-image.view-mode-full .metadata .back {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
   }
 
   .heslo-tools.smartphone {
@@ -988,9 +1040,15 @@ footer .footer-copyright {
     font-size: 2.5em;
   }
   #block-beliana-searchbox .search-input-wrapper {
-    width: 100%;
+    width: calc(100% - 45px);
+    background: #fff;
+    padding: 1px 0 1px 5px;
   }
   #block-beliana-searchbox input.search-submit {
     display: none;
+  }
+
+  .dnes {
+    border: none !important;
   }
 }

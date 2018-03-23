@@ -42,6 +42,19 @@
         $('#block-beliana-heslo').addClass('is-slider');
       }
 
+      var alphabet_offset = $('#block-beliana-heslo .item-list__links').width() - alphabet_width;
+
+      if (alphabet_offset > 5) {
+        $('#block-beliana-heslo .item-list__links').css({
+          'width': alphabet_width - 25,
+          'margin-left': (alphabet_offset + 25) / 2
+        });
+      }
+
+      var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
+      var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
+      search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
+
       $(window).resize(function () {
         if (alphabet_width > $(window).width()) {
           $('#block-beliana-heslo').addClass('is-slider');
