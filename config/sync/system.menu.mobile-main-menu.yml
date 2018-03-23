@@ -1,0 +1,8 @@
+uuid: e76f030c-9cde-41c2-ba85-30fde2103a6c
+langcode: sk
+status: true
+dependencies: {  }
+id: mobile-main-menu
+label: Mobile
+description: ''
+locked: false

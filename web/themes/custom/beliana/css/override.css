@@ -305,6 +305,10 @@ footer a:hover,
   padding-top: 10px;
 }
 
+#block-beliana-mobile-menu {
+  display: none;
+}
+
 .najhladanejsie-hesla ul li .views-field-title span {
   padding-right: 20px;
 }
@@ -469,6 +473,11 @@ article.media-image.view-mode-in-word a {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+@-moz-document url-prefix() {
+  #block-beliana-heslo .facets-widget-links > ul {
+    overflow-x: -moz-hidden-unscrollable;
+  }
+}
 #block-beliana-heslo .facets-widget-links > ul::-webkit-scrollbar {
   display: none;
 }
@@ -503,6 +512,9 @@ article.media-image.view-mode-in-word a {
 }
 #block-beliana-heslo .facets-widget-links .navigation.next {
   right: -20px;
+}
+#block-beliana-heslo .facets-widget-links .navigation.hide {
+  display: none;
 }
 
 #block-beliana-heslo ul li ul {
@@ -918,7 +930,19 @@ footer .footer-copyright {
   }
 }
 
+@media screen and (max-width: 1150px) {
+  .header .header-main .left .logo .beliana-heading {
+    font-size: 0.65em;
+    margin-top: 22px;
+  }
+}
+
 @media screen and (max-width: 843px) {
+  .header .header-main .left .logo .beliana-heading {
+    font-size: 0.5em;
+    margin-top: 25px;
+  }
+
   .media.media-image.view-mode-full .left,
   .media.media-image.view-mode-full .right {
     width: 100%;
@@ -941,7 +965,7 @@ footer .footer-copyright {
     width: 45px;
     height: 45px;
     background-size: 45px;
-    margin-top: 12px;
+    margin-top: 13px;
     margin-left: -4px;
   }
   .header .header-main .middle {
@@ -967,7 +991,7 @@ footer .footer-copyright {
   .header .header-main .middle .smartphone-navigation .nav-collapse {
     display: none;
   }
-  .header .header-main .middle .smartphone-navigation.open .nav-collapse {
+  .header .header-main .middle .smartphone-navigation.open #block-beliana-mobile-menu {
     display: block;
     max-height: initial;
     width: calc(100% + 151px);
@@ -989,6 +1013,7 @@ footer .footer-copyright {
   }
   .header .header-main .middle .smartphone-navigation.open .nav-collapse ul li:first-child a {
     padding-left: 18px;
+    background: none;
   }
 
   article .heslo {
