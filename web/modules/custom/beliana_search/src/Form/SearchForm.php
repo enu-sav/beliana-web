@@ -83,7 +83,7 @@ class SearchForm extends FormBase {
 
       $form['beliana_search_input']['#attributes']['class'][] = 'has-alphabet';
 
-      $base_letter = $entity_manager->getStorage('taxonomy_term')->loadByProperties(['name' => strtoupper(substr($term->label(), 0, 1))]);
+      $base_letter = $entity_manager->getStorage('taxonomy_term')->loadByProperties(['name' => strtoupper(substr($term->get('name')->value, 0, 1))]);
 
       if (!empty($base_letter)) {
         $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = reset($base_letter)->id();
