@@ -83,11 +83,14 @@ class SearchForm extends FormBase {
 
       $form['beliana_search_input']['#attributes']['class'][] = 'has-alphabet';
 
-      $base_letter = $entity_manager->getStorage('taxonomy_term')->loadByProperties(['name' => strtoupper(substr($term->get('name')->value, 0, 1))]);
+      $base_letter = $term->id();
+      $tree = $entity_manager->getStorage('taxonomy_term')->loadAllParents($base_letter);
 
-      if (!empty($base_letter)) {
-        $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = reset($base_letter)->id();
+      if (count($tree) > 1) {
+        $base_letter = end($tree)->id();
       }
+
+      $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = $base_letter;
     }
 
     $form['beliana_search_submit'] = [

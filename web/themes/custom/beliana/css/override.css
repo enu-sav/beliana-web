@@ -475,7 +475,7 @@ article.media-image.view-mode-in-word a {
 }
 @-moz-document url-prefix() {
   #block-beliana-heslo .facets-widget-links > ul {
-    overflow-x: -moz-hidden-unscrollable;
+    overflow: hidden;
   }
 }
 #block-beliana-heslo .facets-widget-links > ul::-webkit-scrollbar {
@@ -1089,11 +1089,20 @@ footer .footer-copyright {
     left: 0;
     width: 100%;
   }
+  #block-beliana-heslo .facets-widget-links .navigation {
+    display: none !important; 
+  }
 
   .dnes {
     border: none !important;
   }
   .dnes.half-box {
     width: 100%;
+  }
+
+  @-moz-document url-prefix() {
+    #block-beliana-heslo .facets-widget-links > ul {
+      overflow: auto;
+    }
   }
 }
