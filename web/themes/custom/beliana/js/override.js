@@ -8,90 +8,12 @@
 
   Drupal.behaviors.override = {
     attach: function (context, settings) {
-      $(document).on('click', function () {
-        if ($('.search-help .description').hasClass('open')) {
-          $('.search-help .description').removeClass('open');
-        }
-      });
-
       $('.smartphone-navigation .fa-bars').on('click', function () {
         if ($(this).parent().hasClass('open')) {
           $(this).parent().removeClass('open');
         } else {
           $(this).parent().addClass('open');
         }
-      });
-
-      $('.search-help').on('click', function () {
-        var desc = $(this);
-        setTimeout(function () {
-          desc.find('.description').addClass('open');
-        }, 150);
-      });
-
-      //set alphabet facet slides wrappers
-      var alphabet_width = 155;
-      $('#block-beliana-heslo .item-list__links > li').each(function (i, item) {
-        alphabet_width += $(item).width();
-      });
-
-      $('#block-beliana-heslo .facets-widget-links').prepend('<a href="#" class="navigation prev"><i class="fa fa-chevron-left"></i></a>');
-      $('#block-beliana-heslo .facets-widget-links').append('<a href="#" class="navigation next"><i class="fa fa-chevron-right"></i></a>');
-
-      if (alphabet_width > $(window).width()) {
-        $('#block-beliana-heslo').addClass('is-slider');
-      }
-
-      var alphabet_offset = $('#block-beliana-heslo .item-list__links').width() - alphabet_width;
-
-      if (alphabet_offset > 5) {
-        $('#block-beliana-heslo .item-list__links').css({
-          'width': alphabet_width - 25,
-          'margin-left': (alphabet_offset + 25) / 2
-        });
-      }
-
-      var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
-      var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
-      search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
-
-      $(window).resize(function () {
-        if (alphabet_width > $(window).width()) {
-          $('#block-beliana-heslo').addClass('is-slider');
-        } else {
-          $('#block-beliana-heslo').removeClass('is-slider');
-        }
-      });
-
-      var alphabet_scroll_offset = 0;
-      var alphabet_navigation = $('#block-beliana-heslo .facets-widget-links');
-      var scroll_width = alphabet_navigation.find('ul.item-list__links > li').first().width();
-      var scroll_count = alphabet_navigation.find('ul.item-list__links > li').length;
-
-      alphabet_navigation.find('.navigation.prev').addClass('hide');
-      alphabet_navigation.find('.navigation').on('click', function (e) {
-        e.preventDefault();
-
-        if ($(this).hasClass('next')) {
-          alphabet_scroll_offset += scroll_width * 2;
-
-        } else {
-          alphabet_scroll_offset -= scroll_width * 2;
-        }
-
-        if (alphabet_scroll_offset > 0) {
-          alphabet_navigation.find('.navigation.prev').removeClass('hide');
-        } else {
-          alphabet_navigation.find('.navigation.prev').addClass('hide');
-        }
-
-        if (alphabet_scroll_offset > (scroll_count * scroll_width - alphabet_navigation.width() + 140)) {
-          alphabet_navigation.find('.navigation.next').addClass('hide');
-        } else {
-          alphabet_navigation.find('.navigation.next').removeClass('hide');
-        }
-
-        $(this).parent().find('ul.item-list__links').animate({scrollLeft: alphabet_scroll_offset}, 500);
       });
 
       //add print functionallity
@@ -107,6 +29,17 @@
       $('article.media-image.view-mode-full img').each(function (key, value) {
         Drupal.behaviors.override.setMediaSize($(value), 660);
       });
+
+      //Configure colorbox call back to resize with custom dimensions 
+      if (jQuery().colorbox) {
+        $.colorbox.settings.onLoad = function () {
+          Drupal.behaviors.override.colorboxResize(false);
+        };
+
+        $(window).resize(function () {
+          Drupal.behaviors.override.colorboxResize(true);
+        });
+      }
     },
     print: function (event) {
       event.preventDefault();
@@ -142,6 +75,21 @@
           }
         });
       });
+    },
+    colorboxResize: function (resize) {
+      var width = '90%';
+      var height = '90%';
+
+      $.colorbox.settings.height = height;
+      $.colorbox.settings.width = width;
+
+      //if window is resized while lightbox open
+      if (resize) {
+        $.colorbox.resize({
+          'height': height,
+          'width': width
+        });
+      }
     }
   };
 

@@ -24,6 +24,7 @@ class SearchForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $entity_manager = \Drupal::entityTypeManager();
     $query = \Drupal::request()->query->all();
     $form['#cache']['max-age'] = 0;
 
@@ -51,9 +52,11 @@ class SearchForm extends FormBase {
       $form['beliana_search_input']['input']['#attributes']['autofocus'] = '';
     }
 
+    $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = NULL;
+
     if (isset($query['f'])) {
       $filter = explode(':', $query['f'][0]);
-      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($filter[1]);
+      $term = $entity_manager->getStorage('taxonomy_term')->load($filter[1]);
 
       $close_query = $query;
       unset($close_query['f']);
@@ -79,6 +82,12 @@ class SearchForm extends FormBase {
       ];
 
       $form['beliana_search_input']['#attributes']['class'][] = 'has-alphabet';
+
+      $base_letter = $entity_manager->getStorage('taxonomy_term')->loadByProperties(['name' => strtoupper(substr($term->label(), 0, 1))]);
+
+      if (!empty($base_letter)) {
+        $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = reset($base_letter)->id();
+      }
     }
 
     $form['beliana_search_submit'] = [
@@ -88,6 +97,8 @@ class SearchForm extends FormBase {
         'class' => ['search-submit'],
       ],
     ];
+
+    $form['#attached']['library'][] = 'beliana_search/search';
 
     return $form;
   }

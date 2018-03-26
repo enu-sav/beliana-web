@@ -865,6 +865,9 @@ article.media-image.view-mode-in-word a {
   font-size: 1.2em;
   color: #8b2908;  
 }
+.dnes.half-box {
+  width: 35%;
+}
 
 .truncate-wrapper {
   max-height: 126px;
@@ -896,6 +899,14 @@ article.media-image.view-mode-in-word a {
 
 .zoznam-tools {
   margin-top: 12px;
+}
+
+#colorbox #cboxContent .cboxPhoto {
+  width: auto !important;
+  height: 100% !important;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto !important;
 }
 
 footer {
@@ -1074,7 +1085,15 @@ footer .footer-copyright {
     display: none;
   }
 
+  #block-beliana-heslo ul li ul {
+    left: 0;
+    width: 100%;
+  }
+
   .dnes {
     border: none !important;
+  }
+  .dnes.half-box {
+    width: 100%;
   }
 }
