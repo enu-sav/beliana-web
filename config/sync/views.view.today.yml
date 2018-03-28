@@ -253,7 +253,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'Žiadne heslá sa neviažu ku dnešnému dátumu, skúste zajtra.'
+          content: 'K dnešnému dátumu sa neviažu žiadne heslá.'
           plugin_id: text_custom
       relationships: {  }
       arguments:

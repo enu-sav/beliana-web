@@ -40,25 +40,25 @@
   {{ title }}
   {{ title_suffix }}
 
-  <div class="clearfix">
-    <header class="left">
-      <h2>{{ title }}</h2>
-      {% if header %}
+  {% if header %}
+    <div class="clearfix">
+      <header class="left">
+        <h2>&nbsp;</h2>
         {{ header }}
-      {% endif %}
-    </header>
-    <div class="zoznam-tools">
-      <p>Zobrazujem:</p>
+      </header>
+      <div class="zoznam-tools">
+        <p>Zobrazujem:</p>
 
-      <div class="truncate-button active">
-        <span class="label">Začiatok hesla<b class="button"></b></span>
-        <ul class="dropdown">
-          <li class="word-short">Začiatok hesla</li>
-          <li class="word-full">Celé heslo</li>
-        </ul>
+        <div class="truncate-button active">
+          <span class="label">Začiatok hesla<b class="button"></b></span>
+          <ul class="dropdown">
+            <li class="word-short">Začiatok hesla</li>
+            <li class="word-full">Celé heslo</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 
   {{ exposed }}
   {{ attachment_before }}

@@ -236,24 +236,27 @@ body.use-loader.is-loaded .page-loader {
   display: none;
 }*/
 
-#block-beliana-page-title ,
-.view-word-search-page header h2 {
+#block-beliana-page-title {
   display: none;
 }
-body.path-abecedny-zoznam .view-word-search-page header {
-  margin-top: 25px;
-}
+
 .view-word-search-page {
   width: 50%;
   margin: 0 auto;
 }
+.view-word-search-page header {
+  margin-top: -10px;
+}
 .view-word-search-page .heslo-container {
   width: 100%;
 }
-
 .view-word-search-page .heslo-container .heslo {
   width: 100%;
   padding: 0;
+}
+.view-word-search-page .heslo-container .heslo h1 a {
+  font-size: 1.1em;
+  font-weight: normal;
 }
 
 .more,

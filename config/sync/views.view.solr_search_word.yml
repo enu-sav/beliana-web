@@ -303,7 +303,18 @@ display:
           content: 'Zobrazené heslá @start - <span id="count-words">@end</span> z celkového počtu @total hesiel.'
           plugin_id: result
       footer: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: 'Zadaným podmienkam nevyhovujú žiadne heslá.'
+          plugin_id: text_custom
       relationships: {  }
       arguments: {  }
       display_extenders: {  }

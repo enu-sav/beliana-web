@@ -313,6 +313,9 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
+      defaults:
+        css_class: true
+        header: true
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -551,6 +554,9 @@ display:
         row: false
         filters: false
         filter_groups: false
+        css_class: false
+        header: false
+        title: false
       style:
         type: default
         options:
@@ -684,6 +690,19 @@ display:
         operator: AND
         groups:
           1: AND
+      css_class: view-word-search-page
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Zobrazené heslá @start - <span id="count-words">@end</span> z celkového počtu @total hesiel.'
+          plugin_id: result
+      title: 'Nové heslá'
     cache_metadata:
       max-age: -1
       contexts:
