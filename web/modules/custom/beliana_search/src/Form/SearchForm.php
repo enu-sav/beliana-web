@@ -49,7 +49,6 @@ class SearchForm extends FormBase {
 
     if (isset($query['text'])) {
       $form['beliana_search_input']['input']['#default_value'] = $query['text'];
-      $form['beliana_search_input']['input']['#attributes']['autofocus'] = '';
     }
 
     $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = NULL;
