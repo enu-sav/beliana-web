@@ -71,8 +71,8 @@
 
       if (alphabet_offset > 5) {
         $('#block-beliana-heslo .item-list__links').css({
-          'width': alphabet_width - 25,
-          'margin-left': (alphabet_offset + 25) / 2
+          'width': alphabet_width - 70,
+          'margin-left': (alphabet_offset + 75) / 2
         });
       }
 
