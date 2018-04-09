@@ -481,16 +481,12 @@ article.media-image.view-mode-in-word a {
   margin-right: 0px;
 }
 #block-beliana-heslo .facets-widget-links > ul {
+  margin-left: 180px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-@-moz-document url-prefix() {
-  #block-beliana-heslo .facets-widget-links > ul {
-    overflow: hidden;
-  }
 }
 #block-beliana-heslo .facets-widget-links > ul::-webkit-scrollbar {
   display: none;
