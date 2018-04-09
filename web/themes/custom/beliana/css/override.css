@@ -352,6 +352,7 @@ body.path-node article .heslo h1 {
 .media.media-image.view-mode-full .metadata {
   font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.7rem;
+  padding-right: 15px;
 }
 .media.media-image.view-mode-full .metadata a{
   color: #266ead;
@@ -1123,7 +1124,9 @@ footer .footer-copyright {
   #block-beliana-searchbox input.search-submit {
     display: none;
   }
-
+  #block-beliana-heslo .facets-widget-links > ul {
+    margin-left: 0;
+  }
   #block-beliana-heslo ul li ul {
     left: 0;
     width: 100%;

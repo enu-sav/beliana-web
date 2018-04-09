@@ -122,6 +122,10 @@
         $('#block-beliana-heslo .item-list__links').css({
           'margin-left': alphabet_margin + 'px'
         });
+      } else {
+        $('#block-beliana-heslo .item-list__links').css({
+          'margin-left': '0px'
+        });
       }
 
       if (alphabet_offset > 5) {

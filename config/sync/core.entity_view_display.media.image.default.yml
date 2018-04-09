@@ -90,7 +90,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_link: colorbox
+      image_link: file
       trim_length: '80'
       url_only: ''
       url_plain: ''
