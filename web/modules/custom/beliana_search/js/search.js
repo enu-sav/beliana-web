@@ -6,6 +6,10 @@
 
   'use strict';
 
+  var alphabet_width = 155;
+  var alphabet_scroll_offset = 0;
+  var alphabet_navigation = $('#block-beliana-heslo .facets-widget-links');
+
   Drupal.behaviors.search = {
     attach: function (context, settings) {
       var current_letter = false;
@@ -36,56 +40,30 @@
         }, 150);
       });
 
-      //set alphabet facet slides wrappers
-      var alphabet_width = 155;
-      var alphabet_scroll_offset = 0;
-      var alphabet_navigation = $('#block-beliana-heslo .facets-widget-links');
+      //set alphabet facet slides
+      $('#block-beliana-heslo .facets-widget-links').prepend('<a href="#" class="navigation prev hide"><i class="fa fa-chevron-left"></i></a>');
+      $('#block-beliana-heslo .facets-widget-links').append('<a href="#" class="navigation next hide"><i class="fa fa-chevron-right"></i></a>');
 
       $('#block-beliana-heslo .item-list__links > li').each(function (i, item) {
         alphabet_width += $(item).width();
       });
 
-      $('#block-beliana-heslo .facets-widget-links').prepend('<a href="#" class="navigation prev hide"><i class="fa fa-chevron-left"></i></a>');
-      $('#block-beliana-heslo .facets-widget-links').append('<a href="#" class="navigation next"><i class="fa fa-chevron-right"></i></a>');
+      Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
 
-      if (alphabet_width > window_width) {
-        $('#block-beliana-heslo').addClass('is-slider');
+      $(window).resize(function () {
+        window_width = $(window).width();
 
-        if (current_letter) {
-          var current_item = $('#block-beliana-heslo .item-list__links > li > a[data-drupal-facet-item-value="' + current_letter + '"]').parent();
+        Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
 
-          if (current_item.offset().left + 80 > window_width) {
-            alphabet_scroll_offset = current_item.offset().left - window_width + 80;
-
-            if (alphabet_scroll_offset > 0) {
-              alphabet_navigation.find('.navigation.prev').removeClass('hide');
-            }
-
-
-            $('#block-beliana-heslo .item-list__links').animate({scrollLeft: alphabet_scroll_offset}, 500);
-          }
+        if (alphabet_width > window_width) {
+          $('#block-beliana-heslo').addClass('is-slider');
+        } else {
+          $('#block-beliana-heslo').removeClass('is-slider');
         }
-      }
+      });
 
-      var alphabet_offset = $('#block-beliana-heslo .item-list__links').width() - alphabet_width;
-
-      if (alphabet_offset > 5) {
-        $('#block-beliana-heslo .item-list__links').css({
-          'width': alphabet_width - 70,
-          'margin-left': (alphabet_offset + 75) / 2
-        });
-      }
-
-      var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
-      var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
       var scroll_width = alphabet_navigation.find('ul.item-list__links > li').first().width();
       var scroll_count = alphabet_navigation.find('ul.item-list__links > li').length;
-
-      search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
-
-      if (alphabet_scroll_offset > 0) {
-        alphabet_navigation.find('.navigation.prev').removeClass('hide');
-      }
 
       alphabet_navigation.find('.navigation').on('click', function (e) {
         e.preventDefault();
@@ -111,6 +89,55 @@
 
         $(this).parent().find('ul.item-list__links').animate({scrollLeft: alphabet_scroll_offset}, 500);
       });
+    },
+    scrollNavigation: function () {
+
+    },
+    setAlphabetSlider: function (window_width, current_letter) {
+      alphabet_scroll_offset = 0
+
+      if (alphabet_width > window_width) {
+        $('#block-beliana-heslo').addClass('is-slider');
+        alphabet_navigation.find('.navigation.next').removeClass('hide');
+
+        if (current_letter) {
+          var current_item = $('#block-beliana-heslo .item-list__links > li > a[data-drupal-facet-item-value="' + current_letter + '"]').parent();
+
+          if (current_item.offset().left + 80 > window_width) {
+            alphabet_scroll_offset = current_item.offset().left - window_width + 80;
+
+            if (alphabet_scroll_offset > 0) {
+              alphabet_navigation.find('.navigation.prev').removeClass('hide');
+            }
+
+            $('#block-beliana-heslo .item-list__links').animate({scrollLeft: alphabet_scroll_offset}, 500);
+          }
+        }
+      }
+
+      var alphabet_offset = $('#block-beliana-heslo .item-list__links').width() - alphabet_width;
+      var alphabet_margin = (window_width - alphabet_width) / 2;
+
+      if (alphabet_margin > 0 && window_width < 1330) {
+        $('#block-beliana-heslo .item-list__links').css({
+          'margin-left': alphabet_margin + 'px'
+        });
+      }
+
+      if (alphabet_offset > 5) {
+        $('#block-beliana-heslo .item-list__links').css({
+          'width': (alphabet_width - 70) + 'px'
+        });
+      }
+
+      var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
+      var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
+
+      search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
+
+      if (alphabet_scroll_offset > 0) {
+        alphabet_navigation.find('.navigation.prev').removeClass('hide');
+      }
 
       if (window_width < 768) {
         $('#block-beliana-heslo .item-list__links > li > a').on('click touch', function (e) {
@@ -124,19 +151,6 @@
           }
         });
       }
-
-      $(window).resize(function () {
-        window_width = $(window).width();
-
-        if (alphabet_width > window_width) {
-          $('#block-beliana-heslo').addClass('is-slider');
-        } else {
-          $('#block-beliana-heslo').removeClass('is-slider');
-        }
-      });
-    },
-    scrollNavigation: function () {
-
     }
   };
 

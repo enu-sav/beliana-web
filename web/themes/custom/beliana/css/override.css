@@ -520,6 +520,7 @@ article.media-image.view-mode-in-word a {
 }
 #block-beliana-heslo.is-slider .facets-widget-links .navigation {
   display: block;
+  top: 16px;
 }
 #block-beliana-heslo .facets-widget-links .navigation.prev {
   left: -20px;
