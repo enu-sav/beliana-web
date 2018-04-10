@@ -124,7 +124,7 @@
         });
       } else {
         $('#block-beliana-heslo .item-list__links').css({
-          'margin-left': '0px'
+          'margin': '0 auto',
         });
       }
 
