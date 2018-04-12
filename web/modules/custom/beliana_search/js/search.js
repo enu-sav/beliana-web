@@ -41,54 +41,54 @@
       });
 
       //set alphabet facet slides
-      $('#block-beliana-heslo .facets-widget-links').prepend('<a href="#" class="navigation prev hide"><i class="fa fa-chevron-left"></i></a>');
-      $('#block-beliana-heslo .facets-widget-links').append('<a href="#" class="navigation next hide"><i class="fa fa-chevron-right"></i></a>');
-
-      $('#block-beliana-heslo .item-list__links > li').each(function (i, item) {
-        alphabet_width += $(item).width();
-      });
-
-      Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
-
-      $(window).resize(function () {
-        window_width = $(window).width();
-
-        Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
-
-        if (alphabet_width > window_width) {
-          $('#block-beliana-heslo').addClass('is-slider');
-        } else {
-          $('#block-beliana-heslo').removeClass('is-slider');
-        }
-      });
-
-      var scroll_width = alphabet_navigation.find('ul.item-list__links > li').first().width();
-      var scroll_count = alphabet_navigation.find('ul.item-list__links > li').length;
-
-      alphabet_navigation.find('.navigation').on('click', function (e) {
-        e.preventDefault();
-
-        if ($(this).hasClass('next')) {
-          alphabet_scroll_offset += scroll_width * 2;
-
-        } else {
-          alphabet_scroll_offset -= scroll_width * 2;
-        }
-
-        if (alphabet_scroll_offset > 0) {
-          alphabet_navigation.find('.navigation.prev').removeClass('hide');
-        } else {
-          alphabet_navigation.find('.navigation.prev').addClass('hide');
-        }
-
-        if (alphabet_scroll_offset > (scroll_count * scroll_width - alphabet_navigation.width() + 140)) {
-          alphabet_navigation.find('.navigation.next').addClass('hide');
-        } else {
-          alphabet_navigation.find('.navigation.next').removeClass('hide');
-        }
-
-        $(this).parent().find('ul.item-list__links').animate({scrollLeft: alphabet_scroll_offset}, 500);
-      });
+//      $('#block-beliana-heslo .facets-widget-links').prepend('<a href="#" class="navigation prev hide"><i class="fa fa-chevron-left"></i></a>');
+//      $('#block-beliana-heslo .facets-widget-links').append('<a href="#" class="navigation next hide"><i class="fa fa-chevron-right"></i></a>');
+//
+//      $('#block-beliana-heslo .item-list__links > li').each(function (i, item) {
+//        alphabet_width += $(item).width();
+//      });
+//
+//      Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
+//
+//      $(window).resize(function () {
+//        window_width = $(window).width();
+//
+//        Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
+//
+//        if (alphabet_width > window_width) {
+//          $('#block-beliana-heslo').addClass('is-slider');
+//        } else {
+//          $('#block-beliana-heslo').removeClass('is-slider');
+//        }
+//      });
+//
+//      var scroll_width = alphabet_navigation.find('ul.item-list__links > li').first().width();
+//      var scroll_count = alphabet_navigation.find('ul.item-list__links > li').length;
+//
+//      alphabet_navigation.find('.navigation').on('click', function (e) {
+//        e.preventDefault();
+//
+//        if ($(this).hasClass('next')) {
+//          alphabet_scroll_offset += scroll_width * 2;
+//
+//        } else {
+//          alphabet_scroll_offset -= scroll_width * 2;
+//        }
+//
+//        if (alphabet_scroll_offset > 0) {
+//          alphabet_navigation.find('.navigation.prev').removeClass('hide');
+//        } else {
+//          alphabet_navigation.find('.navigation.prev').addClass('hide');
+//        }
+//
+//        if (alphabet_scroll_offset > (scroll_count * scroll_width - alphabet_navigation.width() + 140)) {
+//          alphabet_navigation.find('.navigation.next').addClass('hide');
+//        } else {
+//          alphabet_navigation.find('.navigation.next').removeClass('hide');
+//        }
+//
+//        $(this).parent().find('ul.item-list__links').animate({scrollLeft: alphabet_scroll_offset}, 500);
+//      });
     },
     scrollNavigation: function () {
 

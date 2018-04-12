@@ -16,6 +16,11 @@
         }
       });
 
+      // trigger to open all ilustracie .dalsie-info wrapeprs
+      setTimeout(function () {
+        $('.dalsie-info').trigger('open');
+      }, 100);
+
       //add print functionallity
       $('.heslo-tools .print').on('click', function (e) {
         Drupal.behaviors.override.print(e);
