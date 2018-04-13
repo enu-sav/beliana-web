@@ -131,11 +131,6 @@ header.header {
   vertical-align: top;
   margin-top: 24px;
 }
-body.path-frontpage .header .header-main .middle {
-  width: calc(100% - 42px);
-  margin-top: -4px;
-  margin-left: 0;
-}
 .header .header-main .middle .smartphone-navigation {
   display: none;
 }
@@ -1039,6 +1034,11 @@ footer .footer-copyright {
     padding: 1px 0 1px 5px;
     margin-top: 20px;
     margin-left: 10px;
+  }
+  body.path-frontpage .header .header-main .middle {
+    width: calc(100% - 42px);
+    margin-top: -4px;
+    margin-left: 0;
   }
   .header .header-main .right {
     display: none;
