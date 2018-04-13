@@ -288,6 +288,10 @@ body.use-loader.is-loaded .page-loader {
   text-decoration: none !important;
 }
 
+.dnes a {
+  line-height: 1.5em;
+}
+
 .more:hover,
 .obsah a:hover,
 .citacia a:hover,
@@ -746,7 +750,7 @@ article.media-image.view-mode-in-word a {
 }
 #block-views-block-content-recent-block-2 .item-list ul li {
   display: inline-block;
-  padding: 0 10px 2px 0;
+  padding: 0 10px 0 0;
   font-size: 1.6em;
 }
 #block-views-block-content-recent-block-2 .item-list ul li {
@@ -883,6 +887,7 @@ article.media-image.view-mode-in-word a {
 }
 .dnes.half-box {
   width: 35%;
+  padding-right: 15px;
 }
 
 .truncate-wrapper {
@@ -1190,6 +1195,7 @@ footer .footer-copyright {
   }
   .dnes.half-box {
     width: 100%;
+    padding-right: 0;
   }
 
   @-moz-document url-prefix() {
