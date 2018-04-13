@@ -16,6 +16,16 @@
         }
       });
 
+      if ($(window).width() < 768) {
+        $('.header .header-navigation .word-facet-wrap').on('click', function (e) {
+          if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+          } else {
+            $(this).addClass('active');
+          }
+        });
+      }
+
       // trigger to open all ilustracie .dalsie-info wrapeprs
       setTimeout(function () {
         $('.dalsie-info').trigger('open');

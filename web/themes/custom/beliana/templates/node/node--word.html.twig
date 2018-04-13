@@ -73,7 +73,7 @@
 
 <article{{ attributes.addClass('heslo-container') }}>
 
-  <div class="heslo">
+  <div class="heslo{% if node.field_images is empty %} full-width{% endif %}">
     <h1>{{ node.label }}</h1>
     <p class="last-update">
       {% set info_published %}
@@ -98,21 +98,23 @@
     </div>
   </div>
 
-  <div class="heslo-ilustracia">
-    <div class="heslo-tools smartphone">
-      <div class="share">
-        <span>Zdieľať<b class="button"></b></span>
-        <ul class="dropdown">
-          <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a></li>
-          <li><a href="https://twitter.com/intent/tweet?text={{ node.label|url_encode }} {{ share_url }}" target="_blank">Twitter</a>
-        </ul>
+  {% if node.field_images is not empty %}
+    <div class="heslo-ilustracia">
+      <div class="heslo-tools smartphone">
+        <div class="share">
+          <span>Zdieľať<b class="button"></b></span>
+          <ul class="dropdown">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/intent/tweet?text={{ node.label|url_encode }} {{ share_url }}" target="_blank">Twitter</a>
+          </ul>
+        </div>
+        <a href="#"  class="print">Vytlačiť</a>
+        <a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank">Komentovať</a>
       </div>
-      <a href="#"  class="print">Vytlačiť</a>
-      <a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank">Komentovať</a>
-    </div>
 
-    {{ content.field_images }}
-  </div>
+      {{ content.field_images }}
+    </div>
+  {% endif %}
 
   <div class="citacia desktop" data-collapse>
     <h3>citácia</h3>
