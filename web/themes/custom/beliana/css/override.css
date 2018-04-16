@@ -637,6 +637,9 @@ article.media-image.view-mode-in-word a {
 #block-beliana-searchbox {
   position: relative;
 }
+#block-beliana-searchbox form {
+  background: #fff;
+}
 #block-beliana-searchbox .search-input-wrapper {
   display: inline-block;
   background: url('../img/search_icon.png') no-repeat 14px 14px #fff;
@@ -682,7 +685,7 @@ article.media-image.view-mode-in-word a {
 #block-beliana-searchbox input.search-submit {
   display: inline-block;
   position: relative;
-  top: -1px;
+  top: 0;
   left: -4px;
   float: none;  
   width: 85px;
