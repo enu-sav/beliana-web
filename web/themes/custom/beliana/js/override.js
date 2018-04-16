@@ -8,7 +8,7 @@
 
   Drupal.behaviors.override = {
     attach: function (context, settings) {
-      $('.smartphone-navigation .fa-bars').on('click', function () {
+      $('.smartphone-navigation .fa-bars').on('click touch', function () {
         if ($(this).parent().hasClass('open')) {
           $(this).parent().removeClass('open');
         } else {
@@ -16,15 +16,13 @@
         }
       });
 
-      if ($(window).width() < 768) {
-        $('.header .header-navigation .word-facet-wrap').on('click', function (e) {
-          if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-          } else {
-            $(this).addClass('active');
-          }
-        });
-      }
+      $('.header .header-navigation .word-facet-wrap').on('click touch', function (e) {
+        if ($(this).hasClass('active')) {
+          $(this).removeClass('active');
+        } else {
+          $(this).addClass('active');
+        }
+      });
 
       // trigger to open all ilustracie .dalsie-info wrapeprs
       setTimeout(function () {
@@ -32,7 +30,7 @@
       }, 100);
 
       //add print functionallity
-      $('.heslo-tools .print').on('click', function (e) {
+      $('.heslo-tools .print').on('click touch', function (e) {
         Drupal.behaviors.override.print(e);
       });
 

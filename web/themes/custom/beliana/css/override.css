@@ -349,7 +349,11 @@ body.path-node article .heslo h1 {
   font-size: 2.5em;
   font-weight: normal;
 }
-
+body.page-node-type-page article {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
 
 .media.media-image.view-mode-full {
   width: 75%;
@@ -806,18 +810,25 @@ article.media-image.view-mode-in-word a {
 .heslo-tools.desktop {
   display: block;
 }
-.heslo-ilustracia .heslo-tools .share {
+.heslo-tools .share {
   background: none;
   color: #8b2908; 
 }
-.heslo-ilustracia .heslo-tools a.print, 
-.heslo-ilustracia .heslo-tools a.comment,
-.heslo-ilustracia .heslo-tools a:hover.print, 
-.heslo-ilustracia .heslo-tools a:hover.comment{
+.heslo-tools a.print, 
+.heslo-tools a.comment,
+.heslo-tools a:hover.print, 
+.heslo-tools a:hover.comment{
   display: block;
   text-align: left;
   margin: 8px 0;
   background: none;
+}
+.heslo-tools.desktop .share {
+  margin-right: 0;
+}
+.heslo-tools.desktop a.print, 
+.heslo-tools.desktop a.comment {
+  display: inline-block;
 }
 
 .heslo-ilustracia .media-image.view-mode-in-word {
@@ -1171,12 +1182,15 @@ footer .footer-copyright {
     font-size: 2.5em;
   }
   #block-beliana-searchbox .search-input-wrapper {
-    width: calc(100% - 45px);
+    width: calc(100% - 15px);
     background: #fff;
     padding: 1px 0 1px 5px;
   }
   #block-beliana-searchbox input.search-submit {
     display: none;
+  }
+  #block-beliana-searchbox .search-input-wrapper.has-alphabet .form-item {
+    width: calc(100% - 60px);
   }
 
   #block-beliana-heslo ul li ul {
