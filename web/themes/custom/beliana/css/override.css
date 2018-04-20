@@ -738,6 +738,7 @@ article.media-image.view-mode-in-word a {
   text-transform: uppercase;
   word-spacing: 9999999px;
   background: url('../img/beliana_logo_black.png') no-repeat top center;
+  background-size: 100px;
   margin: 0;
 }
 #block-beliana-encyklopediabeliana .field--name-body {
