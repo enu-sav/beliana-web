@@ -250,7 +250,7 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Blok
+    display_title: Content
     position: 1
     display_options:
       block_description: 'Nedávne komentáre'

@@ -1057,6 +1057,10 @@ footer .footer-copyright {
     margin-top: -4px;
     margin-left: 0;
   }
+  body.page-node-type-page article {
+    width: 100%;
+  }
+  
   .header .header-main .right {
     display: none;
   }

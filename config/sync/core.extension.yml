@@ -27,6 +27,7 @@ module:
   editor: 0
   entity: 0
   entity_browser: 0
+  entity_reference_revisions: 0
   entityqueue: 0
   eu_cookie_compliance: 0
   facets: 0
@@ -81,6 +82,7 @@ module:
   views_ui: 0
   menu_link_content: 1
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   stable: 0

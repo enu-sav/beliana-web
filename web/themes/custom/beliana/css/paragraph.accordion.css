@@ -1,0 +1,51 @@
+.paragraph--type--accordion {
+
+}
+.paragraph--type--accordion .sidebar-menu {
+  width: 210px;
+  display: block;
+  float: left;
+  margin-right: 30px;
+  vertical-align: top;
+  min-height: 100px;
+  position: relative;
+}
+.paragraph--type--accordion .sidebar-menu ul {
+  position: fixed;
+  width: 210px;
+  background: #fff;
+}
+.paragraph--type--accordion .sidebar-menu ul li {
+  list-style: none;
+}
+.paragraph--type--accordion .sidebar-menu ul li a {
+  padding: 10px 5px;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1em;
+}
+.paragraph--type--accordion .sidebar-menu ul li a.active {
+  color: #282727 !important;
+}
+
+.paragraph--type--accordion .content {
+  width: calc(100% - 240px);
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.1em;
+}
+
+@media screen and (max-width: 768px) {
+  .paragraph--type--accordion .sidebar-menu {
+    width: 100%;
+  }
+  .paragraph--type--accordion .sidebar-menu ul {
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .paragraph--type--accordion .content {
+    width: 100%;
+  }
+}

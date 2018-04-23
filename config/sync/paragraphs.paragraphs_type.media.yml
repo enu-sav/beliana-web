@@ -1,0 +1,9 @@
+uuid: 37d75f7f-80ca-46ff-8ca2-592bc073c391
+langcode: sk
+status: true
+dependencies: {  }
+id: media
+label: Media
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
