@@ -23,7 +23,7 @@
           $(this).addClass('active');
 
           $('html, body').animate({
-            scrollTop: content.find($(this).attr('href')).offset().top - 100
+            scrollTop: content.find($(this).attr('href')).offset().top - 80
           }, 500);
         });
       });

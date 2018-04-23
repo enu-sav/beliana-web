@@ -1,0 +1,10 @@
+uuid: 9f28965f-8952-40f0-b3a9-9ba5a7536c10
+langcode: sk
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.conetnt
+label: Conetnt
+targetEntityType: media
+cache: true

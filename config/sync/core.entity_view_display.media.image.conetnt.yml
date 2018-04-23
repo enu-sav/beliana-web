@@ -1,0 +1,71 @@
+uuid: 85026a3f-9b72-401f-9352-4f192ffc5379
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.conetnt
+    - field.field.media.image.field_description
+    - field.field.media.image.field_image
+    - field.field.media.image.field_institucia
+    - field.field.media.image.field_licence
+    - field.field.media.image.field_meno_autora_diela
+    - field.field.media.image.field_meno_autora_snimky_diela
+    - field.field.media.image.field_nazov_diela
+    - field.field.media.image.field_obrazok_odkaz
+    - field.field.media.image.field_url_autora_diela_l
+    - field.field.media.image.field_url_diela_l
+    - field.field.media.image.field_url_textu_licencie_l
+    - image.style.large
+    - media_entity.bundle.image
+  module:
+    - beliana_daily
+    - image
+    - text
+id: media.image.conetnt
+targetEntityType: media
+bundle: image
+mode: conetnt
+content:
+  field_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_obrazok_odkaz:
+    weight: 1
+    label: hidden
+    settings:
+      image_link: ''
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: beliana_image_url
+    region: content
+hidden:
+  created: true
+  field_institucia: true
+  field_licence: true
+  field_meno_autora_diela: true
+  field_meno_autora_snimky_diela: true
+  field_nazov_diela: true
+  field_url_autora_diela_l: true
+  field_url_diela_l: true
+  field_url_textu_licencie_l: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
