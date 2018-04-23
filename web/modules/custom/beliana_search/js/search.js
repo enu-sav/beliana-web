@@ -12,8 +12,11 @@
 
   Drupal.behaviors.search = {
     attach: function (context, settings) {
+      var self = this;
       var current_letter = false;
       var window_width = $(window).width();
+
+      self.setSearchInput();
 
       //focus to search input if keyword exist
       if ($('#block-beliana-searchbox .search-input-wrapper input.search-input').val().length > 0) {
@@ -48,19 +51,20 @@
 //        alphabet_width += $(item).width();
 //      });
 //
-//      Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
+//      self.setAlphabetSlider(window_width, current_letter);
 //
-//      $(window).resize(function () {
+      $(window).resize(function () {
 //        window_width = $(window).width();
 //
-//        Drupal.behaviors.search.setAlphabetSlider(window_width, current_letter);
+//        self.setAlphabetSlider(window_width, current_letter);
+        self.setSearchInput();
 //
 //        if (alphabet_width > window_width) {
 //          $('#block-beliana-heslo').addClass('is-slider');
 //        } else {
 //          $('#block-beliana-heslo').removeClass('is-slider');
 //        }
-//      });
+      });
 //
 //      var scroll_width = alphabet_navigation.find('ul.item-list__links > li').first().width();
 //      var scroll_count = alphabet_navigation.find('ul.item-list__links > li').length;
@@ -92,6 +96,12 @@
     },
     scrollNavigation: function () {
 
+    },
+    setSearchInput: function () {
+      var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
+      var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
+
+      search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
     },
     setAlphabetSlider: function (window_width, current_letter) {
       alphabet_scroll_offset = 0
@@ -133,11 +143,6 @@
           'width': (alphabet_width - 70) + 'px'
         });
       }
-
-      var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
-      var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
-
-      search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
 
       if (alphabet_scroll_offset > 0) {
         alphabet_navigation.find('.navigation.prev').removeClass('hide');
