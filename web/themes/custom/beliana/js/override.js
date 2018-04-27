@@ -24,6 +24,14 @@
         }
       });
 
+      $('body.path-rozsirene-vyhladavanie #block-kategorie').on('click touch', function (e) {
+        if ($(this).hasClass('active')) {
+          $(this).removeClass('active');
+        } else {
+          $(this).addClass('active');
+        }
+      });
+
       // trigger to open all ilustracie .dalsie-info wrapeprs
       setTimeout(function () {
         $('.dalsie-info').trigger('open');

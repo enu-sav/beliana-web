@@ -1,4 +1,4 @@
-uuid: eb2130a0-f73d-4f57-959d-3267c803e9cb
+uuid: 21ea6257-52b0-4ba9-bba0-0b3e3e1f6558
 langcode: sk
 status: true
 dependencies:
@@ -7,36 +7,41 @@ dependencies:
     - views.view.solr_search_word
   module:
     - search_api
-id: alphabet
-name: Heslo
-url_alias: alphabet
-weight: -1
-min_count: 0
-show_only_one_result: true
-field_identifier: field_alphabet
-facet_source_id: 'search_api:views_page__solr_search_word__page_1'
+id: kategorie
+name: Kategórie
+url_alias: kategorie
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: field_categories
+facet_source_id: 'search_api:views_page__solr_search_word__page_3'
 widget:
-  type: links
+  type: checkbox
   config:
-    show_numbers: false
+    show_numbers: true
     soft_limit: 0
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
-query_operator: or
+query_operator: and
 use_hierarchy: true
-expand_hierarchy: true
+expand_hierarchy: false
 enable_parent_when_child_gets_disabled: true
 hard_limit: 0
 exclude: false
-only_visible_when_facet_source_is_visible: false
+only_visible_when_facet_source_is_visible: true
 processor_configs:
-  term_weight_widget_order:
-    processor_id: term_weight_widget_order
+  display_value_widget_order:
+    processor_id: display_value_widget_order
     weights:
       sort: -10
     settings:
       sort: ASC
+  list_item:
+    processor_id: list_item
+    weights:
+      build: 5
+    settings: {  }
   translate_entity:
     processor_id: translate_entity
     weights:

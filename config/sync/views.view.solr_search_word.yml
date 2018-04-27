@@ -30,7 +30,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -344,7 +344,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: Abeceda
     position: 1
     display_options:
       display_extenders: {  }
@@ -492,6 +492,7 @@ display:
             link_to_item: false
             multi_separator: ', '
           plugin_id: search_api_field
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -505,16 +506,14 @@ display:
   page_2:
     display_plugin: page
     id: page_2
-    display_title: Page
+    display_title: Vyhladavanie
     position: 1
     display_options:
       display_extenders: {  }
       path: vysledky-vyhladavania
       exposed_block: true
-      cache:
-        type: none
       defaults:
-        cache: false
+        cache: true
         fields: false
         filters: false
         filter_groups: false
@@ -749,6 +748,31 @@ display:
           expose:
             label: ''
           plugin_id: search_api
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+  page_3:
+    display_plugin: page
+    id: page_3
+    display_title: Rozsirene
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      path: rozsirene-vyhladavanie
+      exposed_block: true
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

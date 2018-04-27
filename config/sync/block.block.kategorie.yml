@@ -1,27 +1,28 @@
-uuid: 9f2798a5-79f6-4739-8ae7-bc2323988bf4
+uuid: 0dc27f44-148f-4de2-90fe-8c4c9177487a
 langcode: sk
 status: true
 dependencies:
+  config:
+    - facets.facet.kategorie
   module:
+    - facets
     - system
   theme:
     - beliana
-id: beliana_zalozky
+id: kategorie
 theme: beliana
 region: content
-weight: -2
+weight: -4
 provider: null
-plugin: local_tasks_block
+plugin: 'facet_block:kategorie'
 settings:
-  id: local_tasks_block
-  label: Záložky
-  provider: core
+  id: 'facet_block:kategorie'
+  label: Kategórie
+  provider: facets
   label_display: '0'
-  primary: true
-  secondary: true
 visibility:
   request_path:
     id: request_path
-    pages: "/user/login\r\n/user/password"
+    pages: /rozsirene-vyhladavanie
     negate: false
     context_mapping: {  }

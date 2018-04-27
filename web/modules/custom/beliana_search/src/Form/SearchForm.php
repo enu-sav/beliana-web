@@ -55,41 +55,44 @@ class SearchForm extends FormBase {
 
     if (isset($query['f'])) {
       $filter = explode(':', $query['f'][0]);
-      $term = $entity_manager->getStorage('taxonomy_term')->load($filter[1]);
+      
+      if ($filter[0] == 'alphabet') {
+        $term = $entity_manager->getStorage('taxonomy_term')->load($filter[1]);
 
-      $close_query = $query;
-      unset($close_query['f']);
+        $close_query = $query;
+        unset($close_query['f']);
 
-      $form['beliana_search_input']['alphabet'] = [
-        '#type' => 'container',
-        '#attributes' => ['class' => ['search-alphabet-wrapper']],
-        '#weight' => -99,
-        'facet' => [
+        $form['beliana_search_input']['alphabet'] = [
           '#type' => 'container',
-          'text' => [
-            '#markup' => $term->label(),
-          ]
-        ],
-        'icon' => [
-          '#type' => 'link',
-          '#title' => [
-            '#markup' => '<i class="fa fa-times"></i>'
+          '#attributes' => ['class' => ['search-alphabet-wrapper']],
+          '#weight' => -99,
+          'facet' => [
+            '#type' => 'container',
+            'text' => [
+              '#markup' => $term->label(),
+            ]
           ],
-          '#url' => Url::fromRoute('<current>', [], ['query' => $close_query]),
-          '#attributes' => ['class' => ['close']]
-        ],
-      ];
+          'icon' => [
+            '#type' => 'link',
+            '#title' => [
+              '#markup' => '<i class="fa fa-times"></i>'
+            ],
+            '#url' => Url::fromRoute('<current>', [], ['query' => $close_query]),
+            '#attributes' => ['class' => ['close']]
+          ],
+        ];
 
-      $form['beliana_search_input']['#attributes']['class'][] = 'has-alphabet';
+        $form['beliana_search_input']['#attributes']['class'][] = 'has-alphabet';
 
-      $base_letter = $term->id();
-      $tree = $entity_manager->getStorage('taxonomy_term')->loadAllParents($base_letter);
+        $base_letter = $term->id();
+        $tree = $entity_manager->getStorage('taxonomy_term')->loadAllParents($base_letter);
 
-      if (count($tree) > 1) {
-        $base_letter = end($tree)->id();
+        if (count($tree) > 1) {
+          $base_letter = end($tree)->id();
+        }
+
+        $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = $base_letter;
       }
-
-      $form['#attached']['drupalSettings']['beliana_search']['alphabet'] = $base_letter;
     }
 
     $form['beliana_search_submit'] = [

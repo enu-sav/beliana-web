@@ -29,13 +29,13 @@
 }
 
 .paragraph--type--accordion .content {
-  width: calc(100% - 240px);
+  width: calc(100% - 280px);
   display: inline-block;
   vertical-align: top;
   font-size: 1.1em;
 }
 .paragraph--type--accordion .content .paragraph--type--text {
-  width: 75%;
+
 }
 .paragraph--type--accordion .content .paragraph--type--media .media-image {
   width: 100%;

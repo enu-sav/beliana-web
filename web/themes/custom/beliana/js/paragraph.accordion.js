@@ -16,14 +16,17 @@
 
         sidebar.on('click', 'li a', function (e) {
           e.preventDefault();
-          
-          console.log($(this).attr('href'));
 
           sidebar.find('li a').removeClass('active');
           $(this).addClass('active');
 
+          var offset = 0;
+          if ($('body').hasClass('adminimal-admin-toolbar')) {
+            offset = 80;
+          }
+
           $('html, body').animate({
-            scrollTop: content.find($(this).attr('href')).offset().top - 80
+            scrollTop: content.find($(this).attr('href')).offset().top - offset
           }, 500);
         });
       });

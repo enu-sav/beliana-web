@@ -273,6 +273,49 @@ body.use-loader.is-loaded .page-loader {
   font-size: 0.7em;
 }
 
+body.path-rozsirene-vyhladavanie .views-element-container {
+  width: calc(100% - 280px);
+  float: right;
+}
+body.path-rozsirene-vyhladavanie .view-word-search-page {
+  width: 70%;
+  margin: 0;
+}
+
+body.path-rozsirene-vyhladavanie #block-kategorie {
+  width: 280px;
+  float: left;
+  margin-top: 64px;
+}
+
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li {
+  list-style: none;
+}
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label {
+  padding-left: 15px;
+  position: relative;
+  top: -2px;
+}
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label:before {
+  content: "⯈";
+  font-size: 0.8em;
+  position: relative;
+  top: -1px;
+  left: -5px;
+}
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li {
+
+}
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded ul {
+  padding-left: 21px;
+}
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--collapsed ul {
+  display: none;
+}
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded > label:before {
+  content: "⯆";
+}
+
 .more,
 .obsah a,
 .citacia a,
@@ -1060,7 +1103,58 @@ footer .footer-copyright {
   body.page-node-type-page article {
     width: 100%;
   }
-  
+
+  body.path-rozsirene-vyhladavanie .views-element-container {
+    width: 100%;
+    float: none;
+  }
+  body.path-rozsirene-vyhladavanie .view-word-search-page {
+    width: 100%;
+  }
+
+  body.path-rozsirene-vyhladavanie #block-kategorie {
+    position: relative;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 0 20px;
+    float: none;
+    margin-top: -32px;
+    margin-bottom: 30px;
+    background: #ffa587;
+  }
+  body.path-rozsirene-vyhladavanie #block-kategorie:before {
+    content: "Zobraziť fazety";
+    text-align: left;
+    width: 100%;
+    display: block;
+    padding: 12px 0;
+    font-size: 1.3em;
+    color: #8b2908;
+  }
+  body.path-rozsirene-vyhladavanie #block-kategorie:after {
+    content: "\f138";
+    font: normal normal normal 18px/1 FontAwesome;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    color: #8b2908;
+  }
+  body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox {
+    display: none;
+  }
+  body.path-rozsirene-vyhladavanie #block-kategorie.active .facets-widget-checkbox {
+    display: block;
+  }
+  body.path-rozsirene-vyhladavanie #block-kategorie.active:before {
+    content: "Skryť fazety";
+  }
+  body.path-rozsirene-vyhladavanie #block-kategorie.active:after {
+    content: "\f13a";
+  }
+  body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li {
+    font-size: 1.2em;
+  }
+
   .header .header-main .right {
     display: none;
   }
