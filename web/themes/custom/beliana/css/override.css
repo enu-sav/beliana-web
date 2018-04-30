@@ -993,6 +993,7 @@ article.media-image.view-mode-in-word a {
 
 .table-like {
   display: table;
+  width: 100%;
 }
 
 .table-like > div {
@@ -1002,6 +1003,7 @@ article.media-image.view-mode-in-word a {
 .table-like > div > div {
   display: table-cell;
   vertical-align: top;
+  padding: 0 5px;
 }
 
 #colorbox #cboxContent .cboxPhoto {
@@ -1326,6 +1328,15 @@ footer .footer-copyright {
   .dnes.half-box {
     width: 100%;
     padding-right: 0;
+  }
+
+  .table-like,
+  .table-like > div{
+    display: block;
+  }
+  .table-like > div > div {
+    display:inline-block;
+    width: calc(50% - 10px);
   }
 
   @-moz-document url-prefix() {
