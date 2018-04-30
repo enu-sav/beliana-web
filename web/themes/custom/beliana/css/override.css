@@ -512,6 +512,10 @@ article .heslo .obsah {
   min-height: 2.4em;
 }
 
+article .heslo .obsah table tr td:first-child {
+  font-weight: initial;
+}
+
 article.media-image.view-mode-in-word a {
   display: block;
   text-align: center;
@@ -985,6 +989,19 @@ article.media-image.view-mode-in-word a {
 }
 .truncate-button .button:after {
   border-top-color: #a51b00;
+}
+
+.table-like {
+  display: table;
+}
+
+.table-like > div {
+  display: table-row;
+}
+
+.table-like > div > div {
+  display: table-cell;
+  vertical-align: top;
 }
 
 #colorbox #cboxContent .cboxPhoto {
