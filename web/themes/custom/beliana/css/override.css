@@ -294,13 +294,13 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li 
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label {
   padding-left: 15px;
   position: relative;
-  top: -2px;
+  top: -3px;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label:before {
-  content: "⯈";
-  font-size: 0.8em;
+  content: "\f0da";
+  font: normal normal normal 14px/1 FontAwesome;
   position: relative;
-  top: -1px;
+  top: 1px;
   left: -5px;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li {
@@ -313,7 +313,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
   display: none;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded > label:before {
-  content: "⯆";
+  content: "\f0d7";
 }
 
 .more,
