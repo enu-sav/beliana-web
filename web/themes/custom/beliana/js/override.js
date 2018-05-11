@@ -24,11 +24,11 @@
         }
       });
 
-      $('body.path-rozsirene-vyhladavanie #block-kategorie').on('click touch', function (e) {
-        if ($(this).hasClass('active')) {
-          $(this).removeClass('active');
+      $('body.path-rozsirene-vyhladavanie #block-kategorie .opener').on('click touch', function (e) {
+        if ($(this).parent().hasClass('active')) {
+          $(this).parent().removeClass('active');
         } else {
-          $(this).addClass('active');
+          $(this).parent().addClass('active');
         }
       });
 
@@ -60,6 +60,45 @@
         $(window).resize(function () {
           Drupal.behaviors.override.colorboxResize(true);
         });
+      }
+      
+      // Open collapsed facets
+      $('.facets-widget-checkbox').on('click', '.facet-item--collapsed:not(.facet-item--active) label', function (e) {
+        $(this).parent().addClass('facet-item--expanded').removeClass('facet-item--collapsed');
+      });
+
+      // Close expanded facets
+      $('.facets-widget-checkbox').on('click', '.facet-item--expanded:not(.facet-item--active) label', function (e) {
+        $(this).parent().addClass('facet-item--collapsed').removeClass('facet-item--expanded');
+      });
+
+      // Override facet link replacement with a checked checkbox.
+      if ($.isFunction(Drupal.facets.makeCheckbox)) {
+        Drupal.facets.makeCheckbox = function () {
+          var $link = $(this);
+          var active = $link.hasClass('is-active');
+          var description = $link.html();
+          var href = $link.attr('href');
+          var id = $link.data('drupal-facet-item-id');
+
+          var checkbox = $('<input type="checkbox" class="facets-checkbox">')
+              .attr('id', id)
+              .data($link.data())
+              .data('facetsredir', href);
+          var label = $('<label>' + description + '</label>');
+
+          checkbox.on('change.facets', function (e) {
+            Drupal.facets.disableFacet($link.parents('.js-facets-checkbox-links'));
+            window.location.href = $(this).data('facetsredir');
+          });
+
+          if (active) {
+            checkbox.attr('checked', true);
+            label.find('.js-facet-deactivate').remove();
+          }
+
+          $link.before(checkbox).before(label).remove();
+        };
       }
     },
     print: function (event) {

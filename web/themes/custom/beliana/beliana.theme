@@ -47,15 +47,34 @@ function beliana_preprocess_views_view(&$variables) {
  * Implements template_preprocess_facets_item_list().
  */
 function beliana_preprocess_facets_item_list(&$variables) {
-  foreach ($variables['items'] as &$item) {
-   $options = $item['value']['#url']->getOptions();
-   
-   // remove search text query from facet link
-   if(isset($options['query']['text'])){
-     unset($options['query']['text']);
-   }
-   
-   $item['value']['#url']->setOptions($options);   
+  if(!empty($variables['facet'])){
+    
+    switch($variables['facet']->id()) {
+      case 'alphabet':
+        foreach ($variables['items'] as &$item) {
+          $options = $item['value']['#url']->getOptions();
+
+          // remove search text query from facet link
+          if(isset($options['query']['text'])){
+            unset($options['query']['text']);
+          }
+
+          $item['value']['#url']->setOptions($options);   
+         }
+        break;
+      case 'kategorie':
+        foreach ($variables['items'] as &$item) {
+          if($item['attributes']->hasClass('facet-item--expanded') && $item['value']['#attributes']['class'][0] != 'is-active'){
+            $item['attributes']->removeClass('facet-item--expanded');
+            $item['attributes']->addClass('facet-item--collapsed');
+          }
+          
+          if($item['value']['#attributes']['class'][0] == 'is-active'){
+            $item['attributes']->addClass('facet-item--active');
+          }
+        }
+        break;
+    }
   }
   
 }

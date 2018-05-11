@@ -773,6 +773,9 @@ display:
         type: none
       defaults:
         cache: false
+        title: false
+        use_ajax: true
+      title: 'Pokročilé vyhľadávanie'
     cache_metadata:
       max-age: -1
       contexts:
