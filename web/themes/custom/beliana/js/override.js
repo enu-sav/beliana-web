@@ -63,12 +63,13 @@
       }
       
       // Open collapsed facets
-      $('.facets-widget-checkbox').on('click', '.facet-item--collapsed:not(.facet-item--active) label', function (e) {
-        $(this).parent().addClass('facet-item--expanded').removeClass('facet-item--collapsed');
+      $('.facets-widget-checkbox').on('click', '.facet-item--collapsed:not(.facet-item--active) > label', function (e) {
+        $(this).parent().addClass('facet-item--expanded').removeClass('facet-item--collapsed');        
+        $(this).parent().find('.facets-widget- .facet-item--expanded').addClass('facet-item--collapsed').removeClass('facet-item--expanded');
       });
 
       // Close expanded facets
-      $('.facets-widget-checkbox').on('click', '.facet-item--expanded:not(.facet-item--active) label', function (e) {
+      $('.facets-widget-checkbox').on('click', '.facet-item--expanded:not(.facet-item--active) > label', function (e) {
         $(this).parent().addClass('facet-item--collapsed').removeClass('facet-item--expanded');
       });
 

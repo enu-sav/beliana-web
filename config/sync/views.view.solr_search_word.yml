@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.body
     - search_api.index.word_solr_index
+    - system.menu.footer
   module:
     - search_api
     - text
@@ -775,7 +776,16 @@ display:
         cache: false
         title: false
         use_ajax: true
-      title: 'Pokročilé vyhľadávanie'
+      title: 'Vyhľadávanie podľa kategórií'
+      menu:
+        type: normal
+        title: 'Vyhľadávanie podľa kategórií'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: footer
     cache_metadata:
       max-age: -1
       contexts:

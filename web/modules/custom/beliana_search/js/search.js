@@ -30,14 +30,15 @@
         current_letter = drupalSettings.beliana_search.alphabet;
       }
 
-      $(document).on('click', function () {
+      $(document).on('click', function (e) {
         if ($('.search-help .description').hasClass('open')) {
           $('.search-help .description').removeClass('open');
         }
       });
 
-      $('.search-help').on('click', function () {
-        var desc = $(this);
+      $('.search-help').on('click', '.text', function (e) {
+        var desc = $(this).parent();
+
         setTimeout(function () {
           desc.find('.description').addClass('open');
         }, 150);

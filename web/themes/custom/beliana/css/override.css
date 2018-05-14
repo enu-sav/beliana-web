@@ -279,13 +279,17 @@ body.path-rozsirene-vyhladavanie .views-element-container {
 }
 body.path-rozsirene-vyhladavanie .view-word-search-page {
   width: 70%;
-  margin: 0;
+  margin: 28px 0 0 0;
+}
+body.path-rozsirene-vyhladavanie .view-word-search-page h2 {
+  font-size: 1.7em;
+  margin-top: -8px;
 }
 
 body.path-rozsirene-vyhladavanie #block-kategorie {
   width: 280px;
   float: left;
-  margin-top: -28px;
+  margin-top: 32px;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie h2 {
   margin-bottom: 8px;
@@ -309,9 +313,12 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li 
   top: 1px;
   left: -5px;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded:not(.facet-item--active) > label,
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--collapsed:not(.facet-item--active) > label {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded:not(.facet-item--active) > label,
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed:not(.facet-item--active) > label {
   cursor: pointer;
+}
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed ul {
+  display: none;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
   color: #282727; 
@@ -321,9 +328,6 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded ul {
   padding-left: 21px;
-}
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--collapsed ul {
-  display: none;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded > label:before {
   content: "\f0d7";
