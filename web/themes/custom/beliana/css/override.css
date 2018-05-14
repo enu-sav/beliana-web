@@ -320,6 +320,10 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul l
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed ul {
   display: none;
 }
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > label:before {
+  content: "\f0d7";
+  color: #282727;
+}
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
   color: #282727; 
 }
@@ -328,10 +332,6 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded ul {
   padding-left: 21px;
-}
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded > label:before {
-  content: "\f0d7";
-  color: #282727;
 }
 
 .more,
