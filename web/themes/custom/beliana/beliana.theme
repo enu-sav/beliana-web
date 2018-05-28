@@ -68,8 +68,8 @@ function beliana_preprocess_facets_item_list(&$variables) {
 
           if(isset($item['value']['#attributes']['class'])){
             if($item['value']['#attributes']['class'][0] == 'is-active'){
-              $item['attributes']->addClass('facet-item--active');
-              $collapse = FALSE;
+//              $item['attributes']->addClass('facet-item--active');
+//              $collapse = FALSE;
             }
           }
 

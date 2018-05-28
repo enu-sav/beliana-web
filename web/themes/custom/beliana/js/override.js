@@ -61,14 +61,18 @@
           Drupal.behaviors.override.colorboxResize(true);
         });
       }
-      
+
       // Open collapsed facets
       $('.facets-widget-checkbox').on('click', '.facet-item--collapsed:not(.facet-item--active) > label', function (e) {
-        $(this).parent().addClass('facet-item--expanded').removeClass('facet-item--collapsed');        
+        $(this).parent().addClass('facet-item--expanded').removeClass('facet-item--collapsed');
         $(this).parent().find('.facets-widget- .facet-item--expanded').addClass('facet-item--collapsed').removeClass('facet-item--expanded');
       });
 
       // Close expanded facets
+      setTimeout(function () {
+        $('.facets-widget-checkbox .facet-item--expanded.facet-item--active-trail').addClass('facet-item--collapsed').removeClass('facet-item--expanded');
+      }, 100);
+
       $('.facets-widget-checkbox').on('click', '.facet-item--expanded:not(.facet-item--active) > label', function (e) {
         $(this).parent().addClass('facet-item--collapsed').removeClass('facet-item--expanded');
       });
