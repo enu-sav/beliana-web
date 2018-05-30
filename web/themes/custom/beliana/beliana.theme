@@ -66,12 +66,12 @@ function beliana_preprocess_facets_item_list(&$variables) {
         foreach ($variables['items'] as &$item) {    
           $collapse = TRUE;
 
-          if(isset($item['value']['#attributes']['class'])){
-            if($item['value']['#attributes']['class'][0] == 'is-active'){
+//          if(isset($item['value']['#attributes']['class'])){
+//            if($item['value']['#attributes']['class'][0] == 'is-active'){
 //              $item['attributes']->addClass('facet-item--active');
 //              $collapse = FALSE;
-            }
-          }
+//            }
+//          }
 
           if($item['attributes']->hasClass('facet-item--expanded') && !$item['attributes']->hasClass('facet-item--active-trail') && $collapse){
             $item['attributes']->removeClass('facet-item--expanded');

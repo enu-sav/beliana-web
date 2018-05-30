@@ -69,10 +69,6 @@
       });
 
       // Close expanded facets
-      setTimeout(function () {
-        $('.facets-widget-checkbox .facet-item--expanded.facet-item--active-trail').addClass('facet-item--collapsed').removeClass('facet-item--expanded');
-      }, 100);
-
       $('.facets-widget-checkbox').on('click', '.facet-item--expanded:not(.facet-item--active) > label', function (e) {
         $(this).parent().addClass('facet-item--collapsed').removeClass('facet-item--expanded');
       });
