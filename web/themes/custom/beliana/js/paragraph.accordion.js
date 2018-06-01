@@ -18,13 +18,15 @@
         if (sidebar.height() > window_height - $('header.header').height() - 70) {
           sidebar.css({position: 'relative'});
         } else {
-          var footer_position_top = $('footer').position().top;
+          var footer_limit = $('footer').position().top - sidebar.height() - $('header.header').height() - 150;
 
           $(window).scroll(function () {
-            if ($(window).scrollTop() > footer_position_top - sidebar.height() - $('header.header').height() - 150) {
-              sidebar.css({position: 'relative', top: (footer_position_top - $('header.header').height() - $('footer').height() - sidebar.height() - 50) + 'px'});
+            var scroll_top = $(window).scrollTop();
+
+            if (scroll_top > footer_limit) {
+              sidebar.css({'margin-top': (footer_limit - scroll_top) + 'px'});
             } else {
-              sidebar.css({position: 'fixed', top: ''});
+              sidebar.css({'margin-top': ''});
             }
           });
         }
