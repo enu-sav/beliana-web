@@ -21,7 +21,7 @@
           var footer_position_top = $('footer').position().top;
 
           $(window).scroll(function () {
-            if ($(window).scrollTop() > footer_position_top + sidebar.height() - $('footer').height() - window_height) {
+            if ($(window).scrollTop() > footer_position_top - sidebar.height() - $('header.header').height() - 150) {
               sidebar.css({position: 'relative', top: (footer_position_top - $('header.header').height() - $('footer').height() - sidebar.height() - 50) + 'px'});
             } else {
               sidebar.css({position: 'fixed', top: ''});
