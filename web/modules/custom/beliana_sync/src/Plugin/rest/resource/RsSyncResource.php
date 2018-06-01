@@ -381,8 +381,8 @@ class RsSyncResource extends ResourceBase {
    *   ID of alphabet group taxonomy term.
    */
   public function assignAlphabetGroup($title) {
-    // We need to compare only first 3 characters of the lowercase string.
-    $string_to_compare = mb_substr($title, 0, 3);
+    // We need to compare only first 4 characters of the lowercase string.
+    $string_to_compare = mb_substr($title, 0, 4);
     $string_to_compare = mb_strtolower($string_to_compare);
 
     $term = \Drupal::entityQuery('taxonomy_term')
