@@ -18,7 +18,7 @@
         var footer_limit = 0;
 
         $(window).resize(function () {
-          if (sidebar.height() > window_height - $('header.header').height() - 70) {
+          if (sidebar.height() > window_height - $('header.header').height() - 70 || $(window).width() < 768) {
             sidebar.css({position: 'relative'});
           } else {
             footer_limit = $('footer').position().top - sidebar.height() - $('header.header').height() - 150;
@@ -52,6 +52,8 @@
             scrollTop: content.find($(this).attr('href')).offset().top - offset
           }, 500);
         });
+
+        $(window).resize();
       });
 
     }
