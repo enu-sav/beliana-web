@@ -74,16 +74,17 @@
 <article{{ attributes.addClass('heslo-container') }}>
 
   <div class="heslo{% if node.field_images is empty %} full-width{% endif %}">
-    <h1>{{ node.label }}</h1>
+    <h1>{{ node.label }}</h1>    
+    <div class="obsah">
+      {{ content.body }}
+    </div>
+
     <p class="last-update">
       {% set info_published %}
         {{ node.field_info_published.value }}
       {% endset %}
       {{ info_published |striptags }}
     </p>
-    <div class="obsah">
-      {{ content.body }}
-    </div>
 
     <div class="heslo-tools desktop">
       {% include directory ~ '/templates/content/parts/share.html.twig' %}
