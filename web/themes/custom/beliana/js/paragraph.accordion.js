@@ -15,21 +15,27 @@
         var content = $('.content .field--name-field-section');
         var window_height = $(window).height();
 
-        if (sidebar.height() > window_height - $('header.header').height() - 70) {
-          sidebar.css({position: 'relative'});
-        } else {
-          var footer_limit = $('footer').position().top - sidebar.height() - $('header.header').height() - 150;
+        var footer_limit = 0;
 
-          $(window).scroll(function () {
-            var scroll_top = $(window).scrollTop();
+        $(window).resize(function () {
+          if (sidebar.height() > window_height - $('header.header').height() - 70) {
+            sidebar.css({position: 'relative'});
+          } else {
+            footer_limit = $('footer').position().top - sidebar.height() - $('header.header').height() - 150;
+          }
+        });
 
+        $(window).scroll(function () {
+          var scroll_top = $(window).scrollTop();
+
+          if (footer_limit > 0) {
             if (scroll_top > footer_limit) {
               sidebar.css({'margin-top': (footer_limit - scroll_top) + 'px'});
             } else {
               sidebar.css({'margin-top': ''});
             }
-          });
-        }
+          }
+        });
 
         sidebar.on('click', 'li a', function (e) {
           e.preventDefault();
