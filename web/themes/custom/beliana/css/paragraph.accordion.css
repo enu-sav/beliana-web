@@ -11,7 +11,7 @@
   position: relative;
 }
 .paragraph--type--accordion .sidebar-menu ul {
-  position: fixed;
+  position: relative;
   width: 210px;
   background: #fff;
 }

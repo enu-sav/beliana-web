@@ -13,29 +13,31 @@
       $context.find('.paragraph--type--accordion').once('paragraph-accordion-process').each(function () {
         var sidebar = $('.sidebar-menu ul', this);
         var content = $('.content .field--name-field-section');
-        var window_height = $(window).height();
 
-        var footer_limit = 0;
-
-        $(window).resize(function () {
-          if (sidebar.height() > window_height - $('header.header').height() - 70 || $(window).width() < 768) {
-            sidebar.css({position: 'relative'});
-          } else {
-            footer_limit = $('footer').position().top - sidebar.height() - $('header.header').height() - 150;
-          }
-        });
-
-        $(window).scroll(function () {
-          var scroll_top = $(window).scrollTop();
-
-          if (footer_limit > 0) {
-            if (scroll_top > footer_limit) {
-              sidebar.css({'margin-top': (footer_limit - scroll_top) + 'px'});
-            } else {
-              sidebar.css({'margin-top': ''});
-            }
-          }
-        });
+        // Disable fixed position for sidebar navigation
+//        var window_height = $(window).height();
+//
+//        var footer_limit = 0;
+//
+//        $(window).resize(function () {
+//          if (sidebar.height() > window_height - $('header.header').height() - 70 || $(window).width() < 768) {
+//            sidebar.css({position: 'relative'});
+//          } else {
+//            footer_limit = $('footer').position().top - sidebar.height() - $('header.header').height() - 150;
+//          }
+//        });
+//
+//        $(window).scroll(function () {
+//          var scroll_top = $(window).scrollTop();
+//
+//          if (footer_limit > 0) {
+//            if (scroll_top > footer_limit) {
+//              sidebar.css({'margin-top': (footer_limit - scroll_top) + 'px'});
+//            } else {
+//              sidebar.css({'margin-top': ''});
+//            }
+//          }
+//        });
 
         sidebar.on('click', 'li a', function (e) {
           e.preventDefault();
