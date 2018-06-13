@@ -62,6 +62,10 @@ class SearchForm extends FormBase {
         $close_query = $query;
         unset($close_query['f']);
 
+        if (isset($close_query['page'])) {
+          unset($close_query['page']);
+        }
+
         $form['beliana_search_input']['alphabet'] = [
           '#type' => 'container',
           '#attributes' => ['class' => ['search-alphabet-wrapper']],
