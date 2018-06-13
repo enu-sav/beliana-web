@@ -55,7 +55,7 @@ class SearchForm extends FormBase {
 
     if (isset($query['f'])) {
       $filter = explode(':', $query['f'][0]);
-      
+
       if ($filter[0] == 'alphabet') {
         $term = $entity_manager->getStorage('taxonomy_term')->load($filter[1]);
 
@@ -120,6 +120,10 @@ class SearchForm extends FormBase {
     }
     else {
       unset($query['text']);
+    }
+
+    if (isset($query['page'])) {
+      unset($query['page']);
     }
 
     $form_state->setRedirect('view.solr_search_word.page_1', [], ['query' => $query]);
