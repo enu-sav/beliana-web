@@ -35,20 +35,20 @@ class ModalForm extends FormBase {
     $form['header'] = [
       '#type' => 'html_tag',
       '#tag' => 'h2',
-      '#value' => 'Nahlásenie chyby v hesle',
+      '#value' => 'Komentár k heslu',
     ];
 
     $form['description'] = [
       '#type' => 'textarea',
-      '#title' => 'Popis chyby',
+      '#title' => 'Text správy',
       '#required' => TRUE,
-      '#default_value' => 'Nahlasujem chybu v hesle "' . $node->getTitle() . '"',
+      '#default_value' => 'Komentár k heslu: "' . $node->getTitle() . '"',
     ];
 
     $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Emailová adresa'),
-      '#description' => $this->t('Ak uvediete svoju emailovú adresu, budeme Vás informovať o vyriešení problému'),
+      '#description' => $this->t('Ak uvediete svoju emailovú adresu, budeme Vás informovať o výsledku'),
     ];
 
     $form['actions'] = [
@@ -74,9 +74,9 @@ class ModalForm extends FormBase {
     else {
       $this->sendEmail($form_state);
       $response->addCommand(
-          new OpenModalDialogCommand('Nahlásenie chyby v hesle', 'Ďakujeme za nahlásenie chyby, jej odstránením sa budeme 
-          čoskoro zaoberať a o jej odstránení vás budeme informovať na 
-          zadanú emailovú adresu.', ['width' => '80%'])
+          new OpenModalDialogCommand('Komentár k heslu', 'Ďakujeme za odoslanie komentára. Budeme 
+            sa ním čoskoro zaoberať a o výsledku Vás budeme informovať na
+            zadanú emailovú adresu.', ['width' => '80%'])
       );
     }
     return $response;
@@ -97,7 +97,7 @@ class ModalForm extends FormBase {
     $node = Node::load($form_state->getValue('node'));
 
     $params['node_title'] = $node->getTitle();
-    $params['email'] = $form_state->getValue('email');    
+    $params['email'] = $form_state->getValue('email');
     $params['message'] = $form_state->getValue('description');
     $params['url'] = Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString();
 

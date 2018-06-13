@@ -13,6 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * ModalFormExampleController class.
  */
 class ModalController extends ControllerBase {
+
   /**
    * The form builder.
    *
@@ -35,7 +36,7 @@ class ModalController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('form_builder')
+        $container->get('form_builder')
     );
   }
 
@@ -57,7 +58,7 @@ class ModalController extends ControllerBase {
       // Get the modal form using the form builder.
       $modal_form = $this->formBuilder->getForm('Drupal\beliana_modals\Form\ModalForm', $node);
       // Add an AJAX command to open modal dialog with the form as the content.
-      $response->addCommand(new OpenModalDialogCommand('Formulár na nahlásenie chyby.', $modal_form, ['width' => '80%']));
+      $response->addCommand(new OpenModalDialogCommand('Komentár k heslu.', $modal_form, ['width' => '80%']));
       return $response;
     }
     else {
@@ -90,11 +91,12 @@ class ModalController extends ControllerBase {
 //    $page['header'] = [
 //      '#type' => 'html_tag',
 //      '#tag' => 'h2',
-//      '#value' => 'Ďakujeme za nahlásenie chyby v hesle',
+//      '#value' => 'Ďakujeme za odoslanie komentára.',
 //    ];
     $page['content'] = [
-      '#markup' => 'Ďakujeme za nahlásenie chyby. Vašou pripomienkou sa budeme '
-      . 'čoskoro zaoberať a výsledok odošleme na Vami zadanú emailovú adresu.',
+      '#markup' => 'Ďakujeme za odoslanie komentára.',
+//      '#markup' => 'Ďakujeme za odoslanie komentára. Budeme '
+//      . 'sa ním zaoberať a o výsledku Vás budeme informovať na zadanú emailovú adresu.',
     ];
     return $page;
   }

@@ -1,7 +1,7 @@
 beliana_modals.open_modal_form:
   path: '/beliana/{js}/kontaktujte-nas/{node}'
   defaults:
-    _title: 'Nahlásenie chyby v hesle'
+    _title: 'Komentár k heslu'
     _controller: '\Drupal\beliana_modals\Controller\ModalController::openModalForm'
   requirements:
     _permission: 'access content'
@@ -11,7 +11,7 @@ beliana_modals.open_modal_form:
 beliana_modals.error_thanks:
   path: '/beliana/vdaka'
   defaults:
-    _title: 'Formulár na nahlásenie chyby.'
+    _title: 'Komentár k heslu'
     _controller: '\Drupal\beliana_modals\Controller\ModalController::thankyouPage'
   requirements:
     _permission: 'access content'
@@ -20,9 +20,10 @@ beliana_modals.error_thanks:
 beliana_modals.open_form:
   path: '/beliana/kontaktujte-nas/{node}'
   defaults:
-    _title: 'Formulár na nahlásenie chyby.'
+    _title: 'Komentár k heslu'
     _controller: '\Drupal\beliana_modals\Controller\ModalController::openForm'
   requirements:
     _permission: 'access content'
   options:
     _admin_route: FALSE
+    

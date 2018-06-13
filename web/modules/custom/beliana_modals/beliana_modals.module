@@ -4,14 +4,14 @@
  * Implements hook_mail().
  */
 function beliana_modals_mail($key, &$message, $params) {
- switch ($key) {
-   case 'report_error':
-     $message['from'] = \Drupal::config('system.site')->get('mail');
-     $message['subject'] = 'Pre heslo ' . $params['node_title'] . ' bola nahlásená chyba';
+  switch ($key) {
+    case 'report_error':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = 'Komentár k heslu ' . $params['node_title'];
 //     $message['body'][] = 'Meno a priezvisko: ' . $params['name'];
-     $message['body'][] = 'Email: ' . $params['email'];
-     $message['body'][] = 'Správa: ' . $params['message'];
-     $message['body'][] = 'URL hesla: ' . $params['url'];
-     break;
- }
+      $message['body'][] = 'Email: ' . $params['email'];
+      $message['body'][] = 'Správa: ' . $params['message'];
+      $message['body'][] = 'URL hesla: ' . $params['url'];
+      break;
+  }
 }
