@@ -258,13 +258,12 @@ display:
             title: title
             body: body
             field_sort: field_sort
-            name: name
-            title_1: title_1
-            alt: alt
-            description: description
+            category_name: category_name
+            media_title: media_title
+            media_alt: media_alt
+            category_description: category_description
             field_date: field_date
-            name_1: name_1
-            name_2: name_2
+            category_parent_name: category_parent_name
           plugin_id: search_api_fulltext
       sorts:
         search_api_relevance:

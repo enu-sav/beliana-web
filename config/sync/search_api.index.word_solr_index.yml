@@ -84,7 +84,7 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_categories
-  name:
+  category_name:
     label: 'Kategórie » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_categories:entity:name'
@@ -95,7 +95,7 @@ field_settings:
         - field.storage.node.field_categories
       module:
         - taxonomy
-  title_1:
+  media_title:
     label: 'Obrázky » Médiá » Obrázok » Nadpis'
     datasource_id: 'entity:node'
     property_path: 'field_images:entity:field_image:title'
@@ -106,7 +106,7 @@ field_settings:
         - field.storage.media.field_image
       module:
         - media_entity
-  alt:
+  media_alt:
     label: 'Obrázky » Médiá » Obrázok » Alternative text'
     datasource_id: 'entity:node'
     property_path: 'field_images:entity:field_image:alt'
@@ -117,7 +117,7 @@ field_settings:
         - field.storage.media.field_image
       module:
         - media_entity
-  description:
+  category_description:
     label: 'Kategórie » Termín taxonómie » Popis'
     datasource_id: 'entity:node'
     property_path: 'field_categories:entity:description'
@@ -137,7 +137,7 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_date
-  name_1:
+  alphabet_name:
     label: 'Heslo » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_alphabet:entity:name'
@@ -156,7 +156,7 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_alphabet
-  parent:
+  alphabet_parent:
     label: 'Heslo » Termín taxonómie » Term Parents'
     datasource_id: 'entity:node'
     property_path: 'field_alphabet:entity:parent'
@@ -166,7 +166,7 @@ field_settings:
         - field.storage.node.field_alphabet
       module:
         - taxonomy
-  name_2:
+  alphabet_parent_name:
     label: 'Heslo » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_alphabet:entity:parent:entity:name'
@@ -175,6 +175,18 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_alphabet
+      module:
+        - taxonomy
+        - taxonomy
+  category_parent_name:
+    label: 'Kategórie » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:parent:entity:name'
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.field_categories
       module:
         - taxonomy
         - taxonomy
@@ -193,13 +205,14 @@ processor_settings:
     fields:
       - title
       - body
-      - name
-      - title_1
-      - alt
-      - description
+      - category_name
+      - media_title
+      - media_alt
+      - category_description
       - field_date
-      - name_1
-      - name_2
+      - alphabet_name
+      - alphabet_parent_name
+      - category_parent_name
     title: true
     alt: true
     tags:
@@ -219,13 +232,14 @@ processor_settings:
       - rendered_item
       - title
       - body
-      - name
-      - title_1
-      - alt
-      - description
+      - category_name
+      - media_title
+      - media_alt
+      - category_description
       - field_date
-      - name_1
-      - name_2
+      - alphabet_name
+      - alphabet_parent_name
+      - category_parent_name
     weights:
       preprocess_index: -49
       preprocess_query: -20
@@ -233,7 +247,7 @@ processor_settings:
     fields:
       field_categories: taxonomy_term-parent
       field_alphabet: taxonomy_term-parent
-      parent: taxonomy_term-parent
+      alphabet_parent: taxonomy_term-parent
     weights:
       preprocess_index: -50
   stopwords:
@@ -242,13 +256,14 @@ processor_settings:
       - rendered_item
       - title
       - body
-      - name
-      - title_1
-      - alt
-      - description
+      - category_name
+      - media_title
+      - media_alt
+      - category_description
       - field_date
-      - name_1
-      - name_2
+      - alphabet_name
+      - alphabet_parent_name
+      - category_parent_name
     stopwords:
       - a
       - an
@@ -299,13 +314,14 @@ processor_settings:
       - rendered_item
       - title
       - body
-      - name
-      - title_1
-      - alt
-      - description
+      - category_name
+      - media_title
+      - media_alt
+      - category_description
       - field_date
-      - name_1
-      - name_2
+      - alphabet_name
+      - alphabet_parent_name
+      - category_parent_name
     weights:
       preprocess_index: -48
       preprocess_query: -20
