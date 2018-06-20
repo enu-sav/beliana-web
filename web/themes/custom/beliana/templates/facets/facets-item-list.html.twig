@@ -24,20 +24,28 @@
  * @ingroup themeable
  */
 #}
-<div class="facets-widget- {{- context.list_style -}} ">
-  {% if context.list_style %}
-    {%- set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
-  {% endif %}
-  
+
+{% set class = 'facets-widget' %}
+{% set menu = 'menu' %}
+{% set navigation = '' %}
+
+{% if context.list_style %}
+  {% set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
+  {% set class = 'facets-widget-'~ context.list_style %}
+  {% set navigation = 'navigation' %}
+  {% set menu = 'menubar' %}
+{% endif %}
+
+<div class="{{ class }}"{% if navigation is not empty %} role="{{ navigation }}"{% endif %}>
   {% if items or empty %}
     {% if title is not empty %}
       <h3>{{ title }}</h3>
     {% endif %}
 
     {% if items %}
-      <{{ list_type }}{{ attributes }}>
+      <{{ list_type }}{{ attributes }} role="{{ menu }}">
       {% for item in items %}
-        <li{{ item.attributes }}>{{ item.value }}</li>
+        <li{{ item.attributes }} role="menuitem">{{ item.value }}</li>
         {% endfor %}
       </{{ list_type }}>
     {% else %}
