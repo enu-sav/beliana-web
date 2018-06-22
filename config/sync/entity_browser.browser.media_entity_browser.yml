@@ -37,7 +37,7 @@ widgets:
       extensions: 'jpg jpeg png gif'
       media_bundle: image
       upload_location: 'public://'
-      multiple: '1'
+      multiple: true
       submit_text: 'Select files'
     uuid: 91a8e761-f688-42a5-b087-a71dce7e8fa2
     weight: 2

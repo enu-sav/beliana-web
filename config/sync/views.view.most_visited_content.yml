@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.body
     - node.type.word
   module:
+    - beliana_daily
     - node
     - text
     - user
