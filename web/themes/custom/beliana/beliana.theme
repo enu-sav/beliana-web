@@ -37,6 +37,8 @@ function beliana_preprocess_media(&$variables) {
  */
 function beliana_preprocess_views_view(&$variables) {
   $view = $variables['view'];
+  
+  $variables['label'] = ['#markup' => $view->getTitle()];
 
   if (in_array($view->id(), ['most_visited_content', 'content_recent'])) {
     $variables['#attached']['library'][] = 'cool/facets';

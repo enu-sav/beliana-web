@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ */
+use Drupal\views\ViewExecutable;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_views_pre_render
+ */
+function beliana_search_views_pre_render(ViewExecutable $view) {
+  if ($view->id() == 'solr_search_word' && $view->current_display == 'page_3') {
+    $terms = [];
+    $query = \Drupal::request()->query->all();
+
+    if (isset($query['f']) && !empty($query['f'])) {
+      foreach ($query['f'] as $filter) {
+        $parse = explode(':', $filter);
+
+        if ($parse[0] == 'kategorie') {
+          if ($term = Term::load($parse[1])) {
+            $terms[] = $term->get('name')->value;
+          }
+        }
+      }
+
+      if (!empty($terms)) {
+        asort($terms);
+        
+        $title = $view->getTitle();
+        $view->setTitle($title . ': ' . implode($terms, ', '));
+      }
+    }
+  }
+}
