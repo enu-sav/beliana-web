@@ -354,7 +354,7 @@ display:
         use_more_text: false
         fields: false
         css_class: false
-      use_more_always: false
+      use_more_always: true
       use_more_text: 'Zobraziť viac výročí'
       fields:
         field_date:
