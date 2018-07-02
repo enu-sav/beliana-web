@@ -240,7 +240,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: Dnes
+      title: Výročia
       header: {  }
       footer: {  }
       empty:
@@ -354,8 +354,8 @@ display:
         use_more_text: false
         fields: false
         css_class: false
-      use_more_always: true
-      use_more_text: 'Zobraziť viac dnešných hesiel'
+      use_more_always: false
+      use_more_text: 'Zobraziť viac výročí'
       fields:
         field_date:
           id: field_date
@@ -439,7 +439,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: ' &mdash; {{ title }}'
+            text: ' – {{ title }}'
             make_link: false
             path: ''
             absolute: false
