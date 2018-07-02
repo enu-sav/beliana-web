@@ -3,6 +3,7 @@ html {
 }
 body {
   font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing​: antialiased;
 }
 
 body.path-frontpage {
@@ -151,9 +152,11 @@ body.path-frontpage .header .header-main .right .search-help {
   top: 38px;
 }
 .header .header-main .right .search-help .text {
-  color: #aaa;
-  text-decoration: underline;
+  color: #aaa;  
   cursor: pointer;
+}
+.header .header-main .right .search-help .text:hover {
+  text-decoration: underline;
 }
 
 .header .header-main .right .search-help .description {
@@ -334,10 +337,14 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
   padding-left: 21px;
 }
 
-.more,
+.more-link a {
+  color: #8b2908 !important;
+  background: none !important;
+  text-decoration: underline !important;
+}
+
 .obsah a,
 .citacia a,
-.dnes a,
 .najhladanejsie-hesla a,
 .body-content a,
 .obsah a:visited,
@@ -346,7 +353,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 .najhladanejsie-hesla a:visited,
 .body-content .container  a:visited {
   color: #8b2908 !important;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .dnes a {
@@ -607,20 +614,19 @@ article.media-image.view-mode-in-word a {
   position: absolute;
   padding: 0;
   background: #fae1d9;
-  width: 200px;
-  border: 1px solid #fae1d9;
+  width: 150px;
+  border: none;
   margin-top: -1px;
   display: none;
 }
 #block-beliana-heslo ul li ul li {
   text-align: left;
   padding: 0;
-  margin-top: 2px;
-  margin-right: 0;
+  margin: 0;
   width: 100%;
 }
 #block-beliana-heslo ul li ul li a {
-  padding: 2px 15px;
+  padding: 4px 0 2px 15px;
   border: none !important;
   font-size: 1.3em;
   line-height: 33px;
@@ -758,7 +764,7 @@ article.media-image.view-mode-in-word a {
   background: #fff;
   padding: 0;
   text-transform: none;
-  color: #d4d4d4;
+  color: #747474;
   -webkit-border-top-right-radius: 0px;
   -webkit-border-bottom-right-radius: 0px;
   -moz-border-radius-topright: 0px;

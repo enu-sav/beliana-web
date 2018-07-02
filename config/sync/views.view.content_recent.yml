@@ -506,7 +506,7 @@ display:
           1: AND
       use_more: true
       use_more_always: true
-      use_more_text: 'Zobraziť viac'
+      use_more_text: 'Zobraziť viac nových hesiel'
       link_display: page_1
       link_url: ''
     cache_metadata:

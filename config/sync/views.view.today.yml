@@ -355,7 +355,7 @@ display:
         fields: false
         css_class: false
       use_more_always: true
-      use_more_text: 'Zobraziť viac'
+      use_more_text: 'Zobraziť viac dnešných hesiel'
       fields:
         field_date:
           id: field_date
@@ -439,7 +439,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: ' - {{ title }}'
+            text: ' &mdash; {{ title }}'
             make_link: false
             path: ''
             absolute: false
