@@ -1,8 +1,10 @@
+@import url("https://use.typekit.net/ial0koy.css");
+
 html {
   width: 100%;
 }
 body {
-  font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'arno-pro', sans-serif;
   -webkit-font-smoothing​: antialiased;
 }
 
@@ -389,7 +391,6 @@ footer a:hover,
 }
 
 #block-beliana-main-menu a {
-  font-size: 1.2em;
   background: none;
   padding-top: 4px;
 }
@@ -807,6 +808,7 @@ article.media-image.view-mode-in-word a {
   padding: 115px 0 0 0;
   text-transform: uppercase;
   word-spacing: 9999999px;
+  font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   background: url('../img/beliana_logo_black.png') no-repeat top center;
   background-size: 100px;
   margin: 0;
