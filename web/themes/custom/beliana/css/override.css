@@ -4,7 +4,8 @@ html {
   width: 100%;
 }
 body {
-  font-family: 'arno-pro', sans-serif;
+  /*font-family: 'arno-pro', sans-serif;*/
+  font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing​: antialiased;
 }
 
