@@ -254,6 +254,28 @@ body.use-loader.is-loaded .page-loader {
   margin-top: -15px;
 }
 
+nav.pager {
+  padding-top: 50px;
+}
+nav.pager ul {
+  list-style: none;
+  text-align: center;
+}
+nav.pager ul li {
+  display: inline-block;
+}
+nav.pager ul li a {
+  padding: 4px 10px;
+  margin: 2px;
+  border: 1px solid #e4e4e4;
+}
+nav.pager ul li.is-active a,
+nav.pager ul li a:hover {
+  border: 1px solid #8b2908;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
 .view-word-search-page {
   width: 50%;
   margin: 0 auto;

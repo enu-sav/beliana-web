@@ -10,7 +10,6 @@ dependencies:
     - search_api
     - text
     - user
-    - views_infinite_scroll
 id: solr_search_word
 label: 'Solr search word'
 module: views
@@ -49,7 +48,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: infinite_scroll
+        type: full
         options:
           items_per_page: 50
           offset: 0
@@ -58,6 +57,8 @@ display:
           tags:
             previous: ‹‹
             next: ››
+            first: '« Prvá strana'
+            last: 'Posledná strana ››'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -66,9 +67,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Načítať ďalšie'
-            automatically_load_content: false
+          quantity: 9
       style:
         type: default
       row:
@@ -255,15 +254,15 @@ display:
           parse_mode: direct
           min_length: null
           fields:
-            title: title
-            body: body
-            field_sort: field_sort
-            category_name: category_name
-            media_title: media_title
-            media_alt: media_alt
-            category_description: category_description
-            field_date: field_date
-            category_parent_name: category_parent_name
+            - body
+            - category_description
+            - category_name
+            - category_parent_name
+            - field_date
+            - field_sort
+            - media_alt
+            - media_title
+            - title
           plugin_id: search_api_fulltext
       sorts:
         search_api_relevance:
@@ -696,16 +695,16 @@ display:
           parse_mode: direct
           min_length: null
           fields:
-            title: title
-            body: body
-            field_sort: field_sort
-            name: name
-            title_1: title_1
-            alt: alt
-            description: description
-            field_date: field_date
-            name_1: name_1
-            name_2: name_2
+            - alt
+            - body
+            - description
+            - field_date
+            - field_sort
+            - name
+            - name_1
+            - name_2
+            - title
+            - title_1
           plugin_id: search_api_fulltext
       filter_groups:
         operator: AND

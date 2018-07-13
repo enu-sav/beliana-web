@@ -70,7 +70,11 @@ function beliana_search_views_pre_render(ViewExecutable $view) {
             $subtitle .= ' - ' . _beliana_search_build_search_labels($tree_item['child']);
           }
 
-          $title .= $subtitle;
+          if (substr($subtitle, -2) == ', ') {
+            $subtitle = substr($subtitle, 0, -2);
+          }
+
+          $title .= $subtitle . ', ';
         }
 
         if (substr($title, -2) == ', ') {
