@@ -4,7 +4,6 @@ html {
   width: 100%;
 }
 body {
-  /*font-family: 'arno-pro', sans-serif;*/
   font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   -webkit-font-smoothing​: antialiased;
 }
@@ -166,8 +165,9 @@ body.path-frontpage .header .header-main .right .search-help {
 }
 
 .header .header-main .right .search-help .description ul {
+  font-family: 'arno-pro', sans-serif;
   list-style: none;
-  color: #231f20;
+  color: #231f20;  
 }
 .header .header-main .right .search-help .description ul li span {
   font-weight: bold;
@@ -537,8 +537,8 @@ article .heslo-ilustracia .field--name-field-images {
 }
 
 article .heslo .obsah { 
-  font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.7rem;
+  font-family: 'arno-pro', sans-serif;
+  font-size: 1em;
   min-height: 2.4em;
 }
 
@@ -926,7 +926,7 @@ article.media-image.view-mode-in-word a {
   margin-top: 0;
 } 
 .view-word-search-page .views-row {
-  margin-top: 15px;
+  margin-top: 35px;
 }
 .view-word-search-page .views-row article {
   margin-top: 15px;
