@@ -103,29 +103,9 @@ header.header {
   top: -4px;
   position: relative;
 }
-.header .header-main .left .logo .beliana-logo {
-  width: 78px;
-  height: 78px;
-  position: relative;  
-  margin: -4px 0 0 0;
-  display: inline-block;
-  background: url('../img/beliana_logo_pink.png') no-repeat center center;
-  background-size: 64px 64px;
-}
-.header .header-main .left .logo .beliana-heading {
-  display: inline-block;
-  padding: 0 0 0 15px;
-  margin-top: 12px;
-}
-.header .header-main .left .logo .beliana-heading .encyclopaedia {
-  margin: 0;
-  letter-spacing: initial;
-  font-size: 1.7em;
-}
-.header .header-main .left .logo .beliana-heading .title {
-  font-size: 1.7em;
-  font-weight: normal;
-  line-height: 0.7em;
+.header .header-main .left .logo img {
+  height: 66px;
+  margin-top: 3px;
 }
 
 .header .header-main .middle {
@@ -255,7 +235,7 @@ body.use-loader.is-loaded .page-loader {
 }
 
 nav.pager {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 nav.pager ul {
   list-style: none;
@@ -263,6 +243,7 @@ nav.pager ul {
 }
 nav.pager ul li {
   display: inline-block;
+  margin-top: 20px;
 }
 nav.pager ul li a {
   padding: 4px 10px;
@@ -823,18 +804,8 @@ article.media-image.view-mode-in-word a {
   margin-bottom: 35px;
   border: none;
 }
-#block-beliana-encyklopediabeliana h1 {
-  color: #231f20;
-  font-size: 4.5em;
-  font-weight: normal;
-  line-height: 0.8em;
-  padding: 115px 0 0 0;
-  text-transform: uppercase;
-  word-spacing: 9999999px;
-  font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
-  background: url('../img/beliana_logo_black.png') no-repeat top center;
-  background-size: 100px;
-  margin: 0;
+#block-beliana-encyklopediabeliana img {
+  width: 50%
 }
 #block-beliana-encyklopediabeliana .field--name-body {
   font-size: 1.3em;
@@ -1094,10 +1065,11 @@ footer .footer-copyright {
   }
 }
 
-@media screen and (max-width: 1150px) {
-  .header .header-main .left .logo .beliana-heading {
-    font-size: 0.65em;
-    margin-top: 22px;
+@media screen and (max-width: 1080px) {
+  .header .header-main .left .logo img {
+    height: 50px;
+    margin-top: 13px;
+    margin-bottom: 5px;
   }
 }
 @media screen and (max-width: 948px) {
@@ -1115,10 +1087,10 @@ footer .footer-copyright {
   }
 }
 @media screen and (max-width: 892px) {
-  .header .header-main .left .logo .beliana-heading {
-    font-size: 0.5em;
-    margin-top: 25px;
-    padding: 0;
+  .header .header-main .left .logo img {
+    height: 38px;
+    margin-top: 18px;
+    margin-bottom: 10px;
   }
 
   .media.media-image.view-mode-full .left,
@@ -1145,15 +1117,10 @@ footer .footer-copyright {
   .header .header-main .left {
     width: 45px;
   }
-  .header .header-main .left .logo .beliana-heading {
-    display: none;
-  }
-  .header .header-main .left .logo .beliana-logo {
-    width: 45px;
-    height: 45px;
-    background-size: 45px;
-    margin-top: 13px;
-    margin-left: -4px;
+  .header .header-main .left .logo img {
+    height: 66px;
+    margin-left: -11px;
+    margin-top: 4px;
   }
   .header .header-main .middle {
     width: calc(100% - 105px);
@@ -1355,8 +1322,8 @@ footer .footer-copyright {
     margin-top: 52px;
   }
 
-  #block-beliana-encyklopediabeliana h1 {
-    font-size: 2.5em;
+  #block-beliana-encyklopediabeliana img {
+    width: 80%;
   }
   #block-beliana-searchbox .search-input-wrapper {
     width: calc(100% - 15px);
