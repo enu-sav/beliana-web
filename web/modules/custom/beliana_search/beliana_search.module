@@ -67,7 +67,7 @@ function beliana_search_views_pre_render(ViewExecutable $view) {
           $subtitle = $tree_item['name'];
 
           if (isset($tree_item['child'])) {
-            $subtitle .= ' - ' . _beliana_search_build_search_labels($tree_item['child']);
+            $subtitle .= ' – ' . _beliana_search_build_search_labels($tree_item['child']);
           }
 
           if (substr($subtitle, -2) == ', ') {
