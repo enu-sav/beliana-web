@@ -1,10 +1,9 @@
-@import url("https://use.typekit.net/ial0koy.css");
-
 html {
   width: 100%;
 }
 body {
-  font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.6em;
+  font-family: 'arno-pro', serif;  
   -webkit-font-smoothing​: antialiased;
 }
 
@@ -164,8 +163,7 @@ body.path-frontpage .header .header-main .right .search-help {
   border-bottom: 8px solid #fae1d9;
 }
 
-.header .header-main .right .search-help .description ul {
-  font-family: 'arno-pro', sans-serif;
+.header .header-main .right .search-help .description ul {  
   list-style: none;
   color: #231f20;  
 }
@@ -397,6 +395,7 @@ footer a:hover,
 #block-beliana-main-menu a {
   background: none;
   padding-top: 4px;
+  font-size: 1.1em;
 }
 
 #block-beliana-mobile-menu {
@@ -536,10 +535,8 @@ article .heslo-ilustracia .field--name-field-images {
   margin-top: 98px;
 }
 
-article .heslo .obsah { 
-  font-family: 'arno-pro', sans-serif;
-  font-size: 1em;
-  letter-spacing: 0.2px;
+article .heslo .obsah {
+  font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   min-height: 2.4em;
 }
 
