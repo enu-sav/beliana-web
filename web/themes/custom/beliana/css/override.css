@@ -735,7 +735,9 @@ article.media-image.view-mode-in-word a {
   position: absolute;
   top: 8px;
   right: 7px;
-  color: #8b2908;
+  color: #600b00;
+  font-size: 14px;
+  font-weight: bold;
 }
 #block-beliana-searchbox .search-input-wrapper.has-alphabet .form-item {
   width: calc(100% - 105px);
@@ -886,17 +888,25 @@ article.media-image.view-mode-in-word a {
 .heslo-tools a.comment,
 .heslo-tools a:hover.print, 
 .heslo-tools a:hover.comment{
-  display: block;
   text-align: left;
-  margin: 8px 0;
+  margin: 8px 0px 8px 16px;
   background: none;
 }
+.heslo-tools a.print i, 
+.heslo-tools a.comment i {
+  font-size: 16px;
+  margin-right: 5px;
+} 
 .heslo-tools.desktop .share {
   margin-right: 0;
 }
 .heslo-tools.desktop a.print, 
 .heslo-tools.desktop a.comment {
   display: inline-block;
+  border: none;
+}
+.heslo-tools .share .button:after {
+  border-top-color: #8b2908;
 }
 
 .heslo-ilustracia .media-image.view-mode-in-word {
@@ -1009,6 +1019,28 @@ article.media-image.view-mode-in-word a {
 }
 .truncate-button .button:after {
   border-top-color: #a51b00;
+}
+.heslo-tools .share.active,
+.truncate-button.active {
+  background: #fff;
+  border: 1px solid #fae1d9;
+}
+.heslo-tools .share.active .dropdown,
+.truncate-button.active .dropdown {
+  background: #fae1d9;
+  border: 1px solid #fae1d9;
+  width: calc(100% + 2px);
+  left: -1px;
+}
+.heslo-tools .share.active .dropdown li,
+.truncate-button .dropdown li {
+  color: #a51b00;
+  cursor: pointer;
+}
+.heslo-tools .share.active .dropdown li:hover a,
+.truncate-button .dropdown li:hover {
+  background: #fff;
+  text-decoration: none !important;
 }
 
 .table-like {

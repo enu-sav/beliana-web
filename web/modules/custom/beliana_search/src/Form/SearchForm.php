@@ -80,7 +80,7 @@ class SearchForm extends FormBase {
           'icon' => [
             '#type' => 'link',
             '#title' => [
-              '#markup' => '<i class="fa fa-times"></i>'
+              '#markup' => '<span aria-hidden="true">×</span>'
             ],
             '#url' => Url::fromRoute('<current>', [], ['query' => $close_query]),
             '#attributes' => ['class' => ['close']]
