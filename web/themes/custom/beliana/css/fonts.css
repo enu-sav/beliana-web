@@ -1,3 +1,5 @@
+@import url('https://use.typekit.net/ial0koy.css');
+
 @font-face {
   font-family: 'STIXGeneral';
   src: url('../fonts/stix/regular/stixgeneral-webfont.eot');
@@ -27,7 +29,7 @@
   font-style: italic;
 }
 
-@font-face {
+/*@font-face {
   font-family: 'arno-pro';
   src: url('../fonts/arno/regular/arno-pro-regular.woff2') format('woff2'), url('../fonts/arno/regular/arno-pro-regular.woff') format('woff'), url('../fonts/arno/regular/arno-pro-regular.otf') format('opentype');
   font-style: normal;
@@ -53,4 +55,4 @@
   src: url('../fonts/arno/bolita/arno-pro-bolita.woff2') format('woff2'), url('../fonts/arno/bolita/arno-pro-bolitar.woff') format('woff'), url('../fonts/arno/bolita/arno-pro-bolita.otf') format('opentype');
   font-style: italic;
   font-weight: 700;
-}
+}*/
