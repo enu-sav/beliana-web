@@ -668,8 +668,11 @@ article.media-image.view-mode-in-word a {
 }
 
 #block-beliana-heslo ul li:hover a,
+#block-beliana-heslo ul li:focus a,
 #block-beliana-heslo ul li a:hover,
-.view-word-search-page ul.pager li a:hover {
+#block-beliana-heslo ul li a:focus,
+.view-word-search-page ul.pager li a:hover,
+.view-word-search-page ul.pager li a:focus{
   cursor: pointer;
   color: #8b2908;
   background-color: #fae1d9 !important;
@@ -686,25 +689,31 @@ article.media-image.view-mode-in-word a {
   border-radius: 0;
 }
 
-#block-beliana-heslo .facet-item a:hover {
+#block-beliana-heslo .facet-item a:hover,
+#block-beliana-heslo .facet-item a:focus {
   background-color: #e6e6e6;
   text-decoration: underline;
 }
 
 #block-beliana-heslo .facet-item a.is-active,
+#block-beliana-heslo .facet-item a.is-active:hover,
+#block-beliana-heslo .facet-item a.is-active:focus,
 #block-beliana-heslo .facet-item--active-trail > a,
 #block-beliana-heslo .facet-item--active-trail > a:hover,
-#block-beliana-heslo .facet-item a.is-active:hover {
+#block-beliana-heslo .facet-item--active-trail > a:focus {
   color: #8b2908;
   background: #fff;
   border: 1px solid #fff;
   text-decoration: none;
 }
-#block-beliana-heslo .facet-item--active-trail > a:hover {
+#block-beliana-heslo .facet-item--active-trail > a:hover,
+#block-beliana-heslo .facet-item--active-trail > a:focus{
   border: 1px solid #ccc;
   border-bottom: none;
 }
-#block-beliana-heslo .facet-item.facet-item--expanded:hover ul {
+#block-beliana-heslo .facet-item.facet-item--expanded.hover ul,
+#block-beliana-heslo .facet-item.facet-item--expanded:hover ul,
+#block-beliana-heslo .facet-item.facet-item--expanded:focus ul{
   display: block;
 }
 
