@@ -1,0 +1,10 @@
+uuid: 60b68cd1-8278-41b8-8b60-8d0b69b7f23e
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: node.search_index_today
+label: 'Index vyhľadávania - Výročie'
+targetEntityType: node
+cache: true

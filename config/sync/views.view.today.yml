@@ -3,6 +3,7 @@ langcode: sk
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index_today
     - field.storage.node.field_date
     - node.type.word
   module:
@@ -509,7 +510,7 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
-      path: dnes
+      path: vyrocia
       pager:
         type: infinite_scroll
         options:
@@ -535,7 +536,32 @@ display:
         pager: false
         fields: true
         css_class: false
-      css_class: dnes
+        style: false
+        row: false
+        header: false
+      css_class: view-word-search-page
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: search_index_today
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Zobrazené heslá @start - <span id="count-words">@end</span> z celkového počtu @total hesiel.'
+          plugin_id: result
     cache_metadata:
       max-age: 0
       contexts:

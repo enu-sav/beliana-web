@@ -1,0 +1,38 @@
+uuid: 26678021-7052-445b-b27c-5cd4c7715f6c
+langcode: sk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index_today
+    - field.field.node.word.body
+    - field.field.node.word.field_alphabet
+    - field.field.node.word.field_categories
+    - field.field.node.word.field_date
+    - field.field.node.word.field_images
+    - field.field.node.word.field_info_published
+    - field.field.node.word.field_sort
+    - node.type.word
+  module:
+    - text
+    - user
+id: node.word.search_index_today
+targetEntityType: node
+bundle: word
+mode: search_index_today
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_alphabet: true
+  field_categories: true
+  field_date: true
+  field_images: true
+  field_info_published: true
+  field_sort: true
+  langcode: true
+  links: true

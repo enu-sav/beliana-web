@@ -40,7 +40,7 @@ function beliana_preprocess_views_view(&$variables) {
   
   $variables['label'] = ['#markup' => $view->getTitle()];
 
-  if (in_array($view->id(), ['most_visited_content', 'content_recent'])) {
+  if (in_array($view->id(), ['most_visited_content', 'content_recent', 'today'])) {
     $variables['#attached']['library'][] = 'cool/facets';
   }
 }

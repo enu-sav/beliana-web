@@ -36,29 +36,25 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
-
-  {% if header %}
-    <div class="clearfix">
-      <header class="left">
-        <h2>{{ label }}</h2>
+  <div class="clearfix">
+    <header class="left">
+      <h2>{{ label }}</h2>
+      {% if header %}
         {{ header }}
-      </header>
-      <div class="zoznam-tools">
-        <p>Zobrazujem:</p>
+      {% endif %}
+    </header>
+    <div class="zoznam-tools">
+      <p>Zobrazujem:</p>
 
-        <div class="truncate-button active">
-          <span class="label">Začiatok hesla<b class="button"></b></span>
-          <ul class="dropdown">
-            <li class="word-short">Začiatok hesla</li>
-            <li class="word-full">Celé heslo</li>
-          </ul>
-        </div>
+      <div class="truncate-button active">
+        <span class="label">Začiatok hesla<b class="button"></b></span>
+        <ul class="dropdown">
+          <li class="word-short">Začiatok hesla</li>
+          <li class="word-full">Celé heslo</li>
+        </ul>
       </div>
     </div>
-  {% endif %}
+  </div>
 
   {{ exposed }}
   {{ attachment_before }}
