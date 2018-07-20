@@ -24,6 +24,10 @@ h1, h2 {
   color: #8b2908;
 }
 
+a:focus {
+  outline: 1px solid #ccc;
+}
+
 .container {
   max-width: 1320px;
 }

@@ -43,12 +43,13 @@
           desc.find('.description').addClass('open');
         }, 150);
       });
-
-      $('#block-beliana-heslo .facet-item a').focusin(function () {
-        $(this).parent().addClass('hover');
-      }).focusout(function () {
-        $(this).parent().removeClass('hover');
-      });
+      
+      // open alphabet subnavigation by focus
+//      $('#block-beliana-heslo .facet-item a').focusin(function () {
+//        $(this).parent().addClass('hover');
+//      }).focusout(function () {
+//        $(this).parent().removeClass('hover');
+//      });
 
       //set alphabet facet slides
 //      $('#block-beliana-heslo .facets-widget-links').prepend('<a href="#" class="navigation prev hide"><i class="fa fa-chevron-left"></i></a>');
