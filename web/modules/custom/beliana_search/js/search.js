@@ -43,7 +43,13 @@
           desc.find('.description').addClass('open');
         }, 150);
       });
-      
+
+      $(document).keyup(function (e) {
+        if (e.keyCode == 27) {
+          $('.search-help .description').removeClass('open');
+        }
+      });
+
       // open alphabet subnavigation by focus
 //      $('#block-beliana-heslo .facet-item a').focusin(function () {
 //        $(this).parent().addClass('hover');
