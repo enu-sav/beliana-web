@@ -1,7 +1,7 @@
 domain: ''
 domains_option: 1
 domains_list: ''
-eu_only: false
+eu_only: null
 exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
 export:
   folder: custom
@@ -23,7 +23,7 @@ popup_hide_button_message: Hide
 popup_info:
   value: 'Stránka je v testovacej prevádzke'
   format: restricted_html
-popup_link: 'https://beliana.sav.sk//o-webovej-verzii-beliany'
+popup_link: 'https://beliana.sav.sk/o-webovej-verzii-beliany'
 popup_link_new_window: true
 popup_position: false
 popup_text_hex: ffffff
@@ -33,5 +33,29 @@ _core:
 cookie_lifetime: 100
 mobile_popup_info:
   value: ''
-  format: restricted_html
+  format: basic_html
 show_disagree_button: true
+method: default
+disagree_button_label: 'No, thanks'
+disabled_javascripts: ''
+whitelisted_cookies: ''
+consent_storage_method: do_not_store
+withdraw_message:
+  value: '<h2>We use cookies on this site to enhance your user experience</h2><p>You have given your consent for us to set cookies.</p>'
+  format: restricted_html
+withdraw_action_button_label: 'Withdraw consent'
+withdraw_tab_button_label: 'Privacy settings'
+withdraw_enabled: false
+popup_scrolling_confirmation: false
+use_mobile_message: false
+mobile_breakpoint: 768
+exclude_admin_theme: false
+cookie_session: 0
+eu_only_js: null
+use_bare_css: false
+disagree_do_not_show_popup: false
+reload_page: false
+cookie_name: ''
+exclude_uid_1: false
+better_support_for_screen_readers: false
+fixed_top_position: false

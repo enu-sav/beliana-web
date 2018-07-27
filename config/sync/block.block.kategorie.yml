@@ -20,6 +20,7 @@ settings:
   label: Kategórie
   provider: facets
   label_display: visible
+  block_id: kategorie
 visibility:
   request_path:
     id: request_path

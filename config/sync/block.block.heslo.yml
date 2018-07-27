@@ -20,6 +20,7 @@ settings:
   label: 'Abecedný zoznam'
   provider: facets
   label_display: '0'
+  block_id: heslo
 visibility:
   request_path:
     id: request_path
