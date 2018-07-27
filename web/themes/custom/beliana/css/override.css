@@ -349,6 +349,8 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
   color: #8b2908 !important;
   background: none !important;
   text-decoration: underline !important;
+  margin-bottom: 1px;
+  margin-left: 1px;
 }
 
 .obsah a,
@@ -832,13 +834,19 @@ article.media-image.view-mode-in-word a {
   margin-bottom: 10px;
 }
 #block-views-block-content-recent-block-2 .item-list {
-  max-height: 107px;
+  max-height: 155px;
   overflow: hidden;
 }
 #block-views-block-content-recent-block-2 .item-list ul li {
   display: inline-block;
   padding: 0 10px 0 0;
   font-size: 1.6em;
+}
+#block-views-block-content-recent-block-2 .item-list ul li a {
+  display: block;
+  line-height: 37px;
+  margin-left: 1px;
+  margin-top: 1px;
 }
 #block-views-block-content-recent-block-2 .more-link a {
   margin-top: 30px;
