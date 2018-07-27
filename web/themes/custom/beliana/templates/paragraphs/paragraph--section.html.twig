@@ -49,7 +49,7 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div id="section-{{ paragraph.id() }}" class="section-anchor-wrapper">
+      <div id="section-{{ paragraph.id() }}" class="section-anchor-wrapper" tabindex="-1">
         {{ content }}
       </div>
     {% endblock %}
