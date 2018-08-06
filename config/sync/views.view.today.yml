@@ -356,7 +356,7 @@ display:
         fields: false
         css_class: false
       use_more_always: true
-      use_more_text: 'Zobraziť viac výročí'
+      use_more_text: 'Zobraziť všetky výročia'
       fields:
         field_date:
           id: field_date
@@ -560,7 +560,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: 'Zobrazené heslá @start - <span id="count-words">@end</span> z celkového počtu @total hesiel.'
+          content: 'Zobrazené heslá @start – @end z celkového počtu @total hesiel.'
           plugin_id: result
     cache_metadata:
       max-age: 0
