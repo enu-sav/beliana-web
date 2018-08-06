@@ -834,13 +834,14 @@ article.media-image.view-mode-in-word a {
   margin-bottom: 10px;
 }
 #block-views-block-content-recent-block-2 .item-list {
-  max-height: 155px;
+  max-height: 165px;
   overflow: hidden;
 }
 #block-views-block-content-recent-block-2 .item-list ul li {
   display: inline-block;
   padding: 0 10px 0 0;
   font-size: 1.6em;
+  margin: 1px 0;
 }
 #block-views-block-content-recent-block-2 .item-list ul li a {
   display: block;
@@ -990,7 +991,8 @@ article.media-image.view-mode-in-word a {
 }
 .dnes ul li {
   font-size: 1.6em;
-  color: #8b2908;  
+  color: #8b2908;
+  margin: 1px 0 2px 0;
 }
 .dnes.half-box {
   width: 35%;
