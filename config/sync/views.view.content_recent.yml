@@ -8,7 +8,6 @@ dependencies:
   module:
     - node
     - user
-    - views_infinite_scroll
 _core:
   default_config_hash: tDcmzGfShE0XJbfwJzyA6lJTUYC6X4iVu887dgoFfDg
 id: content_recent
@@ -528,26 +527,10 @@ display:
       display_description: ''
       path: najnovsie
       pager:
-        type: infinite_scroll
+        type: some
         options:
           items_per_page: 50
           offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: '‹ Predchádzajúci'
-            next: Ďalej
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Položiek na stránku'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- Všetko -'
-            offset: false
-            offset_label: 'Zobraziť od'
-          views_infinite_scroll:
-            button_text: 'Načítať ďalšie'
-            automatically_load_content: false
       defaults:
         pager: false
         style: false
@@ -692,23 +675,23 @@ display:
           1: AND
       css_class: view-word-search-page
       header:
-        result:
-          id: result
+        area_text_custom:
+          id: area_text_custom
           table: views
-          field: result
+          field: area_text_custom
           relationship: none
           group_type: group
           admin_label: ''
           empty: false
-          content: 'Zobrazené heslá @start - <span id="count-words">@end</span> z celkového počtu @total hesiel.'
-          plugin_id: result
+          tokenize: false
+          content: 'Zobrazených 50 najnovších hesiel'
+          plugin_id: text_custom
       title: 'Nové heslá'
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
