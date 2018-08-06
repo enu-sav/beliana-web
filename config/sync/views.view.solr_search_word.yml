@@ -311,7 +311,7 @@ display:
           group_type: group
           admin_label: ''
           empty: false
-          content: 'Zobrazené heslá @start - <span id="count-words">@end</span> z celkového počtu @total hesiel.'
+          content: 'Zobrazené heslá @start – <span id="count-words">@end</span> z celkového počtu @total hesiel.'
           plugin_id: result
       footer: {  }
       empty:
