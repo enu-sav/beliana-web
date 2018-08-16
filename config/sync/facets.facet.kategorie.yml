@@ -31,10 +31,10 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  display_value_widget_order:
-    processor_id: display_value_widget_order
+  beliana_display_value_widget_order:
+    processor_id: beliana_display_value_widget_order
     weights:
-      sort: -10
+      sort: 40
     settings:
       sort: ASC
   list_item:
@@ -55,3 +55,4 @@ processor_configs:
     settings: {  }
 empty_behavior:
   behavior: none
+show_title: false
