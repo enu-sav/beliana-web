@@ -25,7 +25,12 @@ h1, h2 {
 }
 
 a:focus {
-  outline: 1px solid #ccc;
+  outline: 1px solid #4D90FE;
+}
+input:focus, textarea:focus {
+  border:1px solid #4D90FE;
+  -webkit-box-shadow: 0px 0px 5px #4D90FE;
+  box-shadow: 0px 0px 5px #4D90FE;
 }
 
 .container {
@@ -733,6 +738,7 @@ article.media-image.view-mode-in-word a {
   display: inline-block;
   background: url('../img/search_icon.png') no-repeat 14px 14px #fff;
   padding-left: 45px;
+  margin-top: 1px;
   width: calc(100% - 90px);
 }
 #block-beliana-searchbox .search-input-wrapper .search-alphabet-wrapper {
@@ -761,7 +767,8 @@ article.media-image.view-mode-in-word a {
 #block-beliana-searchbox .search-input-wrapper input {
   width: 100%;
   float: none;
-  height: 48px;  
+  height: 45px;
+  margin-bottom: 2px;
   font-style: normal;
   font-size: 1.2em;
   color: #666;  
@@ -776,11 +783,11 @@ article.media-image.view-mode-in-word a {
 #block-beliana-searchbox input.search-submit {
   display: inline-block;
   position: relative;
-  top: 0;
-  left: -4px;
-  float: none;  
+  top: -1px;
+  left: 0px;
+  float: none;
   width: 85px;
-  height: 48px;
+  height: 45px;
   background: #fff;
   padding: 0;
   text-transform: none;
