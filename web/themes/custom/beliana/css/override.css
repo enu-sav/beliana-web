@@ -25,12 +25,12 @@ h1, h2 {
 }
 
 a:focus {
-  outline: 1px solid #4D90FE;
+  outline: 1px solid #ccc;
 }
 input:focus, textarea:focus {
-  border:1px solid #4D90FE;
-  -webkit-box-shadow: 0px 0px 5px #4D90FE;
-  box-shadow: 0px 0px 5px #4D90FE;
+  border:1px solid #ccc;
+  -webkit-box-shadow: 0px 0px 5px #ccc;
+  box-shadow: 0px 0px 5px #ccc;
 }
 
 .container {
@@ -279,8 +279,12 @@ nav.pager ul li a:hover {
   width: 100%;
   padding: 0;
 }
+.view-word-search-page .heslo-container .heslo h1 {
+  margin-top: 1px;
+}
 .view-word-search-page .heslo-container .heslo h1 a {
   font-size: 1.1em;
+  margin-left: 1px;
   font-weight: normal;
 }
 .view-word-search-page .heslo-container .heslo h1 i {
