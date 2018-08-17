@@ -73,7 +73,7 @@
 
 <article{{ attributes.addClass('heslo-container') }}>
 
-  <div class="heslo{% if node.field_images is empty %} full-width{% endif %}">
+  <div class="heslo{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
     <h1>{{ node.label }}</h1>    
     <div class="obsah">
       {{ content.body }}
@@ -96,7 +96,18 @@
       <div class="heslo-tools smartphone">
         {% include directory ~ '/templates/content/parts/share.html.twig' %}
       </div>
-      {{ content.field_images }}
+      {% set images_count = content.field_images['#items']|length %}
+      {% for i in 0..images_count %}
+        {% if i == node.field_table_weight.value %}
+          {{ content.field_table }}
+        {% endif %}
+
+        {{ content.field_images[i] }}
+      {% endfor %}
+
+      {% if node.field_table_weight.value > images_count %}
+        {{ content.field_table }}
+      {% endif %}
     </div>
   {% else %}
     <div class="heslo-tools smartphone">

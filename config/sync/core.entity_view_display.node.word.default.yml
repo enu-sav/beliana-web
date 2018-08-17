@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.word.field_images
     - field.field.node.word.field_info_published
     - field.field.node.word.field_sort
+    - field.field.node.word.field_table
+    - field.field.node.word.field_table_weight
     - node.type.word
   module:
     - text
@@ -36,12 +38,19 @@ content:
     type: entity_reference_entity_view
     region: content
   field_info_published:
-    weight: 3
+    weight: 4
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_table:
+    weight: 3
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 0
@@ -53,4 +62,5 @@ hidden:
   field_categories: true
   field_date: true
   field_sort: true
+  field_table_weight: true
   langcode: true

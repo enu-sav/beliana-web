@@ -344,6 +344,7 @@ display:
         css_class: true
         link_display: false
         link_url: false
+        pager: false
       fields:
         title:
           id: title
@@ -508,6 +509,11 @@ display:
       use_more_text: 'Zobraziť viac nových hesiel'
       link_display: page_1
       link_url: ''
+      pager:
+        type: some
+        options:
+          items_per_page: 12
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:

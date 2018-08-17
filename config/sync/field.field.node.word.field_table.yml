@@ -1,0 +1,21 @@
+uuid: a5a662b2-4be6-44e7-843d-692dc8cc6057
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_table
+    - node.type.word
+  module:
+    - text
+id: node.word.field_table
+field_name: field_table
+entity_type: node
+bundle: word
+label: 'Obsah tabuľky'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
