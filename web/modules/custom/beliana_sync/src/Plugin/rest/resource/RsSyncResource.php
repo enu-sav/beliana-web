@@ -104,6 +104,11 @@ class RsSyncResource extends ResourceBase {
       'field_sort' => $data['sort'],
       'field_info_published' => $data['info_published']
     ]);
+
+    // set table 
+    $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
+    $node->field_table_weight = $data['table'][1];
+
     // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
     // may have multiple values, each having hierarchy starting from parent and separated by ';'
     $node->field_categories = $this->getCategories($data['category']);
@@ -419,6 +424,9 @@ class RsSyncResource extends ResourceBase {
     $node->field_date = $data['dates'];
     $node->field_sort = $data['sort'];
     $node->field_info_published = $data['info_published'];
+    // set table 
+    $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
+    $node->field_table_weight = $data['table'][1];
 
     // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
     // may have multiple values, each having hierarchy starting from parent and separated by ';'
