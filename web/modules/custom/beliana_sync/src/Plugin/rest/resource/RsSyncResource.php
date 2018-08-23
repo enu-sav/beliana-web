@@ -97,6 +97,7 @@ class RsSyncResource extends ResourceBase {
     if (!$this->currentUser->hasPermission('create article content')) {
       throw new AccessDeniedHttpException();
     }
+    \Drupal::logger('beliana_sync')->notice("Nové heslo '".$data['title']." (post)");
     $node = Node::create([
       'type' => 'word',
       'title' => $data['title'],
@@ -417,6 +418,7 @@ class RsSyncResource extends ResourceBase {
     if (!$this->currentUser->hasPermission('edit any article content')) {
       throw new AccessDeniedHttpException();
     }
+    \Drupal::logger('beliana_sync')->notice("Aktualizované heslo '".$data['title']." (patch)");
     $node = Node::load($nid);
     $node->title = $data['title'];
     $modified_body = $this->downloadBodyImages($data['body']);
