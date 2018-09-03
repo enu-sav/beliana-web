@@ -64,3 +64,4 @@ hidden:
   field_sort: true
   field_table_weight: true
   langcode: true
+  year_by_date: true

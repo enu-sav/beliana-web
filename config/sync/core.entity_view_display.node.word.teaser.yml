@@ -9,7 +9,10 @@ dependencies:
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
+    - field.field.node.word.field_info_published
     - field.field.node.word.field_sort
+    - field.field.node.word.field_table
+    - field.field.node.word.field_table_weight
     - node.type.word
   module:
     - text
@@ -22,21 +25,25 @@ content:
   body:
     label: hidden
     type: text_trimmed
-    weight: 101
+    weight: 0
     settings:
       trim_length: 200
     third_party_settings: {  }
     region: content
   links:
-    weight: 100
+    weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   field_alphabet: true
   field_categories: true
   field_date: true
   field_images: true
+  field_info_published: true
   field_password: true
   field_sort: true
+  field_table: true
+  field_table_weight: true
   langcode: true
+  year_by_date: true

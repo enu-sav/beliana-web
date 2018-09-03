@@ -72,7 +72,7 @@
 <article{{ attributes.addClass('heslo-container') }}>
   <div class="heslo truncate-wrapper">
     <h1>
-      <a href="{{ url }}">{{ node.field_date.value|date('Y') }} – {{ node.label }}
+      <a href="{{ url }}">{% if content.year_by_date %}{{ content.year_by_date }} – {% endif %}{{ node.label }}
         {% if node.field_images is not empty %}
           <i class="fa fa-picture-o" title="Heslo obsahuje ilustráciu"></i>
         {% endif %}

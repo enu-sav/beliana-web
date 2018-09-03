@@ -4,6 +4,8 @@
  * @file
  */
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 /**
  * Implements hook_theme().
@@ -21,6 +23,51 @@ function beliana_daily_theme() {
       'file' => 'beliana_daily.theme.inc',
     ),
   );
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function beliana_daily_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['node']['word']['display']['year_by_date'] = array(
+    'label' => t('Year'),
+    'description' => t('Year by current date'),
+    'weight' => 0,
+  );
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function beliana_daily_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  switch ($entity->bundle()) {
+    case 'word':
+      if ($display->getComponent('year_by_date')) {
+        $dates = $entity->get('field_date')->getValue();
+
+        if (!empty($dates)) {
+          $path = \Drupal::service('path.current')->getPath();
+          $path_args = explode('/', $path);
+
+          if ($path_args[1] == 'vyrocia') {
+            foreach ($dates as $date) {
+              $time = strtotime($date['value']);
+
+              if (date('d', $time) == $path_args[2] && date('m', $time) == $path_args[3]) {
+                $build['year_by_date'] = [
+                  '#markup' => date('Y', $time),
+                ];
+              }
+            }
+          }
+        }
+      }
+      break;
+  }
 }
 
 /**
