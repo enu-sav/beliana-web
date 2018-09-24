@@ -544,10 +544,7 @@ article .heslo p.last-update {
 
 article .heslo-ilustracia {
   width: 35%;
-}
-
-article .heslo-ilustracia .field--name-field-images {
-  margin-top: 98px;
+  margin-top: 70px;
 }
 
 article .heslo .obsah {
@@ -965,7 +962,7 @@ article.media-image.view-mode-in-word a {
   min-width: 0 !important;
 }
 .heslo-ilustracia .field--name-field-table .field__item table tr {
-  
+
 }
 .heslo-ilustracia .field--name-field-table .field__item table tr td {
   padding: 2px 10px;
@@ -1359,8 +1356,6 @@ footer .footer-copyright {
   }
   article .heslo-ilustracia {
     width: 100%;
-  }
-  article .heslo-ilustracia .field--name-field-images {
     margin-top: 0;
   }
 
@@ -1423,6 +1418,13 @@ footer .footer-copyright {
   }
   #block-beliana-heslo .facet-item.facet-item--expanded:hover ul {
     display: none;
+  }
+
+  .heslo-tools .share,
+  .heslo-tools .print,
+  .heslo-tools .comment {
+    margin: 10px 0 0 0 !important;
+    width: 100%;
   }
 
   .dnes {
