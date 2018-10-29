@@ -21,122 +21,6 @@ name: 'Word Solr index'
 description: ''
 read_only: false
 field_settings:
-  rendered_item:
-    label: 'Rendered HTML output'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        anonymous: anonymous
-      view_mode:
-        'entity:node':
-          word: default
-  node_grants:
-    label: 'Node access information'
-    property_path: search_api_node_grants
-    type: string
-    indexed_locked: true
-    type_locked: true
-    hidden: true
-  title:
-    label: Nadpis
-    datasource_id: 'entity:node'
-    property_path: title
-    type: text
-    boost: !!float 21
-  status:
-    label: status
-    datasource_id: 'entity:node'
-    property_path: status
-    type: boolean
-    indexed_locked: true
-    type_locked: true
-  uid:
-    label: uid
-    datasource_id: 'entity:node'
-    property_path: uid
-    type: integer
-    indexed_locked: true
-    type_locked: true
-  body:
-    label: 'Text hesla'
-    datasource_id: 'entity:node'
-    property_path: body
-    type: text
-    boost: !!float 13
-    dependencies:
-      config:
-        - field.storage.node.body
-  field_sort:
-    label: 'Na zoradenie'
-    datasource_id: 'entity:node'
-    property_path: field_sort
-    type: text
-    boost: !!float 0
-    dependencies:
-      config:
-        - field.storage.node.field_sort
-  field_categories:
-    label: Kategórie
-    datasource_id: 'entity:node'
-    property_path: field_categories
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_categories
-  category_name:
-    label: 'Kategórie » Termín taxonómie » Názov'
-    datasource_id: 'entity:node'
-    property_path: 'field_categories:entity:name'
-    type: text
-    boost: !!float 3
-    dependencies:
-      config:
-        - field.storage.node.field_categories
-      module:
-        - taxonomy
-  media_title:
-    label: 'Obrázky » Médiá » Obrázok » Nadpis'
-    datasource_id: 'entity:node'
-    property_path: 'field_images:entity:field_image:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_images
-        - field.storage.media.field_image
-      module:
-        - media_entity
-  media_alt:
-    label: 'Obrázky » Médiá » Obrázok » Alternative text'
-    datasource_id: 'entity:node'
-    property_path: 'field_images:entity:field_image:alt'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_images
-        - field.storage.media.field_image
-      module:
-        - media_entity
-  category_description:
-    label: 'Kategórie » Termín taxonómie » Popis'
-    datasource_id: 'entity:node'
-    property_path: 'field_categories:entity:description'
-    type: text
-    boost: 0.8
-    dependencies:
-      config:
-        - field.storage.node.field_categories
-      module:
-        - taxonomy
-  field_date:
-    label: Dátum
-    datasource_id: 'entity:node'
-    property_path: field_date
-    type: text
-    boost: 0.8
-    dependencies:
-      config:
-        - field.storage.node.field_date
   alphabet_name:
     label: 'Heslo » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
@@ -148,14 +32,6 @@ field_settings:
         - field.storage.node.field_alphabet
       module:
         - taxonomy
-  field_alphabet:
-    label: Heslo
-    datasource_id: 'entity:node'
-    property_path: field_alphabet
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_alphabet
   alphabet_parent:
     label: 'Heslo » Termín taxonómie » Term Parents'
     datasource_id: 'entity:node'
@@ -178,6 +54,37 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  body:
+    label: 'Text hesla'
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: !!float 13
+    dependencies:
+      config:
+        - field.storage.node.body
+  category_description:
+    label: 'Kategórie » Termín taxonómie » Popis'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:description'
+    type: text
+    boost: 0.8
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  category_name:
+    label: 'Kategórie » Termín taxonómie » Názov'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:name'
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
   category_parent_name:
     label: 'Kategórie » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
@@ -190,6 +97,99 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  field_alphabet:
+    label: Heslo
+    datasource_id: 'entity:node'
+    property_path: field_alphabet
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_alphabet
+  field_categories:
+    label: Kategórie
+    datasource_id: 'entity:node'
+    property_path: field_categories
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+  field_date:
+    label: Dátum
+    datasource_id: 'entity:node'
+    property_path: field_date
+    type: text
+    boost: 0.8
+    dependencies:
+      config:
+        - field.storage.node.field_date
+  field_sort:
+    label: 'Na zoradenie'
+    datasource_id: 'entity:node'
+    property_path: field_sort
+    type: text
+    boost: !!float 0
+    dependencies:
+      config:
+        - field.storage.node.field_sort
+  media_alt:
+    label: 'Obrázky » Médiá » Obrázok » Alternative text'
+    datasource_id: 'entity:node'
+    property_path: 'field_images:entity:field_image:alt'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_images
+        - field.storage.media.field_image
+      module:
+        - media_entity
+  media_title:
+    label: 'Obrázky » Médiá » Obrázok » Nadpis'
+    datasource_id: 'entity:node'
+    property_path: 'field_images:entity:field_image:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_images
+        - field.storage.media.field_image
+      module:
+        - media_entity
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          word: default
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  title:
+    label: Nadpis
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 21
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
 datasource_settings:
   'entity:node':
     bundles:
@@ -200,70 +200,75 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  hierarchy:
+    fields:
+      alphabet_parent: taxonomy_term-parent
+      field_alphabet: taxonomy_term-parent
+      field_categories: taxonomy_term-parent
+    weights:
+      preprocess_index: -50
   html_filter:
     all_fields: false
     fields:
-      - title
-      - body
-      - category_name
-      - media_title
-      - media_alt
-      - category_description
-      - field_date
       - alphabet_name
       - alphabet_parent_name
+      - body
+      - category_description
+      - category_name
       - category_parent_name
+      - field_date
+      - media_alt
+      - media_title
+      - title
     title: true
     alt: true
     tags:
+      b: 2
       h1: 5
       h2: 3
       h3: 2
       strong: 2
-      b: 2
     weights:
       preprocess_index: -47
       preprocess_query: -15
-  aggregated_field: {  }
-  add_url: {  }
   ignorecase:
     all_fields: false
     fields:
-      - rendered_item
-      - title
-      - body
-      - category_name
-      - media_title
-      - media_alt
-      - category_description
-      - field_date
       - alphabet_name
       - alphabet_parent_name
+      - body
+      - category_description
+      - category_name
       - category_parent_name
+      - field_date
+      - media_alt
+      - media_title
+      - rendered_item
+      - title
     weights:
       preprocess_index: -49
       preprocess_query: -20
-  hierarchy:
-    fields:
-      field_categories: taxonomy_term-parent
-      field_alphabet: taxonomy_term-parent
-      alphabet_parent: taxonomy_term-parent
-    weights:
-      preprocess_index: -50
+  rendered_item: {  }
   stopwords:
     all_fields: false
     fields:
-      - rendered_item
-      - title
-      - body
-      - category_name
-      - media_title
-      - media_alt
-      - category_description
-      - field_date
       - alphabet_name
       - alphabet_parent_name
+      - body
+      - category_description
+      - category_name
       - category_parent_name
+      - field_date
+      - media_alt
+      - media_title
+      - rendered_item
+      - title
     stopwords:
       - a
       - an
@@ -303,25 +308,20 @@ processor_settings:
     weights:
       preprocess_index: -44
       preprocess_query: -2
-  rendered_item: {  }
-  content_access:
-    weights:
-      preprocess_query: -30
-  entity_status: {  }
   transliteration:
     all_fields: false
     fields:
-      - rendered_item
-      - title
-      - body
-      - category_name
-      - media_title
-      - media_alt
-      - category_description
-      - field_date
       - alphabet_name
       - alphabet_parent_name
+      - body
+      - category_description
+      - category_name
       - category_parent_name
+      - field_date
+      - media_alt
+      - media_title
+      - rendered_item
+      - title
     weights:
       preprocess_index: -48
       preprocess_query: -20

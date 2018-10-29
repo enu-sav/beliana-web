@@ -1,4 +1,4 @@
-site_id: '1'
+site_id: '2'
 url_http: 'https://analytics.beliana.sav.sk/'
 url_https: 'https://analytics.beliana.sav.sk/'
 domain_mode: 0
@@ -7,7 +7,7 @@ visibility:
   request_path_pages: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
   user_role_mode: 0
   user_role_roles: {  }
-  user_account_mode: 0
+  user_account_mode: 1
 track:
   mailto: true
   files: true
