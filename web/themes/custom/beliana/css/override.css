@@ -531,7 +531,7 @@ article .heslo {
   float: none;
   display: inline-block;
   position: relative;
-  width: 65%;
+  width: 100%;
   padding-right: 50px;
 }
 article .heslo.full-width {
@@ -543,13 +543,24 @@ article .heslo p.last-update {
 }
 
 article .heslo-ilustracia {
+  float: right;
+  display: inline-block;
+  margin-left: 30px;
+  margin-top: 20px;
   width: 35%;
-  margin-top: 70px;
 }
 
 article .heslo .obsah {
   font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   min-height: 2.4em;
+  text-align: justify;
+}
+
+article .heslo .obsah.desktop {
+  display: block;
+}
+article .heslo .obsah.mobile {
+  display: none;
 }
 
 article .heslo .obsah table tr td:first-child {
@@ -940,6 +951,9 @@ article.media-image.view-mode-in-word a {
   margin-bottom: 30px;
   border: 1px solid #e5e5e5;
   padding: 10px 10px 15px 10px;
+}
+.heslo-ilustracia .media-image.view-mode-in-word:last-of-type {
+  margin-bottom: 0;
 }
 .heslo-ilustracia .media-image.view-mode-in-word img {
   max-width: 100%;
@@ -1359,8 +1373,19 @@ footer .footer-copyright {
     margin-top: 0;
   }
 
+  article .heslo .obsah.desktop {
+    display: none;
+  }
+  article .heslo .obsah.mobile {
+    display: block;
+  }
+
   .heslo-container {
     width: 100%; 
+  }
+
+  .heslo-ilustracia .media-image.view-mode-in-word:last-of-type {
+    margin-bottom: 30px;
   }
 
   .media.media-image.view-mode-full {
