@@ -42,7 +42,7 @@ class SearchForm extends FormBase {
         '#title_display' => 'hidden',
         '#attributes' => [
           'class' => ['search-input'],
-          'placeholder' => [$this->t('Search for words, shortcuts ...')],
+          'placeholder' => 'Vyhľadať (pozri "Možnosti vyhľadávania" vpravo)',
 //          'autocomplete' => 'off',
         ],
       ]
