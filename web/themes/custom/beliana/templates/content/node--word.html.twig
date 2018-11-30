@@ -116,7 +116,7 @@
       <div class="citacia desktop" data-collapse>
         <h3>citácia</h3>
         <div>
-          <p>{{ node.label }} [online]. Encyclopaedia Beliana. [cit. {{ now | date('Y-m-d') }}].</p>
+          <p>{{ node.field_author_name.value}} {{ node.label|capitalize }} [online]. Encyclopaedia Beliana. [cit. {{ now | date('Y-m-d') }}].</p>
           <p>Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
       </div>

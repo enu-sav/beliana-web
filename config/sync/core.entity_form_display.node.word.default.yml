@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.media_entity_browser
     - field.field.node.word.body
     - field.field.node.word.field_alphabet
+    - field.field.node.word.field_author_name
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
@@ -45,6 +46,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_author_name:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_categories:
     weight: 12
     settings:
@@ -75,7 +84,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_info_published:
-    weight: 15
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -129,7 +138,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 17
+    weight: 18
     third_party_settings: {  }
     region: content
   sticky:
@@ -157,7 +166,7 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
