@@ -1,10 +1,10 @@
 max_links: 2000
 cron_generate: true
-cron_generate_interval: 24
-generate_duration: 10000
-remove_duplicates: true
+cron_generate_interval: 168
+generate_duration: 15000
+remove_duplicates: false
 skip_untranslated: true
-base_url: ''
+base_url: 'https://beliana.sav.sk'
 default_variant: default
 custom_links_include_images: false
 excluded_languages: {  }

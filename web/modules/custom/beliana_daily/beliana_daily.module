@@ -71,6 +71,36 @@ function beliana_daily_node_view(array &$build, EntityInterface $entity, EntityV
 }
 
 /**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function beliana_daily_node_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  if (empty($build['#attached']['html_head_link'])) {
+    return;
+  }
+
+  $tags = [
+    'canonical',
+    'shortlink',
+    'delete-form',
+    'edit-form',
+    'version-history',
+    'revision',
+  ];
+
+  foreach ($build['#attached']['html_head_link'] as $key => $tag) {
+    if (empty($tag[0]['rel'])) {
+      continue;
+    }
+    if (!in_array($tag[0]['rel'], $tags)) {
+      continue;
+    }
+
+    // Hide tag.
+    unset($build['#attached']['html_head_link'][$key]);
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function beliana_daily_form_piwik_admin_settings_alter(&$form, FormStateInterface $form_state, $form_id) {

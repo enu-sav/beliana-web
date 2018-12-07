@@ -7,5 +7,5 @@ _core:
 id: global
 label: Globálny
 tags:
-  title: '[current-page:title] | [site:name]'
+  title: '[current-page:title] | Encyclopaedia Beliana – slovenská všeobecná encyklopédia'
   hreflang_xdefault: sk
