@@ -71,3 +71,15 @@ function beliana_daily_update_8001() {
 
   $db->schema()->createTable('beliana_piwik_counter_storage', $schema['beliana_piwik_counter_storage']);
 }
+
+/**
+ * Remove shortcut links.
+ */
+function beliana_daily_update_8002() {
+  \Drupal::database()->delete('key_value')
+      ->condition('collection', 'system.schema')
+      ->condition('name', 'piwik')
+      ->execute();
+
+  \Drupal::entityManager()->getStorage('shortcut_set')->load('default')->delete();
+}
