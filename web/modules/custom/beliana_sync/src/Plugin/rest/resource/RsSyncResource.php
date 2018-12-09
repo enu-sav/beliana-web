@@ -106,6 +106,10 @@ class RsSyncResource extends ResourceBase {
       'field_info_published' => $data['info_published']
     ]);
 
+    if (isset($data['menoautora'])) {
+      $node->field_author_name = $data['menoautora'];
+    }
+
     // set table 
     $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
     $node->field_table_weight = $data['table'][1];
@@ -429,6 +433,9 @@ class RsSyncResource extends ResourceBase {
     // set table 
     $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
     $node->field_table_weight = $data['table'][1];
+    if (isset($data['menoautora'])) {
+      $node->field_author_name = $data['menoautora'];
+    }
 
     // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
     // may have multiple values, each having hierarchy starting from parent and separated by ';'
