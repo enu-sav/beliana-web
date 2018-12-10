@@ -5,4 +5,5 @@ core: 8.x
 package: Beliana
 dependencies:
   - block
+  - easy_breadcrumb
   - system (>=8.2.0)

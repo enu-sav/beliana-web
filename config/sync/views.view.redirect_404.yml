@@ -1,19 +1,19 @@
-uuid: a0581afe-97f6-4533-ae2d-4d73c1cb34c5
+uuid: 1402b43a-d614-4037-95c2-cd42d78fd7b5
 langcode: sk
 status: true
 dependencies:
   module:
-    - block_content
+    - redirect_404
     - user
 _core:
-  default_config_hash: msYnighLW1IbiBfyQbwbQwb2cU-5LECiFryt60k0Nfk
-id: block_content
-label: 'Vlastné bloky'
+  default_config_hash: kAe9LN5CFd5dvECtV8RZtKnyvURX37zd7nIMOURm-U0
+id: redirect_404
+label: 'Redirect 404'
 module: views
-description: 'Find and manage custom blocks.'
-tag: default
-base_table: block_content_field_data
-base_field: id
+description: ''
+tag: ''
+base_table: redirect_404
+base_field: ''
 core: 8.x
 display:
   default:
@@ -25,9 +25,9 @@ display:
       access:
         type: perm
         options:
-          perm: 'administer blocks'
+          perm: 'administer redirects'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -40,8 +40,8 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Použiť
-          reset_button: false
+          submit_button: Filter
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -50,13 +50,10 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 50
+          items_per_page: 10
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: '‹ Predchádzajúci'
-            next: Ďalej
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -65,6 +62,9 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
       style:
         type: table
         options:
@@ -77,117 +77,47 @@ display:
           summary: ''
           description: ''
           columns:
-            info: info
-            type: type
-            changed: changed
-            operations: operations
+            path: path
+            count: count
+            timestamp: timestamp
           info:
-            info:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            type:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            changed:
+            path:
               sortable: true
               default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            operations:
-              sortable: false
-              default_sort_order: asc
+            count:
+              sortable: true
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-          default: changed
-          empty_table: true
+            timestamp:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: count
+          empty_table: false
       row:
         type: fields
       fields:
-        info:
-          id: info
-          table: block_content_field_data
-          field: info
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Popis bloku'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+        path:
+          table: redirect_404
+          field: path
+          id: path
           entity_type: null
-          entity_field: info
-          plugin_id: field
-        type:
-          id: type
-          table: block_content_field_data
-          field: type
+          entity_field: null
+          plugin_id: standard
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Typ bloku'
+          label: Path
           exclude: false
           alter:
             alter_text: false
@@ -228,31 +158,14 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: block_content
-          entity_field: type
-          plugin_id: field
-        changed:
-          id: changed
-          table: block_content_field_data
-          field: changed
+        count:
+          id: count
+          table: redirect_404
+          field: count
           relationship: none
           group_type: group
           admin_label: ''
-          label: Aktualizované
+          label: Count
           exclude: false
           alter:
             alter_text: false
@@ -293,18 +206,114 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          entity_type: block_content
-          entity_field: changed
-          type: timestamp
-          settings:
-            date_format: short
-            custom_date_format: ''
-            timezone: ''
-          plugin_id: field
-        operations:
-          id: operations
-          table: block_content
-          field: operations
+          format: unserialized
+          key: ''
+          plugin_id: serialized
+        timestamp:
+          id: timestamp
+          table: redirect_404
+          field: timestamp
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Last accessed'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          date_format: short
+          custom_date_format: ''
+          timezone: ''
+          plugin_id: date
+        langcode:
+          id: langcode
+          table: redirect_404
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Language
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          plugin_id: standard
+        redirect_404_operations:
+          id: redirect_404_operations
+          table: redirect_404
+          field: redirect_404_operations
           relationship: none
           group_type: group
           admin_label: ''
@@ -349,14 +358,12 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          destination: true
-          entity_type: block_content
-          plugin_id: entity_operations
+          plugin_id: redirect_404_operations
       filters:
-        info:
-          id: info
-          table: block_content_field_data
-          field: info
+        path:
+          id: path
+          table: redirect_404
+          field: path
           relationship: none
           group_type: group
           admin_label: ''
@@ -365,12 +372,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: info_op
-            label: 'Popis bloku'
+            operator_id: path_op
+            label: Path
             description: ''
             use_operator: false
-            operator: info_op
-            identifier: info
+            operator: path_op
+            identifier: path
             required: false
             remember: false
             multiple: false
@@ -378,7 +385,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -391,13 +397,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: block_content
-          entity_field: info
           plugin_id: string
-        type:
-          id: type
-          table: block_content_field_data
-          field: type
+        langcode:
+          id: langcode
+          table: redirect_404
+          field: langcode
           relationship: none
           group_type: group
           admin_label: ''
@@ -406,12 +410,12 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: type_op
-            label: 'Typ bloku'
+            operator_id: langcode_op
+            label: Language
             description: ''
             use_operator: false
-            operator: type_op
-            identifier: type
+            operator: langcode_op
+            identifier: langcode
             required: false
             remember: false
             multiple: false
@@ -432,30 +436,32 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: block_content
-          entity_field: type
-          plugin_id: bundle
-        reusable:
-          id: reusable
-          table: block_content_field_data
-          field: reusable
+          plugin_id: in_operator
+        resolved:
+          id: resolved
+          table: redirect_404
+          field: resolved
           relationship: none
           group_type: group
           admin_label: ''
           operator: '='
-          value: '1'
+          value: '0'
           group: 1
           exposed: false
           expose:
             operator_id: ''
-            label: ''
+            label: Resolved
             description: ''
             use_operator: false
-            operator: ''
-            identifier: ''
+            operator: resolved_op
+            identifier: resolved
             required: false
             remember: false
             multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -468,11 +474,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: block_content
-          entity_field: reusable
           plugin_id: boolean
       sorts: {  }
-      title: 'Vlastné bloky'
+      title: 'Fix 404 pages'
       header: {  }
       footer: {  }
       empty:
@@ -485,30 +489,22 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'Žiadne vlastné bloky nie sú dostupné. '
+          content: 'There are no 404 errors to fix.'
           plugin_id: text_custom
-        block_content_listing_empty:
-          admin_label: ''
-          empty: true
-          field: block_content_listing_empty
-          group_type: group
-          id: block_content_listing_empty
-          label: ''
-          relationship: none
-          table: block_content
-          plugin_id: block_content_listing_empty
-          entity_type: block_content
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
+      max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
-      max-age: -1
       tags: {  }
   page_1:
     display_plugin: page
@@ -517,21 +513,14 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/structure/block/block-content
-      menu:
-        type: tab
-        title: 'Vlastné bloky'
-        description: ''
-        parent: block.admin_display
-        weight: 0
-        context: '0'
-        menu_name: admin
+      path: admin/config/search/redirect/404
+      display_description: 'Lists 404 error paths with no redirect assigned yet.'
+      enabled: true
     cache_metadata:
+      max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user.permissions
-      max-age: -1
       tags: {  }

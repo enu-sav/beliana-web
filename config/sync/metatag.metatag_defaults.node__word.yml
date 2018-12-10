@@ -1,15 +1,15 @@
-uuid: 420e2e5b-539d-4001-9c80-7c9d123be822
+uuid: c67cf653-aedf-4619-a166-0112b0c6cb57
 langcode: sk
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: ydpmSCtxLjO9xqkBxObkeYx0Bf2dkW-d8bB_6Q1Ggjs
-id: node
-label: Obsah
+id: node__word
+label: 'Obsah: Heslo'
 tags:
   canonical_url: '[current-page:url:absolute]'
+  image_src: '[node:field_images:entity:field_image:entity:url]'
   description: '[node:summary]'
-  title: '[node:title] | Encyclopaedia Beliana – slovenská všeobecná encyklopédia'
+  title: '[node:title] | [site:name]'
+  og_image: '[node:field_images:entity:field_image:entity:url]'
   og_url: '[current-page:url:absolute]'
   og_site_name: 'Encyclopaedia Beliana'
   og_description: '[node:summary]'

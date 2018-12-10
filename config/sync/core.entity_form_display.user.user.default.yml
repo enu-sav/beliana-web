@@ -19,6 +19,8 @@ content:
   account:
     weight: -10
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
     region: content
@@ -27,6 +29,13 @@ content:
     region: content
   language:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  matomo:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
     region: content
   path:
     type: path
@@ -37,6 +46,8 @@ content:
   timezone:
     weight: 6
     region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_image
     settings:

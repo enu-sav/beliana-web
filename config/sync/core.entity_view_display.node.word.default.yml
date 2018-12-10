@@ -10,11 +10,13 @@ dependencies:
     - field.field.node.word.field_date
     - field.field.node.word.field_images
     - field.field.node.word.field_info_published
+    - field.field.node.word.field_meta_tags
     - field.field.node.word.field_sort
     - field.field.node.word.field_table
     - field.field.node.word.field_table_weight
     - node.type.word
   module:
+    - metatag
     - text
     - user
 id: node.word.default
@@ -45,6 +47,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_meta_tags:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_table:
     weight: 3

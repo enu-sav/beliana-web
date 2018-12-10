@@ -1,0 +1,17 @@
+uuid: dcbd9131-0929-4353-ae8d-4cfa40eaa06c
+langcode: sk
+status: true
+dependencies:
+  module:
+    - beliana_daily
+title: 'Default cron handler'
+id: beliana_daily_cron
+weight: 0
+module: beliana_daily
+callback: beliana_daily_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
