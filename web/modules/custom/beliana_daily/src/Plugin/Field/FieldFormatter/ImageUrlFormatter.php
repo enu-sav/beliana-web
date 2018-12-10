@@ -103,12 +103,13 @@ class ImageUrlFormatter extends LinkFormatter {
         case 'content':
         case 'file':
           $url = $this->getSetting('image_link') == 'content' ? $entity->url() : $item->uri;
-          $target = $this->getSetting('image_link') == 'content' ? '' : '_blank';
+          $target = $this->getSetting('image_link') == 'content' ? '_self' : '_blank';
+          $rel = $this->getSetting('image_link') == 'content' ? 'nofollow' : '';
 
           $elements[$delta] = [
             '#type' => 'html_tag',
             '#tag' => 'a',
-            '#attributes' => ['href' => $url, 'class' => ['field-media'], 'target' => $target],
+            '#attributes' => ['href' => $url, 'class' => ['field-media'], 'target' => $target, 'rel' => $rel],
             'image' => $image
           ];
           break;
