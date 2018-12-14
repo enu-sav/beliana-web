@@ -83,3 +83,13 @@ function beliana_daily_update_8002() {
 
   \Drupal::entityManager()->getStorage('shortcut_set')->load('default')->delete();
 }
+
+/**
+ * Remove missing modules.
+ */
+function beliana_daily_update_8003() {
+  \Drupal::database()->delete('key_value')
+      ->condition('collection', 'system.schema')
+      ->condition('name', 'migrate_source_yaml')
+      ->execute();
+}

@@ -74,32 +74,34 @@
       });
 
       // Override facet link replacement with a checked checkbox.
-      if ($.isFunction(Drupal.facets.makeCheckbox)) {
-        Drupal.facets.makeCheckbox = function () {
-          var $link = $(this);
-          var active = $link.hasClass('is-active');
-          var description = $link.html();
-          var href = $link.attr('href');
-          var id = $link.data('drupal-facet-item-id');
+      if (typeof(Drupal.facets) != 'undefined') {
+        if ($.isFunction(Drupal.facets.makeCheckbox)) {
+          Drupal.facets.makeCheckbox = function () {
+            var $link = $(this);
+            var active = $link.hasClass('is-active');
+            var description = $link.html();
+            var href = $link.attr('href');
+            var id = $link.data('drupal-facet-item-id');
 
-          var checkbox = $('<input type="checkbox" class="facets-checkbox">')
-              .attr('id', id)
-              .data($link.data())
-              .data('facetsredir', href);
-          var label = $('<label>' + description + '</label>');
+            var checkbox = $('<input type="checkbox" class="facets-checkbox">')
+                .attr('id', id)
+                .data($link.data())
+                .data('facetsredir', href);
+            var label = $('<label>' + description + '</label>');
 
-          checkbox.on('change.facets', function (e) {
-            Drupal.facets.disableFacet($link.parents('.js-facets-checkbox-links'));
-            window.location.href = $(this).data('facetsredir');
-          });
+            checkbox.on('change.facets', function (e) {
+              Drupal.facets.disableFacet($link.parents('.js-facets-checkbox-links'));
+              window.location.href = $(this).data('facetsredir');
+            });
 
-          if (active) {
-            checkbox.attr('checked', true);
-            label.find('.js-facet-deactivate').remove();
-          }
+            if (active) {
+              checkbox.attr('checked', true);
+              label.find('.js-facet-deactivate').remove();
+            }
 
-          $link.before(checkbox).before(label).remove();
-        };
+            $link.before(checkbox).before(label).remove();
+          };
+        }
       }
     },
     print: function (event) {

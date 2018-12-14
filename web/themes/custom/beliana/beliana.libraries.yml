@@ -5,8 +5,8 @@ theme:
       css/fonts.css: {}
       css/override.css: {}
   js:    
-    js/exif-js/exif.js: {}
-    js/exif2css/dist/exif2css.js: {}
+    js/libs/exif-js/exif.js: {}
+    js/libs/exif2css/dist/exif2css.js: {}
     js/override.js: {}
   dependencies:
     - core/drupal
