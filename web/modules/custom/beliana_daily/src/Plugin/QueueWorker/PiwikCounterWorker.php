@@ -45,9 +45,12 @@ class PiwikCounterWorker extends QueueWorkerBase implements ContainerFactoryPlug
   public function processItem($data) {
     $statistics = 0;
     $alias_manager = \Drupal::service('path.alias_manager');
+    
+    // DISABLE AFTER CHANGE PIWIK TO MOTAMO
+    return;
 
     $alias = $alias_manager->getAliasByPath('/node/' . $data['nid']);
-    $config = \Drupal::config('piwik.settings');
+    $config = \Drupal::config('matomo.settings');
 
     $options = [
       'pageUrl' => $alias,
@@ -58,16 +61,18 @@ class PiwikCounterWorker extends QueueWorkerBase implements ContainerFactoryPlug
 
     // Request piwik data.
     if ($result = $this->getApiRequest($config->get('url_http'), $config->get('access_token'), 'Actions.getPageUrl', $config->get('site_id'), $options)) {
-      $piwik = reset($result);
-      $statistics = $piwik['nb_hits'];
-    }
+      if ($result['result'] != 'error') {
+        $piwik = reset($result);
+        $statistics = $piwik['nb_hits'];
 
-    $this->connection->merge('beliana_piwik_counter_storage')
-        ->key(array('nid' => $data['nid']))
-        ->fields(array(
-          'pageview_total' => $statistics,
-        ))
-        ->execute();
+        $this->connection->merge('beliana_piwik_counter_storage')
+            ->key(array('nid' => $data['nid']))
+            ->fields(array(
+              'pageview_total' => $piwik['nb_hits'],
+            ))
+            ->execute();
+      }
+    }
   }
 
   /**
