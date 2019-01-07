@@ -75,7 +75,7 @@
 
   <div class="heslo{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
     <h1>{{ node.label }}</h1>
-    
+
     <div class="obsah mobile">
       {{ content.body }}
     </div>
@@ -116,8 +116,8 @@
       <div class="citacia desktop" data-collapse>
         <h3>citácia</h3>
         <div>
-          <p>{{ node.field_author_name.value}} {{ node.label|capitalize }} [online]. Encyclopaedia Beliana. [cit. {{ now | date('Y-m-d') }}].</p>
-          <p>Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
+          {% set author_name = node.field_author_name.value|split(',') %}
+          <p>{{ author_name[0]|trim ~ ', ' ~ author_name[1]|trim|slice(0, 1)|upper ~ '.' }} {{ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana, ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
       </div>
     </div>
