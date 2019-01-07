@@ -116,8 +116,13 @@
       <div class="citacia desktop" data-collapse>
         <h3>citácia</h3>
         <div>
-          {% set author_name = node.field_author_name.value|split(',') %}
-          <p>{{ author_name[0]|trim ~ ', ' ~ author_name[1]|trim|slice(0, 1)|upper ~ '.' }} {{ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana, ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
+          {% if node.field_author_name.value is not empty %}
+            {% set author_name = node.field_author_name.value|split(',') %}
+            {% set author_fomratted = author_name[0]|trim ~ ', ' ~ author_name[1]|trim|slice(0, 1)|upper ~ '. ' %}
+          {% else %}
+            {% set author_fomratted = '' %}
+          {% endif %}
+          <p>{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana, ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
       </div>
     </div>
