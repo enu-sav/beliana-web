@@ -23,9 +23,9 @@ class CurrentDateFormatter extends DateTimeDefaultFormatter {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
-    $today = date('md');
     $output_dates = [];
-    foreach ($items as $delta => $item) {
+
+    foreach ($items as $item) {
       if ($item->date) {
         /** @var \Drupal\Core\Datetime\DrupalDateTime $date */
         $date = $item->date;
@@ -34,20 +34,15 @@ class CurrentDateFormatter extends DateTimeDefaultFormatter {
           // A date without time will pick up the current time, use the default.
           datetime_date_default_time($date);
         }
+        
+        // Display items belonging to the same day and month only.        
+        if ($date->format('md') == date('md')) {
+          // Create the ISO date in Universal Time.
+          $iso_date = $date->format('Y-m-d\TH:i:s') . 'Z';
+          $this->setTimeZone($date);
 
-        // Display items belonging to the same day and month only.
-        $local_today = $date->format("md");
-        if ($local_today !== $today) {
-          continue;
+          $output_dates[$this->formatDate($date)] = $iso_date;
         }
-
-        // Create the ISO date in Universal Time.
-        $iso_date = $date->format("Y-m-d\TH:i:s") . 'Z';
-
-        $this->setTimeZone($date);
-
-        $output_dates[$this->formatDate($date)] = $iso_date;
-
       }
     }
 
@@ -72,7 +67,6 @@ class CurrentDateFormatter extends DateTimeDefaultFormatter {
     }
 
     return $elements;
-
   }
 
 }
