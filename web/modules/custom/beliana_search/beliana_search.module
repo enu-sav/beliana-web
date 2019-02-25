@@ -3,7 +3,16 @@
 /**
  * @file
  */
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_node_insert
+ */
+function beliana_search_node_insert(EntityInterface $entity) {
+  // use cache tags instead
+  //drupal_flush_all_caches();
+}
 
 /**
  * Implements hook_views_pre_render

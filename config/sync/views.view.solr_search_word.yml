@@ -30,7 +30,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
       query:
         type: views_query
@@ -367,10 +367,8 @@ display:
       display_extenders: {  }
       path: abecedny-zoznam
       exposed_block: true
-      cache:
-        type: none
       defaults:
-        cache: false
+        cache: true
         fields: false
         title: true
       fields:
@@ -530,10 +528,8 @@ display:
       display_description: ''
       path: rozsirene-vyhladavanie
       exposed_block: true
-      cache:
-        type: none
       defaults:
-        cache: false
+        cache: true
         title: false
         use_ajax: true
       title: 'Vyhľadávanie podľa kategórií'
