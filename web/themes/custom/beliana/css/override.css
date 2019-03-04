@@ -572,6 +572,11 @@ article.media-image.view-mode-in-word a {
   text-align: center;
 }
 
+article .field--name-body table tr td {
+  vertical-align: top;
+  padding: 0 2px;
+}
+
 .MathJax span, .inline-formula, .block-formula { 
   font-family: 'STIXGeneral' !important;
   font-size: 1.7rem;
