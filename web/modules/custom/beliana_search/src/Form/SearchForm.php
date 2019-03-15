@@ -40,6 +40,8 @@ class SearchForm extends FormBase {
         '#type' => 'textfield',
         '#title' => $this->t('Search'),
         '#title_display' => 'hidden',
+        '#target_type' => 'node',
+        '#autocomplete_route_name' => 'beliana_search.autocomplete',
         '#attributes' => [
           'class' => ['search-input'],
           'placeholder' => 'Vyhľadať (pozri Možnosti vyhľadávania vpravo)',

@@ -1,0 +1,9 @@
+
+beliana_search.autocomplete:
+  path: '/belana-arch-autocomplete'
+  defaults:
+    _controller: '\Drupal\beliana_search\Controller\AutocompleteController::handleAutocomplete'
+    _format: json
+  requirements:
+    _access: 'TRUE'
+
