@@ -29,6 +29,7 @@ class AutocompleteController extends ControllerBase {
           ->condition('n.status', NODE_PUBLISHED)
           ->condition('n.title', '%' . $query->escapeLike($typed_string) . '%', 'LIKE')
           ->orderBy('n.title', 'ASC')
+          ->range(0, 10)
           ->execute()
           ->fetchAll();
     }
