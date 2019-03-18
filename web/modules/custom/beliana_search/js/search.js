@@ -29,7 +29,12 @@
 
       // autosubmit form on autocomplete select
       $wrapper.find('input.search-input').on('autocompleteclose', function (event, node) {
-        $wrapper.parent().find('input.search-submit').click();
+        var input = $(this).val();
+        if ($.isNumeric(input)) {
+          $(this).val('');
+          window.location.href = '/node/' + input;
+        }
+        // $wrapper.parent().find('input.search-submit').click();
       });
 
       if (!$.isEmptyObject(drupalSettings)) {
