@@ -15,16 +15,22 @@
       var self = this;
       var current_letter = false;
       var window_width = $(window).width();
+      var $wrapper = $('#block-beliana-searchbox .search-input-wrapper');
 
       self.setSearchInput();
 
       //focus to search input if keyword exist
-      if ($('#block-beliana-searchbox .search-input-wrapper input.search-input').val().length > 0) {
+      if ($wrapper.find('input.search-input').val().length > 0) {
         // delay for firefox
         setTimeout(function () {
-          $('#block-beliana-searchbox .search-input-wrapper input.search-input').focus();
+          $wrapper.find('input.search-input').focus();
         }, 10);
       }
+
+      // autosubmit form on autocomplete select
+      $wrapper.find('input.search-input').on('autocompleteclose', function (event, node) {
+        $wrapper.parent().find('input.search-submit').click();
+      });
 
       if (!$.isEmptyObject(drupalSettings)) {
         current_letter = drupalSettings.beliana_search.alphabet;
