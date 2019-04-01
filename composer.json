@@ -64,6 +64,7 @@
         "drupal/paragraphs": "^1.2",
         "drupal/pathauto": "~1.0",
         "drupal/redirect": "1.x-dev",
+        "drupal/recaptcha": "^2.4",
         "drupal/search_api": "1.x-dev",
         "drupal/search_api_solr": "1.x-dev",
         "drupal/simple_sitemap": "^3.0",

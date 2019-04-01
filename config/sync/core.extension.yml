@@ -66,6 +66,7 @@ module:
   path: 0
   pathauto: 0
   rdf: 0
+  recaptcha: 0
   redirect: 0
   redirect_404: 0
   rest: 0
