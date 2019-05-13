@@ -7,15 +7,21 @@ use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\TitleResolverInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Entity\EntityRepositoryInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\Menu\MenuLinkManager;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
 use Drupal\Core\Routing\RequestContext;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\Menu\MenuLinkManager;
-use Drupal\Core\Link;
 use Drupal\easy_breadcrumb\EasyBreadcrumbBuilder;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 
 /**
@@ -28,8 +34,8 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
   /**
    * {@inheritdoc}
    */
-  public function __construct(RequestContext $context, AccessManagerInterface $access_manager, RequestMatcherInterface $router, InboundPathProcessorInterface $path_processor, ConfigFactoryInterface $config_factory, TitleResolverInterface $title_resolver, AccountInterface $current_user, CurrentPathStack $current_path, MenuLinkManager $menu_link_manager) {
-    parent::__construct($context, $access_manager, $router, $path_processor, $config_factory, $title_resolver, $current_user, $current_path, $menu_link_manager);
+  public function __construct(RequestContext $context, AccessManagerInterface $access_manager, RequestMatcherInterface $router, RequestStack $request_stack, InboundPathProcessorInterface $path_processor, ConfigFactoryInterface $config_factory, TitleResolverInterface $title_resolver, AccountInterface $current_user, CurrentPathStack $current_path, MenuLinkManager $menu_link_manager, LanguageManagerInterface $language_manager, EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository, LoggerChannelFactoryInterface $logger, MessengerInterface $messenger) {
+    parent::__construct($context, $access_manager, $router, $request_stack, $path_processor, $config_factory, $title_resolver, $current_user, $current_path, $menu_link_manager, $language_manager, $entity_type_manager, $entity_repository, $logger, $messenger);
   }
 
   /**

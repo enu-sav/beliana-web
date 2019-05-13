@@ -59,3 +59,4 @@ cookie_name: ''
 exclude_uid_1: false
 better_support_for_screen_readers: false
 fixed_top_position: false
+popup_info_template: legacy

@@ -59,7 +59,7 @@
         $('.views-element-container .heslo').removeClass('truncate-wrapper');
         $('.views-element-container .heslo #gradient').css('display', 'none');
         $('.truncate-button .label').html(labelMap.full + '<b class="button"></b>');
-        $('.truncate-button').once().toggleClass('active');
+        $('.truncate-button').toggleClass('active');
 
         Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', labelMap.full, 1);
       });
@@ -72,7 +72,7 @@
           }
         });
         $('.truncate-button .label').html(labelMap.short + '<b class="button"></b>');
-        $('.truncate-button').once().toggleClass('active');
+        $('.truncate-button').toggleClass('active');
 
         Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', labelMap.short, 1);
       });
