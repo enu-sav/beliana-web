@@ -109,10 +109,6 @@
         {{ info_published |striptags }}
       </p>
 
-      <div class="heslo-tools">
-        {% include directory ~ '/templates/content/parts/share.html.twig' %}
-      </div>
-
       <div class="citacia desktop" data-collapse>
         <h3>citácia</h3>
         <div>
@@ -124,6 +120,10 @@
           {% endif %}
           <p>{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana, ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
+      </div>
+
+      <div class="heslo-tools">
+        {% include directory ~ '/templates/content/parts/share.html.twig' %}
       </div>
     </div>
   </div>
