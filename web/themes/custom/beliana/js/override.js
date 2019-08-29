@@ -32,6 +32,19 @@
         }
       });
 
+      // sticky header
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if ($('#content-main').height() > 500) {
+          if (scroll >= 310) {
+            $('body').addClass('sticky-header');
+          } else {
+            $('body').removeClass('sticky-header');
+          }
+        }
+      });
+
       // trigger to open all ilustracie .dalsie-info wrapeprs
       setTimeout(function () {
         $('.dalsie-info').trigger('open');

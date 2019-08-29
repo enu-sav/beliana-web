@@ -20,6 +20,21 @@ body.path-frontpage footer{
   border-color: #8b2908;
 }
 
+body.page-node-type-word.sticky-header #header .header-main {
+  position: fixed;
+  background: #171717;
+  width: 100%;
+  margin-top: -46px;
+  z-index: 2;
+}
+body.page-node-type-word.sticky-header #content-main .heslo-container h1 {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  margin-top: -79px;
+  z-index: 2;
+}
+
 h1, h2 {
   color: #8b2908;
 }
