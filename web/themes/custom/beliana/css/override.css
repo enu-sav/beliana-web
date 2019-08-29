@@ -34,6 +34,9 @@ body.page-node-type-word.sticky-header #content-main .heslo-container h1 {
   margin-top: -79px;
   z-index: 2;
 }
+body.page-node-type-word.sticky-header #content-main .heslo-container .obsah {
+  padding-top: 250px;
+}
 
 h1, h2 {
   color: #8b2908;
