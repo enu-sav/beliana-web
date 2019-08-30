@@ -35,12 +35,20 @@
       // sticky header
       $(window).scroll(function () {
         var scroll = $(window).scrollTop();
+        var header_offset = $(window).width() < 768 ? 96 : 46;
+        var title_offset = $(window).width() < 768 ? 212 : 169;
 
         if ($('#content-main').height() > 500) {
-          if (scroll >= 310) {
+          if (scroll >= header_offset) {
             $('body').addClass('sticky-header');
           } else {
             $('body').removeClass('sticky-header');
+          }
+
+          if (scroll >= title_offset) {
+            $('body').addClass('sticky-title');
+          } else {
+            $('body').removeClass('sticky-title');
           }
         }
       });

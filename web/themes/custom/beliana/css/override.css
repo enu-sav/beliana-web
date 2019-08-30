@@ -25,17 +25,29 @@ body.page-node-type-word.sticky-header #header .header-main {
   background: #171717;
   width: 100%;
   margin-top: -46px;
-  z-index: 2;
+  z-index: 4;
 }
-body.page-node-type-word.sticky-header #content-main .heslo-container h1 {
+body.page-node-type-word.sticky-header #header .header-navigation {
+  margin-top: 90px;
+}
+
+body.page-node-type-word.sticky-title #content-main .heslo-container h1 {
   position: fixed;
   width: 100%;
   background: #fff;
-  margin-top: -79px;
+  margin-top: -169px;
   z-index: 2;
 }
-body.page-node-type-word.sticky-header #content-main .heslo-container .obsah {
-  padding-top: 250px;
+body.page-node-type-word.sticky-title #content-main .heslo-container .obsah {
+  padding-top: 54px;
+}
+@media screen and (max-width: 768px) {
+  body.page-node-type-word.sticky-header #header .header-main {
+    margin-top: -89px;
+  }
+  body.page-node-type-word.sticky-title #content-main .heslo-container h1 {
+    margin-top: -212px;
+  }
 }
 
 h1, h2 {
