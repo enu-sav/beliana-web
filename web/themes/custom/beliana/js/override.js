@@ -35,8 +35,16 @@
       // sticky header
       $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        var header_offset = $(window).width() < 768 ? 96 : 46;
-        var title_offset = $(window).width() < 768 ? 212 : 169;
+        var header_offset = 46;
+        var title_offset = 169;
+
+        if ($(window).width() < 768) {
+          header_offset = 52;
+          title_offset = 174;
+        } else if ($(window).width() < 948) {
+          header_offset = 74;
+          title_offset = 252;
+        }
 
         if ($('#content-main').height() > 500) {
           if (scroll >= header_offset) {
