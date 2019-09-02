@@ -3,13 +3,13 @@ langcode: sk
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - field.storage.node.field_sort
-    - field.storage.node.field_categories
-    - field.storage.node.field_images
-    - field.storage.media.field_image
     - field.storage.node.field_date
     - field.storage.node.field_alphabet
+    - field.storage.node.field_categories
+    - field.storage.node.field_sort
+    - field.storage.node.field_images
+    - field.storage.media.field_image
+    - field.storage.node.body
     - search_api.server.solr
   module:
     - taxonomy
@@ -153,6 +153,11 @@ field_settings:
         - field.storage.media.field_image
       module:
         - media_entity
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -171,7 +176,7 @@ field_settings:
         'entity:node':
           word: default
   status:
-    label: status
+    label: Status
     datasource_id: 'entity:node'
     property_path: status
     type: boolean
@@ -184,7 +189,7 @@ field_settings:
     type: text
     boost: !!float 21
   uid:
-    label: uid
+    label: UID
     datasource_id: 'entity:node'
     property_path: uid
     type: integer

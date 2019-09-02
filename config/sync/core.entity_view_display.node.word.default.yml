@@ -49,7 +49,7 @@ content:
     type: string
     region: content
   field_meta_tags:
-    weight: 5
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -64,6 +64,11 @@ content:
     region: content
   links:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  similar_words:
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

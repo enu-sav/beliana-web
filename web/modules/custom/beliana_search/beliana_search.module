@@ -4,14 +4,52 @@
  * @file
  */
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\views\ViewExecutable;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_entity_extra_field_info
+ */
+function beliana_search_entity_extra_field_info() {
+    $extra = [];
+
+    $extra['node']['word']['display']['similar_words'] = [
+        'label' => t('Similar words'),
+        'weight' => 0,
+        'visible' => TRUE,
+    ];
+
+    return $extra;
+}
 
 /**
  * Implements hook_node_insert
  */
 function beliana_search_node_insert(EntityInterface $entity) {
-  // use cache tags instead
-  //drupal_flush_all_caches();
+    // use cache tags instead
+    //drupal_flush_all_caches();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view
+ */
+function beliana_search_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+    if ($display->getComponent('similar_words')) {
+        $args = [$entity->label()];
+        $view = Views::getView('solr_search_word');
+
+        if (is_object($view)) {
+            $view->setArguments($args);
+            $view->setDisplay('embed');
+            $view->preExecute();
+            $view->execute();
+
+            if(count($view->result) > 0) {
+                $build['similar_words'] = $view->buildRenderable('embed', $args);
+            }
+        }
+    }
 }
 
 /**

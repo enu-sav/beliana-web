@@ -12,7 +12,7 @@ use Drupal\Core\Block\BlockBase;
  *  admin_label = @Translation("Search box"),
  * )
  */
-class SearchBox extends BlockBase {
+class SearchBoxBlock extends BlockBase {
 
   /**
    * {@inheritdoc}

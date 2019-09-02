@@ -109,6 +109,13 @@
         {{ info_published |striptags }}
       </p>
 
+      <div class="similar-words">
+        {% if content.similar_words is not empty %}
+          <h3>súvisiace heslá</h3>
+          {{ content.similar_words }}
+        {% endif %}
+      </div>
+
       <div class="citacia desktop" data-collapse>
         <h3>citácia</h3>
         <div>

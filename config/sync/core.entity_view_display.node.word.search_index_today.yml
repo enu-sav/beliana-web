@@ -49,3 +49,4 @@ hidden:
   field_table_weight: true
   langcode: true
   links: true
+  similar_words: true

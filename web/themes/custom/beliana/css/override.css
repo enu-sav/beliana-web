@@ -343,6 +343,17 @@ body.path-rozsirene-vyhladavanie .view-word-search-page h2 {
   font-size: 1.7em;
   margin-top: -8px;
 }
+body.page-node-type-word .similar-words .view-word-search-page {
+  width: auto;
+  margin-left: 32px;
+  margin-top: 10px;
+}
+body.page-node-type-word .similar-words .view-word-search-page .views-row {
+  margin: 0;
+}
+body.page-node-type-word .similar-words .view-word-search-page .views-row ul li {
+  padding: 4px 0px;
+}
 
 body.path-rozsirene-vyhladavanie #block-kategorie {
   width: 280px;
@@ -390,6 +401,24 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li.facet-item--expanded ul {
   padding-left: 21px;
+}
+
+.similar-words h3 {
+  color: #1c1c1c;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 16px;
+  opacity: 0.5;
+}
+.similar-words h3:before {
+  content: "";
+  background: url(../img/arrow_sprite.png) no-repeat;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
 }
 
 .more-link a {
