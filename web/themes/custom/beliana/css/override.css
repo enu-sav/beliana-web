@@ -621,6 +621,8 @@ article .heslo .obsah {
   font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   min-height: 2.4em;
   text-align: justify;
+  line-height: 1.625em;
+  font-size: 2.0rem;
 }
 
 article .heslo .obsah.desktop {
@@ -1139,37 +1141,43 @@ article .field--name-body table tr td {
 }
 
 .zoznam-tools {
-  margin-top: -5px;
+  margin-top: -30px;
   color: #999;
 }
 
-.truncate-button {
+.truncate-button,
+.sort-button {
   border: 1px solid #e4e4e4;
   background: transparent;
   color: #a51b00;
 }
-.truncate-button .button:after {
+.truncate-button .button:after,
+.sort-button .button:after {
   border-top-color: #a51b00;
 }
 .heslo-tools .share.active,
-.truncate-button.active {
+.truncate-button.active,
+.sort-button.active {
   background: #fff;
   border: 1px solid #fae1d9;
 }
 .heslo-tools .share.active .dropdown,
-.truncate-button.active .dropdown {
+.truncate-button.active .dropdown,
+.sort-button.active .dropdown {
   background: #fae1d9;
   border: 1px solid #fae1d9;
   width: calc(100% + 2px);
   left: -1px;
 }
 .heslo-tools .share.active .dropdown li,
-.truncate-button .dropdown li {
+.truncate-button .dropdown li,
+.sort-button .dropdown li {
   color: #a51b00;
   cursor: pointer;
 }
 .heslo-tools .share.active .dropdown li:hover a,
-.truncate-button .dropdown li:hover {
+.truncate-button .dropdown li:hover,
+.sort-button .dropdown li:hover {
   background: #fff;
   text-decoration: none !important;
 }
