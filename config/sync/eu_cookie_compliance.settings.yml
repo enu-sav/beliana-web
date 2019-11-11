@@ -60,3 +60,10 @@ exclude_uid_1: false
 better_support_for_screen_readers: false
 fixed_top_position: false
 popup_info_template: legacy
+cookie_categories: ''
+enable_save_preferences_button: true
+save_preferences_button_label: 'Save preferences'
+accept_all_categories_button_label: 'Accept all cookies'
+fix_first_cookie_category: true
+select_all_categories_by_default: false
+withdraw_button_on_info_popup: false

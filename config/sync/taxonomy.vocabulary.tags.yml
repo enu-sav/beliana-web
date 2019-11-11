@@ -7,5 +7,4 @@ _core:
 name: Značky
 vid: tags
 description: 'Použite značky na zoskupenie článkov do kategórií podľa podobných tém.'
-hierarchy: 0
 weight: 0

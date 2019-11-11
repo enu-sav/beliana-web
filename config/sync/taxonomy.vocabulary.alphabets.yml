@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Abecedné zaradenie'
 vid: alphabets
 description: ''
-hierarchy: 1
 weight: 0

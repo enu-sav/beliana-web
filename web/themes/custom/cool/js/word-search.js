@@ -48,44 +48,65 @@
       $('.truncate-button').once().on('click', function () {
         $(this).toggleClass('active');
       });
+
+      $('.sort-button').once().on('click', function () {
+        $(this).toggleClass('active');
+      });
     }
   };
 
   Drupal.behaviors.clickChangeFormatButton = {
     attach: function (context, settings) {
-      var labelMap = {short: 'Začiatok hesla', full: 'Celé heslo'};
+      $('.zoznam-tools .truncate-button').on('click', 'li', function () {
+        var $item = $(this);
 
-      $('.word-full').on('click', function () {
-        $('.views-element-container .heslo').removeClass('truncate-wrapper');
-        $('.views-element-container .heslo #gradient').css('display', 'none');
-        $('.truncate-button .label').html(labelMap.full + '<b class="button"></b>');
+        if ($item.hasClass('word-short')) {
+          $('.views-element-container .heslo').each(function () {
+            if ($(this).height() > 120) {
+              $(this).addClass('truncate-wrapper');
+              $(this).children('#gradient').css('display', 'block');
+            }
+          });
+        }
+        else {
+          $('.views-element-container .heslo').removeClass('truncate-wrapper');
+          $('.views-element-container .heslo #gradient').css('display', 'none');
+        }
+
+        $('.truncate-button .label').html($item.text() + '<b class="button"></b>');
         $('.truncate-button').toggleClass('active');
 
-        Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', labelMap.full, 1);
+        Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', $item.attr('class'), 1);
       });
 
-      $('.word-short').on('click', function () {
-        $('.views-element-container .heslo').each(function () {
-          if ($(this).height() > 120) {
-            $(this).addClass('truncate-wrapper');
-            $(this).children('#gradient').css('display', 'block');
-          }
-        });
-        $('.truncate-button .label').html(labelMap.short + '<b class="button"></b>');
-        $('.truncate-button').toggleClass('active');
+      $('.zoznam-tools .sort-button').on('click', 'li', function () {
+        var $item = $(this);
 
-        Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', labelMap.short, 1);
+        $('.sort-button .label').html($item.text() + '<b class="button"></b>');
+        $('.sort-button').toggleClass('active');
+
+        Drupal.behaviors.onLoadTrigger.setCookie('word_search_sort', $item.attr('class'), 1);
       });
     }
   };
 
   Drupal.behaviors.onLoadTrigger = {
     attach: function (context, settings) {
-      if (Drupal.behaviors.onLoadTrigger.getCookie('word_search_label') === 'Celé heslo') {
-        $('.word-full').click();
-      } else {
-        $('.word-short').click();
+      var self = this;
+
+      if (self.getCookie('word_search_label').length) {
+        $('.truncate-button .' + self.getCookie('word_search_label')).click();
       }
+      else {
+        $('.truncate-button .word-short').click();
+      }
+
+      // if (self.getCookie('word_search_sort').length) {
+      //   $('.sort-button .' + self.getCookie('word_search_sort')).click();
+      // }
+      // else {
+      //   $('.sort-button .alphabet-asc').click();
+      // }
     },
     setCookie: function (name, value, days) {
       var expires = '';

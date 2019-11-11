@@ -1,0 +1,15 @@
+uuid: 001457a1-1df6-481a-a9ee-c1bdcfd61c88
+langcode: sk
+status: true
+dependencies: {  }
+name: sidebar
+label: SIdebar
+effects:
+  bac9c88b-d50d-4cef-861a-062298a8efe0:
+    uuid: bac9c88b-d50d-4cef-861a-062298a8efe0
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: true
