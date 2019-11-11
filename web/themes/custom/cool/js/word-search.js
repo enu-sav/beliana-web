@@ -94,7 +94,7 @@
     attach: function (context, settings) {
       var self = this;
 
-      if (self.getCookie('word_search_label').length) {
+      if (self.getCookie('word_search_label') != null) {
         $('.truncate-button .' + self.getCookie('word_search_label')).click();
       }
       else {
