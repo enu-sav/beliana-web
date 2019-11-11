@@ -15,6 +15,7 @@ dependencies:
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
+    - image.style.sidebar
     - media_entity.bundle.image
   module:
     - beliana_daily
@@ -37,7 +38,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: sidebar
       image_link: content
     third_party_settings: {  }
     type: image

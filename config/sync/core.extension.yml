@@ -1,5 +1,7 @@
 module:
   admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
+  admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   automated_cron: 0
   basic_auth: 0
@@ -82,6 +84,7 @@ module:
   ultimate_cron: 0
   user: 0
   views_infinite_scroll: 0
+  views_natural_sort: 0
   views_ui: 0
   menu_link_content: 1
   views: 10

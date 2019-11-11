@@ -348,6 +348,9 @@ body.page-node-type-word .similar-words .view-word-search-page {
   margin-left: 32px;
   margin-top: 10px;
 }
+body.page-node-type-word .similar-words .view-word-search-page .views-exposed-form {
+  display: none;
+}
 body.page-node-type-word .similar-words .view-word-search-page .views-row {
   margin: 0;
 }
@@ -1141,8 +1144,11 @@ article .field--name-body table tr td {
 }
 
 .zoznam-tools {
-  margin-top: -30px;
+  margin-top: 0 /*-30px*/;
   color: #999;
+}
+.zoznam-tools .item:last-of-type {
+  display: none;
 }
 
 .truncate-button,
