@@ -4,6 +4,7 @@
   src: local('[smiley]'), url('../fonts/stix/regular/stixgeneral-webfont.woff') format('woff'), url('../fonts/stix/regular/stixgeneral-webfont.ttf') format('truetype'), url('../fonts/stix/regular/stixgeneral-webfont.svg#webfontZXtFAA5Q') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'STIXGeneral';
@@ -11,6 +12,7 @@
   src: local('[smiley]'), url('../fonts/stix/italic/stixgeneralitalic-webfont.woff') format('woff'), url('../fonts/stix/italic/stixgeneralitalic-webfont.ttf') format('truetype'), url('../fonts/stix/italic/stixgeneralitalic-webfont.svg#webfont2oJeLJIt') format('svg');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'STIXGeneral';
@@ -18,6 +20,7 @@
   src: local('[smiley]'), url('../fonts/stix/bold/stixgeneralbol-webfont.woff') format('woff'), url('../fonts/stix/bold/stixgeneralbol-webfont.ttf') format('truetype'), url('../fonts/stix/bold/stixgeneralbol-webfont.svg#webfontwFpnxWyx') format('svg');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'STIXGeneral';
@@ -25,6 +28,7 @@
   src: local('[smiley]'), url('../fonts/stix/bolita/stixgeneralbolita-webfont.woff') format('woff'), url('../fonts/stix/bolita/stixgeneralbolita-webfont.ttf') format('truetype'), url('../fonts/stix/bolita/stixgeneralbolita-webfont.svg#webfontSsfHxKRo') format('svg');
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
 }
 
 /*@font-face {
