@@ -59,7 +59,7 @@ field_settings:
     label: 'Text hesla'
     datasource_id: 'entity:node'
     property_path: body
-    type: solr_string_ngram
+    type: solr_text_ngram
     dependencies:
       config:
         - field.storage.node.body
@@ -89,7 +89,7 @@ field_settings:
     label: 'Kategórie » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_categories:entity:parent:entity:name'
-    type: solr_string_ngram
+    type: solr_text_ngram
     boost: !!float 2
     dependencies:
       config:
@@ -176,7 +176,7 @@ field_settings:
     label: Nadpis
     datasource_id: 'entity:node'
     property_path: title
-    type: solr_string_ngram
+    type: solr_text_ngram
     boost: !!float 21
   uid:
     label: UID
