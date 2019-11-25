@@ -13,6 +13,7 @@ dependencies:
     - search_api.server.solr
   module:
     - taxonomy
+    - search_api_solr
     - media_entity
     - search_api
     - node
@@ -58,8 +59,7 @@ field_settings:
     label: 'Text hesla'
     datasource_id: 'entity:node'
     property_path: body
-    type: text
-    boost: !!float 13
+    type: solr_string_ngram
     dependencies:
       config:
         - field.storage.node.body
@@ -78,7 +78,7 @@ field_settings:
     label: 'Kategórie » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_categories:entity:name'
-    type: text
+    type: solr_string_ngram
     boost: !!float 3
     dependencies:
       config:
@@ -89,7 +89,7 @@ field_settings:
     label: 'Kategórie » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_categories:entity:parent:entity:name'
-    type: text
+    type: solr_string_ngram
     boost: !!float 2
     dependencies:
       config:
@@ -165,16 +165,6 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
-  rendered_item:
-    label: 'Rendered HTML output'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        anonymous: anonymous
-      view_mode:
-        'entity:node':
-          word: default
   status:
     label: Status
     datasource_id: 'entity:node'
@@ -186,7 +176,7 @@ field_settings:
     label: Nadpis
     datasource_id: 'entity:node'
     property_path: title
-    type: text
+    type: solr_string_ngram
     boost: !!float 21
   uid:
     label: UID
@@ -254,7 +244,6 @@ processor_settings:
       - field_date
       - media_alt
       - media_title
-      - rendered_item
       - title
     weights:
       preprocess_index: -49
@@ -265,15 +254,10 @@ processor_settings:
     fields:
       - alphabet_name
       - alphabet_parent_name
-      - body
       - category_description
-      - category_name
-      - category_parent_name
       - field_date
       - media_alt
       - media_title
-      - rendered_item
-      - title
     stopwords:
       - a
       - an
@@ -325,7 +309,6 @@ processor_settings:
       - field_date
       - media_alt
       - media_title
-      - rendered_item
       - title
     weights:
       preprocess_index: -48

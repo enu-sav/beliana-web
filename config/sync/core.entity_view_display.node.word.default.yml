@@ -49,7 +49,7 @@ content:
     type: string
     region: content
   field_meta_tags:
-    weight: 6
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -67,11 +67,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  similar_words:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_alphabet: true
   field_author_name: true
@@ -80,4 +75,5 @@ hidden:
   field_sort: true
   field_table_weight: true
   langcode: true
+  similar_words: true
   year_by_date: true
