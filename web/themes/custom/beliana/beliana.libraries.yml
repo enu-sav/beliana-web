@@ -4,6 +4,7 @@ theme:
     theme:
       css/fonts.css: {}
       css/override.css: {}
+      'https://use.typekit.net/ial0koy.css': { type: external }
   js:    
     js/libs/exif-js/exif.js: {}
     js/libs/exif2css/dist/exif2css.js: {}
