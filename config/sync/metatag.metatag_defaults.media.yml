@@ -1,0 +1,8 @@
+uuid: ff524d52-854e-47b6-851b-c3fc8403fda0
+langcode: sk
+status: true
+dependencies: {  }
+id: media
+label: Médiá
+tags:
+  robots: 'noindex, nofollow, noarchive, noydir'

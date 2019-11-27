@@ -1,0 +1,8 @@
+uuid: 99135f6b-7b26-4bd8-bd9d-b3e60af93549
+langcode: sk
+status: true
+dependencies: {  }
+id: taxonomy_term__alphabets
+label: 'Termín taxonómie: Abecedné zaradenie'
+tags:
+  robots: 'follow, noindex'
