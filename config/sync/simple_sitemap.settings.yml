@@ -1,6 +1,6 @@
 max_links: 2000
 cron_generate: true
-cron_generate_interval: 168
+cron_generate_interval: 24
 generate_duration: 15000
 remove_duplicates: false
 skip_untranslated: true
@@ -13,3 +13,4 @@ enabled_entity_types:
 _core:
   default_config_hash: FoTCiVMOlTpj9EU5bUJB7lS8JK2gnnvqh-AdIC0ktBQ
 langcode: sk
+xsl: true
