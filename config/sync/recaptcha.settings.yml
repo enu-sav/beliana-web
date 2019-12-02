@@ -6,8 +6,6 @@ widget:
   theme: light
   type: image
   size: ''
-  tabindex: 0
+  tabindex: null
   noscript: false
-_core:
-  default_config_hash: eKR4FfUD7Cp3bXamsCz6GAxh0PCLIZNMa65y2kChIh0
 langcode: sk
