@@ -44,7 +44,6 @@ module:
   link: 0
   locale: 0
   mathjax: 0
-  matomo: 0
   media_entity: 0
   media_entity_browser: 0
   media_entity_image: 0

@@ -4,14 +4,23 @@
  * @file
  * Functions to support theming in the beliana theme.
  */
+
 use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_HOOK().
  */
-function beliana_preprocess_region(&$vars) {
-  if (in_array($vars['region'], ['footer_left', 'footer_center'])) {
-    $vars['attributes']['class'][] = str_replace('_', '-', $vars['region']);
+function beliana_preprocess_html(&$variables) {
+  $config = \Drupal::config('matomo.settings');
+  $variables['matomo'] = ['site_id' => $config->get('matomo_site_id', 1)];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function beliana_preprocess_region(&$variables) {
+  if (in_array($variables['region'], ['footer_left', 'footer_center'])) {
+    $variables['attributes']['class'][] = str_replace('_', '-', $variables['region']);
   }
 }
 
@@ -20,15 +29,17 @@ function beliana_preprocess_region(&$vars) {
  */
 function beliana_preprocess_media(&$variables) {
   $media = $variables['elements']['#media'];
-
   $entity_ids = Drupal::service('entity.query')->get('node')
-      ->condition('type', 'word')
-      ->condition('field_images', [$media->id()], 'IN')
-      ->execute();
+    ->condition('type', 'word')
+    ->condition('field_images', [$media->id()], 'IN')
+    ->execute();
 
   if (!empty($entity_ids)) {
-    $variables['node'] = \Drupal::entityManager()->getStorage('node')->load(reset($entity_ids));    
-    $variables['back_url'] = Url::fromRoute('entity.node.canonical', ['node' => $variables['node']->id()], ['absolute' => 'true'])->toString();
+    $variables['node'] = \Drupal::entityManager()
+      ->getStorage('node')
+      ->load(reset($entity_ids));
+    $variables['back_url'] = Url::fromRoute('entity.node.canonical', ['node' => $variables['node']->id()], ['absolute' => 'true'])
+      ->toString();
   }
 }
 
@@ -37,10 +48,13 @@ function beliana_preprocess_media(&$variables) {
  */
 function beliana_preprocess_views_view(&$variables) {
   $view = $variables['view'];
-  
   $variables['label'] = ['#markup' => $view->getTitle()];
 
-  if (in_array($view->id(), ['most_visited_content', 'content_recent', 'today'])) {
+  if (in_array($view->id(), [
+    'most_visited_content',
+    'content_recent',
+    'today',
+  ])) {
     $variables['#attached']['library'][] = 'cool/facets';
   }
 }
@@ -49,33 +63,32 @@ function beliana_preprocess_views_view(&$variables) {
  * Implements template_preprocess_facets_item_list().
  */
 function beliana_preprocess_facets_item_list(&$variables) {
-  if(!empty($variables['facet'])){
-    
-    switch($variables['facet']->id()) {
+  if (!empty($variables['facet'])) {
+    switch ($variables['facet']->id()) {
       case 'alphabet':
         foreach ($variables['items'] as &$item) {
           $options = $item['value']['#url']->getOptions();
 
           // remove search text query from facet link
-          if(isset($options['query']['text'])){
+          if (isset($options['query']['text'])) {
             unset($options['query']['text']);
           }
 
-          $item['value']['#url']->setOptions($options);   
-         }
+          $item['value']['#url']->setOptions($options);
+        }
         break;
       case 'kategorie':
-        foreach ($variables['items'] as &$item) {    
+        foreach ($variables['items'] as &$item) {
           $collapse = TRUE;
 
-//          if(isset($item['value']['#attributes']['class'])){
-//            if($item['value']['#attributes']['class'][0] == 'is-active'){
-//              $item['attributes']->addClass('facet-item--active');
-//              $collapse = FALSE;
-//            }
-//          }
+          //          if(isset($item['value']['#attributes']['class'])){
+          //            if($item['value']['#attributes']['class'][0] == 'is-active'){
+          //              $item['attributes']->addClass('facet-item--active');
+          //              $collapse = FALSE;
+          //            }
+          //          }
 
-          if($item['attributes']->hasClass('facet-item--expanded') && !$item['attributes']->hasClass('facet-item--active-trail') && $collapse){
+          if ($item['attributes']->hasClass('facet-item--expanded') && !$item['attributes']->hasClass('facet-item--active-trail') && $collapse) {
             $item['attributes']->removeClass('facet-item--expanded');
             $item['attributes']->addClass('facet-item--collapsed');
           }
@@ -83,5 +96,4 @@ function beliana_preprocess_facets_item_list(&$variables) {
         break;
     }
   }
-  
 }
