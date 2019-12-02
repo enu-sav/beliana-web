@@ -2,10 +2,12 @@ theme:
   version: 1.x
   css:
     theme:
+      'https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext&display=swap': { type: external }
       css/normalize.css: {}
       css/responsive-nav.css: {}
       css/nav.css: {}
       css/main.css: {}
+      css/no-script.css: {}
   js:
     js/jquery.collapse.js: {}
     js/jquery.selectric.min.js: {}
@@ -29,7 +31,7 @@ facets:
 
 word:
   version: 1.x
-  js: 
+  js:
     js/word.js: {}
   dependencies:
     - core/jquery

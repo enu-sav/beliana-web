@@ -34,45 +34,6 @@ function cool_preprocess_node(&$vars) {
 /**
  * Implements hook_preprocess_HOOK().
  *
- * Attach Google font and noscript to page.
- */
-function cool_preprocess_html(&$vars) {
-  // Add Google font.
-  $vars['#attached']['html_head'][] = [
-    [
-      '#type' => 'html_tag',
-      '#tag' => 'link',
-      '#attributes' => [
-        'href' => 'https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext',
-        'rel' => 'stylesheet',
-        'type' => 'text/css',
-      ],
-    ],
-    'link',
-  ];
-
-  // Set noscript.
-  $no_script_css = [
-    '#type' => 'html_tag',
-    '#tag' => 'link',
-    '#attributes' => [
-      'href' => '/' . drupal_get_path('theme', 'cool') . '/css/no-script.css',
-      'rel' => 'stylesheet',
-    ],
-  ];
-  $vars['#attached']['html_head'][] = [
-    [
-      '#type' => 'html_tag',
-      '#tag' => 'noscript',
-      '#value' => \Drupal::service('renderer')->render($no_script_css),
-    ],
-    'noscript',
-  ];
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- *
  * Add classes to facet alphabet block and display its title on front page.
  */
 function cool_preprocess_block(&$vars) {

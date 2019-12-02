@@ -5,20 +5,22 @@ theme:
       css/fonts.css: {}
       css/override.css: {}
       'https://use.typekit.net/ial0koy.css': { type: external }
-  js:    
+  js:
     js/libs/exif-js/exif.js: {}
     js/libs/exif2css/dist/exif2css.js: {}
     js/override.js: {}
   dependencies:
-    - core/drupal
     - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
 
 paragraph.accordion:
   version: VERSION
   css:
     theme:
       css/paragraph.accordion.css: {}
-  js:    
+  js:
     js/paragraph.accordion.js: {}
   dependencies:
     - core/drupal
