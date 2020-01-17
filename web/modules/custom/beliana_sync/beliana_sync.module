@@ -27,15 +27,29 @@ function beliana_sync_entity_presave(EntityInterface $entity) {
  *   ID of alphabet group taxonomy term.
  */
 function _assign_alphabet_group($title) {
+  $entity_manager = \Drupal::entityTypeManager();
   // We need to compare only first 4 characters of the lowercase string.
   $string_to_compare = mb_substr($title, 0, 4);
   $string_to_compare = mb_strtolower($string_to_compare);
 
-  $term = \Drupal::entityQuery('taxonomy_term')
-    ->condition('field_last', $string_to_compare, '>')
-    ->sort('name', 'ASC')
-    ->range(0, 1)
-    ->execute();
+  $collator = collator_create("sk_SK");
+  $terms = $entity_manager->getStorage('taxonomy_term')
+    ->loadTree('alphabets');
 
-  return reset($term);
+  foreach ($terms as $term) {
+    if ($term->depth == 1) {
+      $term_data[$term->name] = $term->tid;
+    }
+  }
+
+  foreach ($term_data as $key => $val) {
+    if ($collator->compare(mb_strtolower(explode(" ", $key)[0]), $string_to_compare) > 0) {
+      break;
+    }
+
+    $hkey = $key;
+    $htid = $val;
+  }
+
+  return $htid;
 }
