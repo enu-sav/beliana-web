@@ -2,8 +2,12 @@ uuid: 829e22dd-00f7-475a-92f5-e387ba9a1c41
 langcode: sk
 status: true
 dependencies:
+  config:
+    - taxonomy.vocabulary.alphabets
+    - taxonomy.vocabulary.categories
   module:
     - node
+    - taxonomy
     - user
 _core:
   default_config_hash: fUDNcSYKNw6cTMPsX3G9VhsUGov5yUe6_TBHbcnZHyo
@@ -145,16 +149,56 @@ display:
           id: node_bulk_form
           table: node
           field: node_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
           label: ''
           exclude: false
           alter:
             alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
           element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          action_title: Akcia
+          include_exclude: include
+          selected_actions:
+            - node_publish_action
+            - node_save_action
+            - node_unpublish_action
           plugin_id: node_bulk_form
           entity_type: node
         title:
@@ -242,25 +286,6 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
-        name:
-          id: name
-          table: users_field_data
-          field: name
-          relationship: uid
-          label: Autor
-          exclude: false
-          alter:
-            alter_text: false
-          element_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          plugin_id: field
-          type: user_name
-          entity_type: user
-          entity_field: name
         status:
           id: status
           table: node_field_data
@@ -305,6 +330,124 @@ display:
           plugin_id: field
           entity_type: node
           entity_field: changed
+        term_node_tid:
+          id: term_node_tid
+          table: node_field_data
+          field: term_node_tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Abecedné zaradenie'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: separator
+          separator: ', '
+          link_to_taxonomy: true
+          limit: true
+          vids:
+            alphabets: alphabets
+            categories: '0'
+            licenses: '0'
+            tags: '0'
+          entity_type: node
+          plugin_id: taxonomy_index_tid
+        term_node_tid_1:
+          id: term_node_tid_1
+          table: node_field_data
+          field: term_node_tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Kategória
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          type: ul
+          separator: ;
+          link_to_taxonomy: true
+          limit: true
+          vids:
+            categories: categories
+            alphabets: '0'
+            licenses: '0'
+            tags: '0'
+          entity_type: node
+          plugin_id: taxonomy_index_tid
         operations:
           id: operations
           table: node
@@ -467,7 +610,7 @@ display:
             operator_id: title_op
             label: Nadpis
             description: ''
-            use_operator: false
+            use_operator: true
             operator: title_op
             identifier: title
             required: false
@@ -493,27 +636,66 @@ display:
           plugin_id: string
           entity_type: node
           entity_field: title
-        langcode:
-          id: langcode
-          table: node_field_data
-          field: langcode
+        field_sort_value:
+          id: field_sort_value
+          table: node__field_sort
+          field: field_sort_value
           relationship: none
           group_type: group
           admin_label: ''
-          operator: in
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_sort_value_op
+            label: 'Na zoradenie'
+            description: ''
+            use_operator: true
+            operator: field_sort_value_op
+            identifier: field_sort_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
+        term_node_tid_depth:
+          id: term_node_tid_depth
+          table: node_field_data
+          field: term_node_tid_depth
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
           value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: langcode_op
-            label: Language
+            operator_id: term_node_tid_depth_op
+            label: 'Abecedné zaradenie'
             description: ''
             use_operator: false
-            operator: langcode_op
-            identifier: langcode
+            operator: term_node_tid_depth_op
+            identifier: term_node_tid_depth
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
@@ -531,9 +713,62 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: language
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: alphabets
+          hierarchy: true
+          error_message: true
+          depth: 2
           entity_type: node
-          entity_field: langcode
+          plugin_id: taxonomy_index_tid_depth
+        term_node_tid_depth_1:
+          id: term_node_tid_depth_1
+          table: node_field_data
+          field: term_node_tid_depth
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: term_node_tid_depth_1_op
+            label: Kategória
+            description: ''
+            use_operator: false
+            operator: term_node_tid_depth_1_op
+            identifier: term_node_tid_depth_1
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: categories
+          hierarchy: true
+          error_message: true
+          depth: 3
+          entity_type: node
+          plugin_id: taxonomy_index_tid_depth
       sorts: {  }
       title: Obsah
       empty:
@@ -559,6 +794,17 @@ display:
         groups:
           1: AND
       display_extenders: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Zobrazujem @start - @end z @total, na stranu @per_page, strana @current_page z @page_count'
+          plugin_id: result
     display_plugin: default
     display_title: Master
     id: default

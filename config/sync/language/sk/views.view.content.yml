@@ -22,8 +22,6 @@ display:
           label: Nadpis
         type:
           label: 'Typ obsahu'
-        name:
-          label: Autor
         status:
           label: Stav
         changed:
@@ -47,9 +45,6 @@ display:
         title:
           expose:
             label: Nadpis
-        langcode:
-          expose:
-            label: Jazyk
       title: Obsah
       empty:
         area_text_custom:
