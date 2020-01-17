@@ -110,7 +110,7 @@ class RsSyncResource extends ResourceBase {
       $node->field_author_name = $data['menoautora'];
     }
 
-    // set table 
+    // set table
     $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
     $node->field_table_weight = $data['table'][1];
 
@@ -124,7 +124,7 @@ class RsSyncResource extends ResourceBase {
     }
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'full_html'];
-    $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
+    $node->field_alphabet = _assign_alphabet_group($data['sort']);
     \Drupal::service('event_dispatcher')
       ->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $data));
     $node->save();
@@ -145,7 +145,7 @@ class RsSyncResource extends ResourceBase {
   public function downloadMedia(array $images) {
     $taxonomy_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $local_fids = [];
-    $date = date('Y-m-d');    
+    $date = date('Y-m-d');
     foreach ($images as $image) {
       $file_OK = FALSE;
       $link_OK = FALSE;
@@ -160,10 +160,10 @@ class RsSyncResource extends ResourceBase {
           ->realpath('public://') . '/' . $file_dir;
         file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
         $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
-        if ($file !== FALSE) $file_OK = TRUE; 
+        if ($file !== FALSE) $file_OK = TRUE;
       } else { // we got link to external image
         $link_OK = TRUE;
-      } 
+      }
 
       if ($file_OK or $link_OK) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
@@ -189,8 +189,8 @@ class RsSyncResource extends ResourceBase {
         ]);
 
         if ( $file_OK === TRUE ) {
-          $media->set('field_image', [ 
-            'target_id' => $file->id(), 
+          $media->set('field_image', [
+            'target_id' => $file->id(),
             'alt' =>  $image['alternativny_text'],
           ]);
         } else { // we got link to external image
@@ -258,17 +258,17 @@ class RsSyncResource extends ResourceBase {
   // get the topmost parent. We have just a 3-level hierarchy
   public function getTopParent($term) {
     $parents = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($term->id());
-    if (sizeof($parents) == 0) 
+    if (sizeof($parents) == 0)
       return $term;
     $parent = reset($parents);
 
     $parents1 = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($parent->id());
-    if (sizeof($parents1) == 0) 
+    if (sizeof($parents1) == 0)
       return $parent;
     $parent1 = reset($parents1);
 
     $parents2 = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($parent1->id());
-    if (sizeof($parents2) == 0) 
+    if (sizeof($parents2) == 0)
       return $parent1;
   }
 
@@ -303,8 +303,8 @@ class RsSyncResource extends ResourceBase {
       foreach ($tnames as $tname) {
         // check if the category $tname exists, create if not
         $cterm = $this->selectItem($tname, $tnames[0]);
-        if(!$cterm) { // create a new item 
-          if ($parentName != NULL) { 
+        if(!$cterm) { // create a new item
+          if ($parentName != NULL) {
             $parentId = $this->getParentId($parentName, $tnames[0]);
             $term = Term::create([
               'name' => $tname,
@@ -318,7 +318,7 @@ class RsSyncResource extends ResourceBase {
             ])->save();
           }
           $cterm = $this->selectItem($tname, $parentName);
-        }  
+        }
         $parentName = $tname;
 	// if the full category hierarchy should be stored
         //$catlist[] = $cterm;
@@ -382,29 +382,6 @@ class RsSyncResource extends ResourceBase {
   }
 
   /**
-   * Extract alphabet group from title.
-   *
-   * @param string $title
-   *   Title of the node.
-   *
-   * @return int
-   *   ID of alphabet group taxonomy term.
-   */
-  public function assignAlphabetGroup($title) {
-    // We need to compare only first 4 characters of the lowercase string.
-    $string_to_compare = mb_substr($title, 0, 4);
-    $string_to_compare = mb_strtolower($string_to_compare);
-
-    $term = \Drupal::entityQuery('taxonomy_term')
-      ->condition('field_last', $string_to_compare, '>')
-      ->sort('name', 'ASC')
-      ->range(0, 1)
-      ->execute();
-
-    return reset($term);
-  }
-
-  /**
    * Update existing article.
    *
    * @param int $nid
@@ -430,7 +407,7 @@ class RsSyncResource extends ResourceBase {
     $node->field_date = $data['dates'];
     $node->field_sort = $data['sort'];
     $node->field_info_published = $data['info_published'];
-    // set table 
+    // set table
     $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
     $node->field_table_weight = $data['table'][1];
     if (isset($data['menoautora'])) {
@@ -454,7 +431,7 @@ class RsSyncResource extends ResourceBase {
     else {
       $node->set('field_images', []);
     }
-    $node->field_alphabet = $this->assignAlphabetGroup($data['sort']);
+    $node->field_alphabet = _assign_alphabet_group($data['sort']);
     \Drupal::service('event_dispatcher')
       ->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $data));
     $node->save();

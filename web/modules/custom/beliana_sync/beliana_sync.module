@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function beliana_sync_entity_presave(EntityInterface $entity) {
+  switch ($entity->bundle()) {
+    case 'word':
+      $entity->set('field_alphabet', _assign_alphabet_group($entity->get('field_sort')->value));
+      break;
+  }
+}
+
+/**
+ * Extract alphabet group from title.
+ *
+ * @param string $title
+ *   Title of the node.
+ *
+ * @return int
+ *   ID of alphabet group taxonomy term.
+ */
+function _assign_alphabet_group($title) {
+  // We need to compare only first 4 characters of the lowercase string.
+  $string_to_compare = mb_substr($title, 0, 4);
+  $string_to_compare = mb_strtolower($string_to_compare);
+
+  $term = \Drupal::entityQuery('taxonomy_term')
+    ->condition('field_last', $string_to_compare, '>')
+    ->sort('name', 'ASC')
+    ->range(0, 1)
+    ->execute();
+
+  return reset($term);
+}
