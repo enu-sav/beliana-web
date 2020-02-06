@@ -3,18 +3,14 @@ langcode: sk
 status: true
 dependencies:
   config:
-    - field.storage.node.field_date
     - field.storage.node.field_alphabet
     - field.storage.node.field_categories
     - field.storage.node.field_sort
-    - field.storage.node.field_images
-    - field.storage.media.field_image
     - field.storage.node.body
     - search_api.server.solr
   module:
     - taxonomy
     - search_api_solr
-    - media_entity
     - search_api
     - node
 id: word_solr_index
@@ -59,7 +55,7 @@ field_settings:
     label: 'Text hesla'
     datasource_id: 'entity:node'
     property_path: body
-    type: solr_text_ngram
+    type: text
     dependencies:
       config:
         - field.storage.node.body
@@ -113,51 +109,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_categories
-  field_date:
-    label: Dátum
-    datasource_id: 'entity:node'
-    property_path: field_date
-    type: text
-    boost: 0.8
-    dependencies:
-      config:
-        - field.storage.node.field_date
   field_sort:
     label: 'Na zoradenie'
     datasource_id: 'entity:node'
     property_path: field_sort
-    type: text
-    boost: !!float 0
+    type: string
     dependencies:
       config:
         - field.storage.node.field_sort
-  media_alt:
-    label: 'Obrázky » Médiá » Obrázok » Alternative text'
-    datasource_id: 'entity:node'
-    property_path: 'field_images:entity:field_image:alt'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_images
-        - field.storage.media.field_image
-      module:
-        - media_entity
-  media_title:
-    label: 'Obrázky » Médiá » Obrázok » Nadpis'
-    datasource_id: 'entity:node'
-    property_path: 'field_images:entity:field_image:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_images
-        - field.storage.media.field_image
-      module:
-        - media_entity
-  nid:
-    label: ID
-    datasource_id: 'entity:node'
-    property_path: nid
-    type: integer
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -176,7 +135,7 @@ field_settings:
     label: Nadpis
     datasource_id: 'entity:node'
     property_path: title
-    type: solr_text_ngram
+    type: text
     boost: !!float 21
   uid:
     label: UID
@@ -217,9 +176,6 @@ processor_settings:
       - category_description
       - category_name
       - category_parent_name
-      - field_date
-      - media_alt
-      - media_title
       - title
     title: true
     alt: true
@@ -241,9 +197,6 @@ processor_settings:
       - category_description
       - category_name
       - category_parent_name
-      - field_date
-      - media_alt
-      - media_title
       - title
     weights:
       preprocess_index: -49
@@ -255,9 +208,6 @@ processor_settings:
       - alphabet_name
       - alphabet_parent_name
       - category_description
-      - field_date
-      - media_alt
-      - media_title
     stopwords:
       - a
       - an
@@ -306,9 +256,6 @@ processor_settings:
       - category_description
       - category_name
       - category_parent_name
-      - field_date
-      - media_alt
-      - media_title
       - title
     weights:
       preprocess_index: -48
