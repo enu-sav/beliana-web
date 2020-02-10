@@ -437,6 +437,9 @@ class RsSyncResource extends ResourceBase {
 
     \Drupal::logger('beliana_sync')
       ->notice("Aktualizované heslo '" . $data['title'] . " (patch)");
+
+    $event_dispatcher = \Drupal::service('event_dispatcher');
+
     $node = Node::load($nid);
     $node->title = $data['title'];
     $modified_body = $this->downloadBodyImages($data['body']);
@@ -477,11 +480,9 @@ class RsSyncResource extends ResourceBase {
       }
     }
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
-    \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $data));
+    $event_dispatcher->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $data));
     $node->save();
-    \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::POST_NODE_UPDATE, new PostNodeUpdateEvent($node, $data));
+    $event_dispatcher->dispatch(BelianaSyncEvents::POST_NODE_UPDATE, new PostNodeUpdateEvent($node, $data));
     return new ResourceResponse();
   }
 
