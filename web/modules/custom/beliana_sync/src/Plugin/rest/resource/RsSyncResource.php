@@ -97,21 +97,29 @@ class RsSyncResource extends ResourceBase {
     if (!$this->currentUser->hasPermission('create article content')) {
       throw new AccessDeniedHttpException();
     }
-    \Drupal::logger('beliana_sync')->notice("Nové heslo '".$data['title']." (post)");
+    \Drupal::logger('beliana_sync')
+      ->notice("Nové heslo '" . $data['title'] . " (post)");
+
+    $event_dispatcher = \Drupal::service('event_dispatcher');
+
     $node = Node::create([
       'type' => 'word',
       'title' => $data['title'],
       'field_date' => $data['dates'],
       'field_sort' => $data['sort'],
-      'field_info_published' => $data['info_published']
+      'field_info_published' => $data['info_published'],
     ]);
 
-    if (isset($data['menoautora'])) {
-      $node->field_author_name = $data['menoautora'];
+    if (isset($data['autor'])) {
+      $term = $this->getAuthorTerm($data);
+      $node->field_autor = $term->id();
     }
 
     // set table
-    $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
+    $node->field_table = [
+      'value' => $data['table'][0],
+      'format' => 'full_html',
+    ];
     $node->field_table_weight = $data['table'][1];
 
     // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
@@ -119,17 +127,18 @@ class RsSyncResource extends ResourceBase {
     $node->field_categories = $this->getCategories($data['category']);
 
     $local_fids = $this->downloadMedia($data['images']);
+
     if (!empty($local_fids)) {
       $node->field_images = $local_fids;
     }
+
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'full_html'];
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
-    \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $data));
+    $event_dispatcher->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $data));
     $node->save();
-    \Drupal::service('event_dispatcher')
-      ->dispatch(BelianaSyncEvents::POST_NODE_SAVE, new PostNodeSaveEvent($node, $data));
+    $event_dispatcher->dispatch(BelianaSyncEvents::POST_NODE_SAVE, new PostNodeSaveEvent($node, $data));
+
     return new ResourceResponse($node->id(), 201);
   }
 
@@ -157,11 +166,14 @@ class RsSyncResource extends ResourceBase {
         /** @var \Drupal\file\FileInterface $file */
         $file_dir = $date . '/' . $dir;
         $create_dir = \Drupal::service('file_system')
-          ->realpath('public://') . '/' . $file_dir;
+            ->realpath('public://') . '/' . $file_dir;
         file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
         $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
-        if ($file !== FALSE) $file_OK = TRUE;
-      } else { // we got link to external image
+        if ($file !== FALSE) {
+          $file_OK = TRUE;
+        }
+      }
+      else { // we got link to external image
         $link_OK = TRUE;
       }
 
@@ -188,47 +200,55 @@ class RsSyncResource extends ResourceBase {
           ],
         ]);
 
-        if ( $file_OK === TRUE ) {
+        if ($file_OK === TRUE) {
           $media->set('field_image', [
             'target_id' => $file->id(),
-            'alt' =>  $image['alternativny_text'],
+            'alt' => $image['alternativny_text'],
           ]);
-        } else { // we got link to external image
+        }
+        else { // we got link to external image
           $media->set('field_obrazok_odkaz', [
             'uri' => $image['image_url_web'],
             //'alt' =>  $image['alternativny_text'],
           ]);
         }
 
-        if (isset($image['nazov_diela']))
-          $media->set('field_nazov_diela', [ 'value' => $image['nazov_diela']]);
+        if (isset($image['nazov_diela'])) {
+          $media->set('field_nazov_diela', ['value' => $image['nazov_diela']]);
+        }
 
-        if (isset($image['institucia']))
-          $media->set('field_institucia', [ 'value' => $image['institucia']]);
+        if (isset($image['institucia'])) {
+          $media->set('field_institucia', ['value' => $image['institucia']]);
+        }
 
-        if (isset($image['meno_autora_diela']))
-          $media->set('field_meno_autora_diela', [ 'value' => $image['meno_autora_diela']]);
+        if (isset($image['meno_autora_diela'])) {
+          $media->set('field_meno_autora_diela', ['value' => $image['meno_autora_diela']]);
+        }
 
-        if (isset($image['meno_autora_snimky_diela']))
-          $media->set('field_meno_autora_snimky_diela', [ 'value' => $image['meno_autora_snimky_diela']]);
+        if (isset($image['meno_autora_snimky_diela'])) {
+          $media->set('field_meno_autora_snimky_diela', ['value' => $image['meno_autora_snimky_diela']]);
+        }
 
-        if (isset($image['url_diela_l']))
+        if (isset($image['url_diela_l'])) {
           $media->set('field_url_diela_l', [
             'uri' => $image['url_diela_l'],
-            'title' => parse_url($image['url_diela_l'])['host']
+            'title' => parse_url($image['url_diela_l'])['host'],
           ]);
+        }
 
-        if (isset($image['url_autora_diela_l']))
+        if (isset($image['url_autora_diela_l'])) {
           $media->set('field_url_autora_diela_l', [
             'uri' => $image['url_autora_diela_l'],
-            'title' => parse_url($image['url_autora_diela_l'])['host']
+            'title' => parse_url($image['url_autora_diela_l'])['host'],
           ]);
+        }
 
-        if (isset($image['url_testu_licencie_l']))
+        if (isset($image['url_testu_licencie_l'])) {
           $media->set('field_url_testu_licencie_l', [
             'uri' => $image['url_testu_licencie_l'],
-            'title' => parse_url($image['url_testu_licencie_l'])['host']
+            'title' => parse_url($image['url_testu_licencie_l'])['host'],
           ]);
+        }
 
         $media->save();
         $local_fids[] = $media->id();
@@ -239,17 +259,17 @@ class RsSyncResource extends ResourceBase {
 
   // get parent with a required top parent $parentName
   // we a sure that the right parent exists, so just find it in the array
-  public function getParentId($parentName, $topParentName)
-  {
+  public function getParentId($parentName, $topParentName) {
     $parentList = taxonomy_term_load_multiple_by_name($parentName, 'categories');
-    if (sizeof($parentList) > 1 ) {
-      foreach($parentList as $candidate) {
+    if (sizeof($parentList) > 1) {
+      foreach ($parentList as $candidate) {
         $topParent = $this->getTopParent($candidate);
-        if ( $topParent->getName() === $topParentName){
+        if ($topParent->getName() === $topParentName) {
           return $candidate->id();
         }
       }
-    } else {
+    }
+    else {
       return reset($parentList)->id();
     }
   }
@@ -257,53 +277,66 @@ class RsSyncResource extends ResourceBase {
 
   // get the topmost parent. We have just a 3-level hierarchy
   public function getTopParent($term) {
-    $parents = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($term->id());
-    if (sizeof($parents) == 0)
+    $parents = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadParents($term->id());
+    if (sizeof($parents) == 0) {
       return $term;
+    }
     $parent = reset($parents);
 
-    $parents1 = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($parent->id());
-    if (sizeof($parents1) == 0)
+    $parents1 = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadParents($parent->id());
+    if (sizeof($parents1) == 0) {
       return $parent;
+    }
     $parent1 = reset($parents1);
 
-    $parents2 = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadParents($parent1->id());
-    if (sizeof($parents2) == 0)
+    $parents2 = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadParents($parent1->id());
+    if (sizeof($parents2) == 0) {
       return $parent1;
+    }
   }
 
   // select category from a list of categories with a required top parent $parentName
-  public function selectItem($tname, $parentName)
-  {
+  public function selectItem($tname, $parentName) {
     $terms = taxonomy_term_load_multiple_by_name($tname, 'categories');
-    if (!$terms) return Null;
-    if (sizeof($terms) == 1 and !$parentName)
+    if (!$terms) {
+      return NULL;
+    }
+    if (sizeof($terms) == 1 and !$parentName) {
       return reset($terms);
+    }
     foreach ($terms as $term) {
       $topParent = $this->getTopParent($term);
-      if ($topParent->getName() == $parentName)
+      if ($topParent->getName() == $parentName) {
         return $term;
+      }
     }
     // if a category with the required name does not exist
-    return Null;
+    return NULL;
   }
 
   // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
   // may have multiple values, each having hierarchy starting from parent and separated by ';'
   // two categories with the same name but a different parent are asigned different IDs
-  public function getCategories($datacategory)
-  {
-//\Drupal::logger('beliana_sync')->notice($datacategory[0]);
-    $catlist = array();
+  public function getCategories($datacategory) {
+    //\Drupal::logger('beliana_sync')->notice($datacategory[0]);
+    $catlist = [];
     foreach ($datacategory as $taxo) {
-      $tnames = explode(";",$taxo);
-      if ($tnames[0] === "ignore" ) continue;	// do not create and assign category "ignore"
-      $parentName=Null;
+      $tnames = explode(";", $taxo);
+      if ($tnames[0] === "ignore") {
+        continue;
+      }  // do not create and assign category "ignore"
+      $parentName = NULL;
       // process categories one by one
       foreach ($tnames as $tname) {
         // check if the category $tname exists, create if not
         $cterm = $this->selectItem($tname, $tnames[0]);
-        if(!$cterm) { // create a new item
+        if (!$cterm) { // create a new item
           if ($parentName != NULL) {
             $parentId = $this->getParentId($parentName, $tnames[0]);
             $term = Term::create([
@@ -311,7 +344,8 @@ class RsSyncResource extends ResourceBase {
               'vid' => 'categories',
               'parent' => $parentId,
             ])->save();
-          } else {
+          }
+          else {
             $term = Term::create([
               'name' => $tname,
               'vid' => 'categories',
@@ -320,13 +354,13 @@ class RsSyncResource extends ResourceBase {
           $cterm = $this->selectItem($tname, $parentName);
         }
         $parentName = $tname;
-	// if the full category hierarchy should be stored
+        // if the full category hierarchy should be stored
         //$catlist[] = $cterm;
       }
       // if only the lowest category in the hierarchy should be stored
       $catlist[] = $cterm;
     }
-  return $catlist;
+    return $catlist;
   }
 
   /**
@@ -349,7 +383,8 @@ class RsSyncResource extends ResourceBase {
       ->get('beliana_sync.config')
       ->get('remote_url');
     if (empty($remote_site_url)) {
-      \Drupal::logger('beliana_sync')->critical('Extrakcia obrázkov zlyhala, pretože cesta k RS nie je nastavená');
+      \Drupal::logger('beliana_sync')
+        ->critical('Extrakcia obrázkov zlyhala, pretože cesta k RS nie je nastavená');
       return $body;
     }
     if (!empty($images)) {
@@ -364,7 +399,7 @@ class RsSyncResource extends ResourceBase {
           $dir = substr($file_name, 0, 3);
           $file_dir = $date . '/' . $dir;
           $create_dir = \Drupal::service('file_system')
-            ->realpath('public://') . '/' . $file_dir;
+              ->realpath('public://') . '/' . $file_dir;
           file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
           $uri = file_unmanaged_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
           if ($uri !== FALSE) {
@@ -399,7 +434,9 @@ class RsSyncResource extends ResourceBase {
     if (!$this->currentUser->hasPermission('edit any article content')) {
       throw new AccessDeniedHttpException();
     }
-    \Drupal::logger('beliana_sync')->notice("Aktualizované heslo '".$data['title']." (patch)");
+
+    \Drupal::logger('beliana_sync')
+      ->notice("Aktualizované heslo '" . $data['title'] . " (patch)");
     $node = Node::load($nid);
     $node->title = $data['title'];
     $modified_body = $this->downloadBodyImages($data['body']);
@@ -408,28 +445,36 @@ class RsSyncResource extends ResourceBase {
     $node->field_sort = $data['sort'];
     $node->field_info_published = $data['info_published'];
     // set table
-    $node->field_table = ['value' => $data['table'][0], 'format' => 'full_html'];
+    $node->field_table = [
+      'value' => $data['table'][0],
+      'format' => 'full_html',
+    ];
+
     $node->field_table_weight = $data['table'][1];
-    if (isset($data['menoautora'])) {
-      $node->field_author_name = $data['menoautora'];
+
+    if (isset($data['autor'])) {
+      $term = $this->getAuthorTerm($data);
+      $node->field_autor = $term->id();
     }
 
     // set corresponding values in the 'categories' taxonomy according to the $data['category'] value
     // may have multiple values, each having hierarchy starting from parent and separated by ';'
     $node->field_categories = $this->getCategories($data['category']);
 
-    foreach ($node->field_images->getValue() as $field_image) {
-      $media = Media::load($field_image->target_id);
-      if (!is_null($media)) {
-        $media->delete();
+    if($node->hasField('field_images')) {
+      foreach ($node->field_images->getValue() as $field_image) {
+        $media = Media::load($field_image->target_id);
+        if (!is_null($media)) {
+          $media->delete();
+        }
       }
-    }
-    $local_fids = $this->downloadMedia($data['images']);
-    if (!empty($local_fids)) {
-      $node->field_images = $local_fids;
-    }
-    else {
-      $node->set('field_images', []);
+      $local_fids = $this->downloadMedia($data['images']);
+      if (!empty($local_fids)) {
+        $node->field_images = $local_fids;
+      }
+      else {
+        $node->set('field_images', []);
+      }
     }
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
     \Drupal::service('event_dispatcher')
@@ -438,6 +483,45 @@ class RsSyncResource extends ResourceBase {
     \Drupal::service('event_dispatcher')
       ->dispatch(BelianaSyncEvents::POST_NODE_UPDATE, new PostNodeUpdateEvent($node, $data));
     return new ResourceResponse();
+  }
+
+  private function getAuthorTerm($data) {
+    $entity_manager = \Drupal::entityTypeManager();
+
+    if ($terms = $entity_manager->getStorage('taxonomy_term')
+      ->loadByProperties([
+        'vid' => 'autor',
+        'field_meno' => $data['autor']['meno'],
+        'field_priezvisko' => $data['autor']['priezvisko'],
+      ])) {
+      $term = reset($terms);
+      $term->field_titul_pred_menom = $data['autor']['titul_pred_menom'];
+      $term->field_titul_za_menom = $data['autor']['titul_za_menom'];
+      $term->field_zivotopis = [
+        'value' => $data['autor']['zivotopis'],
+        'format' => 'full_html',
+      ];
+
+      $term->save();
+    }
+    else {
+      // create term
+      $term = Term::create([
+        'vid' => 'autor',
+        'field_meno' => $data['autor']['meno'],
+        'field_priezvisko' => $data['autor']['priezvisko'],
+        'field_titul_pred_menom' => $data['autor']['titul_pred_menom'],
+        'field_titul_za_menom' => $data['autor']['titul_za_menom'],
+        'field_zivotopis' => [
+          'value' => $data['autor']['zivotopis'],
+          'format' => 'full_html',
+        ],
+      ]);
+
+      $term->save();
+    }
+
+    return $term;
   }
 
 }

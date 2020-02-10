@@ -1,0 +1,19 @@
+uuid: d3e982b5-5258-4b77-a5a8-77fc51d0d458
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_titul_za_menom
+    - taxonomy.vocabulary.autor
+id: taxonomy_term.autor.field_titul_za_menom
+field_name: field_titul_za_menom
+entity_type: taxonomy_term
+bundle: autor
+label: 'Titul za menom'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

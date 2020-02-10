@@ -1,0 +1,19 @@
+uuid: f598543a-3566-4334-b65b-389f17e7352d
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_priezvisko
+    - taxonomy.vocabulary.autor
+id: taxonomy_term.autor.field_priezvisko
+field_name: field_priezvisko
+entity_type: taxonomy_term
+bundle: autor
+label: Priezvisko
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

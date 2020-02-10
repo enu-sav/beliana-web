@@ -1,0 +1,8 @@
+uuid: bb342d58-268b-477a-9916-7c47da2747b9
+langcode: sk
+status: true
+dependencies: {  }
+name: Autor
+vid: autor
+description: ''
+weight: 0

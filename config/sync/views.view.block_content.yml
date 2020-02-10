@@ -10,7 +10,7 @@ _core:
 id: block_content
 label: 'Vlastné bloky'
 module: views
-description: 'Find and manage custom blocks.'
+description: 'Nájsť a spravovať vlastné bloky.'
 tag: default
 base_table: block_content_field_data
 base_field: id
@@ -43,10 +43,10 @@ display:
           submit_button: Použiť
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Zoradiť podľa'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzostupne
+          sort_desc_label: Zostupne
       pager:
         type: mini
         options:
@@ -308,7 +308,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Operácie
           exclude: false
           alter:
             alter_text: false
@@ -513,7 +513,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: Stránka
     position: 1
     display_options:
       display_extenders: {  }

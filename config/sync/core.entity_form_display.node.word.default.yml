@@ -6,7 +6,7 @@ dependencies:
     - entity_browser.browser.media_entity_browser
     - field.field.node.word.body
     - field.field.node.word.field_alphabet
-    - field.field.node.word.field_author_name
+    - field.field.node.word.field_autor
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
@@ -48,13 +48,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_author_name:
+  field_autor:
     weight: 15
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   field_categories:
     weight: 12
@@ -86,7 +87,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_info_published:
-    weight: 16
+    weight: 17
     settings:
       size: 60
       placeholder: ''
@@ -94,7 +95,7 @@ content:
     type: string_textfield
     region: content
   field_meta_tags:
-    weight: 19
+    weight: 20
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -146,7 +147,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 18
+    weight: 19
     third_party_settings: {  }
     region: content
   sticky:
@@ -174,7 +175,7 @@ content:
     third_party_settings: {  }
     region: content
   url_redirects:
-    weight: 17
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }

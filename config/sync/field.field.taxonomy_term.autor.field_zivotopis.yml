@@ -1,0 +1,21 @@
+uuid: 15950f80-67e0-4f0f-af9e-43ab791980aa
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_zivotopis
+    - taxonomy.vocabulary.autor
+  module:
+    - text
+id: taxonomy_term.autor.field_zivotopis
+field_name: field_zivotopis
+entity_type: taxonomy_term
+bundle: autor
+label: Životopis
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

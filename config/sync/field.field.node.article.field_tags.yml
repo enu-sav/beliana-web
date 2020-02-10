@@ -13,7 +13,7 @@ field_name: field_tags
 entity_type: node
 bundle: article
 label: Značky
-description: 'Enter a comma-separated list. For example: Amsterdam, Mexico City, "Cleveland, Ohio"'
+description: 'Zadajte zoznam oddelený čiarkou. Napríklad: Amsterdam, Mexico City, "Cleveland, Ohio"'
 required: false
 translatable: true
 default_value: {  }

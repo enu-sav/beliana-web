@@ -1,0 +1,6 @@
+status: 1
+pattern: '[term:field_meno] [term:field_priezvisko]'
+escape: false
+dependencies:
+  config:
+    - taxonomy.vocabulary.autor

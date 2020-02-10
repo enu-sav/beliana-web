@@ -1,12 +1,12 @@
-uuid: abe583f0-19b2-457b-9207-bfa2f7f622e9
+uuid: de6361c9-d4e2-4e29-a47d-13324fa9c921
 langcode: sk
 status: true
 dependencies:
   module:
-    - node
-id: node.field_author_name
-field_name: field_author_name
-entity_type: node
+    - taxonomy
+id: taxonomy_term.field_titul_pred_menom
+field_name: field_titul_pred_menom
+entity_type: taxonomy_term
 type: string
 settings:
   max_length: 255

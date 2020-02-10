@@ -35,6 +35,7 @@
         "drupal/admin_toolbar": "~2.0",
         "drupal/adminimal_admin_toolbar": "~1.0",
         "drupal/adminimal_theme": "~1.0",
+        "drupal/auto_entitylabel": "^3.0",
         "drupal/captcha": "~1.0",
         "drupal/colorbox": "^1.2",
         "drupal/config_ignore": "~2.0",

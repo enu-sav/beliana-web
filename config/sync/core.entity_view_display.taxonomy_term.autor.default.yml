@@ -1,0 +1,60 @@
+uuid: dc87ce3d-0455-42e6-a604-0bbd573ae4c1
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.autor.field_meno
+    - field.field.taxonomy_term.autor.field_priezvisko
+    - field.field.taxonomy_term.autor.field_titul_pred_menom
+    - field.field.taxonomy_term.autor.field_titul_za_menom
+    - field.field.taxonomy_term.autor.field_zivotopis
+    - taxonomy.vocabulary.autor
+  module:
+    - text
+id: taxonomy_term.autor.default
+targetEntityType: taxonomy_term
+bundle: autor
+mode: default
+content:
+  field_meno:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_priezvisko:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titul_pred_menom:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_titul_za_menom:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_zivotopis:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  description: true
+  langcode: true

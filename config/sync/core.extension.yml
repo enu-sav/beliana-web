@@ -3,6 +3,7 @@ module:
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
+  auto_entitylabel: 0
   automated_cron: 0
   basic_auth: 0
   beliana_daily: 0

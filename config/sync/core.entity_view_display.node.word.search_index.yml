@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_index
     - field.field.node.word.body
     - field.field.node.word.field_alphabet
-    - field.field.node.word.field_author_name
+    - field.field.node.word.field_autor
     - field.field.node.word.field_categories
     - field.field.node.word.field_date
     - field.field.node.word.field_images
@@ -33,7 +33,7 @@ content:
     region: content
 hidden:
   field_alphabet: true
-  field_author_name: true
+  field_autor: true
   field_categories: true
   field_date: true
   field_images: true

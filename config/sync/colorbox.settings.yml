@@ -5,7 +5,7 @@ custom:
   transition_speed: 350
   opacity: 0.85
   text_current: '{current} of {total}'
-  text_previous: '« Prev'
+  text_previous: '« Predchádzajúce'
   text_next: 'Next »'
   text_close: Zatvoriť
   maxwidth: 98%

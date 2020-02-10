@@ -46,10 +46,10 @@ display:
           submit_button: Použiť
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Zoradiť podľa'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzostupne
+          sort_desc_label: Zostupne
       pager:
         type: some
         options:

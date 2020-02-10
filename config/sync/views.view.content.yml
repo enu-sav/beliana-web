@@ -36,10 +36,10 @@ display:
           submit_button: Filter
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Zoradiť podľa'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzostupne
+          sort_desc_label: Zostupne
       pager:
         type: full
         options:
@@ -455,7 +455,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Operácie
           exclude: false
           alter:
             alter_text: false
@@ -838,7 +838,7 @@ display:
         weight: -10
       display_extenders: {  }
     display_plugin: page
-    display_title: Page
+    display_title: Stránka
     id: page_1
     position: 1
     cache_metadata:
