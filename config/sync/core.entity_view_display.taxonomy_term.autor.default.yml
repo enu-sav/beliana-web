@@ -9,8 +9,6 @@ dependencies:
     - field.field.taxonomy_term.autor.field_titul_za_menom
     - field.field.taxonomy_term.autor.field_zivotopis
     - taxonomy.vocabulary.autor
-  module:
-    - text
 id: taxonomy_term.autor.default
 targetEntityType: taxonomy_term
 bundle: autor
@@ -48,13 +46,7 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_zivotopis:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
 hidden:
   description: true
+  field_zivotopis: true
   langcode: true

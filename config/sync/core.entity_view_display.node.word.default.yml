@@ -33,7 +33,7 @@ content:
     region: content
   field_autor:
     weight: 4
-    label: above
+    label: hidden
     settings:
       link: true
       view_mode: default
