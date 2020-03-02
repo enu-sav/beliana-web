@@ -9,44 +9,24 @@ dependencies:
     - field.field.taxonomy_term.autor.field_titul_za_menom
     - field.field.taxonomy_term.autor.field_zivotopis
     - taxonomy.vocabulary.autor
+  module:
+    - text
 id: taxonomy_term.autor.default
 targetEntityType: taxonomy_term
 bundle: autor
 mode: default
 content:
-  field_meno:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_priezvisko:
-    weight: 2
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_titul_pred_menom:
+  field_zivotopis:
+    type: text_default
     weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
-  field_titul_za_menom:
-    weight: 3
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
-    region: content
 hidden:
   description: true
-  field_zivotopis: true
+  field_meno: true
+  field_priezvisko: true
+  field_titul_pred_menom: true
+  field_titul_za_menom: true
   langcode: true

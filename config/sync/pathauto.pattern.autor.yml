@@ -1,0 +1,23 @@
+uuid: 6652cd3f-17bd-45f4-8732-ae70a423ebf3
+langcode: sk
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: autor
+label: Autor
+type: 'canonical_entities:taxonomy_term'
+pattern: '/autor/[term:name]'
+selection_criteria:
+  c5a6e57c-4581-4f3d-ab29-84014b11de09:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      autor: autor
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: c5a6e57c-4581-4f3d-ab29-84014b11de09
+selection_logic: and
+weight: -5
+relationships: {  }

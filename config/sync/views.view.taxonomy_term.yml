@@ -396,6 +396,7 @@ display:
       defaults:
         style: false
         row: false
+        css_class: false
       row:
         type: fields
         options:
@@ -403,6 +404,7 @@ display:
           inline: {  }
           separator: ''
           hide_empty: false
+      css_class: heslo-container
     cache_metadata:
       contexts:
         - 'languages:language_content'
