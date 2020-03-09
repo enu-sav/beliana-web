@@ -1,0 +1,10 @@
+uuid: 0afbc492-f514-40d5-91a1-01552bcd760b
+langcode: sk
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.name_only
+label: 'Name Only'
+targetEntityType: taxonomy_term
+cache: true

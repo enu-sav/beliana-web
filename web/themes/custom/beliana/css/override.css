@@ -1117,6 +1117,15 @@ article .field--name-body table tr td {
   font-weight: bold;
 }
 
+.view-taxonomy-term.heslo-container header h2:after {
+  content: ":";
+  padding-right: 5px;
+}
+.view-taxonomy-term.heslo-container .views-row {
+  display: inline-block;
+  padding: 0 10px 0 0;
+}
+
 .dnes h2 {
   color: #333;
   font-size: 1.2em;
