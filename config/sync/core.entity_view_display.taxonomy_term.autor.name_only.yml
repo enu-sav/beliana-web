@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.name_only
     - field.field.taxonomy_term.autor.field_meno
+    - field.field.taxonomy_term.autor.field_posobisko
     - field.field.taxonomy_term.autor.field_priezvisko
     - field.field.taxonomy_term.autor.field_titul_pred_menom
     - field.field.taxonomy_term.autor.field_titul_za_menom
@@ -18,6 +19,14 @@ content:
   field_meno:
     type: string
     weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_posobisko:
+    type: string
+    weight: 2
     region: content
     label: hidden
     settings:

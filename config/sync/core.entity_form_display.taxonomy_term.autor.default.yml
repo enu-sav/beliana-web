@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.autor.field_meno
+    - field.field.taxonomy_term.autor.field_posobisko
     - field.field.taxonomy_term.autor.field_priezvisko
     - field.field.taxonomy_term.autor.field_titul_pred_menom
     - field.field.taxonomy_term.autor.field_titul_za_menom
@@ -18,6 +19,14 @@ mode: default
 content:
   field_meno:
     weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_posobisko:
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -49,7 +58,7 @@ content:
     type: string_textfield
     region: content
   field_zivotopis:
-    weight: 5
+    weight: 6
     settings:
       rows: 5
       placeholder: ''

@@ -1,0 +1,19 @@
+uuid: 55f73948-23ff-4f13-abc2-5e4ba7d85d75
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_posobisko
+    - taxonomy.vocabulary.autor
+id: taxonomy_term.autor.field_posobisko
+field_name: field_posobisko
+entity_type: taxonomy_term
+bundle: autor
+label: Pôsobisko
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

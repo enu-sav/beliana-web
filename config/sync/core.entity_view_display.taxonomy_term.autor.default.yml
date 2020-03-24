@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.autor.field_meno
+    - field.field.taxonomy_term.autor.field_posobisko
     - field.field.taxonomy_term.autor.field_priezvisko
     - field.field.taxonomy_term.autor.field_titul_pred_menom
     - field.field.taxonomy_term.autor.field_titul_za_menom
@@ -26,6 +27,7 @@ content:
 hidden:
   description: true
   field_meno: true
+  field_posobisko: true
   field_priezvisko: true
   field_titul_pred_menom: true
   field_titul_za_menom: true

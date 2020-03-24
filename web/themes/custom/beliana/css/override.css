@@ -620,6 +620,10 @@ article .heslo-ilustracia {
   width: 35%;
 }
 
+article .heslo .autor .taxonomy-term-name-only a {
+  color: #333 !important;
+}
+
 article .heslo .obsah {
   font-family: 'STIXGeneral', 'Asana Math', 'Arial Unicode MS', 'Lucida Grande', 'Liberation Sans', 'Helvetica', 'Arial', sans-serif;
   min-height: 2.4em;

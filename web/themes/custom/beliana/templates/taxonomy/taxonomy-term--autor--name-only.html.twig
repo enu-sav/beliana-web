@@ -31,6 +31,6 @@
 
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
   <a href="{{ url }}">
-    {{ term.field_meno.value ~ ' ' ~ term.field_priezvisko.value }}
+    {{ term.field_meno.value ~ ' ' ~ term.field_priezvisko.value }}{% if term.field_posobisko.value is not empty %}, {{ term.field_posobisko.value }}{% endif %}
   </a>
 </div>

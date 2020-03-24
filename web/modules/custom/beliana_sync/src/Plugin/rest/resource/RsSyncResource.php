@@ -498,6 +498,7 @@ class RsSyncResource extends ResourceBase {
       $term = reset($terms);
       $term->field_titul_pred_menom = $data['autor']['titul_pred_menom'];
       $term->field_titul_za_menom = $data['autor']['titul_za_menom'];
+      $term->field_posobisko = $data['autor']['posobisko'];
       $term->field_zivotopis = [
         'value' => $data['autor']['zivotopis'],
         'format' => 'full_html',
@@ -513,6 +514,7 @@ class RsSyncResource extends ResourceBase {
         'field_priezvisko' => $data['autor']['priezvisko'],
         'field_titul_pred_menom' => $data['autor']['titul_pred_menom'],
         'field_titul_za_menom' => $data['autor']['titul_za_menom'],
+        'field_posobisko' => $data['autor']['posobisko'],
         'field_zivotopis' => [
           'value' => $data['autor']['zivotopis'],
           'format' => 'full_html',
