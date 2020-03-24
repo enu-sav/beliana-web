@@ -73,7 +73,7 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
                 ->loadAllParents($term->id());
 
               foreach (array_reverse($ancestors) as $item) {
-                $links[] = Link::createFromRoute($item->label(), 'view.solr_search_word.page_1', [], ['query' => ['f' => ['kategorie:' . $item->id()]]]);
+                $links[] = Link::createFromRoute($item->label(), 'view.solr_search_word.page_3', [], ['query' => ['f' => ['kategorie:' . $item->id()]]]);
               }
 
               if ($count < count($categories)) {
