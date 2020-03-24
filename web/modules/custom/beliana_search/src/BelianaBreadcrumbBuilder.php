@@ -21,6 +21,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\easy_breadcrumb\EasyBreadcrumbBuilder;
+use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 
@@ -52,20 +53,38 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
     $breadcrumb_old = parent::build($route_match);
     $links = $breadcrumb_old->getLinks();
     $last = array_pop($links);
+    $cache_tags = [];
 
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
       if ($node->bundle() == 'word') {
         $entity_manager = \Drupal::service('entity_type.manager');
-        $alphabet = $node->get('field_alphabet')->target_id;
+        $categories = $node->get('field_categories')->getValue();
+        $cache_tags[] = 'node:' . $node->id();
 
-        if (!empty($alphabet)) {
-          if ($term = $entity_manager->getStorage('taxonomy_term')->load($alphabet)) {
-            $ancestors = $entity_manager->getStorage('taxonomy_term')->loadAllParents($term->id());
-            $parent = end($ancestors);
+        if (!empty($categories)) {
+          $count = 0;
 
-            $links[] = Link::createFromRoute($parent->label(), 'view.solr_search_word.page_1', [], ['query' => ['f' => ['alphabet:' . $parent->id()]]]);
+          foreach ($categories as $category) {
+            if ($term = $entity_manager->getStorage('taxonomy_term')
+              ->load($category['target_id'])) {
+              $count++;
+              $cache_tags[] = 'taxonomy_term:' . $term->id();
+              $ancestors = $entity_manager->getStorage('taxonomy_term')
+                ->loadAllParents($term->id());
+
+              foreach (array_reverse($ancestors) as $item) {
+                $links[] = Link::createFromRoute($item->label(), 'view.solr_search_word.page_1', [], ['query' => ['f' => ['kategorie:' . $item->id()]]]);
+              }
+
+              if ($count < count($categories)) {
+                $links[] = Link::createFromRoute('/', '<none>');
+              }
+            }
           }
         }
+
+        $links[0]->setText('Všetky kategórie');
+        $links[0]->setUrl(Url::fromRoute('view.solr_search_word.page_3'));
       }
     }
 
@@ -73,6 +92,7 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
 
     $breadcrumb = new Breadcrumb();
     $breadcrumb->addCacheContexts(['url.path']);
+    $breadcrumb->addCacheTags($cache_tags);
     $breadcrumb->addCacheableDependency($this->config);
     $breadcrumb->setLinks($links);
 

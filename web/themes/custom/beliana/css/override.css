@@ -969,8 +969,11 @@ article .field--name-body table tr td {
   padding-right: 5px;
   color: #636363;
 }
-#block-breadcrumbs ol li a {
-  margin-right: 5px;
+#block-breadcrumbs ol li a:not(.last):after {
+  content: "\f0da";
+  margin-left: 9px;
+  display: inline-block;
+  font: normal normal normal 10px/1 FontAwesome;
 }
 #block-breadcrumbs ol li i {
   font-size: 10px;
