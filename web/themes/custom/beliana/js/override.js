@@ -11,7 +11,8 @@
       $('.smartphone-navigation .fa-bars').on('click touch', function () {
         if ($(this).parent().hasClass('open')) {
           $(this).parent().removeClass('open');
-        } else {
+        }
+        else {
           $(this).parent().addClass('open');
         }
       });
@@ -19,7 +20,8 @@
       $('.header .header-navigation .word-facet-wrap').on('click touch', function (e) {
         if ($(this).hasClass('active')) {
           $(this).removeClass('active');
-        } else {
+        }
+        else {
           $(this).addClass('active');
         }
       });
@@ -27,7 +29,8 @@
       $('body.path-rozsirene-vyhladavanie #block-kategorie .opener').on('click touch', function (e) {
         if ($(this).parent().hasClass('active')) {
           $(this).parent().removeClass('active');
-        } else {
+        }
+        else {
           $(this).parent().addClass('active');
         }
       });
@@ -41,7 +44,8 @@
         if ($(window).width() < 768) {
           header_offset = 52;
           title_offset = 174;
-        } else if ($(window).width() < 948) {
+        }
+        else if ($(window).width() < 948) {
           header_offset = 74;
           title_offset = 252;
         }
@@ -49,13 +53,15 @@
         if ($('#content-main').height() > 500) {
           if (scroll >= header_offset) {
             $('body').addClass('sticky-header');
-          } else {
+          }
+          else {
             $('body').removeClass('sticky-header');
           }
 
           if (scroll >= title_offset) {
             $('body').addClass('sticky-title');
-          } else {
+          }
+          else {
             $('body').removeClass('sticky-title');
           }
         }
@@ -71,6 +77,40 @@
         Drupal.behaviors.override.print(e);
       });
 
+      //build obsah
+      var selector = $(window).width() > 768 ? 'desktop' : 'mobile';
+      var $wrapper = $('article > .heslo > .obsah.' + selector);
+
+      if ($wrapper.find('h2').length) {
+        var $sidebar = $('article > .heslo > .sidebar-wrapper .structure');
+
+        $wrapper.find('h2').each(function (i, item) {
+          $(item).attr('data-id', i);
+          $sidebar.find('ul').append('<li><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
+        });
+
+        $sidebar.on('click', 'ul > li > a', function (e) {
+          e.preventDefault();
+
+          $('html, body').animate({
+            scrollTop: $wrapper.find('h2[data-id="' + $(this).data('id') + '"]').offset().top - 160
+          }, 300);
+        });
+
+        if (selector == 'desktop') {
+          $sidebar.removeClass('hidden');
+        }
+      }
+
+      $(window).bind('resize', function () {
+        if ($(window).width() > 768) {
+          $sidebar.removeClass('hidden');
+        }
+        else {
+          $sidebar.addClass('hidden');
+        }
+      });
+
       //set "Ilustracia" image media size in "Heslo" node
       $('.heslo-ilustracia .media-image.view-mode-in-word img').each(function (key, value) {
         Drupal.behaviors.override.setMediaSize($(value), 420);
@@ -80,7 +120,7 @@
         Drupal.behaviors.override.setMediaSize($(value), 660);
       });
 
-      //Configure colorbox call back to resize with custom dimensions 
+      //Configure colorbox call back to resize with custom dimensions
       if (jQuery().colorbox) {
         $.colorbox.settings.onLoad = function () {
           Drupal.behaviors.override.colorboxResize(false);
@@ -103,7 +143,7 @@
       });
 
       // Override facet link replacement with a checked checkbox.
-      if (typeof(Drupal.facets) != 'undefined') {
+      if (typeof (Drupal.facets) != 'undefined') {
         if ($.isFunction(Drupal.facets.makeCheckbox)) {
           Drupal.facets.makeCheckbox = function () {
             var $link = $(this);
@@ -113,9 +153,9 @@
             var id = $link.data('drupal-facet-item-id');
 
             var checkbox = $('<input type="checkbox" class="facets-checkbox">')
-                .attr('id', id)
-                .data($link.data())
-                .data('facetsredir', href);
+              .attr('id', id)
+              .data($link.data())
+              .data('facetsredir', href);
             var label = $('<label>' + description + '</label>');
 
             checkbox.on('change.facets', function (e) {

@@ -83,22 +83,29 @@
       {{ content.body }}
     </div>
 
-    {% if (node.field_images is not empty) or (node.field_table is not empty) %}
-      <div class="heslo-ilustracia">
-        {% set images_count = content.field_images['#items']|length %}
-        {% for i in 0..images_count %}
-          {% if i == node.field_table_weight.value %}
+    <div class="sidebar-wrapper">
+      <div class="structure hidden">
+        <h3>Obsah</h3>
+        <ul></ul>
+      </div>
+
+      {% if (node.field_images is not empty) or (node.field_table is not empty) %}
+        <div class="heslo-ilustracia">
+          {% set images_count = content.field_images['#items']|length %}
+          {% for i in 0..images_count %}
+            {% if i == node.field_table_weight.value %}
+              {{ content.field_table }}
+            {% endif %}
+
+            {{ content.field_images[i] }}
+          {% endfor %}
+
+          {% if node.field_table_weight.value > images_count %}
             {{ content.field_table }}
           {% endif %}
-
-          {{ content.field_images[i] }}
-        {% endfor %}
-
-        {% if node.field_table_weight.value > images_count %}
-          {{ content.field_table }}
-        {% endif %}
-      </div>
-    {% endif %}
+        </div>
+      {% endif %}
+    </div>
 
     <div class="obsah desktop">
       {{ content.body }}
@@ -126,7 +133,9 @@
           {% if content.field_autor %}
             {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}
           {% endif %}
-          <p>{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana, ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
+          <p>{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana,
+            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a
+              href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
       </div>
 
