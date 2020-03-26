@@ -678,6 +678,9 @@ article .heslo .sidebar-wrapper .structure ul li a {
   padding-left: 10px;
   color: #266ead !important;
 }
+article .heslo .sidebar-wrapper .structure ul li.small a{
+ padding-left: 25px;
+}
 
 article.media-image.view-mode-in-word a {
   display: block;

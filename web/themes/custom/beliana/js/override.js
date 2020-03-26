@@ -84,14 +84,15 @@
         $.each(['desktop', 'mobile'], function (i, selector) {
           var $wrapper = $word.find('> .obsah.' + selector);
 
-          if ($wrapper.find('h2').length) {
+          if ($wrapper.find('h2, h3').length) {
             var $sidebar = $word.find('.sidebar-wrapper.' + selector + ' .structure');
 
             $sidebar.append('<h3>Obsah</h3><ul></ul>');
 
-            $wrapper.find('h2').each(function (i, item) {
+            $wrapper.find('h2, h3').each(function (i, item) {
+              var type = $(item).is('h2') ? 'large' : 'small';
               $(item).attr('data-id', i).after('<span class="scroll-up">Naspať na obsah</span>');
-              $sidebar.find('ul').append('<li><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
+              $sidebar.find('ul').append('<li class="' + type + '"><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
             });
 
             $sidebar.on('click', 'ul > li > a', function (e) {
@@ -103,7 +104,7 @@
               }
 
               $('html, body').animate({
-                scrollTop: $wrapper.find('h2[data-id="' + $(this).data('id') + '"]').offset().top - offset
+                scrollTop: $wrapper.find('h2[data-id="' + $(this).data('id') + '"], h3[data-id="' + $(this).data('id') + '"]').offset().top - offset
               }, 300);
             });
 
