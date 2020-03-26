@@ -78,37 +78,44 @@
       });
 
       //build obsah
-      var selector = $(window).width() > 768 ? 'desktop' : 'mobile';
-      var $wrapper = $('article > .heslo > .obsah.' + selector);
+      $(context).find('article > .heslo').once('structure-process').each(function () {
+        var $word = $(this);
 
-      if ($wrapper.find('h2').length) {
-        var $sidebar = $('article > .heslo > .sidebar-wrapper .structure');
+        $.each(['desktop', 'mobile'], function (i, selector) {
+          var $wrapper = $word.find('> .obsah.' + selector);
 
-        $wrapper.find('h2').each(function (i, item) {
-          $(item).attr('data-id', i);
-          $sidebar.find('ul').append('<li><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
+          if ($wrapper.find('h2').length) {
+            var $sidebar = $word.find('.sidebar-wrapper.' + selector + ' .structure');
+
+            $sidebar.append('<h3>Obsah</h3><ul></ul>');
+
+            $wrapper.find('h2').each(function (i, item) {
+              $(item).attr('data-id', i).after('<span class="scroll-up">Naspať na obsah</span>');
+              $sidebar.find('ul').append('<li><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
+            });
+
+            $sidebar.on('click', 'ul > li > a', function (e) {
+              e.preventDefault();
+              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 240 : 160;
+
+              if (selector == 'mobile') {
+                offset = $('body').hasClass('adminimal-admin-toolbar') ? 150 : 90;
+              }
+
+              $('html, body').animate({
+                scrollTop: $wrapper.find('h2[data-id="' + $(this).data('id') + '"]').offset().top - offset
+              }, 300);
+            });
+
+            $sidebar.removeClass('hidden');
+          }
         });
 
-        $sidebar.on('click', 'ul > li > a', function (e) {
-          e.preventDefault();
-
+        $word.on('click', 'span.scroll-up', function (e) {
           $('html, body').animate({
-            scrollTop: $wrapper.find('h2[data-id="' + $(this).data('id') + '"]').offset().top - 160
+            scrollTop: 0
           }, 300);
         });
-
-        if (selector == 'desktop') {
-          $sidebar.removeClass('hidden');
-        }
-      }
-
-      $(window).bind('resize', function () {
-        if ($(window).width() > 768) {
-          $sidebar.removeClass('hidden');
-        }
-        else {
-          $sidebar.addClass('hidden');
-        }
       });
 
       //set "Ilustracia" image media size in "Heslo" node

@@ -631,6 +631,14 @@ article .heslo .obsah {
   font-size: 2.0rem;
 }
 
+article .heslo .obsah span.scroll-up {
+  font-size: 0.8em;
+  float: right;
+  margin-top: -35px;
+  cursor: pointer;
+  color: #266ead;
+}
+
 article .heslo .obsah.desktop {
   display: block;
 }
@@ -642,7 +650,10 @@ article .heslo .obsah table tr td:first-child {
   font-weight: initial;
 }
 
-article .heslo .sidebar-wrapper {
+article .heslo .sidebar-wrapper.mobile {
+  display: none;
+}
+article .heslo .sidebar-wrapper.desktop {
   float: right;
   display: inline-block;
   width: 35%;
@@ -1539,11 +1550,20 @@ footer .footer-copyright {
     padding: 0;
   }
 
-  article .heslo .sidebar-wrapper {
+  article .heslo .sidebar-wrapper.desktop {
+    display: none;
+  }
+  article .heslo .sidebar-wrapper.mobile {
+    display: block;
+  }
+  article .heslo .sidebar-wrapper.mobile {
     width: 100%;
     margin-top: 0;
   }
-  article .heslo .sidebar-wrapper .heslo-ilustracia {
+  article .heslo .sidebar-wrapper.mobile .structure {
+    margin-left: 0;
+  }
+  article .heslo .sidebar-wrapper.mobile .heslo-ilustracia {
     width: 100%;
     margin-left: 0;
   }

@@ -79,15 +79,16 @@
       {{ content.field_autor }}
     </div>
 
+    <div class="sidebar-wrapper mobile">
+      <div class="structure hidden"></div>
+    </div>
+
     <div class="obsah mobile">
       {{ content.body }}
     </div>
 
-    <div class="sidebar-wrapper">
-      <div class="structure hidden">
-        <h3>Obsah</h3>
-        <ul></ul>
-      </div>
+    <div class="sidebar-wrapper desktop">
+      <div class="structure hidden"></div>
 
       {% if (node.field_images is not empty) or (node.field_table is not empty) %}
         <div class="heslo-ilustracia">
