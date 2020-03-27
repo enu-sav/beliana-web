@@ -100,7 +100,7 @@
               var offset = $('body').hasClass('adminimal-admin-toolbar') ? 220 : 160;
 
               if (selector == 'mobile') {
-                offset = $('body').hasClass('adminimal-admin-toolbar') ? 180 : 110;
+                offset = $('body').hasClass('adminimal-admin-toolbar') ? 180 : 150;
               }
 
               $('html, body').animate({
