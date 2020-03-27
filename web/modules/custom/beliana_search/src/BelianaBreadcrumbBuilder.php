@@ -61,6 +61,8 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
         $categories = $node->get('field_categories')->getValue();
         $cache_tags[] = 'node:' . $node->id();
 
+        $last->setText($node->label());
+
         if (!empty($categories)) {
           $count = 0;
 
