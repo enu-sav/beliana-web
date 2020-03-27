@@ -8,7 +8,7 @@
 
   Drupal.behaviors.override = {
     attach: function (context, settings) {
-      $('.smartphone-navigation .fa-bars').on('click touch', function () {
+      $('.smartphone-navigation .fa-bars').on('click', function () {
         if ($(this).parent().hasClass('open')) {
           $(this).parent().removeClass('open');
         }
@@ -17,7 +17,7 @@
         }
       });
 
-      $('.header .header-navigation .word-facet-wrap').on('click touch', function (e) {
+      $('.header .header-navigation .word-facet-wrap').on('click', function (e) {
         if ($(this).hasClass('active')) {
           $(this).removeClass('active');
         }
@@ -26,7 +26,7 @@
         }
       });
 
-      $('body.path-rozsirene-vyhladavanie #block-kategorie .opener').on('click touch', function (e) {
+      $('body.path-rozsirene-vyhladavanie #block-kategorie .opener').on('click', function (e) {
         if ($(this).parent().hasClass('active')) {
           $(this).parent().removeClass('active');
         }
@@ -73,7 +73,7 @@
       }, 100);
 
       //add print functionallity
-      $('.heslo-tools .print').on('click touch', function (e) {
+      $('.heslo-tools .print').on('click', function (e) {
         Drupal.behaviors.override.print(e);
       });
 
@@ -91,16 +91,16 @@
 
             $wrapper.find('h2, h3').each(function (i, item) {
               var type = $(item).is('h2') ? 'large' : 'small';
-              $(item).attr('data-id', i).after('<span class="scroll-up">Naspať na obsah</span>');
+              $(item).attr('data-id', i).after('<span class="scroll-up">Naspäť na obsah</span>');
               $sidebar.find('ul').append('<li class="' + type + '"><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
             });
 
             $sidebar.on('click', 'ul > li > a', function (e) {
               e.preventDefault();
-              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 240 : 160;
+              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 220 : 160;
 
               if (selector == 'mobile') {
-                offset = $('body').hasClass('adminimal-admin-toolbar') ? 150 : 90;
+                offset = $('body').hasClass('adminimal-admin-toolbar') ? 180 : 110;
               }
 
               $('html, body').animate({
@@ -183,7 +183,7 @@
     },
     print: function (event) {
       event.preventDefault();
-      $('article .citacia h3 a').click();
+      $('article .citacia h3 a').trigger('click');
       window.print();
     },
     setMediaSize: function (image, maxHeight) {

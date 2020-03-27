@@ -55,7 +55,13 @@ body.page-node-type-word.sticky-title .sidebar-wrapper {
     margin-top: -52px;
   }
   body.page-node-type-word.sticky-title #content-main .heslo-container h1 {
+    margin-top: -195px;
+  }
+  body.page-node-type-word.adminimal-admin-toolbar.sticky-title #content-main .heslo-container h1 {
     margin-top: -174px;
+  }
+  body.page-node-type-word.sticky-title #content-main .heslo-container .obsah {
+    padding-top: 0;
   }
 }
 
@@ -634,7 +640,7 @@ article .heslo .obsah {
 article .heslo .obsah span.scroll-up {
   font-size: 0.8em;
   float: right;
-  margin-top: -35px;
+  margin-top: -30px;
   cursor: pointer;
   color: #266ead;
 }
@@ -678,8 +684,8 @@ article .heslo .sidebar-wrapper .structure ul li a {
   padding-left: 10px;
   color: #266ead !important;
 }
-article .heslo .sidebar-wrapper .structure ul li.small a{
- padding-left: 25px;
+article .heslo .sidebar-wrapper .structure ul li.small a {
+  padding-left: 25px;
 }
 
 article.media-image.view-mode-in-word a {
@@ -913,6 +919,11 @@ article .field--name-body table tr td {
 }
 #block-beliana-searchbox .search-input-wrapper input.form-autocomplete {
   background: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 #block-beliana-searchbox input.search-submit {
@@ -1569,6 +1580,16 @@ footer .footer-copyright {
   article .heslo .sidebar-wrapper.mobile .heslo-ilustracia {
     width: 100%;
     margin-left: 0;
+  }
+
+  article .heslo .obsah span.scroll-up {
+    font-size: 0;
+  }
+  article .heslo .obsah span.scroll-up:after {
+    content: "\f077";
+    font: normal normal normal 14px/1 FontAwesome;
+    position: relative;
+    top: 2px;
   }
 
   article .heslo .obsah.desktop {
