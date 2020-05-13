@@ -1,0 +1,25 @@
+uuid: 33709d00-68da-46a7-ad6a-1a417108d7f0
+langcode: sk
+status: true
+dependencies: {  }
+id: 739d7db063
+name: 'Invalidate tags'
+invalidationtype: tag
+hostname: localhost
+port: 80
+path: /
+request_method: BAN
+scheme: http
+verify: '1'
+headers:
+  -
+    field: Purge-Cache-Tags
+    value: '[invalidation:expression]'
+body: null
+body_content_type: null
+runtime_measurement: true
+timeout: !!float 1
+connect_timeout: !!float 1
+cooldown_time: !!float 0
+max_requests: 100
+http_errors: true
