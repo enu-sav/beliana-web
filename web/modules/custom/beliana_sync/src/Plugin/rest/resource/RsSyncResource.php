@@ -152,38 +152,46 @@ class RsSyncResource extends ResourceBase {
    *   Array with media IDs.
    */
   public function downloadMedia(array $images) {
-    $taxonomy_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $entity_manager = \Drupal::entityTypeManager();
+    $file_system = \Drupal::service('file_system');
+    $taxonomy_terms = $entity_manager->getStorage('taxonomy_term');
+
     $local_fids = [];
     $date = date('Y-m-d');
+
     foreach ($images as $image) {
       $file_OK = FALSE;
       $link_OK = FALSE;
-      if (isset($image['image_url_local'])) { // local image should be used
+
+      if (isset($image['image_url_local'])) {
+        // local image should be used
         $file_data = file_get_contents($image['image_url_local']);
         $exploded_path = explode('/', $image['image_url_local']);
         $file_name = array_pop($exploded_path);
         $dir = substr($file_name, 0, 3);
-        /** @var \Drupal\file\FileInterface $file */
-        $file_dir = $date . '/' . $dir;
-        $create_dir = \Drupal::service('file_system')
-            ->realpath('public://') . '/' . $file_dir;
-        file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-        $file = file_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
-        if ($file !== FALSE) {
-          $file_OK = TRUE;
+        $file_dir = 'public://' . $date . '/' . $dir;
+
+        if ($file_system->prepareDirectory('public://' . $file_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY)) {
+          /** @var \Drupal\file\FileInterface $file */
+          if ($file = file_save_data($file_data, $file_dir . '/' . $file_name)) {
+            $file_OK = TRUE;
+          }
         }
       }
-      else { // we got link to external image
+      else {
+        // we got link to external image
         $link_OK = TRUE;
       }
 
       if ($file_OK or $link_OK) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
+
         if (empty($license)) {
           $license = $taxonomy_terms->create([
             'name' => $image['license'],
             'vid' => 'licenses',
           ]);
+
           $license->save();
         }
         else {
@@ -254,6 +262,7 @@ class RsSyncResource extends ResourceBase {
         $local_fids[] = $media->id();
       }
     }
+
     return $local_fids;
   }
 
@@ -274,28 +283,28 @@ class RsSyncResource extends ResourceBase {
     }
   }
 
-
   // get the topmost parent. We have just a 3-level hierarchy
   public function getTopParent($term) {
-    $parents = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
+    $entity_manager = \Drupal::entityTypeManager();
+    $parents = $entity_manager->getStorage('taxonomy_term')
       ->loadParents($term->id());
+
     if (sizeof($parents) == 0) {
       return $term;
     }
-    $parent = reset($parents);
 
-    $parents1 = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
+    $parent = reset($parents);
+    $parents1 = $entity_manager->getStorage('taxonomy_term')
       ->loadParents($parent->id());
+
     if (sizeof($parents1) == 0) {
       return $parent;
     }
-    $parent1 = reset($parents1);
 
-    $parents2 = \Drupal::entityTypeManager()
-      ->getStorage('taxonomy_term')
+    $parent1 = reset($parents1);
+    $parents2 = $entity_manager->getStorage('taxonomy_term')
       ->loadParents($parent1->id());
+
     if (sizeof($parents2) == 0) {
       return $parent1;
     }
@@ -378,32 +387,36 @@ class RsSyncResource extends ResourceBase {
     $dom->loadHTML(mb_convert_encoding($body, 'HTML-ENTITIES', 'UTF-8'));
     /** @var \DOMElement[] $images */
     $images = $dom->getElementsByTagName('img');
-    $date = date('Y-m-d');
     $remote_site_url = \Drupal::configFactory()
       ->get('beliana_sync.config')
       ->get('remote_url');
+
     if (empty($remote_site_url)) {
       \Drupal::logger('beliana_sync')
         ->critical('Extrakcia obrázkov zlyhala, pretože cesta k RS nie je nastavená');
       return $body;
     }
+
+    $file_system = \Drupal::service('file_system');
+
     if (!empty($images)) {
+
       for ($i = $images->length - 1; $i >= 0; $i--) {
         /** @var \DOMElement $item */
         $item = $images->item($i);
         $remote_path = $item->getAttribute('src');
+
         if (!UrlHelper::isExternal($remote_path)) {
           $file_data = file_get_contents($remote_site_url . $remote_path);
           $exploded_path = explode('/', $remote_path);
           $file_name = array_pop($exploded_path);
           $dir = substr($file_name, 0, 3);
-          $file_dir = $date . '/' . $dir;
-          $create_dir = \Drupal::service('file_system')
-              ->realpath('public://') . '/' . $file_dir;
-          file_prepare_directory($create_dir, FILE_CREATE_DIRECTORY);
-          $uri = file_unmanaged_save_data($file_data, 'public://' . $date . '/' . $dir . '/' . $file_name);
-          if ($uri !== FALSE) {
-            $item->setAttribute('src', file_url_transform_relative(file_create_url($uri)));
+          $file_dir = 'public://' . date('Y-m-d') . '/' . $dir;
+
+          if ($file_system->prepareDirectory($file_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY)) {
+            if ($uri = $file_system->saveData($file_data, $file_dir . '/' . $file_name)) {
+              $item->setAttribute('src', file_url_transform_relative(file_create_url($uri)));
+            }
           }
         }
       }
@@ -413,6 +426,7 @@ class RsSyncResource extends ResourceBase {
     foreach ($dom->getElementsByTagName('body')->item(0)->childNodes as $node) {
       $fragment .= $dom->saveHtml($node);
     }
+
     return $fragment;
   }
 
@@ -441,7 +455,7 @@ class RsSyncResource extends ResourceBase {
     $event_dispatcher = \Drupal::service('event_dispatcher');
 
     $node = Node::load($nid);
-    $node->title = $data['title'];
+    $node->setTitle($data['title']);
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'full_html'];
     $node->field_date = $data['dates'];
