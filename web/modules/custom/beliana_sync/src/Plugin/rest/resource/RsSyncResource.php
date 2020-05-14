@@ -171,7 +171,7 @@ class RsSyncResource extends ResourceBase {
         $dir = substr($file_name, 0, 3);
         $file_dir = 'public://' . $date . '/' . $dir;
 
-        if ($file_system->prepareDirectory('public://' . $file_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY)) {
+        if ($file_system->prepareDirectory($file_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY)) {
           /** @var \Drupal\file\FileInterface $file */
           if ($file = file_save_data($file_data, $file_dir . '/' . $file_name)) {
             $file_OK = TRUE;
@@ -480,11 +480,11 @@ class RsSyncResource extends ResourceBase {
 
     if($node->hasField('field_images')) {
       foreach ($node->field_images->getValue() as $field_image) {
-        $media = Media::load($field_image->target_id);
-        if (!is_null($media)) {
+        if ($media = Media::load($field_image['target_id'])) {
           $media->delete();
         }
       }
+
       $local_fids = $this->downloadMedia($data['images']);
       if (!empty($local_fids)) {
         $node->field_images = $local_fids;
