@@ -33,7 +33,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Použiť
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Zoradiť podľa'
@@ -533,7 +533,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Stav zverejnenia'
+            label: 'Publishing status'
             description: ''
             identifier: status
             optional: true

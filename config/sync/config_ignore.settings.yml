@@ -1,8 +1,8 @@
 ignored_config_entities:
-  0: system.file
-  2: system.site
-  4: locale.settings
-  6: recaptcha.settings
+  - system.file
+  - system.site
+  - locale.settings
+  - recaptcha.settings
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 langcode: sk
