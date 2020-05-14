@@ -6,7 +6,7 @@ id: 739d7db063
 name: 'Invalidate tags'
 invalidationtype: tag
 hostname: localhost
-port: 80
+port: 6081
 path: /
 request_method: BAN
 scheme: http
