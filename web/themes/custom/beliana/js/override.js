@@ -47,7 +47,7 @@
         }
         else if ($(window).width() < 948) {
           header_offset = 74;
-          title_offset = 252;
+          title_offset = 200;
         }
 
         if ($('#content-main').height() > 500) {
