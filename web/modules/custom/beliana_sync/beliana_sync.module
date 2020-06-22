@@ -4,6 +4,7 @@
  * @file
  */
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityInterface;
 
 /**
@@ -13,6 +14,7 @@ function beliana_sync_entity_presave(EntityInterface $entity) {
   switch ($entity->bundle()) {
     case 'word':
       $entity->set('field_alphabet', _assign_alphabet_group($entity->get('field_sort')->value));
+      Cache::invalidateTags(['node:' . $entity->id()]);
       break;
   }
 }
