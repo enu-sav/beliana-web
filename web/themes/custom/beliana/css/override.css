@@ -654,6 +654,20 @@ article .heslo .obsah.desktop {
 article .heslo .obsah.mobile {
   display: none;
 }
+article .heslo .obsah.desktop article.media-image.view-mode-in-word {
+  float: left;
+  padding-right: 30px;
+}
+article .heslo .obsah.desktop article.media-image.view-mode-in-word a {
+  display: block;
+  text-align: left;
+}
+article .heslo .obsah article.media-image.view-mode-in-word img {
+  width: 100%;
+}
+article .heslo .obsah.desktop article.media-image.view-mode-in-word img {
+  max-width: 300px;
+}
 
 article .heslo .obsah table tr td:first-child {
   font-weight: initial;
@@ -691,9 +705,12 @@ article .heslo .sidebar-wrapper .structure ul li.small a {
   padding-left: 25px;
 }
 
-article.media-image.view-mode-in-word a {
+.heslo-ilustracia article.media-image.view-mode-in-word a {
   display: block;
   text-align: center;
+}
+.heslo-ilustracia article.media-image.view-mode-in-word.moved {
+  display: none;
 }
 
 article .field--name-body table tr td {

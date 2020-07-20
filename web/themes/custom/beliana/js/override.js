@@ -83,6 +83,20 @@
 
         $.each(['desktop', 'mobile'], function (i, selector) {
           var $wrapper = $word.find('> .obsah.' + selector);
+          var $images = $word.find('.heslo-ilustracia .media-image');
+          var match = $wrapper.html().match(/\[IMG-[0-9]+\]/g);
+
+          // replace [IMG-X] tags in text with referenced media
+          $.each(match, function (key, tag) {
+            var parse = tag.split('-');
+            var id = parse[1].replace(']', '') - 1;
+            var $tag = $wrapper.find('p:contains(' + tag + ')');
+            var $image = $($images[id]);
+
+            $($image[0].outerHTML).insertAfter($tag);
+            $image.addClass('moved');
+            $tag.remove();
+          });
 
           if ($wrapper.find('h2, h3').length) {
             var $sidebar = $word.find('.sidebar-wrapper.' + selector + ' .structure');
