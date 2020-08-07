@@ -14,7 +14,8 @@ function beliana_sync_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
     case 'user_form':
       //disable browser remember password on user edit form
-      $form['#attributes']['autocomplete'] = 'off';
+      $form['account']['current_pass']['#type'] = 'textfield';
+      $form['account']['current_pass']['#attributes']['onfocus'] = "this.setAttribute('type', 'password')";
       break;
   }
 }
