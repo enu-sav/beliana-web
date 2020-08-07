@@ -656,7 +656,11 @@ article .heslo .obsah.mobile {
 }
 article .heslo .obsah.desktop article.media-image.view-mode-in-word {
   float: left;
-  padding-right: 30px;
+  padding-right: 20px;
+  margin-top: 7px;
+}
+article .heslo .obsah.desktop article.media-image.view-mode-in-word .field--name-field-description {
+  display: none;
 }
 article .heslo .obsah.desktop article.media-image.view-mode-in-word a {
   display: block;
@@ -666,7 +670,7 @@ article .heslo .obsah article.media-image.view-mode-in-word img {
   width: 100%;
 }
 article .heslo .obsah.desktop article.media-image.view-mode-in-word img {
-  max-width: 300px;
+  max-width: 290px;
 }
 
 article .heslo .obsah table tr td:first-child {
