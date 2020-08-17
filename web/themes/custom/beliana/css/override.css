@@ -659,6 +659,9 @@ article .heslo .obsah.desktop article.media-image.view-mode-in-word {
   padding-right: 20px;
   margin-top: 7px;
 }
+article .heslo .obsah.desktop article.media-image.view-mode-in-word .field--name-field-description {
+  max-width: 290px;
+}
 article .heslo .obsah.desktop article.media-image.view-mode-in-word .field--name-field-description p {
   margin: 0;
 }
