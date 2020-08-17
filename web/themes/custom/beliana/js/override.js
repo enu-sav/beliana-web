@@ -83,23 +83,35 @@
 
         $.each(['desktop', 'mobile'], function (i, selector) {
           var $wrapper = $word.find('> .obsah.' + selector);
+          var $sidebar_wrapper = $word.find('.sidebar-wrapper.' + selector);
           var $images = $word.find('.heslo-ilustracia .media-image');
-          var match = $wrapper.html().match(/\[IMG-[0-9]+\]/g);
 
-          // replace [IMG-X] tags in text with referenced media
-          $.each(match, function (key, tag) {
-            var parse = tag.split('-');
-            var id = parse[1].replace(']', '') - 1;
-            var $tag = $wrapper.find('p:contains(' + tag + ')');
-            var $image = $($images[id]);
+          $.each(['IMG', 'IMGX'], function (key, tag) {
+            var matches = $wrapper.html().match(new RegExp("\\[" + tag + "-[0-9]+\\]", 'g'));
 
-            $($image[0].outerHTML).insertAfter($tag);
-            $image.addClass('moved');
-            $tag.remove();
+            // replace [IMG-ID] tags in text with referenced media
+            $.each(matches, function (key, match) {
+              var parse = match.split('-');
+              var id = parse[1].replace(']', '') - 1;
+              var $tag = $wrapper.find('p:contains(' + match + ')');
+              var $image = $($images[id]);
+
+              if (tag == 'IMGX') {
+                $image.addClass('hide-description');
+              }
+
+              $($image[0].outerHTML).insertAfter($tag);
+              $image.addClass('moved');
+              $tag.remove();
+            });
+
+            if (!$sidebar_wrapper.find('article.media-image.view-mode-in-word:not(.moved)').length && !$sidebar_wrapper.find('.field--name-field-table').length) {
+              $sidebar_wrapper.hide();
+            }
           });
 
           if ($wrapper.find('h2, h3').length) {
-            var $sidebar = $word.find('.sidebar-wrapper.' + selector + ' .structure');
+            var $sidebar = $sidebar_wrapper.find('.structure');
 
             $sidebar.append('<h3>Obsah</h3><ul></ul>');
 
