@@ -1603,7 +1603,13 @@ footer .footer-copyright {
   }
 
   article .heslo .sidebar-wrapper.desktop {
-    display: none;
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
+  article .heslo .sidebar-wrapper.desktop .field--name-field-description p {
+    border: none;
+    padding: 0;
   }
   article .heslo .sidebar-wrapper.mobile {
     display: block;
