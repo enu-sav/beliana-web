@@ -1644,6 +1644,7 @@ footer .footer-copyright {
   }
   article .heslo .obsah.mobile {
     display: block;
+    text-align: left;
   }
 
   .heslo-container {
