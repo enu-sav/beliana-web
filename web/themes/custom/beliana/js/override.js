@@ -104,10 +104,6 @@
               $image.addClass('moved');
               $tag.remove();
             });
-
-            if (!$sidebar_wrapper.find('article.media-image.view-mode-in-word:not(.moved)').length && !$sidebar_wrapper.find('.field--name-field-table').length) {
-              $sidebar_wrapper.hide();
-            }
           });
 
           if ($wrapper.find('h2, h3').length) {
@@ -135,6 +131,10 @@
             });
 
             $sidebar.removeClass('hidden');
+          }
+
+          if (!$sidebar_wrapper.find('article.media-image.view-mode-in-word:not(.moved)').length && !$sidebar_wrapper.find('.field--name-field-table').length && !$sidebar_wrapper.find('.structure > ul').length) {
+            $sidebar_wrapper.hide();
           }
         });
 

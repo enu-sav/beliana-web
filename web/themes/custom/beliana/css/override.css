@@ -1607,6 +1607,9 @@ footer .footer-copyright {
     float: none;
     padding: 0;
   }
+  article .heslo .sidebar-wrapper.desktop .structure {
+    display: none;
+  }
   article .heslo .sidebar-wrapper.desktop .field--name-field-description p {
     border: none;
     padding: 0;
