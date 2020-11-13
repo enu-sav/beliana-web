@@ -8,31 +8,39 @@
 
   Drupal.behaviors.override = {
     attach: function (context, settings) {
-      $('.smartphone-navigation .fa-bars').on('click', function () {
-        if ($(this).parent().hasClass('open')) {
-          $(this).parent().removeClass('open');
-        }
-        else {
-          $(this).parent().addClass('open');
-        }
+      $('header.header').once('header-process').each(function () {
+        var $wrapper = $(this);
+
+        $wrapper.find('.smartphone-navigation .fa-bars').on('click', function () {
+          if ($(this).parent().hasClass('open')) {
+            $(this).parent().removeClass('open');
+          }
+          else {
+            $(this).parent().addClass('open');
+          }
+        });
+
+        $wrapper.find('.header-navigation .word-facet-wrap').on('click', function (e) {
+          if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+          }
+          else {
+            $(this).addClass('active');
+          }
+        });
       });
 
-      $('.header .header-navigation .word-facet-wrap').on('click', function (e) {
-        if ($(this).hasClass('active')) {
-          $(this).removeClass('active');
-        }
-        else {
-          $(this).addClass('active');
-        }
-      });
+      $('body').once('body-process').each(function () {
+        var $wrapper = $(this);
 
-      $('body.path-rozsirene-vyhladavanie #block-kategorie .opener').on('click', function (e) {
-        if ($(this).parent().hasClass('active')) {
-          $(this).parent().removeClass('active');
-        }
-        else {
-          $(this).parent().addClass('active');
-        }
+        $wrapper.find('.path-rozsirene-vyhladavanie #block-kategorie .opener').on('click', function (e) {
+          if ($(this).parent().hasClass('active')) {
+            $(this).parent().removeClass('active');
+          }
+          else {
+            $(this).parent().addClass('active');
+          }
+        });
       });
 
       // sticky header
