@@ -29,8 +29,17 @@
   'vocabulary-' ~ term.bundle|clean_class,
 ] %}
 
+{% set full_name = [] %}
+{% if term.field_titul_pred_menom.value is not empty %}
+  {% set full_name = full_name|merge([term.field_titul_pred_menom.value ~ ' ']) %}
+{% endif %}
+
+{% set full_name = full_name|merge([term.field_meno.value ~ ' ' ~ term.field_priezvisko.value]) %}
+
+{% if term.field_titul_za_menom.value is not empty %}
+  {% set full_name = full_name|merge([', ' ~  term.field_titul_za_menom.value]) %}
+{% endif %}
+
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
-  <a href="{{ url }}">
-    {{ term.field_titul_pred_menom.value ~ ' ' ~ term.field_meno.value ~ ' ' ~ term.field_priezvisko.value }}{% if term.field_titul_za_menom.value is not empty %}{{ ', ' ~  term.field_titul_za_menom.value }}{% endif %}
-  </a>
+  <a href="{{ url }}">{{ full_name|join|trim }}</a>
 </div>
