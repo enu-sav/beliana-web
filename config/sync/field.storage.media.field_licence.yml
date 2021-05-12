@@ -3,7 +3,7 @@ langcode: sk
 status: true
 dependencies:
   module:
-    - media_entity
+    - media
     - taxonomy
 id: media.field_licence
 field_name: field_licence

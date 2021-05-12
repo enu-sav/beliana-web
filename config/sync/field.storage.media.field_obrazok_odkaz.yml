@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - link
-    - media_entity
+    - media
 id: media.field_obrazok_odkaz
 field_name: field_obrazok_odkaz
 entity_type: media

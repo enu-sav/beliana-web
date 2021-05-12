@@ -14,3 +14,4 @@ _core:
   default_config_hash: FoTCiVMOlTpj9EU5bUJB7lS8JK2gnnvqh-AdIC0ktBQ
 langcode: sk
 xsl: true
+entities_per_queue_item: 50

@@ -3,7 +3,7 @@ langcode: sk
 status: true
 dependencies:
   module:
-    - media_entity_image
+    - media
     - views
 _core:
   default_config_hash: 2RexdEYP3IihY4qtpq0FjvGPzuWNPr9sJatRYTdKdDs

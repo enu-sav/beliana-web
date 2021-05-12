@@ -3,7 +3,7 @@ langcode: sk
 status: true
 dependencies:
   module:
-    - media_entity
+    - media
 id: media.field_institucia
 field_name: field_institucia
 entity_type: media

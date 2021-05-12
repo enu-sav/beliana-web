@@ -46,7 +46,12 @@ $config['config_split.config_split.prod']['status'] = FALSE;
 
 $settings['hash_salt'] = 'J2RATdd4h4GdghkCZH99vaNPXR2-6_q0m6fC1qlrYm6SzkpAp48cDboGnEC6iQy940JhA9rzcA';
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = '../config/sync';
+$settings['config_sync_directory'] = '../config/sync';
+
+// Last: this servers specific settings files.
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
 
 /**
  * Load services definition file.

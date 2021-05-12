@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_url_autora_diela_l
-    - media_entity.bundle.image
+    - media.type.image
   module:
     - link
 id: media.image.field_url_autora_diela_l

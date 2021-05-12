@@ -54,6 +54,7 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
+$sites['web.enu.sav'] = 'dev';
 $sites['beliana.docker.amazee.io'] = 'dev';
 $sites['dw.beliana.sav.sk'] = 'stage';
 $sites['beliana.sav.sk'] = 'prod';

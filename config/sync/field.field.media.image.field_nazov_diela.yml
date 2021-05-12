@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_nazov_diela
-    - media_entity.bundle.image
+    - media.type.image
 id: media.image.field_nazov_diela
 field_name: field_nazov_diela
 entity_type: media

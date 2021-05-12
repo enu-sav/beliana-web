@@ -22,6 +22,11 @@ backend_config:
     commit_within: 1000
     solr_version: ''
     http_method: AUTO
+    http_user: ''
+    http:
+      http_user: ''
+      http_pass: ''
+    http_pass: ''
   retrieve_data: false
   highlight_data: false
   excerpt: false

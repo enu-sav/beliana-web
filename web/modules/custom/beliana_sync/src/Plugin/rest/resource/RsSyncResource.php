@@ -9,7 +9,7 @@ use Drupal\beliana_sync\Event\PreNodeSaveEvent;
 use Drupal\beliana_sync\Event\PreNodeUpdateEvent;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Session\AccountProxyInterface;
-use Drupal\media_entity\Entity\Media;
+use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;

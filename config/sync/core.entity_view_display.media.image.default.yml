@@ -14,7 +14,7 @@ dependencies:
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
-    - media_entity.bundle.image
+    - media.type.image
   module:
     - beliana_daily
     - colorbox
