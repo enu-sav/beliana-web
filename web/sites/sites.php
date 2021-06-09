@@ -56,5 +56,6 @@
 
 $sites['web.enu.sav'] = 'dev';
 $sites['beliana.docker.amazee.io'] = 'dev';
+$sites['beliana.web.lndo.site'] = 'dev';
 $sites['dw.beliana.sav.sk'] = 'stage';
 $sites['beliana.sav.sk'] = 'prod';
