@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a995f184d558a9d5735b1adebddbbf4",
+    "content-hash": "626213df8ad8fd9937d3a07202f93293",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5146,11 +5146,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "dev-1.x",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "aa80a757b2ae2668ff6a528a7487e0a196599ae4"
+                "reference": "8.x-1.19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.19.zip",
+                "reference": "8.x-1.19",
+                "shasum": "5654e9d02117e28c585d89a25ea3cc40d20c5019"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -5170,20 +5176,17 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1620418208",
+                    "version": "8.x-1.19",
+                    "datestamp": "1612192040",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": "^9"
                     }
                 }
             },
@@ -5211,16 +5214,21 @@
                 "source": "https://git.drupalcode.org/project/search_api",
                 "issues": "https://www.drupal.org/project/issues/search_api",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
-            },
-            "time": "2021-05-10T09:46:03+00:00"
+            }
         },
         {
             "name": "drupal/search_api_solr",
-            "version": "dev-1.x",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_solr.git",
-                "reference": "d6f4d62aa0d50741ae80f955c3fc7837ec95bb5b"
+                "reference": "8.x-1.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_solr-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "5ceae0889e19c512307eebbedcc3145f8cdf55ad"
             },
             "require": {
                 "drupal/core": "^8.9 || ^9",
@@ -5228,7 +5236,7 @@
                 "solarium/solarium": "^6.0"
             },
             "conflict": {
-                "drupal/acquia_connector": "<1.24 || ^2",
+                "drupal/acquia_connector": "<3.0",
                 "drupal/acquia_search_solr": "*",
                 "drupal/search_api_pantheon": "<1.1"
             },
@@ -5245,17 +5253,16 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev",
-                    "dev-8.x-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1614163535",
+                    "version": "8.x-1.11",
+                    "datestamp": "1622736934",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "branch-alias": {
+                    "dev-8.x-1.x": "1.x-dev"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5294,8 +5301,7 @@
                 "source": "http://git.drupal.org/project/search_api_solr.git",
                 "issues": "https://www.drupal.org/project/issues/search_api_solr",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
-            },
-            "time": "2021-02-24T10:43:42+00:00"
+            }
         },
         {
             "name": "drupal/simple_sitemap",
@@ -11254,9 +11260,7 @@
         "drupal/inline_entity_form": 10,
         "drupal/media_entity": 10,
         "drupal/media_entity_browser": 15,
-        "drupal/metatag": 20,
-        "drupal/search_api": 20,
-        "drupal/search_api_solr": 20
+        "drupal/metatag": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
