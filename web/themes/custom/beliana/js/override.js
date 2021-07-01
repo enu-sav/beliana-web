@@ -95,23 +95,25 @@
           var $images = $word.find('.heslo-ilustracia .media-image');
 
           $.each(['IMG', 'IMGX'], function (key, tag) {
-            var matches = $wrapper.html().match(new RegExp("\\[" + tag + "-[0-9]+\\]", 'g'));
+            if ($wrapper.length) {
+              var matches = $wrapper.html().match(new RegExp("\\[" + tag + "-[0-9]+\\]", 'g'));
 
-            // replace [IMG-ID] tags in text with referenced media
-            $.each(matches, function (key, match) {
-              var parse = match.split('-');
-              var id = parse[1].replace(']', '') - 1;
-              var $tag = $wrapper.find('p:contains(' + match + ')');
-              var $image = $($images[id]);
+              // replace [IMG-ID] tags in text with referenced media
+              $.each(matches, function (key, match) {
+                var parse = match.split('-');
+                var id = parse[1].replace(']', '') - 1;
+                var $tag = $wrapper.find('p:contains(' + match + ')');
+                var $image = $($images[id]);
 
-              if (tag == 'IMGX') {
-                $image.addClass('hide-description');
-              }
+                if (tag == 'IMGX') {
+                  $image.addClass('hide-description');
+                }
 
-              $($image[0].outerHTML).insertAfter($tag);
-              $image.addClass('moved');
-              $tag.remove();
-            });
+                $($image[0].outerHTML).insertAfter($tag);
+                $image.addClass('moved');
+                $tag.remove();
+              });
+            }
           });
 
           if ($wrapper.find('h2, h3').length) {

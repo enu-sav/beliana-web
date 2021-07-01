@@ -69,7 +69,7 @@
         "drupal/recaptcha": "^2.4",
         "drupal/redirect": "^1.6",
         "drupal/search_api": "^1.19",
-        "drupal/search_api_solr": "^1.11",
+        "drupal/search_api_solr": "^4.2",
         "drupal/simple_sitemap": "^3.0",
         "drupal/svg_image": "^1.9",
         "drupal/token": "^1.6",
@@ -131,8 +131,8 @@
         },
         "patches": {
             "drupal/core": {
-                "2325899 - UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2019-03-02/2325899-124.patch",
-                "2408549 - There is no indication on configuration forms if there are overridden values": "https://www.drupal.org/files/issues/drupal-n2408549-67.patch"
+                "2325899 - UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2020-05-25/2325899-150-D8.patch",
+                "2408549 - There is no indication on configuration forms if there are overridden values": "https://www.drupal.org/files/issues/2020-09-17/2408549-139.patch"
             },
             "drupal/admin_toolbar": {
                 "3121816 - Version 8.x-2.1 need Drupal 8.8.0 or greater": "https://www.drupal.org/files/issues/2020-03-30/3121816-07.patch"
