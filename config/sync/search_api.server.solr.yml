@@ -13,7 +13,7 @@ backend_config:
   connector_config:
     scheme: https
     host: web-04.beliana.sav.sk
-    port: '443'
+    port: 443
     path: ''
     core: beliana_stage
     timeout: 5
