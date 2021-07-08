@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - link
-    - media_entity
+    - media
 id: media.field_url_textu_licencie_l
 field_name: field_url_textu_licencie_l
 entity_type: media

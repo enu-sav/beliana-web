@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_meno_autora_snimky_diela
-    - media_entity.bundle.image
+    - media.type.image
 id: media.image.field_meno_autora_snimky_diela
 field_name: field_meno_autora_snimky_diela
 entity_type: media

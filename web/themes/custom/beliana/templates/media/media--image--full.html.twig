@@ -1,11 +1,30 @@
 {#
 /**
  * @file
- * Default theme implementation to present a media entity.
+ * Default theme implementation to present a media item.
  *
  * Available variables:
- * - name: Name of the media.
+ * - media: The media item, with limited access to object properties and
+ *   methods. Only method names starting with "get", "has", or "is" and
+ *   a few common methods such as "id", "label", and "bundle" are available.
+ *   For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in
+ *   an exception.
+ *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
+ * - name: Name of the media item.
  * - content: Media content.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
  *
  * @see template_preprocess_media()
  *
@@ -13,26 +32,32 @@
  */
 #}
 
-<article{{ attributes }}>
-  {% if content %}      
-      <div class="left metadata">
-        <h1 class="title">Ilustrácia k heslu <span>{{ node.title.value }}</span></h1>
+{% set classes = [
+  'media',
+  'media-' ~ media.bundle()|clean_class,
+  view_mode ? 'view-mode-' ~ view_mode|clean_class,
+] %}
 
-        {{ content.field_description }}
+<article{{ attributes.addClass(classes) }}>
+  {% if content %}
+    <div class="left metadata">
+      <h1 class="title">Ilustrácia k heslu <span>{{ node.title.value }}</span></h1>
 
-        <div class="dalsie-info" data-collapse>
-          <h3>Ďalšie informácie o ilustrácii</h3>
-          <div>{{ content|without('field_image')|without('field_obrazok_odkaz')|without('field_description') }}</div>
-        </div>
+      {{ content.field_description }}
 
-        {% if back_url %}
-            <a href="{{ back_url }}" class="back"><i class="icon-back"></i>Naspäť na stránku hesla</a>
-        {% endif %}
+      <div class="dalsie-info" data-collapse>
+        <h3>Ďalšie informácie o ilustrácii</h3>
+        <div>{{ content|without('field_image')|without('field_obrazok_odkaz')|without('field_description') }}</div>
       </div>
 
-      <div class="right media">
-        {{ content.field_image }}
-        {{ content.field_obrazok_odkaz }}
-      </div>
+      {% if back_url %}
+        <a href="{{ back_url }}" class="back"><i class="icon-back"></i>Naspäť na stránku hesla</a>
+      {% endif %}
+    </div>
+
+    <div class="right media">
+      {{ content.field_image }}
+      {{ content.field_obrazok_odkaz }}
+    </div>
   {% endif %}
 </article>

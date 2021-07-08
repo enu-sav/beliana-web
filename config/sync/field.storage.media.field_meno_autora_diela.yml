@@ -3,7 +3,7 @@ langcode: sk
 status: true
 dependencies:
   module:
-    - media_entity
+    - media
 id: media.field_meno_autora_diela
 field_name: field_meno_autora_diela
 entity_type: media

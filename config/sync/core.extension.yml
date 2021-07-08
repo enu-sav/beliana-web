@@ -1,7 +1,6 @@
 module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
-  admin_toolbar_search: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   auto_entitylabel: 0
@@ -46,9 +45,8 @@ module:
   link: 0
   locale: 0
   mathjax: 0
-  media_entity: 0
+  media: 0
   media_entity_browser: 0
-  media_entity_image: 0
   menu_link_attributes: 0
   menu_ui: 0
   metatag: 0
@@ -58,7 +56,6 @@ module:
   migrate: 0
   migrate_default_content: 0
   migrate_drupal: 0
-  migrate_drupal_multilingual: 0
   migrate_plus: 0
   migrate_source_csv: 0
   migrate_source_yml: 0
@@ -68,6 +65,7 @@ module:
   page_cache: 0
   page_manager: 0
   path: 0
+  path_alias: 0
   pathauto: 0
   purge: 0
   purge_drush: 0

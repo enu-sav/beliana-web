@@ -26,7 +26,6 @@ class SearchForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $entity_manager = \Drupal::entityTypeManager();
     $query = \Drupal::request()->query->all();
-    $form['#cache']['max-age'] = 0;
 
     $form['query'] = [
       '#type' => 'value',
@@ -45,7 +44,6 @@ class SearchForm extends FormBase {
         '#attributes' => [
           'class' => ['search-input'],
           'placeholder' => 'Vyhľadať (pozri Možnosti vyhľadávania vpravo)',
-//          'autocomplete' => 'off',
         ],
       ]
     ];

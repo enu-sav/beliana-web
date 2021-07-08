@@ -80,8 +80,7 @@ function cool_theme_suggestions_block_alter(array &$suggestions, array $variable
  * Implements hook_theme_suggestions_alter().
  */
 function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
-
-  if (isset($variables['element']) && isset($variables['element']['#type']) && $variables['element']['#type'] == 'form') {
+  if (isset($variables['element']) && isset($variables['element']['#type']) && isset($variables['element']['#id']) && $variables['element']['#type'] == 'form') {
     $original_theme_hook = $variables['theme_hook_original'];
     $new_suggestion = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
     if (!in_array($new_suggestion, $suggestions)) {
@@ -89,7 +88,7 @@ function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
     }
   }
 
-  if (isset($variables['element']) && isset($variables['element']['#type']) && $variables['theme_hook_original'] == 'form_element') {
+  if (isset($variables['element']) && isset($variables['element']['#type']) && isset($variables['element']['#name']) && $variables['theme_hook_original'] == 'form_element') {
     $original_theme_hook = $variables['theme_hook_original'];
     $new_suggestion = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#name']);
     if (!in_array($new_suggestion, $suggestions)) {
@@ -98,7 +97,6 @@ function cool_theme_suggestions_alter(array &$suggestions, array $variables) {
   }
 
   return $suggestions;
-
 }
 
 /**

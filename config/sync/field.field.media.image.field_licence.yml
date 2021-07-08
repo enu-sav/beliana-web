@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_licence
-    - media_entity.bundle.image
+    - media.type.image
     - taxonomy.vocabulary.licenses
 id: media.image.field_licence
 field_name: field_licence

@@ -16,10 +16,10 @@ dependencies:
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
     - image.style.large
-    - media_entity.bundle.image
+    - media.type.image
   module:
     - beliana_daily
-    - image
+    - svg_image
     - text
 id: media.image.conetnt
 targetEntityType: media
@@ -67,5 +67,6 @@ hidden:
   field_url_textu_licencie_l: true
   langcode: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

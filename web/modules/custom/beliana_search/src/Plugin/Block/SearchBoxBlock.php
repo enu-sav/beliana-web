@@ -3,6 +3,7 @@
 namespace Drupal\beliana_search\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Custom search block, so we override AJAX-driven views.
@@ -18,7 +19,12 @@ class SearchBoxBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    return \Drupal::formBuilder()->getForm('Drupal\beliana_search\Form\SearchForm');
+    return \Drupal::formBuilder()
+      ->getForm('Drupal\beliana_search\Form\SearchForm');
+  }
+
+  public function getCacheContexts() {
+    return ['url'];
   }
 
 }

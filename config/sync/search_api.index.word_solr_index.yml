@@ -2,17 +2,45 @@ uuid: 22d9b1a6-09ba-4076-86c4-c0aeea26f2f6
 langcode: sk
 status: true
 dependencies:
+  module:
+    - search_api_solr
+    - taxonomy
+    - node
+    - search_api
   config:
     - field.storage.node.field_alphabet
     - field.storage.node.field_categories
     - field.storage.node.field_sort
     - field.storage.node.body
     - search_api.server.solr
-  module:
-    - taxonomy
-    - search_api_solr
-    - search_api
-    - node
+third_party_settings:
+  search_api_solr:
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+      _core:
+        default_config_hash: 914vBglS7nVnl8EUqBejfUPPRT6wnWYcOhMli6oL4jY
+      langcode: sk
+    advanced:
+      index_prefix: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    term_modifiers:
+      slop: 10000000
+      fuzzy: 2
 id: word_solr_index
 name: 'Word Solr index'
 description: ''
@@ -50,7 +78,6 @@ field_settings:
         - field.storage.node.field_alphabet
       module:
         - taxonomy
-        - taxonomy
   body:
     label: 'Text hesla'
     datasource_id: 'entity:node'
@@ -74,7 +101,7 @@ field_settings:
     label: 'Kategórie » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_categories:entity:name'
-    type: solr_string_ngram
+    type: 'solr_text_custom:ngram'
     boost: !!float 3
     dependencies:
       config:
@@ -85,13 +112,12 @@ field_settings:
     label: 'Kategórie » Termín taxonómie » Term Parents » Termín taxonómie » Názov'
     datasource_id: 'entity:node'
     property_path: 'field_categories:entity:parent:entity:name'
-    type: solr_text_ngram
+    type: 'solr_text_custom:ngram'
     boost: !!float 2
     dependencies:
       config:
         - field.storage.node.field_categories
       module:
-        - taxonomy
         - taxonomy
   field_alphabet:
     label: Heslo
@@ -131,12 +157,18 @@ field_settings:
     type: boolean
     indexed_locked: true
     type_locked: true
+    dependencies:
+      module:
+        - node
   title:
     label: Nadpis
     datasource_id: 'entity:node'
     property_path: title
     type: text
     boost: !!float 21
+    dependencies:
+      module:
+        - node
   uid:
     label: UID
     datasource_id: 'entity:node'
@@ -144,6 +176,9 @@ field_settings:
     type: integer
     indexed_locked: true
     type_locked: true
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:node':
     bundles:
@@ -201,7 +236,9 @@ processor_settings:
     weights:
       preprocess_index: -49
       preprocess_query: -20
+  language_with_fallback: {  }
   rendered_item: {  }
+  solr_date_range: {  }
   stopwords:
     all_fields: false
     fields:

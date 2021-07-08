@@ -12,9 +12,9 @@ backend_config:
   connector: standard
   connector_config:
     scheme: https
-    host: web-03.beliana.sav.sk
-    port: '443'
-    path: /solr
+    host: web-04.beliana.sav.sk
+    port: 443
+    path: ''
     core: beliana_stage
     timeout: 5
     index_timeout: 5
@@ -22,11 +22,14 @@ backend_config:
     commit_within: 1000
     solr_version: ''
     http_method: AUTO
+    skip_schema_check: false
   retrieve_data: false
   highlight_data: false
-  excerpt: false
-  skip_schema_check: false
   site_hash: true
-  suggest_suffix: true
-  suggest_corrections: true
-  suggest_words: false
+  domain: generic
+  finalize_timeout: 30
+  server_prefix: ''
+  optimize: false
+  environment: default
+  index_single_documents_fallback_count: 10
+  fallback_multiple: true

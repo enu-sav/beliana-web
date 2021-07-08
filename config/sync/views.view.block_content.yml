@@ -14,7 +14,6 @@ description: 'Nájsť a spravovať vlastné bloky.'
 tag: default
 base_table: block_content_field_data
 base_field: id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -59,12 +58,12 @@ display:
             next: Ďalej
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položiek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Všetko -'
             offset: false
-            offset_label: Offset
+            offset_label: 'Zobraziť od'
       style:
         type: table
         options:
@@ -379,6 +378,8 @@ display:
               anonymous: '0'
               administrator: '0'
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -420,6 +421,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -456,6 +459,8 @@ display:
             required: false
             remember: false
             multiple: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

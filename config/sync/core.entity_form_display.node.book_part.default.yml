@@ -9,8 +9,8 @@ dependencies:
     - image.style.thumbnail
     - node.type.book_part
   module:
-    - image
     - path
+    - svg_image
 id: node.book_part.default
 targetEntityType: node
 bundle: book_part
@@ -95,6 +95,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     region: content
   url_redirects:
