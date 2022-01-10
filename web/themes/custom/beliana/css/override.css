@@ -375,7 +375,7 @@ nav.pager ul li a:hover {
 }
 .view-word-search-page header {
   margin-top: -18px;
-  color: #999;
+  color: #767676;
 }
 .view-word-search-page .heslo-container {
   width: 100%;
@@ -1326,7 +1326,7 @@ article .field--name-body table tr td {
 
 .zoznam-tools {
   margin-top: 0 /*-30px*/;
-  color: #999;
+  color: #767676;
 }
 .zoznam-tools .item:last-of-type {
   display: none;
@@ -1361,6 +1361,7 @@ article .field--name-body table tr td {
 .sort-button .dropdown li {
   color: #a51b00;
   cursor: pointer;
+  padding-left: 10px;
 }
 .heslo-tools .share.active .dropdown li:hover a,
 .truncate-button .dropdown li:hover,
