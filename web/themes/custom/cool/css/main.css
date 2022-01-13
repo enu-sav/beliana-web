@@ -630,8 +630,8 @@ div.obsah {
 .heslo-tools .share .dropdown li a {
   display: block;
   text-decoration: none;
-  color: #494949
-  padding: 0px 10px;
+  color: #494949;
+  padding: 0 10px;
 }
 
 /* Hover state */
@@ -1070,7 +1070,6 @@ form.user-pass input#edit-submit {
   color: #1c1c1c;
   text-decoration: none !important;
   font-weight: 700;
-  font-size: 18px;
   font-size: 1.8rem;
   line-height: 16px;
 }
