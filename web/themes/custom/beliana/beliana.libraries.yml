@@ -8,6 +8,7 @@ theme:
   js:
     js/libs/exif-js/exif.js: {}
     js/libs/exif2css/dist/exif2css.js: {}
+    js/wcag-tools.js: {}
     js/override.js: {}
   dependencies:
     - core/jquery
