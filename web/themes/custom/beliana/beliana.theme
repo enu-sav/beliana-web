@@ -13,6 +13,8 @@ use Drupal\Core\Url;
 function beliana_preprocess_html(&$variables) {
   $config = \Drupal::config('matomo.settings');
   $variables['matomo'] = ['site_id' => $config->get('matomo_site_id', 1)];
+
+  $variables['attributes']['class'][] = '';
 }
 
 /**

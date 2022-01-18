@@ -10,6 +10,19 @@
     attach: function (context, settings) {
       var $context = $(context);
 
+      $(".facets-widget-links").accessibleMegaMenu({
+        uuidPrefix: "accessible-alphabetical-menu",
+        menuClass: 'facet-inactive',
+        topNavItemClass: 'facet-item',
+        panelClass: 'facets-widget',
+        panelGroupClass: "sub-nav",
+        hoverClass: "hover",
+        focusClass: "focus",
+        openClass: "open"
+      });
+
+      // $('article .citacia h3').attr('aria-label',"Rozbaľ citáciu stlačním klávesy enter");
+
       /** Black and white version **/
       var black_white = localStorage.getItem('black-white') || 'normal';
 

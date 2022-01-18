@@ -128,8 +128,8 @@
       </div>
 
       <div class="citacia desktop" data-collapse>
-        <h3>citácia</h3>
-        <div>
+        <h3 tabindex="0">citácia</h3>
+        <div aria-hidden="false" >
           {% set author_fomratted = '' %}
           {% if node.field_autor.target_id %}
             {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}

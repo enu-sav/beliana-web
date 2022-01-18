@@ -51,7 +51,7 @@
   <header id="header" class="header clearfix" role="banner" aria-label="{{ 'Site header'|t }}">
     <div class="header-top">
       <div class="container clearfix">
-          <div class="sitename">
+        <div class="sitename">
           Encyclopaedia Beliana
         </div>
         <div class="left">
@@ -94,20 +94,22 @@
         <div class="right">
           {{ page.header_right }}
           <div class="search-help">
-            <a href="#" class="text">Možnosti vyhľadávania</a>
+            <a href="#" class="text" title="Možnosti vyhľadávania" aria-label="Možnosti vyhľadávania">Možnosti vyhľadávania</a>
             <div class="description">
-              <div class="arrow"></div>
-              <ul class="help">
-                <li><span>teplo:</span> všetky gramatické tvary slova teplo</li>
-                <li><span>teplo*:</span> všetky slová začínajúce sa na teplo</li>
-                <li><span>slovinsko~:</span> podobné slová (Slovensko, Slovinsko, ...)</li>
-                <li><span>"zdroj teplo":</span> fráza (všetky tvary)</li>
-                <li><span>dom teplo:</span> slová dom alebo teplo</li>
-                <li><span>dom -teplo:</span> slová dom, ale nie teplo</li>
-                <li><span>dom and teplo:</span> súčasne slová dom aj teplo</li>
-              </ul>
-              <a href="/pouzivanie-stranky" class="more-info">Viac o vyhľadávaní</a>
-              <a href="/rozsirene-vyhladavanie" class="more-info">Vyhľadávanie podľa kategórií</a>
+              <div class="arrow" aria-hidden="true"></div>
+              <nav class="search-list" aria-label="Zoznam možnosti vyhľadávania" tabindex='0'>
+                <ul class="help">
+                  <li class="item"><span>teplo:</span> všetky gramatické tvary slova teplo</li>
+                  <li class="item"><span>teplo*:</span> všetky slová začínajúce sa na teplo</li>
+                  <li class="item"><span>slovinsko~:</span> podobné slová (Slovensko, Slovinsko, ...)</li>
+                  <li class="item"><span>"zdroj teplo":</span> fráza (všetky tvary)</li>
+                  <li class="item"><span>dom teplo:</span> slová dom alebo teplo</li>
+                  <li class="item"><span>dom -teplo:</span> slová dom, ale nie teplo</li>
+                  <li class="item"><span>dom and teplo:</span> súčasne slová dom aj teplo</li>
+                </ul>
+              </nav>
+              <a href="/pouzivanie-stranky" class="more-info" title="Viac o vyhľadávaní" aria-label="Viac o vyhľadávaní">Viac o vyhľadávaní</a>
+              <a href="/rozsirene-vyhladavanie" class="more-info" title="Vyhľadávanie podľa kategórií" aria-label="Vyhľadávanie podľa kategórií">Vyhľadávanie podľa kategórií</a>
             </div>
           </div>
           <a href="#" id="search-box-mobile-toggle"></a>
@@ -150,11 +152,11 @@
     </div>
   </footer>
 
-{#  <div id="test-popup" class="sliding-popup-bottom">#}
-{#    <div class="popup-content info">#}
-{#      <div id="popup-text">#}
-{#        <p>Stránka je v testovacej prevádzke</p>#}
-{#      </div>#}
-{#    </div>#}
-{#  </div>#}
+  {#  <div id="test-popup" class="sliding-popup-bottom"> #}
+  {#    <div class="popup-content info"> #}
+  {#      <div id="popup-text"> #}
+  {#        <p>Stránka je v testovacej prevádzke</p> #}
+  {#      </div> #}
+  {#    </div> #}
+  {#  </div> #}
 </div>
