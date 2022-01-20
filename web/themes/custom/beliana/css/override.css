@@ -983,6 +983,9 @@ article .field--name-body table tr td {
   margin-top: -1px;
   display: none;
 }
+.black-white #block-beliana-heslo ul li ul {
+  background: #000;
+}
 #block-beliana-heslo ul li ul li {
   text-align: left;
   padding: 0;
@@ -1048,21 +1051,38 @@ article .field--name-body table tr td {
   z-index: 3;
   position: relative;
 }
-
 .black-white #block-beliana-heslo ul li:hover a,
+.black-white #block-beliana-heslo ul li:hover a.open,
 .black-white #block-beliana-heslo ul li:focus a,
-.black-white #block-beliana-heslo ul li a:hover,
-.black-white #block-beliana-heslo ul li a:focus,
+.black-white #block-beliana-heslo ul li:focus a.open,
 .black-white .view-word-search-page ul.pager li a:hover,
 .black-white .view-word-search-page ul.pager li a:focus {
   background-color: #fff !important;
   color: #000;
 }
 
-#block-beliana-heslo ul li ul li a:hover {
+.black-white #block-beliana-heslo ul li a:hover,
+.black-white #block-beliana-heslo ul li a.open:hover,
+.black-white #block-beliana-heslo ul li a:focus,
+.black-white #block-beliana-heslo ul li a.open:focus {
+  background: #000 !important;
+  color: #fff;
+}
+
+#block-beliana-heslo ul li a.open + .facets-widget.open ul {
+  display: block;
+}
+
+#block-beliana-heslo ul li ul li a:hover,
+#block-beliana-heslo ul li ul li a.focus {
   box-shadow: none;
   background-color: #fdbda7 !important;
   border-radius: 0;
+}
+
+.black-whiteiana-heslo ul li ul li a:hover,
+.black-whiteiana-heslo ul li ul li a.focus {
+  background-color: #fff !important;
 }
 
 #block-beliana-heslo .facet-item a:hover,

@@ -1250,6 +1250,10 @@ table {
   bottom: 0;
   left: 0;
 }
+.black-white #gradient {
+  height: 3.125em;
+  filter: invert(1);
+}
 
 table tr td:first-child {
   font-weight: bold;
