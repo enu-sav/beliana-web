@@ -984,7 +984,7 @@ article .field--name-body table tr td {
   display: none;
 }
 .black-white #block-beliana-heslo ul li ul {
-  background: #000;
+  background: #fff;
 }
 #block-beliana-heslo ul li ul li {
   text-align: left;
@@ -1102,7 +1102,10 @@ article .field--name-body table tr td {
   border: 1px solid #fff;
   text-decoration: none;
 }
-.black-white #block-beliana-heslo .facet-item a.is-active,
+.black-white #block-beliana-heslo .facet-item a.is-active {
+  color: #000;
+  background: #fff;
+}
 .black-white #block-beliana-heslo .facet-item a.is-active:hover,
 .black-white #block-beliana-heslo .facet-item a.is-active:focus,
 .black-white #block-beliana-heslo .facet-item--active-trail > a,
