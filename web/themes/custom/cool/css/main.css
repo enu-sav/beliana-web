@@ -16,6 +16,10 @@ body {
   color: #282727;
 }
 
+.black-white body {
+  color: #fff;
+}
+
 h1 {
   color: #266ead;
   font-size: 26px;

@@ -2,28 +2,35 @@ theme:
   version: 1.x
   css:
     theme:
-      css/fonts.css: {}
-      css/override.css: {}
+      css/fonts.css: { }
+      css/override.css: { }
       'https://use.typekit.net/ial0koy.css': { type: external }
   js:
-    js/libs/exif-js/exif.js: {}
-    js/libs/exif2css/dist/exif2css.js: {}
-    js/libs/accessible-mega-menu/jquery-accessibleMegaMenu.js: {}
-    js/wcag-tools.js: {}
-    js/override.js: {}
+    js/libs/exif-js/exif.js: { }
+    js/libs/exif2css/dist/exif2css.js: { }
+    js/libs/accessible-mega-menu/jquery-accessibleMegaMenu.js: { }
+    js/wcag-tools.js: { }
+    js/override.js: { }
   dependencies:
     - core/jquery
     - core/drupal
     - core/drupalSettings
     - core/jquery.once
+    - core/js-cookie
 
 paragraph.accordion:
   version: VERSION
   css:
     theme:
-      css/paragraph.accordion.css: {}
+      css/paragraph.accordion.css: { }
   js:
-    js/paragraph.accordion.js: {}
+    js/paragraph.accordion.js: { }
   dependencies:
     - core/drupal
     - core/jquery
+
+black-white:
+  version: VERSION
+  header: true
+  js:
+    js/black-white.js: {  preprocess: 0, weight: -22, minified: true }
