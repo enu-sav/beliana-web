@@ -1080,11 +1080,6 @@ article .field--name-body table tr td {
   border-radius: 0;
 }
 
-.black-white #block-beliana-heslo ul li ul li a:hover,
-.black-white #block-beliana-heslo ul li ul li a.focus {
-  background-color: #fff !important;
-}
-
 #block-beliana-heslo .facet-item a:hover,
 #block-beliana-heslo .facet-item a:focus {
   background-color: #e6e6e6;
