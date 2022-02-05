@@ -6,14 +6,14 @@ body {
   font-family: 'arno-pro', serif;
   -webkit-font-smoothing​: antialiased;
 }
-body.black-white {
+html.black-white {
   background: #000;
   color: #fff;
 }
 body.path-frontpage {
   background: #ffa587;
 }
-body.path-frontpage.black-white {
+.black-white body.path-frontpage {
   background: #000;
   color: #fff;
 }
@@ -26,7 +26,7 @@ body.path-frontpage .box {
 body.path-frontpage footer {
   border-color: #8a2807;
 }
-body.path-frontpage.black-white footer {
+.black-white body.path-frontpage footer {
   border-color: #fff;
 }
 body.page-node-type-word.sticky-header #header .header-main {
@@ -47,7 +47,7 @@ body.page-node-type-word.sticky-title #content-main .heslo-container h1 {
   margin-top: -134px;
   z-index: 2;
 }
-body.page-node-type-word.sticky-title.black-white #content-main .heslo-container h1 {
+.black-white body.page-node-type-word.sticky-title #content-main .heslo-container h1 {
   background: #000;
 }
 body.page-node-type-word.sticky-title #content-main .heslo-container .obsah,
@@ -491,7 +491,7 @@ body.page-node-type-word .similar-words .view-word-search-page .views-row ul li 
   padding: 4px 0px;
 }
 
-body.path-rozsirene-vyhladavanie.black-white #block-kategorie .facets-widget-checkbox {
+.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox {
   background: #000;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie {
@@ -532,13 +532,13 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul l
   content: "\f0d7";
   color: #282727;
 }
-body.path-rozsirene-vyhladavanie.black-white #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > label:before {
+.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > label:before {
   color: #fff;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
   color: #282727;
 }
-body.path-rozsirene-vyhladavanie.black-white #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
+.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
   color: #fff;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li {
@@ -683,7 +683,7 @@ body.path-node article .heslo h1 {
   font-size: 2.5em;
   font-weight: normal;
 }
-body.path-node.black-white article .heslo h1 {
+.black-white body.path-node article .heslo h1 {
   color: #fff;
 }
 body.page-node-type-page article {
@@ -984,7 +984,7 @@ article .field--name-body table tr td {
   display: none;
 }
 .black-white #block-beliana-heslo ul li ul {
-  background: #000;
+  background: #fff;
 }
 #block-beliana-heslo ul li ul li {
   text-align: left;
@@ -1080,11 +1080,6 @@ article .field--name-body table tr td {
   border-radius: 0;
 }
 
-.black-whiteiana-heslo ul li ul li a:hover,
-.black-whiteiana-heslo ul li ul li a.focus {
-  background-color: #fff !important;
-}
-
 #block-beliana-heslo .facet-item a:hover,
 #block-beliana-heslo .facet-item a:focus {
   background-color: #e6e6e6;
@@ -1102,7 +1097,10 @@ article .field--name-body table tr td {
   border: 1px solid #fff;
   text-decoration: none;
 }
-.black-white #block-beliana-heslo .facet-item a.is-active,
+.black-white #block-beliana-heslo .facet-item a.is-active {
+  color: #000;
+  background: #fff;
+}
 .black-white #block-beliana-heslo .facet-item a.is-active:hover,
 .black-white #block-beliana-heslo .facet-item a.is-active:focus,
 .black-white #block-beliana-heslo .facet-item--active-trail > a,

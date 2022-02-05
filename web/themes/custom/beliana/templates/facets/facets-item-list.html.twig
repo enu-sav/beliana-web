@@ -26,6 +26,7 @@
 #}
 
 {% set class = 'facets-widget' %}
+{% set class_menu = 'sub-nav' %}
 {% set menu = 'menu' %}
 {% set navigation = '' %}
 
@@ -36,14 +37,14 @@
   {% set menu = 'menubar' %}
 {% endif %}
 
-<div class="{{ class }}"{% if navigation is not empty %} role="{{ navigation }}"{% endif %}>
+<nav class="{{ class }}"{% if navigation is not empty %} role="{{ navigation }}"{% endif %}>
   {% if items or empty %}
     {% if title is not empty %}
       <h3>{{ title }}</h3>
     {% endif %}
 
     {% if items %}
-      <{{ list_type }}{{ attributes }} role="{{ menu }}">
+      <{{ list_type }}{{ attributes }} role="{{ menu }}" class="{{ class_menu }}">
       {% for item in items %}
         <li{{ item.attributes }} role="menuitem">{{ item.value }}</li>
         {% endfor %}
@@ -52,4 +53,4 @@
       {{ empty }}
     {% endif %}
   {% endif %}
-</div>
+</nav>
