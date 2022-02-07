@@ -1752,7 +1752,9 @@ footer .footer-copyright {
     display: none;
   }
   .header .header-main .left {
-    width: 45px;
+    width: 60px;
+    overflow: hidden;
+    padding: 1px 10px;
   }
   .header .header-main .left .logo img {
     height: 66px;
