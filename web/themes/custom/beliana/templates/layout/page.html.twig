@@ -94,10 +94,11 @@
         <div class="right">
           {{ page.header_right }}
           <div class="search-help">
-            <a href="#" class="text" title="Možnosti vyhľadávania"  role="button" tabindex="0" aria-expanded="false" aria-label="Možnosti vyhľadávania">Možnosti vyhľadávania</a>
-            <div class="description" tabindex="0" role="dialog" aria-hidden="false" aria-modal="true">
+            <a href="#" class="text" title="Možnosti vyhľadávania" aria-haspopup="true"  role="button" tabindex="0" aria-labelledby="dialogheader" aria-label="Možnosti vyhľadávania">Možnosti vyhľadávania</a>
+            <div class="description" tabindex="0" role="dialog" aria-modal="true">
+              <div id="dialogheader" class="visually-hidden">Zoznam možnosti vyhľadávania</div>
               <div class="arrow"></div>
-              <nav class="search-list" aria-label="Zoznam možnosti vyhľadávania" role="navigation">
+              <nav class="search-list" tabindex="0 role="navigation">
                 <ul class="help" role="list">
                   <li role="listitem" class="item"><span>teplo:</span> všetky gramatické tvary slova teplo</li>
                   <li role="listitem" class="item"><span>teplo*:</span> všetky slová začínajúce sa na teplo</li>

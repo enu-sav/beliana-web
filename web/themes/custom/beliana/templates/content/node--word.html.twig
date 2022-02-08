@@ -128,13 +128,13 @@
       </div>
 
       <div class="citacia desktop" data-collapse="true">
-        <h3 role="link" aria-label="citácia" aria-expanded="false" aria-controls="citation" >citácia</h3>
-        <div id="citation">
+        <h3 id="citation-header" role="link"  aria-expanded="false" aria-controls="citation" >citácia</h3>
+        <div id="citation" tabindex="0">
           {% set author_fomratted = '' %}
           {% if node.field_autor.target_id %}
             {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}
           {% endif %}
-          <p aria-hidden="false" tabindex="0">{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana,
+          <p aria-hidden="false" aria-labelledby="citation-header">{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana,
             ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a
               href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
