@@ -431,7 +431,7 @@ footer ul {
 }
 
 .footer-copyright a.credits {
-  color: #494949
+  color: #494949;
   font-weight: 700;
 }
 
@@ -694,9 +694,11 @@ div.obsah {
   float: left;
   width: 70px;
   margin-right: 5px;
-  font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
+}
+.black-white .zoznam-tools p {
+  font-size: 1.2rem;
 }
 
 p.hesla-count {
@@ -1433,7 +1435,7 @@ td.long {
 .view-word-search-page ul.pager li a {
   line-height: 35px;
   text-decoration: none;
-  color: #494949
+  color: #494949;
   font-size: 1.5rem;
 }
 

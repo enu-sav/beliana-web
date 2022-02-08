@@ -126,7 +126,7 @@
       var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
       var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
       search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
-      search_input_wrapper.find('#edit-icon').attr("title","Zrušiť");
+      search_input_wrapper.find('#edit-icon').attr("title",'Zrušiť Vyhľadávanie');
     },
     setAlphabetSlider: function (window_width, current_letter) {
       alphabet_scroll_offset = 0

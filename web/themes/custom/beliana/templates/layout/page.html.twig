@@ -60,12 +60,12 @@
         <div class="right">
           {{ page.top_right }}
           <div class="wcag-icons">
-            <i class="icon icon-black-white wcag-black-white" aria-hidden="true">
+            <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0" aria-label="Čierno biela verzia stránky" aria-pressed="false">
               <span class="visually-hidden">Čierno biela verzia stránky</span>
             </i>
-            <i class="icon icon-redo wcag-reset" aria-hidden="true">
-              <span class="visually-hidden">Obnoviť pôvodné nastavenia písma</span>
-            </i>
+{#            <i class="icon icon-redo wcag-reset" aria-hidden="true">#}
+{#              <span class="visually-hidden">Obnoviť pôvodné nastavenia písma</span>#}
+{#            </i>#}
           </div>
         </div>
       </div>
@@ -79,12 +79,12 @@
         <div class="middle">
           {{ page.header_middle }}
           <div class="wcag-icons">
-            <i class="icon icon-black-white wcag-black-white" aria-hidden="true">
+            <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0" aria-label="Čierno biela verzia stránky" aria-pressed="false">
               <span class="visually-hidden">Čierno biela verzia stránky</span>
             </i>
-            <i class="icon icon-redo wcag-reset" aria-hidden="true">
-              <span class="visually-hidden">Obnoviť pôvodné nastavenia písma</span>
-            </i>
+{#            <i class="icon icon-redo wcag-reset" aria-hidden="true">#}
+{#              <span class="visually-hidden">Obnoviť pôvodné nastavenia písma</span>#}
+{#            </i>#}
           </div>
           <div class="smartphone-navigation">
             <i class="fa fa-bars fa-2x"></i>
@@ -94,18 +94,18 @@
         <div class="right">
           {{ page.header_right }}
           <div class="search-help">
-            <a href="#" class="text" title="Možnosti vyhľadávania" aria-label="Možnosti vyhľadávania">Možnosti vyhľadávania</a>
-            <div class="description">
-              <div class="arrow" aria-hidden="true"></div>
-              <nav class="search-list" aria-label="Zoznam možnosti vyhľadávania" tabindex='-1' role="navigation">
-                <ul class="help">
-                  <li class="item"><span>teplo:</span> všetky gramatické tvary slova teplo</li>
-                  <li class="item"><span>teplo*:</span> všetky slová začínajúce sa na teplo</li>
-                  <li class="item"><span>slovinsko~:</span> podobné slová (Slovensko, Slovinsko, ...)</li>
-                  <li class="item"><span>"zdroj teplo":</span> fráza (všetky tvary)</li>
-                  <li class="item"><span>dom teplo:</span> slová dom alebo teplo</li>
-                  <li class="item"><span>dom -teplo:</span> slová dom, ale nie teplo</li>
-                  <li class="item"><span>dom and teplo:</span> súčasne slová dom aj teplo</li>
+            <a href="#" class="text" title="Možnosti vyhľadávania"  role="button" tabindex="0" aria-expanded="false" aria-label="Možnosti vyhľadávania">Možnosti vyhľadávania</a>
+            <div class="description" tabindex="0" role="dialog" aria-hidden="false" aria-modal="true">
+              <div class="arrow"></div>
+              <nav class="search-list" aria-label="Zoznam možnosti vyhľadávania" role="navigation">
+                <ul class="help" role="list">
+                  <li role="listitem" class="item"><span>teplo:</span> všetky gramatické tvary slova teplo</li>
+                  <li role="listitem" class="item"><span>teplo*:</span> všetky slová začínajúce sa na teplo</li>
+                  <li role="listitem" class="item"><span>slovinsko~:</span> podobné slová (Slovensko, Slovinsko, ...)</li>
+                  <li role="listitem" class="item"><span>"zdroj teplo":</span> fráza (všetky tvary)</li>
+                  <li role="listitem" class="item"><span>dom teplo:</span> slová dom alebo teplo</li>
+                  <li role="listitem" class="item"><span>dom -teplo:</span> slová dom, ale nie teplo</li>
+                  <li role="listitem" class="item"><span>dom and teplo:</span> súčasne slová dom aj teplo</li>
                 </ul>
               </nav>
               <a href="/pouzivanie-stranky" class="more-info" title="Viac o vyhľadávaní" aria-label="Viac o vyhľadávaní">Viac o vyhľadávaní</a>

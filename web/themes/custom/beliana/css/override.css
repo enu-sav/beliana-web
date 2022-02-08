@@ -10,6 +10,10 @@ html.black-white {
   background: #000;
   color: #fff;
 }
+.black-white body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3em;
+}
 body.path-frontpage {
   background: #ffa587;
 }
@@ -76,6 +80,10 @@ body.page-node-type-word.sticky-title #block-breadcrumbs {
   body.page-node-type-word.sticky-title #content-main .heslo-container .obsah {
     padding-top: 0;
   }
+}
+
+.black-white .visually-hidden {
+  color: #fff;
 }
 
 h1, h2 {
@@ -392,10 +400,6 @@ body.use-loader.is-loaded .page-loader {
   display: none;
 }*/
 
-#block-beliana-page-title {
-  display: none;
-}
-
 #block-breadcrumbs {
   margin-top: -15px;
   opacity: 1;
@@ -450,18 +454,24 @@ nav.pager ul li a:hover {
   width: 100%;
   padding: 0;
 }
-.view-word-search-page .heslo-container .heslo h1 {
+.view-word-search-page .heslo-container .heslo h2 {
   margin-top: 1px;
 }
-.view-word-search-page .heslo-container .heslo h1 a {
+.view-word-search-page .heslo-container .heslo h2 a {
   font-size: 1.1em;
   margin-left: 1px;
   font-weight: normal;
 }
-.view-word-search-page .heslo-container .heslo h1 i {
+.view-word-search-page .heslo-container .heslo h2 i {
   float: right;
   margin-top: 14px;
   font-size: 0.7em;
+}
+.black-white h2 + div {
+  background: #000;
+}
+.black-white .view-word-search-page .heslo-container .heslo h2 a {
+  font-size: 1em;
 }
 
 body.path-rozsirene-vyhladavanie .views-element-container {
@@ -554,6 +564,9 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
   font-size: 1.8rem;
   line-height: 16px;
   opacity: 0.5;
+}
+.black-white .similar-words h3 {
+  font-size: 1.7rem;
 }
 .similar-words h3:before {
   content: "";
@@ -659,6 +672,9 @@ footer a:hover,
   padding-top: 4px;
   font-size: 1.1em;
 }
+.black-white #block-beliana-main-menu a {
+  font-size: 1em;
+}
 
 .header-top .block-beliana-mobile-menu {
   display: none;
@@ -685,6 +701,7 @@ body.path-node article .heslo h1 {
 }
 .black-white body.path-node article .heslo h1 {
   color: #fff;
+  font-size: 2.4em;
 }
 body.page-node-type-page article {
   width: 50%;
@@ -707,6 +724,10 @@ body.page-node-type-page article {
   font-size: 1.7rem;
   padding-right: 15px;
 }
+.black-white .media.media-image.view-mode-full .metadata {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+}
 .media.media-image.view-mode-full .metadata a {
   color: #266ead;
   text-decoration: underline;
@@ -728,6 +749,9 @@ body.page-node-type-page article {
   font-size: 2.3rem;
   font-family: 'Open Sans', sans-serif;
 }
+.black-white .media.media-image.view-mode-full .metadata .title {
+  font-size: 2.2rem;
+}
 .media.media-image.view-mode-full .metadata .title span {
   font-weight: bold;
 }
@@ -742,7 +766,8 @@ body.page-node-type-page article {
   padding: 15px 0 15px 27px;
 }
 
-.media.media-image.view-mode-full .metadata .dalsie-info h3.open a {
+.media.media-image.view-mode-full .metadata .dalsie-info h3.open a,
+.black-white .media.media-image.view-mode-full .metadata .dalsie-info h3.open a {
   background-position: 0 -17px;
 }
 
@@ -758,6 +783,11 @@ body.page-node-type-page article {
   font-size: 1.8rem;
   line-height: 20px;
   opacity: 0.5;
+}
+.black-white .media.media-image.view-mode-full .metadata .dalsie-info h3 a {
+  background: url('../img/arrow_sprite_white.png') no-repeat;
+  opacity: 1;
+  font-size: 1.7rem;
 }
 
 .media.media-image.view-mode-full .metadata .back {
@@ -775,6 +805,10 @@ body.page-node-type-page article {
   text-decoration: none;
   padding: 0 10px 2px 10px;
   margin: 15px 0 0 0;
+}
+.black-white .media.media-image.view-mode-full .metadata .back {
+  background: #000;
+  font-size: 1.2rem;
 }
 
 .black-white .heslo p.last-update {
@@ -813,6 +847,10 @@ article .heslo .obsah {
   line-height: 1.625em;
   font-size: 2.0rem;
 }
+.black-white article .heslo .obsah {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.9rem;
+}
 
 article .heslo .obsah span.scroll-up {
   font-size: 0.8em;
@@ -820,6 +858,9 @@ article .heslo .obsah span.scroll-up {
   margin-top: -30px;
   cursor: pointer;
   color: #266ead;
+}
+.black-white article .heslo .obsah span.scroll-up {
+  font-size: 0.7em;
 }
 
 article .heslo .obsah.desktop {
@@ -917,6 +958,8 @@ article .field--name-body table tr td {
 
 #block-beliana-page-title {
   margin-top: 32px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 
@@ -998,6 +1041,9 @@ article .field--name-body table tr td {
   font-size: 1.3em;
   line-height: 33px;
 }
+.black-white #block-beliana-heslo ul li ul li a {
+  font-size: 1.2em;
+}
 
 .view-word-search-page ul.pager > li {
   width: 150px;
@@ -1011,9 +1057,16 @@ article .field--name-body table tr td {
   color: #fff;
   font-size: 1.6em;
 }
+.black-white #block-beliana-heslo ul li a,
+.black-white .view-word-search-page ul.pager li a {
+  font-size: 1.5em;
+}
 .view-word-search-page ul.pager li a {
   font-weight: bold;
   font-size: 1.3em;
+}
+.black-white .view-word-search-page ul.pager li a {
+  font-size: 1.2em;
 }
 
 #block-beliana-heslo ul li a,
@@ -1185,6 +1238,7 @@ article .field--name-body table tr td {
 }
 .black-white #block-beliana-searchbox .search-input-wrapper input {
   color: #000;
+  font-size: 1.1em;
 }
 
 #block-beliana-searchbox .search-input-wrapper input.form-autocomplete {
@@ -1251,7 +1305,9 @@ article .field--name-body table tr td {
 #block-beliana-encyklopediabeliana .field--name-body {
   font-size: 1.3em;
 }
-
+.black-white #block-beliana-encyklopediabeliana .field--name-body {
+  font-size: 1.2em;
+}
 
 #block-views-block-content-recent-block-2 h2 {
   color: #333;
@@ -1261,6 +1317,7 @@ article .field--name-body table tr td {
 }
 .black-white #block-views-block-content-recent-block-2 h2 {
   color: #fff;
+  font-size: 1.1em;
 }
 #block-views-block-content-recent-block-2 .item-list {
   /*max-height: 165px;
@@ -1271,6 +1328,9 @@ article .field--name-body table tr td {
   padding: 0 10px 0 0;
   font-size: 1.6em;
   margin: 1px 0;
+}
+.black-white #block-views-block-content-recent-block-2 .item-list ul li {
+  font-size: 1.5em;
 }
 #block-views-block-content-recent-block-2 .item-list ul li a {
   display: block;
@@ -1319,7 +1379,9 @@ article .field--name-body table tr td {
 #test-popup #popup-text p {
   font-size: 1.8rem;
 }
-
+.black-white #test-popup #popup-text p {
+  font-size: 1.7rem;
+}
 .heslo-ilustracia .heslo-tools {
   margin: 0;
   padding-bottom: 45px;
@@ -1393,6 +1455,9 @@ article .field--name-body table tr td {
   text-align: center;
   padding-top: 5px;
 }
+.black-white .heslo-ilustracia .media-image.view-mode-in-word .field--name-field-description {
+  font-family: 'Open Sans', sans-serif;
+}
 .heslo-ilustracia .media-image.view-mode-in-word .field--name-field-description p {
   font-size: 1.5rem;
   line-height: 1.8rem;
@@ -1401,6 +1466,7 @@ article .field--name-body table tr td {
 }
 .black-white .heslo-ilustracia .media-image.view-mode-in-word .field--name-field-description p {
   color: #fff;
+  font-size: 1.4rem;
 }
 
 .heslo-ilustracia .field--name-field-table .field__item table {
@@ -1444,6 +1510,10 @@ article .field--name-body table tr td {
   font-size: 1.6rem;
   font-weight: 700;
 }
+.black-white .view-najcitanejsie-hesla article .heslo h1 a,
+.black-white .view-word-search-page article .heslo h1 a {
+  font-size: 1.5rem;
+}
 .view-najcitanejsie-hesla article .heslo h1 a:hover,
 .view-word-search-page article .heslo h1 a:hover {
   text-decoration: underline;
@@ -1457,6 +1527,9 @@ article .field--name-body table tr td {
   font-size: 2.5em;
   font-weight: normal;
 }
+.black-white .view-taxonomy-term header .content h1 {
+  font-size: 2.4em;
+}
 .view-taxonomy-term header .content h2 {
   margin-top: 1em;
   color: #266ead;
@@ -1468,6 +1541,9 @@ article .field--name-body table tr td {
   line-height: 1.625em;
   font-size: 2.0rem;
   margin-bottom: 1em;
+}
+.black-white .view-taxonomy-term header .content .obsah {
+  font-family: 'Open Sans', sans-serif;
 }
 .view-taxonomy-term header .content .obsah .field__label {
   font-weight: bold;
@@ -1490,6 +1566,7 @@ article .field--name-body table tr td {
 }
 .black-white .dnes h2 {
   color: #fff;
+  font-size: 1.1em;
 }
 .dnes ul {
   margin: 0;
@@ -1501,6 +1578,7 @@ article .field--name-body table tr td {
 }
 .black-white .dnes ul li {
   color: #fff;
+  font-size: 1.5em;
 }
 .dnes.half-box {
   width: 35%;
@@ -1658,6 +1736,7 @@ footer .footer-content ul li a:hover {
 .black-white footer .footer-content ul li a:hover {
   color: #fff !important;
   text-decoration: underline !important;
+  font-size: 1.4em;
 }
 footer .footer-copyright {
   width: 100%;
@@ -1747,6 +1826,9 @@ footer .footer-copyright {
     padding: 8px 0;
     display: block;
   }
+  .black-white .header .header-top .sitename {
+    font-size: 1.2em;
+  }
   .header .header-top .left,
   .header .header-top .right {
     display: none;
@@ -1826,6 +1908,7 @@ footer .footer-copyright {
   }
   .black-white body.path-rozsirene-vyhladavanie #block-kategorie .opener {
     color: #fff;
+    font-size: 1.2em;
   }
   body.path-rozsirene-vyhladavanie #block-kategorie .opener:after {
     font: normal normal normal 18px/1 FontAwesome;
@@ -1861,6 +1944,9 @@ footer .footer-copyright {
   }
   body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li {
     font-size: 1.8rem;
+  }
+  .black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li {
+    font-size: 1.7rem;
   }
 
   .header .header-main .right {
