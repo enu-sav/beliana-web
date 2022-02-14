@@ -94,21 +94,46 @@
         <div class="right">
           {{ page.header_right }}
           <div class="search-help">
-            <a href="#" class="text" title="Možnosti vyhľadávania" aria-haspopup="true"  role="button" tabindex="0" aria-labelledby="dialogheader" aria-label="Možnosti vyhľadávania">Možnosti vyhľadávania</a>
-            <div class="description" tabindex="0" role="dialog" aria-modal="true">
-              <div id="dialogheader" class="visually-hidden">Zoznam možnosti vyhľadávania</div>
-              <div class="arrow"></div>
-              <nav class="search-list" tabindex="0 role="navigation">
-                <ul class="help" role="list">
-                  <li role="listitem" class="item"><span>teplo:</span> všetky gramatické tvary slova teplo</li>
-                  <li role="listitem" class="item"><span>teplo*:</span> všetky slová začínajúce sa na teplo</li>
-                  <li role="listitem" class="item"><span>slovinsko~:</span> podobné slová (Slovensko, Slovinsko, ...)</li>
-                  <li role="listitem" class="item"><span>"zdroj teplo":</span> fráza (všetky tvary)</li>
-                  <li role="listitem" class="item"><span>dom teplo:</span> slová dom alebo teplo</li>
-                  <li role="listitem" class="item"><span>dom -teplo:</span> slová dom, ale nie teplo</li>
-                  <li role="listitem" class="item"><span>dom and teplo:</span> súčasne slová dom aj teplo</li>
-                </ul>
-              </nav>
+            <a href="#" class="text" title="Možnosti vyhľadávania" aria-expanded="false" aria-controls="search-help-dialog" aria-haspopup="true" role="button" tabindex="0" aria-label="Nápoveda vyhľadávania">Možnosti vyhľadávania</a>
+            <div id="search-help-dialog" class="description" role="dialog">
+              <div class="arrow" aria-hidden="true"></div>
+              <ul class="help" tabindex="0">
+                <li class="item">
+                  <span aria-hidden="false" aria-label="Zadaním výrazu teplo: sa vyhľadajú všetky gramatické tvary slova teplo">
+                    <strong>teplo:</strong> všetky gramatické tvary slova teplo
+                  </span>
+                </li>
+                <li class="item">
+                  <span aria-hidden="false" aria-label="Zadaním výrazu teplo*: sa vyhľadajú všetky slová začínajúce sa na teplo">
+                    <strong>teplo*:</strong> všetky slová začínajúce sa na teplo
+                  </span>
+                </li>
+                <li class="item">
+                  <span aria-hidden="false" aria-label="Zadaním výrazu slovinsko~ sa vyhľadajú podobné slová (Slovensko, Slovinsko, ...)">
+                    <strong>slovinsko~:</strong> podobné slová (Slovensko, Slovinsko, ...)
+                  </span>
+                </li>
+                <li class="item">
+                  <span aria-hidden="false" aria-label="Zadaním výrazu 'zdroj teplo': sa vyhľadá fráza (všetky tvary)">
+                    <strong>"zdroj teplo":</strong> fráza (všetky tvary)
+                  </span>
+                </li>
+                <li class="item">
+                  <span aria-hidden="false" aria-label="Zadaním výrazu dom teplo: sa vyhľadajú slová dom alebo teplo">
+                    <strong>dom teplo:</strong> slová dom alebo teplo
+                  </span>
+                </li>
+                <li class="item">
+                  <span aria-hidden="false" aria-label="Zadaním výrazu dom -teplo: sa vyhľadajú slová dom, ale nie teplo">
+                    <strong>dom -teplo:</strong> slová dom, ale nie teplo
+                  </span>
+                </li>
+                <li class="item">
+                  <span aria-hidden="false" aria-label="Zadaním výrazu dom and teplo: sa vyhľadajú súčasne slová dom aj teplo">
+                    <strong>dom and teplo:</strong> súčasne slová dom aj teplo
+                  </span>
+                </li>
+              </ul>
               <a href="/pouzivanie-stranky" class="more-info" title="Viac o vyhľadávaní" aria-label="Viac o vyhľadávaní">Viac o vyhľadávaní</a>
               <a href="/rozsirene-vyhladavanie" class="more-info" title="Vyhľadávanie podľa kategórií" aria-label="Vyhľadávanie podľa kategórií">Vyhľadávanie podľa kategórií</a>
             </div>

@@ -305,7 +305,7 @@ body.path-frontpage .header .header-main .right .search-help {
 .header .header-main .right .search-help .description {
   display: none;
   background: #fae1d9;
-  padding: 15px;
+  padding: 14px;
   position: absolute;
   top: 42px;
   right: calc(50% - 80px);
@@ -337,7 +337,6 @@ body.path-frontpage .header .header-main .right .search-help {
   color: #000;
 }
 .header .header-main .right .search-help .description ul li span {
-  font-weight: bold;
   color: #000;
 }
 .header .header-main .right .search-help .description a.more-info {
@@ -1595,15 +1594,19 @@ article .field--name-body table tr td {
 .citacia.smartphone {
   display: none;
 }
-.citacia h3 a {
+.citacia h3 + div {
+  display: block;
+}
+.citacia.desktop h3 {
   color: #1c1c1c !important;
   opacity: 0.6;
+  font-weight: 700;
+  font-size: 1.8rem;
 }
-.black-white .citacia h3 a {
-  background: url("../img/arrow_sprite_white.png") no-repeat;
-}
-.black-white .citacia h3.open a {
-  background-position: 0 -17px;
+
+.black-white .citacia.desktop h3 {
+  color: #fff !important;
+  opacity: 1;
 }
 
 .contentinfo .alret {
