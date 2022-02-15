@@ -29,17 +29,20 @@
       if (black_white == 'black-white') {
         $('html').addClass('black-white');
         $context.find('.wcag-icons .icon').attr('aria-pressed', true);
+        $context.find('.wcag-icons .icon').attr('aria-label', 'Čierno biela verzia stránky je zapnutá');
       }
       $context.find('.wcag-icons').on('click', '.wcag-black-white', function () {
         if ($('html').hasClass('black-white')) {
           $('html').removeClass('black-white');
           cookies.set('black-white', 'normal');
           $context.find('.wcag-icons .icon').attr('aria-pressed', false);
+          $context.find('.wcag-icons .icon').attr('aria-label', 'Čierno biela verzia stránky je vypnutá');
         }
         else {
           $('html').addClass('black-white');
           cookies.set('black-white', 'black-white');
           $context.find('.wcag-icons .icon').attr('aria-pressed', true);
+          $context.find('.wcag-icons .icon').attr('aria-label', 'Čierno biela verzia stránky je zapnutá');
         }
       });
 
@@ -61,6 +64,8 @@
           $('#citation').attr('aria-hidden', true);
         }
       });
+
+
 
       // $context.find('.citacia.desktop').on('click', '.citation', function (e) {
       //   alert(1);
