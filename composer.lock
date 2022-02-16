@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8013c0de76a4a8ee1592fa32c0c03a5e",
+    "content-hash": "dfb439ab488cbbed93ca0061813a9dc6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3961,50 +3961,6 @@
             }
         },
         {
-            "name": "drupal/imagefield_default_alt_and_title",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/imagefield_default_alt_and_title.git",
-                "reference": "8.x-1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/imagefield_default_alt_and_title-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "f7e8138e1db2c9f6cea03acb7c4dc8e38076d10a"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1622641452",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "alex_optim",
-                    "homepage": "https://www.drupal.org/user/3317601"
-                }
-            ],
-            "description": "Sets default alt and title for imagefield with title.",
-            "homepage": "https://www.drupal.org/project/imagefield_default_alt_and_title",
-            "support": {
-                "source": "https://git.drupalcode.org/project/imagefield_default_alt_and_title"
-            }
-        },
-        {
             "name": "drupal/inline_entity_form",
             "version": "1.0.0-rc9",
             "source": {
@@ -6032,25 +5988,25 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.14.0",
+            "version": "0.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-                "reference": "beff89576a72540ee99476aeb9cfe98222e76fb8"
+                "reference": "454682a67b335bb918952b93c4e699a36012c568"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/beff89576a72540ee99476aeb9cfe98222e76fb8",
-                "reference": "beff89576a72540ee99476aeb9cfe98222e76fb8",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/454682a67b335bb918952b93c4e699a36012c568",
+                "reference": "454682a67b335bb918952b93c4e699a36012c568",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
-                "ext-libxml": "*"
+                "ext-libxml": "*",
+                "php": "^7.0 || ^8.0"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "^0.1.2",
-                "phpunit/phpunit": "^6"
+                "phpunit/phpunit": "^6.5 || ^8.5"
             },
             "type": "library",
             "autoload": {
@@ -6069,7 +6025,11 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2021-01-21T10:13:20+00:00"
+            "support": {
+                "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
+                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.15.2"
+            },
+            "time": "2022-02-14T00:53:22+00:00"
         },
         {
             "name": "grasmash/expander",
