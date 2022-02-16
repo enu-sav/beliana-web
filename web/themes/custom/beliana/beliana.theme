@@ -108,3 +108,18 @@ function beliana_theme_suggestions_taxonomy_term_alter(array &$suggestions, arra
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
 }
+
+function beliana_theme_suggestions_image_alter(array &$suggestions, array &$variables) {
+  if (($node = Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
+    if ($node->getType() === 'word') {
+      $suggestions[] = 'image__' . $node->getType();
+      if (empty($variables['alt']) && empty($variables["attributes"]["alt"])) {
+        $variables["alt"] = $node->getTitle();
+        $variables["attributes"]["alt"] = $node->getTitle();
+      } else {
+        $variables["attributes"]["alt"] = $variables["alt"];
+      }
+    }
+  }
+}
+

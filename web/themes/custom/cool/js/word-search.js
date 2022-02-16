@@ -45,8 +45,14 @@
 
   Drupal.behaviors.clickChangeFormatButtonWrapper = {
     attach: function (context, settings) {
-      $('.truncate-button').once().on('click', function () {
+      $('.truncate-button').once('truncate-button').on('click', function () {
         $(this).toggleClass('active');
+        const aria_expanded = $(this).find('.dropdown').attr('aria-expanded');
+        if (typeof aria_expanded !== 'undefined' && aria_expanded === 'false') {
+          $(this).find('ul').attr('aria-expanded', true);
+        } else {
+          $(this).find('ul').attr('aria-expanded', false);
+        }
       });
 
       $('.sort-button').once().on('click', function () {
