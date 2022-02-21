@@ -6,12 +6,15 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
+use Drupal\media\MediaInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_preprocess_HOOK().
  */
 function beliana_preprocess_html(&$variables) {
-  $config = \Drupal::config('matomo.settings');
+  $config = Drupal::config('matomo.settings');
   $variables['matomo'] = ['site_id' => $config->get('matomo_site_id', 1)];
 }
 
@@ -35,7 +38,7 @@ function beliana_preprocess_media(&$variables) {
     ->execute();
 
   if (!empty($entity_ids)) {
-    $variables['node'] = \Drupal::entityManager()
+    $variables['node'] = Drupal::entityManager()
       ->getStorage('node')
       ->load(reset($entity_ids));
     $variables['back_url'] = Url::fromRoute('entity.node.canonical', ['node' => $variables['node']->id()], ['absolute' => 'true'])
@@ -107,4 +110,23 @@ function beliana_theme_suggestions_taxonomy_term_alter(array &$suggestions, arra
   $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+function beliana_theme_suggestions_image_alter(array &$suggestions, array &$variables) {
+  if (($node = Drupal::routeMatch()->getParameter('node')) && $node instanceof NodeInterface) {
+    if ($node->getType() === 'word') {
+      $suggestions[] = 'image__' . $node->getType();
+      $mid = $node->field_images->target_id;
+      if (empty(Media::load($mid)->field_image->getValue())) {
+        $variables["alt"] = $node->getTitle();
+        $variables["attributes"]["alt"] = $node->getTitle();
+      }
+    }
+  }
+  if (($media = Drupal::routeMatch()->getParameter('media')) && $media instanceof MediaInterface) {
+    if (empty($media->field_image->getValue())) {
+      $variables["alt"] = $media->field_nazov_diela->value;
+      $variables["attributes"]["alt"] = $media->field_nazov_diela->value;
+    }
+  }
 }
