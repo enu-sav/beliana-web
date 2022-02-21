@@ -118,15 +118,15 @@ function beliana_theme_suggestions_image_alter(array &$suggestions, array &$vari
       $suggestions[] = 'image__' . $node->getType();
       $mid = $node->field_images->target_id;
       if (empty(Media::load($mid)->field_image->getValue())) {
-        $variables["alt"] = $node->getTitle();
-        $variables["attributes"]["alt"] = $node->getTitle();
+        $variables["alt"] = Media::load($mid)->field_meno_autora_diela->value;
+        $variables["attributes"]["alt"] = Media::load($mid)->field_meno_autora_diela->value;
       }
     }
   }
   if (($media = Drupal::routeMatch()->getParameter('media')) && $media instanceof MediaInterface) {
     if (empty($media->field_image->getValue())) {
-      $variables["alt"] = $media->field_nazov_diela->value;
-      $variables["attributes"]["alt"] = $media->field_nazov_diela->value;
+      $variables["alt"] = $media->field_meno_autora_diela->value;
+      $variables["attributes"]["alt"] = $media->field_meno_autora_diela->value;
     }
   }
 }
