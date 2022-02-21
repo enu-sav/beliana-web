@@ -31,3 +31,5 @@ web/sites/simpletest
 /robots.txt
 /update.php
 /web.config
+
+*.sql

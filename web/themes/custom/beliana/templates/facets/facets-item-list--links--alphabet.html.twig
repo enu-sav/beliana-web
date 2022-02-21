@@ -32,12 +32,12 @@
 
 {% if context.list_style %}
   {% set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
-  {% set class = 'facets-widget-'~ context.list_style %}
+  {% set class = 'accessible-alphabetical facets-widget-'~ context.list_style %}
   {% set navigation = 'navigation' %}
   {% set menu = 'menubar' %}
 {% endif %}
 
-<nav class="{{ class }}"{% if navigation is not empty %} role="{{ navigation }}"{% endif %}>
+<nav aria-label="Nachádzate sa v sekcií: Abecedný zoznam slov" tabindex="0" class="{{ class }}"{% if navigation is not empty %} role="{{ navigation }}"{% endif %}>
   {% if items or empty %}
     {% if title is not empty %}
       <h3>{{ title }}</h3>

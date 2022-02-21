@@ -1,23 +1,15 @@
 name: beliana.web
 recipe: drupal8
 config:
-  php: '7.3'
+  php: 7.4
   via: apache
   webroot: web
-  xdebug: start
-  config:
-    php: .lando/php.ini
-
+  drush: 10
 services:
   appserver:
-    overrides:
-      environment:
-        XDEBUG_MODE:
-        PHP_IDE_CONFIG: "serverName=appserver"
-  phpmyadmin:
-    type: phpmyadmin
-    hosts:
-      - database
+    xdebug: true
+    config:
+      php: .lando/php.ini
   mailhog:
     type: mailhog
     portforward: true

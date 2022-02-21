@@ -71,13 +71,13 @@
 
 <article{{ attributes.addClass('heslo-container') }}>
   <div class="heslo truncate-wrapper">
-    <h1>
+    <h2>
       <a href="{{ url }}">{{ node.label }}
         {% if node.field_images is not empty %}
           <i class="fa fa-picture-o" title="Heslo obsahuje ilustráciu"></i>
         {% endif %}
       </a>
-    </h1>
+    </h2>
     <div class="obsah">{{ content.body }}</div>
     <div id="gradient" style="display: block;"></div>
   </div>
