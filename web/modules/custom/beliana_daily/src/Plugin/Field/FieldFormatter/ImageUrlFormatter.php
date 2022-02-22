@@ -79,7 +79,7 @@ class ImageUrlFormatter extends LinkFormatter {
         '#theme' => 'image',
         '#uri' => $item->uri,
         '#attributes' => [
-          'alt' => empty($item->title) ? '' : \Drupal::token()->replace($item->title, [$entity->getEntityTypeId() => $entity], ['clear' => TRUE]),
+          'alt' => strip_tags($entity->field_description->value) ?? 'Encyclopaedia Beliana',
         ]
       ];
 
