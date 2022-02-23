@@ -50,6 +50,7 @@
         const aria_expanded = $(this).find('.dropdown').attr('aria-expanded');
         if (typeof aria_expanded !== 'undefined' && aria_expanded === 'false') {
           $(this).find('ul').attr('aria-expanded', true);
+          $(this).find('.dropdown').focus();
         } else {
           $(this).find('ul').attr('aria-expanded', false);
         }

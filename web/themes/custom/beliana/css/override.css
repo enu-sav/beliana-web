@@ -200,6 +200,9 @@ header.header {
   background: #000 url('../img/svg-icons/redo.svg') no-repeat center center;
   background-size: 12px auto;
 }
+.header .wcag-icons .icon-black-white:focus {
+  outline: 1px solid #ccc;
+}
 .header .middle .wcag-icons {
   display: none;
 }
@@ -1125,6 +1128,14 @@ article .field--name-body table tr td {
   display: block;
 }
 
+.black-white #block-beliana-heslo ul li .facets-widget.open ul li a  {
+  color: #000;
+}
+.black-white #block-beliana-heslo ul li .facets-widget.open ul li a:hover,
+.black-white #block-beliana-heslo ul li .facets-widget.open ul li a:focus {
+  color: #fff;
+}
+
 #block-beliana-heslo ul li ul li a:hover,
 #block-beliana-heslo ul li ul li a.focus {
   box-shadow: none;
@@ -1626,7 +1637,7 @@ article .field--name-body table tr td {
   margin-top: 0 /*-30px*/;
   color: #767676;
 }
-.black-white .zoznam-tools {
+.black-white .zoznam-tools:focus {
   color: #fff;
 }
 .zoznam-tools .item:last-of-type {
@@ -1685,6 +1696,16 @@ article .field--name-body table tr td {
 .black-white .sort-button .dropdown li {
   color: #000;
 }
+.black-white .heslo-tools .share.active .dropdown li:hover,
+.black-white .heslo-tools .share.active .dropdown li:focus,
+.black-white .truncate-button .dropdown li:hover,
+.black-white .truncate-button .dropdown li:focus,
+.black-white .sort-button .dropdown li:hover,
+.black-white .sort-button .dropdown li:focus {
+  color: #fff;
+  background: #000;
+}
+
 .heslo-tools .share.active .dropdown li:hover a,
 .truncate-button .dropdown li:hover,
 .sort-button .dropdown li:hover {

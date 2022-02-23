@@ -45,6 +45,7 @@
         if ($('.search-help .description').hasClass('open')) {
           $('.search-help .description').removeClass('open');
           $('.search-help .text').attr('aria-expanded', false);
+          $('.search-help .text').attr('aria-label', 'Nápoveda vyhľadávania je zatvorená');
         }
       });
 
@@ -56,6 +57,7 @@
           setTimeout(function () {
             $('.search-help .description').removeClass('open');
             $('.search-help .text').attr('aria-expanded', false);
+            $('.search-help .text').attr('aria-label', 'Nápoveda vyhľadávania je zatvorená');
           }, 150);
         }
         else {
@@ -63,6 +65,7 @@
             desc.find('.description').addClass('open');
             $('#search-help-dialog .help').focus();
             button.attr('aria-expanded', true);
+            $('.search-help .text').attr('aria-label', 'Nápoveda vyhľadávania je otvorená');
           }, 150);
         }
 
