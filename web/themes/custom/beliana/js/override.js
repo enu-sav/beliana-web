@@ -176,15 +176,21 @@
       }
 
       // Open collapsed facets
-      $('.facets-widget-checkbox').on('click', '.facet-item--collapsed:not(.facet-item--active) > label', function (e) {
-        e.preventDefault();
+      $('.facets-widget-checkbox').on('click', '.facet-item--collapsed:not(.facet-item--active) > .sub-categories', function (e) {
+        // e.preventDefault();
+        $(this).attr('aria-expanded', true);
+        // $(this).attr('aria-label', 'Podkategória otvorená');
         $(this).parent().addClass('facet-item--expanded').removeClass('facet-item--collapsed');
-        $(this).parent().find('.facets-widget- .facet-item--expanded').addClass('facet-item--collapsed').removeClass('facet-item--expanded');
+        $(this).parent().find('.facets-widget .facet-item--expanded').addClass('facet-item--collapsed').removeClass('facet-item--expanded');
+        $(this).parent().find('.facets-widget ul li').first().find('.facets-checkbox').focus();
+        $(this).parent().find('.facets-widget ul li').first().find('.facets-checkbox').attr('tabindex', 0)
       });
 
       // Close expanded facets
-      $('.facets-widget-checkbox').on('click', '.facet-item--expanded:not(.facet-item--active) > label', function (e) {
-        e.preventDefault();
+      $('.facets-widget-checkbox').on('click', '.facet-item--expanded:not(.facet-item--active) > .sub-categories', function (e) {
+        // e.preventDefault();
+        $(this).attr('aria-expanded', false);
+        // $(this).attr('aria-label', 'Podkategória zatvorená');
         $(this).parent().addClass('facet-item--collapsed').removeClass('facet-item--expanded');
       });
 
@@ -193,20 +199,35 @@
         if ($.isFunction(Drupal.facets.makeCheckbox)) {
           Drupal.facets.makeCheckbox = function () {
             var $link = $(this);
+            var tabindex_label = -1;
             var active = $link.hasClass('is-active');
+            var collapsed = $link.parent().hasClass('facet-item--collapsed');
             var description = $link.html();
             var href = $link.attr('href');
             var id = $link.data('drupal-facet-item-id');
 
+            $link.parent().find('.facets-widget').attr('id', id).attr('role', 'region');
+            var aria_label = 'Kategória ' + $link.find('.facet-item__value')[0].outerText;
+            if (collapsed) {
+              aria_label = aria_label;
+              tabindex_label = 0;
+            }
+
             var checkbox = $('<input type="checkbox" class="facets-checkbox">')
-              .attr('id', id)
+              .attr('aria-controls', 'label-' + id)
+              .attr('aria-checked', false)
+              .attr('aria-label', aria_label)
               .data($link.data())
               .data('facetsredir', href);
-            var label = $('<label>' + description + '</label>');
+            var label = $('<div aria-controls="' + id + '" tabindex="' + tabindex_label + '" role="button" class="sub-categories" aria-expanded="false" aria-label="' + aria_label + '">' + description + '</div>');
 
             checkbox.on('change.facets', function (e) {
-              Drupal.facets.disableFacet($link.parents('.js-facets-checkbox-links'));
-              window.location.href = $(this).data('facetsredir');
+              e.preventDefault();
+
+              var $widget = $(this).closest('.js-facets-widget');
+
+              Drupal.facets.disableFacet($widget);
+              $widget.trigger('facets_filter', [ href ]);
             });
 
             if (active) {
@@ -214,7 +235,7 @@
               label.find('.js-facet-deactivate').remove();
             }
 
-            $link.before(checkbox).before(label).remove();
+            $link.before(checkbox).before(label).hide();
           };
         }
       }

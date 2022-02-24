@@ -21,7 +21,7 @@
         openClass: "open"
       });
 
-      // $('article .citacia h3').attr('aria-label',"Rozbaľ citáciu stlačním klávesy enter");
+      // $context.find('article .citacia h3').attr('aria-label',"Rozbaľ citáciu stlačním klávesy enter").attr('tabindex', 0).attr('role', 'button');
 
       /** Black and white version **/
       var black_white = cookies.get('black-white') || 'normal';
