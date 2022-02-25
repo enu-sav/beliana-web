@@ -127,8 +127,8 @@
         {% endif %}
       </div>
 
-      <div role="region" tabindex="0" aria-label="Nachádzate sa v sekcií: Citácia" class="citacia desktop">
-        <h3>citácia</h3>
+      <div class="citacia desktop">
+        <h3 role="button" tabindex="0" aria-label="Nachádzate sa v sekcií: Citácia" aria-expanded="false">citácia</h3>
           {% set author_fomratted = '' %}
           {% if node.field_autor.target_id %}
             {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}

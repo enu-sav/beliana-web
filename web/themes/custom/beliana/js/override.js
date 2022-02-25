@@ -153,6 +153,20 @@
             scrollTop: 0
           }, 300);
         });
+        $word.on('click', '.citacia h3', function (e) {
+          if ($(this).parent().hasClass('open')) {
+            $(this).parent().removeClass('open');
+            $(this).parent().find('#dialog-desc').css('display', 'none');
+            $(this).attr('aria-expanded', false);
+          }
+          else {
+            $(this).parent().removeClass('open');
+            $(this).parent().addClass('open');
+            $(this).parent().find('#dialog-desc').css('display', 'block');
+            $(this).parent().find('#dialog-desc').focus();
+            $(this).attr('aria-expanded', true);
+          }
+        });
       });
 
       //set "Ilustracia" image media size in "Heslo" node

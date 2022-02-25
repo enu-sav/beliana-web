@@ -51,27 +51,6 @@
         $('html').removeClass('black-white');
         cookies.set('black-white', 'normal');
       });
-
-      if ($('#citation-header').hasClass('open')) {
-        alert(1);
-      }
-
-      $(document).keyup(function (e) {
-        if (e.keyCode == 27) {
-          $('#citation-header').removeClass('open');
-          $('#citation-header').attr('aria-expanded', false);
-          $('#citation').css('display', 'none');
-          $('#citation').attr('aria-hidden', true);
-        }
-      });
-
-
-
-      // $context.find('.citacia.desktop').on('click', '.citation', function (e) {
-      //   alert(1);
-      //   console.log('1111');
-      //   $('#citation p').focus();
-      // });
     },
   };
 

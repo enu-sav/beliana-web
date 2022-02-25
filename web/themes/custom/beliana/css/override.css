@@ -593,7 +593,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 
 .obsah a,
-.citacia a,
+.citacia h3,
 .najhladanejsie-hesla a,
 .body-content a,
 .obsah a:visited,
@@ -606,11 +606,11 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 
 .black-white .obsah a,
-.black-white .citacia a,
+.black-white .citacia h3,
 .black-white .najhladanejsie-hesla a,
 .black-white .body-content a,
 .black-white .obsah a:visited,
-.black-white .citacia a:visited,
+.black-white .citacia h3:visited,
 .black-white .dnes a:visited,
 .black-white .najhladanejsie-hesla a:visited,
 .black-white .body-content .container a:visited {
@@ -625,7 +625,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 
 .more:hover,
 .obsah a:hover,
-.citacia a:hover,
+.citacia h3:hover,
 .dnes a:hover,
 .najhladanejsie-hesla a:hover,
 .body-content .container a:hover {
@@ -635,7 +635,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 
 .black-white .more:hover,
 .black-white .obsah a:hover,
-.black-white .citacia a:hover,
+.black-white .citacia h3:hover,
 .black-white .dnes a:hover,
 .black-white .najhladanejsie-hesla a:hover,
 .black-white .body-content .container a:hover {
