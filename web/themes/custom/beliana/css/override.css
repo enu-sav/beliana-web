@@ -520,12 +520,12 @@ body.path-rozsirene-vyhladavanie #block-kategorie .opener {
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li {
   list-style: none;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li div {
   padding-left: 15px;
   position: relative;
-  top: -3px;
+  display: initial;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label:before {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li > div.sub-categories:before {
   content: "\f0da";
   color: transparent;
   font: normal normal normal 14px/1 FontAwesome;
@@ -533,24 +533,24 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li 
   top: 1px;
   left: -5px;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded:not(.facet-item--active) > label,
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed:not(.facet-item--active) > label {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded:not(.facet-item--active) > div,
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed:not(.facet-item--active) > div {
   cursor: pointer;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed ul {
   display: none;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > label:before {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > div:before {
   content: "\f0d7";
   color: #282727;
 }
-.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > label:before {
+.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > div:before {
   color: #fff;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed div:before {
   color: #282727;
 }
-.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
+.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed div:before {
   color: #fff;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li {
@@ -593,7 +593,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 
 .obsah a,
-.citacia a,
+.citacia h3,
 .najhladanejsie-hesla a,
 .body-content a,
 .obsah a:visited,
@@ -606,11 +606,11 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 
 .black-white .obsah a,
-.black-white .citacia a,
+.black-white .citacia h3,
 .black-white .najhladanejsie-hesla a,
 .black-white .body-content a,
 .black-white .obsah a:visited,
-.black-white .citacia a:visited,
+.black-white .citacia h3:visited,
 .black-white .dnes a:visited,
 .black-white .najhladanejsie-hesla a:visited,
 .black-white .body-content .container a:visited {
@@ -625,7 +625,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 
 .more:hover,
 .obsah a:hover,
-.citacia a:hover,
+.citacia h3:hover,
 .dnes a:hover,
 .najhladanejsie-hesla a:hover,
 .body-content .container a:hover {
@@ -635,7 +635,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 
 .black-white .more:hover,
 .black-white .obsah a:hover,
-.black-white .citacia a:hover,
+.black-white .citacia h3:hover,
 .black-white .dnes a:hover,
 .black-white .najhladanejsie-hesla a:hover,
 .black-white .body-content .container a:hover {
