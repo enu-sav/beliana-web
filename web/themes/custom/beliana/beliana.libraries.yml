@@ -9,6 +9,7 @@ theme:
     js/libs/exif-js/exif.js: { }
     js/libs/exif2css/dist/exif2css.js: { }
     js/libs/accessible-mega-menu/jquery-accessibleMegaMenu.js: { }
+    js/libs/button/button-links.js: { }
     js/wcag-tools.js: { }
     js/override.js: { }
   dependencies:
