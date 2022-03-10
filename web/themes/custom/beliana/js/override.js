@@ -158,13 +158,14 @@
             $(this).parent().removeClass('open');
             $(this).parent().find('#dialog-desc').css('display', 'none');
             $(this).attr('aria-expanded', false);
+            $(this).attr('aria-label', 'Sekcia: Citácia je zatvorená');
           }
           else {
             $(this).parent().removeClass('open');
             $(this).parent().addClass('open');
             $(this).parent().find('#dialog-desc').css('display', 'block');
-            $(this).parent().find('#dialog-desc').focus();
             $(this).attr('aria-expanded', true);
+            $(this).attr('aria-label', 'Sekcia: Citácia je otvorená');
           }
         });
       });

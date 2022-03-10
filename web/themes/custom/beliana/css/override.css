@@ -1609,7 +1609,7 @@ article .field--name-body table tr td {
   display: block;
 }
 .citacia.desktop h3 {
-  color: #1c1c1c !important;
+  color: #8a2807 !important;
   opacity: 0.6;
   font-weight: 700;
   font-size: 1.8rem;
@@ -1618,6 +1618,7 @@ article .field--name-body table tr td {
 .black-white .citacia.desktop h3 {
   color: #fff !important;
   opacity: 1;
+  text-decoration: underline !important;
 }
 
 .contentinfo .alret {
@@ -1637,6 +1638,7 @@ article .field--name-body table tr td {
   margin-top: 0 /*-30px*/;
   color: #767676;
 }
+.black-white .zoznam-tools,
 .black-white .zoznam-tools:focus {
   color: #fff;
 }
@@ -1650,7 +1652,15 @@ article .field--name-body table tr td {
   background: transparent;
   color: #a51b00;
 }
-.black-white .truncate-button,
+.truncate-button .label {
+  border: none;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.black-white .truncate-button .label,
 .black-white .sort-button {
   border: 1px solid #fff;
   color: #000;
@@ -1692,14 +1702,12 @@ article .field--name-body table tr td {
   padding-left: 10px;
 }
 .black-white .heslo-tools .share.active .dropdown li,
-.black-white .truncate-button .dropdown li,
+.black-white .body-content .truncate-button .dropdown li a,
 .black-white .sort-button .dropdown li {
-  color: #000;
+  color: #000 !important;
 }
 .black-white .heslo-tools .share.active .dropdown li:hover,
 .black-white .heslo-tools .share.active .dropdown li:focus,
-.black-white .truncate-button .dropdown li:hover,
-.black-white .truncate-button .dropdown li:focus,
 .black-white .sort-button .dropdown li:hover,
 .black-white .sort-button .dropdown li:focus {
   color: #fff;
@@ -1753,9 +1761,15 @@ footer .footer-content ul li {
 }
 footer .footer-content ul li a,
 footer .footer-content ul li a:hover {
-  color: #333 !important;
+  color: #8a2807 !important;
   font-size: 1.5em;
 }
+
+.path-frontpage footer .footer-content ul li a,
+.path-frontpage footer .footer-content ul li a:hover {
+  color: #333 !important;
+}
+
 .black-white footer .footer-content ul li a,
 .black-white footer .footer-content ul li a:hover {
   color: #fff !important;
