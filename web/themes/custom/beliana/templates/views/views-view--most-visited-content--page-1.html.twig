@@ -46,12 +46,19 @@
     <div class="zoznam-tools">
       <div class="item">
         <p>Zobrazujem:</p>
-
-        <div class="truncate-button active">
-          <span class="label">Začiatok hesla<b class="button"></b></span>
-          <ul tabindex="0" aria-expanded="false" aria-label="Možnosti zobrazenia" class="dropdown">
-            <li role="link" tabindex="0" aria-label="Zobraziť vo výpise začiatok hesla" class="word-short">Začiatok hesla</li>
-            <li role="link" tabindex="0" aria-label="Zobraziť vo výpise celé heslo" class="word-full">Celé heslo</li>
+        <div class="truncate-button">
+          <button tabindex="0" type="button" aria-label="Možnosti zobrazenia" id="label" class="label"
+                  aria-haspopup="true" aria-controls="truncate-controls">
+            Začiatok hesla<b class="button"></b>
+          </button>
+          <ul id="truncate-controls" role="menu" class="dropdown" aria-labelledby="label">
+            <li role="none">
+              <a href="#" aria-label="Zobraziť vo výpise začiatok hesla" class="word-short" role="menuitem">Začiatok
+                hesla</a>
+            </li>
+            <li role="none">
+              <a href="#" aria-label="Zobraziť vo výpise celé heslo" class="word-full" role="menuitem">Celé heslo</a>
+            </li>
           </ul>
         </div>
       </div>

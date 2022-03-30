@@ -25,13 +25,13 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes }}>
+<div{{ attributes }} tabindex="0" role="region" aria-labelledby="category">
   <span class="smartphone opener open">Zobraziť kategórie</span>
   <span class="smartphone opener close">Skryť kategórie</span>
 
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
+    <h2 id="category" aria-label="Filtrovať obsah podľa kategórie" {{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
 

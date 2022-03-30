@@ -43,27 +43,9 @@
     }
   };
 
-  Drupal.behaviors.clickChangeFormatButtonWrapper = {
-    attach: function (context, settings) {
-      $('.truncate-button').once('truncate-button').on('click', function () {
-        $(this).toggleClass('active');
-        const aria_expanded = $(this).find('.dropdown').attr('aria-expanded');
-        if (typeof aria_expanded !== 'undefined' && aria_expanded === 'false') {
-          $(this).find('ul').attr('aria-expanded', true);
-        } else {
-          $(this).find('ul').attr('aria-expanded', false);
-        }
-      });
-
-      $('.sort-button').once().on('click', function () {
-        $(this).toggleClass('active');
-      });
-    }
-  };
-
   Drupal.behaviors.clickChangeFormatButton = {
     attach: function (context, settings) {
-      $('.zoznam-tools .truncate-button').on('click', 'li', function () {
+      $('.zoznam-tools .truncate-button').on('click', 'li a', function () {
         var $item = $(this);
 
         if ($item.hasClass('word-short')) {
@@ -80,7 +62,6 @@
         }
 
         $('.truncate-button .label').html($item.text() + '<b class="button"></b>');
-        $('.truncate-button').toggleClass('active');
 
         Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', $item.attr('class'), 1);
       });

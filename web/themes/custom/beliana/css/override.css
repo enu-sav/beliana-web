@@ -200,6 +200,9 @@ header.header {
   background: #000 url('../img/svg-icons/redo.svg') no-repeat center center;
   background-size: 12px auto;
 }
+.header .wcag-icons .icon-black-white:focus {
+  outline: 1px solid #ccc;
+}
 .header .middle .wcag-icons {
   display: none;
 }
@@ -517,12 +520,12 @@ body.path-rozsirene-vyhladavanie #block-kategorie .opener {
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li {
   list-style: none;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li div {
   padding-left: 15px;
   position: relative;
-  top: -3px;
+  display: initial;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li label:before {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li > div.sub-categories:before {
   content: "\f0da";
   color: transparent;
   font: normal normal normal 14px/1 FontAwesome;
@@ -530,24 +533,24 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li 
   top: 1px;
   left: -5px;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded:not(.facet-item--active) > label,
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed:not(.facet-item--active) > label {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded:not(.facet-item--active) > div,
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed:not(.facet-item--active) > div {
   cursor: pointer;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--collapsed ul {
   display: none;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > label:before {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > div:before {
   content: "\f0d7";
   color: #282727;
 }
-.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > label:before {
+.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul li.facet-item--expanded > div:before {
   color: #fff;
 }
-body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
+body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed div:before {
   color: #282727;
 }
-.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed label:before {
+.black-white body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox ul li.facet-item--collapsed div:before {
   color: #fff;
 }
 body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul > li {
@@ -590,7 +593,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 
 .obsah a,
-.citacia a,
+.citacia h3,
 .najhladanejsie-hesla a,
 .body-content a,
 .obsah a:visited,
@@ -603,11 +606,11 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 }
 
 .black-white .obsah a,
-.black-white .citacia a,
+.black-white .citacia h3,
 .black-white .najhladanejsie-hesla a,
 .black-white .body-content a,
 .black-white .obsah a:visited,
-.black-white .citacia a:visited,
+.black-white .citacia h3:visited,
 .black-white .dnes a:visited,
 .black-white .najhladanejsie-hesla a:visited,
 .black-white .body-content .container a:visited {
@@ -622,7 +625,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 
 .more:hover,
 .obsah a:hover,
-.citacia a:hover,
+.citacia h3:hover,
 .dnes a:hover,
 .najhladanejsie-hesla a:hover,
 .body-content .container a:hover {
@@ -632,7 +635,7 @@ body.path-rozsirene-vyhladavanie #block-kategorie .facets-widget-checkbox > ul >
 
 .black-white .more:hover,
 .black-white .obsah a:hover,
-.black-white .citacia a:hover,
+.black-white .citacia h3:hover,
 .black-white .dnes a:hover,
 .black-white .najhladanejsie-hesla a:hover,
 .black-white .body-content .container a:hover {
@@ -1125,6 +1128,14 @@ article .field--name-body table tr td {
   display: block;
 }
 
+.black-white #block-beliana-heslo ul li .facets-widget.open ul li a  {
+  color: #000;
+}
+.black-white #block-beliana-heslo ul li .facets-widget.open ul li a:hover,
+.black-white #block-beliana-heslo ul li .facets-widget.open ul li a:focus {
+  color: #fff;
+}
+
 #block-beliana-heslo ul li ul li a:hover,
 #block-beliana-heslo ul li ul li a.focus {
   box-shadow: none;
@@ -1598,7 +1609,7 @@ article .field--name-body table tr td {
   display: block;
 }
 .citacia.desktop h3 {
-  color: #1c1c1c !important;
+  color: #8a2807 !important;
   opacity: 0.6;
   font-weight: 700;
   font-size: 1.8rem;
@@ -1607,6 +1618,7 @@ article .field--name-body table tr td {
 .black-white .citacia.desktop h3 {
   color: #fff !important;
   opacity: 1;
+  text-decoration: underline !important;
 }
 
 .contentinfo .alret {
@@ -1626,7 +1638,8 @@ article .field--name-body table tr td {
   margin-top: 0 /*-30px*/;
   color: #767676;
 }
-.black-white .zoznam-tools {
+.black-white .zoznam-tools,
+.black-white .zoznam-tools:focus {
   color: #fff;
 }
 .zoznam-tools .item:last-of-type {
@@ -1639,7 +1652,15 @@ article .field--name-body table tr td {
   background: transparent;
   color: #a51b00;
 }
-.black-white .truncate-button,
+.truncate-button .label {
+  border: none;
+  width: 100%;
+  background: transparent;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.black-white .truncate-button .label,
 .black-white .sort-button {
   border: 1px solid #fff;
   color: #000;
@@ -1681,10 +1702,18 @@ article .field--name-body table tr td {
   padding-left: 10px;
 }
 .black-white .heslo-tools .share.active .dropdown li,
-.black-white .truncate-button .dropdown li,
+.black-white .body-content .truncate-button .dropdown li a,
 .black-white .sort-button .dropdown li {
-  color: #000;
+  color: #000 !important;
 }
+.black-white .heslo-tools .share.active .dropdown li:hover,
+.black-white .heslo-tools .share.active .dropdown li:focus,
+.black-white .sort-button .dropdown li:hover,
+.black-white .sort-button .dropdown li:focus {
+  color: #fff;
+  background: #000;
+}
+
 .heslo-tools .share.active .dropdown li:hover a,
 .truncate-button .dropdown li:hover,
 .sort-button .dropdown li:hover {
@@ -1732,9 +1761,15 @@ footer .footer-content ul li {
 }
 footer .footer-content ul li a,
 footer .footer-content ul li a:hover {
-  color: #333 !important;
+  color: #8a2807 !important;
   font-size: 1.5em;
 }
+
+.path-frontpage footer .footer-content ul li a,
+.path-frontpage footer .footer-content ul li a:hover {
+  color: #333 !important;
+}
+
 .black-white footer .footer-content ul li a,
 .black-white footer .footer-content ul li a:hover {
   color: #fff !important;
