@@ -1,0 +1,6 @@
+name: Beliana base
+type: module
+description: Beliana base
+package: Beliana
+core: 8.x
+core_version_requirement: ^8 || ^9

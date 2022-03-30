@@ -127,17 +127,14 @@
         {% endif %}
       </div>
 
-      <div class="citacia desktop" data-collapse>
-        <h3>citácia</h3>
-        <div>
+      <div role="dialog" aria-labelledby="citation-title"  aria-label="Nachádzate sa v sekcií: citácia" aria-describedby="dialog-desc" class="citacia desktop">
+        <h3 id="citation-title">citácia</h3>
           {% set author_fomratted = '' %}
           {% if node.field_autor.target_id %}
             {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}
           {% endif %}
-          <p>{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana,
-            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a
-              href="{{ share_url }}">{{ share_url }}</a></p>
-        </div>
+          <p id="dialog-desc">{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online]. Encyclopaedia Beliana,
+            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a href="{{ share_url }}">{{ share_url }}</a></p>
       </div>
 
       <div class="heslo-tools">

@@ -32,10 +32,9 @@
   height: 30px;
   display: inline-block;
   white-space: nowrap;
-  font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
-  color: #545454;
+  color: #494949;
   text-decoration: none;
   margin-right: 6px;
 }
@@ -43,8 +42,8 @@
 .heslo-tools .share .dropdown li a {
   display: block;
   text-decoration: none;
-  color: #545454;
-  padding: 0px 10px;
+  color: #494949;
+  padding: 0 10px;
 }
 
 /* Hover state */

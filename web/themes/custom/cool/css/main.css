@@ -16,6 +16,10 @@ body {
   color: #282727;
 }
 
+.black-white body {
+  color: #fff;
+}
+
 h1 {
   color: #266ead;
   font-size: 26px;
@@ -375,9 +379,8 @@ footer {
   border-top: 1px solid #e4e4e4;
   clear: both;
   text-align: left;
-  font-size: 13px;
   font-size: 1.3rem;
-  color: #545454;
+  color: #494949
   padding-top: 40px;
   padding-bottom: 20px;
   margin-top: 70px;
@@ -428,7 +431,7 @@ footer ul {
 }
 
 .footer-copyright a.credits {
-  color: #545454;
+  color: #494949;
   font-weight: 700;
 }
 
@@ -570,7 +573,7 @@ div.obsah {
   font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
-  color: #545454;
+  color: #494949
   text-decoration: none;
   padding: 0 10px;
   margin-right: 6px;
@@ -597,7 +600,7 @@ div.obsah {
   font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
-  color: #545454;
+  color: #494949
   text-decoration: none;
   padding: 0 10px;
   margin-right: 6px;
@@ -631,8 +634,8 @@ div.obsah {
 .heslo-tools .share .dropdown li a {
   display: block;
   text-decoration: none;
-  color: #545454;
-  padding: 0px 10px;
+  color: #494949;
+  padding: 0 10px;
 }
 
 /* Hover state */
@@ -691,9 +694,11 @@ div.obsah {
   float: left;
   width: 70px;
   margin-right: 5px;
-  font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
+}
+.black-white .zoznam-tools p {
+  font-size: 1.2rem;
 }
 
 p.hesla-count {
@@ -1071,7 +1076,6 @@ form.user-pass input#edit-submit {
   color: #1c1c1c;
   text-decoration: none !important;
   font-weight: 700;
-  font-size: 18px;
   font-size: 1.8rem;
   line-height: 16px;
 }
@@ -1157,7 +1161,7 @@ table {
   font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
-  color: #545454;
+  color: #494949
   text-decoration: none;
   padding: 0 10px;
   margin-top: 0.75em;
@@ -1196,7 +1200,7 @@ table {
 .sort-button .dropdown li {
   display: block;
   text-decoration: none;
-  color: #545454;
+  color: #494949
   padding: 0px 10px;
 }
 
@@ -1251,6 +1255,10 @@ table {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+.black-white #gradient {
+  height: 3.125em;
+  filter: invert(1);
 }
 
 table tr td:first-child {
@@ -1427,7 +1435,7 @@ td.long {
 .view-word-search-page ul.pager li a {
   line-height: 35px;
   text-decoration: none;
-  color: #545454;
+  color: #494949;
   font-size: 1.5rem;
 }
 
