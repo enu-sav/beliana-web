@@ -44,6 +44,7 @@ class SearchForm extends FormBase {
         '#attributes' => [
           'class' => ['search-input'],
           'placeholder' => 'Vyhľadať (pozri Možnosti vyhľadávania vpravo)',
+          'aria-label' => 'Vyhľadať (Pre ďalšie možnosti vyhľadávania, pokračujte na prvok Nápoveda vyhľadávania)',
         ],
       ]
     ];
