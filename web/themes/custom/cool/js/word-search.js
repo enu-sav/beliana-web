@@ -55,10 +55,12 @@
               $(this).children('#gradient').css('display', 'block');
             }
           });
+          $item.parent().parent().parent().find('.label').attr('aria-label', 'Možnosti zobrazenia - nastavené začiatok hesla');
         }
         else {
           $('.views-element-container .heslo').removeClass('truncate-wrapper');
           $('.views-element-container .heslo #gradient').css('display', 'none');
+          $item.parent().parent().parent().find('.label').attr('aria-label', 'Možnosti zobrazenia - nastavené celé heslo');
         }
 
         $('.truncate-button .label').html($item.text() + '<b class="button"></b>');
