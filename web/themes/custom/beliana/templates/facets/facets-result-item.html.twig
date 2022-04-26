@@ -19,7 +19,7 @@
 {% if is_active %}
   <span class="facet-item__status js-facet-deactivate">(-)</span>
 {% endif %}
-<span class="facet-item__value">{{ value }}</span>
+<span class="facet-item__value" data-value="{{ value }}">{{ value }}</span>
 {% if show_count %}
-  <span class="facet-item__count">(<span class="visually-hidden">Počet položiek: </span>{{ count }})</span>
+  <span class="facet-item__count" data-count="{{ count }}">({{ count }})</span>
 {% endif %}

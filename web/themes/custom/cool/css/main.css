@@ -541,7 +541,6 @@ div.obsah {
 }
 
 .heslo h3 {
-  font-size: 16px;
   font-size: 1.6rem;
 }
 
@@ -551,7 +550,6 @@ div.obsah {
 }
 
 .heslo-ilustracia p {
-  font-size: 14px;
   font-size: 1.4rem;
   color: #636363;
 }
@@ -570,10 +568,9 @@ div.obsah {
   height: 30px;
   display: inline-block;
   white-space: nowrap;
-  font-size: 13px;
   font-size: 1.3rem;
   line-height: 30px;
-  color: #494949
+  color: #494949;
   text-decoration: none;
   padding: 0 10px;
   margin-right: 6px;
