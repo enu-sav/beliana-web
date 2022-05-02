@@ -55,7 +55,7 @@
           Encyclopaedia Beliana
         </div>
         <div class="left">
-          {{ page.top_left }}
+          {{ page.top_left|without('beliana_mobile_menu') }}
         </div>
         <div class="right">
           {{ page.top_right }}
@@ -82,7 +82,7 @@
           </div>
           <div class="smartphone-navigation">
             <i class="fa fa-bars fa-2x"></i>
-            {{ page.top_left }}
+            {{ page.top_left|without('beliana_main_menu') }}
           </div>
         </div>
         <div class="right">
