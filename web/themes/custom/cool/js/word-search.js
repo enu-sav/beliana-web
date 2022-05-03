@@ -85,8 +85,8 @@
     attach: function (context, settings) {
       var self = this;
 
-      if (localStorage.getItem('word_search_label') != null) {
-        $('.truncate-button .' + localStorage.getItem('word_search_label')).click();
+      if (localStorage.getItem('word_search_sort') != null) {
+        $('.truncate-button .' + localStorage.getItem('word_search_sort')).click();
       }
       else {
         $('.truncate-button .word-short').click();
