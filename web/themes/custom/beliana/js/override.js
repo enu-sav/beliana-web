@@ -229,8 +229,6 @@
               tabindex_label = 0;
             }
 
-
-
             var checkbox = $('<input type="checkbox" class="facets-checkbox">')
               .attr('aria-controls', 'label-' + id)
               .attr('aria-checked', false)
