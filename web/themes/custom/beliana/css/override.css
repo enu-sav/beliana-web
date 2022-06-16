@@ -904,6 +904,10 @@ article .heslo .obsah.desktop article.media-image.view-mode-in-word img {
   max-width: 290px;
 }
 
+article .heslo .obsah table tr td {
+  line-height: 1.5rem;
+  text-align: left;
+}
 article .heslo .obsah table tr td:first-child {
   font-weight: initial;
 }
