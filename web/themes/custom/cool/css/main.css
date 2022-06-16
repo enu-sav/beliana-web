@@ -545,6 +545,10 @@ div.obsah {
   font-size: 1.6rem;
 }
 
+.heslo ol li {
+  margin-left: 14px;
+}
+
 .heslo-ilustracia {
   float: right;
   width: 275px;
