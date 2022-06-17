@@ -55,15 +55,18 @@
               $(this).children('#gradient').css('display', 'block');
             }
           });
+          $item.parent().parent().parent().find('.label').attr('aria-label', 'Možnosti zobrazenia - nastavené začiatok hesla');
         }
         else {
           $('.views-element-container .heslo').removeClass('truncate-wrapper');
           $('.views-element-container .heslo #gradient').css('display', 'none');
+          $item.parent().parent().parent().find('.label').attr('aria-label', 'Možnosti zobrazenia - nastavené celé heslo');
         }
 
         $('.truncate-button .label').html($item.text() + '<b class="button"></b>');
 
-        Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', $item.attr('class'), 1);
+        // Drupal.behaviors.onLoadTrigger.setCookie('word_search_label', $item.attr('class'), 1);
+        localStorage.setItem('word_search_sort', $item.attr('class'))
       });
 
       $('.zoznam-tools .sort-button').on('click', 'li', function () {
@@ -72,7 +75,8 @@
         $('.sort-button .label').html($item.text() + '<b class="button"></b>');
         $('.sort-button').toggleClass('active');
 
-        Drupal.behaviors.onLoadTrigger.setCookie('word_search_sort', $item.attr('class'), 1);
+        // Drupal.behaviors.onLoadTrigger.setCookie('word_search_sort', $item.attr('class'), 1);
+        localStorage.setItem('word_search_sort', $item.attr('class'))
       });
     }
   };
@@ -81,8 +85,8 @@
     attach: function (context, settings) {
       var self = this;
 
-      if (self.getCookie('word_search_label') != null) {
-        $('.truncate-button .' + self.getCookie('word_search_label')).click();
+      if (localStorage.getItem('word_search_sort') != null) {
+        $('.truncate-button .' + localStorage.getItem('word_search_sort')).click();
       }
       else {
         $('.truncate-button .word-short').click();

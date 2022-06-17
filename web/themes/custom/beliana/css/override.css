@@ -904,6 +904,10 @@ article .heslo .obsah.desktop article.media-image.view-mode-in-word img {
   max-width: 290px;
 }
 
+article .heslo .obsah table tr td {
+  line-height: 1.5rem;
+  text-align: left;
+}
 article .heslo .obsah table tr td:first-child {
   font-weight: initial;
 }
@@ -1417,10 +1421,25 @@ article .field--name-body table tr td {
   margin: 8px 0 8px 16px;
   background: none;
 }
-.black-white .heslo-tools .share .dropdown a,
+.black-white .heslo-tools .share .dropdown a {
+  text-decoration: underline;
+}
+
+.black-white .heslo-tools .share .dropdown a:hover,
 .black-white .heslo-tools .share .dropdown a:focus {
   outline: 1px solid #ccc;
-  text-decoration: underline;
+}
+
+.black-white .heslo-tools a.print,
+.black-white .heslo-tools a.comment {
+  border: none;
+}
+
+.black-white .heslo-tools a.print:hover,
+.black-white .heslo-tools a.print:focus,
+.black-white .heslo-tools a.comment:hover,
+.black-white .heslo-tools a.comment:focus {
+  outline: 1px solid #ccc;
 }
 
 .heslo-tools a.print i,
@@ -1620,6 +1639,11 @@ article .field--name-body table tr td {
   opacity: 1;
   text-decoration: underline !important;
 }
+.black-white .citacia.desktop h3:hover,
+.black-white .citacia.desktop h3:focus {
+  outline: 1px solid #ccc !important;
+  width: auto;
+}
 
 .contentinfo .alret {
   color: #a51b00;
@@ -1801,6 +1825,15 @@ footer .footer-copyright {
 
 *:focus {
   outline: none;
+}
+
+.black-white button,
+.black-white input,
+.black-white optgroup,
+.black-white select,
+.black-white textarea,
+.black-white input#edit-submit {
+  color: #000;
 }
 
 @media print {
