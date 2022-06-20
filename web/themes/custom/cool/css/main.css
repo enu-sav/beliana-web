@@ -1125,9 +1125,10 @@ table {
 }
 
 .obsah table thead th {
-  text-align: left;
+  text-align: center;
   background-color: #d3d3d3;
   padding: 5px;
+  line-height: initial;
 }
 .black-white .obsah table thead th {
   color: #000;
