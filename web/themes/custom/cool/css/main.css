@@ -541,7 +541,8 @@ div.obsah {
 }
 
 .heslo h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
 }
 
 .heslo ol li {
