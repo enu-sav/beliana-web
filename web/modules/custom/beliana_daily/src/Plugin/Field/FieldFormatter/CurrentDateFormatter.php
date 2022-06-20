@@ -33,7 +33,7 @@ class CurrentDateFormatter extends DateTimeDefaultFormatter {
 
         if ($this->getFieldSetting('datetime_type') == 'date') {
           // A date without time will pick up the current time, use the default.
-          $date = DateTimePlus::setDefaultDateTime();
+          $date->setDefaultDateTime() ;
         }
 
         // Display items belonging to the same day and month only.
