@@ -1129,6 +1129,9 @@ table {
   background-color: #d3d3d3;
   padding: 5px;
 }
+.black-white .obsah table thead th {
+  color: #000;
+}
 
 .obsah table p {
   font-size: 1.3rem;
