@@ -3,6 +3,7 @@ type: theme
 description: Coolstranky.sk base theme
 package: Coolstranky
 core: 8.x
+core_version_requirement: ^8 || ^9
 libraries:
   - cool/theme
 

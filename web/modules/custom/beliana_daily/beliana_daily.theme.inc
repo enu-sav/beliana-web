@@ -22,8 +22,8 @@ function beliana_daily_preprocess_colorbox_url_formatter(&$variables) {
   $colorbox_style = $config->get('colorbox_style');
   $trim_length = $config->get('colorbox_caption_trim_length');
 
-  if (((strpos($colorbox_style, 'colorbox/example') !== FALSE) || $config->get('colorbox_caption_trim')) && (Unicode::strlen($caption) > $trim_length)) {
-    $caption = Unicode::substr($caption, 0, $trim_length - 5) . '...';
+  if (((strpos($colorbox_style, 'colorbox/example') !== FALSE) || $config->get('colorbox_caption_trim')) && (mb_strlen($caption) > $trim_length)) {
+    $caption = mb_substr($caption, 0, $trim_length - 5) . '...';
   }
 
   $gallery_id = 'gallery-all';

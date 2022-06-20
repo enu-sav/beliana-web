@@ -4,6 +4,7 @@ description: Beliana custom theme
 package: Beliana
 version: 8.0.1
 core: 8.x
+core_version_requirement: ^8 || ^9
 libraries:
   - beliana/theme
 
@@ -18,6 +19,6 @@ regions:
   navigation: Navigation
   help: Help
   highlighted: Highlighted
-  content: Content  
+  content: Content
   footer: Footer
   bottop: Bottom

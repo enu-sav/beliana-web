@@ -2,6 +2,7 @@
 
 namespace Drupal\beliana_daily\Plugin\Field\FieldFormatter;
 
+use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\datetime\Plugin\Field\FieldFormatter\DateTimeDefaultFormatter;
 
@@ -32,10 +33,10 @@ class CurrentDateFormatter extends DateTimeDefaultFormatter {
 
         if ($this->getFieldSetting('datetime_type') == 'date') {
           // A date without time will pick up the current time, use the default.
-          datetime_date_default_time($date);
+          $date = DateTimePlus::setDefaultDateTime();
         }
-        
-        // Display items belonging to the same day and month only.        
+
+        // Display items belonging to the same day and month only.
         if ($date->format('md') == date('md')) {
           // Create the ISO date in Universal Time.
           $iso_date = $date->format('Y-m-d\TH:i:s') . 'Z';
