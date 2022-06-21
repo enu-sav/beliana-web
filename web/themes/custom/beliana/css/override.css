@@ -711,6 +711,10 @@ body.page-node-type-page article {
   margin-top: 30px;
 }
 
+body.page-node-type-page article ol li {
+  margin-left: 14px;
+}
+
 .media.media-image.view-mode-full {
   width: 75%;
   margin: 0 auto;
