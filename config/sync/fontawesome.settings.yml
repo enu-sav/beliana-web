@@ -9,7 +9,7 @@ method: svg
 use_cdn: false
 external_svg_location: ''
 external_svg_integrity: ''
-use_shim: false
+use_shim: true
 external_shim_location: ''
 allow_pseudo_elements: false
 use_solid_file: true
