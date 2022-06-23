@@ -40,7 +40,7 @@ class ModalForm extends FormBase {
 
     $form['description'] = [
       '#type' => 'textarea',
-      '#title' => 'Text správy',
+      '#title' => 'Text správy (povinné)',
       '#required' => TRUE,
       '#default_value' => 'Komentár k heslu: "' . $node->getTitle() . '"',
     ];
@@ -48,7 +48,7 @@ class ModalForm extends FormBase {
     $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Emailová adresa'),
-      '#description' => $this->t('Ak uvediete svoju emailovú adresu, budeme Vás informovať o výsledku'),
+      '#description' => $this->t('Ak uvediete svoju emailovú adresu, budeme Vás informovať o výsledku<br /> CAPTCHA (povinné)'),
     ];
 
     $form['actions'] = [
@@ -74,7 +74,7 @@ class ModalForm extends FormBase {
     else {
       $this->sendEmail($form_state);
       $response->addCommand(
-          new OpenModalDialogCommand('Komentár k heslu', 'Ďakujeme za odoslanie komentára. Budeme 
+          new OpenModalDialogCommand('Komentár k heslu', 'Ďakujeme za odoslanie komentára. Budeme
             sa ním čoskoro zaoberať a o výsledku Vás budeme informovať na
             zadanú emailovú adresu.', ['width' => '80%'])
       );
@@ -108,7 +108,7 @@ class ModalForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    
+
   }
 
   /**
