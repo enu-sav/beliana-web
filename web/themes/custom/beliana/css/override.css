@@ -867,6 +867,7 @@ article .heslo .obsah span.scroll-up {
 }
 .black-white article .heslo .obsah span.scroll-up {
   font-size: 0.7em;
+  color: #fff;
 }
 
 article .heslo .obsah.desktop {
