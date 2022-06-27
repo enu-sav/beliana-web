@@ -6,3 +6,4 @@ _core:
   default_config_hash: Y89RDIXY0PJrapY3pDHYMbnnM-z8_tnWCurMXu3jocA
 langcode: sk
 config_string: "{\r\n\t\"HTML-CSS\": {\r\n\t\t\"preferredFont\": \"STIX\",\r\n\t\t\"scale\": 100\r\n\t},\r\n\t\"CommonHTML\": {\r\n\t\t\"scale\": 100\r\n\t},\r\n\t\"SVG\": {\r\n\t\t\"font\": \"STIX-Web\",\r\n\t\t\"scale\": 100\r\n\t},\r\n\t\"TeX\": {\r\n\t\t\"extensions\": [\"extpfeil.js\", \"mhchem.js\"],\r\n\t\t\"Macros\": {\r\n\t\t\t\"RR\": \"{\\\\bf R}\",\r\n\t\t\t\"bold\": [\"{\\\\ce{#1}}\", 1],\r\n\t\t\t\"mc\": [\"{\\\\require{mhchem} \\\\mathsf{\\\\ce{#1}}}\", 1]\r\n\t\t}\r\n\t}\r\n}"
+enable_for_admin: 1

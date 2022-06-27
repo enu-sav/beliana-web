@@ -2,4 +2,5 @@ name: Beliana text filter
 type: module
 description: Beliana custom text filters
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Beliana

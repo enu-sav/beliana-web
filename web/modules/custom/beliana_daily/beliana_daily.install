@@ -81,7 +81,7 @@ function beliana_daily_update_8002() {
       ->condition('name', 'piwik')
       ->execute();
 
-  \Drupal::entityManager()->getStorage('shortcut_set')->load('default')->delete();
+  Drupal::entityTypeManager()->getStorage('shortcut_set')->load('default')->delete();
 }
 
 /**

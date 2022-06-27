@@ -38,7 +38,7 @@ function beliana_preprocess_media(&$variables) {
     ->execute();
 
   if (!empty($entity_ids)) {
-    $variables['node'] = Drupal::entityManager()
+    $variables['node'] = Drupal::entityTypeManager()
       ->getStorage('node')
       ->load(reset($entity_ids));
     $variables['back_url'] = Url::fromRoute('entity.node.canonical', ['node' => $variables['node']->id()], ['absolute' => 'true'])
