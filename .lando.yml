@@ -4,7 +4,10 @@ config:
   php: 7.4
   via: apache
   webroot: web
-  drush: 10
+  xdebug: start
+  config:
+    php: .lando/php.ini
+
 services:
   appserver:
     xdebug: true
