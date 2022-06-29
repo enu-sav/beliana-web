@@ -105,10 +105,13 @@ class RsSyncResource extends ResourceBase {
     $node = Node::create([
       'type' => 'word',
       'title' => $data['title'],
-      'field_date' => $data['dates'],
       'field_sort' => $data['sort'],
       'field_info_published' => $data['info_published'],
     ]);
+
+    if (isset($data['dates'])) {
+      $node->field_date = $data['dates'];
+    }
 
     if (isset($data['autor'])) {
       $term = $this->getAuthorTerm($data);
@@ -458,7 +461,9 @@ class RsSyncResource extends ResourceBase {
     $node->setTitle($data['title']);
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'full_html'];
-    $node->field_date = $data['dates'];
+    if (isset($data['dates'])) {
+      $node->field_date = $data['dates'];
+    }
     $node->field_sort = $data['sort'];
     $node->field_info_published = $data['info_published'];
     // set table
