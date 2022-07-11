@@ -18,12 +18,12 @@ plugin: 'facet_block:alphabet'
 settings:
   id: 'facet_block:alphabet'
   label: 'Abecedný zoznam'
-  provider: facets
   label_display: '0'
+  provider: facets
   block_id: heslo
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/abecedny-zoznam"
     negate: false
     context_mapping: {  }
+    pages: "<front>\r\n/abecedny-zoznam"

@@ -22,21 +22,21 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       accordion: accordion
       text: text
+    negate: 0
     target_bundles_drag_drop:
+      accordion:
+        weight: 6
+        enabled: true
       media:
         weight: 5
         enabled: false
-      accordion:
-        enabled: true
-        weight: 6
       section:
         weight: 7
         enabled: false
       text:
-        enabled: true
         weight: 8
+        enabled: true
 field_type: entity_reference_revisions

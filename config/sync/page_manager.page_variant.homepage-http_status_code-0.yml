@@ -6,16 +6,16 @@ dependencies:
     - page_manager.page.homepage
 id: homepage-http_status_code-0
 label: 'HTTP status code'
+weight: 0
 variant: http_status_code
 variant_settings:
   id: http_status_code
-  uuid: 0072839f-d0d9-4d70-8272-135a081fd479
   label: null
   weight: 0
+  uuid: 0072839f-d0d9-4d70-8272-135a081fd479
   status_code: 200
   redirect_location: ''
 page: homepage
-weight: 0
 selection_criteria: {  }
 selection_logic: and
 static_context: {  }

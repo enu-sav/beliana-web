@@ -15,11 +15,11 @@ plugin: page_title_block
 settings:
   id: page_title_block
   label: 'Názov stránky'
-  provider: core
   label_display: '0'
+  provider: core
 visibility:
   request_path:
     id: request_path
-    pages: "/najcitanejsie-hesla\r\n/abecedny-zoznam\r\n/vysledky-vyhladavania"
     negate: false
     context_mapping: {  }
+    pages: "/najcitanejsie-hesla\r\n/abecedny-zoznam\r\n/vysledky-vyhladavania"

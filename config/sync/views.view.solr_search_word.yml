@@ -17,63 +17,12 @@ base_table: search_api_index_word_solr_index
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: search_api_tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: full
-        options:
-          items_per_page: 50
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-            first: '« Prvá strana'
-            last: 'Posledná strana ››'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
-      style:
-        type: default
-      row:
-        type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+      title: 'Výsledky vyhľadávania'
       fields:
         search_api_rendered_item:
           id: search_api_rendered_item
@@ -82,6 +31,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_rendered_item
           label: ''
           exclude: false
           alter:
@@ -126,7 +76,97 @@ display:
           view_modes:
             'entity:node':
               word: search_index
-          plugin_id: search_api_rendered_item
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 50
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« Prvá strana'
+            last: 'Posledná strana ››'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: search_api_tag
+        options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'Zadaným podmienkam nevyhovujú žiadne heslá.'
+          tokenize: false
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_word_solr_index
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: search_api_relevance
+          exposed: false
+        field_sort:
+          id: field_sort
+          table: search_api_index_word_solr_index
+          field: field_sort
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: field_sort
+          exposed: false
+        title:
+          id: title
+          table: search_api_index_word_solr_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: Nadpis
+            field_identifier: title
+          exposed: true
+      arguments: {  }
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -135,6 +175,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: or
           value: ''
           group: 1
@@ -145,6 +186,8 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: text
             required: false
             remember: false
@@ -153,8 +196,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -179,45 +220,22 @@ display:
             - media_alt
             - media_title
             - title
-          plugin_id: search_api_fulltext
-      sorts:
-        search_api_relevance:
-          id: search_api_relevance
-          table: search_api_index_word_solr_index
-          field: search_api_relevance
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-        field_sort:
-          id: field_sort
-          table: search_api_index_word_solr_index
-          field: field_sort
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-        title:
-          id: title
-          table: search_api_index_word_solr_index
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: true
-          expose:
-            label: Nadpis
-          plugin_id: search_api
-      title: 'Výsledky vyhľadávania'
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          bypass_access: false
+          skip_access: false
+      relationships: {  }
+      css_class: view-word-search-page
       header:
         result:
           id: result
@@ -226,26 +244,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: result
           empty: false
           content: 'Zobrazené heslá @start – <span id="count-words">@end</span> z celkového počtu @total hesiel.'
-          plugin_id: result
       footer: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: 'Zadaným podmienkam nevyhovujú žiadne heslá.'
-          plugin_id: text_custom
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      css_class: view-word-search-page
     cache_metadata:
       max-age: -1
       contexts:
@@ -259,13 +262,13 @@ display:
       tags:
         - 'config:search_api.index.word_solr_index'
   block:
-    display_plugin: block
     id: block
     display_title: Vyhladavanie
+    display_plugin: block
     position: 4
     display_options:
-      display_extenders: {  }
       display_description: ''
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -279,39 +282,12 @@ display:
       tags:
         - 'config:search_api.index.word_solr_index'
   embed:
-    display_plugin: embed
     id: embed
     display_title: Suvisiace
+    display_plugin: embed
     position: 4
     display_options:
-      display_extenders: {  }
-      style:
-        type: html_list
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
-      defaults:
-        style: false
-        row: false
-        fields: false
-        filters: false
-        filter_groups: false
-        arguments: false
-        pager: false
-        empty: false
-        header: false
-        title: false
-      row:
-        type: fields
-        options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+      title: 'Súvisiace heslá'
       fields:
         title_2:
           id: title_2
@@ -320,6 +296,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -382,12 +359,12 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
-      filters: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 3
+      empty: {  }
       arguments:
         search_api_fulltext:
           id: search_api_fulltext
@@ -396,6 +373,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           default_action: 'not found'
           exception:
             value: all
@@ -420,10 +398,9 @@ display:
           break_phrase: false
           not: false
           parse_mode: direct
+          conjunction: OR
           fields:
             - title
-          conjunction: OR
-          plugin_id: search_api_fulltext
         nid:
           id: nid
           table: search_api_index_word_solr_index
@@ -431,6 +408,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api
           default_action: default
           exception:
             value: all
@@ -453,16 +431,41 @@ display:
           validate_options: {  }
           break_phrase: false
           not: true
-          plugin_id: search_api
-      pager:
-        type: some
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: html_list
         options:
-          items_per_page: 3
-          offset: 0
-      empty: {  }
-      header: {  }
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        empty: false
+        title: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        arguments: false
+        filters: false
+        filter_groups: false
+        header: false
       display_description: ''
-      title: 'Súvisiace heslá'
+      header: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -476,22 +479,22 @@ display:
       tags:
         - 'config:search_api.index.word_solr_index'
   page_1:
-    display_plugin: page
     id: page_1
     display_title: Abeceda
+    display_plugin: page
     position: 1
     display_options:
+      defaults:
+        cache: true
+        title: true
+        fields: true
+      display_description: ''
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
       path: abecedny-zoznam
-      exposed_block: true
-      defaults:
-        cache: true
-        fields: true
-        title: true
-      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -505,29 +508,29 @@ display:
       tags:
         - 'config:search_api.index.word_solr_index'
   page_3:
-    display_plugin: page
     id: page_3
     display_title: Rozsirene
+    display_plugin: page
     position: 3
     display_options:
-      display_extenders: {  }
-      display_description: ''
-      path: rozsirene-vyhladavanie
-      exposed_block: true
+      title: 'Vyhľadávanie podľa kategórií'
       defaults:
         cache: true
         title: false
         use_ajax: true
-      title: 'Vyhľadávanie podľa kategórií'
+      display_description: ''
+      exposed_block: true
+      display_extenders: {  }
+      path: rozsirene-vyhladavanie
       menu:
         type: normal
         title: 'Vyhľadávanie podľa kategórií'
         description: ''
-        expanded: false
-        parent: ''
         weight: 0
-        context: '0'
+        expanded: false
         menu_name: footer
+        parent: ''
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:

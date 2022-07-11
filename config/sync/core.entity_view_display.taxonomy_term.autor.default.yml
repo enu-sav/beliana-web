@@ -19,11 +19,11 @@ mode: default
 content:
   field_zivotopis:
     type: text_default
-    weight: 0
-    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   description: true
   field_meno: true

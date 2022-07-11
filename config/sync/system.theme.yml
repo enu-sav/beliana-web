@@ -1,5 +1,5 @@
-admin: adminimal_theme
-default: beliana
 _core:
   default_config_hash: fOjer9hADYYnbCJVZMFZIIM1azTFWyg84ZkFDHfAbUg
 langcode: sk
+admin: adminimal_theme
+default: beliana

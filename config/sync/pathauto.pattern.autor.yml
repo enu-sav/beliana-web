@@ -12,12 +12,12 @@ pattern: '/autor/[term:name]'
 selection_criteria:
   c5a6e57c-4581-4f3d-ab29-84014b11de09:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      autor: autor
     negate: false
+    uuid: c5a6e57c-4581-4f3d-ab29-84014b11de09
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: c5a6e57c-4581-4f3d-ab29-84014b11de09
+    bundles:
+      autor: autor
 selection_logic: and
 weight: -5
 relationships: {  }
