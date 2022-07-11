@@ -220,9 +220,10 @@
             var description = $link.html();
             var href = $link.attr('href');
             var id = $link.data('drupal-facet-item-id');
+            var count = $link.find('.facet-item__count').attr('data-count');
 
             $link.parent().find('.facets-widget').attr('id', id).attr('role', 'region');
-            var aria_label = 'Kategória ' + $link.find('.facet-item__value')[0].outerText;
+            var aria_label = 'Kategória ' + $link.find('.facet-item__value').attr('data-value') + ', Počet položiek: ' + count;
             if (collapsed) {
               aria_label = aria_label;
               tabindex_label = 0;

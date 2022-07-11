@@ -55,7 +55,7 @@
           Encyclopaedia Beliana
         </div>
         <div class="left">
-          {{ page.top_left }}
+          {{ page.top_left|without('beliana_mobile_menu') }}
         </div>
         <div class="right">
           {{ page.top_right }}
@@ -82,13 +82,13 @@
           </div>
           <div class="smartphone-navigation">
             <i class="fa fa-bars fa-2x"></i>
-            {{ page.top_left }}
+            {{ page.top_left|without('beliana_main_menu') }}
           </div>
         </div>
         <div class="right">
           {{ page.header_right }}
           <div class="search-help">
-            <a href="#" class="text" title="Možnosti vyhľadávania" aria-expanded="false" aria-controls="search-help-dialog" aria-haspopup="true" role="button" tabindex="0" aria-label="Nápoveda vyhľadávania je zatvorená">Možnosti vyhľadávania</a>
+            <a href="#" class="text" title="Možnosti vyhľadávania" aria-expanded="false" aria-controls="search-help-dialog" aria-haspopup="true" role="button" tabindex="0" aria-label="Možnosti vyhľadávania sú zatvorené">Možnosti vyhľadávania</a>
             <div id="search-help-dialog" class="description" role="dialog">
               <div class="arrow" aria-hidden="true"></div>
               <ul class="help" tabindex="0">

@@ -102,7 +102,7 @@ class ImageUrlFormatter extends LinkFormatter {
           break;
         case 'content':
         case 'file':
-          $url = $this->getSetting('image_link') == 'content' ? $entity->toUrl() : $item->uri;
+          $url = $this->getSetting('image_link') == 'content' ? $entity->toUrl()->toString() : $item->uri;
           $target = $this->getSetting('image_link') == 'content' ? '_self' : '_blank';
           $rel = $this->getSetting('image_link') == 'content' ? 'nofollow' : '';
 

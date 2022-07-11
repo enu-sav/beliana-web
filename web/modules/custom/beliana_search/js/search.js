@@ -45,7 +45,7 @@
         if ($('.search-help .description').hasClass('open')) {
           $('.search-help .description').removeClass('open');
           $('.search-help .text').attr('aria-expanded', false);
-          $('.search-help .text').attr('aria-label', 'Nápoveda vyhľadávania je zatvorená');
+          $('.search-help .text').attr('aria-label', 'Možnosti vyhľadávania sú zatvorené');
         }
       });
 
@@ -57,7 +57,7 @@
           setTimeout(function () {
             $('.search-help .description').removeClass('open');
             $('.search-help .text').attr('aria-expanded', false);
-            $('.search-help .text').attr('aria-label', 'Nápoveda vyhľadávania je zatvorená');
+            $('.search-help .text').attr('aria-label', 'Možnosti vyhľadávania sú zatvorené');
           }, 150);
         }
         else {
@@ -65,7 +65,7 @@
             desc.find('.description').addClass('open');
             $('#search-help-dialog .help').focus();
             button.attr('aria-expanded', true);
-            $('.search-help .text').attr('aria-label', 'Nápoveda vyhľadávania je otvorená');
+            $('.search-help .text').attr('aria-label', 'Možnosti vyhľadávania sú otvorené');
           }, 150);
         }
 
