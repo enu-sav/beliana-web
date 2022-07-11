@@ -1,0 +1,21 @@
+uuid: dc98e8b9-1ac7-463a-b759-9e94c68f5248
+langcode: sk
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_alphabet_coverage
+field_name: field_alphabet_coverage
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+langcode: sk
 uuid: c368ac0c-1394-4226-815a-fcb830dfca3e
 name: 'Encyclopaedia Beliana – slovenská všeobecná encyklopédia'
 mail: beliana@savba.sk
@@ -8,8 +11,5 @@ page:
   front: /homepage
 admin_compact_mode: false
 weight_select_max: 100
-langcode: sk
 default_langcode: sk
-_core:
-  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
 mail_notification: ''

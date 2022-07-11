@@ -10,7 +10,7 @@ dependencies:
     - image.style.large
     - node.type.article
   module:
-    - image
+    - svg_image
     - text
     - user
 _core:
@@ -22,29 +22,36 @@ mode: default
 content:
   body:
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    label: hidden
+    weight: 1
     region: content
   field_image:
     type: image
-    weight: 0
-    settings:
-      image_style: large
-      image_link: ''
-    third_party_settings: {  }
     label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_tags:
     type: entity_reference_label
-    weight: 2
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   comment: true
   langcode: true
   links: true
+  search_api_excerpt: true

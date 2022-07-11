@@ -1,0 +1,42 @@
+uuid: 0bd9cb4b-903a-438e-8564-040eb62e1b63
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.page.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: page
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion: accordion
+      text: text
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 6
+        enabled: true
+      media:
+        weight: 5
+        enabled: false
+      section:
+        weight: 7
+        enabled: false
+      text:
+        weight: 8
+        enabled: true
+field_type: entity_reference_revisions

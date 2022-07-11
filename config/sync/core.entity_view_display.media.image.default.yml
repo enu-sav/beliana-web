@@ -26,14 +26,14 @@ bundle: image
 mode: default
 content:
   field_description:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   field_image:
-    weight: 0
+    type: colorbox
     label: hidden
     settings:
       colorbox_node_style: ''
@@ -44,50 +44,50 @@ content:
       colorbox_caption: auto
       colorbox_caption_custom: ''
     third_party_settings: {  }
-    type: colorbox
+    weight: 0
     region: content
   field_institucia:
-    weight: 9
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 9
     region: content
   field_licence:
-    weight: 7
+    type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 7
     region: content
   field_meno_autora_diela:
-    weight: 3
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
   field_meno_autora_snimky_diela:
-    weight: 5
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 5
     region: content
   field_nazov_diela:
-    weight: 4
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 4
     region: content
   field_obrazok_odkaz:
-    weight: 1
+    type: beliana_image_url
     label: hidden
     settings:
       image_link: file
@@ -97,31 +97,31 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: beliana_image_url
+    weight: 1
     region: content
   field_url_diela_l:
-    weight: 6
+    type: link
     label: inline
     settings:
       trim_length: 80
-      rel: nofollow
-      target: _blank
       url_only: false
       url_plain: false
+      rel: nofollow
+      target: _blank
     third_party_settings: {  }
-    type: link
+    weight: 6
     region: content
   field_url_textu_licencie_l:
-    weight: 8
+    type: link
     label: inline
     settings:
       trim_length: 80
-      rel: nofollow
-      target: _blank
       url_only: false
       url_plain: false
+      rel: nofollow
+      target: _blank
     third_party_settings: {  }
-    type: link
+    weight: 8
     region: content
 hidden:
   created: true

@@ -27,23 +27,29 @@ bundle: image
 mode: conetnt
 content:
   field_description:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   field_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: large
       image_link: ''
+      image_style: large
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_obrazok_odkaz:
-    weight: 1
+    type: beliana_image_url
     label: hidden
     settings:
       image_link: ''
@@ -53,7 +59,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: beliana_image_url
+    weight: 1
     region: content
 hidden:
   created: true

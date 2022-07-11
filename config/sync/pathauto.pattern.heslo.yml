@@ -11,12 +11,12 @@ pattern: 'heslo/[node:title]'
 selection_criteria:
   23a333f5-aebe-40ae-9f06-63b63c4b70e3:
     id: 'entity_bundle:node'
-    bundles:
-      word: word
     negate: false
+    uuid: 23a333f5-aebe-40ae-9f06-63b63c4b70e3
     context_mapping:
       node: node
-    uuid: 23a333f5-aebe-40ae-9f06-63b63c4b70e3
+    bundles:
+      word: word
 selection_logic: and
 weight: -5
 relationships: {  }

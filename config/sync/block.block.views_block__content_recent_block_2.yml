@@ -18,13 +18,13 @@ plugin: 'views_block:content_recent-block_2'
 settings:
   id: 'views_block:content_recent-block_2'
   label: 'Nové heslá'
-  provider: views
   label_display: visible
+  provider: views
   views_label: 'Nové heslá'
   items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
     context_mapping: {  }
+    pages: '<front>'

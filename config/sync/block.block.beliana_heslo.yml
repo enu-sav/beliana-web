@@ -17,7 +17,7 @@ plugin: 'facet_block:alphabet'
 settings:
   id: 'facet_block:alphabet'
   label: 'Abecedný zoznam'
-  provider: facets
   label_display: '0'
+  provider: facets
   block_id: beliana_heslo
 visibility: {  }

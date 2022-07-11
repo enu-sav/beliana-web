@@ -1,20 +1,43 @@
-name: beliana.web
-recipe: drupal8
+name: beliana.sav.web
+recipe: drupal9
 config:
-  php: 7.4
+  php: '7.4'
   via: apache
   webroot: web
-  xdebug: start
+  drush: 10
+  xdebug: false
   config:
     php: .lando/php.ini
-
 services:
   appserver:
-    xdebug: true
-    config:
-      php: .lando/php.ini
+    overrides:
+      environment:
+        XDEBUG_MODE:
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
   mailhog:
     type: mailhog
     portforward: true
     hogfrom:
       - appserver
+  search:
+    type: solr:7
+    core: drupal9
+    portforward: 9999
+    config:
+      dir: .solr/conf
+
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for Apache.
+    cmd: docker-php-ext-enable xdebug && /etc/init.d/apache2 reload && echo "Enabling xdebug"
+    user: root
+
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for Apache.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload && echo "Disabling xdebug"
+    user: root

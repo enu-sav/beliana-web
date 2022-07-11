@@ -15,6 +15,6 @@ plugin: beliana_searchbox
 settings:
   id: beliana_searchbox
   label: 'Search box'
-  provider: beliana_search
   label_display: '0'
+  provider: beliana_search
 visibility: {  }

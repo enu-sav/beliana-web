@@ -18,12 +18,12 @@ plugin: 'facet_block:kategorie'
 settings:
   id: 'facet_block:kategorie'
   label: Kategórie
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: kategorie
 visibility:
   request_path:
     id: request_path
-    pages: /rozsirene-vyhladavanie
     negate: false
     context_mapping: {  }
+    pages: /rozsirene-vyhladavanie
