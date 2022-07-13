@@ -32,7 +32,7 @@ function beliana_preprocess_region(&$variables) {
  */
 function beliana_preprocess_media(&$variables) {
   $media = $variables['elements']['#media'];
-  $entity_ids = Drupal::service('entity.query')->get('node')
+  $entity_ids = \Drupal::entityQuery('node')
     ->condition('type', 'word')
     ->condition('field_images', [$media->id()], 'IN')
     ->execute();
