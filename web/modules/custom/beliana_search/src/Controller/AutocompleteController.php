@@ -32,7 +32,7 @@ class AutocompleteController extends ControllerBase {
     $query = \Drupal::database()->select('node_field_data', 'n');
     $nodes = $query->fields('n')
         ->condition('n.type', 'word')
-        ->condition('n.status', NODE_PUBLISHED)
+        ->condition('n.status', TRUE)
         ->condition('n.title', $query->escapeLike($input) . '%', 'LIKE')
         ->orderBy('n.title', 'ASC')
         ->range(0, 10)
