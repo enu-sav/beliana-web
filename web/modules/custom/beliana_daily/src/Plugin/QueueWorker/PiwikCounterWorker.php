@@ -44,8 +44,8 @@ class PiwikCounterWorker extends QueueWorkerBase implements ContainerFactoryPlug
    */
   public function processItem($data) {
     $statistics = 0;
-    $alias_manager = \Drupal::service('path.alias_manager');
-    
+    $alias_manager = \Drupal::service('path_alias.manager');
+
     // DISABLE AFTER CHANGE PIWIK TO MOTAMO
     return;
 
