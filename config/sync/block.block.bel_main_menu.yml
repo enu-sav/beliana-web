@@ -12,8 +12,8 @@ _core:
   default_config_hash: RWmJA33iI-85Am5BopOINCyIsUnMmBrARktOcCnI00Y
 id: bel_main_menu
 theme: bel
-region: header
-weight: 1
+region: top_left
+weight: -5
 provider: null
 plugin: 'system_menu_block:main'
 settings:

@@ -10,8 +10,8 @@ _core:
   default_config_hash: Vverj725nZuTROdSALtOginMPHQ6QoMmNb-ykeb6LwE
 id: bel_branding
 theme: bel
-region: header
-weight: 0
+region: header_left
+weight: -5
 provider: null
 plugin: system_branding_block
 settings:
@@ -22,4 +22,8 @@ settings:
   use_site_logo: true
   use_site_name: true
   use_site_slogan: true
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

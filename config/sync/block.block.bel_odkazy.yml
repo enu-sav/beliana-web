@@ -1,0 +1,25 @@
+uuid: 3b292007-3939-4138-a9fe-671e0b1cdc7b
+langcode: sk
+status: true
+dependencies:
+  config:
+    - system.menu.secondary
+  module:
+    - system
+  theme:
+    - bel
+id: bel_odkazy
+theme: bel
+region: top_right
+weight: 0
+provider: null
+plugin: 'system_menu_block:secondary'
+settings:
+  id: 'system_menu_block:secondary'
+  label: Odkazy
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

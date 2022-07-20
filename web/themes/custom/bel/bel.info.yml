@@ -13,12 +13,15 @@ libraries:
   - bel/global
 
 regions:
-  header: Header
-  menu: Menu
-  hero: 'Hero image'
+  top_left: Top left
+  top_right: Top right
+  header_left: Header left
+  header_middle: Header middle
+  header_right: Header right
+  navigation: Navigation
   help: Help
   highlighted: Highlighted
   content: Content
-  content_footer: 'Content Footer'
   footer: Footer
+  bottop: Bottom
 
