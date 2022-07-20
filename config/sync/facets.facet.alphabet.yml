@@ -6,7 +6,11 @@ dependencies:
     - search_api.index.word_solr_index
     - views.view.solr_search_word
   module:
+    - facets_pretty_paths
     - search_api
+third_party_settings:
+  facets_pretty_paths:
+    coder: taxonomy_term_coder
 id: alphabet
 name: Heslo
 weight: -1

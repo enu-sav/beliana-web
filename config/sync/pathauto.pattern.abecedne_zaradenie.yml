@@ -1,0 +1,14 @@
+uuid: dbba274e-a3f8-4ec3-b2f8-666b4aadc8da
+langcode: sk
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: abecedne_zaradenie
+label: 'Abecedné zaradenie'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
