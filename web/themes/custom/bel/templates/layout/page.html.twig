@@ -1,0 +1,81 @@
+{% set main_menu = page.primary_menu|render %}
+{% set secondary_menu = page.secondary_menu|render %}
+
+<div{{ attributes.addClass(
+  'layout-container',
+  main_menu or secondary_menu ? 'with-navigation',
+  secondary_menu ? 'with-subnav'
+) }}>
+
+  {# --------- HEADER --------- #}
+  {% if page.header %}
+    <header id="header">
+      <div class="container">
+        <div id="header-region">
+          {{ page.header }}
+        </div>
+      </div>
+    </header>
+  {% endif %}
+
+  {# --------- MAIN --------- #}
+  <div id="main">
+    <div class="container">
+      <div id="content-wrapper">
+        <section id="content">
+          <div id="content-header">
+            {{ page.breadcrumb }}
+
+            {% if page.highlighted|render %}
+              <div id="highlighted">{{ page.highlighted }}</div>
+            {% endif %}
+
+            {{ title_prefix }}
+
+            {% if title %}
+              <h1 class="title">{{ title }}</h1>
+            {% endif %}
+
+            {{ title_suffix }}
+            {{ page.help }}
+
+            {% if tabs %}
+              <div class="tabs">{{ tabs }}</div>
+            {% endif %}
+
+            {% if action_links %}
+              <ul class="action-links">{{ action_links }}</ul>
+            {% endif %}
+          </div>
+
+          <div id="content-area">
+            {{ page.content }}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  {# --------- CONTENT FOOTER --------- #}
+  {% if page.content_footer|render %}
+    <div class="content-footer">
+      <div class="container">
+        <div id="content-footer-region">
+          {{ page.content_footer }}
+        </div>
+      </div>
+    </div><!-- /#footer -->
+  {% endif %}
+
+  {# --------- FOOTER --------- #}
+  {% if page.footer|render %}
+    <footer id="footer">
+      <div class="container">
+        <div id="footer-region">
+          {{ page.footer }}
+        </div>
+      </div>
+    </footer>
+  {% endif %}
+
+</div>

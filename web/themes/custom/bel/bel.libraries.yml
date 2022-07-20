@@ -1,0 +1,26 @@
+global:
+  version: 1.0.0
+  css:
+    theme:
+      assets/dist/css/theme/theme.css: {}
+      assets/dist/css/theme/print.css: { media: print }
+  js:
+    assets/dist/js/modernizr.js: {}
+    assets/dist/js/scripts.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+tabs:
+  version: 1.0.0
+  css:
+    component:
+      assets/dist/css/components/tabs.css: {}
+
+messages:
+  version: 1.0.0
+  css:
+    component:
+      assets/dist/css/components/messages.css: {}
+

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{title}}</title>
+
+	{{#if fabricator}}<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}fabricator/styles/f.css">{{/if}}
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}css/theme/theme.css" media="all">
+	<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}css/theme/print.css" media="print">
+	<!-- /toolkit styles -->
+
+</head>
+<body>
+
+	{{#if fabricator}}
+		{{> f-icons}}
+		{{> f-menu}}
+		<div class="f-container">
+			{{> f-control-bar}}
+	{{/if}}
+
+
+	{% body %}
+
+
+	{{#if fabricator}}
+		</div>
+	<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}fabricator/scripts/fabricator.js"></script>
+	<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}fabricator/scripts/prism.js"></script>
+	{{/if}}
+
+	<!-- toolkit scripts -->
+	<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}js/scripts.js"></script>
+	<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}es6/main.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>

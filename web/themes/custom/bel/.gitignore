@@ -1,0 +1,10 @@
+*.scssc
+*.sassc
+.sass-cache
+*.map
+node_modules
+.DS_Store
+.idea
+/trash/
+/assets/package-lock.json
+output

@@ -1,0 +1,28 @@
+{
+  "name": "drupal/bel",
+  "description": "HTML5, SASS, Responsive grid starter theme.",
+  "type": "drupal-theme",
+  "homepage": "http://drupal.org/project/bel",
+  "authors": [
+    {
+      "name": "Julien Duseyau",
+      "email": "jdu@bel.ch",
+      "homepage": "https://www.bel.ch",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Kriegel Schär",
+      "email": "ksc@bel.ch",
+      "homepage": "https://www.bel.ch",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bel",
+    "irc": "irc://irc.freenode.org/drupal-contribute",
+    "source": "http://cgit.drupalcode.org/bel"
+  },
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {}
+}
