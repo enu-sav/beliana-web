@@ -8,7 +8,6 @@ dependencies:
     - comment
     - eu_cookie_compliance
     - filter
-    - fontawesome
     - media
     - system
 _core:
@@ -20,7 +19,6 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access fontawesome additional settings'
   - 'display eu cookie compliance popup'
   - 'post comments'
   - 'skip comment approval'

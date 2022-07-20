@@ -11,6 +11,8 @@ id: alphabet
 name: Heslo
 weight: -1
 min_count: 0
+missing: false
+missing_label: others
 url_alias: alphabet
 facet_source_id: 'search_api:views_page__solr_search_word__page_1'
 field_identifier: field_alphabet
@@ -18,7 +20,7 @@ query_operator: or
 hard_limit: 0
 exclude: false
 use_hierarchy: true
-keep_hierarchy_parents_active: true
+keep_hierarchy_parents_active: false
 hierarchy:
   type: taxonomy
   config: {  }
