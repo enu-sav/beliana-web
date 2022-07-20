@@ -1,0 +1,22 @@
+uuid: c3f568a8-2bf4-451a-94e6-87f96b763387
+langcode: sk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bel
+_core:
+  default_config_hash: g7-O3dy9VdHyImzA2OVEs2BLwac5ki5rO73al5WrOoE
+id: bel_content
+theme: bel
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

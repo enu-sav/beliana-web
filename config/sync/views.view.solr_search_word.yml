@@ -230,7 +230,7 @@ display:
           separator: ''
           hide_empty: false
       query:
-        type: views_query
+        type: search_api_query
         options:
           bypass_access: false
           skip_access: false
@@ -484,8 +484,11 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      cache:
+        type: search_api_tag
+        options: {  }
       defaults:
-        cache: true
+        cache: false
         title: true
         fields: true
       display_description: ''
@@ -496,7 +499,7 @@ display:
           tokenize: false
       path: abecedny-zoznam
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_interface'
         - url
@@ -506,7 +509,11 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.alphabet'
+        - 'config:facets.facet.heslo_termin_taxonomie_term_parents'
         - 'config:search_api.index.word_solr_index'
+        - 'config:views.view.solr_search_word'
+        - taxonomy_term_list
   page_3:
     id: page_3
     display_title: Rozsirene
@@ -532,7 +539,7 @@ display:
         parent: ''
         context: '0'
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_interface'
         - url
@@ -542,4 +549,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.kategorie'
         - 'config:search_api.index.word_solr_index'
+        - 'config:views.view.solr_search_word'
+        - 'search_api_list:word_solr_index'

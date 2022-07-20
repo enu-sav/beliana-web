@@ -1,4 +1,4 @@
-uuid: 140881ec-cb01-40bc-ab77-a3f7589513ab
+uuid: df52cdd4-fe18-4402-afb9-97121c2527c8
 langcode: sk
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
   module:
     - system
   theme:
-    - cool
+    - bel
 _core:
-  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
-id: cool_main_menu
-theme: cool
-region: navigation
-weight: -4
+  default_config_hash: RWmJA33iI-85Am5BopOINCyIsUnMmBrARktOcCnI00Y
+id: bel_main_menu
+theme: bel
+region: header
+weight: 1
 provider: null
 plugin: 'system_menu_block:main'
 settings:
@@ -22,6 +22,6 @@ settings:
   label_display: '0'
   provider: system
   level: 1
-  depth: 0
+  depth: 1
   expand_all_items: false
 visibility: {  }

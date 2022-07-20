@@ -1,0 +1,20 @@
+uuid: 155e8b8d-8005-45e8-8dd8-954c07ed9b0d
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - bel
+_core:
+  default_config_hash: 8Yh8G08G96N1uXlMDEeDQy8yCZgDwJePYWG44Gskv5M
+id: bel_page_title
+theme: bel
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

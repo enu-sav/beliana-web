@@ -1,4 +1,4 @@
-uuid: c57c07fd-5ead-4d9f-8ae3-f6287bbe723d
+uuid: 8abb15b7-42c8-4e55-8894-7d0a66d36dff
 langcode: sk
 status: true
 dependencies:
@@ -7,16 +7,18 @@ dependencies:
   module:
     - system
   theme:
-    - beliana
-id: pata
-theme: beliana
+    - bel
+_core:
+  default_config_hash: 0EQSF-CvJOjm5WfG4dWrh4U9BADwA1zoQrh26oai-Fk
+id: bel_footer
+theme: bel
 region: footer
-weight: -8
+weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: Päta
+  label: 'Footer menu'
   label_display: '0'
   provider: system
   level: 1

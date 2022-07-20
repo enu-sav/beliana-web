@@ -1,17 +1,17 @@
-uuid: 50a8cc64-ca27-4ab7-8523-ae5dfaaa33dd
+uuid: 5eecaef3-efcc-450d-97bb-820de85dfb18
 langcode: sk
 status: true
 dependencies:
   module:
     - system
   theme:
-    - cool
+    - bel
 _core:
-  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: cool_branding
-theme: cool
+  default_config_hash: Vverj725nZuTROdSALtOginMPHQ6QoMmNb-ykeb6LwE
+id: bel_branding
+theme: bel
 region: header
-weight: -7
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:

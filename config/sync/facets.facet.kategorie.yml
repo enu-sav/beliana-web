@@ -11,6 +11,8 @@ id: kategorie
 name: Kategórie
 weight: 0
 min_count: 1
+missing: false
+missing_label: others
 url_alias: kategorie
 facet_source_id: 'search_api:views_page__solr_search_word__page_3'
 field_identifier: field_categories
@@ -29,9 +31,6 @@ widget:
   config:
     show_numbers: true
     soft_limit: 0
-    show_reset_link: false
-    reset_text: 'Show all'
-    hide_reset_when_no_selection: false
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
@@ -47,11 +46,6 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
-  hierarchy_processor:
-    processor_id: hierarchy_processor
-    weights:
-      build: 100
-    settings: {  }
   list_item:
     processor_id: list_item
     weights:

@@ -1,0 +1,22 @@
+uuid: 0c786358-630a-4124-8e4a-580fd6b01fd3
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - bel
+_core:
+  default_config_hash: bWzF_ZNWFzLMgYKQJpvzmrM0ByX1ps9nR0c1hO5LVmM
+id: bel_local_tasks
+theme: bel
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

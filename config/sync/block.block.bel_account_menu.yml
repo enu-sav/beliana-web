@@ -1,0 +1,27 @@
+uuid: 685e3ff6-5eb7-4a2e-94ff-bd4a86c5f1f9
+langcode: sk
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - bel
+_core:
+  default_config_hash: gFEUgPQr7HTBAY_iR4CrLHap2Nk9KO_PHD2wmPoDR4o
+id: bel_account_menu
+theme: bel
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

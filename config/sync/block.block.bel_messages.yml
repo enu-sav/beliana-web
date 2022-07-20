@@ -1,17 +1,17 @@
-uuid: fd947c9a-1c7c-45b7-9e00-ef5fa48f22ac
+uuid: 55493305-7ae9-4cd5-9875-f0ff679b75ce
 langcode: sk
 status: true
 dependencies:
   module:
     - system
   theme:
-    - cool
+    - bel
 _core:
-  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
-id: cool_messages
-theme: cool
+  default_config_hash: KcTqYMUPZzSW_uYn4vjg6Xbm9_uBU8Yg82U1qMbVcV8
+id: bel_messages
+theme: bel
 region: highlighted
-weight: -7
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

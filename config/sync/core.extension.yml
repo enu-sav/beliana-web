@@ -90,7 +90,6 @@ module:
 theme:
   stable: 0
   seven: 0
-  cool: 0
-  beliana: 0
   adminimal_theme: 0
+  bel: 0
 profile: standard

@@ -1,0 +1,20 @@
+uuid: 6e73950e-d98f-46c7-956b-57704ade810a
+langcode: sk
+status: true
+dependencies:
+  theme:
+    - bel
+_core:
+  default_config_hash: oDKW58VrS7eLp8EGYStfgc2pDbhNPkDWSSk3AxtCCak
+id: bel_local_actions
+theme: bel
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

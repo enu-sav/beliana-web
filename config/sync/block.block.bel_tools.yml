@@ -1,0 +1,27 @@
+uuid: 2246d9ea-3427-4ae6-9f5b-226903a3517e
+langcode: sk
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - bel
+_core:
+  default_config_hash: 23zF8jYuWQ_9E3YBsxIo46ygMEXPuQg8UOOqd9OnTBQ
+id: bel_tools
+theme: bel
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

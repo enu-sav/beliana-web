@@ -1,4 +1,4 @@
-uuid: 143edd77-8275-4a1e-acee-48c82317b171
+uuid: 57ce8435-f78e-4b17-8d7b-2553bb9b26a4
 langcode: sk
 status: true
 dependencies:
@@ -6,11 +6,13 @@ dependencies:
     - node
     - system
   theme:
-    - beliana
-id: breadcrumbs
-theme: beliana
+    - bel
+_core:
+  default_config_hash: kyoVtinzS521zShOqrSuMNJgLA85qasv6k8AT2gg3C4
+id: bel_breadcrumbs
+theme: bel
 region: content
-weight: -9
+weight: -45
 provider: null
 plugin: system_breadcrumb_block
 settings:

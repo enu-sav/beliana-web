@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: ZV9Z7jcEXqz3IwhjCEyMDfl5AOKIFGvf5MieggpR950
+langcode: sk
+browser_sync:
+  enabled: false
+  host: localhost
+  port: 3000
+clear_registry: false
+ie_enabled: false
+ie_enabled_versions:
+  ie8: false
+  ie9: false
