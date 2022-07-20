@@ -33,3 +33,6 @@ web/sites/simpletest
 /web.config
 
 *.sql
+/web/sites/dev/services.local.yml
+/web/sites/dev/settings.php
+/web/sites/sites.php
