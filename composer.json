@@ -62,6 +62,7 @@
         "drupal/pathauto": "^1.10",
         "drupal/purge": "^3.2",
         "drupal/recaptcha": "^3.0",
+        "drupal/recreate_block_content": "^2.1",
         "drupal/redirect": "^1.7",
         "drupal/search_api": "^1.23",
         "drupal/search_api_solr": "^4.2",

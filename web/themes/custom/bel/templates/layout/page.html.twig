@@ -41,6 +41,8 @@
  * @see html.html.twig
  */
 #}
+{{ attach_library('bel/wcag-tools') }}
+
 <div class="page-loader">
   <div class="loader-animation">
     <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
@@ -60,7 +62,8 @@
         <div class="right">
           {{ page.top_right }}
           <div class="wcag-icons">
-            <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0" aria-label="Prístupná verzia stránky je vypnutá" aria-pressed="false">
+            <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0"
+               aria-label="Prístupná verzia stránky je vypnutá" aria-pressed="false">
               <span class="visually-hidden">Čierno biela verzia stránky</span>
             </i>
           </div>
@@ -76,7 +79,8 @@
         <div class="middle">
           {{ page.header_middle }}
           <div class="wcag-icons">
-            <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0" aria-label="Prístupná verzia stránky je vypnutá" aria-pressed="false">
+            <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0"
+               aria-label="Prístupná verzia stránky je vypnutá" aria-pressed="false">
               <span class="visually-hidden">Čierno biela verzia stránky</span>
             </i>
           </div>
@@ -88,22 +92,27 @@
         <div class="right">
           {{ page.header_right }}
           <div class="search-help">
-            <a href="#" class="text" title="Možnosti vyhľadávania" aria-expanded="false" aria-controls="search-help-dialog" aria-haspopup="true" role="button" tabindex="0" aria-label="Možnosti vyhľadávania sú zatvorené">Možnosti vyhľadávania</a>
+            <a href="#" class="text" title="Možnosti vyhľadávania" aria-expanded="false"
+               aria-controls="search-help-dialog" aria-haspopup="true" role="button" tabindex="0"
+               aria-label="Možnosti vyhľadávania sú zatvorené">Možnosti vyhľadávania</a>
             <div id="search-help-dialog" class="description" role="dialog">
               <div class="arrow" aria-hidden="true"></div>
               <ul class="help" tabindex="0">
                 <li class="item">
-                  <span aria-hidden="false" aria-label="Zadaním výrazu teplo: sa vyhľadajú všetky gramatické tvary slova teplo">
+                  <span aria-hidden="false"
+                        aria-label="Zadaním výrazu teplo: sa vyhľadajú všetky gramatické tvary slova teplo">
                     <strong>teplo:</strong> všetky gramatické tvary slova teplo
                   </span>
                 </li>
                 <li class="item">
-                  <span aria-hidden="false" aria-label="Zadaním výrazu teplo*: sa vyhľadajú všetky slová začínajúce sa na teplo">
+                  <span aria-hidden="false"
+                        aria-label="Zadaním výrazu teplo*: sa vyhľadajú všetky slová začínajúce sa na teplo">
                     <strong>teplo*:</strong> všetky slová začínajúce sa na teplo
                   </span>
                 </li>
                 <li class="item">
-                  <span aria-hidden="false" aria-label="Zadaním výrazu slovinsko~ sa vyhľadajú podobné slová (Slovensko, Slovinsko, ...)">
+                  <span aria-hidden="false"
+                        aria-label="Zadaním výrazu slovinsko~ sa vyhľadajú podobné slová (Slovensko, Slovinsko, ...)">
                     <strong>slovinsko~:</strong> podobné slová (Slovensko, Slovinsko, ...)
                   </span>
                 </li>
@@ -118,18 +127,22 @@
                   </span>
                 </li>
                 <li class="item">
-                  <span aria-hidden="false" aria-label="Zadaním výrazu dom -teplo: sa vyhľadajú slová dom, ale nie teplo">
+                  <span aria-hidden="false"
+                        aria-label="Zadaním výrazu dom -teplo: sa vyhľadajú slová dom, ale nie teplo">
                     <strong>dom -teplo:</strong> slová dom, ale nie teplo
                   </span>
                 </li>
                 <li class="item">
-                  <span aria-hidden="false" aria-label="Zadaním výrazu dom and teplo: sa vyhľadajú súčasne slová dom aj teplo">
+                  <span aria-hidden="false"
+                        aria-label="Zadaním výrazu dom and teplo: sa vyhľadajú súčasne slová dom aj teplo">
                     <strong>dom and teplo:</strong> súčasne slová dom aj teplo
                   </span>
                 </li>
               </ul>
-              <a href="/pouzivanie-stranky" class="more-info" title="Viac o vyhľadávaní" aria-label="Viac o vyhľadávaní">Viac o vyhľadávaní</a>
-              <a href="/rozsirene-vyhladavanie" class="more-info" title="Vyhľadávanie podľa kategórií" aria-label="Vyhľadávanie podľa kategórií">Vyhľadávanie podľa kategórií</a>
+              <a href="/pouzivanie-stranky" class="more-info" title="Viac o vyhľadávaní"
+                 aria-label="Viac o vyhľadávaní">Viac o vyhľadávaní</a>
+              <a href="/rozsirene-vyhladavanie" class="more-info" title="Vyhľadávanie podľa kategórií"
+                 aria-label="Vyhľadávanie podľa kategórií">Vyhľadávanie podľa kategórií</a>
             </div>
           </div>
           <a href="#" id="search-box-mobile-toggle"></a>

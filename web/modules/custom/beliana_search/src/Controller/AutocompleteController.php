@@ -42,7 +42,7 @@ class AutocompleteController extends ControllerBase {
     if (!empty($nodes)) {
       foreach ($nodes as $node) {
         $results[] = [
-          'value' => $node->nid,
+          'value' => $node->title,
           'label' => $node->title,
         ];
       }

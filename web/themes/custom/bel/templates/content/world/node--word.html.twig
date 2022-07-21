@@ -1,0 +1,87 @@
+{% extends "node.html.twig" %}
+
+{% block title %}
+  {{ content.mt_node_header }}
+{% endblock %}
+
+{% block meta %}
+{% endblock %}
+
+{% block content %}
+  {{ attach_library('bel/word') }}
+  <article{{ attributes.addClass('heslo-container') }}>
+    <div class="heslo{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
+      <h1>{{ node.label }}</h1>
+      <div class="autor">
+        {{ content.field_autor }}
+      </div>
+
+      <div class="sidebar-wrapper mobile">
+        <div class="structure hidden"></div>
+      </div>
+
+      <div class="obsah mobile">
+        {{ content.body }}
+      </div>
+
+      <div class="sidebar-wrapper desktop">
+        <div class="structure hidden"></div>
+
+        {% if (node.field_images is not empty) or (node.field_table is not empty) %}
+          <div class="heslo-ilustracia">
+            {% set images_count = content.field_images['#items']|length %}
+            {% for i in 0..images_count %}
+              {% if i == node.field_table_weight.value %}
+                {{ content.field_table }}
+              {% endif %}
+
+              {{ content.field_images[i] }}
+            {% endfor %}
+
+            {% if node.field_table_weight.value > images_count %}
+              {{ content.field_table }}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="obsah desktop">
+        {{ content.body }}
+      </div>
+
+      <div class="meta-wrapper">
+        <p class="last-update">
+          {% set info_published %}
+            {{ node.field_info_published.value }}
+          {% endset %}
+          {{ info_published |striptags }}
+        </p>
+
+        <div class="similar-words">
+          {% if content.similar_words is not empty %}
+            <h3>súvisiace heslá</h3>
+            {{ content.similar_words }}
+          {% endif %}
+        </div>
+
+        <div class="citacia desktop">
+          <h3 role="button" tabindex="0" aria-label="Nachádzate sa v sekcií: Citácia" aria-controls="dialog-desc"
+              aria-expanded="false">citácia</h3>
+          {% set author_fomratted = '' %}
+          {% if node.field_autor.target_id %}
+            {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}
+          {% endif %}
+          <p id="dialog-desc">{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online].
+            Encyclopaedia Beliana,
+            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a
+              href="{{ share_url }}">{{ share_url }}</a></p>
+        </div>
+
+        <div class="heslo-tools">
+          {% include directory ~ '/templates/content/world/parts/share.html.twig' %}
+        </div>
+      </div>
+    </div>
+
+  </article>
+{% endblock %}

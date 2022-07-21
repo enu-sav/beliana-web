@@ -5,7 +5,6 @@ global:
       assets/dist/css/theme/theme.css: { }
       assets/dist/css/theme/print.css: { media: print }
   js:
-    assets/dist/js/wcag-tools/black-white.js: { }
     assets/dist/js/modernizr.js: { }
     assets/dist/js/scripts.js: { }
   dependencies:
@@ -31,3 +30,12 @@ black-white-init:
   js:
     assets/dist/js/wcag-tools/black-white-init.js: { preprocess: 0, weight: -22, minified: true }
 
+wcag-tools:
+  version: VERSION
+  header: true
+  js:
+    assets/dist/libs/accessible-menu/jquery-accessible-menu.js: { async: true }
+    assets/dist/js/wcag-tools/wcag-tools.js: { async: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
