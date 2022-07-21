@@ -8,14 +8,14 @@
 
   var alphabet_width = 155;
   var alphabet_scroll_offset = 0;
-  var alphabet_navigation = $('#block-beliana-heslo .facets-widget-links');
+  var alphabet_navigation = $('#block-bel-heslo .facets-widget-links');
 
   Drupal.behaviors.search = {
     attach: function (context, settings) {
       var self = this;
       var current_letter = false;
       var window_width = $(window).width();
-      var $wrapper = $('#block-beliana-searchbox .search-input-wrapper');
+      var $wrapper = $('#block-bel-searchbox .search-input-wrapper');
 
       self.setSearchInput();
 
@@ -122,7 +122,7 @@
 
     },
     setSearchInput: function () {
-      var search_input_wrapper = $('#block-beliana-searchbox .search-input-wrapper.has-alphabet');
+      var search_input_wrapper = $('#block-bel-searchbox .search-input-wrapper.has-alphabet');
       var search_input_width = search_input_wrapper.find('.search-alphabet-wrapper').width() + 40;
       search_input_wrapper.find('.form-item-input').css({width: 'calc(100% - ' + search_input_width + 'px)'});
       search_input_wrapper.find('#edit-icon').attr("title", 'Zrušiť Vyhľadávanie');
@@ -131,11 +131,11 @@
       alphabet_scroll_offset = 0
 
       if (alphabet_width > window_width) {
-        $('#block-beliana-heslo').addClass('is-slider');
+        $('#block-bel-heslo').addClass('is-slider');
         alphabet_navigation.find('.navigation.next').removeClass('hide');
 
         if (current_letter) {
-          var current_item = $('#block-beliana-heslo .item-list__links > li > a[data-drupal-facet-item-value="' + current_letter + '"]').parent();
+          var current_item = $('#block-bel-heslo .item-list__links > li > a[data-drupal-facet-item-value="' + current_letter + '"]').parent();
 
           if (current_item.offset().left + 80 > window_width) {
             alphabet_scroll_offset = current_item.offset().left - window_width + 80;

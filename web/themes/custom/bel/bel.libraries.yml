@@ -2,11 +2,12 @@ global:
   version: 1.0.0
   css:
     theme:
-      assets/dist/css/theme/theme.css: {}
+      assets/dist/css/theme/theme.css: { }
       assets/dist/css/theme/print.css: { media: print }
   js:
-    assets/dist/js/modernizr.js: {}
-    assets/dist/js/scripts.js: {}
+    assets/dist/js/wcag-tools/black-white.js: { }
+    assets/dist/js/modernizr.js: { }
+    assets/dist/js/scripts.js: { }
   dependencies:
     - core/drupal
     - core/jquery
@@ -16,11 +17,17 @@ tabs:
   version: 1.0.0
   css:
     component:
-      assets/dist/css/components/tabs.css: {}
+      assets/dist/css/components/tabs.css: { }
 
 messages:
   version: 1.0.0
   css:
     component:
-      assets/dist/css/components/messages.css: {}
+      assets/dist/css/components/messages.css: { }
+
+black-white-init:
+  version: VERSION
+  header: true
+  js:
+    assets/dist/js/wcag-tools/black-white-init.js: { preprocess: 0, weight: -22, minified: true }
 

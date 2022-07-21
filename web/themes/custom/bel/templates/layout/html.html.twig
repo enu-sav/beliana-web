@@ -42,7 +42,7 @@
   {% set classes = classes|merge(['role--' ~ role|clean_class]) %}
 {% endfor %}
 
-{{ attach_library('beliana/black-white') }}
+{{ attach_library('bel/black-white-init') }}
 
 {% if ie_enabled_versions.ie8 %}
   {{- attach_library('bel/ie8') }}

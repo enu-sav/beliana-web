@@ -12,7 +12,7 @@ _core:
 id: bel_breadcrumbs
 theme: bel
 region: content
-weight: -45
+weight: -5
 provider: null
 plugin: system_breadcrumb_block
 settings:
