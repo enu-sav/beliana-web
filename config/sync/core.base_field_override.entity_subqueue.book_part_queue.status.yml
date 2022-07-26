@@ -1,0 +1,22 @@
+uuid: 8719a10e-d62d-458c-adb6-ac7b43ef02e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.book_part_queue
+id: entity_subqueue.book_part_queue.status
+field_name: status
+entity_type: entity_subqueue
+bundle: book_part_queue
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

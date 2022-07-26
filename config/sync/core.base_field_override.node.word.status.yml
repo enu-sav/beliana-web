@@ -1,0 +1,22 @@
+uuid: 66c70719-5e44-409e-b050-b4f6646d7bae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.word
+id: node.word.status
+field_name: status
+entity_type: node
+bundle: word
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

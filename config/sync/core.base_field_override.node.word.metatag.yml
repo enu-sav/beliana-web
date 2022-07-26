@@ -1,0 +1,18 @@
+uuid: 49e9b064-4ab3-4faa-8cf6-bf12a0c8557f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.word
+id: node.word.metatag
+field_name: metatag
+entity_type: node
+bundle: word
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

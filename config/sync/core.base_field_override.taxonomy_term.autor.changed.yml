@@ -1,0 +1,18 @@
+uuid: eb3e200d-8bf4-488d-b91c-d89b150a3de3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.autor
+id: taxonomy_term.autor.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: autor
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

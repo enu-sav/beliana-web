@@ -1,0 +1,18 @@
+uuid: 2d7533d6-5eba-41d7-8668-37406681d4c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.alphabets
+id: taxonomy_term.alphabets.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: alphabets
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

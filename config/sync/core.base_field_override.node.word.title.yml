@@ -1,0 +1,18 @@
+uuid: e8c215c5-d852-423c-a3c8-dc1376f3d067
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.word
+id: node.word.title
+field_name: title
+entity_type: node
+bundle: word
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

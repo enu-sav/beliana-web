@@ -1,0 +1,18 @@
+uuid: 71a16982-13c7-414e-bdae-489798010096
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.book_part_queue
+id: entity_subqueue.book_part_queue.title
+field_name: title
+entity_type: entity_subqueue
+bundle: book_part_queue
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

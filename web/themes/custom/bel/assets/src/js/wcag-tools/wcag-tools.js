@@ -29,8 +29,8 @@
       var black_white_icon = $(context).find('.wcag-icons .icon-black-white');
       var black_white = localStorage.getItem('black-white') || 'normal';
 
-      // $(context).find('#edit-input').val(Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
-      // console.log(Drupal.t("wcag-accessible-version-of-the-site-is-turned-off"));
+      $(context).find('#edit-input').val(Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
+      console.log(Drupal.t("wcag-accessible-version-of-the-site-is-turned-off"));
 
       if (black_white == 'black-white') {
         $('html').addClass('black-white');
@@ -92,22 +92,23 @@
 
   Drupal.behaviors.click_change_citation = {
     attach: function (context, settings) {
-      var $word = $(this);
-
-      $word.on('click', '.citation h3', function (e) {
-        if ($(this).parent().hasClass('open')) {
-          $(this).parent().removeClass('open');
-          $(this).parent().find('#dialog-desc').css('display', 'none');
-          $(this).attr('aria-expanded', false);
-          $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-closed'));
-        }
-        else {
-          $(this).parent().removeClass('open');
-          $(this).parent().addClass('open');
-          $(this).parent().find('#dialog-desc').css('display', 'block');
-          $(this).attr('aria-expanded', true);
-          $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-open'));
-        }
+      $(context).find('article > .heslo').once('structure-process').each(function () {
+        var $word = $(this);
+        $word.on('click', '.citation h3', function (e) {
+          if ($(this).parent().hasClass('open')) {
+            $(this).parent().removeClass('open');
+            $(this).parent().find('#dialog-desc').css('display', 'none');
+            $(this).attr('aria-expanded', false);
+            $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-closed'));
+          }
+          else {
+            $(this).parent().removeClass('open');
+            $(this).parent().addClass('open');
+            $(this).parent().find('#dialog-desc').css('display', 'block');
+            $(this).attr('aria-expanded', true);
+            $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-open'));
+          }
+        });
       });
     }
   };

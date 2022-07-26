@@ -1,0 +1,18 @@
+uuid: af446cbb-669d-466c-a73e-1c43b8166f0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.categories
+id: taxonomy_term.categories.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: categories
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

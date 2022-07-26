@@ -1,0 +1,18 @@
+uuid: 06e786a3-a713-455e-8fe1-0300edb6bd50
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.alphabets
+id: taxonomy_term.alphabets.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: alphabets
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

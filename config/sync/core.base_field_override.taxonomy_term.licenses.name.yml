@@ -1,0 +1,18 @@
+uuid: e994662c-6a94-44e9-b7cb-7e2a87c33b59
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.licenses
+id: taxonomy_term.licenses.name
+field_name: name
+entity_type: taxonomy_term
+bundle: licenses
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

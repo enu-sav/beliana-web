@@ -2,7 +2,7 @@ _core:
   default_config_hash: Lqw8pAQIfr4sRSts2RRWG97eNG6vRT7FhqF_b5COPGk
 langcode: sk
 cache_strings: true
-translate_english: false
+translate_english: true
 javascript:
   directory: languages
 translation:

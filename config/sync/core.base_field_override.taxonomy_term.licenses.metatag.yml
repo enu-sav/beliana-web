@@ -1,0 +1,18 @@
+uuid: 4e83646e-2056-4f6d-863a-49fe20c207af
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.licenses
+id: taxonomy_term.licenses.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: licenses
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
