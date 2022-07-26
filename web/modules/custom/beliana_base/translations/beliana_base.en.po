@@ -31,6 +31,9 @@ msgstr "EN - Možnosti zobrazenia - nastavené celé heslo"
 msgid "wcag-black-and-white-version-of-the-page"
 msgstr "Black and white version of the page"
 
+msgid "wcag-black-and-white-version-of-the-page"
+msgstr "Black and white version of the page"
+
 msgid "search-options"
 msgstr "Search options"
 
