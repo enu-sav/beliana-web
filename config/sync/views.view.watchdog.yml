@@ -493,6 +493,7 @@ display:
           order: DESC
           expose:
             label: ''
+            field_identifier: wid
           exposed: false
       arguments: {  }
       filters:

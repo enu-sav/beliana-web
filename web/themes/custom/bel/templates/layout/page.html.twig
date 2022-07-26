@@ -63,8 +63,8 @@
           {{ page.top_right }}
           <div class="wcag-icons">
             <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0"
-               aria-label="Prístupná verzia stránky je vypnutá" aria-pressed="false">
-              <span class="visually-hidden">Čierno biela verzia stránky</span>
+               aria-label="{{ 'wcag-accessible-version-of-the-site-is-turned-off'|t }}" aria-pressed="false">
+              <span class="visually-hidden">{{ 'wcag-black-and-white-version-of-the-page'|t }}</span>
             </i>
           </div>
         </div>
@@ -80,8 +80,8 @@
           {{ page.header_middle }}
           <div class="wcag-icons">
             <i class="icon icon-black-white wcag-black-white" role="button" tabindex="0"
-               aria-label="Prístupná verzia stránky je vypnutá" aria-pressed="false">
-              <span class="visually-hidden">Čierno biela verzia stránky</span>
+               aria-label="{{ 'wcag-accessible-version-of-the-site-is-turned-off'|t }}" aria-pressed="false">
+              <span class="">{{ 'wcag-black-and-white-version-of-the-page'|t }}</span>
             </i>
           </div>
           <div class="smartphone-navigation">
@@ -92,9 +92,9 @@
         <div class="right">
           {{ page.header_right }}
           <div class="search-help">
-            <a href="#" class="text" title="Možnosti vyhľadávania" aria-expanded="false"
+            <a href="#" class="text" title="{{ 'search-options'|t }}" aria-expanded="false"
                aria-controls="search-help-dialog" aria-haspopup="true" role="button" tabindex="0"
-               aria-label="Možnosti vyhľadávania sú zatvorené">Možnosti vyhľadávania</a>
+               aria-label="{{ 'aria-label-search-options-are-closed'|t }}">{{ 'search-options'|t }}</a>
             <div id="search-help-dialog" class="description" role="dialog">
               <div class="arrow" aria-hidden="true"></div>
               <ul class="help" tabindex="0">
@@ -139,10 +139,10 @@
                   </span>
                 </li>
               </ul>
-              <a href="/pouzivanie-stranky" class="more-info" title="Viac o vyhľadávaní"
-                 aria-label="Viac o vyhľadávaní">Viac o vyhľadávaní</a>
-              <a href="/rozsirene-vyhladavanie" class="more-info" title="Vyhľadávanie podľa kategórií"
-                 aria-label="Vyhľadávanie podľa kategórií">Vyhľadávanie podľa kategórií</a>
+              <a href="/pouzivanie-stranky" class="more-info" title="{{ 'more-about-search'|t }}"
+                 aria-label="{{ 'more-about-search'|t }}">{{ 'more-about-search'|t }}</a>
+              <a href="/rozsirene-vyhladavanie" class="more-info" title="{{ 'search-by-category'|t }}"
+                 aria-label="{{ 'search-by-category'|t }}">{{ 'search-by-category'|t }}</a>
             </div>
           </div>
           <a href="#" id="search-box-mobile-toggle"></a>

@@ -46,3 +46,4 @@ hidden:
   field_titul_za_menom: true
   field_zivotopis: true
   langcode: true
+  search_api_excerpt: true

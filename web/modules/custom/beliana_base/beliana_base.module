@@ -6,6 +6,6 @@
  */
 
 
-
-
-
+function beliana_base_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'bel/wcag-tools';
+}

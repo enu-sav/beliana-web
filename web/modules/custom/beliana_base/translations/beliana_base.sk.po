@@ -1,0 +1,59 @@
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-07-12 15:03+0200\n"
+"PO-Revision-Date: 2019-07-12 15:03+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "wcag-accessible-version-of-the-site-is-turned-off"
+msgstr "Prístupná verzia stránky je vypnutá"
+
+msgid "wcag-accessible-version-of-the-site-is-turned-on"
+msgstr "Prístupná verzia stránky je zapnutá"
+
+msgid "wcag-display-options-the-beginning-of-the-password-is-set"
+msgstr "Možnosti zobrazenia - nastavené začiatok hesla"
+
+msgid "wcag-display-options-the-entire-password-is-set"
+msgstr "Možnosti zobrazenia - nastavené celé heslo"
+
+msgid "wcag-black-and-white-version-of-the-page"
+msgstr "Čierno biela verzia stránky"
+
+msgid "search-options"
+msgstr "Možnosti vyhľadávania"
+
+msgid "aria-label-search-options-are-open"
+msgstr "Možnosti vyhľadávania sú otvorené"
+
+msgid "aria-label-search-options-are-closed"
+msgstr "Možnosti vyhľadávania sú zatvorené"
+
+msgid "more-about-search"
+msgstr "Viac o vyhľadávaní"
+
+msgid "search-by-category"
+msgstr "Vyhľadávanie podľa kategórií"
+
+msgid "display-options"
+msgstr "Možnosti zobrazenia"
+
+msgid "aria-label-section-citation-is-closed"
+msgstr "Sekcia: Citácia je zatvorená"
+
+msgid "aria-label-section-citation-is-open"
+msgstr "Sekcia: Citácia je otvorená"
+
+msgid "aria-label-you-are-in-the-section-citation"
+msgstr "Nachádzate sa v sekcií: Citácia"

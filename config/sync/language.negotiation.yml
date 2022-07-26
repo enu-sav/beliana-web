@@ -8,6 +8,8 @@ url:
   prefixes:
     sk: ''
     '': null
+    en: en
   domains:
     sk: ''
+    en: ''
 selected_langcode: site_default

@@ -9,6 +9,7 @@ module:
   auto_entitylabel: 0
   automated_cron: 0
   basic_auth: 0
+  beliana_base: 0
   beliana_daily: 0
   beliana_modals: 0
   beliana_search: 0
@@ -40,7 +41,6 @@ module:
   field_ui: 0
   file: 0
   filter: 0
-  fontawesome: 0
   image: 0
   inline_entity_form: 0
   language: 0

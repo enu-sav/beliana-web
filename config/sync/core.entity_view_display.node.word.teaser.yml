@@ -50,5 +50,6 @@ hidden:
   field_table: true
   field_table_weight: true
   langcode: true
+  search_api_excerpt: true
   similar_words: true
   year_by_date: true

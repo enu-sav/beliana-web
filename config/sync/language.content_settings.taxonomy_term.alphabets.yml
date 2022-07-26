@@ -1,0 +1,11 @@
+uuid: 1c60047c-1511-45b9-b2db-a4cfb659e5bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.alphabets
+id: taxonomy_term.alphabets
+target_entity_type_id: taxonomy_term
+target_bundle: alphabets
+default_langcode: site_default
+language_alterable: false

@@ -852,7 +852,7 @@ display:
       tab_options:
         type: normal
         title: Obsah
-        description: 'Find and manage content'
+        description: 'Nájsť a spravovať obsah.'
         weight: -10
         menu_name: admin
     cache_metadata:

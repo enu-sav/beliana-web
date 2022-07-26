@@ -195,6 +195,8 @@ display:
           table: beliana_daily
           field: weight
           plugin_id: numeric
+          expose:
+            field_identifier: weight
         field_sort_value:
           id: field_sort_value
           table: node__field_sort
@@ -206,6 +208,7 @@ display:
           order: ASC
           expose:
             label: ''
+            field_identifier: field_sort_value
           exposed: false
       arguments:
         field_date_value_day:

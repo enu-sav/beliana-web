@@ -64,8 +64,8 @@
           {% endif %}
         </div>
 
-        <div class="citacia desktop">
-          <h3 role="button" tabindex="0" aria-label="Nachádzate sa v sekcií: Citácia" aria-controls="dialog-desc"
+        <div class="citation desktop">
+          <h3 role="button" tabindex="0" aria-label="{{ 'aria-label-you-are-in-the-section-citation'|t }}" aria-controls="dialog-desc"
               aria-expanded="false">citácia</h3>
           {% set author_fomratted = '' %}
           {% if node.field_autor.target_id %}

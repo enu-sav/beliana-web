@@ -49,4 +49,5 @@ hidden:
   field_table_weight: true
   langcode: true
   links: true
+  search_api_excerpt: true
   similar_words: true

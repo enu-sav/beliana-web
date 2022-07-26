@@ -29,32 +29,34 @@
       var black_white_icon = $(context).find('.wcag-icons .icon-black-white');
       var black_white = localStorage.getItem('black-white') || 'normal';
 
+      // $(context).find('#edit-input').val(Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
+      // console.log(Drupal.t("wcag-accessible-version-of-the-site-is-turned-off"));
+
       if (black_white == 'black-white') {
         $('html').addClass('black-white');
-        self.setBlackWhiteAttr(black_white_icon, true, 'Prístupná verzia stránky je zapnutá');
+        black_white_icon.attr('aria-pressed', true);
+        black_white_icon.attr('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-on'));
       }
       $(context).find('.wcag-icons').on('click', '.wcag-black-white', function () {
         if ($('html').hasClass('black-white')) {
           $('html').removeClass('black-white');
-          self.setBlackWhiteAttr(black_white_icon, false, 'Prístupná verzia stránky je vypnutá');
+          black_white_icon.attr('aria-pressed', false);
+          black_white_icon.attr('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
           localStorage.setItem('black-white', 'normal');
         }
         else {
           $('html').addClass('black-white');
-          self.setBlackWhiteAttr(black_white_icon, true, 'Prístupná verzia stránky je zapnutá');
+          black_white_icon.attr('aria-pressed', true);
+          black_white_icon.attr('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-on'));
           localStorage.setItem('black-white', 'black-white');
         }
       });
     },
-    setBlackWhiteAttr: function (icon, aria_pressed, aria_label) {
-      icon.attr('aria-pressed', aria_pressed);
-      icon.attr('aria-label', Drupal.t(aria_label));
-    }
   };
 
   Drupal.behaviors.click_change_format_zoznam_tools = {
     attach: function (context, settings) {
-      $('.zoznam-tools .truncate-button').on('click', 'li a', function () {
+      $('.list-tools .truncate-button').on('click', 'li a', function () {
         var $item = $(this);
 
         if ($item.hasClass('word-short')) {
@@ -64,12 +66,12 @@
               $(this).children('#gradient').css('display', 'block');
             }
           });
-          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('Možnosti zobrazenia - nastavené začiatok hesla'));
+          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-beginning-of-the-password-is-set'));
         }
         else {
           $('.views-element-container .heslo').removeClass('truncate-wrapper');
           $('.views-element-container .heslo #gradient').css('display', 'none');
-          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('Možnosti zobrazenia - nastavené celé heslo'));
+          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-entire-password-is-set'));
         }
 
         $('.truncate-button .label').html($item.text() + '<b class="button"></b>');
@@ -77,7 +79,7 @@
         localStorage.setItem('word_search_sort', $item.attr('class'))
       });
 
-      $('.zoznam-tools .sort-button').on('click', 'li', function () {
+      $('.list-tools .sort-button').on('click', 'li', function () {
         var $item = $(this);
 
         $('.sort-button .label').html($item.text() + '<b class="button"></b>');
@@ -87,5 +89,26 @@
       });
     }
   };
+
+  Drupal.behaviors.click_change_citation = {
+    attach: function (context, settings) {
+      $word.on('click', '.citation h3', function (e) {
+        if ($(this).parent().hasClass('open')) {
+          $(this).parent().removeClass('open');
+          $(this).parent().find('#dialog-desc').css('display', 'none');
+          $(this).attr('aria-expanded', false);
+          $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-closed'));
+        }
+        else {
+          $(this).parent().removeClass('open');
+          $(this).parent().addClass('open');
+          $(this).parent().find('#dialog-desc').css('display', 'block');
+          $(this).attr('aria-expanded', true);
+          $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-open'));
+        }
+      });
+    }
+  };
+
 
 })(jQuery, Drupal);

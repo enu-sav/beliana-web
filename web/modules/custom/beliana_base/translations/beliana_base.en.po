@@ -1,0 +1,59 @@
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-07-12 15:03+0200\n"
+"PO-Revision-Date: 2019-07-12 15:03+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "wcag-accessible-version-of-the-site-is-turned-off"
+msgstr "The accessible version of the site is turned off"
+
+msgid "wcag-accessible-version-of-the-site-is-turned-on"
+msgstr "The accessible version of the site is turned on"
+
+msgid "wcag-display-options-the-beginning-of-the-password-is-set"
+msgstr "EN - Možnosti zobrazenia - nastavené začiatok hesla"
+
+msgid "wcag-display-options-the-entire-password-is-set"
+msgstr "EN - Možnosti zobrazenia - nastavené celé heslo"
+
+msgid "wcag-black-and-white-version-of-the-page"
+msgstr "Black and white version of the page"
+
+msgid "search-options"
+msgstr "Search options"
+
+msgid "aria-label-search-options-are-open"
+msgstr "Search options are open"
+
+msgid "aria-label-search-options-are-closed"
+msgstr "Search options are closed"
+
+msgid "more-about-search"
+msgstr "More about search"
+
+msgid "search-by-category"
+msgstr "Search by category"
+
+msgid "display-options"
+msgstr "Display options"
+
+msgid "aria-labelsection-citation-is-closed"
+msgstr "Section: Citation is closed"
+
+msgid "aria-labelsection-citation-is-open"
+msgstr "Section: Citation is open"
+
+msgid "aria-label-you-are-in-the-section-citation"
+msgstr "You are in the section: Citation"
