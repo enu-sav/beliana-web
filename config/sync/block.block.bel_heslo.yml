@@ -1,0 +1,24 @@
+uuid: fa1cfa20-1a06-45b4-9daf-2433bcc59a0c
+langcode: sk
+status: true
+dependencies:
+  config:
+    - facets.facet.heslo
+  module:
+    - facets
+  theme:
+    - bel
+id: bel_heslo
+theme: bel
+region: navigation
+weight: 0
+provider: null
+plugin: 'facet_block:heslo'
+settings:
+  id: 'facet_block:heslo'
+  label: 'Abecedný zoznam'
+  label_display: '0'
+  provider: facets
+  context_mapping: {  }
+  block_id: bel_heslo
+visibility: {  }

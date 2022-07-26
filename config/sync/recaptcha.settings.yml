@@ -1,3 +1,4 @@
+langcode: sk
 site_key: 6LciTZsUAAAAAC-qsp7oZonNDC1OIzYJWTWDtnAt
 secret_key: 6LciTZsUAAAAAFhDKGRM0LQAXgvVIVx5b6EGAolZ
 verify_hostname: false
@@ -8,4 +9,3 @@ widget:
   size: ''
   tabindex: null
   noscript: false
-langcode: sk

@@ -1,11 +1,7 @@
 <?php
-
 /**
  * @file
  * Contains beliana_base.module.
  */
 
 
-function beliana_base_page_attachments(array &$attachments) {
-  $attachments['#attached']['library'][] = 'bel/wcag-tools';
-}

@@ -92,6 +92,8 @@
 
   Drupal.behaviors.click_change_citation = {
     attach: function (context, settings) {
+      var $word = $(this);
+
       $word.on('click', '.citation h3', function (e) {
         if ($(this).parent().hasClass('open')) {
           $(this).parent().removeClass('open');
