@@ -1,4 +1,4 @@
-uuid: 1e9a4875-382c-4b4f-80a2-0f74d18e92ff
+uuid: 3b907eaa-3dcd-468f-b276-87756a73f7bc
 langcode: sk
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
     - views.view.solr_search_word
   module:
     - search_api
-id: heslo
+id: alphabet
 name: Heslo
-weight: 0
+weight: -1
 min_count: 1
 missing: false
 missing_label: others
@@ -39,14 +39,14 @@ widget:
       show_more_label: 'Show more'
 empty_behavior:
   behavior: none
-only_visible_when_facet_source_is_visible: true
-show_only_one_result: false
+only_visible_when_facet_source_is_visible: false
+show_only_one_result: true
 show_title: false
 processor_configs:
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
-      build: 5
+      build: 100
     settings: {  }
   term_weight_widget_order:
     processor_id: term_weight_widget_order
@@ -57,11 +57,11 @@ processor_configs:
   translate_entity:
     processor_id: translate_entity
     weights:
-      build: -4
+      build: 5
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
       pre_query: 50
-      build: -5
+      build: 15
     settings: {  }

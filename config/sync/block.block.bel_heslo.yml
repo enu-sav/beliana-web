@@ -1,9 +1,9 @@
-uuid: fa1cfa20-1a06-45b4-9daf-2433bcc59a0c
+uuid: 92c9522d-7a70-49f2-be41-4605364b9ee1
 langcode: sk
 status: true
 dependencies:
   config:
-    - facets.facet.heslo
+    - facets.facet.alphabet
   module:
     - facets
   theme:
@@ -13,10 +13,10 @@ theme: bel
 region: navigation
 weight: 0
 provider: null
-plugin: 'facet_block:heslo'
+plugin: 'facet_block:alphabet'
 settings:
-  id: 'facet_block:heslo'
-  label: 'Abecedný zoznam'
+  id: 'facet_block:alphabet'
+  label: Heslo
   label_display: '0'
   provider: facets
   context_mapping: {  }

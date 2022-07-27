@@ -29,8 +29,8 @@
       var black_white_icon = $(context).find('.wcag-icons .icon-black-white');
       var black_white = localStorage.getItem('black-white') || 'normal';
 
-      $(context).find('#edit-input').val(Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
-      console.log(Drupal.t("wcag-accessible-version-of-the-site-is-turned-off"));
+      // $(context).find('#edit-input').val(Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
+      // console.log(Drupal.t("wcag-accessible-version-of-the-site-is-turned-off"));
 
       if (black_white == 'black-white') {
         $('html').addClass('black-white');

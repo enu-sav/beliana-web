@@ -63,3 +63,48 @@ function bel_theme_suggestions_image_alter(array &$suggestions, array &$variable
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add classes to facet alphabet block and display its title on front page.
+ */
+function bel_preprocess_block(&$vars) {
+  if ($vars['plugin_id'] === 'facet_block:alphabet' && \Drupal::service('path.matcher')->isFrontPage()) {
+    $vars['label'] = $vars['elements']['#configuration']['label'];
+    $vars['attributes']['class'][] = 'box';
+    $vars['attributes']['class'][] = 'alphabet-list';
+  }
+}
+
+/**
+ * Implements template_preprocess_facets_item_list().
+ */
+function bel_preprocess_facets_item_list(&$variables) {
+  if (!empty($variables['facet'])) {
+    switch ($variables['facet']->id()) {
+      case 'alphabet':
+        foreach ($variables['items'] as &$item) {
+          $options = $item['value']['#url']->getOptions();
+
+          // remove search text query from facet link
+          if (isset($options['query']['text'])) {
+            unset($options['query']['text']);
+          }
+
+          $item['value']['#url']->setOptions($options);
+        }
+        break;
+      case 'kategorie':
+        foreach ($variables['items'] as &$item) {
+          $collapse = TRUE;
+
+          if ($item['attributes']->hasClass('facet-item--expanded') && !$item['attributes']->hasClass('facet-item--active-trail') && $collapse) {
+            $item['attributes']->removeClass('facet-item--expanded');
+            $item['attributes']->addClass('facet-item--collapsed');
+          }
+        }
+        break;
+    }
+  }
+}
