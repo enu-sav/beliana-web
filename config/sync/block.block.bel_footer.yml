@@ -13,7 +13,7 @@ _core:
 id: bel_footer
 theme: bel
 region: footer
-weight: 0
+weight: -8
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

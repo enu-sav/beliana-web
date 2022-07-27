@@ -41,36 +41,6 @@
         current_letter = drupalSettings.beliana_search.alphabet;
       }
 
-      $(document).on('click', function (e) {
-        if ($('.search-help .description').hasClass('open')) {
-          $('.search-help .description').removeClass('open');
-          $('.search-help .text').attr('aria-expanded', false);
-          $('.search-help .text').attr('aria-label', 'Možnosti vyhľadávania sú zatvorené');
-        }
-      });
-
-      $('.search-help').on('click', '.text', function (e) {
-        var desc = $(this).parent();
-        var button = $(this);
-
-        if ($('.search-help .description').hasClass('open')) {
-          setTimeout(function () {
-            $('.search-help .description').removeClass('open');
-            $('.search-help .text').attr('aria-expanded', false);
-            $('.search-help .text').attr('aria-label', 'Možnosti vyhľadávania sú zatvorené');
-          }, 150);
-        }
-        else {
-          setTimeout(function () {
-            desc.find('.description').addClass('open');
-            $('#search-help-dialog .help').focus();
-            button.attr('aria-expanded', true);
-            $('.search-help .text').attr('aria-label', 'Možnosti vyhľadávania sú otvorené');
-          }, 150);
-        }
-
-      });
-
       $(document).keyup(function (e) {
         if (e.keyCode == 27) {
           $('.search-help .description').removeClass('open');
