@@ -112,7 +112,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
       empty:
         area_text_custom:
@@ -478,47 +478,8 @@ display:
         - user.permissions
       tags:
         - 'config:search_api.index.word_solr_index'
-  page_3:
-    id: page_3
-    display_title: Rozsirene
-    display_plugin: page
-    position: 3
-    display_options:
-      title: 'Vyhľadávanie podľa kategórií'
-      defaults:
-        cache: true
-        title: false
-        use_ajax: true
-      display_description: ''
-      exposed_block: true
-      display_extenders:
-        metatag_display_extender:
-          metatags: {  }
-          tokenize: false
-      path: rozsirene-vyhladavanie
-      menu:
-        type: normal
-        title: 'Vyhľadávanie podľa kategórií'
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: footer
-        parent: ''
-        context: '0'
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:search_api.index.word_solr_index'
-  page_alphabet:
-    id: page_alphabet
+  page_1:
+    id: page_1
     display_title: Abeceda
     display_plugin: page
     position: 1
@@ -549,3 +510,42 @@ display:
         - user.permissions
       tags:
         - 'config:search_api.index.word_solr_index'
+  page_3:
+    id: page_3
+    display_title: Rozsirene
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Vyhľadávanie podľa kategórií'
+      defaults:
+        cache: true
+        title: false
+        use_ajax: true
+      display_description: ''
+      exposed_block: true
+      display_extenders: {  }
+      path: rozsirene-vyhladavanie
+      menu:
+        type: normal
+        title: 'Vyhľadávanie podľa kategórií'
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: footer
+        parent: ''
+        context: '0'
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:facets.facet.kategorie'
+        - 'config:search_api.index.word_solr_index'
+        - 'config:views.view.solr_search_word'
+        - 'search_api_list:word_solr_index'
