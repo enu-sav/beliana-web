@@ -1,9 +1,18 @@
 global:
   version: 1.0.0
   css:
+    base:
+      assets/dist/css/base/base.css: { }
+    layout:
+      assets/dist/css/layout/layout.css: { }
+    component:
+      //fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap: { }
+      assets/dist/css/components/fonts.css: { }
+      assets/dist/css/components/components.css: { }
     theme:
       assets/dist/css/theme/theme.css: { }
       assets/dist/css/theme/print.css: { media: print }
+      //use.typekit.net/ial0koy.css: { }
   js:
     assets/dist/js/modernizr.js: { }
     assets/dist/js/scripts.js: { }

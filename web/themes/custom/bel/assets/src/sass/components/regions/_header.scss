@@ -1,0 +1,304 @@
+header.header {
+
+  &.header {
+    width: 100%;
+    background: #171717;
+    height: auto;
+    .header-top {
+      padding: 5px 0 0 0;
+      border-bottom: 1px solid #555;
+
+      .black-white & {
+        background: #000;
+      }
+
+      .sitename {
+        display: none;
+        color: #fff;
+      }
+
+      .left {
+        display: inline-block;
+        float: none;
+        width: calc(50% - 10px);
+
+        h2,
+        .nav-toggle {
+          color: #fff;
+        }
+      }
+
+      .right {
+        display: flex;
+        flex-flow: row nowrap;
+        width: calc(50% - 10px);
+        text-align: right;
+        vertical-align: top;
+
+        h2 {
+          color: #fff;
+        }
+      }
+
+      .nav-collapse {
+        background: none;
+        border: none;
+        ul {
+          text-align: left;
+        }
+      }
+
+      ul {
+        li {
+          position: relative;
+          list-style: none;
+          display: inline-block;
+          width: auto;
+          top: 3px;
+          a {
+            color: #fff !important;
+            padding: 0 10px;
+            &:hover {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .icon span {
+      color: #fff;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-right: 12px;
+        vertical-align: middle;
+        background-size: 16px auto;
+      }
+    }
+
+    .wcag-icons {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      padding: .513em 1em 0;
+      i {
+        cursor: pointer;
+        &:before {
+          margin-right: .125em;
+        }
+        &:last-child:before {
+          margin-right: 0;
+        }
+      }
+
+      .icon-black-white::before {
+        width: 1.063em;
+        height: 1.063em;
+        padding: 2px;
+        background: #000 url('../assets/dist/svg/svg-icons/black-white.svg') no-repeat center center;
+        background-size: 14px auto;
+      }
+
+      .icon-black-white:focus {
+        outline: 1px solid #ccc;
+      }
+
+      .icon-redo::before {
+        width: 1.063em;
+        height: 1.063em;
+        padding: 2px;
+        background: #000 url('../assets/dist/svg/svg-icons/redo.svg') no-repeat center center;
+        background-size: 12px auto;
+      }
+    }
+
+    .middle {
+      .wcag-icons {
+        display: none;
+      }
+    }
+
+    .header-main {
+      min-height: 90px;
+
+      .black-white & {
+        background: #000;
+        border-bottom: 1px solid #555;
+      }
+
+      .left {
+        width: calc(30% - 20px);
+        position: relative;
+        display: inline-block;
+        float: none;
+        top: 15px;
+        .logo {
+          top: -4px;
+          position: relative;
+          color: #fff;
+          line-height: 20px;
+          float: left;
+          .black-white & {
+            top: -1px;
+            background: url('../assets/dist/svg/beliana_logo_white.svg') no-repeat #fff;
+            width: 330px;
+            height: 66px;
+            filter: invert(1);
+          }
+
+          img {
+            height: 66px;
+            margin-top: 3px;
+            .black-white & {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .middle {
+        width: calc(40% + 45px);
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 24px;
+        .smartphone-navigation {
+          display: none;
+        }
+      }
+
+      .right {
+        width: calc(30% - 35px);
+        position: relative;
+        display: inline-block;
+        float: none;
+        .search-help {
+          position: relative;
+          top: -19px;
+          left: 12px;
+          z-index: 9;
+          .black-white & {
+            top: -8px;
+          }
+
+          body.path-frontpage & {
+            top: 38px;
+          }
+
+          .text {
+            color: #aaa;
+            cursor: pointer;
+            .black-white & {
+              color: #fff;
+              text-decoration: underline;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .description {
+            display: none;
+            background: #fae1d9;
+            padding: 14px;
+            position: absolute;
+            top: 42px;
+            right: calc(50% - 80px);
+            width: 100%;
+            .black-white & {
+              background: #fff;
+            }
+
+            &.open {
+              display: block;
+            }
+
+            .arrow {
+              position: absolute;
+              top: -8px;
+              right: 50%;
+              width: 0;
+              height: 0;
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-bottom: 8px solid #fae1d9;
+            }
+
+            ul {
+              list-style: none;
+              color: #231f20;
+              .black-white & {
+                color: #000;
+              }
+
+              li {
+                span {
+                  color: #000;
+                }
+              }
+            }
+
+            a.more-info {
+              text-align: center;
+              padding: 15px 0 0 0;
+              color: #8a2807;
+              display: block;
+              .black-white & {
+                color: #000;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header-navigation {
+      background: #ffa587;
+      .black-white & {
+        background: #000;
+        border-bottom: 1px solid #555;
+      }
+
+      .word-facet-wrap {
+        margin: 0;
+        min-height: 55px;
+        text-align: center;
+        h2 {
+          display: none;
+        }
+
+        .facets-widget-links {
+          background: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.search-box-mobile {
+  min-height: 58px;
+}
+
+.heslo {
+  border: none;
+}
+
+body .page-loader {
+  display: none;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+.heslo-container {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 30px;
+}

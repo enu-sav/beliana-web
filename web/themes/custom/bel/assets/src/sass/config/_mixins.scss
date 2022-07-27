@@ -2,6 +2,10 @@
   @return ($font-size/$rem-base) *1rem;
 }
 
+@function em($pixels, $context: $base-font-size) {
+  @return #{$pixels/$context}em;
+}
+
 @mixin aspect-ratio($width, $height) {
   position: relative;
   &:before {
