@@ -112,7 +112,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: search_api_tag
+        type: none
         options: {  }
       empty:
         area_text_custom:
@@ -491,7 +491,10 @@ display:
         use_ajax: true
       display_description: ''
       exposed_block: true
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: rozsirene-vyhladavanie
       menu:
         type: normal
@@ -503,7 +506,7 @@ display:
         parent: ''
         context: '0'
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
@@ -513,10 +516,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:facets.facet.kategorie'
         - 'config:search_api.index.word_solr_index'
-        - 'config:views.view.solr_search_word'
-        - 'search_api_list:word_solr_index'
   page_alphabet:
     id: page_alphabet
     display_title: Abeceda
@@ -524,7 +524,7 @@ display:
     position: 1
     display_options:
       cache:
-        type: search_api_tag
+        type: none
         options: {  }
       defaults:
         cache: false
@@ -538,7 +538,7 @@ display:
           tokenize: false
       path: abecedny-zoznam
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
@@ -548,9 +548,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:facets.facet.heslo'
-        - 'config:facets.facet.heslo_termin_taxonomie_term_parents'
         - 'config:search_api.index.word_solr_index'
-        - 'config:views.view.solr_search_word'
-        - 'search_api_list:word_solr_index'
-        - taxonomy_term_list

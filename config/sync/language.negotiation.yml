@@ -6,8 +6,7 @@ session:
 url:
   source: path_prefix
   prefixes:
-    sk: sk
-    '': null
+    sk: ''
     en: en
   domains:
     sk: ''

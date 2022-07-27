@@ -113,5 +113,31 @@
     }
   };
 
+  Drupal.behaviors.click_change_search = {
+    attach: function (context, settings) {
+
+      $('.search-help').on('click', '.text', function (e) {
+        var desc = $(this).parent();
+        var button = $(this);
+
+        if ($('.search-help .description').hasClass('open')) {
+          setTimeout(function () {
+            $('.search-help .description').removeClass('open');
+            $('.search-help .text').attr('aria-expanded', false);
+            $('.search-help .text').attr('aria-label', Drupal.t('aria-label-search-options-are-closed'));
+          }, 150);
+        }
+        else {
+          setTimeout(function () {
+            desc.find('.description').addClass('open');
+            $('#search-help-dialog .help').focus();
+            button.attr('aria-expanded', true);
+            $('.search-help .text').attr('aria-label', Drupal.t('aria-label-search-options-are-open'));
+          }, 150);
+        }
+      });
+    }
+  };
+
 
 })(jQuery, Drupal);

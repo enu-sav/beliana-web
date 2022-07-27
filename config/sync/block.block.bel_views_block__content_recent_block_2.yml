@@ -1,0 +1,29 @@
+uuid: fe724077-28d0-4f01-8a24-11f94f6a724d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_recent
+  module:
+    - system
+    - views
+  theme:
+    - bel
+id: bel_views_block__content_recent_block_2
+theme: bel
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:content_recent-block_2'
+settings:
+  id: 'views_block:content_recent-block_2'
+  label: 'Nové heslá'
+  label_display: visible
+  provider: views
+  views_label: 'Nové heslá'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
