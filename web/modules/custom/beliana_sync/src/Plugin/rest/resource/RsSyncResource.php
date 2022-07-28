@@ -26,7 +26,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  *   label = @Translation("RS Sync"),
  *   uri_paths = {
  *     "canonical" = "/rs/api/{nid}",
- *     "https://www.drupal.org/link-relations/create" = "/rs/api"
+ *     "create" = "/rs/api"
  *   }
  * )
  */
