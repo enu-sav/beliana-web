@@ -21,6 +21,7 @@ body {
 .container {
   margin: auto;
   max-width: $max-screen;
+  padding: 0 em(20, 16);
 }
 
 // Layout Helpers

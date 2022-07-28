@@ -8,11 +8,41 @@ html {
   letter-spacing: $base-letter-spacing;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  body.path-frontpage {
+    background: #ffa587;
+  }
+
   &.black-white {
+    background: #000;
+    color: #fff;
+
     body {
       font-family: 'Open Sans', sans-serif;
+      font-size: $base-font-size-bw;
+      &.path-frontpage {
+        background: #000;
+        color: #fff;
+      }
     }
   }
+}
+
+
+html.black-white {
+  background: #000;
+  color: #fff;
+}
+.black-white body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3em;
+}
+body.path-frontpage {
+  background: #ffa587;
+}
+.black-white body.path-frontpage {
+  background: #000;
+  color: #fff;
 }
 
 h1,
