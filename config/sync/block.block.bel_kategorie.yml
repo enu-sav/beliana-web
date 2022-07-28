@@ -12,7 +12,7 @@ dependencies:
 id: bel_kategorie
 theme: bel
 region: content
-weight: -2
+weight: -1
 provider: null
 plugin: 'facet_block:kategorie'
 settings:

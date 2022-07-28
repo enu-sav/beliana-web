@@ -2,6 +2,8 @@ uuid: 155e8b8d-8005-45e8-8dd8-954c07ed9b0d
 langcode: sk
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - bel
 _core:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/najcitanejsie-hesla\r\n/abecedny-zoznam\r\n/vysledky-vyhladavania"

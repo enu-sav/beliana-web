@@ -12,7 +12,7 @@ dependencies:
 id: bel_views_block__content_recent_block_2
 theme: bel
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: 'views_block:content_recent-block_2'
 settings:

@@ -64,7 +64,7 @@
         "drupal/recaptcha": "^3.0",
         "drupal/recreate_block_content": "^2.1",
         "drupal/redirect": "^1.7",
-        "drupal/search_api": "^1.23",
+        "drupal/search_api": "^1.25",
         "drupal/search_api_solr": "^4.2",
         "drupal/simple_sitemap": "^3.11",
         "drupal/svg_image": "^1.16",
@@ -121,9 +121,6 @@
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {
-            "drupal/core": {
-                "3060007 - Adding/updating interface translations should invalidate JavaScript library cache": "https://www.drupal.org/files/issues/2019-06-06/3060007-2.patch"
-            },
             "drupal/admin_toolbar": {
                 "3121816 - Version 8.x-2.1 need Drupal 8.8.0 or greater": "https://www.drupal.org/files/issues/2020-03-30/3121816-07.patch"
             },

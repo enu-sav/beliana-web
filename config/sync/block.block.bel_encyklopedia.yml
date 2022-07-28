@@ -1,5 +1,5 @@
-uuid: 65d4e9c1-ca96-41f3-b49a-3d0dacf108e2
-langcode: en
+uuid: 051e0074-35ef-4807-ad31-80cd3883b442
+langcode: sk
 status: true
 dependencies:
   content:
@@ -9,10 +9,10 @@ dependencies:
     - system
   theme:
     - bel
-id: bel_encyklopediabeliana
+id: bel_encyklopedia
 theme: bel
 region: content
-weight: -4
+weight: -3
 provider: null
 plugin: 'block_content:320eb99a-81b6-4625-8e54-a7330048e241'
 settings:
