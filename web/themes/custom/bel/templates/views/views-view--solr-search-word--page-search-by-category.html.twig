@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Theme override for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="clearfix">
+    <header class="left">
+      <h2>{{ label }}</h2>
+      {% if header %}
+        {{ header }}
+      {% endif %}
+    </header>
+    <div class="zoznam-tools">
+      <div class="item">
+        <p>Zobrazujem:</p>
+        <div class="truncate-button">
+          <button tabindex="0" type="button" aria-label="Možnosti zobrazenia" id="label" class="label"
+                  aria-haspopup="true" aria-controls="truncate-controls">
+            Začiatok hesla<b class="button"></b>
+          </button>
+          <ul id="truncate-controls" role="menu" class="dropdown" aria-labelledby="label">
+            <li role="none">
+              <a href="#" aria-label="Zobraziť vo výpise začiatok hesla" class="word-short" role="menuitem">Začiatok
+                hesla</a>
+            </li>
+            <li role="none">
+              <a href="#" aria-label="Zobraziť vo výpise celé heslo" class="word-full" role="menuitem">Celé heslo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <p>Zoraďujem:</p>
+        <div class="sort-button">
+          <span class="label">A - Z<b class="button"></b></span>
+          <ul class="dropdown">
+            <li class="alphabet-asc">A - Z</li>
+            <li class="alphabed-desc">Z - A</li>
+            <li class="date-asc">Najnovšie</li>
+            <li class="date-desc">Najstaršie</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+  {{ rows }}
+  {{ empty }}
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

@@ -1,4 +1,4 @@
-uuid: 21ea6257-52b0-4ba9-bba0-0b3e3e1f6558
+uuid: ff3ef4fa-1ea4-474e-a368-8e1cdf86db6d
 langcode: sk
 status: true
 dependencies:
@@ -7,14 +7,14 @@ dependencies:
     - views.view.solr_search_word
   module:
     - search_api
-id: kategorie
+id: categories
 name: Kategórie
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
 url_alias: kategorie
-facet_source_id: 'search_api:views_page__solr_search_word__page_3'
+facet_source_id: 'search_api:views_page__solr_search_word__page_search_by_category'
 field_identifier: field_categories
 query_operator: and
 hard_limit: 0
@@ -31,6 +31,9 @@ widget:
   config:
     show_numbers: true
     soft_limit: 0
+    show_reset_link: false
+    reset_text: 'Show all'
+    hide_reset_when_no_selection: false
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
@@ -46,6 +49,11 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  hierarchy_processor:
+    processor_id: hierarchy_processor
+    weights:
+      build: 100
+    settings: {  }
   list_item:
     processor_id: list_item
     weights:
@@ -59,6 +67,6 @@ processor_configs:
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
-      pre_query: -10
-      build: -10
+      pre_query: 50
+      build: 15
     settings: {  }

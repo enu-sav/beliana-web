@@ -1,27 +1,27 @@
-uuid: deb32dbc-8509-4788-90eb-7723532fc798
-langcode: en
+uuid: 8e9fc42b-4faf-4481-b564-b0d68855a79c
+langcode: sk
 status: true
 dependencies:
   config:
-    - facets.facet.kategorie
+    - facets.facet.categories
   module:
     - facets
     - system
   theme:
     - bel
-id: bel_kategorie
+id: bel_categories
 theme: bel
 region: content
 weight: -1
 provider: null
-plugin: 'facet_block:kategorie'
+plugin: 'facet_block:categories'
 settings:
-  id: 'facet_block:kategorie'
+  id: 'facet_block:categories'
   label: Kategórie
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: bel_kategorie
+  block_id: bel_categories
 visibility:
   request_path:
     id: request_path

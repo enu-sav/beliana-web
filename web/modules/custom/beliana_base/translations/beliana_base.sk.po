@@ -60,3 +60,15 @@ msgstr "Sekcia: Citácia je otvorená"
 
 msgid "aria-label-you-are-in-the-section-citation"
 msgstr "Nachádzate sa v sekcií: Citácia"
+
+msgid "label-show-categories"
+msgstr "Zobraziť kategórie"
+
+msgid "label-hide-categories"
+msgstr "Skryť kategórie"
+
+msgid "aria-label-filter-content-by-category"
+msgstr "Filtrovať obsah podľa kategórie"
+
+msgid "aria-label category @category, number of products: @count"
+msgstr "Kategória @category, Počet položiek: @count"

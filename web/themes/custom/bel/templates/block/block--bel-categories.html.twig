@@ -1,0 +1,16 @@
+<div{{ attributes }} tabindex="0" role="region" aria-labelledby="category">
+  <span class="smartphone opener open">{{ 'label-show-categories'|t }}</span>
+  <span class="smartphone opener close">{{ 'label-hide-categories' }}</span>
+
+  {{ title_prefix }}
+  {% if label %}
+    <h2 id="category" aria-label="{{ 'aria-label-filter-content-by-category'|t }}" {{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+
+  {{ attach_library('bel/facet-categories') }}
+</div>

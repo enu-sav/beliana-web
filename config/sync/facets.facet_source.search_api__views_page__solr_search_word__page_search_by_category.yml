@@ -1,0 +1,9 @@
+uuid: 9471206f-ca0d-4225-b05d-d2d7e15d0a84
+langcode: sk
+status: true
+dependencies: {  }
+id: search_api__views_page__solr_search_word__page_search_by_category
+name: 'search_api:views_page__solr_search_word__page_search_by_category'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }

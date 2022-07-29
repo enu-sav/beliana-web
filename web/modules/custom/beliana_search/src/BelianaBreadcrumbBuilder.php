@@ -76,7 +76,7 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
                 ->loadAllParents($term->id());
 
               foreach (array_reverse($ancestors) as $item) {
-                $links[] = Link::createFromRoute($item->label(), 'view.solr_search_word.page_3', [], ['query' => ['f' => ['kategorie:' . $item->id()]]]);
+                $links[] = Link::createFromRoute($item->label(), 'view.solr_search_word.page_search_by_category', [], ['query' => ['f' => ['kategorie:' . $item->id()]]]);
               }
 
               if ($count < count($categories)) {
@@ -87,7 +87,7 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
         }
 
         $links[0]->setText('Všetky kategórie');
-        $links[0]->setUrl(Url::fromRoute('view.solr_search_word.page_3'));
+        $links[0]->setUrl(Url::fromRoute('view.solr_search_word.page_search_by_category'));
       }
     }
 

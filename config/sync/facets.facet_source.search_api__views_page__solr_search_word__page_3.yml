@@ -1,9 +1,0 @@
-uuid: 89175166-7232-4719-bed8-bcf532e23157
-langcode: en
-status: true
-dependencies: {  }
-id: search_api__views_page__solr_search_word__page_3
-name: 'search_api:views_page__solr_search_word__page_3'
-filter_key: null
-url_processor: query_string
-breadcrumb: {  }

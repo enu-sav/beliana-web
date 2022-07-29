@@ -60,3 +60,15 @@ msgstr "Section: Citation is open"
 
 msgid "aria-label-you-are-in-the-section-citation"
 msgstr "You are in the section: Citation"
+
+msgid "label-show-categories"
+msgstr "Show categories"
+
+msgid "label-hide-categories"
+msgstr "Hide categoriess"
+
+msgid "aria-label-filter-content-by-category"
+msgstr "Filter content by category"
+
+msgid "aria-label category @category, number of products: @count"
+msgstr "Category @category, Number of items: @count"
