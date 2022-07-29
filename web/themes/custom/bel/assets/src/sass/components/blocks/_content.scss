@@ -1,0 +1,7 @@
+#block-bel-content {
+
+  body.path-rozsirene-vyhladavanie & {
+    width: calc(100% - #{em(280, 16)});
+    float: right;
+  }
+}
