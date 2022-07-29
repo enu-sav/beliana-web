@@ -1,4 +1,4 @@
-uuid: 3b292007-3939-4138-a9fe-671e0b1cdc7b
+uuid: 66eb7245-c7b5-4001-9682-c5025ea2ad39
 langcode: sk
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - system
   theme:
     - bel
-id: bel_odkazy
+id: bel_links
 theme: bel
 region: top_right
 weight: 0

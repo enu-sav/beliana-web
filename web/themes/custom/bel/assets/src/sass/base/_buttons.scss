@@ -23,6 +23,10 @@ $_button-background-color-hover: shade($action-color, 20%);
   vertical-align: middle;
   white-space: nowrap;
 
+  .black-white & {
+    font-family: $bw-font-family;
+  }
+
   &:hover,
   &:focus {
     background-color: $_button-background-color-hover;

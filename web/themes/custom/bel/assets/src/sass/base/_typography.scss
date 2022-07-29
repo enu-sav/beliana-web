@@ -14,35 +14,16 @@ html {
   }
 
   &.black-white {
+    font-family: $bw-font-family;
     background: #000;
     color: #fff;
-
     body {
-      font-family: 'Open Sans', sans-serif;
-      font-size: $base-font-size-bw;
       &.path-frontpage {
         background: #000;
         color: #fff;
       }
     }
   }
-}
-
-
-html.black-white {
-  background: #000;
-  color: #fff;
-}
-.black-white body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.3em;
-}
-body.path-frontpage {
-  background: #ffa587;
-}
-.black-white body.path-frontpage {
-  background: #000;
-  color: #fff;
 }
 
 h1,
@@ -91,6 +72,15 @@ a {
   &:hover {
     color: shade($action-color, 25%);
   }
+}
+
+a:focus {
+  outline: em(1, 16) solid #ccc;
+}
+input:focus, textarea:focus {
+  border: em(1, 16) solid #ccc;
+  -webkit-box-shadow: 0 0 em(5, 16) #ccc;
+  box-shadow: 0 0 em(5, 16) #ccc;
 }
 
 hr {

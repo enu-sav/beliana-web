@@ -5,10 +5,10 @@ $padding: $gutter;
 // Typography
 $base-font-family: 'arno-pro', serif;
 $heading-font-family: $base-font-family;
+$bw-font-family: 'Open Sans', sans-serif;
 
 // Font Sizes
 $base-font-size: $font-size;
-$base-font-size-bw: $font-size;
 
 // Line height
 $base-line-height: 1.5;
@@ -24,7 +24,7 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$dark-gray: #333;
+$dark-gray: #666;
 $medium-gray: #999;
 $light-gray: #F7F7F7;
 

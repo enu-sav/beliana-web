@@ -1,0 +1,15 @@
+#block-bel-links {
+
+  a {
+    $fz: 16;
+    font-size: rem($fz);
+    text-decoration: none;
+    padding-top: em(4, $fz);
+    .black-white & {
+      $fz: 13;
+      font-size: rem($fz);
+      text-decoration: underline;
+      padding-top: em(4, $fz);
+    }
+  }
+}

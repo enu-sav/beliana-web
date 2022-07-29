@@ -1,4 +1,4 @@
-#block-bel-heslo {
+#block-bel-alphabet {
   width: 100%;
   display: block;
   position: relative;
@@ -12,11 +12,36 @@
   }
 
   ul {
+    white-space: nowrap;
     li {
       list-style-type: none;
       margin-right: em(4, 16);
       &:last-of-type {
         margin-right: 0;
+      }
+
+      a {
+        $fz: 25;
+        font-size: rem($fz);
+        line-height: em(55, $fz);
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        display: block;
+        color: #8a2807;
+        border: em(1, $fz) solid transparent;
+        -webkit-border-top-left-radius: 0;
+        -webkit-border-top-right-radius: 0;
+        -moz-border-radius-topleft: 0;
+        -moz-border-radius-topright: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        .black-white & {
+          $fz: 19;
+          font-size: rem($fz);
+          line-height: em(55, $fz);
+          border: em(1, $fz) solid transparent;
+        }
       }
 
       ul {
@@ -115,14 +140,12 @@
   margin: 0 auto;
 }
 
-#block-bel-heslo ul li a,
 .view-word-search-page ul.pager li a {
   line-height: 55px;
   text-decoration: none;
   color: #fff;
   font-size: 1.6em;
 }
-.black-white #block-bel-heslo ul li a,
 .black-white .view-word-search-page ul.pager li a {
   font-size: 1.5em;
 }
@@ -134,7 +157,6 @@
   font-size: 1.2em;
 }
 
-#block-bel-heslo ul li a,
 .view-word-search-page ul.pager li a {
   width: 100%;
   height: 100%;
@@ -149,15 +171,15 @@
   border-top-right-radius: 0;
 }
 
-.black-white #block-bel-heslo ul li a,
+.black-white #block-bel-alphabet ul li a,
 .black-white .view-word-search-page ul.pager li a {
   color: #fff;
 }
 
-#block-bel-heslo ul li:hover a,
-#block-bel-heslo ul li:focus a,
-#block-bel-heslo ul li a:hover,
-#block-bel-heslo ul li a:focus,
+#block-bel-alphabet ul li:hover a,
+#block-bel-alphabet ul li:focus a,
+#block-bel-alphabet ul li a:hover,
+#block-bel-alphabet ul li a:focus,
 .view-word-search-page ul.pager li a:hover,
 .view-word-search-page ul.pager li a:focus {
   cursor: pointer;
@@ -169,79 +191,79 @@
   z-index: 3;
   position: relative;
 }
-.black-white #block-bel-heslo ul li:hover a,
-.black-white #block-bel-heslo ul li:hover a.open,
-.black-white #block-bel-heslo ul li:focus a,
-.black-white #block-bel-heslo ul li:focus a.open,
+.black-white #block-bel-alphabet ul li:hover a,
+.black-white #block-bel-alphabet ul li:hover a.open,
+.black-white #block-bel-alphabet ul li:focus a,
+.black-white #block-bel-alphabet ul li:focus a.open,
 .black-white .view-word-search-page ul.pager li a:hover,
 .black-white .view-word-search-page ul.pager li a:focus {
   background-color: #fff !important;
   color: #000;
 }
 
-.black-white #block-bel-heslo ul li a:hover,
-.black-white #block-bel-heslo ul li a.open:hover,
-.black-white #block-bel-heslo ul li a:focus,
-.black-white #block-bel-heslo ul li a.open:focus {
+.black-white #block-bel-alphabet ul li a:hover,
+.black-white #block-bel-alphabet ul li a.open:hover,
+.black-white #block-bel-alphabet ul li a:focus,
+.black-white #block-bel-alphabet ul li a.open:focus {
   background: #000 !important;
   color: #fff;
 }
 
-#block-bel-heslo ul li a.open + .facets-widget.open ul {
+#block-bel-alphabet ul li a.open + .facets-widget.open ul {
   display: block;
 }
 
-.black-white #block-bel-heslo ul li .facets-widget.open ul li a  {
+.black-white #block-bel-alphabet ul li .facets-widget.open ul li a  {
   color: #000;
 }
-.black-white #block-bel-heslo ul li .facets-widget.open ul li a:hover,
-.black-white #block-bel-heslo ul li .facets-widget.open ul li a:focus {
+.black-white #block-bel-alphabet ul li .facets-widget.open ul li a:hover,
+.black-white #block-bel-alphabet ul li .facets-widget.open ul li a:focus {
   color: #fff;
 }
 
-#block-bel-heslo ul li ul li a:hover,
-#block-bel-heslo ul li ul li a.focus {
+#block-bel-alphabet ul li ul li a:hover,
+#block-bel-alphabet ul li ul li a.focus {
   box-shadow: none;
   background-color: #fdbda7 !important;
   border-radius: 0;
 }
 
-#block-bel-heslo .facet-item a:hover,
-#block-bel-heslo .facet-item a:focus {
+#block-bel-alphabet .facet-item a:hover,
+#block-bel-alphabet .facet-item a:focus {
   background-color: #e6e6e6;
   text-decoration: underline;
 }
 
-#block-bel-heslo .facet-item a.is-active,
-#block-bel-heslo .facet-item a.is-active:hover,
-#block-bel-heslo .facet-item a.is-active:focus,
-#block-bel-heslo .facet-item--active-trail > a,
-#block-bel-heslo .facet-item--active-trail > a:hover,
-#block-bel-heslo .facet-item--active-trail > a:focus {
+#block-bel-alphabet .facet-item a.is-active,
+#block-bel-alphabet .facet-item a.is-active:hover,
+#block-bel-alphabet .facet-item a.is-active:focus,
+#block-bel-alphabet .facet-item--active-trail > a,
+#block-bel-alphabet .facet-item--active-trail > a:hover,
+#block-bel-alphabet .facet-item--active-trail > a:focus {
   color: #8a2807;
   background: #fff;
   border: 1px solid #fff;
   text-decoration: none;
 }
-.black-white #block-bel-heslo .facet-item a.is-active {
+.black-white #block-bel-alphabet .facet-item a.is-active {
   color: #000;
   background: #fff;
 }
-.black-white #block-bel-heslo .facet-item a.is-active:hover,
-.black-white #block-bel-heslo .facet-item a.is-active:focus,
-.black-white #block-bel-heslo .facet-item--active-trail > a,
-.black-white #block-bel-heslo .facet-item--active-trail > a:hover,
-.black-white #block-bel-heslo .facet-item--active-trail > a:focus {
+.black-white #block-bel-alphabet .facet-item a.is-active:hover,
+.black-white #block-bel-alphabet .facet-item a.is-active:focus,
+.black-white #block-bel-alphabet .facet-item--active-trail > a,
+.black-white #block-bel-alphabet .facet-item--active-trail > a:hover,
+.black-white #block-bel-alphabet .facet-item--active-trail > a:focus {
   color: #fff;
   background: #000;
 }
-#block-bel-heslo .facet-item--active-trail > a:hover,
-#block-bel-heslo .facet-item--active-trail > a:focus {
+#block-bel-alphabet .facet-item--active-trail > a:hover,
+#block-bel-alphabet .facet-item--active-trail > a:focus {
   border: 1px solid #ccc;
   border-bottom: none;
 }
-#block-bel-heslo .facet-item.facet-item--expanded.hover ul,
-#block-bel-heslo .facet-item.facet-item--expanded:hover ul,
-#block-bel-heslo .facet-item.facet-item--expanded:focus ul {
+#block-bel-alphabet .facet-item.facet-item--expanded.hover ul,
+#block-bel-alphabet .facet-item.facet-item--expanded:hover ul,
+#block-bel-alphabet .facet-item.facet-item--expanded:focus ul {
   display: block;
 }

@@ -28,6 +28,9 @@ textarea {
   display: block;
   font-family: $base-font-family;
   font-size: $base-font-size;
+  .black-white & {
+    font-family: $bw-font-family;
+  }
 }
 
 #{$all-text-inputs} {
@@ -62,7 +65,10 @@ textarea {
   }
 
   &::placeholder {
-    color: tint($base-font-color, 40%);
+    color: tint($base-font-color, 0%);
+    .black-white & {
+      color: tint(#000, 0%);
+    }
   }
 }
 
