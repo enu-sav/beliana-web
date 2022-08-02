@@ -1,4 +1,4 @@
-name: beliana.sav.web
+name: beliana.web
 recipe: drupal9
 config:
   php: '7.4'
@@ -23,7 +23,7 @@ services:
     hogfrom:
       - appserver
   search:
-    type: solr:7
+    type: solr:8
     core: drupal9
     portforward: 9999
     config:
