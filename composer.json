@@ -64,6 +64,7 @@
         "drupal/recaptcha": "^3.0",
         "drupal/recreate_block_content": "^2.1",
         "drupal/redirect": "^1.7",
+        "drupal/restui": "^1.20",
         "drupal/search_api": "^1.25",
         "drupal/search_api_solr": "^4.2",
         "drupal/simple_sitemap": "^3.11",
