@@ -12,6 +12,9 @@ use Drupal\node\NodeInterface;
  * Prepares variables for the html.html.twig template.
  */
 function bel_preprocess_html(&$variables): void {
+  $config = Drupal::config('matomo.settings');
+  $variables['matomo'] = ['site_id' => $config->get('matomo_site_id', 1)];
+
   // Add cachability metadata.
   $theme_name = \Drupal::theme()->getActiveTheme()->getName();
   $theme_settings = \Drupal::config($theme_name . '.settings');
@@ -107,4 +110,12 @@ function bel_preprocess_facets_item_list(&$variables) {
         break;
     }
   }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function bel_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+  $variables['label'] = ['#markup' => $view->getTitle()];
 }

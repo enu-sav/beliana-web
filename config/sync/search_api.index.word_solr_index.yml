@@ -131,7 +131,7 @@ field_settings:
     label: Kategórie
     datasource_id: 'entity:node'
     property_path: field_categories
-    type: integer
+    type: string
     dependencies:
       config:
         - field.storage.node.field_categories

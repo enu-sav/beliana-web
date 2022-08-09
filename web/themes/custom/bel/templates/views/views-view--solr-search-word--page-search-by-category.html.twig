@@ -30,11 +30,9 @@
  * @see template_preprocess_views_view()
  */
 #}
-{%
-  set classes = [
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-  ]
-%}
+{% set classes = [
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+] %}
 <div{{ attributes.addClass(classes) }}>
   <div class="clearfix">
     <header class="left">
@@ -43,21 +41,21 @@
         {{ header }}
       {% endif %}
     </header>
-    <div class="zoznam-tools">
+    <div class="list-tools">
       <div class="item">
         <p>Zobrazujem:</p>
         <div class="truncate-button">
-          <button tabindex="0" type="button" aria-label="Možnosti zobrazenia" id="label" class="label"
-                  aria-haspopup="true" aria-controls="truncate-controls">
-            Začiatok hesla<b class="button"></b>
+          <button tabindex="0" type="button" aria-label="{{ 'display-options'|t }}" id="label" class="label"
+                  aria-haspopup="true" aria-controls="truncate-controls">{{ 'label-beginning-password'|t }}<b
+              class="button"></b>
           </button>
           <ul id="truncate-controls" role="menu" class="dropdown" aria-labelledby="label">
             <li role="none">
-              <a href="#" aria-label="Zobraziť vo výpise začiatok hesla" class="word-short" role="menuitem">Začiatok
-                hesla</a>
+              <a href="#" aria-label="{{ 'label-label-show-the-beginning-of-the-password-in-the-statement'|t }}" class="word-short"
+                 role="menuitem">{{ 'label-beginning-password'|t }}</a>
             </li>
             <li role="none">
-              <a href="#" aria-label="Zobraziť vo výpise celé heslo" class="word-full" role="menuitem">Celé heslo</a>
+              <a href="#" aria-label="{{ 'label-label-show-the-entire-password-in-the-statement'|t }}" class="word-full" role="menuitem">{{ 'label-full-password'|t }}</a>
             </li>
           </ul>
         </div>
@@ -69,8 +67,8 @@
           <ul class="dropdown">
             <li class="alphabet-asc">A - Z</li>
             <li class="alphabed-desc">Z - A</li>
-            <li class="date-asc">Najnovšie</li>
-            <li class="date-desc">Najstaršie</li>
+            <li class="date-asc">{{ 'label-latest'|t }}</li>
+            <li class="date-desc">{{ 'label-oldest'|t }}</li>
           </ul>
         </div>
       </div>

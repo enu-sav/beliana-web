@@ -72,3 +72,18 @@ msgstr "Filtrovať obsah podľa kategórie"
 
 msgid "aria-label category @category, number of products: @count"
 msgstr "Kategória @category, Počet položiek: @count"
+
+msgid "label-latest"
+msgstr "Najnovšie"
+
+msgid "label-oldest"
+msgstr "Najstaršie"
+
+msgid "label-beginning-password"
+msgstr "Začiatok hesla"
+
+msgid "label-label-show-the-beginning-of-the-password-in-the-statement"
+msgstr "Zobraziť vo výpise začiatok hesla"
+
+msgid "label-label-show-the-entire-password-in-the-statement"
+msgstr "Zobraziť vo výpise celé heslo"
