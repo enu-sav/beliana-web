@@ -30,9 +30,10 @@
       // autosubmit form on autocomplete select
       $wrapper.find('input.search-input').on('autocompleteclose', function (event, node) {
         var input = $(this).val();
-        if ($.isNumeric(input)) {
+        input = input.match(/\d+/);
+        if ($.isNumeric(input[0])) {
           $(this).val('');
-          window.location.href = '/node/' + input;
+          window.location.href = '/node/' + input[0];
         }
         // $wrapper.parent().find('input.search-submit').click();
       });

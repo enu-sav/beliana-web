@@ -1,8 +1,5 @@
-_core:
-  default_config_hash: Lqw8pAQIfr4sRSts2RRWG97eNG6vRT7FhqF_b5COPGk
-langcode: sk
 cache_strings: true
-translate_english: true
+translate_english: false
 javascript:
   directory: languages
 translation:
@@ -14,3 +11,6 @@ translation:
   update_interval_days: 0
   path: sites/default/files/translations
   import_enabled: true
+_core:
+  default_config_hash: Lqw8pAQIfr4sRSts2RRWG97eNG6vRT7FhqF_b5COPGk
+langcode: sk

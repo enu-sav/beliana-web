@@ -3,14 +3,36 @@
 namespace Drupal\beliana_search\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\Element\EntityAutocomplete;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Component\Utility\Tags;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Defines a route controller for entity autocomplete form elements.
  */
 class AutocompleteController extends ControllerBase {
+
+  protected $nodeStorage;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+    $this->nodeStroage = $entity_type_manager->getStorage('node');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    // Instantiates this form class.
+    return new static(
+      $container->get('entity_type.manager')
+    );
+  }
 
   /**
    * Handler for autocomplete request.
@@ -30,20 +52,30 @@ class AutocompleteController extends ControllerBase {
 
   private function getResultsNode(&$results, $input) {
     $query = \Drupal::database()->select('node_field_data', 'n');
-    $nodes = $query->fields('n')
-        ->condition('n.type', 'word')
-        ->condition('n.status', TRUE)
-        ->condition('n.title', $query->escapeLike($input) . '%', 'LIKE')
-        ->orderBy('n.title', 'ASC')
-        ->range(0, 10)
-        ->execute()
-        ->fetchAll();
+
+    $query = $this->nodeStroage->getQuery()
+      ->condition('type', 'word')
+      ->condition('title', $query->escapeLike($input), 'CONTAINS')
+      ->condition('status', TRUE)
+      ->groupBy('nid')
+      ->sort('title', 'ASC')
+      ->range(0, 10);
+
+    $ids = $query->execute();
+    $nodes = $ids ? $this->nodeStroage->loadMultiple($ids) : [];
+
 
     if (!empty($nodes)) {
       foreach ($nodes as $node) {
+
+        $label = [
+          $node->getTitle(),
+//          '<small>(' . $node->id() . ')</small>',
+        ];
+
         $results[] = [
-          'value' => $node->nid,
-          'label' => $node->title,
+          'value' => EntityAutocomplete::getEntityLabels([$node]),
+          'label' => implode(' ', $label),
         ];
       }
     }
