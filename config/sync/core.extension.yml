@@ -11,6 +11,7 @@ module:
   basic_auth: 0
   beliana_base: 0
   beliana_daily: 0
+  beliana_local_tasks: 0
   beliana_modals: 0
   beliana_search: 0
   beliana_sync: 0
@@ -42,6 +43,7 @@ module:
   file: 0
   filter: 0
   image: 0
+  imagecache_external: 0
   inline_entity_form: 0
   language: 0
   link: 0
@@ -68,6 +70,7 @@ module:
   recreate_block_content: 0
   redirect: 0
   redirect_404: 0
+  responsive_image: 0
   rest: 0
   restui: 0
   search_api: 0

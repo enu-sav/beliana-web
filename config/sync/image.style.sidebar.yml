@@ -3,12 +3,12 @@ langcode: sk
 status: true
 dependencies: {  }
 name: sidebar
-label: SIdebar
+label: 'Sidebar (300x upscaling allowed)'
 effects:
-  bac9c88b-d50d-4cef-861a-062298a8efe0:
-    uuid: bac9c88b-d50d-4cef-861a-062298a8efe0
+  92bd8386-a86e-4962-8abf-06627f8d933c:
+    uuid: 92bd8386-a86e-4962-8abf-06627f8d933c
     id: image_scale
-    weight: 1
+    weight: 2
     data:
       width: 300
       height: null

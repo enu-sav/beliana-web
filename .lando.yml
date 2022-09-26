@@ -1,9 +1,10 @@
 name: beliana.web
 recipe: drupal9
 config:
-  php: '7.4'
+  php: '8.0'
   via: apache
   webroot: web
+  database: mariadb
   drush: 10
   xdebug: false
   config:
@@ -17,6 +18,8 @@ services:
     type: phpmyadmin
     hosts:
       - database
+    overrides:
+      image: bitnami/mariadb:10.4.12
   mailhog:
     type: mailhog
     portforward: true

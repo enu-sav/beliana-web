@@ -14,7 +14,9 @@ dependencies:
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
+    - image.style.sidebar
     - media.type.image
+    - responsive_image.styles.sidebar
   module:
     - beliana_daily
     - colorbox
@@ -33,12 +35,12 @@ content:
     weight: 2
     region: content
   field_image:
-    type: colorbox
+    type: colorbox_responsive
     label: hidden
     settings:
-      colorbox_node_style: ''
-      colorbox_node_style_first: ''
+      colorbox_responsive_node_style: sidebar
       colorbox_image_style: ''
+      colorbox_responsive_image_style: sidebar
       colorbox_gallery: page
       colorbox_gallery_custom: ''
       colorbox_caption: auto
@@ -87,15 +89,11 @@ content:
     weight: 4
     region: content
   field_obrazok_odkaz:
-    type: beliana_image_url
+    type: beliana_responsive_image_url
     label: hidden
     settings:
-      image_link: file
-      trim_length: '80'
-      url_only: ''
-      url_plain: ''
-      rel: ''
-      target: ''
+      imagecache_external_responsive_style: sidebar
+      imagecache_external_link: colorbox
     third_party_settings: {  }
     weight: 1
     region: content

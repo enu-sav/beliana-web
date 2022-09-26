@@ -1,0 +1,15 @@
+uuid: 3e95d16d-9b70-42de-b5ef-edf06ddc469e
+langcode: sk
+status: true
+dependencies: {  }
+name: sidebar_2x
+label: 'Sidebar 2x (600x upscaling allowed)'
+effects:
+  84e0166e-a53d-416b-9c09-8b7dd3eafb2f:
+    uuid: 84e0166e-a53d-416b-9c09-8b7dd3eafb2f
+    id: image_scale
+    weight: 1
+    data:
+      width: 600
+      height: null
+      upscale: true

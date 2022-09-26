@@ -1,0 +1,24 @@
+uuid: 41b9b638-1384-4177-8adb-5f6973ea81a0
+langcode: sk
+status: true
+dependencies:
+  config:
+    - image.style.sidebar
+    - image.style.sidebar_2x
+  theme:
+    - bel
+id: sidebar
+label: Sidebar
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: sidebar
+    breakpoint_id: bel.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: sidebar_2x
+    breakpoint_id: bel.small
+    multiplier: 2x
+breakpoint_group: bel
+fallback_image_style: sidebar

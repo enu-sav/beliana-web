@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains beliana_local_tasks.module.
+ */
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_page_attachments().
+ *
+ */
+function beliana_local_tasks_page_attachments(array &$attachments) {
+  if (!\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'beliana_local_tasks/base';
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ *
+ * Add a css class to each local task tab.
+ */
+function beliana_local_tasks_preprocess_menu_local_task(&$variables) {
+  /** @var \Drupal\Core\Url $url */
+  $url = $variables['element']['#link']['url'];
+  $path = explode('/', $url->getInternalPath());
+
+  if (count($path) >= 2) {
+    $link_name = isset($path[2]) ? $path[2] : 'view';
+  }
+  else {
+    $link_name = $variables['element']['#link']['title'];
+  }
+
+  $variables['link']['#attributes']['class'][] = Html::cleanCssIdentifier($link_name);
+}

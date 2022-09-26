@@ -1,0 +1,25 @@
+{% extends "media.html.twig" %}
+
+{% block content %}
+  {% if content %}
+    <div class="left metadata">
+      <h1 class="title">Ilustrácia k heslu <span>{{ node.title.value }}</span></h1>
+
+      {{ content.field_description }}
+
+      <div class="dalsie-info" data-collapse>
+        <h3>Ďalšie informácie o ilustrácii</h3>
+        <div>{{ content|without('field_image')|without('field_obrazok_odkaz')|without('field_description') }}</div>
+      </div>
+
+      {% if back_url %}
+        <a href="{{ back_url }}" class="back"><i class="icon-back"></i>Naspäť na stránku hesla</a>
+      {% endif %}
+    </div>
+
+    <div class="right media">
+      {{ content.field_image }}
+      {{ content.field_obrazok_odkaz }}
+    </div>
+  {% endif %}
+{% endblock %}

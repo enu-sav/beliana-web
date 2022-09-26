@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require('glob');
 const entryPlus = require('webpack-entry-plus');
+const TerserPlugin = require("terser-webpack-plugin");
 
 const entryFiles = [
   {
@@ -71,6 +72,17 @@ module.exports = ({
     entry: entryPlus(entryFiles),
     output: {
       filename: '[name]',
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            keep_fnames: true,
+            mangle: false,
+          },
+        }),
+      ],
     },
     devtool: dev ? 'cheap-module-eval-source-map' : false,
     module: {

@@ -1,0 +1,5 @@
+name: Beliana - Local Tasks
+type: module
+description: Module taht override core local task style to fixed one
+core_version_requirement: ^8 || ^9
+package: Beliana
