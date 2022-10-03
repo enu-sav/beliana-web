@@ -14,116 +14,25 @@ dependencies:
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
-    - image.style.sidebar
     - media.type.image
-    - responsive_image.styles.sidebar
-  module:
-    - beliana_daily
-    - colorbox
-    - link
-    - text
 id: media.image.default
 targetEntityType: media
 bundle: image
 mode: default
-content:
-  field_description:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_image:
-    type: colorbox_responsive
-    label: hidden
-    settings:
-      colorbox_responsive_node_style: sidebar
-      colorbox_image_style: ''
-      colorbox_responsive_image_style: sidebar
-      colorbox_gallery: page
-      colorbox_gallery_custom: ''
-      colorbox_caption: auto
-      colorbox_caption_custom: ''
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_institucia:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  field_licence:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_meno_autora_diela:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_meno_autora_snimky_diela:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_nazov_diela:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_obrazok_odkaz:
-    type: beliana_responsive_image_url
-    label: hidden
-    settings:
-      imagecache_external_responsive_style: sidebar
-      imagecache_external_link: colorbox
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_url_diela_l:
-    type: link
-    label: inline
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: nofollow
-      target: _blank
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_url_textu_licencie_l:
-    type: link
-    label: inline
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: nofollow
-      target: _blank
-    third_party_settings: {  }
-    weight: 8
-    region: content
+content: {  }
 hidden:
   created: true
+  field_description: true
+  field_image: true
+  field_institucia: true
+  field_licence: true
+  field_meno_autora_diela: true
+  field_meno_autora_snimky_diela: true
+  field_nazov_diela: true
+  field_obrazok_odkaz: true
   field_url_autora_diela_l: true
+  field_url_diela_l: true
+  field_url_textu_licencie_l: true
   langcode: true
   name: true
   search_api_excerpt: true

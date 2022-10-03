@@ -1,0 +1,15 @@
+uuid: 448c711d-8cc0-4ca2-9609-bbce754f3a51
+langcode: sk
+status: true
+dependencies: {  }
+name: media_full
+label: 'Media - Full (480xupscaling allowed) '
+effects:
+  083ef0d0-4a8d-4e61-8e1e-cfdbe4c10636:
+    uuid: 083ef0d0-4a8d-4e61-8e1e-cfdbe4c10636
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: true

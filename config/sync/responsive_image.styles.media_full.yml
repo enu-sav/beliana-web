@@ -1,0 +1,24 @@
+uuid: 013fba92-c708-40aa-9761-3b609bf8809a
+langcode: sk
+status: true
+dependencies:
+  config:
+    - image.style.media_full
+    - image.style.media_full_2x
+  theme:
+    - bel
+id: media_full
+label: 'Media - Full'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: media_full
+    breakpoint_id: bel.max
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: media_full_2x
+    breakpoint_id: bel.max
+    multiplier: 2x
+breakpoint_group: bel
+fallback_image_style: media_full

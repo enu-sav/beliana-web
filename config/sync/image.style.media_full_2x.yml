@@ -1,0 +1,15 @@
+uuid: 07ac9f5d-e93e-40f8-8694-84b92fdd22e5
+langcode: sk
+status: true
+dependencies: {  }
+name: media_full_2x
+label: 'Media - Full 2x (980xupscaling allowed) '
+effects:
+  780786fc-10e4-4384-9f2b-75d81cf456cf:
+    uuid: 780786fc-10e4-4384-9f2b-75d81cf456cf
+    id: image_scale
+    weight: 1
+    data:
+      width: 980
+      height: null
+      upscale: true

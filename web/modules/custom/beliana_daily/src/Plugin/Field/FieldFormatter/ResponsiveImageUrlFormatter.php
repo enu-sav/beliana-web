@@ -209,8 +209,8 @@ class ResponsiveImageUrlFormatter extends FormatterBase implements ContainerFact
     $url = NULL;
     $image_link_setting = $this->getSetting('imagecache_external_responsive_style');
     // Check if the formatter involves a link.
+    $entity = $items->getEntity();
     if ($image_link_setting == 'content') {
-      $entity = $items->getEntity();
       if (!$entity->isNew()) {
         $url = $entity->toUrl();
       }
@@ -244,7 +244,7 @@ class ResponsiveImageUrlFormatter extends FormatterBase implements ContainerFact
       }
 
       if (isset($link_file)) {
-        $url = Url::fromUri(file_create_url($image_path));
+        $url = Url::fromUri(\Drupal::service('file_url_generator')->generateAbsoluteString($image_path));
       }
 
       $image = $this->imageFactory->get($image_path);
@@ -271,7 +271,7 @@ class ResponsiveImageUrlFormatter extends FormatterBase implements ContainerFact
       }
 
       if ($url) {
-        $rendered_image = render($image_build);
+        $rendered_image = \Drupal::service('renderer')->render($image_build);
         $image = Link::fromTextAndUrl($rendered_image, $url)->toRenderable();
       }
       else {
