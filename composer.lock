@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4e293d7e2a90bc719e80cdb4e6dfdb7",
+    "content-hash": "db3d1237d2d057c83c00bfedab6ab03d",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1919,11 +1919,17 @@
         },
         {
             "name": "drupal/colorbox",
-            "version": "dev-1.x",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/colorbox.git",
-                "reference": "fd51a8ceefea24174438ef594b161c4fa74a6ad1"
+                "reference": "8.x-1.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/colorbox-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "af0eca9891e7134722ed785599e4476325cd1c29"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -1933,15 +1939,12 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.9+4-dev",
-                    "datestamp": "1650338860",
+                    "version": "8.x-1.10",
+                    "datestamp": "1650376979",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "drush": {
@@ -10864,7 +10867,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/colorbox": 20,
         "drupal/config_split": 5,
         "drupal/entityqueue": 20,
         "drupal/inline_entity_form": 5,
