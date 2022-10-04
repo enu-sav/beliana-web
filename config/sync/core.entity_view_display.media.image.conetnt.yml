@@ -15,11 +15,10 @@ dependencies:
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
-    - image.style.large
     - media.type.image
+    - responsive_image.styles.sidebar
   module:
     - beliana_daily
-    - svg_image
     - text
 id: media.image.conetnt
 targetEntityType: media
@@ -34,26 +33,24 @@ content:
     weight: 2
     region: content
   field_image:
-    type: image
+    type: beliana_responsive_image
     label: hidden
     settings:
-      image_link: ''
-      image_style: large
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
-      image_loading:
-        attribute: lazy
+      responsive_image_style: sidebar
+      image_link: colorbox
     third_party_settings: {  }
     weight: 0
     region: content
   field_obrazok_odkaz:
-    type: beliana_responsive_image_url
+    type: beliana_image_url
     label: hidden
     settings:
-      imagecache_external_responsive_style: sidebar
-      imagecache_external_link: ''
+      image_link: ''
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
     third_party_settings: {  }
     weight: 1
     region: content

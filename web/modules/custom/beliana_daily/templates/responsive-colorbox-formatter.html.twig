@@ -4,14 +4,13 @@
  * Default theme implementation to display a formatted colorbox image field.
  *
  * Available variables:
- * - responsive_image: A collection of responsive image data.
+ * - image: A collection of image data.
  * - url: An URL the image can be linked to.
  * - attributes: Link attributes.
  *
- * @see template_preprocess_colorbox_responsive_formatter()
+ * @see template_preprocess_colorbox_formatter()
  *
  * @ingroup themeable
  */
 #}
-
-<a href="{{ url }}"{{ attributes }}>{{ responsive_image }}</a>
+<a href="{{ url }}"{{ attributes }}>{{ image }}</a>

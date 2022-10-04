@@ -60,7 +60,7 @@
         var $item = $(this);
 
         if ($item.hasClass('word-short')) {
-          $('.views-element-container .heslo').each(function () {
+          $('.views-element-container .word').each(function () {
             if ($(this).height() > 120) {
               $(this).addClass('truncate-wrapper');
               $(this).children('#gradient').css('display', 'block');
@@ -69,8 +69,8 @@
           $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-beginning-of-the-password-is-set'));
         }
         else {
-          $('.views-element-container .heslo').removeClass('truncate-wrapper');
-          $('.views-element-container .heslo #gradient').css('display', 'none');
+          $('.views-element-container .word').removeClass('truncate-wrapper');
+          $('.views-element-container .word #gradient').css('display', 'none');
           $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-entire-password-is-set'));
         }
 
@@ -92,7 +92,7 @@
 
   Drupal.behaviors.click_change_citation = {
     attach: function (context, settings) {
-      $(context).find('article > .heslo').once('structure-process').each(function () {
+      $(context).find('article > .word').once('structure-process').each(function () {
         var $word = $(this);
         $word.on('click', '.citation h3', function (e) {
           if ($(this).parent().hasClass('open')) {

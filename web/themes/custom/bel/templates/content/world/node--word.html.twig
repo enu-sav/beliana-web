@@ -9,8 +9,8 @@
 
 {% block content %}
   {{ attach_library('bel/word') }}
-  <article{{ attributes.addClass('heslo-container') }}>
-    <div class="heslo{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
+  <article{{ attributes.addClass('word-container') }}>
+    <div class="word{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
       <h1>{{ node.label }}</h1>
       <div class="autor">
         {{ content.field_autor }}
@@ -28,7 +28,7 @@
         <div class="structure hidden"></div>
 
         {% if (node.field_images is not empty) or (node.field_table is not empty) %}
-          <div class="heslo-ilustracia">
+          <div class="word-illustration">
             {% set images_count = content.field_images['#items']|length %}
             {% for i in 0..images_count %}
               {% if i == node.field_table_weight.value %}
@@ -77,7 +77,7 @@
               href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
 
-        <div class="heslo-tools">
+        <div class="word-tools">
           {% include directory ~ '/templates/content/world/parts/share.html.twig' %}
         </div>
       </div>

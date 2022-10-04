@@ -44,11 +44,15 @@ content:
     weight: 0
     region: content
   field_obrazok_odkaz:
-    type: beliana_responsive_image_url
+    type: beliana_image_url
     label: hidden
     settings:
-      imagecache_external_responsive_style: sidebar
-      imagecache_external_link: content
+      image_link: content
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
     third_party_settings: {  }
     weight: 1
     region: content

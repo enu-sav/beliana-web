@@ -1,5 +1,4 @@
-base:
-  version: VERSION
+local-tasks:
   css:
-    component:
-      css/base.css: {}
+    theme:
+      css/local_tasks.css: {}

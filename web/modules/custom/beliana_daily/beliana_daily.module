@@ -22,6 +22,15 @@ function beliana_daily_theme() {
       ),
       'file' => 'beliana_daily.theme.inc',
     ),
+    'responsive_colorbox_formatter' => array(
+      'variables' => array(
+        'image' => NULL,
+        'item_attributes' => NULL,
+        'entity' => NULL,
+        'settings' => NULL,
+      ),
+      'file' => 'beliana_daily.theme.inc',
+    ),
   );
 }
 

@@ -80,5 +80,123 @@ if (typeof Drupal !== 'undefined') {
 			}
 		};
 
+    Drupal.behaviors.override = {
+      attach: function (context, settings) {
+
+        $('header.header').once('header-process').each(function () {
+          var $wrapper = $(this);
+
+          $wrapper.find('.smartphone-navigation .fa-bars').on('click', function () {
+            if ($(this).parent().hasClass('open')) {
+              $(this).parent().removeClass('open');
+            }
+            else {
+              $(this).parent().addClass('open');
+            }
+          });
+
+          $wrapper.find('.header-navigation .word-facet-wrap').on('click', function (e) {
+            if ($(this).hasClass('active')) {
+              $(this).removeClass('active');
+            }
+            else {
+              $(this).addClass('active');
+            }
+          });
+        });
+
+        // sticky header
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop();
+          var header_offset = 46;
+          var title_offset = 169;
+
+          if ($(window).width() < 768) {
+            header_offset = 52;
+            title_offset = 174;
+          }
+          else if ($(window).width() < 948) {
+            header_offset = 74;
+            title_offset = 200;
+          }
+
+          if ($('#content-main').height() > 500) {
+            if (scroll >= header_offset) {
+              $('body').addClass('sticky-header');
+            }
+            else {
+              $('body').removeClass('sticky-header');
+            }
+
+            if (scroll >= title_offset) {
+              $('body').addClass('sticky-title');
+            }
+            else {
+              $('body').removeClass('sticky-title');
+            }
+          }
+        });
+
+        $('body').once('body-process').each(function () {
+          var $wrapper = $(this);
+
+          $wrapper.find('.path-rozsirene-vyhladavanie #block-bel-categories .opener').on('click', function (e) {
+            if ($(this).parent().hasClass('active')) {
+              $(this).parent().removeClass('active');
+            }
+            else {
+              $(this).parent().addClass('active');
+            }
+          });
+        });
+
+        //set "Ilustracia" image media size in "Heslo" node
+        $('.word-illustration .media-image.view-mode-in-word img').each(function (key, value) {
+          Drupal.behaviors.override.setMediaSize($(value), 420);
+        });
+
+        $('article.media-image.view-mode-full img').each(function (key, value) {
+          Drupal.behaviors.override.setMediaSize($(value), 660);
+        });
+
+        //Configure colorbox call back to resize with custom dimensions
+        if (jQuery().colorbox) {
+          $.colorbox.settings.onLoad = function () {
+            Drupal.behaviors.override.colorboxResize(false);
+          };
+
+          $(window).resize(function () {
+            Drupal.behaviors.override.colorboxResize(true);
+          });
+        }
+      },
+      print: function (event) {
+        event.preventDefault();
+        $('article .citacia h3 a').trigger('click');
+        window.print();
+      },
+      setMediaSize: function (image, maxHeight) {
+        $('body').addClass('use-loader');
+        image.css({height: 'auto', width: '100%'});
+
+        $('body').addClass('is-loaded');
+      },
+      colorboxResize: function (resize) {
+        var width = '90%';
+        var height = '90%';
+
+        $.colorbox.settings.height = height;
+        $.colorbox.settings.width = width;
+
+        //if window is resized while lightbox open
+        if (resize) {
+          $.colorbox.resize({
+            'height': height,
+            'width': width
+          });
+        }
+      }
+    };
+
 	})(Drupal, jQuery);
 }

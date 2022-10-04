@@ -57,3 +57,14 @@ facet-categories:
   dependencies:
     - core/drupal
     - core/jquery
+
+paragraph.accordion:
+  version: VERSION
+  css:
+    theme:
+      css/paragraph.accordion.css: { }
+  js:
+    js/paragraph/paragraph.accordion.js: { }
+  dependencies:
+    - core/drupal
+    - core/jquery

@@ -69,8 +69,8 @@
  */
 #}
 
-<article{{ attributes.addClass('heslo-container') }}>
-  <div class="heslo truncate-wrapper">
+<article{{ attributes.addClass('word-container') }}>
+  <div class="word truncate-wrapper">
     <h1>
       <a href="{{ url }}">{% if content.year_by_date %}{{ content.year_by_date }} – {% endif %}{{ node.label }}
         {% if node.field_images is not empty %}
