@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'FontAwesome';
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'STIXGeneral';
   src: url('../../../src/fonts/stix/regular/stixgeneral-webfont.eot');
   src: local('[smiley]'), url('../../../src/fonts/stix/regular/stixgeneral-webfont.woff') format('woff'), url('../../../src/fonts/stix/regular/stixgeneral-webfont.ttf') format('truetype'), url('../../../src/fonts/stix/regular/stixgeneral-webfont.svg#webfontZXtFAA5Q') format('svg');

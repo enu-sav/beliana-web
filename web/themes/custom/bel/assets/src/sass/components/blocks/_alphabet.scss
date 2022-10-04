@@ -12,7 +12,6 @@
   }
 
   ul {
-    white-space: nowrap;
     li {
       list-style-type: none;
       margin-right: em(4, 16);
@@ -266,4 +265,10 @@
 #block-bel-alphabet .facet-item.facet-item--expanded:hover ul,
 #block-bel-alphabet .facet-item.facet-item--expanded:focus ul {
   display: block;
+}
+
+@media screen and (max-width: 768px) {
+  #block-bel-alphabet .facet-item.facet-item--expanded:hover ul {
+    display: none;
+  }
 }

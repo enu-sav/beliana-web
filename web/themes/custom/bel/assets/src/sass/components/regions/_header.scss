@@ -8,6 +8,10 @@ header {
       padding: em(5, 16) 0 em(10, 16) 0;
       border-bottom: em(1, 16) solid #555;
 
+      @media screen and (max-width: 768px) {
+        padding: em(5, 16) 0 0 0;
+      }
+
       .black-white & {
         background: #000;
       }
@@ -15,12 +19,29 @@ header {
       .sitename {
         display: none;
         color: #fff;
+
+        @media screen and (max-width: 768px) {
+          color: #fff;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 1.3em;
+          padding: em(8, 16) 0;
+          display: block;
+
+          .black-white & {
+            font-size: 1.2em;
+          }
+        }
       }
 
       .left {
         display: inline-block;
         float: left;
         width: calc(50% - #{em(10, 16)});
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
 
         h2,
         .nav-toggle {
@@ -38,6 +59,10 @@ header {
 
         h2 {
           color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+          display: none;
         }
       }
 
@@ -132,6 +157,17 @@ header {
         display: inline-block;
         float: none;
         top: em(15, 16);
+
+        @media screen and (max-width: 768px) {
+          width: 60px;
+          overflow: hidden;
+          padding: 1px 10px;
+
+          body.path-frontpage & {
+            display: none;
+          }
+        }
+
         .logo {
           top: em(-4, 16);
           position: relative;
@@ -144,11 +180,24 @@ header {
             width: em(330, 16);
             height: em(66, 16);
             filter: invert(1);
+
+            @media screen and (max-width: 768px) {
+              height: 66px;
+              margin-left: -11px;
+              margin-top: 4px;
+            }
           }
 
           img {
             height: em(66, 16);
             margin-top: em(3, 16);
+
+            @media screen and (max-width: 768px) {
+              height: 66px;
+              margin-left: -11px;
+              margin-top: 1px;
+            }
+
             .black-white & {
               display: none;
             }
@@ -162,8 +211,109 @@ header {
         display: inline-block;
         vertical-align: top;
         margin-top: em(24, 16);
+
+        @media screen and (max-width: 768px) {
+          width: calc(100% - 150px);
+          padding: 1px 0 1px 5px;
+          margin-top: 20px;
+          margin-left: 5px;
+
+          .wcag-icons {
+            top: 0;
+            right: -48px;
+            position: absolute;
+            display: block;
+            height: 100%;
+            background: #171717;
+            padding: 14px 5px 0;
+
+            .black-white & {
+              background: #000;
+            }
+          }
+
+          body.path-frontpage & {
+            width: calc(100% - 80px);
+            margin-left: 0;
+          }
+        }
+
         .smartphone-navigation {
           display: none;
+
+          @media screen and (max-width: 768px) {
+            display: block;
+
+            .fa-bars {
+              position: absolute;
+              top: rem(10);
+              right: rem(-88);
+              color: #ffa587;
+              font-size: rem(32);
+            }
+
+            .nav-collapse {
+              display: none;
+            }
+
+            &.open {
+
+              .nav-collapse.block-beliana-mobile-menu {
+                display: block;
+                max-height: initial;
+                width: calc(100% + 145px);
+                left: -55px;
+                top: 5px;
+                margin-bottom: 4px;
+                margin-top: -4px;
+                background: #171717;
+                border: none;
+                padding-top: 15px;
+                text-align: center;
+
+                .black-white & {
+                  background: #000;
+                }
+
+                ul {
+
+                  li {
+                    background: #171717;
+                    display: block;
+                    width: 100%;
+
+                    a {
+                      color: #fff;
+                      background: #171717;
+                      border: none;
+                      text-decoration: underline;
+                      padding: 0.7em 1em;
+                      float: none;
+                      width: 100%;
+                      font-size: rem(16);
+                      display: block;
+
+                      .black-white & {
+                        background: #000;
+                      }
+                    }
+
+                    .black-white & {
+                      background: #000;
+                    }
+
+                    &:first-child {
+
+                      a {
+                        padding-left: 18px;
+                        background: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
@@ -172,6 +322,11 @@ header {
         position: relative;
         display: inline-block;
         float: none;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+
         .search-help {
           position: relative;
           top: em(-19, 16);
@@ -274,6 +429,63 @@ header {
         .facets-widget-links {
           background: none;
           margin: 0;
+        }
+
+        @media screen and (max-width: em(768, 16)) {
+          &:before {
+            content: "Zobraziť abecedu";
+            text-align: left;
+            width: 100%;
+            display: block;
+            padding: 12px 0;
+            font-size: 1.3em;
+            color: #8a2807;
+
+            .black-white & {
+              color: #fff;
+            }
+          }
+
+          #block-bel-alphabet {
+
+            &:before {
+              content: "\f138";
+              font: normal normal normal 18px/1 FontAwesome;
+              position: absolute;
+              right: 0;
+              top: -36px;
+              color: #8a2807;
+
+              .black-white & {
+                color: #fff;
+              }
+            }
+
+            .facets-widget-links {
+              display: none;
+            }
+          }
+        }
+
+        &.active {
+
+          @media screen and (max-width: em(768, 16)) {
+
+            &:before {
+              content: "Skryť abecedu";
+            }
+
+            #block-bel-alphabet {
+
+              &:before {
+                content: "\f13a";
+              }
+
+              .facets-widget-links {
+                display: block;
+              }
+            }
+          }
         }
       }
     }

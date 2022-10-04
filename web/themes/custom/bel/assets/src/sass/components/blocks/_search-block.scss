@@ -8,10 +8,21 @@
       padding-left: em(45, 16);
       margin-top: em(1, 16);
       width: calc(100% - #{em(90, 16)});
+
+      @media screen and (max-width: 768px) {
+        width: calc(100% - #{rem(15)});
+        background: #fff;
+        padding: em(1, 16) 0 em(1, 16) em(5, 16);
+      }
+
       .black-white & {
         background: url('../../svg/svg-icons/search-solid-black.svg') no-repeat #fff;
         background-size: em(20, 16);
         background-position: em(14, 16);
+
+        @media screen and (max-width: 768px) {
+          background: #fff;
+        }
       }
       .search-alphabet-wrapper {
         position: relative;
@@ -102,6 +113,10 @@
     border-bottom-right-radius: 0px;
     &:hover {
       background-color: #f4f4f4;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 }

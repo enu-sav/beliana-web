@@ -1,0 +1,36 @@
+#block-bel-encyklopedia {
+  margin-bottom: em(35, 16);
+  border: none;
+
+  img {
+    width: 50%;
+
+    @media screen and (max-width: em(768, 16)) {
+      width: 80%;
+    }
+  }
+
+  .field--name-body {
+    font-size: 1.3em;
+  }
+
+  .black-white & {
+
+    img {
+      filter: invert(1);
+    }
+
+    .field--name-body {
+      font-size: 1.2em;
+    }
+  }
+
+  &.welcome {
+    text-align: center;
+    padding-bottom: em(36, 16);
+
+    p {
+      line-height: 1.45em;
+    }
+  }
+}

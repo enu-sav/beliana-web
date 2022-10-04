@@ -59,7 +59,8 @@ h5 {
 }
 
 p {
-  margin: 0 0 $small-spacing;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
 }
 
 a {
@@ -110,4 +111,13 @@ abbr {
   border-bottom: 1px dotted #666666;
   cursor: help;
   white-space: nowrap;
+}
+
+.more:hover,
+.obsah a:hover,
+.citacia h3:hover,
+.dnes a:hover,
+.najhladanejsie-hesla a:hover,
+.body-content .container a:hover {
+  text-decoration: underline;
 }
