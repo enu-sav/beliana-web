@@ -80,6 +80,7 @@ class ImageUrlFormatter extends LinkFormatter {
         '#uri' => $item->uri,
         '#attributes' => [
           'alt' => strip_tags($entity->field_description->value) ?? 'Encyclopaedia Beliana',
+          'loading' => 'lazy',
         ]
       ];
 
