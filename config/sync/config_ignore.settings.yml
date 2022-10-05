@@ -6,3 +6,4 @@ ignored_config_entities:
   - system.site
   - locale.settings
   - recaptcha.settings
+  - search_api.server.solr
