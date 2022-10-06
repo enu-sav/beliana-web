@@ -28,6 +28,13 @@ body {
   }
 }
 
+article {
+  body.page-node-type-page & {
+    width: 50%;
+    margin: rem(30) auto 0 auto;
+  }
+}
+
 // Layout Helpers
 #header,
 #footer,

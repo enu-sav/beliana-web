@@ -1,7 +1,11 @@
 footer {
-  border-top: rem(1) solid #8a2807;
+  border-top: rem(1) solid #e4e4e4;
   text-align: center;
   padding-bottom: rem(20);
+
+  body.path-frontpage & {
+    border-color: #8a2807;
+  }
 
   .black-white & {
     border-color: #fff;
@@ -22,8 +26,12 @@ footer {
 
         a, a:hover {
           font-size: rem(19.5);
-          color: #333;
+          color: $action-color;
           line-height: rem(51);
+
+          body.path-frontpage & {
+            color: #333;
+          }
 
           .black-white & {
             color: #fff;

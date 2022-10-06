@@ -3,4 +3,11 @@
   body.path-frontpage & {
     display: none;
   }
+
+  .logo img {
+
+    @media screen and (max-width: em(768, 16)) {
+      max-width: initial;
+    }
+  }
 }

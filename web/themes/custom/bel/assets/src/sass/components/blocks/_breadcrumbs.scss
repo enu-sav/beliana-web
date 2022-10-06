@@ -1,0 +1,37 @@
+#block-bel-breadcrumbs {
+  margin-top: rem(-15);
+  opacity: 1;
+  position: relative;
+
+  ol {
+    list-style: none;
+
+    .black-white & {
+      font-size: rem(13);
+    }
+
+    li {
+      display: inline-block;
+      padding-right: rem(5);
+
+      a {
+
+        &:after {
+          content: "\f0da";
+          margin-left: rem(9);
+          display: inline-block;
+          font: normal normal normal 10px/1 FontAwesome;
+        }
+      }
+
+      &:last-child {
+
+        a {
+           &:after {
+             display: none;
+           }
+        }
+      }
+    }
+  }
+}
