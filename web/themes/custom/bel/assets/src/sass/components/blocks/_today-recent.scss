@@ -1,0 +1,134 @@
+#block-bel-views-block-today-block-1 {
+
+  @media screen and (min-width: em(769, 16)) {
+    width: 35%;
+    padding-right: rem(15);
+    float: left;
+    padding-bottom: rem(38);
+  }
+
+  > h2 {
+    color: #333;
+    font-size: rem(19.2);
+    font-weight: normal;
+    margin-bottom: rem(10);
+    line-height: normal;
+
+    .black-white & {
+      color: #fff;
+      font-size: rem(14.3);
+    }
+  }
+
+  > div {
+
+    @media screen and (min-width: em(769, 16)) {
+      overflow: hidden;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-size: rem(25.6);
+        color: #8a2807;
+        margin: rem(1) 0 rem(2) 0;
+
+        a {
+          line-height: rem(29.25);
+        }
+
+        .black-white & {
+          color: #fff;
+          font-size: rem(19.5);
+        }
+      }
+    }
+
+    .more-link a {
+      display: inline-block;
+      margin-top: rem(30);
+      text-decoration: underline;
+      padding-right: rem(13);
+      line-height: rem(24);
+
+      .black-white & {
+        font-size: rem(13);
+        line-height: rem(19.5);
+      }
+    }
+  }
+}
+
+#block-bel-views-block-content-recent-block-2 {
+  margin-top: rem(40);
+  margin-bottom: rem(70);
+
+  @media screen and (min-width: em(769, 16)) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > h2 {
+    color: #333;
+    font-size: rem(19.2);
+    font-weight: normal;
+    margin-bottom: rem(10);
+
+    .black-white & {
+      color: #fff;
+      font-size: rem(14.3);
+    }
+  }
+
+  > div {
+
+    @media screen and (min-width: em(769, 16)) {
+      overflow: hidden;
+      margin-bottom: rem(20);
+    }
+  }
+
+  .item-list {
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        padding: 0 rem(10) 0 0;
+        font-size: rem(25.6);
+        margin: rem(1) 0;
+
+        .black-white & {
+          color: #fff;
+          font-size: rem(19.5);
+        }
+
+        a {
+          display: block;
+          line-height: rem(37);
+          margin-left: rem(1);
+          margin-top: rem(1);
+        }
+      }
+    }
+  }
+
+  .more-link a {
+    display: inline-block;
+    margin-top: rem(30);
+    text-decoration: underline;
+    padding-right: rem(13);
+    line-height: rem(24);
+
+    .black-white & {
+      font-size: rem(13);
+      line-height: rem(19.5);
+    }
+  }
+}

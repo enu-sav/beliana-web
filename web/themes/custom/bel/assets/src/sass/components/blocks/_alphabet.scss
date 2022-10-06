@@ -12,7 +12,13 @@
   }
 
   ul {
+
+    .black-white & {
+      font-size: rem(13);
+    }
+
     li {
+      font-size: rem(16);
       list-style-type: none;
       margin-right: em(4, 16);
       &:last-of-type {
@@ -70,7 +76,7 @@
             line-height: em(33, $fz);
 
             .black-white & {
-              $fz: 19;
+              $fz: 15.6;
               font-size: rem($fz);
               padding: em(4, $fz) 0 em(2, $fz) em(15, $fz);
               line-height: em(33, $fz);
@@ -267,7 +273,7 @@
   display: block;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: em(768, 16)) {
   #block-bel-alphabet .facet-item.facet-item--expanded:hover ul {
     display: none;
   }

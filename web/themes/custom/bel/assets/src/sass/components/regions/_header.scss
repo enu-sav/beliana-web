@@ -8,7 +8,7 @@ header {
       padding: em(5, 16) 0 em(10, 16) 0;
       border-bottom: em(1, 16) solid #555;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: em(768, 16)) {
         padding: em(5, 16) 0 0 0;
       }
 
@@ -20,7 +20,7 @@ header {
         display: none;
         color: #fff;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: em(768, 16)) {
           color: #fff;
           text-align: center;
           text-transform: uppercase;
@@ -29,7 +29,7 @@ header {
           display: block;
 
           .black-white & {
-            font-size: 1.2em;
+            font-size: rem(15.6);
           }
         }
       }
@@ -39,7 +39,7 @@ header {
         float: left;
         width: calc(50% - #{em(10, 16)});
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: em(768, 16)) {
           display: none;
         }
 
@@ -61,7 +61,7 @@ header {
           color: #fff;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: em(768, 16)) {
           display: none;
         }
       }
@@ -158,7 +158,7 @@ header {
         float: none;
         top: em(15, 16);
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: em(768, 16)) {
           width: 60px;
           overflow: hidden;
           padding: 1px 10px;
@@ -181,7 +181,7 @@ header {
             height: em(66, 16);
             filter: invert(1);
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: em(768, 16)) {
               height: 66px;
               margin-left: -11px;
               margin-top: 4px;
@@ -192,7 +192,7 @@ header {
             height: em(66, 16);
             margin-top: em(3, 16);
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: em(768, 16)) {
               height: 66px;
               margin-left: -11px;
               margin-top: 1px;
@@ -212,7 +212,7 @@ header {
         vertical-align: top;
         margin-top: em(24, 16);
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: em(768, 16)) {
           width: calc(100% - 150px);
           padding: 1px 0 1px 5px;
           margin-top: 20px;
@@ -241,7 +241,7 @@ header {
         .smartphone-navigation {
           display: none;
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: em(768, 16)) {
             display: block;
 
             .fa-bars {
@@ -250,6 +250,12 @@ header {
               right: rem(-88);
               color: #ffa587;
               font-size: rem(32);
+
+              .black-white & {
+                font-size: rem(26);
+                top: rem(14);
+                color: #fff;
+              }
             }
 
             .nav-collapse {
@@ -323,7 +329,7 @@ header {
         display: inline-block;
         float: none;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: em(768, 16)) {
           display: none;
         }
 
@@ -365,6 +371,7 @@ header {
             width: 100%;
             .black-white & {
               background: #fff;
+              font-size: rem(13);
             }
 
             &.open {
@@ -443,6 +450,7 @@ header {
 
             .black-white & {
               color: #fff;
+              font-size: rem(16.9);
             }
           }
 

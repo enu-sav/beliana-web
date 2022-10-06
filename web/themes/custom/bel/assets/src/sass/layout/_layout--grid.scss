@@ -9,8 +9,7 @@ html {
   box-sizing: inherit;
 }
 
-html,
-body {
+html {
   height: 100%;
 }
 
@@ -22,6 +21,11 @@ body {
   margin: auto;
   max-width: $max-screen;
   padding: 0 em(20, 16);
+
+  body.path-frontpage #content-main &,
+  body.path-frontpage footer & {
+    max-width: rem(1170);
+  }
 }
 
 // Layout Helpers

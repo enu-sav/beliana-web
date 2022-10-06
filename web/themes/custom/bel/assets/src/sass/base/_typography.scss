@@ -4,10 +4,9 @@ html {
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
-  line-height: $base-line-height;
-  letter-spacing: $base-letter-spacing;
+  line-height: normal;
+  letter-spacing: normal;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   body.path-frontpage {
     background: #ffa587;
@@ -66,12 +65,19 @@ p {
 a {
   color: $action-color;
   text-decoration: none;
-  transition: color $base-duration $base-timing;
+
+  .black-white & {
+    color: #fff;
+    text-decoration: underline;
+  }
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+
+    .black-white & {
+      color: #fff;
+    }
   }
 }
 
