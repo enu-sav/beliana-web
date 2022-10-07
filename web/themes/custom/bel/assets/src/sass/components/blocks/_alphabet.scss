@@ -46,6 +46,7 @@
           font-size: rem($fz);
           line-height: em(55, $fz);
           border: em(1, $fz) solid transparent;
+          color: #fff;
         }
       }
 
@@ -140,53 +141,14 @@
   }
 }
 
-.view-word-search-page ul.pager > li {
-  width: 150px;
-  margin: 0 auto;
-}
-
-.view-word-search-page ul.pager li a {
-  line-height: 55px;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.6em;
-}
-.black-white .view-word-search-page ul.pager li a {
-  font-size: 1.5em;
-}
-.view-word-search-page ul.pager li a {
-  font-weight: bold;
-  font-size: 1.3em;
-}
-.black-white .view-word-search-page ul.pager li a {
-  font-size: 1.2em;
-}
-
-.view-word-search-page ul.pager li a {
-  width: 100%;
-  height: 100%;
-  display: block;
-  color: #8a2807;
-  border: 1px solid transparent;
-  -webkit-border-top-left-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  -moz-border-radius-topleft: 0;
-  -moz-border-radius-topright: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.black-white #block-bel-alphabet ul li a,
-.black-white .view-word-search-page ul.pager li a {
+.black-white #block-bel-alphabet ul li a {
   color: #fff;
 }
 
 #block-bel-alphabet ul li:hover a,
 #block-bel-alphabet ul li:focus a,
 #block-bel-alphabet ul li a:hover,
-#block-bel-alphabet ul li a:focus,
-.view-word-search-page ul.pager li a:hover,
-.view-word-search-page ul.pager li a:focus {
+#block-bel-alphabet ul li a:focus {
   cursor: pointer;
   color: #8a2807;
   background-color: #fae1d9 !important;
@@ -199,9 +161,7 @@
 .black-white #block-bel-alphabet ul li:hover a,
 .black-white #block-bel-alphabet ul li:hover a.open,
 .black-white #block-bel-alphabet ul li:focus a,
-.black-white #block-bel-alphabet ul li:focus a.open,
-.black-white .view-word-search-page ul.pager li a:hover,
-.black-white .view-word-search-page ul.pager li a:focus {
+.black-white #block-bel-alphabet ul li:focus a.open {
   background-color: #fff !important;
   color: #000;
 }
