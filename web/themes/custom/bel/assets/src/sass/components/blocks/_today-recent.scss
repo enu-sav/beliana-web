@@ -64,11 +64,9 @@
 
 #block-bel-views-block-content-recent-block-2 {
   margin-top: rem(40);
-  margin-bottom: rem(70);
 
   @media screen and (min-width: em(769, 16)) {
     margin-top: 0;
-    margin-bottom: 0;
   }
 
   > h2 {

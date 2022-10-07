@@ -25,6 +25,10 @@ html {
   }
 }
 
+h1, h2 {
+  color: $action-color;
+}
+
 h1,
 h2,
 h3,
@@ -33,16 +37,20 @@ h5,
 h6 {
   font-family: $heading-font-family;
   font-size: $base-font-size;
-  line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+  line-height: normal;
+  margin: 0;
+
+  .black-white & {
+    color: $white;
+  }
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: rem(26);
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: rem(20);
 }
 
 h3 {
@@ -58,8 +66,14 @@ h5 {
 }
 
 p {
+  font-size: rem(16);
+  line-height: normal;
   margin-top: 0.75em;
   margin-bottom: 0.75em;
+
+  .black-white & {
+    font-size: rem(13);
+  }
 }
 
 a {
@@ -126,4 +140,34 @@ abbr {
 .najhladanejsie-hesla a:hover,
 .body-content .container a:hover {
   text-decoration: underline;
+}
+
+// Table styles
+table {
+  table-layout: fixed;
+  font-size: rem(16);
+
+  .black-white & {
+    font-size: rem(13);
+  }
+
+  @media screen and (max-width: em(768, 16)) {
+    font-size: rem(14);
+
+    .black-white & {
+      font-size: rem(14);
+    }
+  }
+
+  article .field--name-body & {
+
+    tr td {
+      vertical-align: top;
+      padding: 0 rem(2);
+    }
+  }
+
+  tr td:first-child {
+    font-weight: bold;
+  }
 }

@@ -15,6 +15,9 @@ html {
 
 body {
   margin: 0;
+  &.role--anonymous {
+    height: 100%;
+  }
 }
 
 .container {
@@ -32,6 +35,10 @@ article {
   body.page-node-type-page & {
     width: 50%;
     margin: rem(30) auto 0 auto;
+
+    @media screen and (max-width: em(768, 16)) {
+      width: 100%;
+    }
   }
 }
 

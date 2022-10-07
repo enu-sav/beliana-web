@@ -2,17 +2,18 @@ footer {
   border-top: rem(1) solid #e4e4e4;
   text-align: center;
   padding-bottom: rem(20);
-
-  body.path-frontpage & {
-    border-color: #8a2807;
-  }
+  margin-top: rem(70);
 
   .black-white & {
     border-color: #fff;
   }
 
-  @media screen and (min-width: em(769, 16)) {
-    margin-top: rem(70);
+  body.path-frontpage & {
+    border-color: #8a2807;
+
+    .black-white & {
+      border-color: #fff;
+    }
   }
 
   .footer-content {
@@ -29,14 +30,18 @@ footer {
           color: $action-color;
           line-height: rem(51);
 
-          body.path-frontpage & {
-            color: #333;
-          }
-
           .black-white & {
             color: #fff;
             font-size: rem(18.2);
             line-height: rem(47);
+          }
+
+          body.path-frontpage & {
+            color: #333;
+
+            .black-white & {
+              color: #fff;
+            }
           }
         }
 
