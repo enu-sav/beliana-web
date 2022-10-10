@@ -1,18 +1,41 @@
 footer {
-  border-top: rem(1) solid #e4e4e4;
   text-align: center;
   padding-bottom: rem(20);
-  margin-top: rem(70);
+  padding-top: rem(70);
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: rem(70);
+    width: 100%;
+    height: rem(1);
+    border-top: rem(1) solid #e4e4e4;
+  }
 
   .black-white & {
-    border-color: #fff;
+    background-color: #000;
+
+    &:before {
+      border-color: #fff;
+    }
   }
 
   body.path-frontpage & {
-    border-color: #8a2807;
+    background-color: #ffa587;
+
+    &:before {
+      border-color: #8a2807;
+    }
 
     .black-white & {
-      border-color: #fff;
+      background-color: #000;
+
+      &:before {
+        border-color: #fff;
+      }
     }
   }
 

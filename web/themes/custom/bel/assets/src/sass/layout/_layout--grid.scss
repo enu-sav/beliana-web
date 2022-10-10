@@ -9,15 +9,12 @@ html {
   box-sizing: inherit;
 }
 
-html {
+html, body {
   height: 100%;
 }
 
 body {
   margin: 0;
-  &.role--anonymous {
-    height: 100%;
-  }
 }
 
 .container {
@@ -28,6 +25,13 @@ body {
   body.path-frontpage #content-main &,
   body.path-frontpage footer & {
     max-width: rem(1170);
+  }
+}
+
+body.path-frontpage #content-main {
+  background-color: #ffa587;
+  .black-white & {
+    background-color: #000;
   }
 }
 
