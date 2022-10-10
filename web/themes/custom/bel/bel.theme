@@ -112,7 +112,7 @@ function bel_preprocess_facets_item_list(&$variables) {
           $item['value']['#url']->setOptions($options);
         }
         break;
-      case 'kategorie':
+      case 'categories':
         foreach ($variables['items'] as &$item) {
           $collapse = TRUE;
 
