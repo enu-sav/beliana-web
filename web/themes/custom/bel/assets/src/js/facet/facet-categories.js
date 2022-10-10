@@ -47,6 +47,7 @@
             Drupal.facets.makeCheckbox = function () {
               var $link = $(this);
               var tabindex_label = -1;
+              var aria_expanded = true;
               var active = $link.hasClass('is-active');
               var collapsed = $link.parent().hasClass('facet-item--collapsed');
               var description = $link.html();
@@ -55,9 +56,10 @@
               var count = $link.find('.facet-item__count').attr('data-count');
 
               $link.parent().find('.facets-widget').attr('id', id).attr('role', 'region');
-              var aria_label = Drupal.t('aria-label category @category, number of products: @count',  {'@category': $link.find('.facet-item__value').attr('data-value'), '@count': count});
+              var aria_label = Drupal.t('@category, number of products: @count',  {'@category': $link.find('.facet-item__value').attr('data-value'), '@count': count});
               if (collapsed) {
                 tabindex_label = 0;
+                aria_expanded = false;
               }
 
               var checkbox = $('<input type="checkbox" class="facets-checkbox">')
@@ -66,7 +68,7 @@
                 .attr('aria-label', aria_label)
                 .data($link.data())
                 .data('facetsredir', href);
-              var label = $('<div aria-controls="' + id + '" tabindex="' + tabindex_label + '" role="button" class="sub-categories" aria-expanded="false" aria-label="' + aria_label + '">' + description + '</div>');
+              var label = $('<div aria-controls="' + id + '" tabindex="' + tabindex_label + '" role="button" class="sub-categories" aria-expanded="' + aria_expanded + '" aria-label="' + aria_label + '">' + description + '</div>');
 
               checkbox.on('change.facets', function (e) {
                 e.preventDefault();
