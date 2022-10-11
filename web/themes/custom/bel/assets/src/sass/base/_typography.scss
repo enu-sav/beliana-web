@@ -228,3 +228,14 @@ nav.pager {
   height: rem(1);
   word-wrap: normal;
 }
+
+button, input.button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
+}
