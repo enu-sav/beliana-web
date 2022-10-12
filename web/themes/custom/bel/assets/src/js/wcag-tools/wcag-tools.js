@@ -54,7 +54,7 @@
     },
   };
 
-  Drupal.behaviors.click_change_format_zoznam_tools = {
+  Drupal.behaviors.click_change_format_list_tools = {
     attach: function (context, settings) {
       $('.list-tools .truncate-button').on('click', 'li a', function () {
         var $item = $(this);
