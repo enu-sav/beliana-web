@@ -1,0 +1,293 @@
+article.word-container {
+  width: 75%;
+  margin: rem(30) auto 0 auto;
+
+  @media screen and (max-width: em(768, 16)) {
+    width: 100%;
+  }
+
+  .word {
+
+    h1 {
+      font-size: rem(40);
+      color: #333;
+      font-weight: normal;
+
+      .black-white & {
+        color: $white;
+        font-size: rem(31.2);
+      }
+    }
+
+    .con-wrap {
+
+      @media screen and (max-width: em(768, 16)) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
+    .node {
+
+      &__author {
+
+        h2 {
+
+          a {
+            color: #333;
+            font-size: rem(16);
+            font-weight: normal;
+
+            .black-white & {
+              color: $white;
+            }
+          }
+        }
+
+        .field--name-field-meno,
+        .field--name-field-priezvisko {
+          display: none;
+        }
+      }
+
+      &__content {
+        font-size: rem(20);
+        line-height: rem(32.5);
+        text-align: justify;
+        min-height: rem(48);
+
+        .black-white & {
+          font-size: rem(19);
+          line-height: rem(30.8883);
+        }
+
+        p {
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
+
+      &__sidebar {
+        font-size: rem(16);
+
+        @media screen and (max-width: em(768, 16)) {
+          width: 100%;
+        }
+
+        @media screen and (min-width: em(769, 16)) {
+          width: 35%;
+          float: right;
+        }
+
+        .word-illustration {
+          margin-top: rem(20);
+          margin-left: rem(30);
+          width: calc(100% - #{rem(30)});
+
+          .view-mode-in-word {
+            margin-bottom: rem(30);
+            border: rem(1) solid #e5e5e5;
+            padding: rem(10) rem(10) rem(15) rem(10);
+
+            .black-white {
+              border-color: #ccc;
+            }
+
+            img {
+              max-width: 100%;
+              height: auto;
+              margin-top: rem(10);
+            }
+
+            .field--name-field-description {
+              text-align: center;
+              padding-top: rem(5);
+
+              p {
+                padding: 0;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .meta-wrapper {
+
+      p.last-update {
+        color: #636363;
+        font-size: rem(15);
+        font-style: normal;
+        margin: 0;
+
+        .black-white & {
+          color: $white;
+        }
+      }
+
+      .citation {
+        font-size: rem(16);
+
+        h3 {
+          color: #8a2807;
+          opacity: .6;
+          font-weight: 700;
+          font-size: rem(18);
+          background: url("../../../dist/img/arrow_sprite.png") no-repeat;
+          width: rem(17);
+          height: rem(17);
+          display: inline-block;
+          padding-left: rem(26);
+          text-decoration: none;
+          line-height: rem(16);
+          cursor: pointer;
+          margin-top: rem(26);
+          margin-bottom: rem(8);
+
+          .black-white & {
+            background: url("../../../dist/img/arrow_sprite_white.png") no-repeat;
+            color: $white;
+            text-decoration: underline;
+            opacity: 1;
+          }
+
+          &:hover {
+            text-decoration: underline;
+
+            .black-white & {
+              outline: rem(1) solid #ccc;
+              width: auto;
+            }
+          }
+        }
+
+        #dialog-desc {
+          display: none;
+          font-size: rem(13);
+        }
+
+        &.open {
+
+          h3 {
+            background-position: 0 rem(-17);
+          }
+
+          #dialog-desc {
+            display: block;
+          }
+        }
+
+        @media screen and (max-width: em(768, 16)) {
+          display: none;
+        }
+      }
+
+      .word-tools {
+        font-size: rem(16);
+        margin-top: rem(23);
+
+        .share {
+          height: rem(30);
+          display: inline-block;
+          white-space: nowrap;
+          font-size: rem(13);
+          line-height: rem(30);
+          position: relative;
+          margin: rem(10) 0 0 0;
+
+          ul.dropdown {
+            display: inline-block;
+            list-style: none;
+            font-weight: normal;
+            z-index: 100;
+
+            li {
+              border: rem(1) solid #d5d5d5;
+              -webkit-border-radius: rem(2);
+              -moz-border-radius: rem(2);
+              border-radius: rem(2);
+              background: #f5f5f5;
+              height: rem(30);
+              display: inline-block;
+              white-space: nowrap;
+              font-size: rem(13);
+              line-height: rem(30);
+              color: #494949;
+              text-decoration: none;
+              margin-right: rem(6);
+
+              &:hover, &:focus {
+                background-color: #e6e6e6;
+
+                a {
+                  text-decoration: underline;
+                }
+              }
+
+              .black-white & {
+                background: transparent;
+                border-color: transparent;
+                text-decoration: underline;
+
+                &:hover, &:focus {
+                  border-color: #ccc;
+                  background-color: transparent;
+                }
+              }
+
+              a {
+                display: block;
+                text-decoration: none;
+                padding: 0 rem(10);
+
+                .black-white & {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+
+        a.print,
+        a.comment {
+          border: rem(1) solid #d5d5d5;
+          -webkit-border-radius: rem(2);
+          -moz-border-radius: rem(2);
+          border-radius: rem(2);
+          height: rem(30);
+          display: inline-block;
+          white-space: nowrap;
+          font-size: rem(13);
+          line-height: 30px;
+          text-decoration: none;
+          padding: 0 rem(10);
+          margin-right: rem(6);
+
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+
+          .black-white & {
+            background: transparent;
+            border-color: transparent;
+            text-decoration: underline;
+
+            &:hover, &:focus {
+              border-color: #ccc;
+            }
+          }
+
+          i {
+            font-size: rem(16);
+            margin-right: rem(5);
+          }
+          @media screen and (max-width: em(768, 16)) {
+            margin: rem(10) 0 0 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

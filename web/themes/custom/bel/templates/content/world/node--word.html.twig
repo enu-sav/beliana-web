@@ -12,41 +12,33 @@
   <article{{ attributes.addClass('word-container') }}>
     <div class="word{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
       <h1>{{ node.label }}</h1>
-      <div class="autor">
+      <div class="node__author">
         {{ content.field_autor }}
       </div>
 
-      <div class="sidebar-wrapper mobile">
-        <div class="structure hidden"></div>
-      </div>
+      <div class="con-wrap">
+        <div class="node__sidebar">
+          {% if (node.field_images is not empty) or (node.field_table is not empty) %}
+            <div class="word-illustration">
+              {% set images_count = content.field_images['#items']|length %}
+              {% for i in 0..images_count %}
+                {% if i == node.field_table_weight.value %}
+                  {{ content.field_table }}
+                {% endif %}
 
-      <div class="obsah mobile">
-        {{ content.body }}
-      </div>
+                {{ content.field_images[i] }}
+              {% endfor %}
 
-      <div class="sidebar-wrapper desktop">
-        <div class="structure hidden"></div>
-
-        {% if (node.field_images is not empty) or (node.field_table is not empty) %}
-          <div class="word-illustration">
-            {% set images_count = content.field_images['#items']|length %}
-            {% for i in 0..images_count %}
-              {% if i == node.field_table_weight.value %}
+              {% if node.field_table_weight.value > images_count %}
                 {{ content.field_table }}
               {% endif %}
+            </div>
+          {% endif %}
+        </div>
 
-              {{ content.field_images[i] }}
-            {% endfor %}
-
-            {% if node.field_table_weight.value > images_count %}
-              {{ content.field_table }}
-            {% endif %}
-          </div>
-        {% endif %}
-      </div>
-
-      <div class="obsah desktop">
-        {{ content.body }}
+        <div class="node__content">
+          {{ content.body }}
+        </div>
       </div>
 
       <div class="meta-wrapper">
