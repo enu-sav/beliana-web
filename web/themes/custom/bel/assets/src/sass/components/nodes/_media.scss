@@ -1,0 +1,161 @@
+article.media.media-image {
+
+  &.view-mode-full {
+    width: 75%;
+    margin: 0 auto;
+
+    @media screen and (max-width: em(768, 16)) {
+      width: 100%;
+    }
+
+    .left {
+      width: 50%;
+      float: left;
+
+      @media screen and (max-width: em(892, 16)) {
+        width: 100%;
+      }
+    }
+
+    .right {
+      width: 50%;
+      float: right;
+
+      @media screen and (max-width: em(892, 16)) {
+        width: 100%;
+        margin-top: rem(10);
+      }
+    }
+
+    .metadata {
+      font-size: rem(17);
+      font-family: 'arno-pro','STIXGeneral','Asana Math','Arial Unicode MS','Lucida Grande','Liberation Sans','Helvetica','Arial',sans-serif;
+
+      @media screen and (min-width: em(892, 16)) {
+        padding-right: rem(15);
+      }
+
+      .black-white & {
+        font-family: 'Open Sans',sans-serif;
+        font-size: rem(16);
+      }
+
+      .title {
+        font-weight: normal;
+        font-size: rem(23);
+        font-family: 'Open Sans',sans-serif;
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      .field--name-field-description {
+        padding: rem(20) 0;
+
+        p {
+          margin: 0;
+
+          .black-white & {
+            font-size: rem(16);
+          }
+        }
+      }
+
+      .dalsie-info {
+
+        h3 {
+          font-size: rem(19.89);
+
+          .black-white & {
+            font-family: 'Open Sans',sans-serif;
+          }
+
+          a {
+            background: url("../../../dist/img/arrow_sprite.png") no-repeat;
+            height: rem(17);
+            display: inline-block;
+            padding-left: rem(26);
+            margin: 0;
+            text-decoration: none !important;
+            font-weight: 700;
+            font-size: rem(18);
+            line-height: rem(20);
+            opacity: 0.5;
+
+            .black-white & {
+              background: url("../../../dist/img/arrow_sprite_white.png") no-repeat;
+              opacity: 1;
+              font-size: rem(17);
+              color: $white;
+            }
+          }
+
+          &.open {
+
+            a {
+              background-position: 0 rem(-17);
+            }
+          }
+        }
+
+        > div {
+          padding: rem(15) 0 rem(15) rem(27);
+
+          .field {
+
+            &__label {
+              display: inline-block;
+              font-weight: bold;
+
+              &:after {
+                content: ":";
+              }
+            }
+
+            &__item {
+              display: inline-block;
+
+              a {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      .back {
+        font-family: 'Open Sans',sans-serif;
+        border: rem(1) solid #d5d5d5;
+        -webkit-border-radius: rem(2);
+        -moz-border-radius: rem(2);
+        border-radius: rem(2);
+        background: #f5f5f5;
+        display: inline-block;
+        white-space: nowrap;
+        font-size: rem(13);
+        line-height: 30px;
+        text-decoration: none;
+        padding: 0 rem(10) rem(2) rem(10);
+        margin: rem(15) 0 0 0;
+
+        @media screen and (max-width: em(768, 16)) {
+          width: 100%;
+          text-align: center;
+          margin-bottom: rem(15);
+          padding-right: rem(15);
+        }
+
+        .black-white & {
+          background-color: transparent;
+          border-color: $white;
+          color: $white;
+        }
+
+        &:hover, &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
