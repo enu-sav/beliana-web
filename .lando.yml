@@ -9,6 +9,21 @@ config:
   xdebug: false
   config:
     php: .lando/php.ini
+database:
+  type: compose
+  services:
+    image: mariadb:latest
+    command: docker-entrypoint.sh mariadbd
+    volumes:
+      - data_volume:/var/lib/mysql/data
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: drupal9
+      MARIADB_DATABASE: drupal9
+      MARIADB_USER: drupal9
+      MARIADB_PASSWORD: drupal9
+  volumes:
+    data_volume:
 services:
   appserver:
     overrides:
