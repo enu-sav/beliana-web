@@ -1,5 +1,5 @@
-uuid: fe724077-28d0-4f01-8a24-11f94f6a724d
-langcode: en
+uuid: d5f07a95-3e43-4bf7-8479-7479d8014725
+langcode: sk
 status: true
 dependencies:
   config:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - bel
-id: bel_views_block__content_recent_block_2
+id: views_block__content_recent_block_latest_words
 theme: bel
 region: content
 weight: -2
 provider: null
-plugin: 'views_block:content_recent-block_2'
+plugin: 'views_block:content_recent-block_latest_words'
 settings:
-  id: 'views_block:content_recent-block_2'
+  id: 'views_block:content_recent-block_latest_words'
   label: 'Nové heslá'
   label_display: visible
   provider: views

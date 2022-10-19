@@ -1,5 +1,5 @@
-uuid: 46ee661d-cde2-4d44-bad7-28f73ade9400
-langcode: en
+uuid: ba6a3d44-1a5c-4302-935a-65107a124b6a
+langcode: sk
 status: true
 dependencies:
   config:
@@ -9,18 +9,18 @@ dependencies:
     - views
   theme:
     - bel
-id: bel_views_block__today_block_1
+id: views_block__today_block_anniversaries
 theme: bel
 region: content
 weight: -3
 provider: null
-plugin: 'views_block:today-block_1'
+plugin: 'views_block:today-block_anniversaries'
 settings:
-  id: 'views_block:today-block_1'
-  label: ''
+  id: 'views_block:today-block_anniversaries'
+  label: Výročia
   label_display: visible
   provider: views
-  views_label: ''
+  views_label: Výročia
   items_per_page: none
 visibility:
   request_path:

@@ -308,18 +308,20 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Blok
+  block_latest_content:
+    id: block_latest_content
+    display_title: 'Blok: Latest content'
     display_plugin: block
     position: 1
     display_options:
       defaults:
         css_class: true
         header: true
-      display_description: ''
+      display_description: 'Blok: Latest content'
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -329,9 +331,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_2:
-    id: block_2
-    display_title: 'Heslá blok'
+  block_latest_words:
+    id: block_latest_words
+    display_title: 'Block: Latest words'
     display_plugin: block
     position: 2
     display_options:
@@ -518,13 +520,16 @@ display:
         fields: false
         filters: false
         filter_groups: false
-      display_description: ''
+      display_description: 'Block: Latest words'
       use_more: true
       use_more_always: true
       use_more_text: 'Zobraziť viac nových hesiel'
       link_display: page_1
       link_url: ''
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -534,9 +539,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_1:
-    id: page_1
-    display_title: Heslá
+  page_words:
+    id: page_words
+    display_title: 'Page: Words'
     display_plugin: page
     position: 3
     display_options:
@@ -695,7 +700,7 @@ display:
         filter_groups: false
         header: false
       css_class: view-word-search-page
-      display_description: ''
+      display_description: 'Page: Words'
       header:
         area_text_custom:
           id: area_text_custom
@@ -708,7 +713,10 @@ display:
           empty: false
           content: 'Zobrazených 50 najnovších hesiel'
           tokenize: false
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: najnovsie
     cache_metadata:
       max-age: -1
