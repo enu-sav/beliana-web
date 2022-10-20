@@ -45,7 +45,6 @@ wcag-tools:
   header: true
   js:
     assets/dist/libs/accessible/jquery-accessible-menu.js: { async: true }
-    assets/dist/libs/accessible/button-links.js: { }
     assets/dist/js/wcag-tools/wcag-tools.js: { async: true }
   dependencies:
     - core/drupal
@@ -60,13 +59,10 @@ facet-categories:
     - core/drupal
     - core/jquery
 
-paragraph.accordion:
+wcag-tools.media.more-info:
   version: VERSION
-  css:
-    theme:
-      css/paragraph.accordion.css: { }
   js:
-    js/paragraph/paragraph.accordion.js: { }
+    assets/dist/js/wcag-tools/wcag-tools.media.more-info.js: { }
   dependencies:
     - core/drupal
     - core/jquery

@@ -62,16 +62,18 @@ article.media.media-image {
         }
       }
 
-      .dalsie-info {
+      .more-info {
 
         h3 {
           font-size: rem(19.89);
+          cursor: pointer;
+          color: #8a2807;
 
           .black-white & {
             font-family: 'Open Sans',sans-serif;
           }
 
-          a {
+          span {
             background: url("../../../dist/img/arrow_sprite.png") no-repeat;
             height: rem(17);
             display: inline-block;
@@ -90,10 +92,11 @@ article.media.media-image {
               color: $white;
             }
           }
+        }
 
-          &.open {
-
-            a {
+        &.open {
+          h3 {
+            span {
               background-position: 0 rem(-17);
             }
           }

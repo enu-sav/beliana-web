@@ -7,9 +7,12 @@
 
       {{ content.field_description }}
 
-      <div class="dalsie-info" data-collapse>
-        <h3>Ďalšie informácie o ilustrácii</h3>
-        <div>{{ content|without('field_image')|without('field_obrazok_odkaz')|without('field_description') }}</div>
+      <div class="more-info open">
+        <h3 aria-label="{{ 'aria-label-you-are-in-the-section-more-info'|t }}" aria-controls="dialog-desc"
+            aria-expanded="true">
+          <span>Ďalšie informácie o ilustrácii</span>
+        </h3>
+        <div class="detail">{{ content|without('field_image')|without('field_obrazok_odkaz')|without('field_description') }}</div>
       </div>
 
       {% if back_url %}
@@ -21,5 +24,6 @@
       {{ content.field_image }}
       {{ content.field_obrazok_odkaz }}
     </div>
+    {{ attach_library('bel/wcag-tools.media.more-info') }}
   {% endif %}
 {% endblock %}
