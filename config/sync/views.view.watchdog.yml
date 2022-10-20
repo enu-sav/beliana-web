@@ -435,7 +435,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 50
@@ -444,6 +444,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« Prvý'
+            last: Koniec
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -452,6 +454,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -699,7 +702,10 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: admin/reports/dblog
     cache_metadata:
       max-age: -1
