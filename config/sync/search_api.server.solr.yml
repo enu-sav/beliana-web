@@ -41,7 +41,7 @@ backend_config:
   environment: default
   connector: standard
   connector_config:
-    scheme: http
+    scheme: https
     host: web-04.beliana.sav.sk
     port: 443
     path: ''
