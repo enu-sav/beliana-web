@@ -244,3 +244,20 @@ button, input.button {
   font-family: "Font Awesome 6 Free";
   font-weight: 400;
 }
+
+.truncate-wrapper {
+  display: block;
+  max-height: rem(130);
+  position: relative;
+  overflow: hidden;
+}
+
+#gradient {
+  display: none;
+  width: 100%;
+  height: rem(35);
+  background: url("../../../dist/img/bg-gradient.png") repeat-x;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

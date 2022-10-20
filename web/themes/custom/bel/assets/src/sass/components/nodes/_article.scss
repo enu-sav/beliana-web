@@ -6,16 +6,68 @@ article.word-container {
     width: 100%;
   }
 
+  .view-word-search-page & {
+    width: 100%;
+  }
+
   .word {
+    border: none;
+
+    #gradient {
+      bottom: rem(-4);
+    }
 
     h1 {
       font-size: rem(40);
       color: #333;
       font-weight: normal;
 
+      a {
+
+        .view-word-search-page &,
+        .view-najcitanejsie-hesla &{
+          text-decoration: none;
+          font-size: rem(16);
+          font-weight: 700;
+        }
+
+      }
+
       .black-white & {
         color: $white;
         font-size: rem(31.2);
+      }
+    }
+
+    h2 {
+
+      body.path-rozsirene-vyhladavanie .view-word-search-page & {
+        font-size: em(27.2, 16);
+      }
+
+      a {
+        font-size: rem(22.8);
+        margin-left: rem(1);
+        font-weight: normal;
+
+        body.path-rozsirene-vyhladavanie .view-word-search-page &  {
+          font-size: 1.1em;
+        }
+      }
+    }
+
+    .obsah {
+      font-family: 'arno-pro','STIXGeneral','Asana Math','Arial Unicode MS','Lucida Grande','Liberation Sans','Helvetica','Arial',sans-serif;
+      min-height: rem(48);
+      text-align: justify;
+      line-height: rem(32.5);
+      font-size: rem(20);
+
+      p {
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        text-align: inherit;
       }
     }
 
@@ -288,6 +340,10 @@ article.word-container {
           }
         }
       }
+    }
+
+    &.truncate-wrapper {
+
     }
   }
 }

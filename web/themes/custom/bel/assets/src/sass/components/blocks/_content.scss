@@ -3,5 +3,10 @@
   body.path-rozsirene-vyhladavanie & {
     width: calc(100% - #{em(280, 16)});
     float: right;
+
+    @media screen and (max-width: em(768, 16)) {
+      width: 100%;
+      float: none;
+    }
   }
 }

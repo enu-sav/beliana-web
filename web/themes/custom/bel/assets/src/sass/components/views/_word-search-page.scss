@@ -1,8 +1,18 @@
 .view-word-search-page {
+  width: 50%;
+  margin: 0 auto;
+
+  @media screen and (max-width: em(768, 16)) {
+    width: 100%;
+  }
 
   body.path-rozsirene-vyhladavanie & {
     width: 70%;
     margin: rem(28) 0 0 0;
+
+    @media screen and (max-width: em(768, 16)) {
+      width: auto;
+    }
   }
 
   header {
@@ -19,6 +29,11 @@
     color: #767676;
     float: right;
 
+    @media screen and (max-width: em(768, 16)) {
+      float: left;
+      width: 100%;
+    }
+
     p {
       float: left;
       width: rem(70);
@@ -29,8 +44,8 @@
   }
 
   h2 {
-    font-size: rem(27.2);
-    margin-top: rem(-8);
+    font-size: rem(20);
+    //margin-top: rem(-8);
     margin-bottom: rem(5);
   }
 
