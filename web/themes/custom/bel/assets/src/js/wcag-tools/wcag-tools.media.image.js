@@ -4,7 +4,7 @@
  */
 (function ($, Drupal) {
 
-  Drupal.behaviors.click_change_more_info = {
+  Drupal.behaviors.click_change_media_image_more_info = {
     attach: function (context, settings) {
       $(context).find('.more-info').once('structure-process').each(function () {
         $(this).on('click', 'h3', function (e) {

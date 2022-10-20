@@ -50,19 +50,27 @@ wcag-tools:
     - core/drupal
     - core/jquery
 
+wcag-tools.node.word:
+  version: VERSION
+  js:
+    assets/dist/js/wcag-tools/wcag-tools.node.word.js: { async: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+wcag-tools.media.image:
+  version: VERSION
+  js:
+    assets/dist/js/wcag-tools/wcag-tools.media.image.js: { async: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 facet-categories:
   version: VERSION
   header: true
   js:
     assets/dist/js/facet/facet-categories.js: { async: true }
-  dependencies:
-    - core/drupal
-    - core/jquery
-
-wcag-tools.media.more-info:
-  version: VERSION
-  js:
-    assets/dist/js/wcag-tools/wcag-tools.media.more-info.js: { }
   dependencies:
     - core/drupal
     - core/jquery
