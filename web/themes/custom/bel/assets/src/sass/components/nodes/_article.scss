@@ -15,12 +15,22 @@ article.word-container {
 
     #gradient {
       bottom: rem(-4);
+
+      .view-najcitanejsie-hesla &,
+      .view-word-search-page & {
+
+        .black-white & {
+          bottom: rem(-15);
+        }
+      }
     }
 
     h1 {
       font-size: rem(40);
       color: #333;
       font-weight: normal;
+
+
 
       a {
 
@@ -29,6 +39,10 @@ article.word-container {
           text-decoration: none;
           font-size: rem(16);
           font-weight: 700;
+
+          .black-white & {
+            font-size: rem(15);
+          }
         }
 
       }
@@ -45,13 +59,25 @@ article.word-container {
         font-size: em(27.2, 16);
       }
 
+      .black-white body.path-rozsirene-vyhladavanie .view-word-search-page & {
+        font-size: em(22.1, 16);
+      }
+
       a {
         font-size: rem(22.8);
         margin-left: rem(1);
         font-weight: normal;
 
+        .black-white & {
+          font-size: rem(16.9);
+        }
+
         body.path-rozsirene-vyhladavanie .view-word-search-page &  {
           font-size: 1.1em;
+        }
+
+        .black-white body.path-rozsirene-vyhladavanie .view-word-search-page &  {
+          font-size: 1em;
         }
       }
     }
@@ -62,6 +88,13 @@ article.word-container {
       text-align: justify;
       line-height: rem(32.5);
       font-size: rem(20);
+
+      .black-white & {
+        font-family: 'Open Sans',sans-serif;
+        font-size: rem(19);
+        line-height: rem(30.833);
+        min-height: rem(45.6);
+      }
 
       p {
         font-size: inherit;

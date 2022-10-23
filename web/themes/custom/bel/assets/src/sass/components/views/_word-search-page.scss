@@ -18,6 +18,15 @@
   header {
     margin-top: rem(-18);
     color: #767676;
+
+    .black-white & {
+      color: $white;
+      font-size: rem(13);
+
+      h2 {
+        font-size: rem(20);
+      }
+    }
   }
 
   .views-row {
@@ -28,6 +37,10 @@
     margin-top: 0;
     color: #767676;
     float: right;
+
+    .black-white & {
+      color: $white;
+    }
 
     @media screen and (max-width: em(768, 16)) {
       float: left;
@@ -40,6 +53,10 @@
       margin-right: rem(5);
       font-size: rem(13);
       line-height: rem(30);
+
+      .black-white & {
+        font-size: rem(12);
+      }
     }
   }
 
@@ -58,20 +75,20 @@
 
   .truncate-button {
     position: relative;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    -webkit-border-radius: rem(2);
+    -moz-border-radius: rem(2);
+    border-radius: rem(2);
     display: inline-block;
     white-space: nowrap;
     font-size: rem(13);
-    line-height: 30px;
+    line-height: rem(30);
     text-decoration: none;
     padding: 0;
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
-    margin-right: 6px;
-    width: 140px;
-    border: 1px solid #e4e4e4;
+    margin-top: rem(9.75);
+    margin-bottom: rem(9.75);
+    margin-right: rem(6);
+    width: rem(140);
+    border: rem(1) solid #e4e4e4;
     background: transparent;
     color: #a51b00;
 
@@ -80,7 +97,14 @@
       width: 100%;
       background: transparent;
       text-align: left;
-      padding: 0 10px;
+      padding: 0 rem(10);
+
+      .black-white & {
+        border: rem(1) solid $white;
+        color: #000;
+        background: $white;
+        height: rem(30);
+      }
     }
 
     .button {
@@ -88,8 +112,8 @@
       position: absolute;
       right: 0;
       top: 0;
-      width: 35px;
-      height: 31px;
+      width: rem(35);
+      height: rem(31);
       color: #bbb;
       text-align: center;
       font: 0/0 a;
@@ -104,12 +128,16 @@
         margin: auto;
         width: 0;
         height: 0;
-        border: 4px solid transparent;
+        border: rem(4) solid transparent;
         border-top-color: #a51b00;
         border-bottom-color: transparent;
         border-bottom-style: solid;
-        border-bottom-width: 4px;
+        border-bottom-width: rem(4);
         border-bottom: none;
+
+        .black-white & {
+          border-top-color: #000;
+        }
       }
     }
 
@@ -124,17 +152,25 @@
       opacity: 0;
       pointer-events: auto;
       z-index: 100;
-      border: 1px solid #d5d5d5;
-      -webkit-border-radius: 0 0 2px 2px;
-      -moz-border-radius: 0 0 2px 2px;
-      border-radius: 0 0 2px 2px;
+      border: rem(1) solid #d5d5d5;
+      -webkit-border-radius: 0 0 rem(2) rem(2);
+      -moz-border-radius: 0 0 rem(2) rem(2);
+      border-radius: 0 0 rem(2) rem(2);
 
       li {
         display: block;
         text-decoration: none;
-        padding: 0 10px 0 10px;
+        padding: 0 rem(10) 0 rem(10);
         color: #a51b00;
         cursor: pointer;
+
+        a {
+          color: #a51b00;
+
+          .black-white & {
+            color: #000;
+          }
+        }
       }
     }
   }

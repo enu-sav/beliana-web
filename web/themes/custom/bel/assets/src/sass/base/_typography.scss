@@ -42,6 +42,7 @@ h6 {
 
   .black-white & {
     color: $white;
+    font-family: 'Open Sans',sans-serif;
   }
 }
 
@@ -189,22 +190,47 @@ table {
 nav.pager {
   padding-top: rem(30);
 
+  .black-white & {
+    font-size: rem(13);
+  }
+
   ul {
     list-style: none;
     text-align: center;
+
+    .black-white & {
+      font-size: inherit;
+    }
 
     li {
       display: inline-block;
       margin-top: rem(20);
 
+      .black-white & {
+        font-size: inherit;
+      }
+
       a {
         padding: rem(4) rem(10);
         margin: rem(2);
         border: rem(1) solid #e4e4e4;
-        text-decoration: none !important;
+        text-decoration: none;
+
+        .black-white & {
+          font-size: inherit;
+        }
+
+        .black-white & {
+          border-color: $white;
+          text-decoration: underline;
+        }
 
         &:hover {
           border-color: $action-color;
+
+          .black-white & {
+            border-color: $white;
+          }
         }
       }
 
@@ -213,6 +239,10 @@ nav.pager {
         a {
           border-color: $action-color;
           font-weight: bold;
+
+          .black-white & {
+            border-color: $white;
+          }
         }
       }
     }
@@ -260,4 +290,8 @@ button, input.button {
   position: absolute;
   bottom: 0;
   left: 0;
+  .black-white & {
+    height: rem(50);
+    filter: invert(1);
+  }
 }

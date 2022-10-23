@@ -57,4 +57,9 @@ article {
 
 #content-main {
   margin-top: rem(32);
+
+  .black-white & {
+    position: relative;
+    z-index: 1;
+  }
 }
