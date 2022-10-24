@@ -1,7 +1,46 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * arno-pro:
+ *   - http://typekit.com/eulas/000000000000000000017424
+ *   - http://typekit.com/eulas/000000000000000000017425
+ *   - http://typekit.com/eulas/000000000000000000017428
+ *   - http://typekit.com/eulas/000000000000000000017429
+ *
+ * © 2009-2022 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2018-07-19 11:56:42 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=ial0koy&ht=tk&f=8493.8494.8495.8496&a=14520606&app=typekit&e=css");
+
 @font-face {
-  font-family: "arno-pro";
-  font-display: swap;
+  font-family:"arno-pro";
+  src:url("https://use.typekit.net/af/b9acbc/000000000000000000017424/27/l?subset_id=1&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/b9acbc/000000000000000000017424/27/d?subset_id=1&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/b9acbc/000000000000000000017424/27/a?subset_id=1&fvd=n4&v=3") format("opentype");
+  font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
 }
+
+@font-face {
+  font-family:"arno-pro";
+  src:url("https://use.typekit.net/af/598d94/000000000000000000017425/27/l?subset_id=1&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/598d94/000000000000000000017425/27/d?subset_id=1&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/598d94/000000000000000000017425/27/a?subset_id=1&fvd=i4&v=3") format("opentype");
+  font-display:swap;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+  font-family:"arno-pro";
+  src:url("https://use.typekit.net/af/f03dd8/000000000000000000017428/27/l?subset_id=1&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/f03dd8/000000000000000000017428/27/d?subset_id=1&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/f03dd8/000000000000000000017428/27/a?subset_id=1&fvd=n7&v=3") format("opentype");
+  font-display:swap;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+  font-family:"arno-pro";
+  src:url("https://use.typekit.net/af/98461a/000000000000000000017429/27/l?subset_id=1&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/98461a/000000000000000000017429/27/d?subset_id=1&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/98461a/000000000000000000017429/27/a?subset_id=1&fvd=i7&v=3") format("opentype");
+  font-display:swap;font-style:italic;font-weight:700;font-stretch:normal;
+}
+
+.tk-arno-pro { font-family: "arno-pro",serif; }
 
 @font-face {
   font-family: 'FontAwesome';
@@ -40,31 +79,3 @@
   font-style: italic;
   font-display: swap;
 }
-
-//@font-face {
-//  font-family: 'arno-pro';
-//  src: url('../../../src/fonts/arno/regular/arno-pro-regular.woff2') format('woff2'), url('../../../src/fonts/arno/regular/arno-pro-regular.woff') format('woff'), url('../../../src/fonts/arno/regular/arno-pro-regular.otf') format('opentype');
-//  font-style: normal;
-//  font-weight: 400;
-//}
-//
-//@font-face {
-//  font-family: 'arno-pro';
-//  src: url('../../../src/fonts/arno/italic/arno-pro-italic.woff2') format('woff2'), url('../../../src/fonts/arno/italic/arno-pro-italic.woff') format('woff'), url('../../../src/fonts/arno/italic/arno-pro-italic.otf') format('opentype');
-//  font-style: italic;
-//  font-weight: 400;
-//}
-//
-//@font-face {
-//  font-family: 'arno-pro';
-//  src: url('../../../src/fonts/arno/bold/arno-pro-bold.woff2') format('woff2'), url('../../../src/fonts/arno/bold/arno-pro-bold.woff') format('woff'), url('../../../src/fonts/arno/bold/arno-pro-bold.otf') format('opentype');
-//  font-style:normal;
-//  font-weight:700;
-//}
-//
-//@font-face {
-//  font-family: 'arno-pro';
-//  src: url('../../../src/fonts/arno/bolita/arno-pro-bolita.woff2') format('woff2'), url('../../../src/fonts/arno/bolita/arno-pro-bolita.woff') format('woff'), url('../../../src/fonts/arno/bolita/arno-pro-bolita.otf') format('opentype');
-//  font-style: italic;
-//  font-weight: 700;
-//}

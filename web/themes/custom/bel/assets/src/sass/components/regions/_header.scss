@@ -196,14 +196,15 @@ header {
           .black-white & {
             top: em(-1, 16);
             background: url('../../svg/beliana_logo_white.svg') no-repeat #fff;
+            background-size: em(330, 16) em(66, 16);
             width: em(330, 16);
             height: em(66, 16);
             filter: invert(1);
 
             @media screen and (max-width: em(768, 16)) {
-              height: 66px;
-              margin-left: -11px;
-              margin-top: 4px;
+              height: em(66, 16);
+              margin-left: em(-11, 16);
+              margin-top: em(4, 16);
             }
           }
 
@@ -212,9 +213,9 @@ header {
             margin-top: em(3, 16);
 
             @media screen and (max-width: em(768, 16)) {
-              height: 66px;
-              margin-left: -11px;
-              margin-top: 1px;
+              height: em(66, 16);
+              margin-left: em(-11, 16);
+              margin-top: em(1, 16);
             }
 
             .black-white & {
@@ -232,19 +233,19 @@ header {
         margin-top: em(24, 16);
 
         @media screen and (max-width: em(768, 16)) {
-          width: calc(100% - 150px);
-          padding: 1px 0 1px 5px;
-          margin-top: 20px;
-          margin-left: 5px;
+          width: calc(100% - #{em(150, 16)});
+          padding: em(1, 16) em(1, 16) em(5, 16);
+          margin-top: em(20, 16);
+          margin-left: em(5, 16);
 
           .wcag-icons {
             top: 0;
-            right: -48px;
+            right: rem(-48);
             position: absolute;
             display: block;
             height: 100%;
             background: #171717;
-            padding: 14px 5px 0;
+            padding: rem(14) rem(5) 0;
 
             .black-white & {
               background: #000;
@@ -252,7 +253,7 @@ header {
           }
 
           body.path-frontpage & {
-            width: calc(100% - 80px);
+            width: calc(100% - #{em(80, 16)});
             margin-left: 0;
           }
         }
@@ -286,14 +287,14 @@ header {
               .nav-collapse.block-beliana-mobile-menu {
                 display: block;
                 max-height: initial;
-                width: calc(100% + 145px);
-                left: -55px;
-                top: 5px;
-                margin-bottom: 4px;
-                margin-top: -4px;
+                width: calc(100% + #{em(145, 16)});
+                left: rem(-55);
+                top: rem(5);
+                margin-bottom: rem(4);
+                margin-top: rem(-4);
                 background: #171717;
                 border: none;
-                padding-top: 15px;
+                padding-top: rem(15);
                 text-align: center;
 
                 .black-white & {
@@ -330,7 +331,7 @@ header {
                     &:first-child {
 
                       a {
-                        padding-left: 18px;
+                        padding-left: rem(18);
                         background: none;
                       }
                     }
@@ -383,10 +384,10 @@ header {
           .description {
             display: none;
             background: #fae1d9;
-            padding: 14px;
+            padding: rem(14);
             position: absolute;
-            top: 42px;
-            right: calc(50% - 80px);
+            top: rem(42);
+            right: calc(50% - #{rem(80)});
             width: 100%;
             .black-white & {
               background: #fff;
@@ -399,13 +400,13 @@ header {
 
             .arrow {
               position: absolute;
-              top: -8px;
+              top: rem(-8);
               right: 50%;
               width: 0;
               height: 0;
-              border-left: 8px solid transparent;
-              border-right: 8px solid transparent;
-              border-bottom: 8px solid #fae1d9;
+              border-left: rem(8) solid transparent;
+              border-right: rem(8) solid transparent;
+              border-bottom: rem(8) solid #fae1d9;
             }
 
             ul {
@@ -424,7 +425,7 @@ header {
 
             a.more-info {
               text-align: center;
-              padding: 15px 0 0 0;
+              padding: rem(15) 0 0 0;
               color: #8a2807;
               display: block;
               .black-white & {
@@ -441,12 +442,12 @@ header {
       background: #ffa587;
       .black-white & {
         background: #000;
-        border-bottom: 1px solid #555;
+        border-bottom: rem(1) solid #555;
       }
 
       .word-facet-wrap {
         margin: 0;
-        min-height: 55px;
+        min-height: rem(55);
         text-align: center;
         h2 {
           display: none;
@@ -463,7 +464,7 @@ header {
             text-align: left;
             width: 100%;
             display: block;
-            padding: 12px 0;
+            padding: rem(12) 0;
             font-size: 1.3em;
             color: #8a2807;
 
@@ -480,7 +481,7 @@ header {
               font: normal normal normal 18px/1 FontAwesome;
               position: absolute;
               right: 0;
-              top: -36px;
+              top: rem(-36);
               color: #8a2807;
 
               .black-white & {
@@ -520,7 +521,7 @@ header {
 }
 
 .search-box-mobile {
-  min-height: 58px;
+  min-height: rem(58);
 }
 
 .word {

@@ -6,7 +6,6 @@ html {
   font-size: $base-font-size;
   line-height: normal;
   letter-spacing: normal;
-  -webkit-font-smoothing: antialiased;
 
   body.path-frontpage {
     background: #ffa587;
@@ -293,5 +292,14 @@ button, input.button {
   .black-white & {
     height: rem(50);
     filter: invert(1);
+  }
+}
+
+.fa.fa-picture-o {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+
+  &:before {
+    content: "\f03e";
   }
 }
