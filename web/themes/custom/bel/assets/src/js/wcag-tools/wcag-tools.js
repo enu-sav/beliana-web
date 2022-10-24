@@ -6,6 +6,36 @@
 
   "use strict";
 
+  Drupal.behaviors.headerProcess = {
+    attach: function (context, settings) {
+      $('header.header').once('header-process').each(function () {
+        var $wrapper = $(this);
+
+        $wrapper.find('.smartphone-navigation .fa-bars').on('click', function () {
+          if ($(this).parent().hasClass('open')) {
+            $(this).parent().removeClass('open');
+            $(this).parent().attr('aria-expanded', false);
+            $(this).parent().attr('aria-label', Drupal.t('aria-label-the-mobile-menu-is-closed'));
+          }
+          else {
+            $(this).parent().addClass('open');
+            $('#search-help-dialog .help').focus();
+            $(this).parent().attr('aria-expanded', true);
+            $(this).parent().attr('aria-label', Drupal.t('aria-label-the-mobile-menu-is-open'));
+          }
+        });
+
+        $wrapper.find('.header-navigation .word-facet-wrap').on('click', function (e) {
+          if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+          }
+          else {
+            $(this).addClass('active');
+          }
+        });
+      });
+    },
+  };
   Drupal.behaviors.alphabetical_accessible_menu = {
     attach: function (context, settings) {
       $(".accessible-alphabetical").accessibleMegaMenu({

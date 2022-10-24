@@ -43,8 +43,8 @@ only_visible_when_facet_source_is_visible: true
 show_only_one_result: false
 show_title: false
 processor_configs:
-  beliana_display_value_widget_order:
-    processor_id: beliana_display_value_widget_order
+  display_value_widget_order:
+    processor_id: display_value_widget_order
     weights:
       sort: 40
     settings:
@@ -52,21 +52,21 @@ processor_configs:
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
-      build: 100
+      build: -6
     settings: {  }
   list_item:
     processor_id: list_item
     weights:
-      build: 5
+      build: -7
     settings: {  }
   translate_entity:
     processor_id: translate_entity
     weights:
-      build: 5
+      build: -8
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
       pre_query: 50
-      build: 15
+      build: -9
     settings: {  }

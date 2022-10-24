@@ -99,3 +99,12 @@ msgstr "Section: More info is open"
 
 msgid "aria-label-you-are-in-the-section-more-info"
 msgstr "You are in the section: More info"
+
+msgid "aria-label-the-mobile-menu-is-open"
+msgstr "The mobile menu is open"
+
+msgid "aria-label-the-mobile-menu-is-closed"
+msgstr "The mobile menu is closed"
+
+msgid "aria-label-you-are-in-the-mobile-menu"
+msgstr "You are in the section: Mobile menu"

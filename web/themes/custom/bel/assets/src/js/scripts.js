@@ -40,6 +40,14 @@ if (typeof Drupal !== 'undefined') {
 			}
 		};
 
+    Drupal.behaviors.share = {
+      attach: function () {
+        $('.share').click(function () {
+          $(this).toggleClass('active');
+        });
+      }
+    };
+
 		/**
 		 * Activate smooth scrolling on a.smooth-scroll
 		 */
@@ -82,28 +90,6 @@ if (typeof Drupal !== 'undefined') {
 
     Drupal.behaviors.override = {
       attach: function (context, settings) {
-
-        $('header.header').once('header-process').each(function () {
-          var $wrapper = $(this);
-
-          $wrapper.find('.smartphone-navigation .fa-bars').on('click', function () {
-            if ($(this).parent().hasClass('open')) {
-              $(this).parent().removeClass('open');
-            }
-            else {
-              $(this).parent().addClass('open');
-            }
-          });
-
-          $wrapper.find('.header-navigation .word-facet-wrap').on('click', function (e) {
-            if ($(this).hasClass('active')) {
-              $(this).removeClass('active');
-            }
-            else {
-              $(this).addClass('active');
-            }
-          });
-        });
 
         // sticky header
         $(window).scroll(function () {
@@ -169,6 +155,9 @@ if (typeof Drupal !== 'undefined') {
             Drupal.behaviors.override.colorboxResize(true);
           });
         }
+        $('.word-tools .print').on('click', function (e) {
+          Drupal.behaviors.override.print(e);
+        });
       },
       print: function (event) {
         event.preventDefault();

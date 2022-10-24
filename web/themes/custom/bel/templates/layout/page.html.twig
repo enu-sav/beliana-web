@@ -84,7 +84,7 @@
               <span class="visually-hidden">{{ 'wcag-black-and-white-version-of-the-page'|t }}</span>
             </i>
           </div>
-          <div class="smartphone-navigation">
+          <div class="smartphone-navigation" tabindex="0" aria-expanded="false" aria-label="{{ 'aria-label-you-are-in-the-mobile-menu'|t }}">
             <i class="fa fa-bars fa-2x"></i>
             {{ page.top_left|without('beliana_main_menu') }}
           </div>

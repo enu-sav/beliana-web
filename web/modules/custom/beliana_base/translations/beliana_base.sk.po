@@ -82,6 +82,9 @@ msgstr "Najstaršie"
 msgid "label-beginning-password"
 msgstr "Začiatok hesla"
 
+msgid "label-full-password"
+msgstr "Celé heslo"
+
 msgid "label-label-show-the-beginning-of-the-password-in-the-statement"
 msgstr "Zobraziť vo výpise začiatok hesla"
 
@@ -96,3 +99,12 @@ msgstr "Sekcia: Ďalšie informácie o ilustrácii sú otvorené"
 
 msgid "aria-label-you-are-in-the-section-more-info"
 msgstr "Nachádzate sa v sekcií: Ďalšie informácie o ilustrácii"
+
+msgid "aria-label-the-mobile-menu-is-open"
+msgstr "Mobilné menu je otvorené"
+
+msgid "aria-label-the-mobile-menu-is-closed"
+msgstr "Mobilné menu je zatvorené"
+
+msgid "aria-label-you-are-in-the-mobile-menu"
+msgstr "Nachádzate sa v sekcií: Mobilné menu"
