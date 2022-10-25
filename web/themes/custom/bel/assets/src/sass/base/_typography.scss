@@ -303,3 +303,25 @@ button, input.button {
     content: "\f03e";
   }
 }
+
+.ui-widget {
+
+  &.ui-autocomplete {
+
+    .ui-menu-item {
+      font-size: rem(13.6);
+      height: auto;
+
+      > a {
+        display: block;
+        padding: rem(7) rem(12);
+
+        &.ui-state-active {
+          background: #f5f5f5;
+          border: none;
+          color: #333;
+        }
+      }
+    }
+  }
+}
