@@ -5,16 +5,18 @@
 
   body.sticky-title & {
     position: fixed;
-    background: #fff;
+    background: #f5f5f5;
     width: 100%;
     top: rem(90);
     z-index: 4;
     margin-top: 0;
     padding: rem(10) 0;
     left: 0;
+    border-bottom: .0625em solid #f0f0f0;
 
     .black-white & {
       background: #000;
+      border-color: #555;
     }
 
     > nav {
