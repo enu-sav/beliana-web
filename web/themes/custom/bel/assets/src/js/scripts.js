@@ -31,6 +31,47 @@ if (typeof Drupal !== 'undefined') {
 	(function(Drupal, $) {
 		'use strict';
 
+    /**
+     * Sticky header scroll
+     */
+    Drupal.behaviors.stickyHeader = {
+      attach: function (context, settings) {
+
+        var $body = $('body');
+
+        $(window).on('scroll', function () {
+          var scroll = $(window).scrollTop();
+          var header_offset = 46;
+          var title_offset = 169;
+
+          if ($(window).width() < 768) {
+            header_offset = 52;
+            title_offset = 174;
+          }
+          else if ($(window).width() < 948) {
+            header_offset = 74;
+            title_offset = 200;
+          }
+
+          if ($('#content-main').height() > 500) {
+            if (scroll >= header_offset) {
+              $body.addClass('sticky-header');
+            }
+            else {
+              $body.removeClass('sticky-header');
+            }
+
+            if (scroll >= title_offset) {
+              $body.addClass('sticky-title');
+            }
+            else {
+              $body.removeClass('sticky-title');
+            }
+          }
+        });
+      },
+    };
+
 		/**
 		 * Open external content links in new window
 		 */
@@ -90,38 +131,6 @@ if (typeof Drupal !== 'undefined') {
 
     Drupal.behaviors.override = {
       attach: function (context, settings) {
-
-        // sticky header
-        $(window).scroll(function () {
-          var scroll = $(window).scrollTop();
-          var header_offset = 46;
-          var title_offset = 169;
-
-          if ($(window).width() < 768) {
-            header_offset = 52;
-            title_offset = 174;
-          }
-          else if ($(window).width() < 948) {
-            header_offset = 74;
-            title_offset = 200;
-          }
-
-          if ($('#content-main').height() > 500) {
-            if (scroll >= header_offset) {
-              $('body').addClass('sticky-header');
-            }
-            else {
-              $('body').removeClass('sticky-header');
-            }
-
-            if (scroll >= title_offset) {
-              $('body').addClass('sticky-title');
-            }
-            else {
-              $('body').removeClass('sticky-title');
-            }
-          }
-        });
 
         $('body').once('body-process').each(function () {
           var $wrapper = $(this);

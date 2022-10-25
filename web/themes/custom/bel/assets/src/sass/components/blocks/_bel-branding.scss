@@ -4,6 +4,10 @@
     display: none;
   }
 
+  body.path-frontpage.sticky-header & {
+    display: block;
+  }
+
   .logo img {
 
     @media screen and (max-width: em(768, 16)) {

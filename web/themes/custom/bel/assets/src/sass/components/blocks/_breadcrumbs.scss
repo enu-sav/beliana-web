@@ -3,6 +3,27 @@
   opacity: 1;
   position: relative;
 
+  body.sticky-title & {
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    top: rem(90);
+    z-index: 4;
+    margin-top: 0;
+    padding: rem(10) 0;
+    left: 0;
+
+    .black-white & {
+      background: #000;
+    }
+
+    > nav {
+      margin: auto;
+      max-width: $max-screen;
+      padding: 0 em(20, 16);
+    }
+  }
+
   ol {
     list-style: none;
 

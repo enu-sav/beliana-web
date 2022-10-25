@@ -164,6 +164,19 @@ header {
 
     .header-main {
       min-height: em(90, 16);
+      position: relative;
+
+      body.sticky-header & {
+        position: fixed;
+        background: #171717;
+        width: 100%;
+        z-index: 4;
+        top: 0;
+
+        .black-white & {
+          background: #000;
+        }
+      }
 
       .black-white & {
         background: #000;
@@ -184,6 +197,10 @@ header {
 
           body.path-frontpage & {
             display: none;
+          }
+
+          body.path-frontpage.sticky-header & {
+            display: inline-block;
           }
         }
 
@@ -252,7 +269,7 @@ header {
             }
           }
 
-          body.path-frontpage & {
+          body.path-frontpage:not(.sticky-header) & {
             width: calc(100% - #{em(80, 16)});
             margin-left: 0;
           }
@@ -364,6 +381,13 @@ header {
 
           body.path-frontpage & {
             top: em(38, 16);
+          }
+
+          body.path-frontpage.sticky-header & {
+            top: em(-19, 16);
+            .black-white & {
+              top: em(-8, 16);
+            }
           }
 
           .text {
