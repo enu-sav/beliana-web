@@ -1,0 +1,128 @@
+/**
+ * @file
+ * Styles for system messages.
+ */
+
+div[data-drupal-messages=""] {
+  margin: rem(20) auto rem(10) auto;
+  max-width: $max-screen;
+  padding: 0 rem(20);
+}
+
+html:not(.black-white) {
+
+  .messages {
+    padding: rem(15) rem(20) rem(15) rem(35);
+    word-wrap: break-word;
+    border: rem(1) solid;
+    border-width: rem(1) rem(1) rem(1) 0;
+    border-radius: 2px;
+    background: no-repeat rem(10) rem(17);
+    overflow-wrap: break-word;
+    position: relative;
+    z-index: 2;
+
+    + {
+      .messages {
+        margin-top: 1.538em;
+      }
+    }
+
+    a {
+      font-weight: bold;
+    }
+  }
+  [dir="rtl"] {
+    .messages {
+      padding-right: rem(35);
+      padding-left: rem(20);
+      text-align: right;
+      border-width: rem(1) 0 rem(1) rem(1);
+      background-position: right rem(10) top rem(17);
+    }
+    .messages--status {
+      margin-left: 0;
+      border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
+      box-shadow: rem(8) 0 0 #77b259;
+    }
+    .messages--warning {
+      border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+      box-shadow: rem(8) 0 0 #e09600;
+    }
+    .messages--error {
+      border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+      box-shadow: rem(8) 0 0 #e62600;
+    }
+  }
+  .messages__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .messages__item {
+    + {
+      .messages__item {
+        margin-top: 0.769em;
+      }
+    }
+  }
+  .messages--status {
+    color: #325e1c;
+    border-color: #c9e1bd #c9e1bd #c9e1bd transparent;
+    background-color: #f3faef;
+    background-image: url("../../../dist/svg/messages/check.svg");
+    box-shadow: rem(-8) 0 0 #77b259;
+
+    a {
+      color: #325e1c;
+    }
+  }
+  .messages--warning {
+    color: #734c00;
+    border-color: #f4daa6 #f4daa6 #f4daa6 transparent;
+    background-color: #fdf8ed;
+    background-image: url("../../../dist/svg/messages/warning.svg");
+    box-shadow: rem(-8) 0 0 #e09600;
+
+    a {
+      color: #734c00;
+    }
+  }
+  .messages--error {
+    color: #a51b00;
+    border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+    background-color: #fcf4f2;
+    background-image: url("../../../dist/svg/messages/error.svg");
+    box-shadow: rem(-8) 0 0 #e62600;
+    p.error {
+      color: #a51b00;
+    }
+
+    a {
+      color: #a51b00;
+    }
+  }
+}
+
+html.black-white {
+  .messages {
+    padding: rem(15) rem(20) rem(15) rem(35);
+    word-wrap: break-word;
+    border: rem(1) solid $white;
+    border-radius: 2px;
+    overflow-wrap: break-word;
+    position: relative;
+    z-index: 2;
+    color: $white;
+
+    + {
+      .messages {
+        margin-top: 1.538em;
+      }
+    }
+
+    a {
+      font-weight: bold;
+    }
+  }
+}

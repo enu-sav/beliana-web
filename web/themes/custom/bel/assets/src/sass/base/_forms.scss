@@ -1,0 +1,47 @@
+//.form-item {
+//  margin-bottom: rem(20);
+//}
+
+form.user-login-form,
+form.user-pass,
+#submit-error-form {
+
+  div {
+    display: block;
+    margin-top: rem(5);
+
+    &.form-actions {
+      display: inline-block;
+      width: 100%;
+      margin-top: rem(20);
+    }
+  }
+
+  label {
+    display: block;
+    margin-top: rem(20);
+  }
+
+  textarea,
+  input {
+    max-width: 100%;
+  }
+}
+
+.form-actions input.form-submit {
+  background: #8a2807;
+  color: $white;
+  padding: rem(7) rem(15);
+  border-radius: rem(2);
+  cursor: pointer;
+  border: rem(1) solid #8a2807;
+
+  .black-white & {
+    background: #000;
+    border-color: $white;
+
+    &:focus {
+      outline: rem(1) solid $white;
+    }
+  }
+}

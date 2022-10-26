@@ -1,0 +1,97 @@
+body.path-user .block-local-tasks-block,
+body.path-webform .block-local-tasks-block {
+  margin: 0.9375em 0;
+}
+
+@media all and (min-width: 64.0625em) {
+  body.path-user .block-local-tasks-block,
+  body.path-webform .block-local-tasks-block {
+    margin: 1.5625em 0;
+  }
+}
+
+body.path-user .block-local-tasks-block ul.blt-tabs,
+body.path-webform .block-local-tasks-block ul.blt-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -0.3125em;
+}
+
+@media all and (min-width: 48em) {
+  body.path-user .block-local-tasks-block ul.blt-tabs,
+  body.path-webform .block-local-tasks-block ul.blt-tabs {
+    margin: -0.625em;
+  }
+}
+
+body.path-user .block-local-tasks-block ul.blt-tabs > li,
+body.path-webform .block-local-tasks-block ul.blt-tabs > li {
+  list-style: none;
+  padding: 0.3125em;
+}
+
+@media all and (min-width: 48em) {
+  body.path-user .block-local-tasks-block ul.blt-tabs > li,
+  body.path-webform .block-local-tasks-block ul.blt-tabs > li {
+    padding: 0.625em;
+  }
+}
+
+body.path-user .block-local-tasks-block ul.blt-tabs > li:hover a,
+body.path-user .block-local-tasks-block ul.blt-tabs > li:focus a,
+body.path-webform .block-local-tasks-block ul.blt-tabs > li:hover a,
+body.path-webform .block-local-tasks-block ul.blt-tabs > li:focus a {
+  /*text-decoration: underline;*/
+  background-color: #F0F0F0;
+
+  .black-white & {
+    background-color: transparent;
+    border: rem(1) solid $white;
+  }
+}
+
+body.path-user .block-local-tasks-block ul.blt-tabs > li a,
+body.path-webform .block-local-tasks-block ul.blt-tabs > li a {
+  font-size: 14px;
+  font-size: 0.875rem;
+  display: block;
+  text-decoration: none;
+  color: #191919;
+  padding: 0.42857em 0.71429em;
+  border: rem(1) solid transparent;
+
+  .black-white & {
+    color: $white;
+  }
+}
+
+@media all and (min-width: 48em) {
+  body.path-user .block-local-tasks-block ul.blt-tabs > li a,
+  body.path-webform .block-local-tasks-block ul.blt-tabs > li a {
+    font-size: 1rem;
+    padding: 0.625em 0.9375em;
+  }
+}
+
+@media all and (min-width: 64.0625em) {
+  body.path-user .block-local-tasks-block ul.blt-tabs > li a,
+  body.path-webform .block-local-tasks-block ul.blt-tabs > li a {
+    font-size: 1.125rem;
+    padding: 0.55556em 0.83333em;
+  }
+}
+
+body.path-user .block-local-tasks-block ul.blt-tabs > li a.is-active,
+body.path-webform .block-local-tasks-block ul.blt-tabs > li a.is-active {
+  color: #fff;
+  background-color:#8a2807;
+  border: rem(1) solid #8a2807;
+  text-decoration: none;
+  .black-white & {
+    background-color: transparent;
+    border-color: $white;
+  }
+}
