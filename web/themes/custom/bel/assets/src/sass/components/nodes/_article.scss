@@ -6,6 +6,10 @@ article.word-container {
     width: 100%;
   }
 
+  @media print {
+    width: 100%;
+  }
+
   .view-word-search-page & {
     width: 100%;
   }
@@ -173,6 +177,11 @@ article.word-container {
           float: right;
         }
 
+        @media print {
+          width: 35%;
+          float: right;
+        }
+
         .word-illustration {
           margin-top: rem(20);
           margin-left: rem(30);
@@ -183,6 +192,11 @@ article.word-container {
             border: rem(1) solid #e5e5e5;
             padding: rem(10) rem(10) rem(15) rem(10);
 
+            a {
+              display: block;
+              text-align: center;
+            }
+
             .black-white {
               border-color: #ccc;
             }
@@ -190,7 +204,7 @@ article.word-container {
             img {
               max-width: 100%;
               height: auto;
-              margin-top: rem(10);
+              //margin-top: rem(10);
             }
 
             .field--name-field-description {
@@ -200,6 +214,8 @@ article.word-container {
               p {
                 padding: 0;
                 margin: 0;
+                font-size: rem(15);
+                line-height: rem(18);
               }
             }
           }
@@ -239,6 +255,10 @@ article.word-container {
           margin-top: rem(26);
           margin-bottom: rem(8);
 
+          @media print {
+            display: none;
+          }
+
           .black-white & {
             background: url("../../../dist/img/arrow_sprite_white.png") no-repeat;
             color: $white;
@@ -259,6 +279,12 @@ article.word-container {
         #dialog-desc {
           display: none;
           font-size: rem(13);
+        }
+
+        @media print {
+          #dialog-desc {
+            display: block !important;
+          }
         }
 
         &.open {
@@ -387,5 +413,17 @@ article.word-container {
     &.truncate-wrapper {
 
     }
+  }
+}
+
+article .word {
+  padding-right: rem(50);
+
+  .view-word-search-page & {
+    padding-right: 0;
+  }
+
+  @media print {
+    padding-right: 0;
   }
 }
