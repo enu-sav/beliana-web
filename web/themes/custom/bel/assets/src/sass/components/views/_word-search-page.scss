@@ -66,14 +66,16 @@
     margin-bottom: rem(5);
   }
 
-  .truncate-button {
+  .truncate-button,
+  .sort-button {
 
     button {
       color: inherit;
     }
   }
 
-  .truncate-button {
+  .truncate-button,
+  .sort-button {
     position: relative;
     -webkit-border-radius: rem(2);
     -moz-border-radius: rem(2);
@@ -91,6 +93,11 @@
     border: rem(1) solid #e4e4e4;
     background: transparent;
     color: #a51b00;
+    overflow: hidden;
+
+    &.focus {
+      overflow: initial;
+    }
 
     .label {
       border: none;
@@ -178,8 +185,4 @@
 
 .left {
   float: left;
-}
-
-.list-tools .item:last-of-type {
-  display: none;
 }

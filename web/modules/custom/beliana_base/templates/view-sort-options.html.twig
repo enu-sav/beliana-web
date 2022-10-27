@@ -1,0 +1,35 @@
+<div class="list-tools">
+  <div class="item">
+    <p>{{ 'label-im-showing'|t }}</p>
+    <div class="truncate-button">
+      <button tabindex="0" type="button" aria-label="{{ 'display-options'|t }}" id="label-truncate" class="label"
+              aria-haspopup="true" aria-controls="truncate-controls">{{ 'label-beginning-password'|t }}<b
+          class="button"></b>
+      </button>
+      <ul id="truncate-controls" role="menu" class="dropdown" aria-labelledby="label">
+        <li role="none">
+          <a href="#" aria-label="{{ 'label-show-the-beginning-of-the-password-in-the-statement'|t }}" class="word-short"
+             role="menuitem">{{ 'label-beginning-password'|t }}</a>
+        </li>
+        <li role="none">
+          <a href="#" aria-label="{{ 'label-show-the-entire-password-in-the-statement'|t }}" class="word-full" role="menuitem">{{ 'label-full-password'|t }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="item">
+    <p>{{ 'label-sorting'|t }}</p>
+    <div class="sort-button">
+      <button tabindex="0" type="button" aria-label="{{ sort_option_active_link }}" id="label-sort" class="label"
+              aria-haspopup="true" aria-controls="sort-controls">{{ sort_option_active_link }}<b class="button"></b>
+      </button>
+      <ul id="sort-controls" role="menu" class="dropdown" aria-labelledby="label">
+        {% for link in sort_option_links %}
+        <li role="none">
+          <a href="{{ link.url }}" aria-label="{{ link.title }}" class="{{ link.class.0 }}" role="menuitem">{{ link.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

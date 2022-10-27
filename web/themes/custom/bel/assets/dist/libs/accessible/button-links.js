@@ -323,7 +323,7 @@
 // Initialize menu buttons
 
   window.addEventListener('load', function () {
-    var menuButtons = document.querySelectorAll('.truncate-button');
+    var menuButtons = document.querySelectorAll('.truncate-button, .sort-button');
     for (let i = 0; i < menuButtons.length; i++) {
       new MenuButtonLinks(menuButtons[i]);
     }

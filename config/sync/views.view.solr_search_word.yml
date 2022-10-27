@@ -6,6 +6,7 @@ dependencies:
     - search_api.index.word_solr_index
     - system.menu.footer
   module:
+    - beliana_base
     - search_api
     - user
 id: solr_search_word
@@ -112,7 +113,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
       empty:
         area_text_custom:
@@ -150,21 +151,21 @@ display:
           plugin_id: search_api
           order: ASC
           expose:
-            label: ''
-            field_identifier: field_sort
-          exposed: false
-        title:
-          id: title
+            label: 'Na zoradenie'
+            field_identifier: order
+          exposed: true
+        created:
+          id: created
           table: search_api_index_word_solr_index
-          field: title
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: search_api
-          order: ASC
+          order: DESC
           expose:
-            label: Nadpis
-            field_identifier: title
+            label: 'Napísané dňa'
+            field_identifier: created
           exposed: true
       arguments: {  }
       filters:
@@ -247,6 +248,15 @@ display:
           plugin_id: result
           empty: false
           content: 'Zobrazené heslá @start – <span id="count-words">@end</span> z celkového počtu @total hesiel.'
+        bel_view_sort_options_area:
+          id: bel_view_sort_options_area
+          table: views
+          field: bel_view_sort_options_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: bel_view_sort_options_area
+          empty: true
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -551,4 +561,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.categories'
         - 'config:search_api.index.word_solr_index'

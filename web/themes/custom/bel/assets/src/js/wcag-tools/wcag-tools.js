@@ -86,7 +86,15 @@
 
   Drupal.behaviors.click_change_format_list_tools = {
     attach: function (context, settings) {
-      $('.list-tools .truncate-button').on('click', 'li a', function () {
+      var word_search_short = localStorage.getItem('word-search-short') || 'normal';
+
+      if (word_search_short != null) {
+        $('.truncate-button .' + word_search_short).click();
+      }
+      else {
+        $('.truncate-button .word-short').click();
+      }
+      $('.list-tools .truncate-button').once().on('click', 'li a', function () {
         var $item = $(this);
 
         if ($item.hasClass('word-short')) {
@@ -105,17 +113,28 @@
         }
 
         $('.truncate-button .label').html($item.text() + '<b class="button"></b>');
+        $('.truncate-button').toggleClass('active');
 
-        localStorage.setItem('word_search_sort', $item.attr('class'))
+        localStorage.setItem('word-search-short', $item.attr('class'))
       });
 
-      $('.list-tools .sort-button').on('click', 'li', function () {
+
+      var word_search_sort = localStorage.getItem('word-search-sort') || 'alphabet-asc';
+
+      if (word_search_sort != null) {
+        $('.sort-button .' + word_search_sort).click();
+      }
+      else {
+        $('.sort-button .alphabet-asc').click();
+      }
+
+      $('.list-tools .sort-button').once().on('click', 'li a', function () {
         var $item = $(this);
 
         $('.sort-button .label').html($item.text() + '<b class="button"></b>');
         $('.sort-button').toggleClass('active');
 
-        localStorage.setItem('word_search_sort', $item.attr('class'))
+        localStorage.setItem('word-search-sort', $item.attr('class'))
       });
     }
   };

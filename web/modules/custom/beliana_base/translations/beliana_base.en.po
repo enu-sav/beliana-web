@@ -73,11 +73,8 @@ msgstr "Filter content by category"
 msgid "aria-label category @category, number of products: @count"
 msgstr "Category @category, Number of items: @count"
 
-msgid "label-latest"
-msgstr "The latest"
-
-msgid "label-oldest"
-msgstr "The oldest"
+msgid "label-im-showing"
+msgstr "I'm showing:"
 
 msgid "label-beginning-password"
 msgstr "The beginning of the password"
@@ -85,11 +82,32 @@ msgstr "The beginning of the password"
 msgid "label-full-password"
 msgstr "Full password"
 
-msgid "label-label-show-the-beginning-of-the-password-in-the-statement"
+msgid "label-show-the-beginning-of-the-password-in-the-statement"
 msgstr "Show the beginning of the password in the statement"
 
-msgid "label-label-show-the-entire-password-in-the-statement"
+msgid "label-show-the-entire-password-in-the-statement"
 msgstr "Show the entire password in the statement"
+
+msgid "label-sorting"
+msgstr "Sorting:"
+
+msgid "label-alphabet-asc"
+msgstr "A-Z"
+
+msgid "label-alphabet-desc"
+msgstr "Z-A"
+
+msgid "label-alphabet-asc"
+msgstr "A-Z"
+
+msgid "label-alphabet-desc"
+msgstr "Z-A"
+
+msgid "label-date-asc"
+msgstr "The latest"
+
+msgid "label-date-desc"
+msgstr "The oldest"
 
 msgid "aria-label-section-more-info-is-closed"
 msgstr "Section: More info is closed"

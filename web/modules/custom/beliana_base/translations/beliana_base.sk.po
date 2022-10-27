@@ -73,23 +73,35 @@ msgstr "Filtrovať obsah podľa kategórie"
 msgid "aria-label category @category, number of products: @count"
 msgstr "Kategória @category, Počet položiek: @count"
 
-msgid "label-latest"
-msgstr "Najnovšie"
-
-msgid "label-oldest"
-msgstr "Najstaršie"
-
 msgid "label-beginning-password"
 msgstr "Začiatok hesla"
+
+msgid "label-im-showing"
+msgstr "Zobrazujem:"
 
 msgid "label-full-password"
 msgstr "Celé heslo"
 
-msgid "label-label-show-the-beginning-of-the-password-in-the-statement"
+msgid "label-show-the-beginning-of-the-password-in-the-statement"
 msgstr "Zobraziť vo výpise začiatok hesla"
 
-msgid "label-label-show-the-entire-password-in-the-statement"
+msgid "label-show-the-entire-password-in-the-statement"
 msgstr "Zobraziť vo výpise celé heslo"
+
+msgid "label-sorting"
+msgstr "Zoraďujem:"
+
+msgid "label-alphabet-asc"
+msgstr "A-Z"
+
+msgid "label-alphabet-desc"
+msgstr "Z-A"
+
+msgid "label-date-asc"
+msgstr "Najnovšie"
+
+msgid "label-date-desc"
+msgstr "Najstaršie"
 
 msgid "aria-label-section-citation-is-closed"
 msgstr "Sekcia: Ďalšie informácie o ilustrácii sú zatvorené"

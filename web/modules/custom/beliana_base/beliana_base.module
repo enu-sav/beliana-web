@@ -5,3 +5,24 @@
  */
 
 
+/**
+ * Implements hook_theme().
+ *
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ *
+ * @return \null[][][]
+ */
+function beliana_base_theme($existing, $type, $theme, $path): array {
+  return [
+    'view_sort_options' => [
+      'variables' => [
+        'sort_option_active_link' => NULL,
+        'sort_option_links' => NULL,
+      ],
+      'template' => 'view-sort-options',
+    ],
+  ];
+}
