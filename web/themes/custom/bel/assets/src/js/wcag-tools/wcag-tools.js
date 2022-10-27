@@ -86,6 +86,7 @@
 
   Drupal.behaviors.click_change_format_list_tools = {
     attach: function (context, settings) {
+      var self = this;
       var word_search_short = localStorage.getItem('word-search-short') || 'normal';
 
       if (word_search_short != null) {
@@ -136,7 +137,7 @@
 
         localStorage.setItem('word-search-sort', $item.attr('class'))
       });
-    }
+    },
   };
 
   Drupal.behaviors.click_change_search = {

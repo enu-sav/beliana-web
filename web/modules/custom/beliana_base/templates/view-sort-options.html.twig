@@ -20,13 +20,13 @@
   <div class="item">
     <p>{{ 'label-sorting'|t }}</p>
     <div class="sort-button">
-      <button tabindex="0" type="button" aria-label="{{ sort_option_active_link }}" id="label-sort" class="label"
+      <button tabindex="0" type="button" aria-label="{{ 'wcag-sorting-options-set'|t }}{{ sort_option_active_link }}" id="label-sort" class="{{ link.title }}"
               aria-haspopup="true" aria-controls="sort-controls">{{ sort_option_active_link }}<b class="button"></b>
       </button>
       <ul id="sort-controls" role="menu" class="dropdown" aria-labelledby="label">
         {% for link in sort_option_links %}
         <li role="none">
-          <a href="{{ link.url }}" aria-label="{{ link.title }}" class="{{ link.class.0 }}" role="menuitem">{{ link.title }}</a>
+          <a href="{{ link.url }}" aria-label="{{ 'label-sort-passwords-in-list'|t }}{{ link.title }}" class="{{ link.class.0 }}" role="menuitem">{{ link.title }}</a>
         </li>
         {% endfor %}
       </ul>

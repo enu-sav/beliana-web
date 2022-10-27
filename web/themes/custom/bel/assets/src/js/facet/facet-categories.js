@@ -56,7 +56,7 @@
               var count = $link.find('.facet-item__count').attr('data-count');
 
               $link.parent().find('.facets-widget').attr('id', id).attr('role', 'region');
-              var aria_label = Drupal.t('@category, number of products: @count',  {'@category': $link.find('.facet-item__value').attr('data-value'), '@count': count});
+              var aria_label = Drupal.t('aria-label-category-number-of-products-count',  {'@category': $link.find('.facet-item__value').attr('data-value'), '@count': count});
               if (collapsed) {
                 tabindex_label = 0;
                 aria_expanded = false;

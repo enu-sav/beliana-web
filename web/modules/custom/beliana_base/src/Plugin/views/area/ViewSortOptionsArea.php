@@ -35,13 +35,13 @@ class ViewSortOptionsArea extends AreaPluginBase {
    */
   public function render($empty = FALSE) {
     if (!$empty || !empty($this->options['empty'])) {
-      $sort_option_active_link = t('label-alphabet-asc');
+      $sort_option_active_link = t('label-order-asc');
 
       $sort_types = [
-        'alphabet-ASC' => t('label-alphabet-asc'),
-        'alphabet-DESC' => t('label-alphabet-desc'),
-        'date-ASC' => t('label-date-asc'),
-        'date-DESC' => t('label-date-desc'),
+        'order-ASC' => t('label-order-asc'),
+        'order-DESC' => t('label-order-desc'),
+        'created-ASC' => t('label-created-asc'),
+        'created-DESC' => t('label-created-desc'),
       ];
 
       $route_name = \Drupal::routeMatch()->getRouteName();
@@ -51,26 +51,26 @@ class ViewSortOptionsArea extends AreaPluginBase {
       unset($current_query['sort_order']);
 
       foreach ($sort_types as $key => $sort_type) {
-        $sort_by = $sort_order = 'ASC';
+        $sort_order = 'ASC';
 
         if (isset($_GET['sort_by']) && isset($_GET['sort_order']) && ($key == $_GET['sort_by'] . '-' . $_GET['sort_order'])) {
           $sort_option_active_link = $sort_type->render();
         }
 
         switch ($key) {
-          case 'alphabet-ASC':
+          case 'order-ASC':
             $sort_by = 'order';
             break;
-          case 'alphabet-DESC':
+          case 'order-DESC':
             $sort_by = 'order';
             $sort_order = 'DESC';
             break;
-          case 'date-ASC':
+          case 'created-ASC':
+            $sort_by = 'created';
+            break;
+          case 'created-DESC':
             $sort_by = 'created';
             $sort_order = 'DESC';
-            break;
-          case 'date-DESC':
-            $sort_by = 'created';
             break;
         }
 

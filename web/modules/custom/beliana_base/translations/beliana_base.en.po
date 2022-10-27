@@ -23,10 +23,10 @@ msgid "wcag-accessible-version-of-the-site-is-turned-on"
 msgstr "The accessible version of the site is turned on"
 
 msgid "wcag-display-options-the-beginning-of-the-password-is-set"
-msgstr "EN - Možnosti zobrazenia - nastavené začiatok hesla"
+msgstr "Display options - set to article beginning"
 
 msgid "wcag-display-options-the-entire-password-is-set"
-msgstr "EN - Možnosti zobrazenia - nastavené celé heslo"
+msgstr "Display options - set to entire article"
 
 msgid "wcag-black-and-white-version-of-the-page"
 msgstr "Black and white version of the page"
@@ -70,8 +70,8 @@ msgstr "Hide categoriess"
 msgid "aria-label-filter-content-by-category"
 msgstr "Filter content by category"
 
-msgid "aria-label category @category, number of products: @count"
-msgstr "Category @category, Number of items: @count"
+msgid "aria-label-category-number-of-products-count"
+msgstr "Category @category, number of items: @count"
 
 msgid "label-im-showing"
 msgstr "I'm showing:"
@@ -83,40 +83,43 @@ msgid "label-full-password"
 msgstr "Full password"
 
 msgid "label-show-the-beginning-of-the-password-in-the-statement"
-msgstr "Show the beginning of the password in the statement"
+msgstr "Show the beginning of the password in the list"
 
 msgid "label-show-the-entire-password-in-the-statement"
-msgstr "Show the entire password in the statement"
+msgstr "Show the entire password in the list"
+
+msgid "sorting-options"
+msgstr "Sorting options"
+
+msgid "wcag-sorting-options-set"
+msgstr "Display options set: "
 
 msgid "label-sorting"
 msgstr "Sorting:"
 
-msgid "label-alphabet-asc"
+msgid "label-order-asc"
 msgstr "A-Z"
 
-msgid "label-alphabet-desc"
+msgid "label-order-desc"
 msgstr "Z-A"
 
-msgid "label-alphabet-asc"
-msgstr "A-Z"
-
-msgid "label-alphabet-desc"
-msgstr "Z-A"
-
-msgid "label-date-asc"
+msgid "label-created-asc"
 msgstr "The latest"
 
-msgid "label-date-desc"
+msgid "label-created-desc"
 msgstr "The oldest"
 
+msgid "label-sort-passwords-in-list"
+msgstr "Sort the passwords in the list: "
+
 msgid "aria-label-section-more-info-is-closed"
-msgstr "Section: More info is closed"
+msgstr "Section: More information is closed"
 
 msgid "aria-label-section-more-info-is-open"
-msgstr "Section: More info is open"
+msgstr "Section: More information is open"
 
 msgid "aria-label-you-are-in-the-section-more-info"
-msgstr "You are in the section: More info"
+msgstr "You are in the section: More information"
 
 msgid "aria-label-the-mobile-menu-is-open"
 msgstr "The mobile menu is open"
