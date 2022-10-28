@@ -66,6 +66,14 @@ wcag-tools.media.image:
     - core/drupal
     - core/jquery
 
+wcag-tools.view.options:
+  version: VERSION
+  js:
+    assets/dist/js/wcag-tools/wcag-tools.view.options.js: { async: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 facet-categories:
   version: VERSION
   header: true

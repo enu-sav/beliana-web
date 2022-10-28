@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_date
     - node.type.word
   module:
+    - beliana_base
     - beliana_daily
     - datetime
     - node
@@ -175,7 +176,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: tag
         options: {  }
       empty:
         area_text_custom:
@@ -617,6 +618,15 @@ display:
           plugin_id: result
           empty: false
           content: 'Zobrazené heslá @start – @end z celkového počtu @total hesiel.'
+        bel_view_truncate_options_area:
+          id: bel_view_truncate_options_area
+          table: views
+          field: bel_view_truncate_options_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: bel_view_truncate_options_area
+          empty: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }

@@ -248,6 +248,15 @@ display:
           plugin_id: result
           empty: false
           content: 'Zobrazené heslá @start – <span id="count-words">@end</span> z celkového počtu @total hesiel.'
+        bel_view_truncate_options_area:
+          id: bel_view_truncate_options_area
+          table: views
+          field: bel_view_truncate_options_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: bel_view_truncate_options_area
+          empty: true
         bel_view_sort_options_area:
           id: bel_view_sort_options_area
           table: views

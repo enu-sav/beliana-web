@@ -38,8 +38,13 @@
     <header class="left">
       <h2>{{ label }}</h2>
       {% if header %}
-        {{ header }}
+        {{ header.result }}
+        <div class="view-options">
+          {{ header.bel_view_truncate_options_area }}
+          {{ header.bel_view_sort_options_area }}
+        </div>
       {% endif %}
+      {{ attach_library('bel/wcag-tools.view.options') }}
     </header>
   </div>
 

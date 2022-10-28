@@ -43,8 +43,15 @@
   {% if header %}
     <div class="clearfix">
       <header class="left">
-        <h2>&nbsp;</h2>
-        {{ header }}
+        <h2>{{ label }}</h2>
+        {% if header %}
+          {{ header.result }}
+          <div class="view-options">
+            {{ header.bel_view_truncate_options_area }}
+            {{ header.bel_view_sort_options_area }}
+          </div>
+          {{ attach_library('bel/wcag-tools.view.options') }}
+        {% endif %}
       </header>
     </div>
   {% endif %}

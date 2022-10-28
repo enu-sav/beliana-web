@@ -17,6 +17,10 @@
  */
 function beliana_base_theme($existing, $type, $theme, $path): array {
   return [
+    'view_truncate_options' => [
+      'variables' => [],
+      'template' => 'view-truncate-options',
+    ],
     'view_sort_options' => [
       'variables' => [
         'sort_option_active_link' => NULL,

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_index
     - node.type.word
   module:
+    - beliana_base
     - node
     - user
 _core:
@@ -713,6 +714,15 @@ display:
           empty: false
           content: 'Zobrazených 50 najnovších hesiel'
           tokenize: false
+        bel_view_truncate_options_area:
+          id: bel_view_truncate_options_area
+          table: views
+          field: bel_view_truncate_options_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: bel_view_truncate_options_area
+          empty: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
