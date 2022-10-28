@@ -22,10 +22,10 @@ msgstr "The accessible version of the site is turned off"
 msgid "wcag-accessible-version-of-the-site-is-turned-on"
 msgstr "The accessible version of the site is turned on"
 
-msgid "wcag-display-options-the-beginning-of-the-password-is-set"
+msgid "wcag-display-options-the-beginning-of-the-article-is-set"
 msgstr "Display options - set to article beginning"
 
-msgid "wcag-display-options-the-entire-password-is-set"
+msgid "wcag-display-options-the-entire-article-is-set"
 msgstr "Display options - set to entire article"
 
 msgid "wcag-black-and-white-version-of-the-page"
@@ -82,10 +82,10 @@ msgstr "The beginning of the password"
 msgid "label-full-password"
 msgstr "Full password"
 
-msgid "label-show-the-beginning-of-the-password-in-the-statement"
+msgid "label-show-the-beginning-of-the-password-in-the-list"
 msgstr "Show the beginning of the password in the list"
 
-msgid "label-show-the-entire-password-in-the-statement"
+msgid "label-show-the-entire-password-in-the-list"
 msgstr "Show the entire password in the list"
 
 msgid "sorting-options"
@@ -96,6 +96,9 @@ msgstr "Display options set: "
 
 msgid "label-sorting"
 msgstr "Sorting:"
+
+msgid "label-relevance-desc"
+msgstr "Relevance"
 
 msgid "label-order-asc"
 msgstr "A-Z"

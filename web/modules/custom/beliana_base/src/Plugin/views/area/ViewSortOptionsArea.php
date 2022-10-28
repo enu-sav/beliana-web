@@ -35,9 +35,10 @@ class ViewSortOptionsArea extends AreaPluginBase {
    */
   public function render($empty = FALSE) {
     if (!$empty || !empty($this->options['empty'])) {
-      $sort_option_active_link = t('label-order-asc');
+      $sort_option_active_link = t('label-relevance-desc');
 
       $sort_types = [
+        'relevance-DESC' => t('label-relevance-desc'),
         'order-ASC' => t('label-order-asc'),
         'order-DESC' => t('label-order-desc'),
         'created-ASC' => t('label-created-asc'),
@@ -51,15 +52,18 @@ class ViewSortOptionsArea extends AreaPluginBase {
       unset($current_query['sort_order']);
 
       foreach ($sort_types as $key => $sort_type) {
-        $sort_order = 'ASC';
-
         if (isset($_GET['sort_by']) && isset($_GET['sort_order']) && ($key == $_GET['sort_by'] . '-' . $_GET['sort_order'])) {
           $sort_option_active_link = $sort_type->render();
         }
 
         switch ($key) {
+          case 'relevance-DESC':
+            $sort_by = 'relevance';
+            $sort_order = 'DESC';
+            break;
           case 'order-ASC':
             $sort_by = 'order';
+            $sort_order = 'ASC';
             break;
           case 'order-DESC':
             $sort_by = 'order';
@@ -67,6 +71,7 @@ class ViewSortOptionsArea extends AreaPluginBase {
             break;
           case 'created-ASC':
             $sort_by = 'created';
+            $sort_order = 'ASC';
             break;
           case 'created-DESC':
             $sort_by = 'created';

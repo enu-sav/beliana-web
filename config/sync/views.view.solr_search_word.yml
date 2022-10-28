@@ -138,9 +138,9 @@ display:
           plugin_id: search_api
           order: DESC
           expose:
-            label: ''
-            field_identifier: search_api_relevance
-          exposed: false
+            label: Relevantnosť
+            field_identifier: relevance
+          exposed: true
         field_sort:
           id: field_sort
           table: search_api_index_word_solr_index
@@ -162,7 +162,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api
-          order: DESC
+          order: ASC
           expose:
             label: 'Napísané dňa'
             field_identifier: created

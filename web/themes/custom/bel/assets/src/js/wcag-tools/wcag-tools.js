@@ -105,12 +105,12 @@
               $(this).children('#gradient').css('display', 'block');
             }
           });
-          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-beginning-of-the-password-is-set'));
+          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-beginning-of-the-article-is-set'));
         }
         else {
           $('.views-element-container .word').removeClass('truncate-wrapper');
           $('.views-element-container .word #gradient').css('display', 'none');
-          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-entire-password-is-set'));
+          $item.parent().parent().parent().find('.label').attr('aria-label', Drupal.t('wcag-display-options-the-entire-article-is-set'));
         }
 
         $('.truncate-button .label').html($item.text() + '<b class="button"></b>');
