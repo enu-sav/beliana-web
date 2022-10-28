@@ -419,6 +419,10 @@ article.word-container {
 article .word {
   padding-right: rem(50);
 
+  @media screen and (max-width: em(768, 16)) {
+    padding-right: 0;
+  }
+
   .view-word-search-page & {
     padding-right: 0;
   }
