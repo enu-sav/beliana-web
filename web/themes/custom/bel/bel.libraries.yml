@@ -2,12 +2,12 @@ global:
   version: 1.0.0
   css:
     base:
+      assets/dist/css/base/font-awessome.css: { }
       assets/dist/css/base/base.css: { }
     layout:
       assets/dist/css/layout/layout.css: { }
     component:
       //fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap: { }
-      //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css: { }
       assets/dist/css/components/fonts.css: { }
       assets/dist/css/components/components.css: { }
     theme:

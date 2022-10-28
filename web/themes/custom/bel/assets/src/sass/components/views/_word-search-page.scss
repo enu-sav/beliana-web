@@ -18,6 +18,7 @@
   header {
     margin-top: rem(-18);
     color: #767676;
+    width: 100%;
 
     .black-white & {
       color: $white;
@@ -25,6 +26,18 @@
 
       h2 {
         font-size: rem(20);
+      }
+    }
+
+    .view-options {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: rem(15) rem(-5) 0 rem(-5);
+
+      .list-tools {
+        padding: 0 rem(5);
+        width: auto;
       }
     }
   }
@@ -99,7 +112,8 @@
       overflow: initial;
     }
 
-    .label {
+    .label,
+    #label-sort {
       border: none;
       width: 100%;
       background: transparent;
@@ -173,9 +187,18 @@
 
         a {
           color: #a51b00;
+          display: block;
+          width: 100%;
+
+          &:focus {
+            outline: none;
+          }
 
           .black-white & {
             color: #000;
+            &:focus {
+              outline: em(1, 16) solid #000;
+            }
           }
         }
       }
