@@ -101,14 +101,21 @@ class ViewSortOptionsArea extends AreaPluginBase {
     if (empty($sort_order)) {
       $sort_order = 'ASC';
     }
-    return Url::fromRoute($route_name, $route_parameters->all(), [
+
+    $query = [
       'query' => [
         $current_query,
         'sort_by' => $sort_by,
         'sort_order' => $sort_order,
       ],
       'absolute' => 'true',
-    ]);
+    ];
+
+    if (empty($current_query)) {
+      unset($query['query'][0]);
+    }
+
+    return Url::fromRoute($route_name, $route_parameters->all(), $query);
   }
 
   /**
