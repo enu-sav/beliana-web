@@ -6,6 +6,7 @@ dependencies:
     - facets.facet.alphabet
   module:
     - facets
+    - system
   theme:
     - bel
 id: bel_alphabet
@@ -21,4 +22,8 @@ settings:
   provider: facets
   context_mapping: {  }
   block_id: bel_alphabet
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/node/*\r\n/media/*"

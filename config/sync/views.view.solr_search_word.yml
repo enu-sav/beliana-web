@@ -140,7 +140,7 @@ display:
           expose:
             label: Relevantnosť
             field_identifier: relevance
-          exposed: true
+          exposed: false
         field_sort:
           id: field_sort
           table: search_api_index_word_solr_index
@@ -506,11 +506,73 @@ display:
       cache:
         type: search_api_tag
         options: {  }
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_word_solr_index
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: Relevantnosť
+            field_identifier: relevance
+          exposed: false
+        field_sort:
+          id: field_sort
+          table: search_api_index_word_solr_index
+          field: field_sort
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: 'Na zoradenie'
+            field_identifier: order
+          exposed: false
+        created:
+          id: created
+          table: search_api_index_word_solr_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: 'Napísané dňa'
+            field_identifier: created
+          exposed: false
       defaults:
         cache: false
         title: true
         fields: true
+        sorts: false
+        header: false
       display_description: ''
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Zobrazené heslá @start – <span id="count-words">@end</span> z celkového počtu @total hesiel.'
+        bel_view_truncate_options_area:
+          id: bel_view_truncate_options_area
+          table: views
+          field: bel_view_truncate_options_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: bel_view_truncate_options_area
+          empty: true
       exposed_block: true
       display_extenders:
         metatag_display_extender:
@@ -523,8 +585,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
         - user.permissions
       tags:
