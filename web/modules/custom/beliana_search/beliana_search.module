@@ -58,7 +58,7 @@ function beliana_search_node_view(array &$build, EntityInterface $entity, Entity
 function beliana_search_views_pre_render(ViewExecutable $view) {
   if ($view->id() == 'solr_search_word' && $view->current_display == 'page_alphabet') {
     $query = \Drupal::request()->query->all();
-    if (empty($query['text'])) {
+    if (empty($query['text']) && empty($query['f'])) {
       $view->result = [];
     }
   }
