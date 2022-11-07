@@ -60,6 +60,8 @@ function beliana_search_views_pre_render(ViewExecutable $view) {
     $query = \Drupal::request()->query->all();
     if (empty($query['text']) && empty($query['f'])) {
       $view->result = [];
+      $view->header['result']->options = [];
+      $view->pager = [];
     }
   }
   if ($view->id() == 'solr_search_word' && $view->current_display == 'page_search_by_category') {
