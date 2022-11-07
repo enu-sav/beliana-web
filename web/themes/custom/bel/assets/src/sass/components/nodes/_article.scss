@@ -130,10 +130,16 @@ article.word-container {
       &__author {
 
         h2 {
+          display: inline-block;
+          width: 100%;
+          height: rem(22);
 
           a {
+            display: inline-block;
+            width: 100%;
             color: #333;
             font-size: rem(16);
+            line-height: normal;
             font-weight: normal;
 
             .black-white & {
@@ -175,6 +181,7 @@ article.word-container {
         @media screen and (min-width: em(769, 16)) {
           width: 35%;
           float: right;
+          margin-top: rem(-15);
         }
 
         @media print {
