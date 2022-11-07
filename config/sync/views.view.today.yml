@@ -12,7 +12,6 @@ dependencies:
     - datetime
     - node
     - user
-    - views_infinite_scroll
 id: today
 label: Dnes
 module: views
@@ -567,7 +566,7 @@ display:
     position: 2
     display_options:
       pager:
-        type: infinite_scroll
+        type: full
         options:
           offset: 0
           items_per_page: 50
@@ -576,6 +575,8 @@ display:
           tags:
             next: Ďalej
             previous: '‹ Predchádzajúci'
+            first: '« Prvý'
+            last: 'Posledná strana ››'
           expose:
             items_per_page: false
             items_per_page_label: 'Položiek na stránku'
@@ -584,9 +585,7 @@ display:
             items_per_page_options_all_label: '- Všetko -'
             offset: false
             offset_label: 'Zobraziť od'
-          views_infinite_scroll:
-            button_text: 'Načítať ďalšie'
-            automatically_load_content: false
+          quantity: 9
       style:
         type: default
         options:

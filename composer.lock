@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16f507bf5b49e936fadcb9ba1e1b5db2",
+    "content-hash": "660390e33ef06b66366fd38a94c6e527",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2214,36 +2214,40 @@
         },
         {
             "name": "drupal/config_ignore",
-            "version": "2.3.0",
+            "version": "3.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/config_ignore.git",
-                "reference": "8.x-2.3"
+                "reference": "8.x-3.0-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_ignore-8.x-2.3.zip",
-                "reference": "8.x-2.3",
-                "shasum": "2e1f07a455275fb6637909921a8915646601fc00"
+                "url": "https://ftp.drupal.org/files/projects/config_ignore-8.x-3.0-beta1.zip",
+                "reference": "8.x-3.0-beta1",
+                "shasum": "fc559ad7c5d0de2172a5b5980943d812f6b3b006"
             },
             "require": {
-                "drupal/config_filter": "^1 || ^2",
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.8 || ^9",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "drupal/config_filter": "^1.8||^2.2",
+                "drush/drush": "^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.3",
-                    "datestamp": "1608306489",
+                    "version": "8.x-3.0-beta1",
+                    "datestamp": "1627977337",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -2265,7 +2269,7 @@
             "description": "Ignore certain configuration during import.",
             "homepage": "http://drupal.org/project/config_ignore",
             "support": {
-                "source": "https://git.drupalcode.org/project/config_ignore",
+                "source": "http://cgit.drupalcode.org/config_ignore",
                 "issues": "http://drupal.org/project/config_ignore",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             }
@@ -3094,36 +3098,35 @@
         },
         {
             "name": "drupal/entity_browser",
-            "version": "1.10.0",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_browser.git",
-                "reference": "8.x-1.10"
+                "reference": "8.x-2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "1a6b9f293f4763759fee2362ed7566f270829356"
+                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.8.zip",
+                "reference": "8.x-2.8",
+                "shasum": "151433fb7681f3e844010072285a374a5e46cf2a"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^9.2 || ^10"
             },
             "require-dev": {
                 "drupal/embed": "~1.0",
-                "drupal/entity": "~1.0",
-                "drupal/entity_embed": "~1.0",
-                "drupal/entityqueue": "~1.0",
-                "drupal/inline_entity_form": "~1.0",
-                "drupal/media_entity": "~1.0",
-                "drupal/paragraphs": "~1.0",
-                "drupal/token": "~1.0"
+                "drupal/entity_embed": "1.x-dev",
+                "drupal/entity_reference_revisions": "1.x-dev",
+                "drupal/entityqueue": "1.x-dev",
+                "drupal/inline_entity_form": "1.x-dev",
+                "drupal/paragraphs": "1.x-dev",
+                "drupal/token": "1.x-dev"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1579563787",
+                    "version": "8.x-2.8",
+                    "datestamp": "1658509699",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3714,26 +3717,26 @@
         },
         {
             "name": "drupal/mathjax",
-            "version": "3.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/mathjax.git",
-                "reference": "3.0.0"
+                "reference": "4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mathjax-3.0.0.zip",
-                "reference": "3.0.0",
-                "shasum": "ab1233e5ef40192a6e7266ba208126b78fd28a3f"
+                "url": "https://ftp.drupal.org/files/projects/mathjax-4.0.1.zip",
+                "reference": "4.0.1",
+                "shasum": "46f6056deb91ca4a668423652abac9a2b24e44ee"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.1 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0",
-                    "datestamp": "1638546800",
+                    "version": "4.0.1",
+                    "datestamp": "1663335885",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3836,35 +3839,35 @@
         },
         {
             "name": "drupal/menu_link_attributes",
-            "version": "1.2.0",
+            "version": "1.3.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_link_attributes.git",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3-rc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_link_attributes-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "a332eca9d63eed14df01af759882627512ba6448"
+                "url": "https://ftp.drupal.org/files/projects/menu_link_attributes-8.x-1.3-rc3.zip",
+                "reference": "8.x-1.3-rc3",
+                "shasum": "e0fa130a6c061f1d1901dffa8a0c1fa40d356aa1"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1616337149",
+                    "version": "8.x-1.3-rc3",
+                    "datestamp": "1667506257",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -4614,27 +4617,27 @@
         },
         {
             "name": "drupal/simple_sitemap",
-            "version": "3.11.0",
+            "version": "4.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simple_sitemap.git",
-                "reference": "8.x-3.11"
+                "reference": "4.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_sitemap-8.x-3.11.zip",
-                "reference": "8.x-3.11",
-                "shasum": "5fdd4ed5af5e37e3c707e401d094a179f52e7711"
+                "url": "https://ftp.drupal.org/files/projects/simple_sitemap-4.1.3.zip",
+                "reference": "4.1.3",
+                "shasum": "18eda442709f32102416a0112abc33649658f8e9"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^9.3 || ^10",
                 "ext-xmlwriter": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.11",
-                    "datestamp": "1658781789",
+                    "version": "4.1.3",
+                    "datestamp": "1665573795",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4642,7 +4645,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": ">=9"
                     }
                 }
             },
@@ -4666,8 +4669,7 @@
             "homepage": "https://drupal.org/project/simple_sitemap",
             "support": {
                 "source": "https://cgit.drupalcode.org/simple_sitemap",
-                "issues": "https://drupal.org/project/issues/simple_sitemap",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
+                "issues": "https://drupal.org/project/issues/simple_sitemap"
             }
         },
         {
@@ -11434,10 +11436,12 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/config_ignore": 10,
         "drupal/config_split": 5,
         "drupal/entityqueue": 20,
         "drupal/inline_entity_form": 5,
         "drupal/media_entity_browser": 15,
+        "drupal/menu_link_attributes": 5,
         "drupal/ultimate_cron": 15
     },
     "prefer-stable": true,

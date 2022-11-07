@@ -87,7 +87,6 @@ module:
   ultimate_cron: 0
   update: 0
   user: 0
-  views_infinite_scroll: 0
   views_natural_sort: 0
   views_ui: 0
   menu_link_content: 1
