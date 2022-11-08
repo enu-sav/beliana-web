@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd56902fe5b789884821396751a8b76c",
+    "content-hash": "e3131aaa2a267d906164e9d253806b25",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4184,6 +4184,50 @@
                 "source": "https://cgit.drupalcode.org/pathauto",
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
+            }
+        },
+        {
+            "name": "drupal/preload_font",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/preload_font.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/preload_font-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "d2315910393df9b15e2cac961b7a55ef174c6d94"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1662361452",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jaykumar95",
+                    "homepage": "https://www.drupal.org/user/3613338"
+                }
+            ],
+            "description": "This module provides functionality to preload fonts in head tag.",
+            "homepage": "https://www.drupal.org/project/preload_font",
+            "support": {
+                "source": "https://git.drupalcode.org/project/preload_font"
             }
         },
         {

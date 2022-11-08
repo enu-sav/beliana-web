@@ -63,6 +63,7 @@
         "drupal/migrate_source_csv": "^3.4",
         "drupal/page_manager": "^4.0",
         "drupal/pathauto": "^1.11",
+        "drupal/preload_font": "^1.0",
         "drupal/purge": "^3.2",
         "drupal/recaptcha": "^3.1",
         "drupal/recreate_block_content": "^2.1",
