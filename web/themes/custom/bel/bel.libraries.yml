@@ -51,8 +51,8 @@ wcag-tools:
   version: VERSION
   header: true
   js:
-    assets/dist/libs/accessible/jquery-accessible-menu.js: { async: true }
-    assets/dist/libs/accessible/button-links.js: { async: true }
+    assets/dist/js/accessible/jquery-accessible-menu.js: { async: true }
+    assets/dist/js/accessible/button-links.js: { async: true }
     assets/dist/js/wcag-tools/wcag-tools.js: { async: true }
   dependencies:
     - core/drupal
