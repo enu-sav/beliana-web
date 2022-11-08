@@ -599,10 +599,38 @@ display:
     position: 3
     display_options:
       title: 'Vyhľadávanie podľa kategórií'
+      sorts:
+        field_sort:
+          id: field_sort
+          table: search_api_index_word_solr_index
+          field: field_sort
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: 'Na zoradenie'
+            field_identifier: order
+          exposed: true
+        created:
+          id: created
+          table: search_api_index_word_solr_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: 'Napísané dňa'
+            field_identifier: created
+          exposed: true
       defaults:
         cache: true
         title: false
         use_ajax: true
+        sorts: false
       display_description: ''
       exposed_block: true
       display_extenders:

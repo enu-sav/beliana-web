@@ -8,7 +8,6 @@
 {% endblock %}
 
 {% block content %}
-  {{ attach_library('bel/word') }}
   <article{{ attributes.addClass('word-container') }}>
     <div class="word{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
       <h1>{{ node.label }}</h1>
@@ -17,7 +16,9 @@
       </div>
 
       <div class="con-wrap">
-        <div class="node__sidebar">
+        <div class="node__sidebar desktop">
+          <div class="structure hidden"></div>
+
           {% if (node.field_images is not empty) or (node.field_table is not empty) %}
             <div class="word-illustration">
               {% set images_count = content.field_images['#items']|length %}
@@ -36,7 +37,7 @@
           {% endif %}
         </div>
 
-        <div class="node__content">
+        <div class="node__content desktop">
           {{ content.body }}
         </div>
       </div>

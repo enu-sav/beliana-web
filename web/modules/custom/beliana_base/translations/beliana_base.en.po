@@ -132,3 +132,9 @@ msgstr "The mobile menu is closed"
 
 msgid "aria-label-you-are-in-the-mobile-menu"
 msgstr "You are in the section: Mobile menu"
+
+msgid "label-content"
+msgstr "Content"
+
+msgid "label-back-to-content"
+msgstr "Back to content"

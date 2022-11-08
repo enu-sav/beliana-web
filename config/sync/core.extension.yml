@@ -85,7 +85,6 @@ module:
   toolbar: 0
   twig_tweak: 0
   ultimate_cron: 0
-  update: 0
   user: 0
   views_natural_sort: 0
   views_ui: 0
