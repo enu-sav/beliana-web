@@ -109,7 +109,7 @@ class SearchForm extends FormBase {
       ],
     ];
 
-    $form['#attached']['library'][] = 'beliana_search/search';
+    $form['#attached']['library'][] = 'bel/search';
 
     return $form;
   }
