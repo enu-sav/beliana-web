@@ -63,6 +63,7 @@
         "drupal/migrate_source_csv": "^3.4",
         "drupal/page_manager": "^4.0",
         "drupal/pathauto": "^1.11",
+        "drupal/preload_font": "^1.0",
         "drupal/purge": "^3.2",
         "drupal/recaptcha": "^3.1",
         "drupal/recreate_block_content": "^2.1",
@@ -133,6 +134,9 @@
             },
             "drupal/admin_toolbar": {
                 "3121816 - Version 8.x-2.1 need Drupal 8.8.0 or greater": "https://www.drupal.org/files/issues/2020-03-30/3121816-07.patch"
+            },
+            "drupal/mathjax": {
+                "3016329 - Conditionally attach MathJax libraries and markup": "https://www.drupal.org/files/issues/2020-09-18/3016329-conditionally-attach-markup-10.patch"
             }
         }
     },
