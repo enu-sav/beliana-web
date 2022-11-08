@@ -36,9 +36,10 @@
   'nav-collapse',
   'clearfix',
   'nav-collapse-0',
-  'closed'
+  'closed',
+  'block-bel-main-menu'
 ] %}
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(nav_classes)|without('role', 'aria-labelledby') }} style="transition: max-height 284ms; position: relative;" aria-hidden="false">
+<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(nav_classes)|without('id', 'role', 'aria-labelledby') }} style="transition: max-height 284ms; position: relative;" aria-hidden="false">
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% if not configuration.label_display %}
     {% set title_attributes = title_attributes.addClass('visually-hidden') %}
