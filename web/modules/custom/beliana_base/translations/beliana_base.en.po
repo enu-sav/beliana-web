@@ -138,3 +138,6 @@ msgstr "Content"
 
 msgid "label-back-to-content"
 msgstr "Back to content"
+
+msgid "label-select-the-category/categories-in-the-categories-list"
+msgstr "Select the category/categories in the 'Categories' list"

@@ -56,12 +56,16 @@ function beliana_search_node_view(array &$build, EntityInterface $entity, Entity
  * Implements hook_views_pre_render
  */
 function beliana_search_views_pre_render(ViewExecutable $view) {
-  if ($view->id() == 'solr_search_word' && $view->current_display == 'page_alphabet') {
+  if ($view->id() == 'solr_search_word' && ($view->current_display == 'page_alphabet' || $view->current_display == 'page_search_by_category')) {
     $query = \Drupal::request()->query->all();
     if (empty($query['text']) && empty($query['f'])) {
       $view->result = [];
       $view->header['result']->options = [];
       $view->pager = [];
+
+      if ($view->current_display == 'page_search_by_category') {
+        $view->empty['area_text_custom']->options['content'] = t('label-select-the-category/categories-in-the-categories-list');
+      }
     }
   }
   if ($view->id() == 'solr_search_word' && $view->current_display == 'page_search_by_category') {

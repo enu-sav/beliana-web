@@ -138,3 +138,6 @@ msgstr "Obsah"
 
 msgid "label-back-to-content"
 msgstr "Naspäť na obsah"
+
+msgid "label-select-the-category/categories-in-the-categories-list"
+msgstr "Zvoľte kategóriu/kategórie v zozname 'Kategórie'"

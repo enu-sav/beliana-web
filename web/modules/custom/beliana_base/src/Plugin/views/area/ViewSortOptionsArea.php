@@ -35,10 +35,9 @@ class ViewSortOptionsArea extends AreaPluginBase {
    */
   public function render($empty = FALSE) {
     if (!$empty || !empty($this->options['empty'])) {
-      $sort_option_active_link = t('label-relevance-desc');
+      $sort_option_active_link = t('label-order-asc');
 
       $sort_types = [
-        'relevance-DESC' => t('label-relevance-desc'),
         'order-ASC' => t('label-order-asc'),
         'order-DESC' => t('label-order-desc'),
         'created-ASC' => t('label-created-asc'),
@@ -57,10 +56,6 @@ class ViewSortOptionsArea extends AreaPluginBase {
         }
 
         switch ($key) {
-          case 'relevance-DESC':
-            $sort_by = 'relevance';
-            $sort_order = 'DESC';
-            break;
           case 'order-ASC':
             $sort_by = 'order';
             $sort_order = 'ASC';
