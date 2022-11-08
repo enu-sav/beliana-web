@@ -119,6 +119,8 @@
       background: transparent;
       text-align: left;
       padding: 0 rem(10);
+      line-height: inherit;
+      cursor: pointer;
 
       .black-white & {
         border: rem(1) solid $white;

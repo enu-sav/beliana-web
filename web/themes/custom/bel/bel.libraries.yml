@@ -39,6 +39,14 @@ black-white-init:
   js:
     assets/dist/js/wcag-tools/black-white-init.js: { preprocess: 0, weight: -22, minified: true }
 
+search:
+  version: VERSION
+  js:
+    assets/dist/js/search/search.js: { async: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+
 wcag-tools:
   version: VERSION
   header: true

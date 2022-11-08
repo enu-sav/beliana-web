@@ -132,3 +132,12 @@ msgstr "Mobilné menu je zatvorené"
 
 msgid "aria-label-you-are-in-the-mobile-menu"
 msgstr "Nachádzate sa v sekcii: Mobilné menu"
+
+msgid "label-content"
+msgstr "Obsah"
+
+msgid "label-back-to-content"
+msgstr "Naspäť na obsah"
+
+msgid "label-select-the-category/categories-in-the-categories-list"
+msgstr "Zvoľte kategóriu/kategórie v zozname 'Kategórie'"

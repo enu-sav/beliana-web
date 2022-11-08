@@ -130,10 +130,16 @@ article.word-container {
       &__author {
 
         h2 {
+          display: inline-block;
+          width: 100%;
+          height: rem(22);
 
           a {
+            display: inline-block;
+            width: 100%;
             color: #333;
             font-size: rem(16);
+            line-height: normal;
             font-weight: normal;
 
             .black-white & {
@@ -166,6 +172,40 @@ article.word-container {
       }
 
       &__sidebar {
+        &.mobile {
+          display: none;
+        }
+        &.desktop {
+          float: right;
+          display: inline-block;
+          width: 35%;
+        }
+
+        .structure {
+          margin-left: 30px;
+          margin-top: 20px;
+          background: #eee;
+          padding: 10px;
+        }
+        .structure h3 {
+          margin-top: 0;
+          margin-left: 10px;
+          margin-bottom: 5px;
+          color: #333 !important;
+        }
+        .structure ul {
+          list-style: none;
+        }
+        .structure ul li a {
+          padding-left: 10px;
+          color: #266ead !important;
+        }
+        .structure ul li.small a {
+          padding-left: 25px;
+        }
+      }
+
+      &__sidebar {
         font-size: rem(16);
 
         @media screen and (max-width: em(768, 16)) {
@@ -175,6 +215,7 @@ article.word-container {
         @media screen and (min-width: em(769, 16)) {
           width: 35%;
           float: right;
+          margin-top: rem(-15);
         }
 
         @media print {

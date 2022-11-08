@@ -1,7 +1,0 @@
-search:
-  version: VERSION  
-  js:    
-    js/search.js: {}
-  dependencies:
-    - core/drupal
-    - core/jquery
