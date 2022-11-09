@@ -50,9 +50,8 @@
             $sidebar.on('click', 'ul > li > a', function (e) {
               e.preventDefault();
               var offset = $('body').hasClass('adminimal-admin-toolbar') ? 280 : 260;
-
-              if (selector == 'mobile') {
-                offset = $('body').hasClass('adminimal-admin-toolbar') ? 180 : 150;
+              if ($(window).width() < 769) {
+                offset = $('body').hasClass('adminimal-admin-toolbar') ? 320 : 320;
               }
 
               $('html, body').animate({
