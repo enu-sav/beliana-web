@@ -49,7 +49,7 @@
 
             $sidebar.on('click', 'ul > li > a', function (e) {
               e.preventDefault();
-              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 220 : 160;
+              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 280 : 260;
 
               if (selector == 'mobile') {
                 offset = $('body').hasClass('adminimal-admin-toolbar') ? 180 : 150;
