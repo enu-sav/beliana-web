@@ -14,7 +14,7 @@
       self.setSearchInput();
 
       //focus to search input if keyword exist
-      if ($wrapper.find('input.search-input').val().length > 0) {
+      if ($wrapper.find('input.search-input').val.length > 0) {
         // delay for firefox
         setTimeout(function () {
           $wrapper.find('input.search-input').focus();
