@@ -3,9 +3,9 @@ langcode: sk
 status: true
 dependencies:
   module:
+    - beliana_base
     - beliana_text_filter
     - editor
-    - mathjax
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Základné HTML'
@@ -18,7 +18,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt style height width data-entity-type data-entity-uuid data-align data-caption> <sub> <sup> <table> <tr> <th colspan rowspan> <td colspan rowspan>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt style data-entity-type data-entity-uuid data-align data-caption width height> <sub> <sup> <table> <tr> <th colspan rowspan> <td colspan rowspan>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -39,15 +39,15 @@ filters:
     status: true
     weight: 11
     settings: {  }
-  filter_mathjax:
-    id: filter_mathjax
-    provider: mathjax
-    status: true
-    weight: 50
-    settings: {  }
   filter_beliana_table_wrapper:
     id: filter_beliana_table_wrapper
     provider: beliana_text_filter
     status: true
     weight: 0
+    settings: {  }
+  beliana_filter_mathjax:
+    id: beliana_filter_mathjax
+    provider: beliana_base
+    status: true
+    weight: 50
     settings: {  }

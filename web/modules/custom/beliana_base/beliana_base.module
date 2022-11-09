@@ -4,6 +4,22 @@
  * Contains beliana_base.module.
  */
 
+use Drupal\Component\Serialization\Json;
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function beliana_base_page_attachments_alter(array &$attachments): void {
+  if (in_array('mathjax/source', $attachments['#attached']['library'])) {
+    $index = array_search('mathjax/source', $attachments['#attached']['library']);
+    unset($attachments['#attached']['library'][$index]);
+  }
+  if (in_array('mathjax/setup', $attachments['#attached']['library'])) {
+    $index = array_search('mathjax/setup', $attachments['#attached']['library']);
+    unset($attachments['#attached']['library'][$index]);
+  }
+}
 
 /**
  * Implements hook_theme().
