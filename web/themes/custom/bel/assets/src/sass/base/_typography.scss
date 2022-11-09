@@ -45,6 +45,40 @@ h6 {
   }
 }
 
+h2 {
+
+  .word & {
+    font-size: rem(26);
+    line-height: rem(32.5);
+
+    .black-white & {
+      font-size: rem(24.7);
+      line-height: rem(30.8833);
+    }
+  }
+}
+
+h3 {
+
+  .word & {
+    font-size: rem(17.6);
+    line-height: rem(32.5);
+  }
+}
+
+h2, h3 {
+
+  .word & {
+    margin-top: rem(26);
+    color: #266ead;
+
+    .black-white & {
+      margin-top: rem(24.7);
+      color: #fff;
+    }
+  }
+}
+
 h1 {
   font-size: rem(26);
 }
