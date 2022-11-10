@@ -65,10 +65,6 @@
           if (!$sidebar_wrapper.find('article.media-image.view-mode-in-word:not(.moved)').length && !$sidebar_wrapper.find('.field--name-field-table').length && !$sidebar_wrapper.find('.structure > ul').length) {
             $sidebar_wrapper.hide();
           }
-
-          if ($sidebar_wrapper.find('.structure > ul').length) {
-            $sidebar_wrapper.parent().addClass('relative');
-          }
         });
 
         $word.on('click', 'span.scroll-up', function (e) {
