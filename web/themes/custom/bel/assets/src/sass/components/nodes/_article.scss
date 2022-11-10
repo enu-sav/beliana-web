@@ -59,11 +59,11 @@ article.word-container {
 
     h2 {
 
-      body.path-rozsirene-vyhladavanie .view-word-search-page & {
+      .view-word-search-page & {
         font-size: em(27.2, 16);
       }
 
-      .black-white body.path-rozsirene-vyhladavanie .view-word-search-page & {
+      .black-white .view-word-search-page & {
         font-size: em(22.1, 16);
       }
 
@@ -76,11 +76,11 @@ article.word-container {
           font-size: rem(16.9);
         }
 
-        body.path-rozsirene-vyhladavanie .view-word-search-page &  {
+        .view-word-search-page &  {
           font-size: 1.1em;
         }
 
-        .black-white body.path-rozsirene-vyhladavanie .view-word-search-page &  {
+        .black-white .view-word-search-page &  {
           font-size: 1em;
         }
       }
@@ -535,5 +535,17 @@ article .word {
 
   @media print {
     padding-right: 0;
+  }
+}
+
+article {
+  body.page-node-type-page & {
+
+    ol {
+
+      li {
+        margin-left: rem(14);
+      }
+    }
   }
 }
