@@ -15,11 +15,12 @@ dependencies:
     - field.field.media.image.field_url_autora_diela_l
     - field.field.media.image.field_url_diela_l
     - field.field.media.image.field_url_textu_licencie_l
+    - image.style.sidebar
     - media.type.image
-    - responsive_image.styles.sidebar
   module:
     - beliana_daily
     - link
+    - svg_image
     - text
 id: media.image.full
 targetEntityType: media
@@ -34,11 +35,17 @@ content:
     weight: 2
     region: content
   field_image:
-    type: beliana_responsive_image
+    type: image
     label: hidden
     settings:
-      responsive_image_style: sidebar
-      image_link: colorbox
+      image_link: ''
+      image_style: sidebar
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
