@@ -174,6 +174,85 @@ article.word-container {
           font-size: inherit;
           line-height: inherit;
         }
+
+        article.media-image.view-mode-in-word {
+
+           a {
+             display: block;
+             text-align: left;
+           }
+
+           img {
+             width: 100%;
+             display: block;
+           }
+
+           .field--name-field-description {
+             padding-top: rem(5);
+             font-size: rem(16);
+
+             p {
+               margin: 0;
+               text-align: center;
+               line-height: 1.2em;
+             }
+           }
+        }
+
+        table {
+          font-size: rem(13);
+          line-height: rem(32.5);
+          border: 0;
+          margin-top: rem(15);
+          margin-bottom: rem(25);
+
+          thead th {
+            text-align: center;
+            background-color: #d3d3d3;
+            padding: rem(5);
+            line-height: initial;
+            border: rem(1) solid;
+          }
+
+          td {
+            padding: rem(5);
+            vertical-align: top;
+            border: rem(1) solid #282727;
+          }
+
+          tr {
+            border: rem(1) solid #282727;
+          }
+
+          tr td {
+            line-height: rem(15);
+            text-align: left;
+          }
+
+          tr td:first-child {
+            font-weight: initial;
+          }
+        }
+
+        &.desktop {
+
+          article.media-image.view-mode-in-word {
+
+            @media screen and (min-width: em(769, 16)) {
+              float: left;
+              padding-right: rem(20);
+              margin-top: rem(7);
+
+              img {
+                max-width: rem(290);
+              }
+
+              .field--name-field-description {
+                max-width: rem(290);
+              }
+            }
+          }
+        }
       }
 
       &__sidebar {
@@ -285,6 +364,17 @@ article.word-container {
                 font-size: rem(15);
                 line-height: rem(18);
               }
+            }
+          }
+
+          .field--name-field-table .field__item table {
+            width: 100% !important;
+            margin-bottom: rem(30);
+            min-width: 0 !important;
+
+            tr td {
+              padding: rem(2) rem(10);
+              border: rem(1) solid #e4e4e4;
             }
           }
         }
