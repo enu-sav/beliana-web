@@ -31,6 +31,7 @@
 
                 $($image[0].outerHTML).insertAfter($tag);
                 $image.addClass('moved');
+                $images[id].remove();
                 $tag.remove();
               });
             }
