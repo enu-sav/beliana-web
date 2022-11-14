@@ -52,7 +52,7 @@
 
             $sidebar.on('click', 'ul > li > a', function (e) {
               e.preventDefault();
-              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 280 : 260;
+              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 290 : 270;
               if ($(window).width() < 769) {
                 offset = $('body').hasClass('adminimal-admin-toolbar') ? 320 : 320;
               }
