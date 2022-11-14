@@ -31,12 +31,14 @@
 
                 $($image[0].outerHTML).insertAfter($tag);
                 $image.addClass('moved');
+                $images[id].remove();
                 $tag.remove();
               });
             }
           });
 
           if ($wrapper.find('h2, h3').length) {
+            var breadcrumbs = 0;
             var $sidebar = $sidebar_wrapper.find('.structure');
 
             $sidebar.append('<h3>' + Drupal.t('label-content') + '</h3><ul></ul>');
@@ -45,6 +47,7 @@
               var type = $(item).is('h2') ? 'large' : 'small';
               $(item).attr('data-id', i).after('<span class="scroll-up">' + Drupal.t('label-back-to-content') + '</span>');
               $sidebar.find('ul').append('<li class="' + type + '"><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
+              breadcrumbs = document.querySelector('.block-bel-breadcrumbs').offsetHeight;
             });
 
             $sidebar.on('click', 'ul > li > a', function (e) {
@@ -55,7 +58,7 @@
               }
 
               $('html, body').animate({
-                scrollTop: $wrapper.find('h2[data-id="' + $(this).data('id') + '"], h3[data-id="' + $(this).data('id') + '"]').offset().top - offset
+                scrollTop: $wrapper.find('h2[data-id="' + $(this).data('id') + '"], h3[data-id="' + $(this).data('id') + '"]').offset().top - (offset + breadcrumbs)
               }, 300);
             });
 
