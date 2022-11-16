@@ -68,6 +68,7 @@
         "drupal/recaptcha": "^3.1",
         "drupal/recreate_block_content": "^2.1",
         "drupal/redirect": "^1.8",
+        "drupal/responsive_favicons": "^1.7",
         "drupal/restui": "^1.20",
         "drupal/search_api": "^1.28",
         "drupal/search_api_solr": "^4.2",
