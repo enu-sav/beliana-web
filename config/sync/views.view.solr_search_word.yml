@@ -152,7 +152,7 @@ display:
           order: ASC
           expose:
             label: 'Na zoradenie'
-            field_identifier: order
+            field_identifier: title
           exposed: true
         created:
           id: created
@@ -611,7 +611,7 @@ display:
           order: ASC
           expose:
             label: 'Na zoradenie'
-            field_identifier: order
+            field_identifier: title
           exposed: true
         created:
           id: created
