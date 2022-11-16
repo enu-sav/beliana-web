@@ -57,11 +57,11 @@ class ViewSortOptionsArea extends AreaPluginBase {
 
         switch ($key) {
           case 'order-ASC':
-            $sort_by = 'order';
+            $sort_by = 'title';
             $sort_order = 'ASC';
             break;
           case 'order-DESC':
-            $sort_by = 'order';
+            $sort_by = 'title';
             $sort_order = 'DESC';
             break;
           case 'created-ASC':
