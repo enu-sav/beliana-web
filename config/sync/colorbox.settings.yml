@@ -1,6 +1,7 @@
 _core:
   default_config_hash: AKL00pU-O0VFc8YjnfQak2hpuYRFW_x4r_rr4xhqTcg
 langcode: sk
+dompurify_hide_warning: null
 custom:
   style: default
   activate: 0
