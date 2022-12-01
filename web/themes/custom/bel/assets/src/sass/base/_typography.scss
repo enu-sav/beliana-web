@@ -367,7 +367,17 @@ button, input.button {
     }
   }
 }
-
+#colorbox {
+  #cboxContent {
+    .cboxPhoto {
+      width: auto !important;
+      height: 100% !important;
+      max-height: 100%;
+      max-width: 100%;
+      margin: 0 auto !important;
+    }
+  }
+}
 
 //@media screen and (min-width: 769px) {
 //  .js .nav-collapse.closed {
