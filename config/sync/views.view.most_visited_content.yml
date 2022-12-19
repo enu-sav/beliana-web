@@ -203,9 +203,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
+  block_most_read_passwords:
+    id: block_most_read_passwords
+    display_title: 'Block: Most read passwords'
     display_plugin: block
     position: 2
     display_options:
@@ -283,7 +283,11 @@ display:
         pager: false
         fields: false
       css_class: ''
-      display_extenders: {  }
+      display_description: 'Block: Most read passwords'
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -292,9 +296,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_1:
-    id: page_1
-    display_title: Page
+  page_most_read_passwords:
+    id: page_most_read_passwords
+    display_title: 'Page: Most read passwords'
     display_plugin: page
     position: 1
     display_options:
@@ -443,6 +447,7 @@ display:
         row: false
         fields: false
       css_class: view-najcitanejsie-hesla
+      display_description: 'Page: Most read passwords'
       display_extenders:
         metatag_display_extender:
           metatags: {  }

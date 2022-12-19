@@ -135,6 +135,10 @@ class RsSyncResource extends ResourceBase {
       $node->field_images = $local_fids;
     }
 
+    if ($data['language'] == 'en') {
+      $node->set('langcode', $data['language']);
+    }
+
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'full_html'];
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
@@ -498,6 +502,10 @@ class RsSyncResource extends ResourceBase {
         $node->set('field_images', []);
       }
     }
+    if ($data['language'] == 'en') {
+      $node->set('langcode', $data['language']);
+    }
+
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
     $event_dispatcher->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $data));
     $node->save();

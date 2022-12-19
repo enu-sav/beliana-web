@@ -4,11 +4,11 @@ langcode: sk
 session:
   parameter: language
 url:
-  source: path_prefix
+  source: domain
   prefixes:
     sk: ''
     en: en
   domains:
-    sk: ''
-    en: ''
+    sk: beliana.sav.sk
+    en: en.beliana.sav.sk
 selected_langcode: site_default

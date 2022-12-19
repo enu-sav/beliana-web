@@ -32,6 +32,11 @@ services:
     config:
       dir: .solr/conf
 
+proxy:
+  appserver:
+    - "*.beliana.web.lndo.site"
+    - beliana.web.lndo.site
+
 tooling:
   xdebug-on:
     service: appserver
