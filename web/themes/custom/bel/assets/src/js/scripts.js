@@ -42,15 +42,15 @@ if (typeof Drupal !== 'undefined') {
         $(window).on('scroll', function () {
           var scroll = $(window).scrollTop();
           var header_offset = 46;
-          var title_offset = 169;
+          var title_offset = 44;
 
           if ($(window).width() < 768) {
             header_offset = 52;
-            title_offset = 174;
+            title_offset = 52;
           }
           else if ($(window).width() < 948) {
             header_offset = 74;
-            title_offset = 200;
+            title_offset = 74;
           }
 
           if ($('#content-main').height() > 500) {
