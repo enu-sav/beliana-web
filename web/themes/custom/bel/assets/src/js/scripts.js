@@ -41,16 +41,15 @@ if (typeof Drupal !== 'undefined') {
 
         $(window).on('scroll', function () {
           var scroll = $(window).scrollTop();
-          var header_offset = 46;
-          var title_offset = 44;
+          var header_offset = 40;
 
           if ($(window).width() < 768) {
             header_offset = 52;
-            title_offset = 52;
           }
           else if ($(window).width() < 948) {
             header_offset = 74;
-            title_offset = 74;
+          } else if ($(window).width() < 1085) {
+              header_offset = 58;
           }
 
           if ($('#content-main').height() > 500) {
@@ -59,13 +58,6 @@ if (typeof Drupal !== 'undefined') {
             }
             else {
               $body.removeClass('sticky-header');
-            }
-
-            if (scroll >= title_offset) {
-              $body.addClass('sticky-title');
-            }
-            else {
-              $body.removeClass('sticky-title');
             }
           }
         });

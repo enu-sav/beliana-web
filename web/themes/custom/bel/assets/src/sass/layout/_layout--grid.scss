@@ -58,6 +58,10 @@ article {
 #content-main {
   margin-top: rem(32);
 
+  body.sticky-header & {
+    padding-top: rem(98);
+  }
+
   .black-white & {
     position: relative;
     z-index: 1;
