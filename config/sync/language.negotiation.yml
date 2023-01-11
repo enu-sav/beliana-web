@@ -7,8 +7,8 @@ url:
   source: domain
   prefixes:
     sk: ''
-    en: en
+    en: ''
   domains:
-    sk: dw.beliana.sav.sk
-    en: dw.en.beliana.sav.sk
+    sk: beliana.sav.sk
+    en: en.beliana.sav.sk
 selected_langcode: site_default

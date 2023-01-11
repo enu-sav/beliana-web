@@ -4,7 +4,9 @@
  * Contains beliana_base.module.
  */
 
-use Drupal\Component\Serialization\Json;
+use Drupal\Core\Access\AccessResult;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
 
 
 /**
@@ -45,4 +47,20 @@ function beliana_base_theme($existing, $type, $theme, $path): array {
       'template' => 'view-sort-options',
     ],
   ];
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function beliana_base_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if (!$node->hasTranslation($langcode)) {
+    $access = AccessResult::forbidden();
+  }
+  else {
+    $access = AccessResult::neutral();
+  }
+  $access->addCacheableDependency($node);
+
+  return $access;
 }
