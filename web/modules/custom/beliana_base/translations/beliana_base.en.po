@@ -23,10 +23,10 @@ msgid "wcag-accessible-version-of-the-site-is-turned-on"
 msgstr "The accessible version of the site is turned on"
 
 msgid "wcag-display-options-the-beginning-of-the-article-is-set"
-msgstr "Display options - set to article beginning"
+msgstr "Display options – set to truncated articles"
 
 msgid "wcag-display-options-the-entire-article-is-set"
-msgstr "Display options - set to entire article"
+msgstr "Display options – set to full article"
 
 msgid "wcag-black-and-white-version-of-the-page"
 msgstr "Black and white version of the page"
@@ -65,7 +65,7 @@ msgid "label-show-categories"
 msgstr "Show categories"
 
 msgid "label-hide-categories"
-msgstr "Hide categoriess"
+msgstr "Hide categories"
 
 msgid "aria-label-filter-content-by-category"
 msgstr "Filter content by category"
@@ -74,19 +74,19 @@ msgid "aria-label-category-number-of-products-count"
 msgstr "Category @category, number of items: @count"
 
 msgid "label-im-showing"
-msgstr "I'm showing:"
+msgstr "Displaying:"
 
-msgid "label-beginning-password"
-msgstr "The beginning of the password"
+msgid "label-truncated-article"
+msgstr "Truncated article"
 
-msgid "label-full-password"
-msgstr "Full password"
+msgid "label-full-article"
+msgstr "Full article"
 
-msgid "label-show-the-beginning-of-the-password-in-the-list"
-msgstr "Show the beginning of the password in the list"
+msgid "label-show-truncated-articless-in-the-list"
+msgstr "Show truncated articles in the list"
 
-msgid "label-show-the-entire-password-in-the-list"
-msgstr "Show the entire password in the list"
+msgid "label-show-the-full-article-in-the-list"
+msgstr "Show the full articles in the list"
 
 msgid "sorting-options"
 msgstr "Sorting options"
@@ -101,16 +101,16 @@ msgid "label-relevance-desc"
 msgstr "Relevance"
 
 msgid "label-order-asc"
-msgstr "A-Z"
+msgstr "A – Z"
 
 msgid "label-order-desc"
-msgstr "Z-A"
+msgstr "Z – A"
 
 msgid "label-created-asc"
-msgstr "The latest"
+msgstr "Latest first"
 
 msgid "label-created-desc"
-msgstr "The oldest"
+msgstr "Oldest first"
 
 msgid "label-sort-articles-in-list"
 msgstr "Sort articles in the list: "
@@ -140,4 +140,4 @@ msgid "label-back-to-content"
 msgstr "Back to content"
 
 msgid "label-select-the-category/categories-in-the-categories-list"
-msgstr "Select the category/categories in the 'Categories' list"
+msgstr "Select a category/categories in the 'Categories' list"
