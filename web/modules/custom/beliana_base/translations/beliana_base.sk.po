@@ -76,16 +76,16 @@ msgstr "Kategória @category, počet položiek: @count"
 msgid "label-im-showing"
 msgstr "Zobrazujem:"
 
-msgid "label-beginning-article"
+msgid "label-truncated-article"
 msgstr "Začiatok hesla"
 
 msgid "label-full-article"
 msgstr "Celé heslo"
 
-msgid "label-show-the-beginning-of-the-article-in-the-list"
+msgid "label-show-truncated-articles-in-the-list"
 msgstr "Vo výpise zobraziť začiatok hesla"
 
-msgid "label-show-the-entire-article-in-the-list"
+msgid "label-show-the-full-articles-in-the-list"
 msgstr "Vo výpise zobraziť celé heslo"
 
 msgid "sorting-options"
