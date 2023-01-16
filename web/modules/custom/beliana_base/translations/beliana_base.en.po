@@ -112,8 +112,8 @@ msgstr "The latest"
 msgid "label-created-desc"
 msgstr "The oldest"
 
-msgid "label-sort-passwords-in-list"
-msgstr "Sort the passwords in the list: "
+msgid "label-sort-articles-in-list"
+msgstr "Sort articles in the list: "
 
 msgid "aria-label-section-more-info-is-closed"
 msgstr "Section: More information is closed"

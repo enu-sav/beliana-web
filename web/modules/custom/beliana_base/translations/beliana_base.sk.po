@@ -112,7 +112,7 @@ msgstr "Najnovšie"
 msgid "label-created-desc"
 msgstr "Najstaršie"
 
-msgid "label-sort-passwords-in-list"
+msgid "label-sort-articles-in-list"
 msgstr "Vo výpise zoradiť heslá: "
 
 msgid "aria-label-section-citation-is-closed"
