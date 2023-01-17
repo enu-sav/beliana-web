@@ -42,8 +42,8 @@
                   </span>
     </li>
   </ul>
-  <a href="/pouzivanie-stranky" class="more-info" title="{{ 'more-about-search'|t }}"
+  <a href="{{ path('entity.node.canonical', {'node': 747}) }}" class="more-info" title="{{ 'more-about-search'|t }}"
      aria-label="{{ 'more-about-search'|t }}">{{ 'more-about-search'|t }}</a>
-  <a href="/rozsirene-vyhladavanie" class="more-info" title="{{ 'search-by-category'|t }}"
+  <a href="{{ path('view.solr_search_word.page_search_by_category') }}" class="more-info" title="{{ 'search-by-category'|t }}"
      aria-label="{{ 'search-by-category'|t }}">{{ 'search-by-category'|t }}</a>
 </div>
