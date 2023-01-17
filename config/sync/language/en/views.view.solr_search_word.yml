@@ -1,0 +1,21 @@
+display:
+  default:
+    display_options:
+      title: 'Search results'
+  block:
+    display_title: Searching
+  embed:
+    display_title: Relevant
+    display_options:
+      title: 'Related articles'
+  page_alphabet:
+    display_title: Alphabet
+  page_search_by_category:
+    display_title: Extended
+    display_options:
+      sorts:
+        field_sort:
+          expose:
+            label: 'To line up'
+      menu:
+        title: 'Search by category'
