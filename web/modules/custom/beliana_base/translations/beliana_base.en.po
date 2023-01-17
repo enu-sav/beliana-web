@@ -16,6 +16,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgid "site-description-slovak-general-encyclopedia"
+msgstr "Slovak general encyclopedia"
+
 msgid "wcag-accessible-version-of-the-site-is-turned-off"
 msgstr "The accessible version of the site is turned off"
 

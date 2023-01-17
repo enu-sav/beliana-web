@@ -5,8 +5,8 @@
  */
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Access\AccessResultInterface;
 use Drupal\node\NodeInterface;
-use Drupal\Core\Session\AccountInterface;
 
 
 /**
@@ -52,7 +52,7 @@ function beliana_base_theme($existing, $type, $theme, $path): array {
 /**
  * Implements hook_node_access().
  */
-function beliana_base_node_access(NodeInterface $node, $op, AccountInterface $account) {
+function beliana_base_node_access(NodeInterface $node): AccessResultInterface {
   $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
   if (!$node->hasTranslation($langcode)) {
     $access = AccessResult::forbidden();
