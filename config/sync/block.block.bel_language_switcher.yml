@@ -1,0 +1,20 @@
+uuid: fc9486bc-7956-4bca-af99-c15086a02672
+langcode: sk
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - bel
+id: bel_language_switcher
+theme: bel
+region: footer
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Prepínač jazykov'
+  label_display: '0'
+  provider: language
+visibility: {  }
