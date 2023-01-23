@@ -40,8 +40,8 @@ class ViewSortOptionsArea extends AreaPluginBase {
       $sort_types = [
         'order-ASC' => t('label-order-asc'),
         'order-DESC' => t('label-order-desc'),
-        'created-ASC' => t('label-created-asc'),
         'created-DESC' => t('label-created-desc'),
+        'created-ASC' => t('label-created-asc'),
       ];
 
       $route_name = \Drupal::routeMatch()->getRouteName();

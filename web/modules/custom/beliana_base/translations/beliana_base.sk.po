@@ -109,10 +109,10 @@ msgstr "A – Z"
 msgid "label-order-desc"
 msgstr "Z – A"
 
-msgid "label-created-asc"
+msgid "label-created-desc"
 msgstr "Najnovšie"
 
-msgid "label-created-desc"
+msgid "label-created-asc"
 msgstr "Najstaršie"
 
 msgid "label-sort-articles-in-list"
