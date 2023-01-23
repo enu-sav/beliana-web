@@ -52,10 +52,10 @@ msgstr "Search by category"
 msgid "display-options"
 msgstr "Display options"
 
-msgid "aria-labelsection-citation-is-closed"
+msgid "aria-label-section-citation-is-closed"
 msgstr "Section: Citation is closed"
 
-msgid "aria-labelsection-citation-is-open"
+msgid "aria-label-section-citation-is-open"
 msgstr "Section: Citation is open"
 
 msgid "aria-label-you-are-in-the-section-citation"
@@ -106,10 +106,10 @@ msgstr "A-Z"
 msgid "label-order-desc"
 msgstr "Z-A"
 
-msgid "label-created-asc"
+msgid "label-created-desc"
 msgstr "The latest"
 
-msgid "label-created-desc"
+msgid "label-created-asc"
 msgstr "The oldest"
 
 msgid "label-sort-passwords-in-list"
