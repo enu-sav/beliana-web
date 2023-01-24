@@ -65,13 +65,7 @@
 
   h2 {
     margin-top: 1em;
-
-    &:after {
-      content: ":";
-      padding-right: 5px;
-    }
   }
-
   .views-row {
     display: inline-block;
     padding: 0 10px 0 0;
