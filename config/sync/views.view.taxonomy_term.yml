@@ -1,6 +1,6 @@
 uuid: ae776ef3-3e53-4d49-b477-d4fc46bd7739
 langcode: sk
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -379,8 +379,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_1:
-    id: page_1
+  page_taxonomy_term:
+    id: page_taxonomy_term
     display_title: Stránka
     display_plugin: page
     position: 1
@@ -408,7 +408,9 @@ display:
         row: false
       css_class: heslo-container
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: taxonomy/term/%
     cache_metadata:
       max-age: -1

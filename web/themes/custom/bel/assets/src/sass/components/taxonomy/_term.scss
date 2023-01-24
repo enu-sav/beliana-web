@@ -1,0 +1,79 @@
+.taxonomy-term-autor {
+  width: 75%;
+  margin: rem(30) auto 0 auto;
+
+  @media screen and (max-width: em(768, 16)) {
+    width: 100%;
+  }
+
+
+  .content {
+    border: none;
+
+    h1 {
+      font-size: rem(40);
+      color: #333;
+      font-weight: normal;
+
+      a {
+
+        .view-word-search-page &,
+        .view-najcitanejsie-hesla &{
+          text-decoration: none;
+          font-size: rem(16);
+          font-weight: 700;
+
+          .black-white & {
+            font-size: rem(15);
+          }
+        }
+
+      }
+
+      .black-white & {
+        color: $white;
+        font-size: rem(31.2);
+      }
+    }
+
+    .obsah {
+      font-family: 'arno-pro','STIXGeneral','Asana Math','Arial Unicode MS','Lucida Grande','Liberation Sans','Helvetica','Arial',sans-serif;
+      min-height: rem(48);
+      text-align: justify;
+      line-height: rem(32.5);
+      font-size: rem(20);
+
+      .black-white & {
+        font-family: 'Open Sans',sans-serif;
+        font-size: rem(19);
+        line-height: rem(30.833);
+        min-height: rem(45.6);
+      }
+
+      .field__label {
+        font-weight: bold;
+      }
+
+      p {
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        text-align: inherit;
+      }
+    }
+  }
+
+  h2 {
+    margin-top: 1em;
+
+    &:after {
+      content: ":";
+      padding-right: 5px;
+    }
+  }
+
+  .views-row {
+    display: inline-block;
+    padding: 0 10px 0 0;
+  }
+}
