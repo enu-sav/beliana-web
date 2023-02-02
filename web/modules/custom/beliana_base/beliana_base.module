@@ -6,6 +6,8 @@
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 
 
@@ -70,9 +72,13 @@ function beliana_base_node_access(NodeInterface $node): AccessResultInterface {
  */
 function beliana_base_preprocess_links__language_block(&$variables): void {
   if (isset($variables['links'])) {
+  
+    $config = \Drupal::configFactory()->get('language.negotiation');
+    $domains = $config->get('url.domains');
+    
     // Go through each link present in the output and change it's title.
     foreach ($variables['links'] as $link_langcode => $link) {
-      $variables['links'][$link_langcode]['link']['#title'] = $link_langcode;
+      $variables['links'][$link_langcode]['link'] = new Link($link_langcode, Url::fromUri('https://' . $domains[$link_langcode]));
     }
   }
 }
