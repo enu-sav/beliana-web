@@ -2,6 +2,27 @@ display:
   default:
     display_options:
       title: 'Search results'
+      pager:
+        options:
+          tags:
+            first: '« First page'
+            last: 'Last page ››'
+      empty:
+        area_text_custom:
+          content: 'No articles match the specified conditions.'
+      sorts:
+        search_api_relevance:
+          expose:
+            label: Relevance
+        field_sort:
+          expose:
+            label: 'To line up'
+        created:
+          expose:
+            label: 'Written on'
+      header:
+        result:
+          content: 'Displayed articles @start – <span id="count-words">@end</span> of total @total articles.'
   block:
     display_title: Searching
   embed:
@@ -10,6 +31,20 @@ display:
       title: 'Related articles'
   page_alphabet:
     display_title: Alphabet
+    display_options:
+      sorts:
+        search_api_relevance:
+          expose:
+            label: Relevance
+        field_sort:
+          expose:
+            label: 'To line up'
+        created:
+          expose:
+            label: 'Written on'
+      header:
+        result:
+          content: 'Displayed articles @start – <span id="count-words">@end</span> of total @total articles.'
   page_search_by_category:
     display_title: Extended
     display_options:
@@ -17,5 +52,9 @@ display:
         field_sort:
           expose:
             label: 'To line up'
+        created:
+          expose:
+            label: 'Written on'
       menu:
         title: 'Search by category'
+      title: 'Search by category'
