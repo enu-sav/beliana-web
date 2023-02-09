@@ -52,21 +52,21 @@
 
         <div class="similar-words">
           {% if content.similar_words is not empty %}
-            <h3>súvisiace heslá</h3>
+            <h3>{{ 'súvisiace heslá'|t }}</h3>
             {{ content.similar_words }}
           {% endif %}
         </div>
 
         <div class="citation desktop">
           <h3 role="button" tabindex="0" aria-label="{{ 'aria-label-you-are-in-the-section-citation'|t }}" aria-controls="dialog-desc"
-              aria-expanded="false">citácia</h3>
+              aria-expanded="false">{{ 'citácia'|t }}</h3>
           {% set author_fomratted = '' %}
           {% if node.field_autor.target_id %}
             {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}
           {% endif %}
           <p id="dialog-desc">{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online].
-            Encyclopaedia Beliana,
-            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. Dostupné na internete: <a
+            {{ 'Encyclopaedia Beliana'|t }},
+            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. {{ 'Dostupné na internete:'|t }} <a
               href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
 
