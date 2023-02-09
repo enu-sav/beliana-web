@@ -75,6 +75,7 @@
         "drupal/simple_sitemap": "^4.1",
         "drupal/svg_image": "^1.16",
         "drupal/token": "^1.11",
+        "drupal/translatable_menu_link_uri": "^2.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "^3.14",
