@@ -43,8 +43,8 @@ class SearchForm extends FormBase {
         '#autocomplete_route_name' => 'beliana_search.autocomplete',
         '#attributes' => [
           'class' => ['search-input'],
-          'placeholder' => 'Vyhľadať (pozri Možnosti vyhľadávania vpravo)',
-          'aria-label' => 'Vyhľadať (Pre ďalšie možnosti vyhľadávania, pokračujte na prvok Možnosti vyhľadávania)',
+          'placeholder' => t('Vyhľadať (pozri Možnosti vyhľadávania vpravo)'),
+          'aria-label' => t('Vyhľadať (Pre ďalšie možnosti vyhľadávania, pokračujte na prvok Možnosti vyhľadávania)'),
         ],
       ]
     ];
