@@ -1,9 +1,9 @@
 <div class="share">
-  <span>Zdieľať<b class="button"></b></span>
+  <span>{{ 'Zdieľať'|t }}<b class="button"></b></span>
   <ul class="dropdown">
     <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">Facebook</a></li>
     <li><a href="https://twitter.com/intent/tweet?text={{ node.label|url_encode }} {{ share_url }}" target="_blank">Twitter</a>
   </ul>
 </div>
-<a href="#" class="print"><i class="fa fa-print"></i> Vytlačiť</a>
-<a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank"><i class="fa fa-comment"></i>Komentovať</a>
+<a href="#" class="print"><i class="fa fa-print"></i>{{ 'Vytlačiť'|t }}</a>
+<a href="/beliana/kontaktujte-nas/{{ node.id() }}" class="comment" target="_blank"><i class="fa fa-comment"></i>{{ 'Komentovať'|t }}</a>
