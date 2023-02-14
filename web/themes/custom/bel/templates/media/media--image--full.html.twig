@@ -3,7 +3,7 @@
 {% block content %}
   {% if content %}
     <div class="left metadata">
-      <h1 class="title">Ilustrácia k heslu <span>{{ node.title.value }}</span></h1>
+      <h1 class="title">{{ 'illustration-for-the-article'|t }} <span>{{ node.title.value }}</span></h1>
 
       {{ content.field_description }}
 
@@ -16,7 +16,7 @@
       </div>
 
       {% if back_url %}
-        <a href="{{ back_url }}" class="back"><i class="icon-back"></i>Naspäť na stránku hesla</a>
+        <a href="{{ back_url }}" class="back"><i class="icon-back"></i>{{ 'back-to-the-article-page'|t }}</a>
       {% endif %}
     </div>
 
