@@ -74,7 +74,7 @@
     <h2>
       <a href="{{ url }}">{% if content.year_by_date %}{{ content.year_by_date }} – {% endif %}{{ node.label }}
         {% if node.field_images is not empty %}
-          <i class="fa fa-picture-o" title="Heslo obsahuje ilustráciu"></i>
+          <i class="fa fa-picture-o" title="{{ 'title-the-article-contains-an-illustration'|t }}"></i>
         {% endif %}
       </a>
     </h2>

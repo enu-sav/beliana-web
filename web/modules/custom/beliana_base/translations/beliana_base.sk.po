@@ -144,3 +144,54 @@ msgstr "Naspäť na obsah"
 
 msgid "label-select-the-category/categories-in-the-categories-list"
 msgstr "Zvoľte kategóriu/kategórie v zozname 'Kategórie'"
+
+msgid "placeholder-search-see-search-options-on-the-right"
+msgstr "Vyhľadať (pozri Možnosti vyhľadávania vpravo)"
+
+msgid "aria-label-search-for-more-search-options-continue-to-the-search-options-element)"
+msgstr "Vyhľadať (Pre ďalšie možnosti vyhľadávania, pokračujte na prvok Možnosti vyhľadávania)"
+
+msgid "centre-of-operations-of-the-slovak-academy-of-sciences-encyclopaedic-institute"
+msgstr "Centrum spoločných činností Slovenskej akadémie vied, Encyklopedický ústav"
+
+msgid "all-categories"
+msgstr "Všetky kategórie"
+
+msgid "share"
+msgstr "Zdieľať"
+
+msgid "print"
+msgstr "Vytlačiť"
+
+msgid "feedback"
+msgstr "Komentovať"
+
+msgid "related-articles"
+msgstr "súvisiace heslá"
+
+msgid "citation"
+msgstr "citácia"
+
+msgid "encyclopaedia-beliana"
+msgstr "Encyclopaedia Beliana"
+
+msgid "available-online"
+msgstr "Dostupné na internete:"
+
+msgid "aria-label-link-to-home-page-encyclopaedia-beliana"
+msgstr "Linka na domovskú stránku - Encyclopaedia Beliana"
+
+msgid "aria-label-site=logo-encyclopaedia-beliana"
+msgstr "Logo stránky - Encyclopaedia Beliana"
+
+msgid "title-the-article-contains-an-illustration"
+msgstr "Heslo obsahuje ilustráciu"
+
+msgid "aria-label-you-are-in-the-sections-alphabetical-list-of-words"
+msgstr "Nachádzate sa v sekcií: Abecedný zoznam slov"
+
+msgid "back-to-the-article-page"
+msgstr "Naspäť na stránku hesla"
+
+msgid "illustration-for-the-article"
+msgstr "Ilustrácia k heslu"

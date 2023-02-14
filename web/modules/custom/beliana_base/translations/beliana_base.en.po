@@ -144,3 +144,54 @@ msgstr "Back to content"
 
 msgid "label-select-the-category/categories-in-the-categories-list"
 msgstr "Select a category/categories in the 'Categories' list"
+
+msgid "placeholder-search-see-search-options-on-the-right"
+msgstr "Search (see the Search options on the right)"
+
+msgid "aria-label-search-for-more-search-options-continue-to-the-search-options-element)"
+msgstr "Search (For further, searching options click on searching option)"
+
+msgid "centre-of-operations-of-the-slovak-academy-of-sciences-encyclopaedic-institute"
+msgstr "Centre of Operations of the Slovak Academy of Sciences, Encyclopaedic Institute"
+
+msgid "all-categories"
+msgstr "All categories"
+
+msgid "share"
+msgstr "Share"
+
+msgid "print"
+msgstr "Print"
+
+msgid "feedback"
+msgstr "Feedback"
+
+msgid "related-articles"
+msgstr "related articles"
+
+msgid "citation"
+msgstr "citation"
+
+msgid "encyclopaedia-beliana"
+msgstr "Encyclopaedia Beliana"
+
+msgid "available-online"
+msgstr "Available online:"
+
+msgid "aria-label-link-to-home-page-encyclopaedia-beliana"
+msgstr "Link to home page - Encyclopaedia Beliana"
+
+msgid "aria-label-site=logo-encyclopaedia-beliana"
+msgstr "Site logo - Encyclopaedia Beliana"
+
+msgid "title-the-article-contains-an-illustration"
+msgstr "The article contains an illustration"
+
+msgid "aria-label-you-are-in-the-sections-alphabetical-list-of-words"
+msgstr "You are in the sections: Alphabetical list of words"
+
+msgid "back-to-the-article-page"
+msgstr "Back to the article page"
+
+msgid "illustration-for-the-article"
+msgstr "Illustration for the article"

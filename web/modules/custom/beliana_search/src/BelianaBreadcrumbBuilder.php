@@ -86,7 +86,7 @@ class BelianaBreadcrumbBuilder extends EasyBreadcrumbBuilder implements Breadcru
           }
         }
 
-        $links[0]->setText(t('Všetky kategórie'));
+        $links[0]->setText(t('all-categories'));
         $links[0]->setUrl(Url::fromRoute('view.solr_search_word.page_search_by_category'));
       }
     }

@@ -37,7 +37,7 @@
   {% set menu = 'menubar' %}
 {% endif %}
 
-<div class="{{ class }}"{% if navigation is not empty %} aria-label="Nachádzate sa v sekcií: Abecedný zoznam slov" tabindex="0" role="{{ navigation }}"{% endif %}>
+<div class="{{ class }}"{% if navigation is not empty %} aria-label="{{ 'aria-label-you-are-in-the-sections-alphabetical-list-of-words'|t }}" tabindex="0" role="{{ navigation }}"{% endif %}>
   {% if items or empty %}
     {% if title is not empty %}
       <h3>{{ title }}</h3>
