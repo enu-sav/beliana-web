@@ -25,3 +25,5 @@ display:
             title: Všetko
   feed_1:
     display_title: 'Kanál správ'
+  page_1:
+    display_title: Stránka

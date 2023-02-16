@@ -9,7 +9,7 @@ display:
             last: 'Last page ››'
       empty:
         area_text_custom:
-          content: 'No articles match the specified conditions.'
+          content: 'Any Articles match the specified conditions.'
       sorts:
         search_api_relevance:
           expose:
