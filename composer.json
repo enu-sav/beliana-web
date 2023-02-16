@@ -132,7 +132,8 @@
         "patches": {
             "drupal/core": {
                 "3173231 - Enable lazy-load by default for responsive images": "https://www.drupal.org/files/issues/2020-10-09/3173231-3.patch",
-                "2957924 - Have responsive image module ignore svg": "https://www.drupal.org/files/issues/2022-06-23/drupal-responsive_image_svg_support-2957924-11.patch"
+                "2957924 - Have responsive image module ignore svg": "https://www.drupal.org/files/issues/2022-06-23/drupal-responsive_image_svg_support-2957924-11.patch",
+                "3300404 - Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated in Drupal\\Core\\Entity\\Sql\\SqlContentEntityStorage::loadFromSharedTables()": "https://www.drupal.org/files/issues/2023-02-03/3300404-20-check-values-before-unserialize.patch"
             },
             "drupal/admin_toolbar": {
                 "3121816 - Version 8.x-2.1 need Drupal 8.8.0 or greater": "https://www.drupal.org/files/issues/2020-03-30/3121816-07.patch"
