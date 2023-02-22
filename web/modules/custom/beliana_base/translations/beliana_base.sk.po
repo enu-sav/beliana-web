@@ -118,11 +118,14 @@ msgstr "Najstaršie"
 msgid "label-sort-articles-in-list"
 msgstr "Vo výpise zoradiť heslá: "
 
-msgid "aria-label-section-citation-is-closed"
+msgid "aria-label-section-more-info-is-closed"
 msgstr "Sekcia: Ďalšie informácie o ilustrácii sú zatvorené"
 
-msgid "aria-label-section-citation-is-open"
+msgid "aria-label-section-more-info-is-open"
 msgstr "Sekcia: Ďalšie informácie o ilustrácii sú otvorené"
+
+msgid "label-you-are-in-the-section-more-info"
+msgstr "Ďalšie informácie o ilustrácii"
 
 msgid "aria-label-you-are-in-the-section-more-info"
 msgstr "Nachádzate sa v sekcii: Ďalšie informácie o ilustrácii"
