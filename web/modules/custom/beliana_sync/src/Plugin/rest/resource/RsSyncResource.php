@@ -129,7 +129,7 @@ class RsSyncResource extends ResourceBase {
     // may have multiple values, each having hierarchy starting from parent and separated by ';'
     $node->field_categories = $this->getCategories($data['category']);
 
-    $local_fids = $this->downloadMedia($data['images']);
+    $local_fids = $this->downloadMedia($data['images'], $data['language']);
 
     if (!empty($local_fids)) {
       $node->field_images = $local_fids;
@@ -158,7 +158,7 @@ class RsSyncResource extends ResourceBase {
    * @return array
    *   Array with media IDs.
    */
-  public function downloadMedia(array $images) {
+  public function downloadMedia(array $images, $language) {
     $entity_manager = \Drupal::entityTypeManager();
     $file_system = \Drupal::service('file_system');
     $taxonomy_terms = $entity_manager->getStorage('taxonomy_term');
@@ -263,6 +263,10 @@ class RsSyncResource extends ResourceBase {
             'uri' => $image['url_testu_licencie_l'],
             'title' => parse_url($image['url_testu_licencie_l'])['host'],
           ]);
+        }
+        
+        if ($language == 'en') {
+          $media->set('langcode', $language);
         }
 
         $media->save();
@@ -494,7 +498,7 @@ class RsSyncResource extends ResourceBase {
         }
       }
 
-      $local_fids = $this->downloadMedia($data['images']);
+      $local_fids = $this->downloadMedia($data['images'], $data['language']);
       if (!empty($local_fids)) {
         $node->field_images = $local_fids;
       }
