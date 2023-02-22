@@ -1,6 +1,6 @@
 uuid: fc9486bc-7956-4bca-af99-c15086a02672
 langcode: sk
-status: true
+status: false
 dependencies:
   module:
     - language

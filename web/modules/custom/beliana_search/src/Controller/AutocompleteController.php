@@ -52,11 +52,13 @@ class AutocompleteController extends ControllerBase {
 
   private function getResultsNode(&$results, $input) {
     $query = \Drupal::database()->select('node_field_data', 'n');
-
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    
     $query = $this->nodeStroage->getQuery()
       ->condition('type', 'word')
       ->condition('title', $query->escapeLike($input), 'CONTAINS')
       ->condition('status', TRUE)
+      ->condition('langcode', $language)
       ->groupBy('nid')
       ->sort('title', 'ASC')
       ->range(0, 10);
