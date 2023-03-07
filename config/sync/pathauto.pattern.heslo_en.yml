@@ -1,33 +1,33 @@
-uuid: 1925cfd0-558c-412f-8262-b8beb80f54ac
+uuid: b2d32204-8edb-40c3-bd40-e95dac228989
 langcode: sk
 status: true
 dependencies:
   module:
     - language
     - node
-id: heslo
-label: 'Heslo - SK'
+id: heslo_en
+label: 'Heslo - EN'
 type: 'canonical_entities:node'
-pattern: 'heslo/[node:title]'
+pattern: 'article/[node:title]'
 selection_criteria:
-  d02548dc-bf14-4333-b0b4-56d7cac81d49:
+  f2752dbb-f6e7-4792-82f5-2e76ef8ac9d1:
     id: 'entity_bundle:node'
     negate: false
-    uuid: d02548dc-bf14-4333-b0b4-56d7cac81d49
+    uuid: f2752dbb-f6e7-4792-82f5-2e76ef8ac9d1
     context_mapping:
       node: node
     bundles:
       word: word
-  4249adb8-0ff0-4719-834f-bdeba2fc0963:
+  b6a0440d-b974-4756-8d07-5888036883d4:
     id: language
     negate: false
-    uuid: 4249adb8-0ff0-4719-834f-bdeba2fc0963
+    uuid: b6a0440d-b974-4756-8d07-5888036883d4
     context_mapping:
       language: 'node:langcode:language'
     langcodes:
-      sk: sk
+      en: en
 selection_logic: and
-weight: -5
+weight: -10
 relationships:
   'node:langcode:language':
     label: Language
