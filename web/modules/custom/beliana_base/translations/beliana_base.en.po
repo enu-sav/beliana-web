@@ -198,3 +198,45 @@ msgstr "Back to the article page"
 
 msgid "illustration-for-the-article"
 msgstr "Illustration for the article"
+
+msgid "aria-label-by-entering-the-term-slovak-all-grammatical-forms-of-the-word-slovak-will-be-searched"
+msgstr "By entering the term slovak: all grammatical forms of the word slovak will be searched"
+
+msgid "slovak-all-grammatical-forms-of-the-word-slovak"
+msgstr "<strong>slovak:</strong> all grammatical forms of the word slovak"
+
+msgid "aria-label-entering-words-slov-will-search-for-all-words-begining-with-words-slov"
+msgstr "Entering words slov*: will search for all words begining with words slov"
+
+msgid "slov-all-words-begining-with-slov"
+msgstr "<strong>slov*:</strong> all words begining with slov"
+
+msgid "aria-label-entering-the-term-slovak-will-search-for-similar-words-slovakia-slovenia"
+msgstr "Entering the term slovak~ will search for similar words (Slovakia, Slovenia, ...)"
+
+msgid "slovak--similar-words-slovakia-slovenia"
+msgstr "<strong>slovak~:</strong> similar words (Slovakia, Slovenia, ...)"
+
+msgid "aria-label-by-entering-the-expression-slovak-painter-the-phrase-all-forms-will-be-searched"
+msgstr "By entering the expression 'slovak painter': the phrase (all forms) will be searched"
+
+msgid "slovak-painter-idioms-all-forms"
+msgstr "<strong>\"slovak painter\":</strong> idioms (all forms)"
+
+msgid "aria-label-by-entering-the-expression-slovak-painter-the-words-slovak-or-painter-will-be-searched"
+msgstr "By entering the expression slovak painter: the words slovak or painter will be searched"
+
+msgid "slovak-painter-words-slovak-or-painter"
+msgstr "<strong>slovak painter:</strong> words slovak or painter"
+
+msgid "aria-label-by-entering-the-expression-slovak--painter-the-words-slovak-but-no-painter-will-be-searched"
+msgstr "By entering the expression slovak -painter: the words slovak but no painter will be searched"
+
+msgid "slovak-painter-words-slovak-but-no-painter"
+msgstr "<strong>slovak -painter:</strong> words slovak, but no painter"
+
+msgid "aria-label-by-entering-the-expression-slovak-and-painter:-the-words-slovak-and-painter-are-searched-at-the-same-time"
+msgstr "By entering the expression slovak and painter: the words slovak and painter are searched at the same time"
+
+msgid "slovak-and-painter-together-words-slovak-and-painter"
+msgstr "<strong>slovak and painter:</strong> together words slovak and painter"
