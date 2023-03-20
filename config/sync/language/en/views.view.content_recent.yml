@@ -10,11 +10,16 @@ display:
         area_text_custom:
           content: '50 most recent articles displayed'
   default:
+    display_title: Default
     display_options:
-      title: 'Latest content'
+      title: 'Recent content'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Apply
+          reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -22,4 +27,5 @@ display:
         area_text_custom:
           content: 'No content available.'
       use_more_text: More
-label: 'Latest content'
+label: 'Recent content'
+description: 'Recent content.'
