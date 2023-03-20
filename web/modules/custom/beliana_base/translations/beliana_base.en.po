@@ -221,7 +221,7 @@ msgid "aria-label-by-entering-the-expression-slovak-painter-the-phrase-all-forms
 msgstr "By entering the expression 'slovak painter': the phrase (all forms) will be searched"
 
 msgid "slovak-painter-idioms-all-forms"
-msgstr "<strong>\"slovak painter\":</strong> idioms (all forms)"
+msgstr "<strong>\"slovak painter\":</strong> the phrase (all forms)"
 
 msgid "aria-label-by-entering-the-expression-slovak-painter-the-words-slovak-or-painter-will-be-searched"
 msgstr "By entering the expression slovak painter: the words slovak or painter will be searched"
