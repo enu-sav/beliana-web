@@ -16,7 +16,7 @@ dependencies:
     - text
     - user
     - views_data_export
-id: export_pre_juls
+id: export_for_juls
 label: 'Export pre JULS'
 module: views
 description: ''
@@ -181,6 +181,50 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            sk: sk
+          group: 1
+          exposed: false
+          expose:
+            operator_id: langcode_op
+            label: 'Jazyk prekladu'
+            description: ''
+            use_operator: false
+            operator: langcode_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: langcode
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
       row:
@@ -206,8 +250,8 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags: {  }
-  data_export_1:
-    id: data_export_1
+  data_export_for_juls:
+    id: data_export_for_juls
     display_title: 'Data export'
     display_plugin: data_export
     position: 2
@@ -559,9 +603,9 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: export_pre_juls
+      path: export_for_juls
       displays:
-        page_1: page_1
+        page_export_for_juls: page_export_for_juls
         default: '0'
       filename: 'export_juls_data-[date:html_date].csv'
       automatic_download: false
@@ -583,8 +627,8 @@ display:
       tags:
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_categories'
-  page_1:
-    id: page_1
+  page_export_for_juls:
+    id: page_export_for_juls
     display_title: Page
     display_plugin: page
     position: 1

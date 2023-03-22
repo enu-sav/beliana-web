@@ -155,7 +155,7 @@ msgid "aria-label-search-for-more-search-options-continue-to-the-search-options-
 msgstr "Search (For further, searching options click on searching option)"
 
 msgid "centre-of-operations-of-the-slovak-academy-of-sciences-encyclopaedic-institute"
-msgstr "Centre of Operations of the Slovak Academy of Sciences, Encyclopaedic Institute"
+msgstr "Encyclopaedic Institute of the Slovak Academy of Sciences"
 
 msgid "all-categories"
 msgstr "All categories"
