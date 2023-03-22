@@ -17,5 +17,11 @@ function beliana_base_views_data(): array {
       'id' => 'bel_view_sort_options_area',
     ],
   ];
+  $data['views']['article_categories'] = [
+    'title' => t('Categories'),
+    'field' => [
+      'id' => 'article_categories',
+    ],
+  ];
   return $data;
 }
