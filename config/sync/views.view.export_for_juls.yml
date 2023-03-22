@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_categories
     - node.type.word
-    - system.menu.footer
     - user.role.authenticated
   module:
     - csv_serialization
@@ -639,7 +638,7 @@ display:
           tokenize: false
       path: export-pre-juls
       menu:
-        type: normal
+        type: none
         title: 'Export pre JULS'
         description: ''
         weight: 0
