@@ -8,10 +8,8 @@ display:
       fields:
         info:
           label: 'Block description'
-          separator: ', '
         type:
           label: 'Block type'
-          separator: ', '
         changed:
           label: Updated
         operations:
@@ -28,7 +26,6 @@ display:
       exposed_form:
         options:
           submit_button: Apply
-          reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
