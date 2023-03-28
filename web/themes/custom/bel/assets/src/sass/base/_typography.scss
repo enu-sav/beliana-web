@@ -142,6 +142,10 @@ ul, ol {
     body.page-node-type-page article & {
       list-style: inherit;
     }
+    body.path-taxonomy & {
+      list-style: inherit;
+      margin-left: .875rem;
+    }
   }
 }
 
