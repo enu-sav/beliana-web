@@ -629,12 +629,13 @@ article .word {
 }
 
 article {
-  body.page-node-type-page & {
+  body.page-node-type-page &,
+  body.page-node-type-word &{
 
-    ol {
-
+    ul, ol {
       li {
         margin-left: rem(14);
+        list-style: inherit;
       }
     }
   }
