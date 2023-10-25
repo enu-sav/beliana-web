@@ -1,5 +1,6 @@
 _core:
   default_config_hash: q2QxaHH2DKzN8zFKH4sBu5eWpPMNQERApyo7cDmngt4
+langcode: sk
 path_type: upload
 path: favicons
 tags:
@@ -11,4 +12,3 @@ tags:
   - '<meta name="msapplication-TileColor" content="#da532c">'
   - '<meta name="theme-color" content="#ffffff">'
 remove_default: 1
-langcode: sk

@@ -3,31 +3,20 @@ langcode: sk
 status: true
 dependencies:
   module:
-    - language
     - node
 id: heslo
-label: 'Heslo - SK'
+label: Heslo
 type: 'canonical_entities:node'
 pattern: 'heslo/[node:title]'
 selection_criteria:
-  d02548dc-bf14-4333-b0b4-56d7cac81d49:
+  23a333f5-aebe-40ae-9f06-63b63c4b70e3:
     id: 'entity_bundle:node'
     negate: false
-    uuid: d02548dc-bf14-4333-b0b4-56d7cac81d49
+    uuid: 23a333f5-aebe-40ae-9f06-63b63c4b70e3
     context_mapping:
       node: node
     bundles:
       word: word
-  4249adb8-0ff0-4719-834f-bdeba2fc0963:
-    id: language
-    negate: false
-    uuid: 4249adb8-0ff0-4719-834f-bdeba2fc0963
-    context_mapping:
-      language: 'node:langcode:language'
-    langcodes:
-      sk: sk
 selection_logic: and
 weight: -5
-relationships:
-  'node:langcode:language':
-    label: Language
+relationships: {  }

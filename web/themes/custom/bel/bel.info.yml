@@ -5,7 +5,7 @@ package: Core
 project: 'bel'
 datestamp: 1524949387
 version: '1.0'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 base theme: false
 
 libraries:

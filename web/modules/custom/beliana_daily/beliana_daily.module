@@ -150,6 +150,7 @@ function beliana_daily_cron() {
     // Queue all the published nodes to be counted
     $ids = \Drupal::entityQuery('node')
         ->condition('status', TRUE)
+        ->accessCheck(TRUE)
         ->execute();
 
     foreach ($ids as $key => $nid) {

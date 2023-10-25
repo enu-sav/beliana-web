@@ -1,10 +1,20 @@
 display:
   default:
-    display_title: Default
+    display_title: Master
     display_options:
+      title: 'Kto je online'
       exposed_form:
         options:
           submit_button: Apply
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
+      filters:
+        access:
+          expose:
+            label: 'Posledný prístup'
+            description: 'Používateľ sa považuje za online v tomto čase od posledného zobrazenia stránky.'
+  who_s_online_block:
+    display_title: 'Kto je online'
+    display_options:
+      block_description: 'Kto je online'

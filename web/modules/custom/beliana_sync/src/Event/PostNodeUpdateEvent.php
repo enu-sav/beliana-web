@@ -3,7 +3,7 @@
 namespace Drupal\beliana_sync\Event;
 
 use Drupal\node\NodeInterface;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Wraps a post node save event for event listeners.

@@ -3,7 +3,7 @@ type: module
 description: Beliana base
 package: Beliana
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 
 interface translation project: beliana_base
 interface translation server pattern: modules/custom/%project/translations/%project.%language.po

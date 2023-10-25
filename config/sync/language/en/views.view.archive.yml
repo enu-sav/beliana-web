@@ -1,21 +1,18 @@
 display:
   default:
-    display_title: Default
+    display_title: Master
     display_options:
-      title: 'Monthly archive'
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
-            offset_label: Offset
+            items_per_page_label: 'Položiek na stránku'
+            items_per_page_options_all_label: '- Všetko -'
+            offset_label: 'Zobraziť od'
       exposed_form:
         options:
           submit_button: Apply
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
-  block_1:
-    display_title: Block
   page_1:
-    display_title: Page
+    display_title: Stránka

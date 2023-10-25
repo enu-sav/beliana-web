@@ -1,16 +1,24 @@
+label: 'Termín taxonómie'
+description: 'Obsah patriaci k určitému termínu taxonómie.'
 display:
   default:
-    display_title: Default
+    display_title: Master
     display_options:
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
-            offset_label: Offset
+            items_per_page_label: 'Položiek na stránku'
+            items_per_page_options_all_label: '- Všetko -'
+            offset_label: 'Zobraziť od'
       exposed_form:
         options:
           submit_button: Apply
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
+      arguments:
+        tid:
+          exception:
+            title: Všetko
+  feed_1:
+    display_title: 'Kanál správ'

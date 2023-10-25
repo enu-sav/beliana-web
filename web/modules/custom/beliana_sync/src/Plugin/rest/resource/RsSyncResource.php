@@ -180,7 +180,7 @@ class RsSyncResource extends ResourceBase {
 
         if ($file_system->prepareDirectory($file_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY)) {
           /** @var \Drupal\file\FileInterface $file */
-          if ($file = file_save_data($file_data, $file_dir . '/' . $file_name)) {
+          if ($file = \Drupal::service('file.repository')->writeData($file_data, $file_dir . '/' . $file_name)) {
             $file_OK = TRUE;
           }
         }
@@ -189,7 +189,7 @@ class RsSyncResource extends ResourceBase {
         // we got link to external image
         $link_OK = TRUE;
       }
-
+      
       if ($file_OK or $link_OK) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
 
@@ -280,7 +280,8 @@ class RsSyncResource extends ResourceBase {
   // get parent with a required top parent $parentName
   // we a sure that the right parent exists, so just find it in the array
   public function getParentId($parentName, $topParentName) {
-    $parentList = taxonomy_term_load_multiple_by_name($parentName, 'categories');
+    $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $parentList = $storage->loadByProperties(['name' => $parentName, 'vid' => 'categories']);
     if (sizeof($parentList) > 1) {
       foreach ($parentList as $candidate) {
         $topParent = $this->getTopParent($candidate);
@@ -323,7 +324,8 @@ class RsSyncResource extends ResourceBase {
 
   // select category from a list of categories with a required top parent $parentName
   public function selectItem($tname, $parentName) {
-    $terms = taxonomy_term_load_multiple_by_name($tname, 'categories');
+    $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $terms = $storage->loadByProperties(['name' => $tname, 'vid' => 'categories']);
     if (!$terms) {
       return NULL;
     }
@@ -426,7 +428,7 @@ class RsSyncResource extends ResourceBase {
 
           if ($file_system->prepareDirectory($file_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY)) {
             if ($uri = $file_system->saveData($file_data, $file_dir . '/' . $file_name)) {
-              $item->setAttribute('src', file_url_transform_relative(file_create_url($uri)));
+              $item->setAttribute('src', \Drupal::service('file_url_generator')->generateString($uri));
             }
           }
         }
