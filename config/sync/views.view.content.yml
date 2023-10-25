@@ -212,6 +212,15 @@ display:
             date_format: short
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
         term_node_tid:
           id: term_node_tid
           table: node_field_data
@@ -392,7 +401,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Použiť
+          submit_button: Filter
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Zoradiť podľa'
@@ -458,7 +467,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Publishing status'
+            label: 'Stav zverejnenia'
             description: ''
             identifier: status
             optional: true
