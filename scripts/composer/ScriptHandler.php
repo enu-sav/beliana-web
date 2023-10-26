@@ -9,6 +9,7 @@ namespace DrupalProject\composer;
 
 use Composer\Script\Event;
 use Composer\Semver\Comparator;
+use DrupalFinder\DrupalFinder;
 use Symfony\Component\Filesystem\Filesystem;
 
 class ScriptHandler {
@@ -93,6 +94,13 @@ class ScriptHandler {
       $io->writeError('<error>Drupal-project requires Composer version 1.0.0 or higher. Please update your Composer before continuing</error>.');
       exit(1);
     }
+  }
+  
+  public static function removeGitDirectories() {
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $root = $drupalFinder->getDrupalRoot();
+    exec('find ' . $root . ' -name \'.git\' | xargs rm -rf');
   }
 
 }

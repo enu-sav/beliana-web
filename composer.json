@@ -91,7 +91,8 @@
         "drupal/views_natural_sort": "^2.0@alpha",
         "drush/drush": "^12.4",
         "symfony/filesystem": "^6.3",
-        "symfony/finder": "^6.3"
+        "symfony/finder": "^6.3",
+        "vlucas/phpdotenv": "^5.5"
     },
     "require-dev": {
         "drupal/core-dev": "^10"
@@ -104,6 +105,9 @@
     "autoload": {
         "classmap": [
             "scripts/composer/ScriptHandler.php"
+        ],
+        "files": [
+            "load.environment.php"
         ]
     },
     "scripts": {
@@ -115,10 +119,12 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::removeGitDirectories"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::removeGitDirectories"
         ]
     },
     "extra": {
