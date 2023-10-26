@@ -20,7 +20,7 @@ $base-letter-spacing: 0.03em;
 // Other Sizes
 $base-border-radius: 2px;
 $base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
+$small-spacing: calc(#{$base-spacing} / 2);
 $base-z-index: 0;
 
 // Colors

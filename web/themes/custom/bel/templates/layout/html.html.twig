@@ -92,17 +92,6 @@
   {{ page }}
   {{ page_bottom }}
 
-  <script>
-    var ajax = new XMLHttpRequest();
-    ajax.open("GET", "/themes/custom/bel/assets/dist/svg/sprite.svg", true);
-    ajax.onload = function(e) {
-      var div = document.createElement("div");
-      div.innerHTML = ajax.responseText;
-      document.body.insertBefore(div, document.body.childNodes[0]);
-    };
-    ajax.send();
-  </script>
-
   <js-bottom-placeholder token="{{ placeholder_token }}">
   {% if browser_sync.enabled %}
     <script id="__bs_script__">

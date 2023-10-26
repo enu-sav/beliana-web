@@ -142,6 +142,7 @@ function bel_preprocess_media(&$variables) {
   $entity_ids = \Drupal::entityQuery('node')
     ->condition('type', 'word')
     ->condition('field_images', [$media->id()], 'IN')
+    ->accessCheck(FALSE)
     ->execute();
 
   if (!empty($entity_ids)) {

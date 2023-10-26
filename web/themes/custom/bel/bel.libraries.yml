@@ -16,9 +16,9 @@ global:
     assets/dist/js/modernizr.js: { }
     assets/dist/js/scripts.js: { }
   dependencies:
-    - core/drupal
     - core/jquery
-    - core/jquery.once
+    - core/drupal
+    - core/once
 
 tabs:
   version: 1.0.0
@@ -42,9 +42,6 @@ search:
   version: VERSION
   js:
     assets/dist/js/search/search.js: { async: true }
-  dependencies:
-    - core/drupal
-    - core/jquery
 
 wcag-tools:
   version: VERSION
@@ -54,38 +51,31 @@ wcag-tools:
     assets/dist/js/accessible/button-links.js: { async: true }
     assets/dist/js/wcag-tools/wcag-tools.js: { async: true }
   dependencies:
-    - core/drupal
     - core/jquery
+    - core/drupal
+    - core/once
 
 wcag-tools.node.word:
   version: VERSION
   js:
     assets/dist/js/wcag-tools/wcag-tools.node.word.js: { async: true }
-  dependencies:
-    - core/drupal
-    - core/jquery
 
 wcag-tools.media.image:
   version: VERSION
   js:
     assets/dist/js/wcag-tools/wcag-tools.media.image.js: { async: true }
-  dependencies:
-    - core/drupal
-    - core/jquery
 
 wcag-tools.view.options:
   version: VERSION
   js:
     assets/dist/js/wcag-tools/wcag-tools.view.options.js: { async: true }
   dependencies:
-    - core/drupal
     - core/jquery
+    - core/drupal
+    - core/once
 
 facet-categories:
   version: VERSION
   header: true
   js:
     assets/dist/js/facet/facet-categories.js: { async: true }
-  dependencies:
-    - core/drupal
-    - core/jquery

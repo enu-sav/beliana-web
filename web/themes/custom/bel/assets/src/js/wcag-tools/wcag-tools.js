@@ -2,16 +2,16 @@
  * @file
  * WCAG tools
  */
-(function ($, Drupal) {
+(function ($, Drupal, once) {
 
   "use strict";
 
   Drupal.behaviors.headerProcess = {
     attach: function (context, settings) {
-      $('header.header').once('header-process').each(function () {
-        var $wrapper = $(this);
+      once('header-process', 'header.header', context).forEach(function (item) {
+        var wrapper = $(item);
 
-        $wrapper.find('.smartphone-navigation .fa-bars').on('click', function () {
+        wrapper.find('.smartphone-navigation .fa-bars').on('click', function () {
           if ($(this).parent().hasClass('open')) {
             $(this).parent().removeClass('open');
             $(this).parent().attr('aria-expanded', false);
@@ -25,7 +25,7 @@
           }
         });
 
-        $wrapper.find('.header-navigation .word-facet-wrap').on('click', function (e) {
+        wrapper.find('.header-navigation .word-facet-wrap').on('click', function (e) {
           if ($(this).hasClass('active')) {
             $(this).removeClass('active');
           }
@@ -111,4 +111,4 @@
   };
 
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

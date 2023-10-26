@@ -1,9 +1,18 @@
-@function rem($font-size, $rem-base: 16) {
-  @return ($font-size/$rem-base) *1rem;
+@use "sass:math";
+
+@function round($value, $fractionDigits: 0) {
+  $power: math.pow(10, $fractionDigits);
+  @return math.div(math.round($power * $value), $power);
 }
 
-@function em($pixels, $context: $base-font-size) {
-  @return #{$pixels/$context}em;
+@function em($pixels, $context: $browser-context) {
+  $em: calc($pixels/$context);
+  @return round($em, 2) * 1em;
+}
+
+@function rem($pixels, $context: 16) {
+  $rem: calc($pixels/$context);
+  @return round($rem, 2) * 1rem;
 }
 
 @mixin aspect-ratio($width, $height) {

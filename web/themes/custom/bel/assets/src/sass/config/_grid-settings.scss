@@ -73,27 +73,3 @@ $grid-xl: 1400px;
     }
   }
 }
-
-
-// COLUMN WIDHTS
-$width-1-col-small: calc(8.3333% - #{($gutter-small / 12 * 10)});
-$width-1-5-col-small: calc(12.5% - #{($gutter-small / 12 * 10)});
-$width-2-col-small: calc(16.6666% - #{($gutter-small / 12 * 10)});
-$width-3-col-small: calc(25% - #{($gutter-small / 12 * 9)});
-$width-4-col-small: calc(33.3333% - #{($gutter-small / 12 * 8)});
-$width-6-col-small: calc(50% - #{($gutter-small / 12 * 6)});
-$width-7-col-small: calc(58.3333% - #{($gutter-small / 12 * 8)});
-$width-8-col-small: calc(66.6666% - #{($gutter-small / 12 * 4)});
-$width-9-col-small: calc(75% - #{($gutter-small / 12 * 3)});
-$width-10-col-small: calc(83.3333% - #{($gutter-small / 12 * 2)});
-
-$width-1-col: calc(8.3333% - #{($gutter / 12 * 10)});
-$width-1-5-col: calc(12.5% - #{($gutter / 12 * 10)});
-$width-2-col: calc(16.6666% - #{($gutter / 12 * 10)});
-$width-3-col: calc(25% - #{($gutter / 12 * 9)});
-$width-4-col: calc(33.3333% - #{($gutter / 12 * 8)});
-$width-6-col: calc(50% - #{($gutter / 12 * 6)});
-$width-7-col: calc(58.3333% - #{($gutter / 12 * 8)});
-$width-8-col: calc(66.6666% - #{($gutter / 12 * 4)});
-$width-9-col: calc(75% - #{($gutter / 12 * 3)});
-$width-10-col: calc(83.3333% - #{($gutter / 12 * 2)});
