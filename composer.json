@@ -148,7 +148,8 @@
         "patches": {
             "drupal/core": {
                 "3300404 - Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated in Drupal\\Core\\Entity\\Sql\\SqlContentEntityStorage::loadFromSharedTables()": "https://www.drupal.org/files/issues/2023-02-03/3300404-20-check-values-before-unserialize.patch",
-                "2466553 - Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2023-10-18/2466553.d10_0.patch"
+                "2466553 - Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2023-10-18/2466553.d10_0.patch",
+                "3373328 - ^10.1 CSS aggregation breaks during maintenance mode": "https://www.drupal.org/files/issues/2023-07-10/3373328-11.patch"
             },
             "drupal/admin_toolbar": {
                 "3121816 - Version 8.x-2.1 need Drupal 8.8.0 or greater": "https://www.drupal.org/files/issues/2020-03-30/3121816-07.patch"
