@@ -142,9 +142,9 @@ class RsSyncResource extends ResourceBase {
     $modified_body = $this->downloadBodyImages($data['body']);
     $node->body = ['value' => $modified_body, 'format' => 'full_html'];
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
-    $event_dispatcher->dispatch(BelianaSyncEvents::PRE_NODE_SAVE, new PreNodeSaveEvent($node, $data));
+    $event_dispatcher->dispatch(new PreNodeSaveEvent($node, $data), BelianaSyncEvents::PRE_NODE_SAVE);
     $node->save();
-    $event_dispatcher->dispatch(BelianaSyncEvents::POST_NODE_SAVE, new PostNodeSaveEvent($node, $data));
+    $event_dispatcher->dispatch(new PostNodeSaveEvent($node, $data), BelianaSyncEvents::POST_NODE_SAVE);
 
     return new ResourceResponse($node->id(), 201);
   }
