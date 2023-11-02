@@ -513,9 +513,9 @@ class RsSyncResource extends ResourceBase {
     }
 
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
-    $event_dispatcher->dispatch(BelianaSyncEvents::PRE_NODE_UPDATE, new PreNodeUpdateEvent($node, $data));
+    $event_dispatcher->dispatch(new PreNodeUpdateEvent($node, $data), BelianaSyncEvents::PRE_NODE_UPDATE);
     $node->save();
-    $event_dispatcher->dispatch(BelianaSyncEvents::POST_NODE_UPDATE, new PostNodeUpdateEvent($node, $data));
+    $event_dispatcher->dispatch(new PostNodeUpdateEvent($node, $data), BelianaSyncEvents::POST_NODE_UPDATE);
     return new ResourceResponse();
   }
 
