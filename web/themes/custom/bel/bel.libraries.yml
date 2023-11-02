@@ -79,3 +79,7 @@ facet-categories:
   header: true
   js:
     assets/dist/js/facet/facet-categories.js: { async: true }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

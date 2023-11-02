@@ -8,36 +8,49 @@
 
   Drupal.behaviors.headerProcess = {
     attach: function (context, settings) {
+
       once('header-process', 'header.header', context).forEach(function (item) {
-        var wrapper = $(item);
+        var wrapper = item;
 
-        wrapper.find('.smartphone-navigation .fa-bars').on('click', function () {
-          if ($(this).parent().hasClass('open')) {
-            $(this).parent().removeClass('open');
-            $(this).parent().attr('aria-expanded', false);
-            $(this).parent().attr('aria-label', Drupal.t('aria-label-the-mobile-menu-is-closed'));
-          }
-          else {
-            $(this).parent().addClass('open');
-            $('#search-help-dialog .help').focus();
-            $(this).parent().attr('aria-expanded', true);
-            $(this).parent().attr('aria-label', Drupal.t('aria-label-the-mobile-menu-is-open'));
-          }
-        });
+        // Toggle mobile menu
+        var mobileMenuToggle = wrapper.querySelector('.smartphone-navigation .fa-bars');
+        if (mobileMenuToggle) {
+          mobileMenuToggle.addEventListener('click', function () {
+            var parent = this.parentElement;
+            if (parent.classList.contains('open')) {
+              parent.classList.remove('open');
+              parent.setAttribute('aria-expanded', false);
+              parent.setAttribute('aria-label', Drupal.t('aria-label-the-mobile-menu-is-closed'));
+            }
+            else {
+              parent.classList.add('open');
+              document.querySelector('#search-help-dialog .help').focus();
+              parent.setAttribute('aria-expanded', true);
+              parent.setAttribute('aria-label', Drupal.t('aria-label-the-mobile-menu-is-open'));
+            }
+          });
+        }
 
-        wrapper.find('.header-navigation .word-facet-wrap').on('click', function (e) {
-          if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-          }
-          else {
-            $(this).addClass('active');
-          }
-        });
+        // Toggle header navigation
+        var wordFacetWrap = wrapper.querySelector('.header-navigation .word-facet-wrap');
+        if (wordFacetWrap) {
+          wordFacetWrap.addEventListener('click', function (e) {
+            if (this.classList.contains('active')) {
+              this.classList.remove('active');
+            }
+            else {
+              this.classList.add('active');
+            }
+          });
+        }
       });
+
     },
   };
-  Drupal.behaviors.alphabetical_accessible_menu = {
+
+  Drupal.behaviors.alphabeticalAccessibleMenu = {
     attach: function (context, settings) {
+
       $(".accessible-alphabetical").accessibleMegaMenu({
         uuidPrefix: "accessible-alphabetical-menu",
         menuClass: 'facet-inactive',
@@ -48,65 +61,74 @@
         focusClass: "focus",
         openClass: "open"
       });
+
     }
   };
 
-  Drupal.behaviors.black_white = {
+  Drupal.behaviors.blackWhite = {
     attach: function (context, settings) {
-      var self = this;
 
       /** Black and white version **/
-      var black_white_icon = $(context).find('.wcag-icons .icon-black-white');
-      var black_white = localStorage.getItem('black-white') || 'normal';
+      once('wcag-icons-icon-black-white', '.wcag-icons .icon-black-white', context).forEach(function (item) {
+        // Black and white version
+        var blackWhiteIcon = item;
+        var blackWhite = localStorage.getItem('black-white') || 'normal';
 
-      // $(context).find('#edit-input').val(Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
-      // console.log(Drupal.t("wcag-accessible-version-of-the-site-is-turned-off"));
-
-      if (black_white == 'black-white') {
-        $('html').addClass('black-white');
-        black_white_icon.attr('aria-pressed', true);
-        black_white_icon.attr('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-on'));
-      }
-      $(context).find('.wcag-icons').on('click', '.wcag-black-white', function () {
-        if ($('html').hasClass('black-white')) {
-          $('html').removeClass('black-white');
-          black_white_icon.attr('aria-pressed', false);
-          black_white_icon.attr('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
-          localStorage.setItem('black-white', 'normal');
+        if (blackWhite === 'black-white') {
+          document.documentElement.classList.add('black-white');
+          blackWhiteIcon.setAttribute('aria-pressed', true);
+          blackWhiteIcon.setAttribute('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-on'));
         }
-        else {
-          $('html').addClass('black-white');
-          black_white_icon.attr('aria-pressed', true);
-          black_white_icon.attr('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-on'));
-          localStorage.setItem('black-white', 'black-white');
-        }
+        item.parentElement.addEventListener('click', function (event) {
+          if (document.documentElement.classList.contains('black-white')) {
+            document.documentElement.classList.remove('black-white');
+            blackWhiteIcon.setAttribute('aria-pressed', false);
+            blackWhiteIcon.setAttribute('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-off'));
+            localStorage.setItem('black-white', 'normal');
+          }
+          else {
+            document.documentElement.classList.add('black-white');
+            blackWhiteIcon.setAttribute('aria-pressed', true);
+            blackWhiteIcon.setAttribute('aria-label', Drupal.t('wcag-accessible-version-of-the-site-is-turned-on'));
+            localStorage.setItem('black-white', 'black-white');
+          }
+        });
       });
+
     },
   };
 
-  Drupal.behaviors.click_change_search = {
+  Drupal.behaviors.clickChangeSearch = {
     attach: function (context, settings) {
 
-      $('.search-help').on('click', '.text', function (e) {
-        var desc = $(this).parent();
-        var button = $(this);
+      var searchHelp = document.querySelector('.search-help');
+      searchHelp.addEventListener('click', function (e) {
+        if (e.target.classList.contains('text')) {
+          var desc = e.target.parentElement;
+          var button = e.target;
 
-        if ($('.search-help .description').hasClass('open')) {
-          setTimeout(function () {
-            $('.search-help .description').removeClass('open');
-            $('.search-help .text').attr('aria-expanded', false);
-            $('.search-help .text').attr('aria-label', Drupal.t('aria-label-search-options-are-closed'));
-          }, 150);
-        }
-        else {
-          setTimeout(function () {
-            desc.find('.description').addClass('open');
-            $('#search-help-dialog .help').focus();
-            button.attr('aria-expanded', true);
-            $('.search-help .text').attr('aria-label', Drupal.t('aria-label-search-options-are-open'));
-          }, 150);
+          if (document.querySelector('.search-help .description').classList.contains('open')) {
+            setTimeout(function () {
+              document.querySelector('.search-help .description').classList.remove('open');
+              document.querySelectorAll('.search-help .text').forEach(function (element) {
+                element.setAttribute('aria-expanded', false);
+                element.setAttribute('aria-label', Drupal.t('aria-label-search-options-are-closed'));
+              });
+            }, 150);
+          }
+          else {
+            setTimeout(function () {
+              desc.querySelector('.description').classList.add('open');
+              document.querySelector('#search-help-dialog .help').focus();
+              button.setAttribute('aria-expanded', true);
+              document.querySelectorAll('.search-help .text').forEach(function (element) {
+                element.setAttribute('aria-label', Drupal.t('aria-label-search-options-are-open'));
+              });
+            }, 150);
+          }
         }
       });
+
     }
   };
 

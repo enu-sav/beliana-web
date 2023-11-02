@@ -80,7 +80,7 @@ class RsSyncResource extends ResourceBase {
       $container->get('current_user')
     );
   }
-
+  
   /**
    * Create new article.
    *
@@ -90,8 +90,9 @@ class RsSyncResource extends ResourceBase {
    * @return \Drupal\rest\ResourceResponse
    *   Return 201 on success with NID.
    *
-   * @throws \Symfony\Component\HttpKernel\Exception\HttpException
-   *   Throws exception expected.
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function post($data) {
     if (!$this->currentUser->hasPermission('create article content')) {
@@ -148,15 +149,19 @@ class RsSyncResource extends ResourceBase {
 
     return new ResourceResponse($node->id(), 201);
   }
-
+  
   /**
    * Download attached files and create media entities from them.
    *
    * @param array $images
    *   Array with image data.
+   * @param $language
    *
    * @return array
    *   Array with media IDs.
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function downloadMedia(array $images, $language) {
     $entity_manager = \Drupal::entityTypeManager();
