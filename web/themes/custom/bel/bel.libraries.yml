@@ -2,22 +2,26 @@ global:
   version: 1.0.0
   css:
     base:
-      assets/dist/css/base/font-awessome.css: { }
-      assets/dist/css/base/base.css: { }
+      assets/dist/css/base/font-awessome.css: { minified: true }
+      assets/dist/css/base/base.css: { minified: true }
     layout:
-      assets/dist/css/layout/layout.css: { }
+      assets/dist/css/layout/layout.css: { minified: true }
     component:
-      assets/dist/css/components/fonts.css: { }
-      assets/dist/css/components/components.css: { }
+      assets/dist/css/components/fonts.css: { minified: true }
+      assets/dist/css/components/components.css: { minified: true }
     theme:
-      assets/dist/css/theme/theme.css: { }
-      assets/dist/css/theme/print.css: { media: print }
+      assets/dist/css/theme/theme.css: { minified: true }
+      assets/dist/css/theme/print.css: { minified: true , media: print }
   js:
     assets/dist/js/modernizr.js: {
       minified: true,
     }
     assets/dist/js/scripts.js: {
       minified: true,
+    }
+    https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js: {
+      external: true,
+      attributes: { defer: true }
     }
   dependencies:
     - core/jquery
@@ -28,13 +32,13 @@ tabs:
   version: 1.0.0
   css:
     component:
-      assets/dist/css/components/tabs.css: { }
+      assets/dist/css/components/tabs.css: { minified: true }
 
 messages:
   version: 1.0.0
   css:
     component:
-      assets/dist/css/components/messages.css: { }
+      assets/dist/css/components/messages.css: { minified: true }
 
 black-white-init:
   version: VERSION
