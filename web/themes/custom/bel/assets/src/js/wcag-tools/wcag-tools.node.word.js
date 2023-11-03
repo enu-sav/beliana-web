@@ -2,99 +2,119 @@
  * @file
  * WCAG tools
  */
-(function ($, Drupal, once) {
+(function (Drupal, once) {
+
+  'use strict';
 
   Drupal.behaviors.click_change_node_word_citation = {
     attach: function (context, settings) {
-      once('structure-process', 'article > .word', context).forEach(function (item) {
-        var word = $(item);
+      var wordElements = once('structure-process', 'article > .word', context);
 
-        $.each(['desktop', 'mobile'], function (i, selector) {
-          var wrapper = word.find('.node__content.' + selector);
-          var sidebar_wrapper = word.find('.node__sidebar.' + selector);
-          var images = word.find('.word-illustration .media-image');
+      if (!wordElements) {
+        return;
+      }
 
-          $.each(['IMG', 'IMGX'], function (key, tag) {
-            if (wrapper.length) {
-              var matches = wrapper.html().match(new RegExp("\\[" + tag + "-[0-9]+\\]", 'g'));
+      wordElements.forEach(function (item) {
+        var word = item;
+
+        ['desktop', 'mobile'].forEach(function (selector) {
+          var wrapper = word.querySelector('.node__content.' + selector);
+          var sidebar_wrapper = word.querySelector('.node__sidebar.' + selector);
+          var images = word.querySelectorAll('.word-illustration .media-image');
+
+          ['IMG', 'IMGX'].forEach(function (tag) {
+            if (wrapper) {
+              var matches = wrapper.innerHTML.match(new RegExp("\\[" + tag + "-[0-9]+\\]", 'g'));
 
               if (matches) {
-                // replace [IMG-ID] tags in text with referenced media
-                $.each(matches, function (key, match) {
+                matches.forEach(function (match) {
                   var parse = match.split('-');
                   var id = parse[1].replace(']', '') - 1;
-                  var tag = wrapper.find('p:contains(' + match + ')');
-                  var image = $(images[id]);
+                  var tagElement = wrapper.querySelector('p:contains(' + match + ')');
+                  var image = images[id];
 
-                  if (tag == 'IMGX') {
-                    image.addClass('hide-description');
+                  if (tag === 'IMGX') {
+                    image.classList.add('hide-description');
                   }
 
-                  $(image[0].outerHTML).insertAfter(tag);
-                  image.addClass('moved');
-                  images[id].remove();
-                  tag.remove();
+                  var newImage = document.createElement('div');
+                  newImage.innerHTML = image.outerHTML;
+                  tagElement.insertAdjacentElement('afterend', newImage);
+                  image.classList.add('moved');
+                  image.remove();
+                  tagElement.remove();
                 });
               }
             }
           });
 
-          if (wrapper.find('h2, h3').length) {
+          if (wrapper && wrapper.querySelector('h2, h3')) {
             var breadcrumbs = 0;
-            var sidebar = sidebar_wrapper.find('.structure');
+            var sidebar = sidebar_wrapper.querySelector('.structure');
+            sidebar.innerHTML += '<h3>' + Drupal.t('label-content') + '</h3><ul></ul>';
 
-            sidebar.append('<h3>' + Drupal.t('label-content') + '</h3><ul></ul>');
-
-            wrapper.find('h2, h3').each(function (i, item) {
-              var type = $(item).is('h2') ? 'large' : 'small';
-              $(item).attr('data-id', i).after('<span class="scroll-up">' + Drupal.t('label-back-to-content') + '</span>');
-              sidebar.find('ul').append('<li class="' + type + '"><a href="#" data-id="' + i + '">' + $(item).text() + '</a></li>');
+            wrapper.querySelectorAll('h2, h3').forEach(function (item, i) {
+              var type = item.tagName === 'H2' ? 'large' : 'small';
+              item.setAttribute('data-id', i);
+              item.insertAdjacentHTML('afterend', '<span class="scroll-up">' + Drupal.t('label-back-to-content') + '</span>');
+              sidebar.querySelector('ul').innerHTML += '<li class="' + type + '"><a href="#" data-id="' + i + '">' + item.textContent + '</a></li>';
               breadcrumbs = document.querySelector('.block-bel-breadcrumbs').offsetHeight;
             });
 
-            sidebar.on('click', 'ul > li > a', function (e) {
-              e.preventDefault();
-              var offset = $('body').hasClass('adminimal-admin-toolbar') ? 290 : 270;
-              if ($(window).width() < 769) {
-                offset = $('body').hasClass('adminimal-admin-toolbar') ? 320 : 320;
-              }
+            sidebar.addEventListener('click', function (e) {
+              if (e.target.tagName === 'A') {
+                e.preventDefault();
+                var offset = 130;
 
-              $('html, body').animate({
-                scrollTop: wrapper.find('h2[data-id="' + $(this).data('id') + '"], h3[data-id="' + $(this).data('id') + '"]').offset().top - (offset + breadcrumbs)
-              }, 300);
+                if (window.innerWidth < 769) {
+                  offset = 150;
+                }
+
+                var targetId = e.target.getAttribute('data-id');
+                var targetElement = wrapper.querySelector('h2[data-id="' + targetId + '"], h3[data-id="' + targetId + '"]');
+                if (targetElement) {
+                  var scrollTop = targetElement.offsetTop - (offset + breadcrumbs);
+                  window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+                }
+              }
             });
 
-            sidebar.removeClass('hidden');
+            sidebar.classList.remove('hidden');
           }
 
-          if (!sidebar_wrapper.find('article.media-image.view-mode-in-word:not(.moved)').length && !sidebar_wrapper.find('.field--name-field-table').length && !sidebar_wrapper.find('.structure > ul').length) {
-            sidebar_wrapper.hide();
+          if (sidebar_wrapper && !sidebar_wrapper.querySelectorAll('article.media-image.view-mode-in-word:not(.moved)').length && !sidebar_wrapper.querySelector('.field--name-field-table') && !sidebar_wrapper.querySelector('.structure > ul')) {
+            sidebar_wrapper.style.display = 'none';
           }
         });
 
-        word.on('click', 'span.scroll-up', function (e) {
-          $('html, body').animate({
-            scrollTop: 0
-          }, 300);
+
+
+        once('label-back-to-content', 'span.scroll-up', context).forEach(function (item) {
+          item.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
         });
 
-        word.on('click', '.citation h3', function (e) {
-          if ($(this).parent().hasClass('open')) {
-            $(this).parent().removeClass('open');
-            $(this).parent().find('#dialog-desc').css('display', 'none');
-            $(this).attr('aria-expanded', false);
-            $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-closed'));
-          }
-          else {
-            $(this).parent().removeClass('open');
-            $(this).parent().addClass('open');
-            $(this).parent().find('#dialog-desc').css('display', 'block');
-            $(this).attr('aria-expanded', true);
-            $(this).attr('aria-label', Drupal.t('aria-label-section-citation-is-open'));
+        word.addEventListener('click', function (e) {
+          if (e.target.closest('.citation h3')) {
+            const citationElement = e.target.parentElement;
+
+            if (citationElement.classList.contains('open')) {
+              citationElement.classList.remove('open');
+              citationElement.querySelector('#dialog-desc').style.display = 'none';
+              e.target.setAttribute('aria-expanded', false);
+              e.target.setAttribute('aria-label', Drupal.t('aria-label-section-citation-is-closed'));
+            } else {
+              citationElement.classList.add('open');
+              citationElement.querySelector('#dialog-desc').style.display = 'block';
+              e.target.setAttribute('aria-expanded', true);
+              e.target.setAttribute('aria-label', Drupal.t('aria-label-section-citation-is-open'));
+            }
           }
         });
       });
     }
   };
 
-})(jQuery, Drupal, once);
+})(Drupal, once);

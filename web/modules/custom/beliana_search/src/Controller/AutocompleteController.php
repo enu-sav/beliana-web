@@ -59,6 +59,7 @@ class AutocompleteController extends ControllerBase {
       ->condition('title', $query->escapeLike($input), 'CONTAINS')
       ->condition('status', TRUE)
       ->condition('langcode', $language)
+      ->accessCheck(TRUE)
       ->groupBy('nid')
       ->sort('title', 'ASC')
       ->range(0, 10);

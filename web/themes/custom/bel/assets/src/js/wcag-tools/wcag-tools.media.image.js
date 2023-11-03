@@ -4,6 +4,8 @@
  */
 (function (Drupal, once) {
 
+  'use strict';
+
   Drupal.behaviors.click_change_media_image_more_info = {
     attach: function (context, settings) {
       once('more-info', '.more-info', context).forEach(function (item) {

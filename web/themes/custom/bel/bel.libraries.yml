@@ -13,8 +13,12 @@ global:
       assets/dist/css/theme/theme.css: { }
       assets/dist/css/theme/print.css: { media: print }
   js:
-    assets/dist/js/modernizr.js: { }
-    assets/dist/js/scripts.js: { }
+    assets/dist/js/modernizr.js: {
+      minified: true,
+    }
+    assets/dist/js/scripts.js: {
+      minified: true,
+    }
   dependencies:
     - core/jquery
     - core/drupal
@@ -41,15 +45,27 @@ black-white-init:
 search:
   version: VERSION
   js:
-    assets/dist/js/search/search.js: { async: true }
+    assets/dist/js/search/search.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
 
 wcag-tools:
   version: VERSION
   header: true
   js:
-    assets/dist/js/accessible/jquery-accessible-menu.js: { async: true }
-    assets/dist/js/accessible/button-links.js: { async: true }
-    assets/dist/js/wcag-tools/wcag-tools.js: { async: true }
+    assets/dist/js/accessible/jquery-accessible-menu.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
+    assets/dist/js/accessible/button-links.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
+    assets/dist/js/wcag-tools/wcag-tools.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
   dependencies:
     - core/jquery
     - core/drupal
@@ -58,19 +74,30 @@ wcag-tools:
 wcag-tools.node.word:
   version: VERSION
   js:
-    assets/dist/js/wcag-tools/wcag-tools.node.word.js: { async: true }
+    assets/dist/js/wcag-tools/wcag-tools.node.word.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
+  dependencies:
+    - core/drupal
+    - core/once
 
 wcag-tools.media.image:
   version: VERSION
   js:
-    assets/dist/js/wcag-tools/wcag-tools.media.image.js: { async: true }
+    assets/dist/js/wcag-tools/wcag-tools.media.image.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
 
 wcag-tools.view.options:
   version: VERSION
   js:
-    assets/dist/js/wcag-tools/wcag-tools.view.options.js: { async: true }
+    assets/dist/js/wcag-tools/wcag-tools.view.options.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
   dependencies:
-    - core/jquery
     - core/drupal
     - core/once
 
@@ -78,7 +105,9 @@ facet-categories:
   version: VERSION
   header: true
   js:
-    assets/dist/js/facet/facet-categories.js: { async: true }
+    assets/dist/js/facet/facet-categories.js: {
+      minified: true,
+    }
   dependencies:
     - core/jquery
     - core/drupal

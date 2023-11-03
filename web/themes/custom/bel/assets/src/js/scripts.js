@@ -7,72 +7,79 @@
   Drupal.behaviors.stickyHeader = {
     attach: function (context, settings) {
 
-      var $body = $('body');
+      var body = document.body;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
-      $(window).on('scroll', function () {
-        var scroll = $(window).scrollTop();
-        var header_offset = 40;
+      function updateStickyHeader() {
+        var scroll = window.scrollY || window.pageYOffset;
+        var headerOffset = 40;
 
-        if ($(window).width() < 768) {
-          header_offset = 52;
-        }
-        else if ($(window).width() < 948) {
-          header_offset = 74;
-        }
-        else if ($(window).width() < 1085) {
-          header_offset = 58;
+        if (windowWidth < 768) {
+          headerOffset = 52;
+        } else if (windowWidth < 948) {
+          headerOffset = 74;
+        } else if (windowWidth < 1085) {
+          headerOffset = 58;
         }
 
-        if ($('#content-main').height() > 500) {
-          if (scroll >= header_offset) {
-            $body.addClass('sticky-header');
+        var contentMain = document.getElementById('content-main');
+
+        if (contentMain && contentMain.clientHeight > 500) {
+          if (scroll >= headerOffset) {
+            body.classList.add('sticky-header');
+          } else {
+            body.classList.remove('sticky-header');
           }
-          else {
-            $body.removeClass('sticky-header');
-          }
         }
+      }
+
+      updateStickyHeader();
+
+      window.addEventListener('scroll', updateStickyHeader);
+      window.addEventListener('resize', function () {
+        windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        updateStickyHeader();
       });
+
+      Drupal.behaviors.stickyHeader.once = true;
+
     },
   };
 
   /**
-   * Open external content links in new window
+   * Open external content links in a new window
    */
-  Drupal.behaviors.externalLinks = {
-    attach: function (context, settings) {
-      const links = document.querySelectorAll('a[href^="http"]');
-      const currentHost = window.location.host;
+  (function (Drupal) {
+    Drupal.behaviors.externalLinks = {
+      attach: function (context, settings) {
 
-      links.forEach(link => {
-        if (!link.href.includes(currentHost)) {
-          if (!link.classList.contains('processed')) {
+        var externalLinks = document.querySelectorAll('.layout-container a[href^="http"]');
+        externalLinks.forEach(function(link) {
+          if (!link.href.includes(location.host)) {
             link.setAttribute('target', '_blank');
-            link.classList.add('processed');
           }
-        }
-      });
-    }
-  };
+        });
+
+        var pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
+        pdfLinks.forEach(function(link) {
+          link.setAttribute('target', '_blank');
+        });
+
+      }
+    };
+  })(Drupal);
 
   Drupal.behaviors.share = {
     attach: function () {
-      $('.share').click(function () {
-        $(this).toggleClass('active');
-      });
-    }
-  };
 
-  /**
-   * Activate smooth scrolling on a.smooth-scroll
-   */
-  Drupal.behaviors.smoothScroll = {
-    attach: function (context, settings) {
-      once('smooth-scroll-once', 'a.smooth-scroll', context).forEach(function (item) {
-        $(item).on('click', function (event) {
-          event.preventDefault();
-          $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top - 50}, 'slow');
+      const shareElements = document.querySelectorAll('.share');
+
+      shareElements.forEach(shareElement => {
+        shareElement.addEventListener('click', function () {
+          this.classList.toggle('active');
         });
       });
+
     }
   };
 
@@ -81,10 +88,14 @@
    */
   Drupal.behaviors.menuToggler = {
     attach: function (context, settings) {
+
       once('processed', '#hamburger-toggle', context).forEach(function (item) {
-        $(item).toggleClass('is-active');
-        $('body').toggleClass('menu-overlay-open');
+        if (item) {
+          item.classList.toggle('is-active');
+          document.body.classList.toggle('menu-overlay-open');
+        }
       });
+
     }
   };
 
@@ -94,16 +105,17 @@
   Drupal.behaviors.webformFloatingLabels = {
     attach: function (context, settings) {
       // Handle label/input state
-      once('addFocusListener', 'form input, form textarea', context).forEach(function (item) {
-        $(item).on('blur', function () {
-          if ($(this).val() !== '') {
-            $(this).addClass('focus');
+      var inputs = context.querySelectorAll('form input, form textarea');
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('blur', function () {
+          if (this.value !== '') {
+            this.classList.add('focus');
+          } else {
+            this.classList.remove('focus');
           }
-          else {
-            $(this).removeClass('focus');
-          }
-        }).trigger('blur');
-      });
+        });
+        inputs[i].dispatchEvent(new Event('blur'));
+      }
     }
   };
 
@@ -148,7 +160,6 @@
     },
     print: function (event) {
       event.preventDefault();
-      $('article .citacia h3 a').trigger('click');
       window.print();
     },
     setMediaSize: function (image, maxHeight) {

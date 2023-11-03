@@ -81,6 +81,7 @@
         "drupal/search_api_solr": "^4.3",
         "drupal/simple_sitemap": "^4.1",
         "drupal/stable": "^2.0",
+        "drupal/stage_file_proxy": "^2.1",
         "drupal/svg_image": "^3.0",
         "drupal/token": "^1.13",
         "drupal/translatable_menu_link_uri": "^2.1",
