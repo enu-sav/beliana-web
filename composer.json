@@ -156,6 +156,9 @@
             },
             "drupal/mathjax": {
                 "3016329 - Conditionally attach MathJax libraries and markup": "https://www.drupal.org/files/issues/2020-09-18/3016329-conditionally-attach-markup-10.patch"
+            },
+            "drupal/redirect": {
+                "3373123 - Setting 'Enforce clean and canonical URLs.' breaks CSS aggregation on multilingual Drupal 10.1.x with browser caching enabled": "https://www.drupal.org/files/issues/2023-11-01/3373123_redirect_dont-normalize-assets.patch"
             }
         }
     },
