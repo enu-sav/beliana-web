@@ -2,6 +2,7 @@ display:
   default:
     display_title: Master
     display_options:
+      title: 'Mesačný archív'
       pager:
         options:
           expose:
@@ -14,5 +15,7 @@ display:
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
+  block_1:
+    display_title: Blok
   page_1:
     display_title: Stránka

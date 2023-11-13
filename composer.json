@@ -42,11 +42,11 @@
         "drupal/config_filter": "^2.5",
         "drupal/config_ignore": "^3.0@RC",
         "drupal/config_split": "^2.0@RC",
-        "drupal/core": "10.1.5",
+        "drupal/core": "10.1.6",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^10",
         "drupal/core-recommended": "^10",
-        "drupal/csv_serialization": "^3.0",
+        "drupal/csv_serialization": "^4.0",
         "drupal/ctools": "^4.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/entity": "^1.4",
@@ -149,7 +149,8 @@
         "patches": {
             "drupal/core": {
                 "3300404 - Unserialize(): Passing null to parameter #1 ($data) of type string is deprecated in Drupal\\Core\\Entity\\Sql\\SqlContentEntityStorage::loadFromSharedTables()": "https://www.drupal.org/files/issues/2023-02-03/3300404-20-check-values-before-unserialize.patch",
-                "2466553 - Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2023-10-18/2466553.d10_0.patch"
+                "2466553 - Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2023-10-18/2466553.d10_0.patch",
+                "2957924 - Have responsive image module ignore svg": "https://www.drupal.org/files/issues/2022-06-23/drupal-responsive_image_svg_support-2957924-11.patch"
             },
             "drupal/admin_toolbar": {
                 "3121816 - Version 8.x-2.1 need Drupal 8.8.0 or greater": "https://www.drupal.org/files/issues/2020-03-30/3121816-07.patch"

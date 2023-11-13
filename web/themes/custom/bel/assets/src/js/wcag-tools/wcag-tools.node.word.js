@@ -30,7 +30,9 @@
                 matches.forEach(function (match) {
                   var parse = match.split('-');
                   var id = parse[1].replace(']', '') - 1;
-                  var tagElement = wrapper.querySelector('p:contains(' + match + ')');
+                  var tagElement = Array.from(wrapper.querySelectorAll('p')).find(function (p) {
+                    return p.textContent.includes(match);
+                  });
                   var image = images[id];
 
                   if (tag === 'IMGX') {

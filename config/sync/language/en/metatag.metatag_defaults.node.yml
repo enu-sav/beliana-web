@@ -1,1 +1,4 @@
 label: Obsah
+tags:
+  title: '[node:title] | Encyclopaedia Beliana – slovenská všeobecná encyklopédia'
+  canonical_url: '[current-page:url:absolute]'

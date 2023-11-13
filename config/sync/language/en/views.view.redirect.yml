@@ -13,5 +13,19 @@ display:
             items_per_page_label: 'Položiek na stránku'
             items_per_page_options_all_label: '- Všetko -'
             offset_label: 'Zobraziť od'
+      fields:
+        redirect_bulk_form:
+          action_title: 'S výberom'
+        redirect_source__path:
+          label: Od
+        created:
+          label: Vytvorené
+      filters:
+        redirect_source__path:
+          expose:
+            label: Od
+        redirect_redirect__uri:
+          expose:
+            label: Komu
   page_1:
     display_title: Stránka

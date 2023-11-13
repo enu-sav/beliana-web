@@ -1,8 +1,15 @@
+label: 'Vlastné bloky'
+description: 'Nájsť a spravovať vlastné bloky.'
 display:
   default:
     display_title: Master
     display_options:
+      title: 'Vlastné bloky'
       fields:
+        info:
+          label: 'Popis bloku'
+        type:
+          label: 'Typ bloku'
         changed:
           label: Aktualizované
         operations:
@@ -22,5 +29,18 @@ display:
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
+      empty:
+        area_text_custom:
+          content: 'Žiadne vlastné bloky nie sú dostupné. '
+      filters:
+        info:
+          expose:
+            label: 'Popis bloku'
+        type:
+          expose:
+            label: 'Typ bloku'
   page_1:
     display_title: Stránka
+    display_options:
+      menu:
+        description: 'Create and edit block content.'
