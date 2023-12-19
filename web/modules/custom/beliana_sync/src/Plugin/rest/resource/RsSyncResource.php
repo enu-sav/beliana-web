@@ -136,7 +136,7 @@ class RsSyncResource extends ResourceBase {
       $node->field_images = $local_fids;
     }
 
-    if ($data['language'] == 'en') {
+    if ($data['language'] == 'en' || $data['language'] == 'p-s') {
       $node->set('langcode', $data['language']);
     }
 
@@ -270,7 +270,7 @@ class RsSyncResource extends ResourceBase {
           ]);
         }
         
-        if ($language == 'en') {
+        if ($language == 'en' || $language == 'p-s') {
           $media->set('langcode', $language);
         }
 
@@ -513,8 +513,8 @@ class RsSyncResource extends ResourceBase {
         $node->set('field_images', []);
       }
     }
-    if ($data['language'] == 'en') {
-      $node->set('langcode', $data['language']);
+    if ($data['language'] == 'en' || $data['language'] == 'p-s') {
+       $node->set('langcode', $data['language']);
     }
 
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
