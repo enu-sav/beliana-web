@@ -915,7 +915,7 @@ $config['environment_indicator.indicator']['name'] = getenv('ENVIRONMENT_INDICAT
 $config['language.negotiation']['url']['source'] = getenv('LANGUAGE_SOURCE') ?? 'native';
 $config['language.negotiation']['url']['domains']['sk'] = getenv('LANGUAGE_DOMAINS_SK') ?? 'beliana.web.lndo.site';
 $config['language.negotiation']['url']['domains']['en'] = getenv('LANGUAGE_DOMAINS_EN') ?? 'en.beliana.web.lndo.site';
-$config['language.negotiation']['url']['domains']['p-s'] = getenv('LANGUAGE_DOMAINS_PS') ?? 'p-s.beliana.web.lndo.site';
+$config['language.negotiation']['url']['domains']['p-s'] = getenv('LANGUAGE_DOMAINS_PS') ?? 'dwskola.beliana.sav.sk';
 
 // SOLR settings.
 $config['search_api.server.solr']['backend_config']['connector_config']['scheme'] = getenv('SOLR_SCHEME');
