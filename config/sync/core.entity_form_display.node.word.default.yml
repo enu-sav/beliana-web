@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.word.field_date
     - field.field.node.word.field_images
     - field.field.node.word.field_info_published
+    - field.field.node.word.field_is_school
     - field.field.node.word.field_meta_tags
     - field.field.node.word.field_sort
     - field.field.node.word.field_table
@@ -97,6 +98,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_is_school:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
     weight: 20
@@ -145,6 +153,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

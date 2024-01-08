@@ -170,7 +170,7 @@ display:
           exception:
             value: ''
             title_enable: false
-            title: Všetko
+            title: Všetky
           title_enable: true
           title: '{{ arguments.tid }}'
           default_argument_type: fixed

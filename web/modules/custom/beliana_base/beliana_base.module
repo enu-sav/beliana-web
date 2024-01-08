@@ -7,6 +7,7 @@
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 
@@ -54,15 +55,15 @@ function beliana_base_theme($existing, $type, $theme, $path): array {
 /**
  * Implements hook_node_access().
  */
-function beliana_base_node_access(NodeInterface $node): AccessResultInterface {
-  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+function beliana_base_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  $langcode = Drupal::languageManager()->getCurrentLanguage()->getId();
   if (!$node->hasTranslation($langcode)) {
     $access = AccessResult::forbidden();
   }
   else {
     $access = AccessResult::neutral();
   }
-  $access->addCacheableDependency($node);
+//  $access->addCacheableDependency($node);
 
   return $access;
 }
@@ -72,13 +73,62 @@ function beliana_base_node_access(NodeInterface $node): AccessResultInterface {
  */
 function beliana_base_preprocess_links__language_block(&$variables): void {
   if (isset($variables['links'])) {
-  
-    $config = \Drupal::configFactory()->get('language.negotiation');
+
+    $config = Drupal::configFactory()->get('language.negotiation');
     $domains = $config->get('url.domains');
-    
+
     // Go through each link present in the output and change it's title.
     foreach ($variables['links'] as $link_langcode => $link) {
       $variables['links'][$link_langcode]['link'] = new Link($link_langcode, Url::fromUri('https://' . $domains[$link_langcode]));
     }
   }
+}
+
+/**
+ * Implementation of hook_node_grants().
+ */
+function beliana_base_node_grants(AccountInterface $account, $op): array {
+  $grants = [];
+
+  if ($op == 'view') {
+    $grants['beliana_base_school_grants'] = [intval(is_domain_school())];
+  }
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_access_records().
+ */
+function beliana_base_node_access_records(NodeInterface $node) {
+  $records = [];
+
+  // Check if the node has the boolean parameter set to TRUE.
+  if ($node->hasField('field_is_school') && $node->get('field_is_school')->value) {
+    // Grant access for users with certain permissions.
+    $records[] = [
+      'realm' => 'beliana_base_school_grants',
+      'gid' => 1,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+    ];
+  } else {
+    $records[] = [
+      'realm' => 'beliana_base_school_grants',
+      'gid' => 0,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+    ];
+  }
+
+  return $records;
+}
+
+function is_domain_school() {
+  $domain = explode('.', Drupal::request()->getHost())[0];
+  $is_school = 'skola' != $domain ? FALSE : TRUE;
+
+  return $is_school;
 }

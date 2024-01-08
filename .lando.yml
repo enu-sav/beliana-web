@@ -34,7 +34,8 @@ services:
 
 proxy:
   appserver:
-    - "*.beliana.web.lndo.site"
+    - en.beliana.web.lndo.site
+    - skola.beliana.web.lndo.site
     - beliana.web.lndo.site
 
 tooling:

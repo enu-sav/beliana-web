@@ -80,7 +80,7 @@ class RsSyncResource extends ResourceBase {
       $container->get('current_user')
     );
   }
-  
+
   /**
    * Create new article.
    *
@@ -136,8 +136,12 @@ class RsSyncResource extends ResourceBase {
       $node->field_images = $local_fids;
     }
 
-    if ($data['language'] == 'en' || $data['language'] == 'p-s') {
+    if ($data['language'] == 'en') {
       $node->set('langcode', $data['language']);
+    }
+
+    if ($data['is_school']) {
+      $node->set('field_is_school', TRUE);
     }
 
     $modified_body = $this->downloadBodyImages($data['body']);
@@ -149,7 +153,7 @@ class RsSyncResource extends ResourceBase {
 
     return new ResourceResponse($node->id(), 201);
   }
-  
+
   /**
    * Download attached files and create media entities from them.
    *
@@ -194,7 +198,7 @@ class RsSyncResource extends ResourceBase {
         // we got link to external image
         $link_OK = TRUE;
       }
-      
+
       if ($file_OK or $link_OK) {
         $license = $taxonomy_terms->loadByProperties(['name' => $image['license']]);
 
@@ -269,8 +273,8 @@ class RsSyncResource extends ResourceBase {
             'title' => parse_url($image['url_testu_licencie_l'])['host'],
           ]);
         }
-        
-        if ($language == 'en' || $language == 'p-s') {
+
+        if ($language == 'en') {
           $media->set('langcode', $language);
         }
 
@@ -513,8 +517,12 @@ class RsSyncResource extends ResourceBase {
         $node->set('field_images', []);
       }
     }
-    if ($data['language'] == 'en' || $data['language'] == 'p-s') {
+    if ($data['language'] == 'en') {
        $node->set('langcode', $data['language']);
+    }
+
+    if ($data['is_school']) {
+      $node->set('field_is_school', TRUE);
     }
 
     $node->field_alphabet = _assign_alphabet_group($data['sort']);

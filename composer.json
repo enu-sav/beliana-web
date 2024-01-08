@@ -68,6 +68,7 @@
         "drupal/metatag": "^2.0",
         "drupal/migrate_source_csv": "^3.5",
         "drupal/page_manager": "^4.0@RC",
+        "drupal/paragraphs": "^1.16",
         "drupal/pathauto": "^1.12",
         "drupal/preload_font": "^1.0",
         "drupal/purge": "^3.4",

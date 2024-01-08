@@ -8,9 +8,7 @@ url:
   prefixes:
     sk: ''
     en: en
-    p-s: p-s
   domains:
     sk: beliana.sav.sk
     en: en.beliana.sav.sk
-    p-s: pre-skoly.beliana.sav.sk
 selected_langcode: site_default

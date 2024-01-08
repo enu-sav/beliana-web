@@ -1,9 +1,0 @@
-uuid: 404f0752-604e-46ad-a42a-cf61714380cf
-langcode: sk
-status: true
-dependencies: {  }
-id: p-s
-label: 'pre školy'
-direction: ltr
-weight: 2
-locked: false
