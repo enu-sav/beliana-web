@@ -1,0 +1,23 @@
+uuid: c8fef3c7-a6d2-4d86-b960-7307253461e2
+langcode: sk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_school
+    - node.type.word
+id: node.word.field_is_school
+field_name: field_is_school
+entity_type: node
+bundle: word
+label: Škola
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Áno
+  off_label: Nie
+field_type: boolean
