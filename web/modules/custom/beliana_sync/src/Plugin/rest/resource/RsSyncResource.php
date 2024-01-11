@@ -141,7 +141,7 @@ class RsSyncResource extends ResourceBase {
     }
 
     if ($data['is_school']) {
-      $node->set('field_is_school', TRUE);
+      $node->set('field_is_school', 1);
     }
 
     $modified_body = $this->downloadBodyImages($data['body']);
@@ -522,7 +522,7 @@ class RsSyncResource extends ResourceBase {
     }
 
     if ($data['is_school']) {
-      $node->set('field_is_school', TRUE);
+      $node->set('field_is_school', 1);
     }
 
     $node->field_alphabet = _assign_alphabet_group($data['sort']);
