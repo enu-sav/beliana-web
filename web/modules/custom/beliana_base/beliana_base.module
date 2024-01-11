@@ -49,6 +49,10 @@ function beliana_base_theme($existing, $type, $theme, $path): array {
       ],
       'template' => 'view-sort-options',
     ],
+    'info_popup_block' => [
+      'variables' => [],
+      'template' => 'info-popup-block',
+    ],
   ];
 }
 

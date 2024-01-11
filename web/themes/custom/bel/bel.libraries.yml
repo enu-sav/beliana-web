@@ -116,3 +116,11 @@ facet-categories:
     - core/jquery
     - core/drupal
     - core/once
+
+info_popup:
+  version: 1.x
+  js:
+    assets/dist/js/info-popup.js: { }
+  dependencies:
+    - core/once
+    - core/drupalSettings

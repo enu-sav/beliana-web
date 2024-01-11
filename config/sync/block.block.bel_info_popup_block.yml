@@ -1,0 +1,20 @@
+uuid: ac050852-aa7b-4a7d-864f-645115b15336
+langcode: sk
+status: true
+dependencies:
+  module:
+    - beliana_base
+  theme:
+    - bel
+id: bel_info_popup_block
+theme: bel
+region: content
+weight: 0
+provider: null
+plugin: info_pop_up_block
+settings:
+  id: info_pop_up_block
+  label: 'BELIANA Info - PopUp'
+  label_display: '0'
+  provider: beliana_base
+visibility: {  }

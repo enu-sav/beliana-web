@@ -55,7 +55,7 @@
 
         var externalLinks = document.querySelectorAll('.layout-container a[href^="http"]');
         externalLinks.forEach(function(link) {
-          if (!link.href.includes(location.host)) {
+          if (!link.href.includes(location.host) && link.href !== 'https://beliana.sav.sk/') {
             link.setAttribute('target', '_blank');
           }
         });

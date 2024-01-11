@@ -5,7 +5,7 @@
   @return math.div(math.round($power * $value), $power);
 }
 
-@function em($pixels, $context: $browser-context) {
+@function em($pixels, $context: $base-font-size) {
   $em: calc($pixels/$context);
   @return round($em, 2) * 1em;
 }
