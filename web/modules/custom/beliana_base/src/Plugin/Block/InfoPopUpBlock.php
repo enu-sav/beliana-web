@@ -32,8 +32,9 @@ class InfoPopUpBlock extends BlockBase {
       ];
       $build['#attached']['library'][] = 'bel/info_popup';
       $build['#attached']['drupalSettings']['beliana_base']['info_popup_delay'] = 1;
-      // add condition where substr "en or skola is in http host
-      $domain = explode('.', Drupal::request()->getHost())[0];
+
+      $domain = \Drupal::request()->getHost();
+      $domain = explode('.', $domain)[0];
       if (strpos($domain, 'en') !== false) {
         $prod_url = [
           'url' => 'https://en.beliana.sav.sk/',
@@ -50,6 +51,11 @@ class InfoPopUpBlock extends BlockBase {
         '#theme' => 'info_popup_block',
         '#prod_url' => $prod_url,
       ];
+
+      // Add cache tags based on the domain.
+      $build['#cache']['tags'][] = 'domain:' . $domain;
+      // Add cache contexts based on the domain.
+      $build['#cache']['contexts'][] = 'url.site';
     }
 
     return $build;
