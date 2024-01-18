@@ -53,21 +53,35 @@
     Drupal.behaviors.externalLinks = {
       attach: function (context, settings) {
 
+        function openExternalLinks(links, hostExclusions) {
+          links.forEach(function (link) {
+            if (!isLocalLink(link, hostExclusions)) {
+              link.setAttribute('target', '_blank');
+            }
+          });
+        }
+
+        function isLocalLink(link, hostExclusions) {
+          return (
+            link.href.includes(location.host) ||
+            hostExclusions.some(exclusion => link.href === exclusion)
+          );
+        }
+
         var externalLinks = document.querySelectorAll('.layout-container a[href^="http"]');
-        externalLinks.forEach(function(link) {
-          if (!link.href.includes(location.host) && link.href !== 'https://beliana.sav.sk/') {
-            link.setAttribute('target', '_blank');
-          }
-        });
+        openExternalLinks(externalLinks, [
+          'https://beliana.sav.sk/',
+          'https://en.beliana.sav.sk/',
+          'https://skola.beliana.sav.sk/'
+        ]);
 
         var pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
-        pdfLinks.forEach(function(link) {
-          link.setAttribute('target', '_blank');
-        });
+        openExternalLinks(pdfLinks, []);
 
       }
     };
   })(Drupal);
+
 
   Drupal.behaviors.share = {
     attach: function () {

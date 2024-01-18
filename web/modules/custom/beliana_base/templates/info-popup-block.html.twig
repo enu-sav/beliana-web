@@ -1,8 +1,8 @@
 <div class="bel-modal" id="info-popup">
   <div class="bel-modal__container">
     <div class="bel-modal__close"><span class="icon-close modal-close-button"></span></div>
-    <h2 class="bel-modal__title">Informácia</h2>
-    <p class="bel-modal__text">Nachádzate sa na testovacom webe EnÚ SAV, ktorého obsah nie je určený verejnosti.</p>
-    <p class="bel-modal__text">Prejdite prosím na stránku <a href="https://beliana.sav.sk/">beliana.sav.sk</a></p>
+    <h2 class="bel-modal__title">{{ 'Information'|t }}</h2>
+    <p class="bel-modal__text">{{ 'You are on the test website of the Institute of Informatics, Slovak Academy of Sciences (EnÚ SAV), and its content is not intended for the public.'|t }}</p>
+    <p class="bel-modal__text">{{ 'Please go to the page'|t }} <a href="{{ prod_url.url }}">{{ prod_url.text }}</a></p>
   </div>
 </div>
