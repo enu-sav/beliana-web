@@ -24,7 +24,7 @@ Thumbs.db
 *~.nib
 nbproject
 .komodotools
-.idea\
+.idea
 .env
 
 # Theme specific #
