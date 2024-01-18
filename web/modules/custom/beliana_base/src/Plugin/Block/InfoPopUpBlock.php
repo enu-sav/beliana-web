@@ -33,13 +33,13 @@ class InfoPopUpBlock extends BlockBase {
       $build['#attached']['library'][] = 'bel/info_popup';
       $build['#attached']['drupalSettings']['beliana_base']['info_popup_delay'] = 1;
       // add condition where substr "en or skola is in http host
-      $host = Drupal::request()->getHost();
-      if (strpos($host, 'en.') !== FALSE) {
+      $domain = explode('.', Drupal::request()->getHost())[0];
+      if (strpos($domain, 'en') !== false) {
         $prod_url = [
           'url' => 'https://en.beliana.sav.sk/',
           'text' => 'en.beliana.sav.sk',
         ];
-      } else if (strpos($host, 'skola.') !== FALSE) {
+      } else if (strpos($domain, 'skola') !== false) {
         $prod_url = [
           'url' => 'https://skola.beliana.sav.sk/',
           'text' => 'skola.beliana.sav.sk',
