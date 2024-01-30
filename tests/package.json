@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "cypress:open": "cypress open -b chrome --config baseUrl=https://dw.beliana.sav.sk",
+    "cypress:run": "cypress run -b chrome --config baseUrl=https://dw.beliana.sav.sk"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.3",
+    "typescript": "^5.3.3"
+  }
+}

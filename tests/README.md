@@ -1,0 +1,1 @@
+# Cypress tests for beliana-web
