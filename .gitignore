@@ -87,3 +87,9 @@ web/sites/default/services.local.yml
 ########################################
 /.editorconfig
 /.gitattributes
+
+# Ignore test dir - CY
+########################################
+tests/cypress/screenshots/*
+tests/cypress/videos/*
+tests/cypress/downloads/*
