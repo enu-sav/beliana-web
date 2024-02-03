@@ -1,5 +1,5 @@
 // commands imports
-import './commands/closeModalAfterVisitPage'
+import './commands/customCommands'
 
 
 // GLOBAL HOOKS
