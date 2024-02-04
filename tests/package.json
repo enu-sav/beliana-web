@@ -1,5 +1,5 @@
 {
-  "name": "Cypress tests for beliana-web",
+  "name": "Cypress tests for beliana web",
   "scripts": {
     "cypress:open": "cypress open -b chrome --config baseUrl=https://dw.beliana.sav.sk",
     "cypress:run": "cypress run -b chrome --config baseUrl=https://dw.beliana.sav.sk",
