@@ -1,4 +1,5 @@
 // commands imports
+import 'cypress-plugin-steps'
 import './commands/customCommands'
 
 
