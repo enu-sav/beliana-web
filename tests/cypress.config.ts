@@ -10,7 +10,6 @@ export default defineConfig({
 
   e2e: {
     supportFile: './cypress/support/e2e.ts',
-    testIsolation: false,
 
     setupNodeEvents(on, config) {
       // delete the video if the spec passed
