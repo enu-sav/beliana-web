@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "cypress:open": "cypress open -b chrome --config baseUrl=https://dw.beliana.sav.sk",
-    "cypress:run": "cypress run -b chrome --config baseUrl=https://dw.beliana.sav.sk",
-    "cypress:run:specificTest": "cypress run --spec '' -b chrome --config baseUrl="
+    "cypress:open": "NO_COLOR=1 cypress open -b chrome --config baseUrl=https://dw.beliana.sav.sk",
+    "cypress:run": "NO_COLOR=1 cypress run -b chrome --config baseUrl=https://dw.beliana.sav.sk",
+    "cypress:run:specificTest": "NO_COLOR=1 cypress run --spec '' -b chrome --config baseUrl="
   },
   "devDependencies": {
     "cypress": "^13.6.3",
