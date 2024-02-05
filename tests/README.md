@@ -8,6 +8,7 @@
 
 - [Directory structure](#directory-structure)
 - [How run tests](#how-run-tests)
+- [Deployment](#deployment)
 - [Links and Resources for cypress](#links-and-resources-for-cypress) 
 
 ---
@@ -52,7 +53,7 @@
 
 Install all dependencies
 > `$ cd tests` <br>
-> `$ npm install` 
+> `$ npm install`  or `$ npm ci`
 
 ### scripts
 
@@ -68,6 +69,17 @@ Run specific test
 > `npm run cypress:run:specificTest` <br>
 >> `$ npx cypress run --spec '' -b chrome --config baseUrl=` <br>
 >>> example - `$ npx cypress run --spec 'cypress/e2e/exampleTest.cy.ts' -b chrome --config baseUrl=https://dw.beliana.sav.sk`
+
+---
+
+## Deployment
+
+> SSH Commands - After Changes <br>
+Automated Tests
+
+`$ cd %path%/tests` <br>
+`$ npm ci` <br>
+`$ npm run cypress:run (this script must exist in file package.json)`
 
 ---
 
