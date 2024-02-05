@@ -1,5 +1,5 @@
 describe('Example test file', () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit('/')
   })
 
