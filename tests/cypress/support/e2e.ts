@@ -1,5 +1,6 @@
 // commands imports
 import 'cypress-plugin-steps'
+import 'cypress-map'
 import './commands/customCommands'
 
 // GLOBAL HOOKS
