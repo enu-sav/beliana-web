@@ -259,6 +259,10 @@ article.word-container {
         &__content {
           width: 65%;
           text-align: left;
+
+          @media screen and (max-width: em(768, 16)) {
+            width: 100%;
+          }
         }
       }
 
