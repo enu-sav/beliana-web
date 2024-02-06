@@ -24,6 +24,11 @@ function bel_preprocess_html(&$variables): void {
     ->applyTo($variables);
   // Union all theme setting variables to the html.html.twig template.
   $variables += $theme_settings->getOriginal();
+
+  $domain = explode('.', Drupal::request()->getHost())[0];
+  if (strpos($domain, 'skola') !== false) {
+    $variables['attributes']['class'][] = 'domain-school';
+  }
 }
 
 /**
