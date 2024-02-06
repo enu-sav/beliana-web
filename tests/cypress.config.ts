@@ -2,11 +2,9 @@ import {defineConfig} from 'cypress'
 import * as fs from 'fs'
 
 export default defineConfig({
-  viewportWidth: 1440,
-  viewportHeight: 1250,
-  animationDistanceThreshold: 20,
+  viewportWidth: 1536,
+  viewportHeight: 864,
   chromeWebSecurity: false,
-  video: true,
 
   e2e: {
     supportFile: './cypress/support/e2e.ts',
