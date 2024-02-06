@@ -255,6 +255,13 @@ article.word-container {
         }
       }
 
+      .domain-school & {
+        &__content {
+          width: 65%;
+          text-align: left;
+        }
+      }
+
       &__sidebar {
 
         .structure {
