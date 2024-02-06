@@ -66,10 +66,15 @@ Open cypress for development
 > `npm run cypress:open` <br>
 >> `$ cypress open -b chrome --config baseUrl=https://dw.beliana.sav.sk`
 
-Run specific test
+Run specific test or all tests in dir
 > `npm run cypress:run:specificTest` <br>
 >> `$ npx cypress run --spec '' -b chrome --config baseUrl=` <br>
->>> example - `$ npx cypress run --spec 'cypress/e2e/exampleTest.cy.ts' -b chrome --config baseUrl=https://dw.beliana.sav.sk`
+
+>> example: how run one test <br>
+>>> `$ npx cypress run --spec 'cypress/e2e/desktop/exampleTest.cy.ts' -b chrome --config baseUrl=https://dw.beliana.sav.sk` <br>
+
+>> example: how run all tests in mobile dir <br>
+>>> `$ npx cypress run --spec 'cypress/e2e/mobile/*.cy.ts' -b chrome --config baseUrl=https://dw.beliana.sav.sk`
 
 ---
 
