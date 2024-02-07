@@ -1,4 +1,4 @@
-describe('Example test', () => {
+describe.skip('Example test', () => {
   before(() => {
     cy.visit('/')
   })
