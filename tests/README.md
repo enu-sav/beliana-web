@@ -9,6 +9,7 @@
 - [Directory structure](#directory-structure)
 - [How run tests](#how-run-tests)
 - [Deployment](#deployment)
+- [Test structure](#test-structure)
 - [Links and Resources for cypress](#links-and-resources-for-cypress) 
 
 ---
@@ -65,10 +66,15 @@ Open cypress for development
 > `npm run cypress:open` <br>
 >> `$ cypress open -b chrome --config baseUrl=https://dw.beliana.sav.sk`
 
-Run specific test
+Run specific test or all tests in dir
 > `npm run cypress:run:specificTest` <br>
 >> `$ npx cypress run --spec '' -b chrome --config baseUrl=` <br>
->>> example - `$ npx cypress run --spec 'cypress/e2e/exampleTest.cy.ts' -b chrome --config baseUrl=https://dw.beliana.sav.sk`
+
+>> example: how run one test <br>
+>>> `$ npx cypress run --spec 'cypress/e2e/desktop/exampleTest.cy.ts' -b chrome --config baseUrl=https://dw.beliana.sav.sk` <br>
+
+>> example: how run all tests in mobile dir <br>
+>>> `$ npx cypress run --spec 'cypress/e2e/mobile/*.cy.ts' -b chrome --config baseUrl=https://dw.beliana.sav.sk`
 
 ---
 
@@ -81,6 +87,37 @@ Automated Tests
 `$ npm ci` <br>
 `$ npm run cypress:run (this script must exist in file package.json)`
 
+---
+
+## Test structure
+
+Tests are organized using  `describe`, `before`, and `it` functions and other... <br>
+https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests
+
+```typescript
+// Describe a group of tests
+describe('My Cypress file', () => {
+  // Before running any tests
+  before(() => {
+    // Initialization steps, e.g., starting a server, opening a browser
+    cy.visit('/')
+  })
+
+  // Test a specific block or piece of code
+  it('Test X', () => {
+    cy.get('selectorX').should('be.visible').then($sel => {
+      cy.wrap($sel)
+        .invoke('text')
+        .should('eq', `X`)
+    })
+  })
+
+  // Another test
+  it('Test Y', () => {
+    cy.get('selector').should('be.visible').and('have.text', 'Y')
+  })
+})
+```
 ---
 
 ## Links and Resources for cypress
