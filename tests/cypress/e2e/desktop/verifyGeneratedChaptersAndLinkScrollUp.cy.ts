@@ -2,7 +2,7 @@
  * BeforeEach tests, check if there are any h2 elements in the content (h2Exists = true | false)
  *
  * BEL-128 - 2. test case
- * - Navigate to /heslo/${node}
+ * - Navigate to /node/nid
  * - If h2Exists = true
  *  - Find all h2 elements in page content and verifies that each of them contains a scroll-up link
  *  - Select a random scroll-up link, click on it, verify that the page scrolled up, and h1 element is visible
@@ -10,7 +10,7 @@
  *  - Verification that there is no scroll-up link in the content
  *
  * BEL-128 - 3. test case
- * - Navigate to /heslo/${node}
+ * - Navigate to /node/nid
  * - If h2Exists = true
  *  - Find all h2 elements in the page content and saves them into an array of strings
  *  - Verification that a section for content is displayed in the sidebar
@@ -24,16 +24,18 @@ describe('Generated chapter content in sidebar and Link to scroll up', () => {
   let h2Exists: boolean
 
   before(() => {
-    const node = 'francuzsko'
+    // exp. francuzsko=17922, konstanta=19378
+    const path = 'node/17922'
 
-    cy.visit(`/heslo/${node}`)
+    cy.visit(path)
   })
 
   beforeEach(() => {
     cy.step('beforeEach - check if exist h2 in content')
-    cy.get('article.word-container')
+    cy.get('article.word-container .node__content')
       .as('container')
-      .find('.field__item')
+      .find('.field--name-body')
+      .children('.field__item')
       .then(($items) => {
         h2Exists = $items.find('h2').length > 0
       })
@@ -48,7 +50,7 @@ describe('Generated chapter content in sidebar and Link to scroll up', () => {
         .within(() => {
           cy.get('.field__item h2')
             .each(($elementH2) => {
-              cy.step('verify every h2 element has a scroll-up link')
+              cy.step('Verify every h2 element has a scroll-up link')
               cy.wrap($elementH2)
                 .siblings('span:eq(0)')
                 .as('linkForScrollUp')
