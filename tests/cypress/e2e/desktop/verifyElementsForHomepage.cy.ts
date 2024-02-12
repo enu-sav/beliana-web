@@ -1,4 +1,4 @@
-import {texts} from '../../support/variables/footer/textsForHomePage'
+import {texts} from '../../support/variables/textsForHomePage'
 
 /**
  * BeforeEach tests (it block), disable scroll bar
