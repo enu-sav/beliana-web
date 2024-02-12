@@ -1,4 +1,4 @@
-import {texts} from '../../support/variables/footer/textsForHomePage'
+import {texts} from '../../support/variables/textsForHomePage'
 
 describe.skip('Example test', () => {
   before(() => {
