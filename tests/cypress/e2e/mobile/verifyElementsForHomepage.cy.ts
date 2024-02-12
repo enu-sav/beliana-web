@@ -1,20 +1,18 @@
 import {texts} from '../../support/variables/textsForHomePage'
+import {resolutions} from '../../support/variables/viewportResolutions'
 
 /**
  * BeforeEach tests (it block), disable scroll bar
  * AfterEach tests (it block), enabled scroll bar
  *
- * BEL-128 - 1. test case for viewport 390x844
+ * BEL-128 - 1. test case for mobile viewport
  * - Navigate to homepage
  * - Verification of content, header, body, footer
  *  - check for pixel resolution
  *  - check (non)visible, (non)exist elements
  *  - check texts, lists and links
  */
-describe('Mobile - check all elements and their dimensions in px for homepage', {
-  viewportWidth: 390,
-  viewportHeight: 844
-}, () => {
+describe('Mobile - check all elements and their dimensions in px for homepage', resolutions.mobile, () => {
   before(() => {
     cy.visit('/')
   })
@@ -25,13 +23,13 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
   })
 
   it('Content - verifying of visibility and px resolution of elements', () => {
-    cy.checkElementWidth('body', 390)
+    cy.checkElementWidth('body', resolutions.mobile.viewportWidth)
     cy.get('.layout-container').should('be.visible')
   })
 
   it('Header - verifying of visibility and px resolution of elements', () => {
     cy.step('Verify header and children divs')
-    cy.checkElementWidth('header', 390)
+    cy.checkElementWidth('header', resolutions.mobile.viewportWidth)
     cy.get('header')
       .should('be.visible')
       .within($header => {
@@ -41,7 +39,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           .and('have.length', 3)
 
         cy.section('Verify part header-top')
-        cy.checkElementWidth('.header-top', 390)
+        cy.checkElementWidth('.header-top', resolutions.mobile.viewportWidth)
         cy.get('.header-top')
           .should('be.visible')
           .within(() => {
@@ -54,7 +52,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify part header-main')
-        cy.checkElementWidth('.header-main', 390)
+        cy.checkElementWidth('.header-main', resolutions.mobile.viewportWidth)
         cy.get('.header-main')
           .should('be.visible')
           .within(() => {
@@ -73,7 +71,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify part header-navigation')
-        cy.checkElementWidth('.header-navigation', 390)
+        cy.checkElementWidth('.header-navigation', resolutions.mobile.viewportWidth)
         cy.get('.header-navigation')
           .should('be.visible')
           .within(() => {
@@ -86,7 +84,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
 
   it('Body/Main - verifying of visibility and px resolution of elements', () => {
     cy.step('Verify body / content-main')
-    cy.checkElementWidth('#content-main', 390)
+    cy.checkElementWidth('#content-main', resolutions.mobile.viewportWidth)
     cy.get('#content-main .body-content')
       .should('be.visible')
       .within(() => {
@@ -101,7 +99,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
             cy.step('Verify text/link in body under img')
             cy.get('.field p')
               .should('be.visible')
-              .and('have.text', `${texts.bodyLinkText}`)
+              .and('have.text', texts.bodyLinkText)
               .find('a')
               .should('have.attr', 'href', 'node/28')
           })
@@ -112,17 +110,17 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           .should('be.visible')
           .within(() => {
             cy.step(`Verify text - ${texts.anniversaries}`)
-            cy.contains('h2', `${texts.anniversaries}`).should('be.visible')
+            cy.contains('h2', texts.anniversaries).should('be.visible')
 
             cy.step(`Verify link - ${texts.linkForAnniversaries}`)
             cy.get('.more-link')
               .should('be.visible')
-              .and('have.text', `${texts.linkForAnniversaries}`)
+              .and('have.text', texts.linkForAnniversaries)
 
             cy.step('List of anniversaries')
             cy.get('ul li')
               .then($liElements => {
-                if ($liElements.text().includes(`${texts.msgForEmptyAnniversariesList}`)) {
+                if ($liElements.text().includes(texts.msgForEmptyAnniversariesList)) {
                   cy.step('List is empty')
                   cy.wrap($liElements).should('be.visible')
                 } else {
@@ -166,7 +164,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
 
   it('Footer - verifying of visibility and px resolution of elements', () => {
     cy.step('Verify footer and children divs')
-    cy.checkElementWidth('footer', 390)
+    cy.checkElementWidth('footer', resolutions.mobile.viewportWidth)
     cy.get('footer')
       .should('be.visible')
       .within($footer => {
@@ -176,7 +174,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           .and('have.length', 2)
 
         cy.section('Verify part footer-content')
-        cy.checkElementWidth('.footer-content', 390)
+        cy.checkElementWidth('.footer-content', resolutions.mobile.viewportWidth)
         cy.get('.footer-content')
           .should('be.visible')
           .within(() => {
@@ -207,7 +205,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify part footer-bottom')
-        cy.checkElementWidth('.footer-bottom', 390)
+        cy.checkElementWidth('.footer-bottom', resolutions.mobile.viewportWidth)
         cy.get('.footer-bottom')
           .should('be.visible')
           .within(() => {
