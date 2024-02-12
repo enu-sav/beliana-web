@@ -139,9 +139,11 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
           })
 
         cy.section('Verify block anniversaries')
-        cy.checkElementWidth('#block-views-block-today-block-anniversaries', 395.515625)
         cy.get('#block-views-block-today-block-anniversaries')
           .should('be.visible')
+          .should($el => {
+            expect(parseInt($el.outerWidth().toFixed(0))).eq(396)
+          })
           .within(() => {
             cy.step(`Verify text - ${texts.anniversaries}`)
             cy.contains('h2', texts.anniversaries).should('be.visible')
@@ -169,9 +171,11 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
           })
 
         cy.section('Verify block latest-words')
-        cy.checkElementWidth('#block-views-block-content-recent-block-latest-words', 1130.078125)
         cy.get('#block-views-block-content-recent-block-latest-words')
           .should('be.visible')
+          .should($el => {
+            expect(parseInt($el.outerWidth().toFixed(0))).eq(1130)
+          })
           .within(() => {
             cy.step(`Verify text - ${texts.latestWords}`)
             cy.contains('h2', texts.latestWords).should('be.visible')
