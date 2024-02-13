@@ -1,3 +1,5 @@
+import {texts} from '../../support/variables/textsForHomePage'
+
 describe.skip('Example test', () => {
   before(() => {
     cy.visit('/')
@@ -21,7 +23,7 @@ describe.skip('Example test', () => {
     cy.step('Verify text in body')
     cy.get('#block-bel-encyklopedia .field--name-body')
       .should('be.visible')
-      .and('have.text', 'Slovenská všeobecná encyklopédia – viac o encyklopédii')
+      .and('have.text', `${texts.bodyLinkText}`)
 
     cy.step('Verify global search')
     cy.get('#block-bel-searchbox').should('be.visible')

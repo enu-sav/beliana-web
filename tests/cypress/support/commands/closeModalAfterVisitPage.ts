@@ -11,7 +11,11 @@ declare namespace Cypress {
 }
 
 Cypress.Commands.add('closeModalAfterVisitPage', () => {
-  cy.get('#info-popup .bel-modal__container').should('be.visible').within(() => {
-    cy.get('.bel-modal__close').should('be.visible').click()
-  })
+  cy.get('#info-popup .bel-modal__container')
+    .should('be.visible')
+    .within(() => {
+      cy.get('.bel-modal__close')
+        .should('be.visible')
+        .click()
+    })
 })
