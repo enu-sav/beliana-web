@@ -13,7 +13,7 @@ export const texts = {
   footerLinksText: [
     'Autorský kolektív',
     'Podmienky použitia',
-    'Encyclopaedia Beliana',
+    'In English',
     'Vyhlásenie o prístupnosti',
     'Vyhľadávanie podľa kategórií'
   ]
