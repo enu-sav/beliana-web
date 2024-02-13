@@ -1,20 +1,25 @@
 declare namespace Cypress {
-  interface Chainable {
+  interface Chainable<Subject> {
     /**
      * - check the width of an element
      *
-     * @param {string} selector - css selector identifying the element to check
      * @param {number} width - expected width of the element in pixels
      *
      * @example
-     * cy.checkElementWidth('.element', 100)
+     * cy.get('header').checkElementWidth(100)
+     * cy.checkElementWidth(100)
      */
-    checkElementWidth(selector: string, width: number): void
+    checkElementWidth(width: number): Chainable<Subject>
   }
 }
 
+Cypress.Commands.add('checkElementWidth', {prevSubject: true}, (subject: JQuery<HTMLElement> | undefined, width: number) => {
+  const elementToCheck = subject ? cy.wrap(subject) : cy.document().then((doc) => cy.wrap(doc.body))
 
-Cypress.Commands.add('checkElementWidth', (selector: string, width: number) => {
-  cy.get(`${selector}`)
-    .should('have.css', 'width', `${width}px`)
+  return elementToCheck.then(($el) => {
+    // rounding element width to int
+    expect(parseInt($el.outerWidth().toFixed(0))).to.eq(width)
+
+    return subject
+  })
 })
