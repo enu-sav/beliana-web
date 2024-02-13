@@ -23,25 +23,26 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
   })
 
   it('Content - Verifying of visibility and px resolution of elements', () => {
-    cy.checkElementWidth('body', resolutions.desktop.viewportWidth)
     cy.get('.layout-container').should('be.visible')
+    cy.get('body').checkElementWidth(resolutions.desktop.viewportWidth)
   })
 
   it('Header - Verifying of visibility and px resolution of elements', () => {
     cy.step('Verify header and children divs')
-    cy.checkElementWidth('header', resolutions.desktop.viewportWidth)
     cy.get('header')
       .should('be.visible')
+      .checkElementWidth(resolutions.desktop.viewportWidth)
       .within($header => {
+
         cy.wrap($header)
           .children('div')
           .should('be.visible')
           .and('have.length', 3)
 
         cy.section('Verify part header-top')
-        cy.checkElementWidth('.header-top', resolutions.desktop.viewportWidth)
         cy.get('.header-top')
           .should('be.visible')
+          .checkElementWidth(resolutions.desktop.viewportWidth)
           .within(() => {
             cy.step(`Verify text/attribute in header - ${texts.aboutBeliane}`)
             cy.get('.left')
@@ -77,9 +78,9 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
           })
 
         cy.section('Verify part header-main')
-        cy.checkElementWidth('.header-main', resolutions.desktop.viewportWidth)
         cy.get('.header-main')
           .should('be.visible')
+          .checkElementWidth(resolutions.desktop.viewportWidth)
           .within(() => {
             cy.step('Verify search box')
             cy.get('#block-bel-searchbox').should('be.visible')
@@ -100,9 +101,9 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
           })
 
         cy.section('Verify part header-navigation')
-        cy.checkElementWidth('.header-navigation', resolutions.desktop.viewportWidth)
         cy.get('.header-navigation')
           .should('be.visible')
+          .checkElementWidth(resolutions.desktop.viewportWidth)
           .within(() => {
             cy.step('Verify if exist in DOM alphabetical-menu')
             cy.get('.word-facet-wrap').should('be.visible')
@@ -118,9 +119,9 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
 
   it('Body/Main - Verifying of visibility and px resolution of elements', () => {
     cy.step('Verify body / content-main')
-    cy.checkElementWidth('#content-main', resolutions.desktop.viewportWidth)
     cy.get('#content-main .body-content')
       .should('be.visible')
+      .checkElementWidth(resolutions.desktop.viewportWidth)
       .within(() => {
 
         cy.section('Verify block encyklopedia')
@@ -141,9 +142,7 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
         cy.section('Verify block anniversaries')
         cy.get('#block-views-block-today-block-anniversaries')
           .should('be.visible')
-          .should($el => {
-            expect(parseInt($el.outerWidth().toFixed(0))).eq(396)
-          })
+          .checkElementWidth(396)
           .within(() => {
             cy.step(`Verify text - ${texts.anniversaries}`)
             cy.contains('h2', texts.anniversaries).should('be.visible')
@@ -173,9 +172,7 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
         cy.section('Verify block latest-words')
         cy.get('#block-views-block-content-recent-block-latest-words')
           .should('be.visible')
-          .should($el => {
-            expect(parseInt($el.outerWidth().toFixed(0))).eq(1130)
-          })
+          .checkElementWidth(1130)
           .within(() => {
             cy.step(`Verify text - ${texts.latestWords}`)
             cy.contains('h2', texts.latestWords).should('be.visible')
@@ -200,9 +197,9 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
 
   it('Footer - verifying of visibility and px resolution of elements', () => {
     cy.step('Verify footer and children divs')
-    cy.checkElementWidth('footer', resolutions.desktop.viewportWidth)
     cy.get('footer')
       .should('be.visible')
+      .checkElementWidth(resolutions.desktop.viewportWidth)
       .within($footer => {
         cy.wrap($footer)
           .children('div')
@@ -210,9 +207,9 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
           .and('have.length', 2)
 
         cy.section('Verify part footer-content')
-        cy.checkElementWidth('.footer-content', resolutions.desktop.viewportWidth)
         cy.get('.footer-content')
           .should('be.visible')
+          .checkElementWidth(resolutions.desktop.viewportWidth)
           .within(() => {
             cy.step('Verify list for links')
             cy.get('#block-bel-footer')
@@ -241,9 +238,9 @@ describe('Desktop - check all elements and their dimensions in px for homepage',
           })
 
         cy.section('Verify part footer-bottom')
-        cy.checkElementWidth('.footer-bottom', resolutions.desktop.viewportWidth)
         cy.get('.footer-bottom')
           .should('be.visible')
+          .checkElementWidth(resolutions.desktop.viewportWidth)
           .within(() => {
             cy.step('Verify copyright is visible')
             cy.get('.footer-copyright').should('be.visible')

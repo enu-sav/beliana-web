@@ -23,15 +23,15 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
   })
 
   it('Content - verifying of visibility and px resolution of elements', () => {
-    cy.checkElementWidth('body', resolutions.mobile.viewportWidth)
     cy.get('.layout-container').should('be.visible')
+    cy.get('body').checkElementWidth(resolutions.mobile.viewportWidth)
   })
 
   it('Header - verifying of visibility and px resolution of elements', () => {
     cy.step('Verify header and children divs')
-    cy.checkElementWidth('header', resolutions.mobile.viewportWidth)
     cy.get('header')
       .should('be.visible')
+      .checkElementWidth(resolutions.mobile.viewportWidth)
       .within($header => {
         cy.wrap($header)
           .children('div')
@@ -39,9 +39,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           .and('have.length', 3)
 
         cy.section('Verify part header-top')
-        cy.checkElementWidth('.header-top', resolutions.mobile.viewportWidth)
         cy.get('.header-top')
           .should('be.visible')
+          .checkElementWidth(resolutions.mobile.viewportWidth)
           .within(() => {
             cy.step('Verify site name is visible')
             cy.get('.sitename').should('be.visible')
@@ -52,9 +52,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify part header-main')
-        cy.checkElementWidth('.header-main', resolutions.mobile.viewportWidth)
         cy.get('.header-main')
           .should('be.visible')
+          .checkElementWidth(resolutions.mobile.viewportWidth)
           .within(() => {
             cy.step('Verify search box')
             cy.get('#block-bel-searchbox').should('be.visible')
@@ -71,9 +71,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify part header-navigation')
-        cy.checkElementWidth('.header-navigation', resolutions.mobile.viewportWidth)
         cy.get('.header-navigation')
           .should('be.visible')
+          .checkElementWidth(resolutions.mobile.viewportWidth)
           .within(() => {
             cy.step('Verify if exist in DOM alphabetical-menu')
             cy.get('.word-facet-wrap').should('be.visible')
@@ -84,9 +84,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
 
   it('Body/Main - verifying of visibility and px resolution of elements', () => {
     cy.step('Verify body / content-main')
-    cy.checkElementWidth('#content-main', resolutions.mobile.viewportWidth)
     cy.get('#content-main .body-content')
       .should('be.visible')
+      .checkElementWidth(resolutions.mobile.viewportWidth)
       .within(() => {
 
         cy.section('Verify block encyklopedia')
@@ -105,9 +105,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify block anniversaries')
-        cy.checkElementWidth('#block-views-block-today-block-anniversaries', 350)
         cy.get('#block-views-block-today-block-anniversaries')
           .should('be.visible')
+          .checkElementWidth(350)
           .within(() => {
             cy.step(`Verify text - ${texts.anniversaries}`)
             cy.contains('h2', texts.anniversaries).should('be.visible')
@@ -137,9 +137,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify block latest-words')
-        cy.checkElementWidth('#block-views-block-content-recent-block-latest-words', 350)
         cy.get('#block-views-block-content-recent-block-latest-words')
           .should('be.visible')
+          .checkElementWidth(350)
           .within(() => {
             cy.step(`Verify text - ${texts.latestWords}`)
             cy.contains('h2', `${texts.latestWords}`).should('be.visible')
@@ -164,9 +164,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
 
   it('Footer - verifying of visibility and px resolution of elements', () => {
     cy.step('Verify footer and children divs')
-    cy.checkElementWidth('footer', resolutions.mobile.viewportWidth)
     cy.get('footer')
       .should('be.visible')
+      .checkElementWidth(resolutions.mobile.viewportWidth)
       .within($footer => {
         cy.wrap($footer)
           .children('div')
@@ -174,9 +174,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           .and('have.length', 2)
 
         cy.section('Verify part footer-content')
-        cy.checkElementWidth('.footer-content', resolutions.mobile.viewportWidth)
         cy.get('.footer-content')
           .should('be.visible')
+          .checkElementWidth(resolutions.mobile.viewportWidth)
           .within(() => {
             cy.step('Verify list for links')
             cy.get('#block-bel-footer')
@@ -205,9 +205,9 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
           })
 
         cy.section('Verify part footer-bottom')
-        cy.checkElementWidth('.footer-bottom', resolutions.mobile.viewportWidth)
         cy.get('.footer-bottom')
           .should('be.visible')
+          .checkElementWidth(resolutions.mobile.viewportWidth)
           .within(() => {
             cy.step('Verify copyright is visible')
             cy.get('.footer-copyright').should('be.visible')
