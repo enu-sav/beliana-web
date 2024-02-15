@@ -41,10 +41,11 @@
           $fz: 14;
           font-size: rem($fz);
           position: absolute;
-          top: em(8, $fz);
-          right: em(7, $fz);
+          top: 0;
+          right: 0;
           color: #600b00;
           font-weight: bold;
+          padding: 10px;
         }
       }
       &.has-alphabet {

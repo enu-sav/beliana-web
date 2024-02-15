@@ -53,7 +53,7 @@
           if (wrapper && wrapper.querySelector('h2, h3')) {
             var breadcrumbs = 0;
             var sidebar = sidebar_wrapper.querySelector('.structure');
-            sidebar.innerHTML += '<h3>' + Drupal.t('label-content') + '</h3><ul></ul>';
+            sidebar.innerHTML += '<h2>' + Drupal.t('label-content') + '</h2><ul></ul>';
 
             wrapper.querySelectorAll('h2, h3').forEach(function (item, i) {
               var type = item.tagName === 'H2' ? 'large' : 'small';

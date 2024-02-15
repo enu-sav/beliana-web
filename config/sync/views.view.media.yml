@@ -528,8 +528,8 @@ display:
           tags:
             next: Ďalej
             previous: '‹ Predchádzajúci'
-            first: '« Prvý'
-            last: Koniec
+            first: «
+            last: »
           expose:
             items_per_page: false
             items_per_page_label: 'Položiek na stránku'

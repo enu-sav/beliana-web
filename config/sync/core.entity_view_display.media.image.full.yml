@@ -39,6 +39,8 @@ content:
     settings:
       responsive_image_style: media_full
       image_link: colorbox
+      image_loading:
+        attribute: eager
     third_party_settings: {  }
     weight: 0
     region: content
@@ -87,6 +89,8 @@ content:
     label: hidden
     settings:
       image_link: colorbox
+      image_loading:
+        attribute: eager
       trim_length: '80'
       url_only: ''
       url_plain: ''

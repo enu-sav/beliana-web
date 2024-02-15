@@ -118,6 +118,9 @@ class ResponsiveImageFormatter extends ImageFormatterBase {
     return [
       'responsive_image_style' => '',
       'image_link' => '',
+      'image_loading' => [
+        'attribute' => 'lazy',
+      ],
     ] + parent::defaultSettings();
   }
 
@@ -146,6 +149,29 @@ class ResponsiveImageFormatter extends ImageFormatterBase {
         '#markup' => $this->linkGenerator->generate($this->t('Configure Responsive Image Styles'), new Url('entity.responsive_image_style.collection')),
         '#access' => $this->currentUser->hasPermission('administer responsive image styles'),
         ],
+    ];
+
+    $image_loading = $this->getSetting('image_loading');
+    $elements['image_loading'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Image loading'),
+      '#weight' => 10,
+      '#description' => $this->t('Lazy render images with native image loading attribute (<em>loading="lazy"</em>). This improves performance by allowing browsers to lazily load images. See <a href="@url">Lazy loading</a>.', [
+        '@url' => 'https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#images_and_iframes',
+      ]),
+    ];
+    $loading_attribute_options = [
+      'lazy' => $this->t('Lazy'),
+      'eager' => $this->t('Eager'),
+    ];
+    $elements['image_loading']['attribute'] = [
+      '#title' => $this->t('Lazy loading attribute'),
+      '#type' => 'select',
+      '#default_value' => $image_loading['attribute'],
+      '#options' => $loading_attribute_options,
+      '#description' => $this->t('Select the lazy loading attribute for images. <a href=":link">Learn more.</a>', [
+        ':link' => 'https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes',
+      ]),
     ];
 
     $link_types = [
@@ -187,6 +213,11 @@ class ResponsiveImageFormatter extends ImageFormatterBase {
     else {
       $summary[] = t('Select a responsive image style.');
     }
+
+    $image_loading = $this->getSetting('image_loading');
+    $summary[] = $this->t('Loading attribute: @attribute', [
+      '@attribute' => $image_loading['attribute'],
+    ]);
 
     return $summary;
   }
@@ -241,6 +272,9 @@ class ResponsiveImageFormatter extends ImageFormatterBase {
       $item_attributes = $item->_attributes;
       unset($item->_attributes);
 
+      $image_loading_settings = $this->getSetting('image_loading');
+      $item_attributes['loading'] = $image_loading_settings['attribute'];
+
       $image = [
         '#theme' => 'responsive_image_formatter',
         '#item' => $item,
@@ -268,31 +302,12 @@ class ResponsiveImageFormatter extends ImageFormatterBase {
             $colorbox_service->attach($elements);
           }
           break;
-        case 'content':
-        case 'file':
-          $url = $this->getSetting('image_link') == 'content' ? $items->getEntity()
-            ->toUrl()
-            ->toString() : $item->uri;
-          $target = $this->getSetting('image_link') == 'content' ? '_self' : '_blank';
-          $rel = $this->getSetting('image_link') == 'content' ? 'nofollow' : '';
-
-          $elements[$delta] = [
-            '#type' => 'html_tag',
-            '#tag' => 'a',
-            '#attributes' => [
-              'href' => $url,
-              'class' => ['field-media'],
-              'target' => $target,
-              'rel' => $rel,
-            ],
-            'image' => $image,
-          ];
-          break;
         default:
           $elements[$delta] = $image;
           break;
       }
     }
+
     return $elements;
   }
 

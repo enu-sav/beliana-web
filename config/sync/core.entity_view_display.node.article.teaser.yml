@@ -35,7 +35,7 @@ content:
       image_link: content
       image_style: medium
       image_loading:
-        attribute: lazy
+        attribute: eager
       svg_attributes:
         width: null
         height: null
@@ -57,6 +57,5 @@ content:
     weight: 100
     region: content
 hidden:
-  field_tags: true
   langcode: true
   search_api_excerpt: true

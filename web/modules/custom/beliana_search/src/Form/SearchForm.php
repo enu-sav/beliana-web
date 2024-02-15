@@ -84,7 +84,11 @@ class SearchForm extends FormBase {
               '#markup' => '<span aria-hidden="true">×</span>'
             ],
             '#url' => Url::fromRoute('<current>', [], ['query' => $close_query]),
-            '#attributes' => ['class' => ['close']]
+            '#attributes' => [
+              'class' => ['close'],
+              'title' => t('reset-search'),
+              'aria-label' => t('reset-search')
+            ]
           ],
         ];
 
