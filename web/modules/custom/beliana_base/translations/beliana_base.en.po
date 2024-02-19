@@ -52,6 +52,9 @@ msgstr "More about search"
 msgid "search-by-category"
 msgstr "Search by category"
 
+msgid "reset-search"
+msgstr "Reset search"
+
 msgid "display-options"
 msgstr "Display options"
 

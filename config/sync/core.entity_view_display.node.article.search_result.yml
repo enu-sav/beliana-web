@@ -35,7 +35,7 @@ content:
       image_link: content
       image_style: thumbnail
       image_loading:
-        attribute: lazy
+        attribute: eager
       svg_attributes:
         width: null
         height: null

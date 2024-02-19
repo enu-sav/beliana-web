@@ -6,7 +6,7 @@
  *
  * Each branding element variable (logo, name, slogan) is only available if
  * enabled in the block configuration.
- *
+ *wa
  * Available variables:
  * - site_logo: Logo for site as defined in Appearance or theme settings.
  * - site_name: Name for site as defined in Site information settings.
@@ -15,6 +15,6 @@
 #}
 {% block content %}
   <a href="/" class="logo" tabindex="0" aria-label="{{ 'aria-label-link-to-home-page-encyclopaedia-beliana'|t }}">
-    <img width="330" height="66" alt="Encyclopaedia Beliana" title="Encyclopaedia Beliana" src="/{{ directory }}/assets/dist/svg/beliana_logo_pink.svg" />
+    <img {{ attributes.setAttribute('loading', 'eager') }} width="330" height="66" alt="Encyclopaedia Beliana" title="Encyclopaedia Beliana" src="/{{ directory }}/assets/dist/svg/beliana_logo_pink.svg" />
   </a>
 {% endblock %}

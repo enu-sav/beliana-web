@@ -396,8 +396,8 @@ display:
           tags:
             next: Ďalej
             previous: '‹ Predchádzajúci'
-            first: '« Prvý'
-            last: Koniec
+            first: «
+            last: »
       exposed_form:
         type: basic
         options:

@@ -52,6 +52,9 @@ msgstr "Viac o vyhľadávaní"
 msgid "search-by-category"
 msgstr "Vyhľadávanie podľa kategórií"
 
+msgid "reset-search"
+msgstr "Resetovať vyhľadávanie"
+
 msgid "display-options"
 msgstr "Možnosti zobrazenia"
 

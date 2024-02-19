@@ -13,3 +13,9 @@ effects:
       width: 300
       height: null
       upscale: true
+  a60c2803-4d52-4276-a162-03cef18bcfcc:
+    uuid: a60c2803-4d52-4276-a162-03cef18bcfcc
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
