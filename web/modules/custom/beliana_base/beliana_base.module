@@ -5,7 +5,7 @@
  */
 
 use Drupal\Core\Access\AccessResult;
-use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
@@ -137,4 +137,15 @@ function is_domain_school() {
   $is_school = (strpos($domain, 'skola') !== false);
 
   return $is_school;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function beliana_base_node_view(array &$build, Drupal\Core\Entity\EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode): void {
+  if ($entity->getEntityTypeId() == 'node' && $entity->getType() == 'word' && $view_mode == 'full') {
+    if (preg_match('/math-tex/', $entity->get('body')->value)) {
+      $build['#attached']['library'][] = 'bel/word.mathjax';
+    }
+  }
 }

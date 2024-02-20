@@ -37,7 +37,11 @@ black-white-init:
   version: VERSION
   header: true
   js:
-    assets/dist/js/wcag-tools/black-white-init.js: { preprocess: 0, weight: -22, minified: true }
+    assets/dist/js/wcag-tools/black-white-init.js: {
+      weight: -22,
+      minified: true,
+      attributes: { defer: true }
+    }
 
 search:
   version: VERSION
@@ -68,13 +72,17 @@ wcag-tools:
     - core/drupal
     - core/once
 
-wcag-tools.node.word:
+word.mathjax:
   version: VERSION
   js:
     https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js: {
       external: true,
       attributes: { defer: true }
     }
+
+wcag-tools.node.word:
+  version: VERSION
+  js:
     assets/dist/js/wcag-tools/wcag-tools.node.word.js: {
       minified: true,
       attributes: { defer: true }
@@ -108,6 +116,7 @@ facet-categories:
   js:
     assets/dist/js/facet/facet-categories.js: {
       minified: true,
+      attributes: { defer: true }
     }
   dependencies:
     - core/jquery
@@ -117,7 +126,10 @@ facet-categories:
 info_popup:
   version: 1.x
   js:
-    assets/dist/js/info-popup.js: { }
+    assets/dist/js/info-popup.js: {
+      minified: true,
+      attributes: { defer: true }
+    }
   dependencies:
     - core/once
     - core/drupalSettings
