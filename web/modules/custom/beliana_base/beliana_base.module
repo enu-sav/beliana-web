@@ -10,7 +10,7 @@ use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
-
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_page_attachments_alter().
@@ -148,4 +148,11 @@ function beliana_base_node_view(array &$build, Drupal\Core\Entity\EntityInterfac
       $build['#attached']['library'][] = 'bel/word.mathjax';
     }
   }
+}
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function beliana_base_views_pre_build(ViewExecutable $view) {
+  $view->element['#attached']['library'][] = 'bel/word.mathjax';
 }
