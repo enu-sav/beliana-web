@@ -163,6 +163,9 @@
             },
             "drupal/redirect": {
                 "3373123 - Setting 'Enforce clean and canonical URLs.' breaks CSS aggregation on multilingual Drupal 10.1.x with browser caching enabled": "https://www.drupal.org/files/issues/2023-11-01/3373123_redirect_dont-normalize-assets.patch"
+            },
+            "drupal/svg_image": {
+                "3227734 - Read width and height from viewBox if explicit attributes are not available": "https://www.drupal.org/files/issues/2021-12-01/svg_image-viewbox-width-height-3227734-3.patch"
             }
         }
     },
