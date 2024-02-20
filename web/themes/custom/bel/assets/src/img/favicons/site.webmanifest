@@ -1,8 +1,9 @@
 {
     "name": "Encyclopaedia Beliana",
     "short_name": "beliana",
-    "start_url": "https://beliana.sav.sk",
-    "description": "Centrum spoločných činností Slovenskej akadémie vied, Encyklopedický ústav",
+    "start_url": "/",
+    "scope": "/",
+    "description": "Slovenská všeobecná encyklopédia",
     "icons": [
         {
             "src": "/themes/custom/bel/assets/dist/img/favicons/android-chrome-192x192.png",
