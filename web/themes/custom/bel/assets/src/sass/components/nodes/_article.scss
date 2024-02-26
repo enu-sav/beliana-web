@@ -118,6 +118,8 @@ article.word-container {
     }
 
     .con-wrap {
+      display: flex;
+      flex-direction: row;
 
       @media screen and (max-width: em(768, 16)) {
         display: flex;
@@ -160,9 +162,11 @@ article.word-container {
         line-height: rem(32.5);
         text-align: justify;
         min-height: rem(48);
+        width: 65%;
 
         @media screen and (max-width: em(768, 16)) {
           order: 2;
+          width: 100%;
         }
 
         .black-white & {

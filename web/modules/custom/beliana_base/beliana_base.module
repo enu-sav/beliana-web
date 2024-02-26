@@ -154,5 +154,7 @@ function beliana_base_node_view(array &$build, Drupal\Core\Entity\EntityInterfac
  * Implements hook_views_pre_build().
  */
 function beliana_base_views_pre_build(ViewExecutable $view) {
-  $view->element['#attached']['library'][] = 'bel/word.mathjax';
+  if ($view->id() == 'solr_search_word' && ($view->current_display == 'page_alphabet' || $view->current_display == 'page_search_by_category')) {
+    $view->element['#attached']['library'][] = 'bel/word.mathjax';
+  }
 }
