@@ -85,6 +85,7 @@
           }
 
           if (sidebar_wrapper && !sidebar_wrapper.querySelectorAll('article.media-image.view-mode-in-word:not(.moved)').length && !sidebar_wrapper.querySelector('.field--name-field-table') && !sidebar_wrapper.querySelector('.structure > ul')) {
+            wrapper.style.width = '100%';
             sidebar_wrapper.style.display = 'none';
           }
         });
