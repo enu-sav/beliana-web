@@ -8,13 +8,13 @@ effects:
   92bd8386-a86e-4962-8abf-06627f8d933c:
     uuid: 92bd8386-a86e-4962-8abf-06627f8d933c
     id: image_scale
-    weight: 2
+    weight: -10
     data:
       width: 300
       height: null
       upscale: true
-  a60c2803-4d52-4276-a162-03cef18bcfcc:
-    uuid: a60c2803-4d52-4276-a162-03cef18bcfcc
+  f71aad62-758a-4c59-92d0-08ed15752116:
+    uuid: f71aad62-758a-4c59-92d0-08ed15752116
     id: image_convert
     weight: 2
     data:

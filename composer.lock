@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f3917fb7b999c4703a2d39db42db9cd",
+    "content-hash": "663078cb93f432edc3f1c1d31b35002a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5395,18 +5395,18 @@
             }
         },
         {
-            "name": "drupal/wpf",
-            "version": "1.1.0",
+            "name": "drupal/webp",
+            "version": "1.0.0-rc1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/wpf.git",
-                "reference": "1.1.0"
+                "url": "https://git.drupalcode.org/project/webp.git",
+                "reference": "8.x-1.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/wpf-1.1.0.zip",
-                "reference": "1.1.0",
-                "shasum": "2ecdb43d709d6994093f085ec83f86843f1d36ba"
+                "url": "https://ftp.drupal.org/files/projects/webp-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "59466a0c5881f265926429ce6033084653ecd1ef"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10",
@@ -5415,11 +5415,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.0",
-                    "datestamp": "1683061774",
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1692124378",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5429,28 +5429,28 @@
             ],
             "authors": [
                 {
-                    "name": "Dudás József",
-                    "homepage": "https://www.drupal.org/user/387119",
-                    "email": "dj@brainsum.com",
+                    "name": "Bart Vanhoutte",
+                    "homepage": "https://www.drupal.org/user/145609",
+                    "email": "bart@croquemonsieur.be",
                     "role": "Maintainer"
                 },
                 {
-                    "name": "pedrop",
-                    "homepage": "https://www.drupal.org/user/1043368"
+                    "name": "Bart Vanhoutte",
+                    "homepage": "https://www.drupal.org/user/1133754"
                 },
                 {
-                    "name": "szato",
-                    "homepage": "https://www.drupal.org/user/389677"
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
                 }
             ],
-            "description": "Generates jpg copies of webp image style derivatives.",
-            "homepage": "https://www.drupal.org/project/wpf",
+            "description": "Generates WebP copies of image style derivatives.",
+            "homepage": "https://www.drupal.org/project/webp",
             "keywords": [
                 "Drupal"
             ],
             "support": {
-                "source": "http://cgit.drupalcode.org/wpf",
-                "issues": "https://www.drupal.org/project/issues/wpf"
+                "source": "http://cgit.drupalcode.org/webp",
+                "issues": "https://www.drupal.org/project/issues/webp"
             }
         },
         {
@@ -15387,7 +15387,8 @@
         "drupal/menu_link_attributes": 5,
         "drupal/page_manager": 5,
         "drupal/ultimate_cron": 15,
-        "drupal/views_natural_sort": 15
+        "drupal/views_natural_sort": 15,
+        "drupal/webp": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
