@@ -8,5 +8,6 @@ id: front
 label: 'Titulná stránka'
 tags:
   canonical_url: '[site:url]'
+  description: 'Encyklopédia Beliana, všeobecná slovenská encyklopédia, vydávaná od konca 90. rokov Encyklopedickým ústavom Slovenskej akadémie vied.'
   shortlink: '[site:url]'
   title: 'Encyclopaedia Beliana - Slovenská všeobecná encyklopédia'
