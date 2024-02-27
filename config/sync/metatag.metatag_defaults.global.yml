@@ -7,5 +7,5 @@ _core:
 id: global
 label: Globálny
 tags:
-  description: 'Encyklopédia Beliana, všeobecná slovenská encyklopédia, vydávaná od konca 90. rokov Encyklopedickým ústavom Slovenskej akadémie vied.'
+  description: 'Slovenská všeobecná encyklopédia zahŕňajúca texty o encyklopedických heslách z oblasti vedy, techniky, spoločenských a humanitných vied a články so zameraním na slovenské reálie, vydávaná od konca 90. rokov Encyklopedickým ústavom SAV.'
   title: '[current-page:title] | Encyclopaedia Beliana – slovenská všeobecná encyklopédia'

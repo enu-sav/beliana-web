@@ -27,6 +27,15 @@ function beliana_base_page_attachments_alter(array &$attachments): void {
 }
 
 /**
+ * Implements hook_metatags_alter().
+ */
+function beliana_base_metatags_alter(array &$metatags, array $context): void {
+  if (is_domain_school()) {
+    $metatags['description'] = t('Školská verzia Encyclopaedie Beliany, ktorá prináša spracovanie encyklopedických hesiel z matematiky a fyziky na úrovni učiva stredných škôl.');
+  }
+}
+
+/**
  * Implements hook_theme().
  *
  * @param $existing
@@ -69,7 +78,7 @@ function beliana_base_node_access(NodeInterface $node, $op, AccountInterface $ac
   else {
     $access = AccessResult::neutral();
   }
-//  $access->addCacheableDependency($node);
+  //  $access->addCacheableDependency($node);
 
   return $access;
 }
@@ -79,7 +88,6 @@ function beliana_base_node_access(NodeInterface $node, $op, AccountInterface $ac
  */
 function beliana_base_preprocess_links__language_block(&$variables): void {
   if (isset($variables['links'])) {
-
     $config = Drupal::configFactory()->get('language.negotiation');
     $domains = $config->get('url.domains');
 
@@ -119,7 +127,8 @@ function beliana_base_node_access_records(NodeInterface $node) {
       'grant_update' => 0,
       'grant_delete' => 0,
     ];
-  } else {
+  }
+  else {
     $records[] = [
       'realm' => 'beliana_base_school_grants',
       'gid' => 0,
@@ -134,7 +143,7 @@ function beliana_base_node_access_records(NodeInterface $node) {
 
 function is_domain_school() {
   $domain = explode('.', Drupal::request()->getHost())[0];
-  $is_school = (strpos($domain, 'skola') !== false);
+  $is_school = (strpos($domain, 'skola') !== FALSE);
 
   return $is_school;
 }
