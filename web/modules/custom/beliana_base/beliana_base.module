@@ -151,7 +151,7 @@ function beliana_base_node_access_records(NodeInterface $node) {
 function is_domain_school(): bool {
   $domain = explode('.', Drupal::request()->getHost())[0];
 
-  return (str_contains($domain, 'skola'));
+  return (FALSE !== strpos($domain, 'skola'));
 }
 
 /**
@@ -160,7 +160,7 @@ function is_domain_school(): bool {
 function is_domain_en(): bool {
   $domain = explode('.', Drupal::request()->getHost())[0];
 
-  return (str_contains($domain, 'en'));
+  return (FALSE !== strpos($domain, 'en'));
 }
 
 /**
