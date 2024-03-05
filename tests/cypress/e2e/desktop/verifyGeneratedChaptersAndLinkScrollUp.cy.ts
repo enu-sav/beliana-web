@@ -69,7 +69,7 @@ describe('Generated chapter content in sidebar and Link to scroll up', () => {
       cy.get('.node__sidebar .structure')
         .should('be.visible')
         .within(() => {
-          cy.get('h3')
+          cy.get('.contents')
             .should('be.visible')
             .and('have.text', 'Obsah')
 
