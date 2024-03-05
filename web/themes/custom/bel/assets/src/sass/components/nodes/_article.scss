@@ -118,8 +118,6 @@ article.word-container {
     }
 
     .con-wrap {
-      display: flex;
-      flex-direction: row;
 
       @media screen and (max-width: em(768, 16)) {
         display: flex;
@@ -162,11 +160,9 @@ article.word-container {
         line-height: rem(32.5);
         text-align: justify;
         min-height: rem(48);
-        width: 65%;
 
         @media screen and (max-width: em(768, 16)) {
           order: 2;
-          width: 100%;
         }
 
         .black-white & {
@@ -181,26 +177,26 @@ article.word-container {
 
         article.media-image.view-mode-in-word {
 
-           a {
-             display: block;
-             text-align: left;
-           }
+          a {
+            display: block;
+            text-align: left;
+          }
 
-           img {
-             width: 100%;
-             display: block;
-           }
+          img {
+            width: 100%;
+            display: block;
+          }
 
-           .field--name-field-description {
-             padding-top: rem(5);
-             font-size: rem(16);
+          .field--name-field-description {
+            padding-top: rem(5);
+            font-size: rem(16);
 
-             p {
-               margin: 0;
-               text-align: center;
-               line-height: 1.2em;
-             }
-           }
+            p {
+              margin: 0;
+              text-align: center;
+              line-height: 1.2em;
+            }
+          }
         }
 
         table {
@@ -290,7 +286,7 @@ article.word-container {
             background: #fff;
           }
         }
-        .structure h3 {
+        .structure h2 {
           margin-top: 0;
           margin-left: rem(10);
           margin-bottom: rem(5);
@@ -339,6 +335,16 @@ article.word-container {
         @media print {
           width: 35%;
           float: right;
+        }
+
+        .contents {
+          margin-top: 0;
+          margin-left: .63rem;
+          margin-bottom: .31rem;
+          color: #333 !important;
+          line-height: normal;
+          font-size: 1.1rem;
+          font-weight: bold;
         }
 
         .word-illustration {

@@ -60,10 +60,6 @@ Disallow: /index.php/user/register
 Disallow: /index.php/user/login
 Disallow: /index.php/user/logout
 
-# EN
-Disallow: https://en.beliana.sav.sk
-Disallow: https://en.beliana.sav.sk/*
-
 # Pages
 Disallow: /vyrocia
 Disallow: /vyrocia/*
@@ -72,6 +68,8 @@ Disallow: /abecedny-zoznam
 Disallow: /abecedny-zoznam/*
 Disallow: /beliana/kontaktujte-nas
 Disallow: /beliana/kontaktujte-nas/*
+Disallow: /rozsirene-vyhladavanie
+Disallow: /rozsirene-vyhladavanie/*
 
 # Sitemap
 Sitemap: https://beliana.sav.sk/sitemap.xml

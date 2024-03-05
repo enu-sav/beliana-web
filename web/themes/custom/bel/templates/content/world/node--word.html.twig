@@ -9,17 +9,14 @@
 
 {% block content %}
   <article{{ attributes.addClass('word-container') }}>
-    <div class="word{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
+    <div
+      class="word{% if (node.field_images is empty) and (node.field_table is empty) %} full-width{% endif %}">
       <h1>{{ node.label }}</h1>
       <div class="node__author">
         {{ content.field_autor }}
       </div>
 
       <div class="con-wrap">
-        <div class="node__content desktop">
-          {{ content.body }}
-        </div>
-
         <div class="node__sidebar desktop">
           <div class="structure hidden"></div>
 
@@ -40,8 +37,9 @@
             </div>
           {% endif %}
         </div>
-
-
+        <div class="node__content desktop">
+          {{ content.body }}
+        </div>
       </div>
 
       <div class="meta-wrapper">
@@ -60,15 +58,20 @@
         </div>
 
         <div class="citation desktop">
-          <h3 role="button" tabindex="0" aria-label="{{ 'aria-label-you-are-in-the-section-citation'|t }}" aria-controls="dialog-desc"
+          <h3 role="button" tabindex="0"
+              aria-label="{{ 'aria-label-you-are-in-the-section-citation'|t }}"
+              aria-controls="dialog-desc"
               aria-expanded="false">{{ 'citation'|t }}</h3>
           {% set author_fomratted = '' %}
           {% if node.field_autor.target_id %}
             {% set author_fomratted = node.field_autor.entity.field_priezvisko.value|trim ~ ', ' ~ node.field_autor.entity.field_meno.value|trim|slice(0,1) ~ '. ' %}
           {% endif %}
-          <p id="dialog-desc">{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }} [online].
+          <p
+            id="dialog-desc">{{ author_fomratted ~ node.label|slice(0,1)|upper ~ node.label|slice(1) }}
+            [online].
             {{ 'encyclopaedia-beliana'|t }},
-            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}]. {{ 'available-online'|t }} <a
+            ISBN 978-80-89524-30-3. [cit. {{ now | date('Y-m-d') }}
+            ]. {{ 'available-online'|t }} <a
               href="{{ share_url }}">{{ share_url }}</a></p>
         </div>
 

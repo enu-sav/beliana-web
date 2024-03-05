@@ -30,6 +30,10 @@ function beliana_base_page_attachments_alter(array &$attachments): void {
  * Implements hook_metatags_alter().
  */
 function beliana_base_metatags_alter(array &$metatags, array $context): void {
+  if (is_domain_en()){
+    // set metags no index, no follow
+    $metatags['robots'] = 'noindex, nofollow';
+  }
   if (is_domain_school()) {
     $metatags['description'] = t('Školská verzia Encyclopaedie Beliany, ktorá prináša spracovanie encyklopedických hesiel z matematiky a fyziky na úrovni učiva stredných škôl.');
   }
@@ -141,11 +145,22 @@ function beliana_base_node_access_records(NodeInterface $node) {
   return $records;
 }
 
-function is_domain_school() {
+/**
+ * @return bool
+ */
+function is_domain_school(): bool {
   $domain = explode('.', Drupal::request()->getHost())[0];
-  $is_school = (strpos($domain, 'skola') !== FALSE);
 
-  return $is_school;
+  return (str_contains($domain, 'skola'));
+}
+
+/**
+ * @return bool
+ */
+function is_domain_en(): bool {
+  $domain = explode('.', Drupal::request()->getHost())[0];
+
+  return (str_contains($domain, 'en'));
 }
 
 /**
