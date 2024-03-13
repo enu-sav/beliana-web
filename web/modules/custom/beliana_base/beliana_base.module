@@ -175,6 +175,17 @@ function beliana_base_node_view(array &$build, Drupal\Core\Entity\EntityInterfac
 }
 
 /**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function beliana_base_media_view(array &$build, Drupal\Core\Entity\EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode): void {
+  if ($entity->getEntityTypeId() == 'media' && $view_mode == 'full') {
+    if (preg_match('/math-tex/', $entity->get('field_description')->value)) {
+      $build['#attached']['library'][] = 'bel/word.mathjax';
+    }
+  }
+}
+
+/**
  * Implements hook_views_pre_build().
  */
 function beliana_base_views_pre_build(ViewExecutable $view) {
