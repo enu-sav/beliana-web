@@ -49,11 +49,15 @@ describe('check ol/ul elements on page', () => {
         .should('be.visible')
         .within(() => {
           cy.step('Verify ol element')
-          cy.get('ol').should('exist')
-          cy.get('ol').children('li').each(($li) => {
-            cy.wrap($li).should('have.css', 'list-style-type', 'lower-alpha')
-            cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-          })
+          cy.get('ol')
+            .should('exist')
+            .find('li')
+            .should('have.length.greaterThan', 1)
+            .get('ol').children('li').each(($li) => {
+              cy.wrap($li).should('have.css', 'list-style-type', 'lower-alpha')
+              cy.wrap($li).should('have.css', 'margin-left', '14.08px')
+              cy.should('be.visible')
+            })
         })
     } else {
       cy.step('Verify if not exist ol elements in content')
@@ -64,11 +68,15 @@ describe('check ol/ul elements on page', () => {
         .should('be.visible')
         .within(() => {
           cy.step('Verify ul element')
-          cy.get('ul').should('exist')
-          cy.get('ul').children('li').each(($li) => {
-            cy.wrap($li).should('have.css', 'list-style-type', 'circle')
-            cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-          })
+          cy.get('ul')
+            .should('exist')
+            .find('li')
+            .should('have.length.greaterThan', 1)
+            .get('ul').children('li').each(($li) => {
+              cy.wrap($li).should('have.css', 'list-style-type', 'circle')
+              cy.wrap($li).should('have.css', 'margin-left', '14.08px')
+              cy.should('be.visible')
+            })
         })
     } else {
       cy.step('Verify if not exist ul elements in content')

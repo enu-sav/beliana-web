@@ -24,7 +24,7 @@ describe('check ol elements on page', () => {
 
   beforeEach(() => {
     cy.step('beforeEach - check if exist ol in content')
-    cy.get('article')
+    cy.get('article.word-container .node__content')
       .as('container')
       .find('.field--name-body')
       .then(($items) => {
@@ -38,11 +38,15 @@ describe('check ol elements on page', () => {
         .should('be.visible')
         .within(() => {
           cy.step('Verify ol element')
-          cy.get('ol').should('exist')
-          cy.get('ol').children('li').each(($li) => {
-            cy.wrap($li).should('have.css', 'list-style-type', 'decimal')
-            cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-          })
+          cy.get('ol')
+            .should('exist')
+            .find('li')
+            .should('have.length.greaterThan', 1)
+            .get('ol').children('li').each(($li) => {
+              cy.wrap($li).should('have.css', 'list-style-type', 'decimal')
+              cy.wrap($li).should('have.css', 'margin-left', '14.08px')
+              cy.should('be.visible')
+            })
         })
     } else {
       cy.step('Verify if not exist ol elements in content')
