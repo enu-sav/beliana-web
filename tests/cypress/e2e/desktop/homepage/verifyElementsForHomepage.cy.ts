@@ -1,5 +1,5 @@
-import {texts} from '../../support/variables/textsForHomePage'
-import {resolutions} from '../../support/variables/viewportResolutions'
+import {texts} from '../../../support/variables/textsForHomePage'
+import {resolutions} from '../../../support/variables/viewportResolutions'
 
 /**
  * BeforeEach tests (it block), disable scroll bar

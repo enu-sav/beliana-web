@@ -5,8 +5,6 @@
  * - Navigate to /node/nid
  * - If mathJaxExists = true
  * - Find all math-tex elements in the page content and verifies that each of them is not empty
- * - Verify that the MathJax javascript file was loaded successfully
- * - Verify that the MathJax object is available in the window object
  * - Verify that the rendered MathJax equation matches the expected equation
  * - Verify that the rendered MathJax equation is not empty
  * - Verify that the MathJax object is available in the window object
