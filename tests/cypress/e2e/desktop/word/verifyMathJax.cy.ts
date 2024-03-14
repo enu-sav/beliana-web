@@ -69,7 +69,7 @@ describe('check MathJax elements on page', () => {
           });
         })
     } else {
-      cy.step('Verify if not exist ol elements in content')
+      cy.step('Verify if not exist MathJax elements in content')
     }
   })
 })
