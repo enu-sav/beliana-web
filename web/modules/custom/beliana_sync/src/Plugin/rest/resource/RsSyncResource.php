@@ -220,7 +220,7 @@ class RsSyncResource extends ResourceBase {
           'field_licence' => $license->id(),
           'field_description' => [
             'value' => $image['description'],
-            'format' => 'basic_html',
+            'format' => 'full_html',
           ],
         ]);
 
