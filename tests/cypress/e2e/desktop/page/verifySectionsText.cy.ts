@@ -1,30 +1,19 @@
 /**
- * BeforeEach test - check if there are any ol/ul elements in the content (olExists = true | false, ulExists = true | false)
- *
  * BEL-128 - 11. test case
  * - Navigate to /node/nid
- * - If olExists = true
+ *
  * - Find all ol elements in the page content and verifies that each of them contains li elements
  * - Verify that each li element has a list-style-type: lower-alpha
  * - Verify that each li element has a margin-left: 14.08px
+ * - Verify that each li element is visible and not empty
  *
- * - If olExists = false
- * - Verification that there are no ol elements in the content
- *
- * - If ulExists = true
  * - Find all ul elements in the page content and verifies that each of them contains li elements
  * - Verify that each li element has a list-style-type: circle
  * - Verify that each li element has a margin-left: 14.08px
- *
- * - If ulExists = false
- * - Verification that there are no li elements in the content
- *
+ * - Verify that each li element is visible and not empty
  */
 
 describe('check ol/ul elements on page', () => {
-  let olExists: boolean
-  let liExists: boolean
-
   before(() => {
     // exp. vyhlasenie_o_pristupnosti=18531
     const path = 'node/18531'
@@ -32,54 +21,41 @@ describe('check ol/ul elements on page', () => {
     cy.visit(path)
   })
 
-  beforeEach(() => {
-    cy.step('beforeEach - check if exist ol/ul in content')
+  it('Verifying ol element from content', () => {
     cy.get('article')
-      .as('container')
-      .find('.field--name-body')
-      .then(($items) => {
-        olExists = $items.find('ol').length > 0
-        liExists = $items.find('ul').length > 0
+      .should('be.visible')
+      .within(() => {
+        cy.step('Verify ol element')
+        cy.get('ol')
+          .should('exist')
+          .should('have.length', 1)
+
+        cy.step('Verify li elements from ol element')
+        cy.get('ol').children('li').each(($li) => {
+          cy.wrap($li).should('have.css', 'list-style-type', 'lower-alpha')
+          cy.wrap($li).should('have.css', 'margin-left', '14.08px')
+          cy.wrap($li).should('be.visible')
+          cy.wrap($li).should('not.be.empty')
+        })
       })
   })
+  it('Verifying ul element from content', () => {
+    cy.get('article')
+      .should('be.visible')
+      .within(() => {
+        cy.step('Verify ul element')
+        cy.get('ul')
+          .should('exist')
+          .find('li')
+          .should('have.length', 3)
 
-  it('Verifying ol/ul element from content', () => {
-    if (olExists) {
-      cy.get('@container')
-        .should('be.visible')
-        .within(() => {
-          cy.step('Verify ol element')
-          cy.get('ol')
-            .should('exist')
-            .find('li')
-            .should('have.length.greaterThan', 1)
-            .get('ol').children('li').each(($li) => {
-              cy.wrap($li).should('have.css', 'list-style-type', 'lower-alpha')
-              cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-              cy.should('be.visible')
-            })
+        cy.step('Verify li elements from ul element')
+        cy.get('ul').children('li').each(($li) => {
+          cy.wrap($li).should('have.css', 'list-style-type', 'circle')
+          cy.wrap($li).should('have.css', 'margin-left', '14.08px')
+          cy.wrap($li).should('be.visible')
+          cy.wrap($li).should('not.be.empty')
         })
-    } else {
-      cy.step('Verify if not exist ol elements in content')
-    }
-
-    if (liExists) {
-      cy.get('@container')
-        .should('be.visible')
-        .within(() => {
-          cy.step('Verify ul element')
-          cy.get('ul')
-            .should('exist')
-            .find('li')
-            .should('have.length.greaterThan', 1)
-            .get('ul').children('li').each(($li) => {
-              cy.wrap($li).should('have.css', 'list-style-type', 'circle')
-              cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-              cy.should('be.visible')
-            })
-        })
-    } else {
-      cy.step('Verify if not exist ul elements in content')
-    }
+      })
   })
 })
