@@ -30,7 +30,7 @@ function beliana_base_page_attachments_alter(array &$attachments): void {
  * Implements hook_metatags_alter().
  */
 function beliana_base_metatags_alter(array &$metatags, array $context): void {
-  if (is_domain_en()){
+  if (is_domain_en()) {
     // set metags no index, no follow
     $metatags['robots'] = 'noindex, nofollow';
   }
@@ -178,9 +178,11 @@ function beliana_base_node_view(array &$build, Drupal\Core\Entity\EntityInterfac
  * Implements hook_ENTITY_TYPE_view().
  */
 function beliana_base_media_view(array &$build, Drupal\Core\Entity\EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode): void {
-  if ($entity->getEntityTypeId() == 'media' && $view_mode == 'full') {
-    if (preg_match('/math-tex/', $entity->get('field_description')->value)) {
-      $build['#attached']['library'][] = 'bel/word.mathjax';
+  if ($entity->getEntityTypeId() == 'media') {
+    if ($view_mode == 'full' || $view_mode == 'in_word' || $view_mode == 'conetnt') {
+      if (preg_match('/math-tex/', $entity->get('field_description')->value)) {
+        $build['#attached']['library'][] = 'bel/word.mathjax';
+      }
     }
   }
 }
