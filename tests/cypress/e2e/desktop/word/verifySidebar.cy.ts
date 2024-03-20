@@ -1,7 +1,7 @@
 /**
  * BeforeEach tests, check if there are sidebar element in the content (sidebarExists = true | false)
  *
- * BEL-128 - 6. test case
+ * BEL-128 - 4, 5, 6. test case
  * - Navigate to /node/nid
  *
  * - If sidebarExists = true
@@ -43,14 +43,15 @@ describe('Check if sidebar exists in content and contains the correct structure'
 
   })
 
-  it('Verifying sidebar in content', () => {
-    const textForH2Elements = []
-
+  it('If exist sidebar, verify if visible structure in sidebar', () => {
     if (sidebarExists) {
       cy.step('Verify if visible structure in sidebar')
-      cy.get('.node__sidebar .structure')
+      cy.get('.node__sidebar')
+        .should('be.visible')
+        .children('.structure')
         .should('be.visible')
         .within(() => {
+          cy.step('Verify if content section in sidebar is visible and contains text "Obsah"')
           cy.get('.contents')
             .should('be.visible')
             .and('have.text', 'Obsah')
@@ -65,6 +66,19 @@ describe('Check if sidebar exists in content and contains the correct structure'
                 .invoke('text')
             })
         })
+    } else {
+      cy.step('Verify if not visible sidebar and not exist structure in sidebar')
+      cy.get('.node__sidebar')
+        .should('have.css', 'display', 'none')
+        .and('not.be.visible')
+        .children('.structure')
+        .should('have.class', 'hidden')
+        .and('not.be.visible')
+    }
+  })
+
+  it('If exist sidebar, verify if visible word-illustration, media-image and table in sidebar', () => {
+    if (sidebarExists) {
       cy.step('Verify if visible word-illustration in sidebar')
       cy.get('.node__sidebar .word-illustration')
         .should('be.visible')
@@ -115,9 +129,6 @@ describe('Check if sidebar exists in content and contains the correct structure'
       cy.get('.node__sidebar')
         .should('have.css', 'display', 'none')
         .and('not.be.visible')
-        .children('.structure')
-        .should('have.class', 'hidden')
-        .and('not.be.visible')
 
       cy.step('Verify if not exist word-illustration in sidebar')
       cy.get('.node__sidebar .word-illustration')
@@ -129,10 +140,6 @@ describe('Check if sidebar exists in content and contains the correct structure'
 
       cy.step('Verify if not exist table in sidebar')
       cy.get('.node__sidebar .field--name-field-table')
-        .should('not.exist')
-
-      cy.step('Verify if not exist list of links in sidebar')
-      cy.get('.node__sidebar .contents')
         .should('not.exist')
     }
   })
