@@ -1,4 +1,5 @@
 import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
+import {texts} from "../../../support/variables/textsForSectionsText";
 
 /**
  * BEL-128 - 12. test case
@@ -25,21 +26,7 @@ describe('check ol elements on page', () => {
     cy.get('article.word-container .node__content')
       .should('be.visible')
       .within(() => {
-        cy.step('Verify ol element')
-        // prerobit na custom command
-        cy.get('ol').as('ol_list')
-          .should('exist')
-          .children('li')
-          .and('have.length', 4)
-          .each(($li) => {
-            cy.step('Verify li css properties in ol element')
-            cy.wrap($li).should('have.css', 'list-style-type', 'decimal')
-            cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-            cy.step('Verify li visibility and content')
-            cy.wrap($li).should('be.visible')
-            cy.wrap($li).should('not.be.empty')
-          })
-          .find('a').should('have.attr', 'href')
+        cy.verifyListElement('ol', 4, 'decimal', '14.08px', [])
       })
   })
 

@@ -1,3 +1,5 @@
+import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
+
 /**
  * BEL-128 - 9. test case
  *
@@ -11,9 +13,6 @@
  * - Verify MathJax javascript file was loaded successfully
  * - Verify MathJax object is available in the window object
  */
-
-import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
-
 describe('check MathJax elements on page', () => {
   before(() => {
     // exp. abelovsky-integral=150

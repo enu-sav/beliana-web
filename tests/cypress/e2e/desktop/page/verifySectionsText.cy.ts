@@ -23,29 +23,11 @@ describe('check ol/ul elements on page', () => {
     cy.visit(path)
   })
 
-
-  // overenie textov v liste
-  // cy.log() - vypis do konzoly
-
   it('Verifying ol element from content', () => {
     cy.get('article')
       .should('be.visible')
       .within(() => {
-        cy.step('Verify ol element')
-        cy.get('ol').as('ol_list')
-          .should('exist')
-          .children('li')
-          .and('have.length', 1)
-          .each(($li, index) => {
-            cy.step('Verify css properties in li element from ol element')
-            cy.wrap($li).should('have.css', 'list-style-type', 'lower-alpha')
-            cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-            cy.step('Verify li visibility and content')
-            cy.wrap($li).should('be.visible')
-            cy.wrap($li).should('not.be.empty')
-            cy.step('Verify text in li element from ol element. Processing li element at index: ' + index)
-            cy.wrap($li).contains(texts.olLiText)
-          })
+        cy.verifyListElement('ol', 1, 'lower-alpha', '14.08px', texts.olLiText)
       })
   })
 
@@ -53,21 +35,7 @@ describe('check ol/ul elements on page', () => {
     cy.get('article')
       .should('be.visible')
       .within(() => {
-        cy.step('Verify ul element')
-        cy.get('ul').as('ul_list')
-          .should('exist')
-          .children('li')
-          .and('have.length', 3)
-          .each(($li, index) => {
-            cy.step('Verify css properties in li element from ul element')
-            cy.wrap($li).should('have.css', 'list-style-type', 'circle')
-            cy.wrap($li).should('have.css', 'margin-left', '14.08px')
-            cy.step('Verify li visibility and content')
-            cy.wrap($li).should('be.visible')
-            cy.wrap($li).should('not.be.empty')
-            cy.step('Verify text in li element from ul element. Processing li element at index: ' + index)
-            cy.wrap($li[index]).contains(texts.ulLiTexts[index])
-          })
+        cy.verifyListElement('ul', 3, 'circle', '14.08px', texts.ulLiTexts)
       })
   })
 
