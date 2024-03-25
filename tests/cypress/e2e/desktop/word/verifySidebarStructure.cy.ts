@@ -1,4 +1,4 @@
-import {texts} from "../../../support/variables/textsForSidebarText";
+import {texts} from "../../../support/variables/textsForSidebar";
 
 /**
  *

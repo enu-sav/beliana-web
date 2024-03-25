@@ -1,5 +1,4 @@
 import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
-import {texts} from "../../../support/variables/textsForSectionsText";
 
 /**
  * BEL-128 - 12. test case

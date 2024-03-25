@@ -1,4 +1,4 @@
-import {texts} from "../../../support/variables/textsForSectionsText";
+import {texts} from "../../../support/variables/textsForSections";
 import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
 
 /**
