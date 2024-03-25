@@ -20,19 +20,21 @@ describe('Verify images in content and sidebar', () => {
     let contentImages = []
 
     // Get all images in .node__content and save their src attributes in an array
-    cy.get('article.word-container .node__content img')
+    cy.get('article.word-container .node__content img').as('contentImages')
       .each(($img) => {
-        contentImages.push($img.attr('src'))
+        const src = $img.attr('src').split('?')[0]
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
+        contentImages.push(src)
       })
 
     // Get all images in .node__sidebar and verify they are not in the contentImages array
-    cy.get('article.word-container .node__sidebar img')
+    cy.get('article.word-container .node__sidebar img').as('sidebarImages')
       .each(($img) => {
-        expect(contentImages).not.to.include($img.attr('src'))
+        const src = $img.attr('src').split('?')[0]
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
+        expect(contentImages).not.to.include(src)
       })
   })
 
@@ -40,19 +42,21 @@ describe('Verify images in content and sidebar', () => {
     let sidebarImages = []
 
     // Get all images in .node__sidebar and save their src attributes in an array
-    cy.get('article.word-container .node__sidebar img')
+    cy.get('article.word-container .node__sidebar img').as('sidebarImages')
       .each(($img) => {
-        sidebarImages.push($img.attr('src'))
+        const src = $img.attr('src').split('?')[0]
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
+        sidebarImages.push(src)
       })
 
     // Get all images in .node__content and verify they are not in the node__sidebar array
-    cy.get('article.word-container .node__content img')
+    cy.get('article.word-container .node__content img').as('contentImages')
       .each(($img) => {
-        expect(sidebarImages).not.to.include($img.attr('src'))
+        const src = $img.attr('src').split('?')[0]
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
+        expect(sidebarImages).not.to.include(src)
       })
   })
 })

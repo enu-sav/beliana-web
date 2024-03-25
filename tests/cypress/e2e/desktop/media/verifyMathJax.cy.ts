@@ -1,9 +1,7 @@
 /**
- * BeforeEach test - check if there are any MathJax elements in the content (mathJaxExists = true | false)
- *
  * BEL-128 - 9. test case
+ *
  * - Navigate to /media/id
- * - If mathJaxExists = true
  * - Find all math-tex elements in the page content and verifies that each of them is not empty
  * - Verify that the rendered MathJax equation matches the expected equation
  * - Verify that the rendered MathJax equation is not empty
@@ -27,50 +25,37 @@ describe('check MathJax elements on page', () => {
     cy.visit(path)
   })
 
-  beforeEach(() => {
-    cy.step('beforeEach - check if exist MathJax in content')
+  it('Verifying MathJax element from content', () => {
     cy.get('article.media')
-      .as('container')
-      .find('.field--name-field-description')
-      .then(($items) => {
-        mathJaxExists = $items.find('.math-tex').length > 0 // Check if there are any MathJax elements in the content
-        cy.log('mathJaxExists: ' + mathJaxExists)
+      .should('not.be.visible')
+      .within(() => {
+        cy.step('Verify MathJax element')
+        cy.get('.math-tex').as('mathTex')
+          .then(($mathTex) => {
+          const mathEquation = $mathTex.text(); // Get the text content of the MathJax equation
+          const expectedEquation = 'kOdd|OP|Okd<|OP|d|OP|Okd=|OP|d|OP|Okd>|OP|'; // Add your expected MathJax equation here
+
+          expect(mathEquation).to.eq(expectedEquation); // Assert if the rendered MathJax equation matches the expected equation
+        })
+
+        cy.step('Verify MathJax is not empty')
+        cy.get('.math-tex').as('mathTex')
+          .should('be.visible').then($mathElements => {
+          $mathElements.each((index, element) => {
+            cy.wrap(element).then($element => {
+              const mathjaxText = $element.text();
+              expect(mathjaxText.trim()).to.not.equal(''); // Assert if the rendered MathJax equation is not empty
+            });
+          });
+        });
       })
   })
 
-  it('Verifying MathJax element from content', () => {
-    if (mathJaxExists) {
-      cy.get('@container')
-        .should('not.be.visible')
-        .within(() => {
-          cy.step('Verify MathJax element')
-          cy.get('.math-tex').then(($mathTex) => {
-              const mathEquation = $mathTex.text(); // Get the text content of the MathJax equation
-              const expectedEquation = 'kOdd|OP|Okd<|OP|d|OP|Okd=|OP|d|OP|Okd>|OP|'; // Add your expected MathJax equation here
+  it('Verify MathJax javascript file was loaded successfully', () => {
+    cy.verifyJavascriptFileLoad(mathjaxCDNLink.link);
+  })
 
-              expect(mathEquation).to.eq(expectedEquation); // Assert if the rendered MathJax equation matches the expected equation
-            })
-          cy.step('Verify MathJax is not empty')
-          cy.get('.math-tex')
-            .should('be.visible').then(mathElements => {
-              mathElements.each((index, element) => {
-                cy.wrap(  element).then($element => {
-                  const mathjaxText = $element.text();
-                  expect(mathjaxText.trim()).to.not.equal(''); // Assert if the rendered MathJax equation is not empty
-                });
-              });
-            });
-          cy.step('Verify MathJax javascript file was loaded successfully')
-          cy.request(mathjaxCDNLink.link).then((response) => {
-            expect(response.status).to.eq(200)
-          })
-          cy.step('Verify MathJax object is available in the window object')
-          cy.window().then(win => {
-            expect(win.document.querySelector('script[src="' + mathjaxCDNLink.link +  '"]')).to.exist;
-          });
-        })
-    } else {
-      cy.step('Verify if not exist MathJax elements in content')
-    }
+  it('Verify MathJax object is available in the window object', () => {
+    cy.verifyWindowObjectAvailability(mathjaxCDNLink.link);
   })
 })

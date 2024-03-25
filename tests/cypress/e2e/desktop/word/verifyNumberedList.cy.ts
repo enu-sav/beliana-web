@@ -1,3 +1,5 @@
+import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
+
 /**
  * BEL-128 - 12. test case
  * - Navigate to /node/nid
@@ -11,9 +13,6 @@
  * - Verify MathJax javascript file was loaded successfully
  * - Verify MathJax object is available in the window object
  */
-
-import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
-
 describe('check ol elements on page', () => {
   before(() => {
     // exp. premostenie=18887
@@ -27,13 +26,16 @@ describe('check ol elements on page', () => {
       .should('be.visible')
       .within(() => {
         cy.step('Verify ol element')
-        cy.get('ol')
+        // prerobit na custom command
+        cy.get('ol').as('ol_list')
           .should('exist')
-          .find('li')
-          .should('have.length', 4)
+          .children('li')
+          .and('have.length', 4)
           .each(($li) => {
+            cy.step('Verify li css properties in ol element')
             cy.wrap($li).should('have.css', 'list-style-type', 'decimal')
             cy.wrap($li).should('have.css', 'margin-left', '14.08px')
+            cy.step('Verify li visibility and content')
             cy.wrap($li).should('be.visible')
             cy.wrap($li).should('not.be.empty')
           })
@@ -42,14 +44,10 @@ describe('check ol elements on page', () => {
   })
 
   it('Verify MathJax javascript file was loaded successfully', () => {
-    cy.request(mathjaxCDNLink.link).then((response) => {
-      expect(response.status).to.eq(200)
-    })
+    cy.verifyJavascriptFileLoad(mathjaxCDNLink.link);
   })
 
   it('Verify MathJax object is available in the window object', () => {
-    cy.window().then(win => {
-      expect(win.document.querySelector('script[src="' + mathjaxCDNLink.link + '"]')).to.not.exist;
-    });
+    cy.verifyWindowObjectNotAvailability(mathjaxCDNLink.link);
   })
 })

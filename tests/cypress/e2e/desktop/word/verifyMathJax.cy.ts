@@ -27,7 +27,8 @@ describe('check MathJax elements on page', () => {
       .should('be.visible')
       .within(() => {
         cy.step('Verify MathJax element')
-        cy.get('.math-tex').then(($mathTex) => {
+        cy.get('.math-tex').as('mathTex')
+          .then(($mathTex) => {
           const mathEquation = $mathTex.text(); // Get the text content of the MathJax equation
           const expectedEquation = '∫abf(x,y)dx,fxyyx'; // Add your expected MathJax equation here
 
@@ -37,14 +38,10 @@ describe('check MathJax elements on page', () => {
   })
 
   it('Verify MathJax javascript file was loaded successfully', () => {
-    cy.request(mathjaxCDNLink.link).then((response) => {
-      expect(response.status).to.eq(200)
-    })
+    cy.verifyJavascriptFileLoad(mathjaxCDNLink.link);
   })
 
   it('Verify MathJax object is available in the window object', () => {
-    cy.window().then(win => {
-      expect(win.document.querySelector('script[src="' + mathjaxCDNLink.link + '"]')).to.exist;
-    });
+    cy.verifyWindowObjectAvailability(mathjaxCDNLink.link);
   })
 })
