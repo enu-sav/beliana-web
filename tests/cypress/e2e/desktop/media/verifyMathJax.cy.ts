@@ -16,8 +16,6 @@
 import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
 
 describe('check MathJax elements on page', () => {
-  let mathJaxExists: boolean
-
   before(() => {
     // exp. media/7669
     const path = 'media/7669'
@@ -29,6 +27,18 @@ describe('check MathJax elements on page', () => {
     cy.get('article.media')
       .should('not.be.visible')
       .within(() => {
+        cy.step('Verify MathJax is not empty')
+        cy.get('.math-tex').as('mathTex')
+          .should('be.visible')
+          .then($mathElements => {
+          $mathElements.each((index, element) => {
+            cy.wrap(element).then($element => {
+              const mathjaxText = $element.text();
+              expect(mathjaxText.trim()).to.not.equal(''); // Assert if the rendered MathJax equation is not empty
+            });
+          });
+        });
+
         cy.step('Verify MathJax element')
         cy.get('.math-tex').as('mathTex')
           .then(($mathTex) => {
@@ -37,17 +47,6 @@ describe('check MathJax elements on page', () => {
 
           expect(mathEquation).to.eq(expectedEquation); // Assert if the rendered MathJax equation matches the expected equation
         })
-
-        cy.step('Verify MathJax is not empty')
-        cy.get('.math-tex').as('mathTex')
-          .should('be.visible').then($mathElements => {
-          $mathElements.each((index, element) => {
-            cy.wrap(element).then($element => {
-              const mathjaxText = $element.text();
-              expect(mathjaxText.trim()).to.not.equal(''); // Assert if the rendered MathJax equation is not empty
-            });
-          });
-        });
       })
   })
 
