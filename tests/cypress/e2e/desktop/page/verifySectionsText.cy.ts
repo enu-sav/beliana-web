@@ -15,7 +15,7 @@ import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
  * - Verify that each li element has a margin-left: 14.08px
  * - Verify that each li element is visible and not empty
  */
-describe('check ol/ul elements on page', () => {
+describe('Check ol/ul elements on page', () => {
   before(() => {
     // exp. vyhlasenie_o_pristupnosti=18531
     const path = 'node/18531'

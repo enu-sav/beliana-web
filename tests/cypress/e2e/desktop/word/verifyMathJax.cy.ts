@@ -13,7 +13,7 @@ import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
  * - Verify MathJax javascript file was loaded successfully
  * - Verify MathJax object is available in the window object
  */
-describe('check MathJax elements on page', () => {
+describe('Check MathJax elements on page', () => {
   before(() => {
     // exp. abelovsky-integral=150
     const path = 'node/150'

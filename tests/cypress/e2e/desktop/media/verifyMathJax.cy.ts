@@ -15,7 +15,7 @@
 
 import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
 
-describe('check MathJax elements on page', () => {
+describe('Check MathJax elements on page', () => {
   before(() => {
     // exp. media/7669
     const path = 'media/7669'

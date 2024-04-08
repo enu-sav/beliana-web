@@ -11,7 +11,7 @@ import {texts} from "../../../support/variables/textsForImageInLine";
  *
  */
 
-describe('check if Image-in-text is loading', () => {
+describe('Check if Image-in-text is loading', () => {
   before(() => {
     // exp. amidíny=13008
     const path = 'node/13008'
