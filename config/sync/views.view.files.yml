@@ -487,7 +487,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Použiť
+          submit_button: Filter
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Zoradiť podľa'
@@ -1037,13 +1037,12 @@ display:
           exception:
             value: all
             title_enable: false
-            title: Všetky
+            title: Všetko
           title_enable: true
           title: 'File usage information for {{ arguments.fid }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true

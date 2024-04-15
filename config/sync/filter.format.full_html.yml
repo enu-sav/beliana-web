@@ -11,6 +11,12 @@ name: 'Full HTML'
 format: full_html
 weight: -8
 filters:
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 50
+    settings: {  }
   filter_align:
     id: filter_align
     provider: filter
@@ -23,18 +29,6 @@ filters:
     status: true
     weight: 10
     settings: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 11
-    settings: {  }
-  editor_file_reference:
-    id: editor_file_reference
-    provider: editor
-    status: true
-    weight: 50
-    settings: {  }
   filter_html:
     id: filter_html
     provider: filter
@@ -44,11 +38,35 @@ filters:
       allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: 0
+    settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
     weight: -50
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 11
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 51
+    settings: {  }
+  filter_mathjax:
+    id: filter_mathjax
+    provider: mathjax
+    status: false
+    weight: -10
     settings: {  }
   filter_url:
     id: filter_url
@@ -57,21 +75,3 @@ filters:
     weight: 9
     settings:
       filter_url_length: 72
-  filter_html_escape:
-    id: filter_html_escape
-    provider: filter
-    status: false
-    weight: 0
-    settings: {  }
-  filter_mathjax:
-    id: filter_mathjax
-    provider: mathjax
-    status: false
-    weight: -10
-    settings: {  }
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
-    status: true
-    weight: 51
-    settings: {  }
