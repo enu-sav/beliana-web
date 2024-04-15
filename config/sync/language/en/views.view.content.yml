@@ -32,6 +32,9 @@ display:
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
           sort_desc_label: Desc
+      empty:
+        area_text_custom:
+          content: 'Žiaden obsah nie je dostupný.'
       filters:
         title:
           expose:
