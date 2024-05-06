@@ -12,7 +12,6 @@ import {texts} from "../../../support/variables/textsForSidebar";
  * - Verify that the rest of the images are .webp type
  *
  */
-
 describe('Check if illustrations are visible in sidebar', () => {
   before(() => {
     // exp. francuzsko=17922, konstanta=19378
@@ -47,10 +46,10 @@ describe('Check if illustrations are visible in sidebar', () => {
             if (index < 3) {
               cy.wrap($el)
                 .find('img')
-                .and('have.attr', 'src')
-                .then(($src) => {
-                  const src = $src.split('?')[0]
-                  const img_ype = src.split('.').pop();
+                .invoke('attr', 'src')
+                .then((src) => {
+                  const srcAsString = String(src).split('?')[0];
+                  const img_ype = srcAsString.split('.').pop();
                   cy.step('Verify if image is .svg type')
                   expect(img_ype).to.equal('svg');
                 })
@@ -58,9 +57,9 @@ describe('Check if illustrations are visible in sidebar', () => {
               cy.wrap($el)
                 .find('img')
                 .and('have.attr', 'src')
-                .then(($src) => {
-                  const src = $src.split('?')[0]
-                  const img_ype = src.split('.').pop();
+                .then((src) => {
+                  const srcAsString = String(src).split('?')[0];
+                  const img_ype = srcAsString.split('.').pop();
                   cy.step('Verify if image is .webp type')
                   expect(img_ype).to.equal('webp');
                 })

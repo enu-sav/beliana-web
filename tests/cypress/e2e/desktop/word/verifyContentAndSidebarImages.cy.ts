@@ -7,7 +7,6 @@
  * - Verify that the images in the content are not displayed in the sidebar
  * - Verify that the images in the sidebar are not displayed in the content
  */
-
 describe('Verify images in content and sidebar', () => {
   before(() => {
     // exp. francuzsko=17922, konstanta=19378
@@ -22,7 +21,7 @@ describe('Verify images in content and sidebar', () => {
     // Get all images in .node__content and save their src attributes in an array
     cy.get('article.word-container .node__content img').as('contentImages')
       .each(($img) => {
-        const src = $img.attr('src').split('?')[0]
+        const src = getImgSrcAttr($img)
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
         contentImages.push(src)
@@ -31,7 +30,7 @@ describe('Verify images in content and sidebar', () => {
     // Get all images in .node__sidebar and verify they are not in the contentImages array
     cy.get('article.word-container .node__sidebar img').as('sidebarImages')
       .each(($img) => {
-        const src = $img.attr('src').split('?')[0]
+        const src = getImgSrcAttr($img)
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
         expect(contentImages).not.to.include(src)
@@ -44,7 +43,7 @@ describe('Verify images in content and sidebar', () => {
     // Get all images in .node__sidebar and save their src attributes in an array
     cy.get('article.word-container .node__sidebar img').as('sidebarImages')
       .each(($img) => {
-        const src = $img.attr('src').split('?')[0]
+        const src = getImgSrcAttr($img)
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
         sidebarImages.push(src)
@@ -53,10 +52,14 @@ describe('Verify images in content and sidebar', () => {
     // Get all images in .node__content and verify they are not in the node__sidebar array
     cy.get('article.word-container .node__content img').as('contentImages')
       .each(($img) => {
-        const src = $img.attr('src').split('?')[0]
+        const src = getImgSrcAttr($img)
         cy.step('Verify image is visible')
         cy.wrap($img).should('be.visible')
         expect(sidebarImages).not.to.include(src)
       })
   })
 })
+
+function getImgSrcAttr($img): Chainable{
+  return  $img.attr('src').split('?')[0]
+}

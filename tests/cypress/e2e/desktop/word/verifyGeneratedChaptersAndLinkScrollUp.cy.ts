@@ -19,7 +19,6 @@
  *  - Verification that there are no h2 elements in the content
  *  - Verification that there is no section displayed in the sidebar for content
  */
-
 describe('Generated chapter content in sidebar and Link to scroll up', () => {
   let h2Exists: boolean
 
