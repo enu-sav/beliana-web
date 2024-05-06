@@ -10,7 +10,6 @@ import {texts} from "../../../support/variables/textsForImageInLine";
  * - Verify that the text after the image is correct
  *
  */
-
 describe('Check if Image-in-text is loading', () => {
   before(() => {
     // exp. amidíny=13008
@@ -36,10 +35,10 @@ describe('Check if Image-in-text is loading', () => {
             .and('include', 'amidiny.png');
 
           cy.log('textBeforeImage: ', textBeforeImage);
-          expect(textBeforeImage).to.eq(texts.beforeImage);
+          expect(textBeforeImage, 'check text before image').to.eq(texts.beforeImage);
 
           cy.log('textAfterImage: ', textAfterImage.substring(0, 42));
-          expect(textAfterImage.substring(0, 42)).to.eq(texts.afterImage.substring(0, 42));
+          expect(textAfterImage.substring(0, 42), 'check text after image').to.eq(texts.afterImage.substring(0, 42));
         });
       });
   })

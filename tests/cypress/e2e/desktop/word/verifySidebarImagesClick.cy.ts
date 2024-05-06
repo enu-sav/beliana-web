@@ -17,7 +17,6 @@ import {texts} from "../../../support/variables/textsForMedia";
  * - Repeat the steps for each img element
  *
  */
-
 describe('Verify if media images in sidebar are clickable and open in a new tab', () => {
   let media_links = []
 
@@ -35,19 +34,19 @@ describe('Verify if media images in sidebar are clickable and open in a new tab'
       .within(() => {
         cy.step('Verify if visible media-image in sidebar.')
         cy.get('.media-image a').each(($link, index) => {
-          cy.wrap($link).as('wrap_link').then($link => {
-            const href = $link.prop('href')
-            media_links.push(href)
-          });
+          const href = $link.prop('href')
+          media_links.push(href)
         });
       })
   });
 
   it('Visit each media link in a new tab and verify the image', () => {
     cy.wrap(media_links).each(($link) => {
-      cy.visit($link.toString())
+      cy.visit(`${$link}`)
+      cy.step('Verify media page is opened in a new tab')
       cy.contains(texts.mediaTitle).should('exist')
 
+      cy.step('Verify media image is visible')
       cy.get('.media-image img').as('media-img')
         .should('be.visible')
         .and('have.css', 'width', '480px')
@@ -57,6 +56,7 @@ describe('Verify if media images in sidebar are clickable and open in a new tab'
         .should('exist')
         .and('have.attr', 'srcset')
 
+      cy.step('Navigate back to the previous page')
       cy.go('back')
     })
   })

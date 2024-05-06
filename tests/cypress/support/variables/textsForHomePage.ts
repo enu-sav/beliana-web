@@ -1,6 +1,8 @@
 export const texts = {
   aboutBeliane: 'O Beliane',
   searchOptions: 'Možnosti vyhľadávania',
+  searchOptionsAriaLabelClosed: 'Možnosti vyhľadávania sú zatvorené',
+  searchOptionsAriaLabelOpen: 'Možnosti vyhľadávania sú otvorené',
   bodyLinkText: 'Slovenská všeobecná encyklopédia – viac o encyklopédii',
   anniversaries: 'Výročia',
   linkForAnniversaries: 'Zobraziť všetky výročia',

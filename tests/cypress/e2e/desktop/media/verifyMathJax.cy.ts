@@ -1,3 +1,5 @@
+import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink"
+
 /**
  * BEL-128 - 9. test case
  *
@@ -12,9 +14,6 @@
  * - Verification that there are no math-tex elements in the content
  *
  */
-
-import {mathjaxCDNLink} from "../../../support/variables/mathjaxCDNLink";
-
 describe('Check MathJax elements on page', () => {
   before(() => {
     // exp. media/7669
@@ -24,37 +23,36 @@ describe('Check MathJax elements on page', () => {
   })
 
   it('Verifying MathJax element from content', () => {
-    cy.get('article.media')
-      .should('not.be.visible')
+    cy.step('Verify article.media .....')
+    cy.get('article .metadata')
+      .should('be.visible')
       .within(() => {
         cy.step('Verify MathJax is not empty')
         cy.get('.math-tex').as('mathTex')
           .should('be.visible')
           .then($mathElements => {
-          $mathElements.each((index, element) => {
-            cy.wrap(element).then($element => {
-              const mathjaxText = $element.text();
-              expect(mathjaxText.trim()).to.not.equal(''); // Assert if the rendered MathJax equation is not empty
-            });
-          });
-        });
+            cy.wrap($mathElements).each($element => {
+              const mathjaxText = $element.text()
+              expect(mathjaxText.trim()).to.not.equal('') // Assert if the rendered MathJax equation is not empty
+            })
+          })
 
         cy.step('Verify MathJax element')
         cy.get('.math-tex').as('mathTex')
           .then(($mathTex) => {
-          const mathEquation = $mathTex.text(); // Get the text content of the MathJax equation
-          const expectedEquation = 'kOdd|OP|Okd<|OP|d|OP|Okd=|OP|d|OP|Okd>|OP|'; // Add your expected MathJax equation here
+            const mathEquation = $mathTex.text() // Get the text content of the MathJax equation
+            const expectedEquation = 'kOdd|OP|Okd<|OP|d|OP|Okd=|OP|d|OP|Okd>|OP|'; // Add your expected MathJax equation here
 
-          expect(mathEquation).to.eq(expectedEquation); // Assert if the rendered MathJax equation matches the expected equation
-        })
+            expect(mathEquation).to.eq(expectedEquation) // Assert if the rendered MathJax equation matches the expected equation
+          })
       })
   })
 
   it('Verify MathJax javascript file was loaded successfully', () => {
-    cy.verifyJavascriptFileLoad(mathjaxCDNLink.link);
+    cy.verifyJavascriptFileLoad(mathjaxCDNLink.link)
   })
 
   it('Verify MathJax object is available in the window object', () => {
-    cy.verifyWindowObjectAvailability(mathjaxCDNLink.link);
+    cy.verifyWindowObjectAvailability(mathjaxCDNLink.link)
   })
 })

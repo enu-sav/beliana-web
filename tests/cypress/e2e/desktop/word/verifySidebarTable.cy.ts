@@ -7,7 +7,6 @@
  * - Verify if table has min 1 row and 2 columns
  *
  */
-
 describe('Check if table exists in sidebar and has min 1 row and 2 columns', () => {
   before(() => {
     // exp. francuzsko=17922, konstanta=19378

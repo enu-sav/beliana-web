@@ -33,19 +33,19 @@ declare namespace Cypress {
   }
 }
 
-Cypress.Commands.add('verifyJavascriptFileLoad', (mathjaxCDNLink) => {
+Cypress.Commands.add('verifyJavascriptFileLoad', (mathjaxCDNLink: string) => {
   cy.request(mathjaxCDNLink).then((response) => {
     expect(response.status).to.eq(200)
   })
 })
 
-Cypress.Commands.add('verifyWindowObjectAvailability', (mathjaxCDNLink) => {
+Cypress.Commands.add('verifyWindowObjectAvailability', (mathjaxCDNLink: string) => {
   cy.window().then(win => {
     expect(win.document.querySelector('script[src="' + mathjaxCDNLink + '"]')).to.exist;
   })
 })
 
-Cypress.Commands.add('verifyWindowObjectNotAvailability', (mathjaxCDNLink) => {
+Cypress.Commands.add('verifyWindowObjectNotAvailability', (mathjaxCDNLink: string) => {
   cy.window().then(win => {
     expect(win.document.querySelector('script[src="' + mathjaxCDNLink + '"]')).to.not.exist;
   })

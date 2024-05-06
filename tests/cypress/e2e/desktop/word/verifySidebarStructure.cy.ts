@@ -11,9 +11,7 @@ import {texts} from "../../../support/variables/textsForSidebar";
  * - Verify link in list
  *
  */
-
 describe('Check if structure exists in sidebar and contains the correct structure', () => {
-  let sidebarExists: boolean
 
   before(() => {
     // exp. francuzsko=17922, konstanta=19378
@@ -40,7 +38,7 @@ describe('Check if structure exists in sidebar and contains the correct structur
           .find('a')
           .should('have.length.at.least', 1)
           .and('not.be.empty')
-          .each(($el, index) => {
+          .each(($el) => {
             cy.step('Verify link in list')
             cy.wrap($el)
               .should('be.visible')
