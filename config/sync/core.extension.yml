@@ -78,6 +78,7 @@ module:
   responsive_image: 0
   rest: 0
   restui: 0
+  schema_metatag: 0
   search_api: 0
   search_api_solr: 0
   serialization: 0
@@ -91,7 +92,6 @@ module:
   translatable_menu_link_uri: 0
   twig_tweak: 0
   ultimate_cron: 0
-  update: 0
   user: 0
   views_data_export: 0
   views_natural_sort: 0

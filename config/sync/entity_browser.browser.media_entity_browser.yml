@@ -38,8 +38,8 @@ widgets:
     label: media_entity_image_upload
     weight: 2
     settings:
-      extensions: 'jpg jpeg png gif'
+      submit_text: 'Select files'
       upload_location: 'public://'
       multiple: true
-      submit_text: 'Select files'
+      extensions: 'jpg jpeg png gif'
       media_type: image

@@ -34,5 +34,5 @@ segment_display_limit: null
 truncator_mode: false
 truncator_length: null
 truncator_dots: false
-remove_repeated_segments_text_only: 0
-home_segment_validation_skip: 0
+remove_repeated_segments_text_only: false
+home_segment_validation_skip: false
