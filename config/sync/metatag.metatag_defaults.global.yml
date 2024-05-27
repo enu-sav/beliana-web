@@ -8,4 +8,16 @@ id: global
 label: Globálny
 tags:
   description: 'Slovenská všeobecná encyklopédia zahŕňajúca texty o encyklopedických heslách z oblasti vedy, techniky, spoločenských a humanitných vied a články so zameraním na slovenské reálie, vydávaná od konca 90. rokov Encyklopedickým ústavom SAV.'
+  schema_article_author: 'a:4:{s:5:"@type";s:12:"Organization";s:3:"@id";s:54:"https://beliana.sav.sk/autor/autorsky-kolektiv-beliana";s:4:"name";s:71:"Autorský kolektív Encyklopedického ústavu Slovenskej akadémie vied";s:3:"url";s:54:"https://beliana.sav.sk/autor/autorsky-kolektiv-beliana";}'
+  schema_article_date_modified: '[node:changed:html_datetime]'
+  schema_article_date_published: '[node:created:html_datetime]'
+  schema_article_description: '[node:body]'
+  schema_article_headline: '[current-page:title]'
+  schema_article_id: '[current-page:url]'
+  schema_article_is_accessible_for_free: 'True'
+  schema_article_main_entity_of_page: '[current-page:url]'
+  schema_article_name: '[current-page:title]'
+  schema_article_publisher: 'a:4:{s:5:"@type";s:12:"Organization";s:3:"@id";s:23:"https://beliana.sav.sk/";s:4:"name";s:25:"Slovenská akadémia vied";s:3:"url";s:19:"https://www.sav.sk/";}'
+  schema_article_type: Article
+  schema_item_list_type: ItemList
   title: '[current-page:title] | Encyclopaedia Beliana – slovenská všeobecná encyklopédia'

@@ -78,6 +78,8 @@ module:
   responsive_image: 0
   rest: 0
   restui: 0
+  schema_article: 0
+  schema_item_list: 0
   schema_metatag: 0
   search_api: 0
   search_api_solr: 0
