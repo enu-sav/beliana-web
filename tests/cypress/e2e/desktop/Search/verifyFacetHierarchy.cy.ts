@@ -3,70 +3,80 @@
  *
  */
 describe('Verify search by category', () => {
-  before(() => {
-    const path = 'rozsirene-vyhladavanie'
+  const path = 'https://dw.beliana.sav.sk/rozsirene-vyhladavanie'
 
+  before(() => {
+    cy.step('Visiting the search page')
     cy.visit(path)
   })
 
   it('Verifying facet hierarchy', () => {
-    // Visit the page with the facet widget
-    cy.visit('https://dw.beliana.sav.sk/rozsirene-vyhladavanie')
-
-    // Check that the main facet navigation is visible
+    cy.step('Checking the main facet navigation visibility')
     cy.get('nav.facets-widget-checkbox')
-      .should('be.visible', 'Facet navigation is visible')
+      .should('be.visible')
 
-    // Iterate over each top-level facet item
+    cy.step('Iterating over each top-level facet item')
     cy.get('ul[data-drupal-facet-id="categories"] > li.facet-item').each(($facetItem, index) => {
-      // Ensure the facet item is visible
-      cy.wrap($facetItem)
-        .should('be.visible', 'Facet item is visible')
+      verifyFacetItem($facetItem);
 
-      cy.step('Verify if input checkbox is visible and has correct attributes')
-      cy.wrap($facetItem).find('input.facets-checkbox')
-        .should('be.visible', 'Input checkbox is visible')
-
-      cy.wrap($facetItem).find('div.sub-categories').then(($subCategoryButton) => {
-        // step where sub-category has in before style #282727
-        cy.wrap($subCategoryButton)
-          .should('be.visible', 'Sub-category button is visible')
-
-        cy.step('Verify if facet_item_value and facet_item_count are visible')
-        cy.wrap($subCategoryButton).find('.facet-item__value')
-          .should('be.visible', 'Facet item value is visible')
-        cy.wrap($subCategoryButton).find('.facet-item__count')
-          .should('be.visible', 'Facet item count is visible')
-      });
-
-      cy.step('Verify if facet item has class facet-item--collapsed')
-      if ($facetItem.hasClass('facet-item--collapsed')) {
-        cy.wrap($facetItem).find('> .facets-widget').then(($subCategory) => {
-          // Check for the ::before pseudo-element content
-          cy.step('Verify if facet item has before content');
-
-          cy.wrap($subCategory).parent().find('> .sub-categories')
-            .should(($el) => {
-            const beforeContent = window.getComputedStyle($el[0], '::before').getPropertyValue('content')
-            expect(beforeContent).to.eq('""')
-          });
-          cy.wrap($subCategory).should('not.be.visible');
-          cy.wrap($subCategory).find('> ul.sub-nav')
-            .should('not.be.visible', 'Sub-categories are not visible')
-          cy.wrap($subCategory).parent().find('> .sub-categories .facet-item__value').click()
-          cy.wrap($subCategory).find('ul.sub-nav')
-            .should('be.visible', 'Sub-categories are visible')
-            .and('have.length.greaterThan', 0, 'Sub-categories are visible')
-          cy.wrap($subCategory).parent().find('> .sub-categories .facet-item__value').click()
-          cy.wrap($subCategory).find('ul.sub-nav')
-            .should('not.be.visible', 'Sub-categories are not visible')
-        });
-      }
-
-      if (index === 10) {
+      if (index === 9) {
+        cy.step('Stopping iteration after 10 items')
         return false
       }
     });
   })
-
 })
+
+function verifyFacetItem($facetItem, level = 0, maxLevel = 10) {
+  if (level > maxLevel) {
+    return;
+  }
+
+  cy.step(`Checking visibility of facet item ${level}`)
+  cy.wrap($facetItem)
+    .should('be.visible')
+
+  cy.step('Verifying input checkbox visibility and attributes')
+  cy.wrap($facetItem).find('input.facets-checkbox')
+    .should('be.visible')
+
+  cy.step('Checking sub-category button visibility and its child elements')
+  cy.wrap($facetItem).find('div.sub-categories').then(($subCategoryButton) => {
+    cy.step('Checking sub-category button visibility')
+    cy.wrap($subCategoryButton)
+      .should('be.visible')
+
+    cy.step('Verifying facet_item_value and facet_item_count visibility')
+    cy.wrap($subCategoryButton).find('.facet-item__value')
+      .should('be.visible')
+    cy.wrap($subCategoryButton).find('.facet-item__count')
+      .should('be.visible')
+  });
+
+  if ($facetItem.hasClass('facet-item--collapsed')) {
+    cy.wrap($facetItem).find('> .facets-widget').then(($subCategory) => {
+      cy.step('Checking for the ::before pseudo-element content')
+      cy.wrap($subCategory).parent().find('> .sub-categories')
+        .should(($el) => {
+          const beforeContent = window.getComputedStyle($el[0], '::before').getPropertyValue('content')
+          expect(beforeContent).to.eq('""')
+        });
+
+      cy.step('Checking sub-category visibility when facet item is clicked')
+      cy.wrap($subCategory).parent().find('> .sub-categories .facet-item__value').click()
+      cy.wrap($subCategory).find('ul.sub-nav')
+        .should('be.visible')
+        .and('have.length.greaterThan', 0)
+
+      // Iterate over each sub-category item
+      cy.wrap($subCategory).find('ul.sub-nav > li.facet-item').each(($subCategoryItem) => {
+        verifyFacetItem($subCategoryItem, level + 1);
+      });
+
+      cy.step('Checking sub-category visibility when facet item is clicked again')
+      cy.wrap($subCategory).parent().find('> .sub-categories .facet-item__value').click()
+      cy.wrap($subCategory).find('ul.sub-nav')
+        .should('not.be.visible')
+    });
+  }
+}
