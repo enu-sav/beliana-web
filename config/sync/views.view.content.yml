@@ -90,7 +90,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Názov
+          label: Nadpis
           exclude: false
           alter:
             alter_text: false
@@ -401,7 +401,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Použiť
+          submit_button: Filter
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Zoradiť podľa'
@@ -544,7 +544,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Názov
+            label: Nadpis
             description: ''
             use_operator: true
             operator: title_op

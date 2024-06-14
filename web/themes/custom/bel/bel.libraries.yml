@@ -115,8 +115,7 @@ facet-categories:
   header: true
   js:
     assets/dist/js/facet/facet-categories.js: {
-      minified: true,
-      attributes: { defer: true }
+      minified: true
     }
   dependencies:
     - core/jquery
