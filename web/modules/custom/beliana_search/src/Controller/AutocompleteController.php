@@ -56,7 +56,7 @@ class AutocompleteController extends ControllerBase {
     
     $query = $this->nodeStorage->getQuery()
       ->condition('type', 'word')
-      ->condition('title', $query->escapeLike($input), 'CONTAINS')
+      ->condition('title', $query->escapeLike($input), 'STARTS_WITH')
       ->condition('status', TRUE)
       ->condition('langcode', $language)
       ->accessCheck(TRUE)
