@@ -54,6 +54,8 @@ class AutocompleteController extends ControllerBase {
     $query = \Drupal::database()->select('node_field_data', 'n');
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     
+    #Suggestions starting with $input
+    $nsuggestions = 12;
     $query = $this->nodeStorage->getQuery()
       ->condition('type', 'word')
       ->condition('title', $query->escapeLike($input), 'STARTS_WITH')
@@ -62,10 +64,36 @@ class AutocompleteController extends ControllerBase {
       ->accessCheck(TRUE)
       ->groupBy('nid')
       ->sort('title', 'ASC')
-      ->range(0, 10);
+      ->range(0, $nsuggestions);
 
     $ids = $query->execute();
     $nodes = $ids ? $this->nodeStorage->loadMultiple($ids) : [];
+
+    #if we do not have enough suggestions, try to add more
+    if (count($nodes) < 10) {
+        $query2 = $this->nodeStorage->getQuery()
+          ->condition('type', 'word')
+	  #escapeLike causes problem here
+          #->condition('title', $query->escapeLike($input), 'CONTAINS')
+          ->condition('title', $input, 'CONTAINS')
+          ->condition('status', TRUE)
+          ->condition('langcode', $language)
+          ->accessCheck(TRUE)
+          ->groupBy('nid')
+          ->sort('title', 'ASC')
+          ->range(0, $nsuggestions);
+
+        $ids2 = $query2->execute();
+        $nodes2 = $ids2 ? $this->nodeStorage->loadMultiple($ids2) : [];
+	#merge both arrays (these are not strings, so array_merge does not work)
+        foreach($nodes2 as $n2) {
+	  if (!in_array($n2, $nodes)) {
+	    $nodes[] = $n2;
+	  }
+        }
+	#cut to $nsuggestion pieces
+        $nodes = array_slice($nodes, 0, $nsuggestions - 1);
+    }
 
 
     if (!empty($nodes)) {
