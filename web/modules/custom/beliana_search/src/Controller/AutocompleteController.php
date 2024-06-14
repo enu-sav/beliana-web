@@ -21,7 +21,7 @@ class AutocompleteController extends ControllerBase {
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->nodeStroage = $entity_type_manager->getStorage('node');
+    $this->nodeStorage = $entity_type_manager->getStorage('node');
   }
 
   /**
@@ -54,7 +54,7 @@ class AutocompleteController extends ControllerBase {
     $query = \Drupal::database()->select('node_field_data', 'n');
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     
-    $query = $this->nodeStroage->getQuery()
+    $query = $this->nodeStorage->getQuery()
       ->condition('type', 'word')
       ->condition('title', $query->escapeLike($input), 'CONTAINS')
       ->condition('status', TRUE)
@@ -65,7 +65,7 @@ class AutocompleteController extends ControllerBase {
       ->range(0, 10);
 
     $ids = $query->execute();
-    $nodes = $ids ? $this->nodeStroage->loadMultiple($ids) : [];
+    $nodes = $ids ? $this->nodeStorage->loadMultiple($ids) : [];
 
 
     if (!empty($nodes)) {
