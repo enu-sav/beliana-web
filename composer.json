@@ -76,6 +76,7 @@
         "drupal/recaptcha": "^3.2",
         "drupal/recreate_block_content": "^3.0",
         "drupal/redirect": "^1.9",
+        "drupal/reroute_email": "^2.2",
         "drupal/responsive_favicons": "^2.0",
         "drupal/restui": "^1.21",
         "drupal/schema_metatag": "^3.0",
