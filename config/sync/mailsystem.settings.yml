@@ -1,6 +1,5 @@
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
-langcode: sk
 theme: current
 defaults:
   sender: phpmailer_smtp

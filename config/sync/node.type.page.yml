@@ -15,7 +15,7 @@ _core:
 name: 'Základná stránka'
 type: page
 description: "Použite <em>základné stránky</em> pre statický obsah, ako napr. stránka 'O nás'."
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false
