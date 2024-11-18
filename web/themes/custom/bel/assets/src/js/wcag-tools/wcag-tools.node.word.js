@@ -17,12 +17,12 @@
       wordElements.forEach(function (item) {
         var word = item;
 
-        ['desktop', 'mobile'].forEach(function (selector) {
+        ['desktop'].forEach(function (selector) {
           var wrapper = word.querySelector('.node__content.' + selector);
           var sidebar_wrapper = word.querySelector('.node__sidebar.' + selector);
           var images = word.querySelectorAll('.word-illustration .media-image');
 
-          ['IMG', 'IMGX'].forEach(function (tag) {
+          ['IMG', 'IMGX', 'MIMG'].forEach(function (tag) {
             if (wrapper) {
               var matches = wrapper.innerHTML.match(new RegExp("\\[" + tag + "-[0-9]+\\]", 'g'));
 
@@ -41,6 +41,11 @@
 
                   var newImage = document.createElement('div');
                   newImage.innerHTML = image.outerHTML;
+                  if (tag === 'MIMG') {
+                    newImage.classList.add('mobile-image');
+                  } else {
+                    newImage.classList.add('desktop-image');
+                  }
                   tagElement.insertAdjacentElement('afterend', newImage);
                   image.classList.add('moved');
                   image.remove();
