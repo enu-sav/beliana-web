@@ -6,7 +6,7 @@ config:
   webroot: web
   database: mariadb
   drush: 10
-  xdebug: false
+  xdebug: true
   config:
     php: .lando/php.ini
 services:

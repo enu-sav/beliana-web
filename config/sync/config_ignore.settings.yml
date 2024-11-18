@@ -3,7 +3,6 @@ _core:
 langcode: sk
 mode: simple
 ignored_config_entities:
-  - core.extension
   - locale.settings
   - 'metatag.metatag_defaults.*'
   - recaptcha.settings

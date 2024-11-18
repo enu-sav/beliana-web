@@ -52,6 +52,7 @@ module:
   language: 0
   link: 0
   locale: 0
+  mailsystem: 0
   mathjax: 0
   media: 0
   media_entity_browser: 0
@@ -61,6 +62,7 @@ module:
   metatag_hreflang: 0
   metatag_open_graph: 0
   metatag_views: 0
+  mimemail: 0
   mysql: 0
   node: 0
   options: 0
@@ -70,6 +72,7 @@ module:
   path_alias: 0
   pathauto: 0
   phpass: 0
+  phpmailer_smtp: 0
   preload_font: 0
   recaptcha: 0
   recreate_block_content: 0
