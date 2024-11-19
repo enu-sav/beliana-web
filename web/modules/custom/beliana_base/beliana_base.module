@@ -6,6 +6,8 @@
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\media\Entity\Media;
 use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
@@ -193,5 +195,82 @@ function beliana_base_media_view(array &$build, Drupal\Core\Entity\EntityInterfa
 function beliana_base_views_pre_build(ViewExecutable $view) {
   if ($view->id() == 'solr_search_word' && ($view->current_display == 'page_alphabet' || $view->current_display == 'page_search_by_category')) {
     $view->element['#attached']['library'][] = 'bel/word.mathjax';
+  }
+}
+
+
+/**
+ * Implements hook_entity_view().
+ *
+ * @param array $build
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ * @param $view_mode
+ */
+function beliana_base_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode): void {
+  if ($entity->bundle() === 'word' && $view_mode === 'full') {
+    if (!empty($build['body'][0]['#text'])) {
+      $body = $build['body'][0]['#text'];
+
+      // Check if the body contains any of the tokens
+      if (preg_match('/\[(IMG|IMGX|MIMG|MIMGX)-\d+\]/', $body)) {
+        $images = &$build['field_images'];
+        $images_to_hide = [];
+
+        // Replace MIMG-N and MIMGX-N tags
+        $body = preg_replace_callback('/\[MIMG(X?)-(\d+)\]/', function ($matches) use (&$images, &$images_to_hide) {
+          $image_index = intval($matches[2]) - 1;
+
+          if (isset($images[$image_index])) {
+            $media = Media::load($images[$image_index]['#media']->id());
+            if ($media && $media->bundle() === 'image') {
+              $view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+              $render_array = $view_builder->view($media, 'in_word');
+              $renderer = \Drupal::service('renderer');
+              $output = '<div class="mobile-image' . ($matches[1] ? ' hide-description' : '') . '" data-img-id="' . $image_index . '">'
+                . $renderer->render($render_array) .
+                '</div>';
+              return $output;
+            }
+          }
+          return '';
+        }, $body);
+
+        // Replace IMG-N and IMGX-N tags only if corresponding MIMG-N or MIMGX-N tag exists
+        $body = preg_replace_callback('/\[IMG(X?)-(\d+)\]/', function ($matches) use (&$images, &$images_to_hide, &$body) {
+          $image_index = intval($matches[2]) - 1;
+
+          if (isset($images[$image_index])) {
+            $media = Media::load($images[$image_index]['#media']->id());
+            if ($media && $media->bundle() === 'image') {
+              $view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+              $render_array = $view_builder->view($media, 'in_word');
+              $renderer = \Drupal::service('renderer');
+
+              if (preg_match('/data-img-id="' . $image_index . '"/', $body)) {
+                $output = '<div class="desktop-image' . ($matches[1] ? ' hide-description' : '') . '" data-img-id="' . $image_index . '">' . $renderer->render($render_array) . '</div>';
+                $images_to_hide[] = $image_index;
+              } else {
+                $output = '<div data-img-id="' . $image_index . '">' . $renderer->render($render_array) . '</div>';
+              }
+
+              // Add 'moved' class to the image
+              $images[$image_index]['#attributes']['class'][] = 'moved';
+
+              return $output;
+            }
+          }
+          return '';
+        }, $body);
+
+        // Add hidden class to images in the field_images array
+        foreach ($images_to_hide as $index) {
+          $images[$index]['#attributes']['class'][] = 'hidden';
+        }
+
+        $build['body'][0]['#text'] = $body;
+        $build["body"][0]["#format"] = "full_html";
+      }
+    }
   }
 }

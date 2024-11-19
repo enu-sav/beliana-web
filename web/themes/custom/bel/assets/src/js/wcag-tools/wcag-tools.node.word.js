@@ -20,40 +20,6 @@
         ['desktop'].forEach(function (selector) {
           var wrapper = word.querySelector('.node__content.' + selector);
           var sidebar_wrapper = word.querySelector('.node__sidebar.' + selector);
-          var images = word.querySelectorAll('.word-illustration .media-image');
-
-          ['IMG', 'IMGX', 'MIMG'].forEach(function (tag) {
-            if (wrapper) {
-              var matches = wrapper.innerHTML.match(new RegExp("\\[" + tag + "-[0-9]+\\]", 'g'));
-
-              if (matches) {
-                matches.forEach(function (match) {
-                  var parse = match.split('-');
-                  var id = parse[1].replace(']', '') - 1;
-                  var tagElement = Array.from(wrapper.querySelectorAll('p')).find(function (p) {
-                    return p.textContent.includes(match);
-                  });
-                  var image = images[id];
-
-                  if (tag === 'IMGX') {
-                    image.classList.add('hide-description');
-                  }
-
-                  var newImage = document.createElement('div');
-                  newImage.innerHTML = image.outerHTML;
-                  if (tag === 'MIMG') {
-                    newImage.classList.add('mobile-image');
-                  } else {
-                    newImage.classList.add('desktop-image');
-                  }
-                  tagElement.insertAdjacentElement('afterend', newImage);
-                  image.classList.add('moved');
-                  image.remove();
-                  tagElement.remove();
-                });
-              }
-            }
-          });
 
           if (wrapper && wrapper.querySelector('h2, h3')) {
             var breadcrumbs = 0;
@@ -94,8 +60,6 @@
             sidebar_wrapper.style.display = 'none';
           }
         });
-
-
 
         once('label-back-to-content', 'span.scroll-up', context).forEach(function (item) {
           item.addEventListener('click', function (e) {
