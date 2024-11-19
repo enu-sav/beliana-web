@@ -249,9 +249,9 @@ function beliana_base_entity_view(array &$build, EntityInterface $entity, Entity
 
               if (preg_match('/data-img-id="' . $image_index . '"/', $body)) {
                 $output = '<div class="desktop-image' . ($matches[1] ? ' hide-description' : '') . '" data-img-id="' . $image_index . '">' . $renderer->render($render_array) . '</div>';
-                $images_to_hide[] = $image_index;
               } else {
                 $output = '<div data-img-id="' . $image_index . '">' . $renderer->render($render_array) . '</div>';
+                $images_to_hide[] = $image_index;
               }
 
               // Add 'moved' class to the image
