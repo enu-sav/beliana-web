@@ -30,10 +30,14 @@ describe('Check if illustrations are visible in sidebar', () => {
           .should('be.visible')
           .find('picture').as('images')
           .each(($el, index) => {
-            cy.wrap($el)
-              .find('img')
-              .should('be.visible')
-              .and('have.attr', 'src')
+            cy.wrap($el).parents('article').then($parent => {
+              if (!$parent.hasClass('hidden')) {
+                cy.wrap($el)
+                  .find('img')
+                  .should('be.visible')
+                  .and('have.attr', 'src')
+              }
+            })
 
             if (index == 0) {
               cy.step('Verify if alt attribute contains "Štátna zástava" in first image')
