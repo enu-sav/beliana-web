@@ -211,66 +211,88 @@ function beliana_base_entity_view(array &$build, EntityInterface $entity, Entity
   if ($entity->bundle() === 'word' && $view_mode === 'full') {
     if (!empty($build['body'][0]['#text'])) {
       $body = $build['body'][0]['#text'];
+      $images = &$build['field_images'];
 
       // Check if the body contains any of the tokens
       if (preg_match('/\[(IMG|IMGX|MIMG|MIMGX)-\d+\]/', $body)) {
-        $images = &$build['field_images'];
         $images_to_hide = [];
 
-        // Replace MIMG-N and MIMGX-N tags
-        $body = preg_replace_callback('/\[MIMG(X?)-(\d+)\]/', function ($matches) use (&$images, &$images_to_hide) {
-          $image_index = intval($matches[2]) - 1;
+        // Process MIMG and MIMGX tags
+        $body = process_image_tags($body, $images, $images_to_hide, 'MIMG');
 
-          if (isset($images[$image_index])) {
-            $media = Media::load($images[$image_index]['#media']->id());
-            if ($media && $media->bundle() === 'image') {
-              $view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
-              $render_array = $view_builder->view($media, 'in_word');
-              $renderer = \Drupal::service('renderer');
-              $output = '<div class="mobile-image' . ($matches[1] ? ' hide-description' : '') . '" data-img-id="' . $image_index . '">'
-                . $renderer->render($render_array) .
-                '</div>';
-              return $output;
-            }
-          }
-          return '';
-        }, $body);
+        // Process IMG and IMGX tags
+        $body = process_image_tags($body, $images, $images_to_hide, 'IMG');
 
-        // Replace IMG-N and IMGX-N tags only if corresponding MIMG-N or MIMGX-N tag exists
-        $body = preg_replace_callback('/\[IMG(X?)-(\d+)\]/', function ($matches) use (&$images, &$images_to_hide, &$body) {
-          $image_index = intval($matches[2]) - 1;
-
-          if (isset($images[$image_index])) {
-            $media = Media::load($images[$image_index]['#media']->id());
-            if ($media && $media->bundle() === 'image') {
-              $view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
-              $render_array = $view_builder->view($media, 'in_word');
-              $renderer = \Drupal::service('renderer');
-
-              if (preg_match('/data-img-id="' . $image_index . '"/', $body)) {
-                $output = '<div class="desktop-image' . ($matches[1] ? ' hide-description' : '') . '" data-img-id="' . $image_index . '">' . $renderer->render($render_array) . '</div>';
-              } else {
-                $output = '<div data-img-id="' . $image_index . '">' . $renderer->render($render_array) . '</div>';
-                $images_to_hide[] = $image_index;
-              }
-
-              // Add 'moved' class to the image
-              $images[$image_index]['#attributes']['class'][] = 'moved';
-
-              return $output;
-            }
-          }
-          return '';
-        }, $body);
-
-        // Add hidden class to images in the field_images array
-        foreach ($images_to_hide as $index) {
-          $images[$index]['#attributes']['class'][] = 'hidden';
-        }
+        // Process images
+        process_images($images, $images_to_hide, $build);
 
         $build['body'][0]['#text'] = $body;
         $build["body"][0]["#format"] = "full_html";
       }
+    }
+  }
+}
+
+/**
+ * Process image tags in the body text.
+ *
+ * @param string $body
+ * @param array $images
+ * @param array $images_to_hide
+ * @param string $tag_prefix
+ * @return string
+ */
+function process_image_tags(string $body, array &$images, array &$images_to_hide, string $tag_prefix): string {
+  return preg_replace_callback('/\[' . $tag_prefix . '(X?)-(\d+)\]/', function ($matches) use (&$images, &$images_to_hide, $tag_prefix, $body) {
+    $image_index = intval($matches[2]) - 1;
+
+    if (isset($images[$image_index])) {
+      $media = Media::load($images[$image_index]['#media']->id());
+      if ($media && $media->bundle() === 'image') {
+        // Invalidate cache for the media entity
+        \Drupal::service('cache_tags.invalidator')->invalidateTags(['media:' . $media->id()]);
+
+        $view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+        $render_array = $view_builder->view($media, 'in_word');
+        $renderer = \Drupal::service('renderer');
+        $output = '<div class="' . ($tag_prefix === 'MIMG' ? 'mobile-image' : 'desktop-image') . ($matches[1] ? ' hide-description' : '') . '" data-img-id="' . $image_index . '">'
+          . $renderer->render($render_array) .
+          '</div>';
+
+        if ($tag_prefix === 'IMG' || preg_match('/data-img-id="' . $image_index . '"/', $body)) {
+          $images_to_hide[] = $image_index;
+        }
+
+        // Add 'moved' class to the image
+        $images[$image_index]['#attributes']['class'][] = 'moved';
+
+        return $output;
+      }
+    }
+    return '';
+  }, $body);
+}
+
+/**
+ * Process images to add classes and cache tags.
+ *
+ * @param array $images
+ * @param array $images_to_hide
+ * @param array &$build
+ */
+function process_images(array &$images, array $images_to_hide, array &$build): void {
+  foreach ($images['#items']->getValue() as $index => $image) {
+    if (in_array($index, $images_to_hide)) {
+      $images[$index]['#attributes']['class'][] = 'mobile-image hidden';
+    } else {
+      $images[$index]['#attributes']['class'][] = 'desktop-image';
+    }
+
+    // Invalidate cache for the images
+    $media = Media::load($image['target_id']);
+    if ($media) {
+      \Drupal::service('cache_tags.invalidator')->invalidateTags(['media:' . $media->id()]);
+      $build['#cache']['tags'][] = 'media:' . $media->id();
     }
   }
 }
