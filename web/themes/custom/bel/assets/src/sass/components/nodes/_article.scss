@@ -262,12 +262,21 @@ article.word-container {
           }
         }
 
+        .desktop-image.hide-description .field--name-field-description,
+        .mobile-image.hide-description .field--name-field-description {
+          display: none;
+        }
+
         .desktop-image {
           display: block;
         }
 
         .mobile-image {
           display: none;
+        }
+
+        .visible-on-both {
+          display: block;
         }
 
         @media screen and (max-width: 768px) {
@@ -277,6 +286,18 @@ article.word-container {
 
           .mobile-image {
             display: block;
+
+            img {
+              height: auto;
+            }
+          }
+
+          .visible-on-both {
+            display: block;
+
+            img {
+              height: auto;
+            }
           }
         }
       }
@@ -423,16 +444,6 @@ article.word-container {
             tr td {
               padding: rem(2) rem(10);
               border: rem(1) solid #e4e4e4;
-            }
-          }
-
-          @media screen and (max-width: 768px) {
-            .desktop-image {
-              display: none;
-            }
-
-            .mobile-image {
-              display: block;
             }
           }
         }
