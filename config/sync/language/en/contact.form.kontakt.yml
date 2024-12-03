@@ -1,0 +1,5 @@
+third_party_settings:
+  contact_storage:
+    submit_text: 'Send a message'
+label: Contact
+message: 'Thank you for submitting your comment. We will address it shortly and inform you of the result at the email address provided.'

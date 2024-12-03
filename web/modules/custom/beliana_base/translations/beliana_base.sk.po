@@ -243,3 +243,25 @@ msgstr "Zadaním výrazu dom and teplo: sa vyhľadajú súčasne slová dom aj t
 
 msgid "slovak-and-painter-together-words-slovak-and-painter"
 msgstr "<strong>dom and teplo:</strong> súčasne slová dom aj teplo"
+
+msgid "entry-comment-heading"
+msgstr "Komentár k heslu"
+
+msgid "message-text-required"
+msgstr "Text správy (povinné)"
+
+msgid "email-address"
+msgstr "Emailová adresa"
+
+msgid "email-notification-note"
+msgstr "Ak uvediete svoju emailovú adresu, budeme Vás informovať o výsledku.<br /> CAPTCHA (povinné)"
+
+msgid "captcha-required"
+msgstr "CAPTCHA (povinné)"
+
+msgid "submit-button"
+msgstr "Odoslať"
+
+msgid "thank-you-note"
+msgstr "Ďakujeme za odoslanie komentára. Budeme sa ním čoskoro zaoberať a o výsledku Vás budeme informovať na zadanú emailovú adresu."
+

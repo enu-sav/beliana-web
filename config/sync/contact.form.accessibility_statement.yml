@@ -1,0 +1,21 @@
+uuid: caa2b4b1-d467-457a-ba31-d1403702e711
+langcode: sk
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: 'Odoslať správu'
+    show_preview: false
+    disabled_form_message: 'Tento kontaktný formulár bol zakázaný.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+id: accessibility_statement
+label: 'Vyhlásenie o prístupnosti'
+recipients:
+  - beliana@savba.sk
+reply: ''
+weight: 0
+message: 'Ďakujeme za odoslanie komentára. Budeme sa ním čoskoro zaoberať a o výsledku Vás budeme informovať na zadanú emailovú adresu.'
+redirect: ''

@@ -243,3 +243,24 @@ msgstr "By entering the expression slovak and painter: the words slovak and pain
 
 msgid "slovak-and-painter-together-words-slovak-and-painter"
 msgstr "<strong>slovak and painter:</strong> together words slovak and painter"
+
+msgid "entry-comment-heading"
+msgstr "Comment on the entry"
+
+msgid "message-text-required"
+msgstr "Message text (required)"
+
+msgid "email-address"
+msgstr "Email address"
+
+msgid "email-notification-note"
+msgstr "If you provide your email address, we will inform you about the result.<br /> CAPTCHA (required)"
+
+msgid "captcha-required"
+msgstr "CAPTCHA (required)"
+
+msgid "submit-button"
+msgstr "Submit"
+
+msgid "thank-you-note"
+msgstr "Thank you for submitting your comment. We will address it shortly and inform you of the result at the email address provided."

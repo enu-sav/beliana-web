@@ -35,20 +35,20 @@ class ModalForm extends FormBase {
     $form['header'] = [
       '#type' => 'html_tag',
       '#tag' => 'h2',
-      '#value' => 'Komentár k heslu',
+      '#value' => $this->t('entry-comment-heading'),
     ];
 
     $form['description'] = [
       '#type' => 'textarea',
-      '#title' => 'Text správy (povinné)',
+      '#title' => $this->t('message-text-required'),
       '#required' => TRUE,
-      '#default_value' => 'Komentár k heslu: "' . $node->getTitle() . '"',
+      '#default_value' => $this->t('entry-comment-heading') . ': "' . $node->getTitle() . '"',
     ];
 
     $form['email'] = [
       '#type' => 'email',
-      '#title' => $this->t('Emailová adresa'),
-      '#description' => $this->t('Ak uvediete svoju emailovú adresu, budeme Vás informovať o výsledku<br /> CAPTCHA (povinné)'),
+      '#title' => $this->t('email-address'),
+      '#description' => $this->t('email-notification-note'),
     ];
 
     $form['actions'] = [
@@ -57,7 +57,7 @@ class ModalForm extends FormBase {
 
     $form['actions']['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Odoslať'),
+      '#value' => $this->t('submit-button'),
     ];
     return $form;
   }
@@ -74,9 +74,7 @@ class ModalForm extends FormBase {
     else {
       $this->sendEmail($form_state);
       $response->addCommand(
-          new OpenModalDialogCommand('Komentár k heslu', 'Ďakujeme za odoslanie komentára. Budeme
-            sa ním čoskoro zaoberať a o výsledku Vás budeme informovať na
-            zadanú emailovú adresu.', ['width' => '80%'])
+          new OpenModalDialogCommand($this->t('entry-comment-heading'), $this->t('thank-you-note'), ['width' => '80%'])
       );
     }
     return $response;
