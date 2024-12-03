@@ -1,6 +1,5 @@
 _core:
   default_config_hash: GL7ygb-sUJwtEtFI_8Z3Qd8mBJpr2h5lTL6DIOQKs98
-langcode: sk
 smtp_host: mail.savba.sk
 smtp_hostbackup: ''
 smtp_port: 25

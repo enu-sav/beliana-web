@@ -462,14 +462,15 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: 0
           id: 0
           tags:
             next: Ďalej
             previous: '‹ Predchádzajúci'
-            first: «
-            last: »
+            first: '« Prvý'
+            last: Koniec
           expose:
             items_per_page: false
             items_per_page_label: 'Položiek na stránku'

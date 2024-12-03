@@ -14,7 +14,7 @@ _core:
 name: Článok
 type: article
 description: 'Použite <em>články</em> pre časovo obmedzený obsah ako sú novinky, tlačové správy či blogové príspevky.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: false

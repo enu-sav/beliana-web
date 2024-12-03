@@ -1,6 +1,5 @@
 _core:
   default_config_hash: Y89RDIXY0PJrapY3pDHYMbnnM-z8_tnWCurMXu3jocA
-langcode: sk
 use_cdn: 1
 cdn_url: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
 config_type: 1

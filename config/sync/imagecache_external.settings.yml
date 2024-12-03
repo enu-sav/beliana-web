@@ -1,13 +1,12 @@
 _core:
   default_config_hash: sYKKIgXKwriRVKA1-QEKqToS8jwnr-TasvZwHT0Asek
-langcode: sk
 imagecache_directory: externals
 imagecache_subdirectories: false
 imagecache_default_extension: .jpg
 imagecache_external_batch_flush_limit: 1000
 imagecache_external_hosts: ''
 imagecache_external_management: unmanaged
-imagecache_external_use_whitelist: true
+imagecache_external_use_whitelist: false
 imagecache_fallback_image: 0
 imagecache_external_allowed_mimetypes:
   - image/jpg

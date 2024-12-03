@@ -1,6 +1,5 @@
 _core:
   default_config_hash: rpfRQVoEn2ZWd_lw-iULKPiuina5CqcmzXWlz1OjTwM
-langcode: sk
 name: 'Encyclopaedia Beliana – slovenská všeobecná encyklopédia'
 mail: beliana@savba.sk
 simple_address: false

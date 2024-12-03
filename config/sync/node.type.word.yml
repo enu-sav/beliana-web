@@ -12,7 +12,7 @@ third_party_settings:
 name: Heslo
 type: word
 description: 'Použite typ obsahu Heslo pre jednotlivé heslá encyklopédie.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

@@ -1,6 +1,5 @@
 _core:
   default_config_hash: o57trdcl5av39RvArvfjkUXYdhd3UbY2pEg0yZpIu-0
-langcode: sk
 dependencies:
   module:
     - views_natural_sort
