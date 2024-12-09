@@ -24,7 +24,7 @@ display:
           settings:
             past_format: 'pred @interval'
         operations:
-          label: Operácie
+          label: Operations
       pager:
         options:
           tags:
@@ -33,9 +33,9 @@ display:
             first: '« Prvý'
             last: Koniec
           expose:
-            items_per_page_label: 'Položiek na stránku'
-            items_per_page_options_all_label: '- Všetko -'
-            offset_label: 'Zobraziť od'
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       exposed_form:
         options:
           submit_button: Použiť
@@ -65,10 +65,10 @@ display:
             label: Oprávnenie
       use_more_text: viac
   page_1:
-    display_title: Stránka
+    display_title: Page
     display_options:
       menu:
-        title: Zoznam
+        title: List
         description: 'Nájsť a spravovať ľudí, ktorí sú aktívni na vašich stránkach.'
       tab_options:
         title: Používatelia

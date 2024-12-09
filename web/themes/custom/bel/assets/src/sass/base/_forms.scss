@@ -28,6 +28,12 @@ form.contact-message-form {
     max-width: 100%;
   }
 }
+form.contact-message-form {
+  label.js-form-required.form-required::after {
+    content: " *";
+    color: red;
+  }
+}
 
 .form-actions input.form-submit {
   background: #8a2807;

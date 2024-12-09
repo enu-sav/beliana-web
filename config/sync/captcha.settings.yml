@@ -8,6 +8,7 @@ description: ''
 title: CAPTCHA
 administration_mode: false
 administration_mode_on_admin_routes: false
+whitelist_ips: ''
 wrong_captcha_response_message: 'Vložili ste nesprávnu odpoveď.'
 default_validation: 1
 persistence: 1

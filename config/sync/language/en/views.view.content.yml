@@ -18,7 +18,7 @@ display:
         changed:
           label: Aktualizované
         operations:
-          label: Operácie
+          label: Operations
       pager:
         options:
           tags:
@@ -53,7 +53,7 @@ display:
               2:
                 title: Nezverejnené
   page_1:
-    display_title: Stránka
+    display_title: Page
     display_options:
       menu:
         title: Obsah
