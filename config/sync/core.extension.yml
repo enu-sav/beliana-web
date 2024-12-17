@@ -25,7 +25,6 @@ module:
   config_ignore: 0
   config_translation: 0
   contact: 0
-  contact_storage: 0
   csv_serialization: 0
   ctools: 0
   datetime: 0

@@ -1,16 +1,7 @@
 uuid: f384cf7e-e426-47b3-899d-2f959c6e79d7
 langcode: sk
 status: true
-dependencies:
-  module:
-    - contact_storage
-third_party_settings:
-  contact_storage:
-    submit_text: 'Poslať správu'
-    show_preview: false
-    disabled_form_message: 'This contact form has been disabled.'
-    maximum_submissions_user: 0
-    page_autoreply_format: plain_text
+dependencies: {  }
 id: kontakt
 label: Kontakt
 recipients:
@@ -18,4 +9,4 @@ recipients:
 reply: ''
 weight: 0
 message: 'Ďakujeme za odoslanie komentára. Budeme sa ním čoskoro zaoberať a o výsledku Vás budeme informovať na zadanú emailovú adresu.'
-redirect: ''
+redirect: /node/27
