@@ -1,0 +1,7 @@
+uuid: 775464fb-5b92-45fc-9ccc-f12a8e46e35e
+langcode: sk
+status: true
+dependencies: {  }
+formId: contact_message_accessibility_statement_form
+captchaType: default
+label: contact_message_accessibility_statement_form

@@ -24,6 +24,7 @@ module:
   config: 0
   config_ignore: 0
   config_translation: 0
+  contact: 0
   csv_serialization: 0
   ctools: 0
   datetime: 0
@@ -95,6 +96,7 @@ module:
   translatable_menu_link_uri: 0
   twig_tweak: 0
   ultimate_cron: 0
+  update: 0
   user: 0
   views_data_export: 0
   views_natural_sort: 0

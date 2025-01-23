@@ -23,15 +23,16 @@ display:
           label: 'Dátum zmeny'
         count:
           label: 'Použité v'
+          format_plural_string: !!binary MSBwbGFjZQNAY291bnQgcGxhY2Vz
       pager:
         options:
           tags:
             next: Ďalej
             previous: '‹ Predchádzajúci'
           expose:
-            items_per_page_label: 'Položiek na stránku'
-            items_per_page_options_all_label: '- Všetko -'
-            offset_label: 'Zobraziť od'
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       exposed_form:
         options:
           submit_button: Použiť
@@ -68,9 +69,9 @@ display:
             next: Ďalej
             previous: '‹ Predchádzajúci'
           expose:
-            items_per_page_label: 'Položiek na stránku'
-            items_per_page_options_all_label: '- Všetko -'
-            offset_label: 'Zobraziť od'
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       arguments:
         fid:
           exception:

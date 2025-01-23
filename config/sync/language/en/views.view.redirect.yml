@@ -10,16 +10,16 @@ display:
       pager:
         options:
           expose:
-            items_per_page_label: 'Položiek na stránku'
-            items_per_page_options_all_label: '- Všetko -'
-            offset_label: 'Zobraziť od'
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       fields:
         redirect_bulk_form:
-          action_title: 'S výberom'
+          action_title: 'With selection'
         redirect_source__path:
           label: Od
         created:
-          label: Vytvorené
+          label: Created
       filters:
         redirect_source__path:
           expose:
@@ -28,4 +28,4 @@ display:
           expose:
             label: Komu
   page_1:
-    display_title: Stránka
+    display_title: Page

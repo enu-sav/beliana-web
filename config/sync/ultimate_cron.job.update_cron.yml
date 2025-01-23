@@ -1,0 +1,17 @@
+uuid: 6f681ccf-adfe-455c-b46a-bc376302a6e4
+langcode: sk
+status: true
+dependencies:
+  module:
+    - update
+title: 'Skontrolovať aktualizácie'
+id: update_cron
+weight: 0
+module: update
+callback: 'update#cron'
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

@@ -1,0 +1,47 @@
+uuid: b30b72dc-bc10-4394-9864-4f6a7bb93573
+langcode: sk
+status: true
+dependencies:
+  config:
+    - contact.form.kontakt
+id: contact_message.kontakt.default
+targetEntityType: contact_message
+bundle: kontakt
+mode: default
+content:
+  langcode:
+    type: language_select
+    weight: 4
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  mail:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 12
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  copy: true
+  preview: true

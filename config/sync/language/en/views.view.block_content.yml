@@ -13,16 +13,16 @@ display:
         changed:
           label: Aktualizované
         operations:
-          label: Operácie
+          label: Operations
       pager:
         options:
           tags:
             next: Ďalej
             previous: '‹ Predchádzajúci'
           expose:
-            items_per_page_label: 'Položiek na stránku'
-            items_per_page_options_all_label: '- Všetko -'
-            offset_label: 'Zobraziť od'
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       exposed_form:
         options:
           submit_button: Apply
@@ -40,7 +40,8 @@ display:
           expose:
             label: 'Typ bloku'
   page_1:
-    display_title: Stránka
+    display_title: Page
     display_options:
       menu:
+        title: 'Vlastné bloky'
         description: 'Create and edit block content.'
