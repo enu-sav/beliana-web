@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: beliana_daily_cron
 weight: 0
 module: beliana_daily
-callback: beliana_daily_cron
+callback: 'beliana_daily#cron'
 scheduler:
   id: simple
 launcher:

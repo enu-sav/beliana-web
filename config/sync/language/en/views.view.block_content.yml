@@ -43,4 +43,5 @@ display:
     display_title: Page
     display_options:
       menu:
+        title: 'Vlastné bloky'
         description: 'Create and edit block content.'
