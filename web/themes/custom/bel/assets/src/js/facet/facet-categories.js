@@ -1,7 +1,3 @@
-/**
- * @file
- * Facet categories
- */
 (function ($, Drupal, once) {
 
   "use strict";
@@ -27,6 +23,13 @@
           if ($.isFunction(Drupal.facets.makeCheckbox)) {
             Drupal.facets.makeCheckbox = function () {
               var $link = $(this);
+              var facetName = $link.closest('.js-facets-widget').data('drupal-facet-id');
+
+              // Check if the facet name is 'categories'
+              if (facetName !== 'categories') {
+                return;
+              }
+
               var tabindex_label = -1;
               var aria_expanded = true;
               var active = $link.hasClass('is-active');
@@ -34,7 +37,8 @@
               var description = $link.html();
               var href = $link.attr('href');
               var id = $link.data('drupal-facet-item-id');
-              var count = $link.find('.facet-item__count').attr('data-count');
+              var count = 0; // $link.find('.facet-item__count').attr('data-count');
+              var type = $link.data('drupal-facet-widget-element-class');
 
               $link.parent().find('.facets-widget').attr('id', id).attr('role', 'region');
               var aria_label = Drupal.t('aria-label-category-number-of-products-count', {
@@ -47,11 +51,16 @@
               }
 
               var checkbox = $('<input type="checkbox" class="facets-checkbox">')
-                  .attr('aria-controls', 'label-' + id)
-                  .attr('aria-checked', false)
-                  .attr('aria-label', aria_label)
-                  .data($link.data())
-                  .data('facetsredir', href);
+                .attr('id', id)
+                .attr('name', $(this).closest('.js-facets-widget').data('drupal-facet-filter-key') + '[]')
+                .addClass(type)
+                .val($link.data('drupal-facet-filter-value'))
+                .data($link.data())
+                .data('facetsredir', href)
+                .attr('aria-controls', 'label-' + id)
+                .attr('aria-checked', false)
+                .attr('aria-label', aria_label);
+
               var label = $('<div aria-controls="' + id + '" tabindex="' + tabindex_label + '" role="button" class="sub-categories" aria-expanded="' + aria_expanded + '" aria-label="' + aria_label + '">' + description + '</div>');
 
               checkbox.on('change.facets', function (e) {
@@ -65,6 +74,7 @@
 
               if (active) {
                 checkbox.attr('checked', true);
+                label.addClass('is-active');
                 label.find('.js-facet-deactivate').remove();
               }
 
@@ -73,9 +83,6 @@
           }
         }
       });
-
-      // Open collapsed facets
-
 
       // Open collapsed facets
       $('#block-bel-categories').find('.facets-widget-checkbox').on('click', '.facet-item--collapsed:not(.facet-item--active) > .sub-categories', function (e) {

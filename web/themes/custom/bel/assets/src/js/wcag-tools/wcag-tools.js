@@ -62,6 +62,9 @@
         openClass: "open"
       });
 
+      $(".accessible-alphabetical a").on('click', function (e) {
+        window.location.href = $(this).attr('href');
+      });
     }
   };
 

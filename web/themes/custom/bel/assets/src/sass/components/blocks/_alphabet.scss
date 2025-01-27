@@ -25,6 +25,10 @@
         margin-right: 0;
       }
 
+      label {
+        display: none;
+      }
+
       a {
         $fz: 25;
         font-size: rem($fz);
@@ -32,7 +36,7 @@
         text-decoration: none;
         width: 100%;
         height: 100%;
-        display: block;
+        display: block !important;
         color: #8a2807;
         border: em(1, $fz) solid transparent;
         -webkit-border-top-left-radius: 0;
