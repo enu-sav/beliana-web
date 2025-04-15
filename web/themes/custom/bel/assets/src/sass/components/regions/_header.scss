@@ -482,9 +482,12 @@ header {
           margin: 0;
         }
 
+        .toggle-text {
+          display: none;
+        }
+
         @media screen and (max-width: em(768, 16)) {
-          &:before {
-            content: "Zobraziť abecedu";
+          .toggle-text {
             text-align: left;
             width: 100%;
             display: block;
@@ -505,7 +508,7 @@ header {
               font: normal normal normal 18px/1 FontAwesome;
               position: absolute;
               right: 0;
-              top: rem(-36);
+              top: rem(18);
               color: #8a2807;
 
               .black-white & {
@@ -522,10 +525,6 @@ header {
         &.active {
 
           @media screen and (max-width: em(768, 16)) {
-
-            &:before {
-              content: "Skryť abecedu";
-            }
 
             #block-bel-alphabet {
 

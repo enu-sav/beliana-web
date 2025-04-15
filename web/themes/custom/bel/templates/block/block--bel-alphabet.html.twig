@@ -35,6 +35,7 @@
     {% endif %}
     {{ title_suffix }}
     {% block content %}
+      <span class="toggle-text" data-open="{{ 'toggle-closed-hide-alphabet'|t }}" data-closed="{{ 'toggle-open-show-alphabet'|t }}">{{ 'toggle-open-show-alphabet'|t }}</span>
       {{ content }}
     {% endblock %}
   </div>

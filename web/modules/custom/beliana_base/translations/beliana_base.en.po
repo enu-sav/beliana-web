@@ -264,3 +264,9 @@ msgstr "Submit"
 
 msgid "thank-you-note"
 msgstr "Thank you for submitting your comment. We will address it shortly and inform you of the result at the email address provided."
+
+msgid "toggle-open-show-alphabet"
+msgstr "Show alphabet"
+
+msgid "toggle-closed-hide-alphabet"
+msgstr "Hide alphabet"
