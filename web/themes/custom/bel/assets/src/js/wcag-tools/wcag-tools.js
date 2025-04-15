@@ -37,9 +37,16 @@
           wordFacetWrap.addEventListener('click', function (e) {
             if (this.classList.contains('active')) {
               this.classList.remove('active');
-            }
-            else {
+              const toggleText = this.querySelector('.toggle-text');
+              if (toggleText) {
+                toggleText.textContent = toggleText.getAttribute('data-closed');
+              }
+            } else {
               this.classList.add('active');
+              const toggleText = this.querySelector('.toggle-text');
+              if (toggleText) {
+                toggleText.textContent = toggleText.getAttribute('data-open');
+              }
             }
           });
         }

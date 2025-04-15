@@ -265,3 +265,8 @@ msgstr "Odoslať"
 msgid "thank-you-note"
 msgstr "Ďakujeme za odoslanie komentára. Budeme sa ním čoskoro zaoberať a o výsledku Vás budeme informovať na zadanú emailovú adresu."
 
+msgid "toggle-open-show-alphabet"
+msgstr "Zobraziť abecedu"
+
+msgid "toggle-closed-hide-alphabet"
+msgstr "Skryť abecedu"
