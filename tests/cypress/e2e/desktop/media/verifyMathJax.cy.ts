@@ -28,7 +28,7 @@ describe('Check MathJax elements on page', () => {
       .should('be.visible')
       .within(() => {
         cy.step('Verify MathJax is not empty')
-        cy.get('.math-tex').as('mathTex')
+        cy.get('.MathJax').as('mathTex')
           .should('be.visible')
           .then($mathElements => {
             cy.wrap($mathElements).each($element => {
@@ -38,7 +38,7 @@ describe('Check MathJax elements on page', () => {
           })
 
         cy.step('Verify MathJax element')
-        cy.get('.math-tex').as('mathTex')
+        cy.get('.MathJax').as('mathTex')
           .then(($mathTex) => {
             const mathEquation = $mathTex.text() // Get the text content of the MathJax equation
             const expectedEquation = 'kOdd|OP|Okd<|OP|d|OP|Okd=|OP|d|OP|Okd>|OP|'; // Add your expected MathJax equation here

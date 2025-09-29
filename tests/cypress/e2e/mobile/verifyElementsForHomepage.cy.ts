@@ -188,7 +188,7 @@ describe('Mobile - check all elements and their dimensions in px for homepage', 
                 cy.wrap($ul)
                   .find('li')
                   .should('be.visible')
-                  .and('have.length', 5)
+                  .and('have.length', 4)
                   .each(($liElements, index) => {
                     cy.wrap($liElements)
                       .invoke('text')

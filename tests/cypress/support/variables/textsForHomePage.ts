@@ -13,7 +13,6 @@ export const texts = {
     'Slovenská akadémia vied',
     'Kontakt'],
   footerLinksText: [
-    'Autorský kolektív',
     'Podmienky použitia',
     'In English',
     'Vyhlásenie o prístupnosti',
