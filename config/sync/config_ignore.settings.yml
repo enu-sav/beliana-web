@@ -8,3 +8,4 @@ ignored_config_entities:
   - search_api.server.solr
   - system.file
   - system.site
+  - update.settings
