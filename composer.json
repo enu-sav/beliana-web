@@ -29,7 +29,7 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.12",
+        "composer/installers": "^2.0",
         "cweagans/composer-patches": "~1.7",
         "drupal/admin_toolbar": "^3.5",
         "drupal/adminimal_admin_toolbar": "^1.11",
@@ -42,10 +42,9 @@
         "drupal/config_filter": "^2.7",
         "drupal/config_ignore": "^3.3",
         "drupal/config_split": "^2.0",
-        "drupal/core": "10.4.5",
-        "drupal/core-composer-scaffold": "^10",
-        "drupal/core-project-message": "^10",
-        "drupal/core-recommended": "^10",
+        "drupal/core-composer-scaffold": "10.5.9",
+        "drupal/core-project-message": "10.5.9",
+        "drupal/core-recommended": "10.5.9",
         "drupal/csv_serialization": "^4.0",
         "drupal/ctools": "^4.1",
         "drupal/easy_breadcrumb": "^2.0",
@@ -55,7 +54,7 @@
         "drupal/entity_update": "^3.0",
         "drupal/entityqueue": "1.x-dev",
         "drupal/environment_indicator": "^4.0",
-        "drupal/eu_cookie_compliance": "^1.25",
+        "drupal/eu_cookie_compliance": "^1.29",
         "drupal/facets": "^3.0",
         "drupal/fontawesome": "^2.26",
         "drupal/gin": "^4.0",
@@ -66,7 +65,7 @@
         "drupal/mathjax": "^4.1",
         "drupal/media_entity_browser": "^3.0",
         "drupal/menu_link_attributes": "^1.5",
-        "drupal/metatag": "^2.1",
+        "drupal/metatag": "^2.2",
         "drupal/migrate_source_csv": "^3.7",
         "drupal/mimemail": "^1.0@alpha",
         "drupal/page_manager": "^4.0@RC",
@@ -101,9 +100,6 @@
         "symfony/filesystem": "^6.4",
         "symfony/finder": "^6.4",
         "vlucas/phpdotenv": "^5.6"
-    },
-    "require-dev": {
-        "drupal/core-dev": "^10"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -165,9 +161,6 @@
             },
             "drupal/mathjax": {
                 "3016329 - Conditionally attach MathJax libraries and markup": "https://www.drupal.org/files/issues/2020-09-18/3016329-conditionally-attach-markup-10.patch"
-            },
-            "drupal/redirect": {
-                "3373123 - Setting 'Enforce clean and canonical URLs.' breaks CSS aggregation on multilingual Drupal 10.1.x with browser caching enabled": "https://www.drupal.org/files/issues/2023-11-01/3373123_redirect_dont-normalize-assets.patch"
             },
             "drupal/svg_image": {
                 "3227734 - Read width and height from viewBox if explicit attributes are not available": "https://www.drupal.org/files/issues/2021-12-01/svg_image-viewbox-width-height-3227734-3.patch"

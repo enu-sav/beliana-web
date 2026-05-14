@@ -1,11 +1,10 @@
 name: beliana.web
-recipe: drupal9
+recipe: drupal10
 config:
-  php: '8.1'
+  php: '8.4'
   via: apache
   webroot: web
-  database: mariadb
-  drush: 10
+  database:  mariadb:10.6
   xdebug: true
   config:
     php: .lando/php.ini
@@ -14,12 +13,12 @@ services:
     overrides:
       environment:
         XDEBUG_MODE:
-  phpmyadmin:
-    type: phpmyadmin
-    hosts:
-      - database
-    overrides:
-      image: bitnami/mariadb:10.4.12
+#  phpmyadmin:
+#    type: phpmyadmin
+#    hosts:
+#      - database
+#    overrides:
+#      image: bitnami/mariadb:10.4.12
   mailhog:
     type: mailhog
     portforward: true
@@ -27,7 +26,7 @@ services:
       - appserver
   search:
     type: solr:8
-    core: drupal9
+    core: drupal10
     portforward: 9999
     config:
       dir: .solr/conf
